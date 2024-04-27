@@ -1,0 +1,364 @@
+.modal {
+    &-content {
+        background: var(--white);
+        border-radius: 6px;
+        position: relative;
+        padding: 20px;
+        min-height: 450px;
+    }
+    &-head {
+        margin-bottom: 10px;
+        &__inner {
+            align-items: center;
+            justify-content: space-between;
+            &-btn {
+                width: 40px;
+            }
+            &-logo {
+                display: none;
+            }
+        }
+    }
+    &-dialog {
+        max-width: 676px;
+    }
+    &-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &-txt {
+        text-align: center;
+        margin-bottom: 36px;
+    }
+    &-body {
+        padding: 0 50px;
+    }
+    &-login {
+        &__txt {
+            padding-left: 32px;
+            padding-right: 32px;
+            &-number {
+                display: block;
+            }
+        }
+        &__bottom {
+            text-align: center;
+            &.repeat {
+                .modal-login__bottom-txt {
+                    display: none;
+                }
+                .modal-login__repeat {
+                    display: inline-flex;
+                }
+            }
+            &-txt {
+                color: #B7B7B7;
+            }
+        }
+        &__repeat {
+            display: none;
+            align-items: center;
+            &-icon {
+                width: 16px;
+                height: 16px;
+                margin-right: 4px;
+            }
+        }
+    }
+    &-sms {
+        padding-top: 24px;
+    }
+    &-form {
+        &__input {
+            position: relative;
+            border-radius: 42px;
+            height: 60px;
+            font-size: 17px;
+            line-height: 130%;
+            &-inner {
+                height: 100%;
+                align-items: center;
+            }
+            &-left {
+                width: 126px;
+                flex-shrink: 0;
+            }
+            &-right {
+                flex-grow: 1;
+            }
+        }
+        &__country {
+            padding-left: 20px;
+            padding-right: 16px;
+            align-items: center;
+            line-height: 1;
+            &-flag {
+                width: 24px;
+                height: 17px;
+                margin-right: 10px;
+                flex-shrink: 0;
+                margin-top: -2px;
+            }
+            &-icon {
+                width: 16px;
+                height: 16px;
+                stroke: var(--black);
+                margin-left: auto;
+            }
+            &[aria-expanded="true"] {
+                .modal-form__country-icon {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        &__field {
+            padding: 0 20px;
+            border: none;
+            border-left: 1px solid var(--stroke-element);
+            height: 25px;
+            &::placeholder {
+                color: #ACACAC;
+            }
+        }
+        &__dropdown {
+            width: 100%;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 0;
+            margin: 27px 0 !important;
+            overflow: hidden;
+            &::before {
+                border-color: var(--black);
+            }
+            &-inner {
+                padding: 6px 0;
+            }
+        }
+        &__c-link {
+            padding: 15px 20px;
+            &.selected, &:hover {
+                background: #F5F5F5;
+            }
+            &-flag {
+                width: 24px;
+                height: 17px;
+                flex-shrink: 0;
+                margin-right: 12px;
+            }
+        }
+        &__foot {
+            margin-top: 8px;
+        }
+        &__btn {
+            width: 100%;
+            border-radius: 44px;
+        }
+    }
+}
+
+.pin-code {
+    &-wrapper {
+        margin-bottom: 70px;
+        position: relative;
+        &.error {
+            .pin-code__error {
+                display: block;
+            }
+            .pin-code__input {
+                color: var(--cancel);
+            }
+        }
+    }
+    justify-content: center;
+    &__input {
+        width: 56px;
+        height: 68px;
+        border: none;
+        font-size: 38px;
+        text-align: center;
+        border-radius: 4px;
+        background: #F3F3F3;
+        margin: 0 4px;
+    }
+    &__error {
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        color: var(--cancel);
+        position: absolute;
+        bottom: -34px;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+}
+
+@media (max-width: 1440px) {
+    .modal {
+        &-dialog {
+            max-width: 528px;
+        }
+        &-content {
+            padding: 16px;
+            min-height: 372px;
+        }
+        &-head {
+            margin-bottom: 10px;
+            &__inner {
+                &-btn {
+                    width: 34px;
+                }
+            }
+        }
+        &-body {
+            padding: 0 46px;
+        }
+        &-login {
+            &__txt {
+                padding: 0 8px;
+            }
+            &__repeat {
+                &-icon {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+        &-sms {
+            padding-top: 22px;
+        }
+        &-title {
+            margin-bottom: 12px;
+        }
+        &-txt {
+            margin-bottom: 28px;
+        }
+        &-form {
+            &__input {
+                height: 50px;
+                font-size: 15px;
+                &-left {
+                    width: 104px;
+                }
+            }
+            &__btn {
+                padding: 17px 20px 16px;
+            }
+            &__foot {
+                margin-top: 6px;
+            }
+            &__country {
+                padding-left: 16px;
+                padding-right: 12px;
+                &-flag {
+                    width: 20px;
+                    height: 14px;
+                    margin-right: 8px;
+                }
+                &-icon {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+            &__field {
+                padding: 0 16px;
+            }
+            &__dropdown {
+                margin: 21px 0 !important;
+                &-inenr {
+                    padding: 4px 0;
+                }
+            }
+            &__c-link {
+                padding: 12px 16px;
+                font-size: 15px;
+                &-flag {
+                    width: 20px;
+                    height: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .pin-code {
+        &-wrapper {
+            margin-bottom: 56px;
+        }
+        &__input {
+            width: 52px;
+            height: 64px;
+            margin: 0 3px;
+            font-size: 34px;
+        }
+        &__error {
+            font-size: 12px;
+            bottom: -28px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        &-dialog {
+            margin: 0;
+        }
+        &-content {
+            border-radius: 0;
+            height: 100vh;
+            overflow: auto;
+            padding: 0;
+        }
+        &-head {
+            padding: 36px 14px 16px;
+            margin-bottom: 0;
+            &__inner {
+                &-logo {
+                    display: block;
+                }
+            }
+        }
+        &-body {
+            padding: 70px 14px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &-title {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        &-txt {
+            margin-bottom: 32px;
+            
+        }
+        &-login {
+            &__txt {
+                padding: 0 4px;
+                text-transform: initial;
+            }
+            &__bottom {
+                max-width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        &-form {
+            padding: 0 22px;
+        }
+        &-sms {
+            &__txt {
+                line-height: 140%;
+                margin-bottom: 44px;
+            }
+        }
+    }
+
+    .pin-code {
+        &-wrapper {
+            margin-bottom: 48px;
+        }
+    }
+}

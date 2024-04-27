@@ -1,0 +1,107 @@
+.account-head.account-head--desctop
+    .account-head__title.h4.ttl привет, алевтина!
+.account-mobileHead
+    .account-mobileHead__group.d-flex 
+        a.account-mobileHead__btn.btn-circle(href="#")
+            +svg('arrow-left', '16', '16')
+        .account-mobileHead__qty (2)
+    .account-mobileHead__title.ttl управление подписками
+.account-subscriptions
+    .switch.txt-sm
+        .switch__content.switch__content--subscriptions.d-flex.outline-border
+            .switch__content-btn 
+                label.switch-btn
+                    input(type="checkbox" checked name="subscriptions")
+                    span.switch-btn__content 
+                        span 
+            .switch__content-txt.title Подписка на новости
+.account__subtitle.title Подписка на поступение товаров
+.account-list
+    .account-list__item 
+        .account-orderItem.account-orderItem--in-cart
+            .account-orderItem__inner.d-flex 
+                .account-orderItem__inner-img 
+                    a.account-orderItem__img.centered(href="#") 
+                        +pngC('stphoto_ru2', '100', '96')
+                        .account-orderItem__img-size.mobile 36
+                .account-orderItem__inner-info 
+                    .account-orderItem__top 
+                        .account-orderItem__group.d-flex
+                            .account-orderItem__group-name 
+                                .account-orderItem__title.ttl.title1 
+                                    a(href="#")  Addict
+                                .account-orderItem__category 
+                                    a(href="#") Ботинки 
+                                .account-orderItem__size
+                                    .account-orderItem__size-txt 38
+                                    .account-orderItem__size-icon(style="background: #EBE3CF;")
+                            .account-orderItem__group-quantity
+                                .account-orderItem__quantity.ttl.account-orderItem__quantity--null нет в наличии
+                    .account-orderItem__bottom
+                        a.account-orderItem__subscribe.d-flex.change-link(href="#" data-default="отписаться" data-change="подписаться снова") 
+                            span.change-link__output отписаться
+                            span.account-orderItem__subscribe-icon.icon
+                                span.account-orderItem__subscribe-icon__bell 
+                                    include ../../icons/bell
+                                span.account-orderItem__subscribe-icon__unbell 
+                                    include ../../icons/unbell
+    .account-list__item 
+        .account-orderItem.account-orderItem--in-cart
+            .account-orderItem__inner.d-flex 
+                .account-orderItem__inner-img 
+                    a.account-orderItem__img.centered(href="#") 
+                        +pngC('stphoto_ru2', '100', '96')
+                        .account-orderItem__img-size.mobile 36
+                .account-orderItem__inner-info 
+                    .account-orderItem__top 
+                        .account-orderItem__group.d-flex
+                            .account-orderItem__group-name 
+                                .account-orderItem__title.ttl.title1 
+                                    a(href="#")  Addict
+                                .account-orderItem__category 
+                                    a(href="#") Ботинки 
+                                .account-orderItem__size
+                                    .account-orderItem__size-txt 38
+                                    .account-orderItem__size-icon(style="background: #EBE3CF;")
+                            .account-orderItem__group-quantity
+                                .account-orderItem__quantity.ttl 
+                                    .account-orderItem__quantity-txt в наличии
+                                    .account-orderItem__quantity-icon.icon 
+                                        include ../../icons/circle-check
+                    .account-orderItem__bottom
+                        a.account-orderItem__subscribe.d-flex.change-link(href="#" data-default="отписаться" data-change="подписаться снова") 
+                            span.change-link__output отписаться
+                            span.account-orderItem__subscribe-icon.icon
+                                span.account-orderItem__subscribe-icon__bell 
+                                    include ../../icons/bell
+                                span.account-orderItem__subscribe-icon__unbell 
+                                    include ../../icons/unbell
+    .account-list__item 
+        .account-orderItem.account-orderItem--in-cart
+            .account-orderItem__inner.d-flex 
+                .account-orderItem__inner-img 
+                    a.account-orderItem__img.centered(href="#") 
+                        +pngC('stphoto_ru2', '100', '96')
+                        .account-orderItem__img-size.mobile 36
+                .account-orderItem__inner-info 
+                    .account-orderItem__top 
+                        .account-orderItem__group.d-flex
+                            .account-orderItem__group-name 
+                                .account-orderItem__title.ttl.title1 
+                                    a(href="#")  Addict
+                                .account-orderItem__category 
+                                    a(href="#") Ботинки 
+                                .account-orderItem__size
+                                    .account-orderItem__size-txt 38
+                                    .account-orderItem__size-icon(style="background: #EBE3CF;")
+                            .account-orderItem__group-quantity
+                                .account-orderItem__quantity.account-orderItem__quantity--warning.ttl 
+                                    .account-orderItem__quantity-txt осталась <br>одна штука
+                    .account-orderItem__bottom
+                        a.account-orderItem__subscribe.d-flex.change-link(href="#" data-default="отписаться" data-change="подписаться снова") 
+                            span.change-link__output отписаться
+                            span.account-orderItem__subscribe-icon.icon
+                                span.account-orderItem__subscribe-icon__bell 
+                                    include ../../icons/bell
+                                span.account-orderItem__subscribe-icon__unbell 
+                                    include ../../icons/unbell

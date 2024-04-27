@@ -1,0 +1,85 @@
+#loginModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            .modal-head
+                .modal-head__inner.d-flex 
+                    .modal-head__inner-btn
+                    .modal-head__inner-logo 
+                        .modal-head__logo 
+                            +svg('logo', '43', '62')
+                    .modal-head__inner-btn
+                        button.modal-close.btn-circle(type='button' data-bs-dismiss='modal' aria-label='Close')
+                            +svg('close', '20', '20')
+            .modal-body.modal-login
+                .modal-title.ttl.h3 вход или&nbsp;регистрация
+                .modal-login__txt.modal-txt.txt-base-u после входа вы получите дополнительную скидку на все товары
+                form.modal-form(action="/") 
+                    .modal-form__input.outline-border 
+                        .modal-form__input-inner.d-flex 
+                            .modal-form__input-left 
+                                a.modal-form__country.d-flex(href="#" data-bs-toggle="dropdown") 
+                                    span.modal-form__country-flag
+                                        +svg('rus', '24', '17')
+                                    span.modal-form__country-txt +7
+                                    span.modal-form__country-icon.icon 
+                                        include ../../icons/arrow-down
+                                .modal-form__dropdown.outline-border.dropdown-menu 
+                                    .modal-form__dropdown-inner 
+                                        .modal-form__list
+                                            .modal-form__list-item 
+                                                a.modal-form__c-link.d-flex(href="#" data-flag="static/images/general/bel.svg" data-txt="+9") 
+                                                    span.modal-form__c-link-flag
+                                                        +svg('bel', '24', '17') 
+                                                    span.modal-form__c-link-txt Беларусь
+                                            .modal-form__list-item 
+                                                a.modal-form__c-link.d-flex(href="#" data-flag="static/images/general/kz.svg" data-txt="+8") 
+                                                    span.modal-form__c-link-flag
+                                                        +svg('kz', '24', '17') 
+                                                    span.modal-form__c-link-txt Казахстан
+                                            .modal-form__list-item 
+                                                a.modal-form__c-link.d-flex.selected(href="#" data-flag="static/images/general/rus.svg" data-txt="+7") 
+                                                    span.modal-form__c-link-flag
+                                                        +svg('rus', '24', '17') 
+                                                    span.modal-form__c-link-txt Россия
+                                            .modal-form__list-item 
+                                                a.modal-form__c-link.d-flex(href="#" data-flag="static/images/general/bel.svg" data-txt="+9") 
+                                                    span.modal-form__c-link-flag
+                                                        +svg('bel', '24', '17') 
+                                                    span.modal-form__c-link-txt Беларусь
+                            .modal-form__input-right 
+                                input.modal-form__field(type="text" data-ru data-placeholder="(___)__-__-__" data-default="телефон" placeholder="телефон")
+                    .modal-form__foot 
+                        button.modal-form__btn.btn(type="submit") подтвердить номер
+
+#smsModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered
+        .modal-content
+            .modal-head
+                .modal-head__inner.d-flex 
+                    .modal-head__inner-btn
+                        a.btn-circle(href="#loginModal" data-bs-toggle="modal") 
+                            +svg('arrow-left')
+                    .modal-head__inner-logo 
+                        .modal-head__logo 
+                            +svg('logo', '43', '62')
+                    .modal-head__inner-btn
+                        button.modal-close.btn-circle(type='button' data-bs-dismiss='modal' aria-label='Close')
+                            +svg('close', '20', '20')
+            .modal-body.modal-login.modal-sms
+                .modal-title.ttl.h3 код из СМС
+                .modal-sms__txt.modal-login__txt.modal-txt.txt-base-u мы отправили код на номер 
+                    span.modal-login__txt-number +7 999 999-99-99
+                .pin-code-wrapper
+                    .pin-code.d-flex
+                        input.pin-code__input(type="tel" maxlength="1" autofocus)
+                        input.pin-code__input(type="tel" maxlength="1")
+                        input.pin-code__input(type="tel" maxlength="1")
+                        input.pin-code__input(type="tel" maxlength="1")
+                    .pin-code__error неверный код
+                    input.pin-code__check(type="hidden")
+                .modal-login__bottom.txt-sm
+                    .modal-login__bottom-txt новый код можно отправить через <span>30</span> секунд
+                    a.modal-login__repeat(href="#") 
+                        span.modal-login__repeat-icon.icon 
+                            +svg('repeat')
+                        span.modal-login__repeat-txt повторить отправку

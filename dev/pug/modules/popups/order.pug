@@ -1,0 +1,281 @@
+#chooseOffice.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head.offcanvas__head--has-search
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back.offcanvas__head-back--mobile 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 Выбор пункта выдачи
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+            .offcanvas__head-search 
+                .form-item.form-item-dropdown
+                    .form-item__group 
+                        .form-item__label.form-item__label--hidden Поиск по адресу
+                        input.form-input.form-input--rounded(type="text" data-validate)
+                        button.form-item__clear(type="button")
+                            span.form-item__clear-default.form-item__clear-icon
+                                +svg('search-grey')
+                            span.form-item__clear-active.form-item__clear-icon
+                                +svg('close')
+                    .form-item__dropdown.form-item__dropdown--rounded.outline-border
+                        .form-item__dropdown-scroll(data-simplebar)
+                            .form-item__list
+                                - for (let i = 0; i < 20; i++)
+                                    .form-item__list-item 
+                                        label.form-item__dropdown-label
+                                            input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                            span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                span Новосибирская обл.
+        .offcanvas__body.offcanvas__body--no-padding
+            #postOfficeMap
+            .postOffice-info
+                a.postOffice-info__close.icon(href="#")
+                    +svg('close') 
+                .postOffice-info__inner  
+                    .postOffice-info__title.title Почтовое отделение № 119285
+                    .postOffice-info__address г Москва, ул Мосфильмовская, дом 34, индекс 438232
+                    .postOffice-info__title.title График работы
+                    .postOffice-info__work
+                        .postOffice-info__work-item.d-flex
+                            .postOffice-info__work-item__left пн-пт
+                            .postOffice-info__work-item__right 08:00–20:00
+                        .postOffice-info__work-item.d-flex
+                            .postOffice-info__work-item__left сб
+                            .postOffice-info__work-item__right 09:00–20:00
+                        .postOffice-info__work-item.d-flex
+                            .postOffice-info__work-item__left вс
+                            .postOffice-info__work-item__right 10:00–18:00
+                    a.postOffice-info__btn.btn.btn-rounded(href="#addRecipient" data-bs-toggle="offcanvas" ) заберу отсюда 
+            a.get-location.centered.txt-sm(href="#")
+                span.get-location__txt определить местоположение
+                span.get-location__icon.icon 
+                    include ../../icons/location
+
+
+
+
+#addresses.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 адреса
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            .address
+                .address-list 
+                    .address-list__item 
+                        label.address-item.radio
+                            input(type="radio" checked name="address")
+                            span.address-item__inner.d-flex.outline-border.radio-content 
+                                span.address-item__inner-left
+                                    span.address-item__info
+                                        span.address-item__info-content.d-flex 
+                                            span.address-item__info-icon.radio-icon 
+                                            span.address-item__info-info
+                                                span.address-item__info-title Курьером по адресу
+                                                span.address-item__info-txt.txt-sm
+                                                    span.address-item__info-txt__item г. Москва, ул. Безымянная 47/1, кв. 6, п3, этаж 5
+                                                    span.address-item__info-txt__item Иванов Иван +7 913 211-43-13)
+                                                span.address-item__info-comment.d-flex.txt-sm
+                                                    span.address-item__info-comment__icon.icon
+                                                        +icon('comment-sm')
+                                                    span.address-item__info-comment__txt Позвоните, когда будете у шлагбаума
+                                                span.address-item__info-status основной
+                                span.address-item__inner-right
+                                    a.address-item__more.icon(href="#")
+                                        +icon('more') 
+                                    span.address-item__actions
+                                        span.address-item__actions-overlay
+                                        span.address-item__actions-content
+                                            span.address-item__actions-close.icon
+                                                +svg('close', '14', '14')
+                                            span.address-item__actions-list.d-flex 
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#addAddress" data-bs-toggle="offcanvas") 
+                                                        span.address-item__actions-btn__txt Редактировать
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('edit')
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#") 
+                                                        span.address-item__actions-btn__txt Удалить
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('trash')
+                    .address-list__item 
+                        label.address-item.radio
+                            input(type="radio" name="address")
+                            span.address-item__inner.d-flex.outline-border.radio-content 
+                                span.address-item__inner-left
+                                    span.address-item__info
+                                        span.address-item__info-content.d-flex 
+                                            span.address-item__info-icon.radio-icon 
+                                            span.address-item__info-info
+                                                span.address-item__info-title Курьером по адресу
+                                                span.address-item__info-txt.txt-sm
+                                                    span.address-item__info-txt__item г. Москва, ул. Безымянная 47/1, кв. 6, п3, этаж 5
+                                                    span.address-item__info-txt__item Иванов Иван +7 913 211-43-13)
+                                span.address-item__inner-right
+                                    a.address-item__more.icon(href="#")
+                                        +icon('more') 
+                                    span.address-item__actions
+                                        span.address-item__actions-overlay
+                                        span.address-item__actions-content
+                                            span.address-item__actions-close.icon
+                                                +svg('close', '14', '14')
+                                            span.address-item__actions-list.d-flex 
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#addAddress" data-bs-toggle="offcanvas") 
+                                                        span.address-item__actions-btn__txt Редактировать
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('edit')
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#") 
+                                                        span.address-item__actions-btn__txt Удалить
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('trash')
+            .address-add
+                a.address-add__btn.d-flex.txt-sm(href="#addAddress" data-bs-toggle="offcanvas") 
+                    span.address-add__btn-icon.icon 
+                        +icon('plus')
+                    span.address-add__btn-txt добавить новый адрес
+
+#addAddress.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 новый адрес
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .form-item.form-item-dropdown
+                        .form-item__group 
+                            .form-item__label населенный пункт*
+                            input.form-input(type="text" data-validate)
+                        .form-item__dropdown.outline-border
+                            .form-item__dropdown-scroll(data-simplebar)
+                                .form-item__list
+                                    - for (let i = 0; i < 20; i++)
+                                        .form-item__list-item 
+                                            label.form-item__dropdown-label
+                                                input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                    span Новосибирская обл.
+                    include ../../pages/order/courier
+                    .address-form__group-title Получатель
+                    .order-form__row-wrapper
+                        .order-form__row.flex
+                            .order-form__col 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label имя
+                                        input.form-input(type="text")
+                            .order-form__col 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label фамилия
+                                        input.form-input(type="text")
+                            .order-form__col.order-form__col--fw 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label телефон
+                                        input.form-input(type="text")
+                            .order-form__col.order-form__col--fw
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label комментарий к заказу
+                                        input.form-input(type="text")
+                .address-form__foot 
+                    button.address-form__btn.btn(type="submit") сохранить и продолжить
+
+
+#addAddressPost.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 новый адрес
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .form-item.form-item-dropdown
+                        .form-item__group 
+                            .form-item__label населенный пункт*
+                            input.form-input(type="text" data-validate)
+                        .form-item__dropdown.outline-border
+                            .form-item__dropdown-scroll(data-simplebar)
+                                .form-item__list
+                                    - for (let i = 0; i < 20; i++)
+                                        .form-item__list-item 
+                                            label.form-item__dropdown-label
+                                                input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                    span Новосибирская обл.
+                    .order-form__info
+                        .order-form__info-txt.d-flex 
+                            .order-form__info-txt-icon.centered 
+                                +svg('info')
+                            .order-form__info-txt-value В ваш регион доступна доставка Почтой России.
+                        a.order-form__info-btn.outline-border(href="#chooseOffice" data-bs-toggle="offcanvas") выбрать пункт выдачи
+
+
+
+#addRecipient.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 получатель
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .order-form__row-wrapper
+                        .order-form__row.flex
+                            .order-form__col 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label имя
+                                        input.form-input(type="text")
+                            .order-form__col 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label фамилия
+                                        input.form-input(type="text")
+                            .order-form__col.order-form__col--fw 
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label телефон
+                                        input.form-input(type="text")
+                            .order-form__col.order-form__col--fw
+                                .form-item
+                                    .form-item__group 
+                                        .form-item__label комментарий к заказу
+                                        input.form-input(type="text")
+                .address-form__foot 
+                    button.address-form__btn.btn(type="submit") сохранить и продолжить

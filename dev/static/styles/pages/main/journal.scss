@@ -1,0 +1,122 @@
+.journal {
+    position: relative;
+    &::before {
+        content: "";
+
+    }
+    &-content {
+        &__left {
+            width: 462px;
+            background: var(--white);
+            position: relative;
+            z-index: 3;
+        }
+        &__right {
+            width: calc(100% - 462px);
+        }
+    }
+    &-info {
+        height: 376px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    &-slider {
+        &__slide {
+            width: 454px;
+        }
+    }
+    &-item {
+        position: relative;
+        &__img {
+            margin-bottom: 20px;
+            img {
+                width: 100%;
+            }
+        }
+        &__info {
+            padding-left: 16px;
+        }
+        &__category {
+            line-height: normal;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .journal {
+        &-content {
+            &__left {
+                width: 347px;
+            }
+            &__right {
+                width: calc(100% - 347px);
+            }
+        }
+        &-slider {
+            &__slide {
+                width: 456px;
+            }
+        }
+        &-info {
+            height: 380px;
+        }
+        &-item {
+            &__img {
+                margin-bottom: 16px;
+            }
+            &__info {
+                padding-left: 14px;
+            }
+            &__category {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .journal {
+        &-content {
+            flex-wrap: wrap;
+            &__left {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+            &__right {
+                width: 100%;
+            }
+        }
+        &-slider {
+            &__slide {
+                width: 229px;
+            }
+        }
+        &-item {
+            &__img {
+                margin-bottom: 10px;
+            }
+            &__category {
+                font-size: 10px;
+                margin-bottom: 4px;
+            }
+            &__title {
+                font-size: 14px;
+            }
+            &__info {
+                padding-left: 0;
+            }
+        }
+        &-info {
+            height: auto;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+    }
+}

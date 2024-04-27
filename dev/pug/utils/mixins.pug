@@ -1,0 +1,144 @@
+mixin icon(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+mixin icon2(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/symbol/spriteoutline.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="static/images/svg/symbol/spriteoutline.svg#" + name)
+			
+mixin svg(name, w, h)
+	img(src=`static/images/general/${name}.svg`, width=`${w}` height=`${h}` alt="img")
+
+mixin pngG(name, w, h)
+	picture
+		source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+		img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
+
+mixin pngC(name, w, h)
+	picture
+		source(srcset=`static/images/content/${name}.webp`, type='image/webp')
+		img(src=`static/images/content/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
+
+mixin jpgC(name, w, h)
+	picture
+		source(srcset=`static/images/content/${name}.webp`, type='image/webp')
+		img(src=`static/images/content/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
+
+mixin jpgG(name, w, h)
+	picture
+		source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+		img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
+
+
+//- mixin responsiveImage(name, name2)
+//- 	picture
+//- 		source(srcset=`static/images/content/${name}.webp`, type='image/webp')
+
+//-     // Use name for PC
+//- 		img(src=`static/images/content/${name}.jpg`, alt='img')
+
+//-     // Use name2 for phones
+//- 		source(srcset=`static/images/content/${name2}.webp`, type='image/webp', media='(max-width: 768px)')
+//- 		img(src=`static/images/content/${name2}.jpg`, alt='img')
+
+
+mixin productCard(img, className)
+	.productCard
+		.productCard__top
+			.productCard__img 
+				+pngC(`${img}`, '305', '296')
+			.productCard__sale.ttl.sticker — 30%
+			a.productCard__favorite.icon(href="#")
+				+svg('heart') 
+		.productCard__bottom
+			.productCard__title.ttl.title1 
+				a(href="#") MOBY BE KIND 
+			.productCard__price.ttl.title2
+				.productCard__price-new 18 990 ₽
+				.productCard__price-old 22 990 ₽
+			.productCard__tags.flex
+				.productCard__tags-item 
+					+svg('bekind', '54', '24')
+				.productCard__tags-item 
+					+svg('reash', '68', '24')
+
+
+mixin productCardFavorite(img)
+	.productCard.productCard-favorite
+		.productCard__top
+			.productCard__img.productCard__img--no-padding 
+				+pngC(`${img}`, '454', '565')
+			.productCard__sale.ttl.sticker — 30%
+			a.productCard__favorite.icon.active(href="#")
+				+icon('heart') 
+				+icon('heart-fill')
+		.productCard__bottom
+			.productCard__title.ttl.title1 
+				a(href="#") MOBY BE KIND 
+			.productCard__price.ttl.title2
+				.productCard__price-new 18 990 ₽
+				.productCard__price-old 22 990 ₽
+			.productCard__tags.flex
+				.productCard__tags-item 
+					+svg('bekind', '54', '24')
+				.productCard__tags-item 
+					+svg('reash', '68', '24')
+
+mixin newCard()
+	a.card(href="#") 
+		.card-img
+			.card-img__slider.slider
+				.swiper-wrapper 
+					.swiper-slide 
+						.card-img__slider-img
+							+jpgC('img-card', '454', '563')
+					.swiper-slide 
+						.card-img__slider-img
+							+jpgC('img-card', '454', '563')
+					.swiper-slide 
+						.card-img__slider-img
+							+jpgC('img-card', '454', '563')
+					.swiper-slide 
+						.card-img__slider-img
+							+jpgC('img-card', '454', '563')
+			.card-img__pagination
+		.card-img-mobile 
+			+jpgC('card-m', '346', '508')
+		.card-info
+			.card-info__name.txt-sm Zeta 
+			.card-price.card-info__price.txt-sm
+				.card-price__new 18 990 ₽
+				.card-price__old 22 990 ₽
+		.card-hidden 
+			.card-hidden__sizes 
+				.card-sizes.d-flex.txt-sm
+					.card-sizes__item 35
+					.card-sizes__item 36
+					.card-sizes__item 37
+					.card-sizes__item.card-sizes__item--disabled 38
+					.card-sizes__item 39
+					.card-sizes__item.card-sizes__item--disabled 40
+					.card-sizes__item 41
+			.card-hidden__colors
+				.card-colors
+					.card-colors__list.d-flex 
+						- for (let i = 1; i < 6; i++)
+							.card-colors__list-item 
+								.card-colors__item 
+									+jpgC(`img-card`, '62', '77')
+						.card-colors__list-item 
+							.card-colors__item.card-colors__item--txt.txt-sm +3
+
+		.card-stickers
+			.card-stickers__item.card-stickers__item--sale.ttl.sticker -30%
+		button.card-favorite.fav-btn.icon(type="button")
+			+icon('heart') 
+			+icon('heart-fill')

@@ -1,0 +1,23 @@
+.order-form__date-wrapper
+    if(!courier)
+        .order-form__subtitle
+            .order-form__subtitle-default Дата и время доставки*
+            .order-form__subtitle-error Пожалуйста выберите дату и время доставки*
+    .order-form__day-slider.slider
+        .swiper-wrapper 
+            - for (let i = 0; i < 5; i++)
+                .order-form__day-slider__item.swiper-slide 
+                    label.order-form__day
+                        input(type="radio" name="day")
+                        span.order-form__day-content.outline-border 
+                            span.order-form__day-icon 
+                            span.order-form__day-info 
+                                span.order-form__day-day пн
+                                span.order-form__day-date 24 июля
+    .order-form__time-slider.slider
+        .swiper-wrapper
+            - for (let i = 0; i < 4; i++)
+                .order-form__time-slider__item.swiper-slide 
+                    label.order-form__time
+                        input(type="radio" name="time")
+                        span.order-form__time-content.outline-border 14:00–16:00

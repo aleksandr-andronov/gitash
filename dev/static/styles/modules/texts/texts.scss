@@ -1,0 +1,111 @@
+.sticker {
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    line-height: normal;
+    text-transform: uppercase;
+    &--sale {
+        color: var(--sale);
+    }
+    &--new {
+        color: var(--new);
+    }
+}
+
+.banner-title {
+    font-size: 100px;
+    line-height: 76%;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+}
+
+.banner-title-second {
+    font-size: 86px;
+    line-height: 80%;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.base-up {
+    line-height: 115%;
+    text-transform: uppercase;
+}
+
+.txt-sm {
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.txt-label {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.tech-14 {
+    font-size: 14px;
+    line-height: normal;
+    color: var(--text-standart);
+}
+
+.title {
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 600;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+@media (max-width: 1440px) {
+    .banner-title {
+        font-size: 75px;
+    }
+
+    .banner-title-second {
+        font-size: 65px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .txt-sm {
+        font-size: 14px;
+    }
+
+    .tech-14 {
+        font-size: 12px;
+    }
+
+    .sticker {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 932px) {
+    .banner-title {
+        font-size: 36px;
+    }
+
+    .banner-title-second {
+        font-size: 28px;
+        line-height: 90%;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        letter-spacing: 0.025em;
+    }
+}

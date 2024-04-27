@@ -1,0 +1,9 @@
+form.promocode-form.form(action="/")
+    .promocode-form__group
+        .form-item
+            .form-item__group 
+                .form-item__label.form-item__label--hidden 
+                    .form-item__label-default Введите промокод
+                    .form-item__label-error промокод не найден
+                input.form-input.promocode-form__input(type="text" data-validate)
+        button.promocode-form__btn.tech-14(type="button") Применить

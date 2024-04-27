@@ -1,0 +1,84 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body
+		.wrapper
+			include ../modules/header/header
+			.account 
+				
+				.container 
+					.content.flex 
+						.content__col.content__col-3
+							.account__left
+								.account__left-user
+									.account-user.outline-border
+										.account-user__inner.d-flex 
+											.account-user__inner-left 
+												.account-user__avatar.centered.ttl a
+											.account-user__inner-middle
+												.account-user__name.ttl Алевтина
+												.account-user__mail alya1983@mail.ru
+											.account-user__inner-right 
+												a.account-user__edit.centered(href="#")
+													include ../icons/edit 
+								.account__left-usermenu 
+									ul.account-userMenu
+										li.account-userMenu__item 
+											a.account-userMenu__link.account-userMenu__link--selected.d-flex.outline-border(href="#") 
+												span.account-userMenu__link-icon.icon 
+													+svg('sale', '20', '20')
+												span.account-userMenu__link-txt Моя скидка
+												span.account-userMenu__link-qty.account-userMenu__link-qty--black 5%
+										li.account-userMenu__item 
+											a.account-userMenu__link.d-flex.outline-border(href="#") 
+												span.account-userMenu__link-icon.icon 
+													+svg('basket', '20', '20')
+												span.account-userMenu__link-txt Мои заказы
+												span.account-userMenu__link-qty 1
+										li.account-userMenu__item 
+											a.account-userMenu__link.d-flex.outline-border(href="#") 
+												span.account-userMenu__link-icon.icon 
+													+svg('heart', '20', '20')
+												span.account-userMenu__link-txt Избранное
+												span.account-userMenu__link-qty 1
+								.account__left-menu 
+									ul.account-menu
+										li.account-menu__item 
+											a.account-menu__link.outline-border(href="#") Возвраты
+										li.account-menu__item 
+											a.account-menu__link.outline-border(href="#") Адреса
+										li.account-menu__item 
+											a.account-menu__link.outline-border(href="#") Управление подписками
+										li.account-menu__item 
+											a.account-menu__link.outline-border(href="#") Подарки
+										li.account-menu__item 
+											a.account-menu__link.outline-border(href="#") Сертификаты
+								.account__left-logout
+									ul.account-userMenu
+										li.account-userMenu__item 
+											a.account-userMenu__link.d-flex.outline-border(href="#") 
+												span.account-userMenu__link-icon.icon 
+													+svg('logout', '20', '20')
+												span.account-userMenu__link-txt Выйти
+						.content__col.content__col-6
+							.content__info
+								block content
+						.content__col.content__col-3
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/simplebar.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		block script

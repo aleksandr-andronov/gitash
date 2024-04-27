@@ -1,0 +1,112 @@
+footer.footer
+    .container 
+        .footer__top 
+            .footer-logo 
+                +svg('logo-white', '92', '132')
+        .footer__middle
+            .footer__content.d-flex
+                .footer__col.footer__col-6
+                    .footer__download 
+                        .footer-download.d-flex 
+                            .footer-download__qr 
+                                +pngG('qr', '195', '195')
+                            .footer-download__info 
+                                .footer-download__txt.txt-base Скачивайте приложение ASH – мы позаботились о том, чтобы шопинг был максимально комфортным
+                                a.footer-download__link(href="#") 
+                                    +svg('app-stote', '145', '55')
+                .footer__col.footer__col-6
+                    .footer__content.d-flex
+                        .footer__col.footer__col-3
+                            .footer-info.txt-base.footer-info--first
+                                a.footer-info__title(href="#f-content1" data-bs-toggle="collapse")
+                                    span.footer-info__title-txt Покупателям
+                                    span.footer-info__title-icon.icon 
+                                        include ../../icons/arrow-down
+                                .footer-info__content.collapse#f-content1 
+                                    .footer-info__content-inner
+                                        ul.footer-menu 
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Оформление заказа
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Оплата
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Доставка
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Политика возврата
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Памятка по уходу
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") FAQ
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Подарочный сертификат
+                        .footer__col.footer__col-3
+                            .footer-info.txt-base
+                                a.footer-info__title(href="#f-content2" data-bs-toggle="collapse")
+                                    span.footer-info__title-txt О бренде
+                                    span.footer-info__title-icon.icon 
+                                        include ../../icons/arrow-down
+                                .footer-info__content.collapse#f-content2 
+                                    .footer-info__content-inner
+                                        ul.footer-menu 
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") История бренда
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Наши магазины
+                                            li.footer-menu__item 
+                                                a.footer-menu__link(href="#") Стать партнером
+                        .footer__col.footer__col-3
+                            .footer-info.txt-base
+                                a.footer-info__title(href="#f-content3" data-bs-toggle="collapse")
+                                    span.footer-info__title-txt контакты
+                                    span.footer-info__title-icon.icon 
+                                        include ../../icons/arrow-down
+                                .footer-info__content.collapse#f-content3 
+                                    .footer-info__content-inner
+                                        .footer-contacts
+                                            .footer-contacts__list.footer-menu
+                                                .footer-menu__item г. Москва ул. Шарикоподшипниковская, д.4, стр. 4А
+                                                .footer-menu__item пн-пт <br>10.00 - 19.00
+                                            .footer-contacts__phones
+                                                a.footer-contacts__phones-item(href="tel:88005007682") 8 (800) 500-76-82
+                                                a.footer-contacts__phones-item(href="tel:84956498313") 8 (495) 649-83-13
+                                            .footer-contacts__write 
+                                                a.footer-contacts__btn.outline-border(href="#") написать нам 
+                                                .footer-contacts__dropdown
+                                                    .footer-contacts__dropdown-inner.d-flex 
+                                                        .footer-contacts__dropdown-item
+                                                            a.footer-contacts__dropdown-link(href="#")
+                                                                span.footer-contacts__dropdown-link-icon.icon
+                                                                    +svg('f-tg', '20', '20')
+                                                        .footer-contacts__dropdown-item
+                                                            a.footer-contacts__dropdown-link(href="#")
+                                                                span.footer-contacts__dropdown-link-icon.icon
+                                                                    +svg('f-wa', '20', '20')
+                                                        .footer-contacts__dropdown-item
+                                                            a.footer-contacts__dropdown-link(href="#feedback" data-bs-toggle="offcanvas")
+                                                                span.footer-contacts__dropdown-link-icon.icon
+                                                                    +svg('f-list', '20', '20')
+                                                                span.footer-contacts__dropdown-link-txt Заполнить форму
+        .footer__bottom
+            .footer__content.footer__content--bottom.d-flex 
+                .footer__col.footer__col-6
+                    form.footer-mailing.txt-base(action="/") 
+                        .footer-mailing__txt Узнавайте новости первыми. <br>Подписывайтесь на рассылку
+                        .footer-mailing__group 
+                            input.footer-mailing__input(type="email" placeholder="@email")
+                            button.footer-mailing__btn.centered(type="submit")
+                                +svg('arrow-right', '20', '20')
+                .footer__col.footer__col-6
+                    .footer__content.footer__content--bottom.d-flex 
+                        .footer__col.footer__col-3
+                            ul.footer-social.d-flex
+                                li.footer-social__item 
+                                    a.footer-social__link.centered(href="#")
+                                        +icon('tg') 
+                                li.footer-social__item 
+                                    a.footer-social__link.centered(href="#")
+                                        +icon('yt') 
+                        .footer__col.footer__col-4
+                            .footer-txt
+                                .footer-txt__item
+                                    a(href="#" taregt="_blank") Политика Конфиденциальности
+                                .footer-txt__item © 2023, Ashrussia.ru. Официальный дистрибьютор ASH в России.

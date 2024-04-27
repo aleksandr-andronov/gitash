@@ -1,0 +1,95 @@
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--element-second);
+    img, svg {
+        width: 20px;
+    }
+} 
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 115%;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    &[disabled] {
+        color: var(--text-disable);
+        background: var(--grey-14);
+        &:hover {
+            background: var(--grey-14);
+        }
+    }
+    &:hover {
+        background: var(--btn-hover);
+    }
+    &-outline {
+        position: relative;
+        background: transparent;
+        color: var(--black);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--black);
+            border-radius: inherit;
+            transition: border-color .2s ease-in-out;
+        }
+        &:hover {
+            background: transparent;
+            color: var(--btn-hover);
+            &::before {
+                border-color: var(--btn-hover);
+            }
+        }
+    }
+    &-rounded {
+        border-radius: 46px;
+    }
+}
+
+.back-btn {
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .btn-circle {
+        width: 34px;
+        height: 34px;
+        img, svg {
+            width: 18px;
+        }
+    }
+
+    .back-btn {
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 17px 20px 16px;
+        border-radius: 4px;
+        &-rounded {
+            border-radius: 46px;
+        }
+    }
+}

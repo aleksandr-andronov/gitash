@@ -1,0 +1,38 @@
+.order-form__info
+    .order-form__info-txt.d-flex 
+        .order-form__info-txt-icon.centered 
+            +svg('info')
+        .order-form__info-txt-value В ваш регион доступна <span>бесплатная доставка курьером.</span> Возможна примерка, а&nbsp;так&nbsp;же частичный возврат курьеру.
+
+.order-form__row-wrapper
+    .order-form__row.flex
+        .order-form__col.order-form__col--fw 
+            .form-item
+                .form-item__group 
+                    .form-item__label улица*
+                    input.form-input(type="text" data-validate)
+        .order-form__col 
+            .form-item
+                .form-item__group 
+                    .form-item__label дом*
+                    input.form-input(type="text" data-validate)
+        .order-form__col 
+            .form-item
+                .form-item__group 
+                    .form-item__label квартира*
+                    input.form-input(type="text" data-validate)
+        .order-form__col 
+            .form-item
+                .form-item__group 
+                    .form-item__label подъезд
+                    input.form-input(type="text")
+        .order-form__col 
+            .form-item
+                .form-item__group 
+                    .form-item__label этаж
+                    input.form-input(type="text")
+        .order-form__col.order-form__col--fw
+            .form-item
+                .form-item__group 
+                    .form-item__label комментарий курьеру
+                    input.form-input(type="text")

@@ -1,0 +1,14 @@
+.account-head.account-head--desctop
+    .account-head__title.h4.ttl привет, алевтина!
+.account-mobileHead
+    .account-mobileHead__group.d-flex 
+        a.account-mobileHead__btn.btn-circle(href="#")
+            +svg('arrow-left', '16', '16')
+        .account-mobileHead__qty (2)
+    .account-mobileHead__title.ttl избранное
+
+.account-listRow.flex
+    - for (let i = 0; i < 6; i++)
+        .account-listRow__item 
+            +newCard()
+            //- +productCardFavorite('product-img')

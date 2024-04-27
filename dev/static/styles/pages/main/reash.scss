@@ -1,0 +1,102 @@
+.reash {
+    &-info {
+        &__title {
+            margin-bottom: 32px;
+        }
+        &__txt {
+            margin-bottom: 32px;
+            max-width: 462px;
+        }
+    }
+    &-slider {
+        &__slide {
+            width: calc(25% - 6px);
+            &--big {
+                width: calc(50% - 6px);
+                .card {
+                    height: 848px;
+                    &-img {
+                        &__slider {
+                            &-img {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                img {
+                                    max-width: 440px;
+                                }
+                            }
+                        }
+                    }
+                    &-hidden {
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .reash {
+        &-info {
+            &__title {
+                margin-bottom: 24px;
+            }
+            &__txt {
+                max-width: 362px;
+                margin-bottom: 24px;
+            }
+        }
+        &-slider {
+            &__slide {
+                width: calc(25% - 4px);
+                &--big {
+                    width: calc(50% - 4px);
+                    .card {
+                        height: 634px;
+                        &-img {
+                            &__slider {
+                                &-img {
+                                    img {
+                                        max-width: 394px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 932px) {
+    .reash {
+        &-slider {
+            &__slide {
+                width: 173px;
+                &--big {
+                    .card {
+                        height: initial;
+                    }
+                }
+            }
+        }
+        &-info {
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            &__txt {
+                width: 100%;
+                max-width: 100%;
+                margin-top: 12px;
+                margin-bottom: 0;
+                order: 2;
+            }
+            &__title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.season.mainSection 
+    .container 
+        .mainSection__group 
+            .mainSection-content.list 
+                .mainSection-content__col.col 
+                    .mainSection__img
+                        +jpgC('season-1', '916', '963')
+                .mainSection-content__col.col 
+                    .mainSection__info
+                        .mainSection__info-item
+                            .season-head
+                                .season__title.ttl.h2 MID SEASON SALE
+                                a.mainSection__link.d-flex(href="#") 
+                                    span.mainSection__link-txt смотреть все
+                                    span.mainSection__link-icon.icon 
+                                        include ../../icons/link
+                        .mainSection__info-item.mainSection__info-item--img.mainSection__info-item--bottom-right
+                            .mainSection__sm-img 
+                                +jpgC('season-2', '454', '440')
+        .mainSection__group 
+            .mainSection-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .mainSection-slider__slide.swiper-slide 
+                            +newCard()

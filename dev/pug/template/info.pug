@@ -1,0 +1,147 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body
+		.wrapper
+			include ../modules/header/header
+			.infoPage
+				.container 
+					.content.flex 
+						.content__col.content__col-3
+							.infoPage__left
+								.infoPage__left-controls 
+									a.order__back.centered(href="#") 
+										+svg('arrow-left', '16', '16')
+								.infoPage__left-menu 
+									ul.account-menu.infoPage-menu
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Доставка
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Возвраты
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.account-menu__link--selected.outline-border(href="#") Магазины
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Памятка по уходу
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Часто задаваемые вопросы
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Стать партнёром
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Способы оплаты
+										li.account-menu__item 
+											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Договор оферты
+						.content__col.content__col-6
+							if (shop)
+								.content__info.content__info--map
+									block content
+							else
+								.content__info
+									block content
+						.content__col.content__col-3
+							if (shop)
+								.infoPage__right.infoPage__right--map
+									.slideToggle.shops-list
+										.slideToggle-list
+											.slideToggle-list__item 
+												.slideToggle-item
+													.slideToggle-item__head 
+														a.slideToggle-item__open.slideToggle-item__open--fz-17.d-flex(href="#toggle1" data-bs-toggle="collapse") 
+															span.slideToggle-item__open-left главный офис
+															span.slideToggle-item__open-right.icon 
+																+svg('arrow-down', '16', '16')
+													.slideToggle-item__body.collapse#toggle1
+														.slideToggle-item__info 
+															.shopInfo
+																.shopInfo__list 
+																	.shopInfo__list-item 
+																		.shopInfo__item.d-flex
+																			.shopInfo__item-icon
+																				+svg('shop-icon-1') 
+																			.shopInfo__item-txt г. Москва ул. Шарикоподшипниковская, д. 4, стр. 4а
+																	.shopInfo__list-item 
+																		.shopInfo__item.d-flex
+																			.shopInfo__item-icon
+																				+svg('shop-icon-2') 
+																			.shopInfo__item-txt ежедневно с 10:00 до 22:00
+																	.shopInfo__list-item 
+																		.shopInfo__item.d-flex
+																			.shopInfo__item-icon
+																				+svg('shop-icon-3') 
+																			.shopInfo__item-txt +7 495 909-83-14 доб 202
+																.shopInfo__links.d-flex
+																	.shopInfo__links-item
+																		a(href="#") показать на карте 
+																	.shopInfo__links-item 
+																		a(href="#") координаты 
+											- for (let i = 0; i < 7; i++)
+												.slideToggle-list__item 
+													.slideToggle-item
+														.slideToggle-item__head 
+															a.slideToggle-item__open.slideToggle-item__open--fz-17.d-flex(href=`#toggle${i+2}` data-bs-toggle="collapse") 
+																span.slideToggle-item__open-left ash метрополис
+																span.slideToggle-item__open-right.icon 
+																	+svg('arrow-down', '16', '16')
+														.slideToggle-item__body.collapse(id=`toggle${i+2}`)
+															.slideToggle-item__info 
+																.shopInfo
+																	.shopInfo__list 
+																		.shopInfo__list-item 
+																			.shopInfo__item.d-flex
+																				.shopInfo__item-icon
+																					+svg('shop-icon-1') 
+																				.shopInfo__item-txt г. Москва ул. Шарикоподшипниковская, д. 4, стр. 4а
+																		.shopInfo__list-item 
+																			.shopInfo__item.d-flex
+																				.shopInfo__item-icon
+																					+svg('shop-icon-2') 
+																				.shopInfo__item-txt ежедневно с 10:00 до 22:00
+																		.shopInfo__list-item 
+																			.shopInfo__item.d-flex
+																				.shopInfo__item-icon
+																					+svg('shop-icon-3') 
+																				.shopInfo__item-txt +7 495 909-83-14 доб 202
+																	.shopInfo__links.d-flex
+																		.shopInfo__links-item
+																			a(href="#") показать на карте 
+																		.shopInfo__links-item 
+																			a(href="#") координаты 
+							else
+								.infoPage__right
+									.infoPage-questions
+										.infoPage-questions__title Остались вопросы?
+										.infoPage-questions__txt Задать вопрос или дать обратную связь вы можете через чат боты в мессенджерах или с помощью формы обратной связи
+										.infoPage-questions__links
+											.infoPage-questions__links-item 
+												a.infoPage-questions__link(href="#")  
+													span.infoPage-questions__link-icon.icon 
+														+svg('list', '20', '20')
+													span.infoPage-questions__link-txt Заполнить форму
+											.infoPage-questions__links-item 
+												a.infoPage-questions__link(href="#")  
+													span.infoPage-questions__link-icon.icon 
+														+svg('tg', '20', '20')
+													span.infoPage-questions__link-txt Telegram
+											.infoPage-questions__links-item 
+												a.infoPage-questions__link(href="#")  
+													span.infoPage-questions__link-icon.icon 
+														+svg('wa', '20', '20')
+													span.infoPage-questions__link-txt WhatsApp
+										.infoPage-questions__phone 
+											a(href="tel:88005007682") 8 800 500-76-82
+										.infoPage-questions__worktime пн-пт с 9:00 до 18:00
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		block script

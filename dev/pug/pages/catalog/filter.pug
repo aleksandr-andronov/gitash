@@ -1,0 +1,160 @@
+#filter.offcanvas.offcanvas-start(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head.offcanvas__head--pb-2
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 фильтры
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.filter(action="/") 
+                .filter__top
+                    .filter__group
+                        .filter__group-head.d-flex
+                            .filter__title.base-up 
+                                .filter__title-txt Размер
+                                .filter__title-qty.filter-btn__qty.centered 0
+                            a.filter__group-clear.tech-14(href="#") сбросить
+                        .filter-labels.flex 
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 35
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 36
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 37
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 38
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 39
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="size")
+                                    span.outline-border 40
+                    .filter__group
+                        .filter__group-head.d-flex
+                            .filter__title.base-up 
+                                .filter__title-txt цвет
+                                .filter__title-qty.filter-btn__qty.centered 0
+                            a.filter__group-clear.tech-14(href="#") сбросить
+                        .filter-colors.flex
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #F5F5F5;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #404040;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #53BDF9;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #404040;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #93D8DC;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #FAD749;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #8C4F1A;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: linear-gradient(122.28deg, #7DFFA2 -1.81%, #FDF99B 45.91%, #FF1091 100%)")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #ED8FAC;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #C0C0C0;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #808080;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #E561DB")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered
+                                        span(style="background: #000000;")
+                    .filter__group
+                        .filter__group-head.d-flex
+                            .filter__title.base-up 
+                                .filter__title-txt Размер
+                                .filter__title-qty.filter-btn__qty.centered 0
+                            a.filter__group-clear.tech-14(href="#") сбросить
+                        .filter-labels.flex 
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border велюр
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border кожа натуральная
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border кожа искусственная
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border лак
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border лак искусственный
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border текстиль
+                            .filter-labels__item 
+                                label.filter-label
+                                    input(type="checkbox" name="material")
+                                    span.outline-border полимер
+                .filter__bottom
+                    .filter__bottom-actions
+                        .filter__bottom-actions__inner.d-flex
+                            .filter__qty 17 товаров
+                            button.filter__clear.d-flex(type="button")
+                                span.filter__clear-icon.icon 
+                                    include ../../icons/x
+                                span.filter__clear-txt сбросить все
+                    .filter__bottom-btn 
+                        button.filter__btn.btn(type="submit" disabled) показать результаты

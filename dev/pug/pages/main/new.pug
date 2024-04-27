@@ -1,0 +1,36 @@
+.newCollection.mainSection
+    .newCollection-inner
+        .newCollection-bg 
+            +jpgC('new-bg', '1920', '972')
+        .newCollection-content
+            .newCollection-content__info
+                .newCollection-info
+                    .newCollection-info__title.ttl.banner-title-second новая 
+                        span коллекция SS23
+                    .newCollection-info__group 
+                        .newCollection-info__txt.base-up 
+                            .desctop Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
+                            .mobile Коллекция обуви, в которой сошлись отличный дизайн и&nbsp;экологичный подход
+                        a.newCollection-info__btn.intro-item__btn.btn.base-up(href="#") 
+                            span.intro-item__btn-txt к покупкам
+                            span.intro-item__btn-icon.svg
+                                +icon('link')
+            .newCollection-content__slider
+                .newCollection-slider-wrapper
+                    .newCollection-slider
+                        .swiper-wrapper
+                            - for (let i = 0; i < 4; i++)
+                                .newCollection-slider__slide.swiper-slide 
+                                    a.newCollection-item(href="#")
+                                        +jpgC('new-1', '300', '300') 
+                                .newCollection-slider__slide.swiper-slide 
+                                    a.newCollection-item(href="#")
+                                        +jpgC('new-2', '300', '300') 
+                                .newCollection-slider__slide.swiper-slide 
+                                    a.newCollection-item(href="#")
+                                        +jpgC('new-3', '300', '300') 
+                    .newCollection-controls.outline-border 
+                        a.newCollection-btn.newCollection-prev.icon(href="#")
+                            include ../../icons/prev 
+                        a.newCollection-btn.newCollection-next.icon(href="#")
+                            include ../../icons/next 

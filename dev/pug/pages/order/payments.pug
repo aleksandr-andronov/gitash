@@ -1,0 +1,40 @@
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" data-type="notinshares" name="payment")
+        span.order-form__payment-content.d-flex.outline-border 
+            span.order-form__payment-check.centered 
+            span.order-form__payment-txt СБП
+            span.order-form__payment-icon.centered 
+                +svg('payment-1')
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" data-type="notinshares" name="payment" checked)
+        span.order-form__payment-content.d-flex.outline-border 
+            span.order-form__payment-check.centered 
+            span.order-form__payment-txt Картой онлайн
+            span.order-form__payment-icon.centered 
+                +svg('payment-2')
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" data-type="inshares" name="payment")
+        span.order-form__payment-content.flex.outline-border 
+            span.order-form__payment-content__group.d-flex
+                span.order-form__payment-check.centered 
+                span.order-form__payment-txt Долями
+                span.order-form__payment-icon.centered 
+                    +svg('payment-3')
+            span.order-form__payment-content__hidden-wrapper.collapse#paymentHidden
+                span.order-form__payment-content__hidden 
+                    span.order-form__payment-txt-2 Раздели покупку на четыре платежа по 4 584 ₽. 
+                    a.order-form__payment-link.d-flex(href="#paymentShares" data-bs-toggle="offcanvas") 
+                        span.order-form__payment-link__txt подробнее
+                        span.order-form__payment-link__icon.icon 
+                            +icon('right')
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" data-type="notinshares" name="payment")
+        span.order-form__payment-content.d-flex.outline-border 
+            span.order-form__payment-check.centered 
+            span.order-form__payment-txt SberPay
+            span.order-form__payment-icon.centered 
+                +svg('payment-4')

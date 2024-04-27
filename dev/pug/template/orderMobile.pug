@@ -1,0 +1,238 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body
+		.wrapper
+			include ../modules/header/header-only-logo
+			.order
+				.container
+					.order__inner
+						.order__subhead
+							.order__subhead-inner.d-flex 
+								.order__subhead-item
+									a.order__back.btn-circle(href="#") 
+										+icon('a-left-sm')
+								.order__subhead-item 
+									.order__qty 
+										span.desctop 16 товаров
+										span.mobile (2)
+						.order__title.ttl.h3 оформление заказа
+						form.order-mobile(action="/")
+
+							if (selected)
+								if (courier)
+									.order-mobile__group
+										.order-mobile__delivery
+											.order-mobile__delivery-top.d-flex 
+												.order-mobile__delivery-info.d-flex 
+													.order-mobile__delivery-info-icon.centered 
+														+svg('delivery', '20', '20') 
+													.order-mobile__delivery-info-txt Курьером по адресу
+												.order-mobile__delivery-price Бесплатно
+											.order-mobile__delivery-bottom 
+												.order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
+												a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddress"  data-bs-toggle="offcanvas") изменить адрес
+								else
+									.order-mobile__group
+										.order-mobile__delivery
+											.order-mobile__delivery-top.d-flex 
+												.order-mobile__delivery-info.d-flex 
+													.order-mobile__delivery-info-icon.centered 
+														+svg('delivery', '20', '20') 
+													.order-mobile__delivery-info-txt В отделение почты России
+												.order-mobile__delivery-price Бесплатно
+											.order-mobile__delivery-bottom 
+												.order-mobile__delivery-txt № 119285 по адресу г Москва, <br>ул Мосфильмовская, дом 34, индекс 438232
+												.order-mobile__delivery-hidden.collapse#hiddenDeliveryInfo
+													.order-mobile__delivery-hidden__inner 
+														.order-mobile__delivery-hidden__txt График работы
+														.order-mobile__delivery-hidden__list
+															.order-mobile__delivery-hidden__list-item.d-flex 
+																.order-mobile__delivery-hidden__list-left пн-пт
+																.order-mobile__delivery-hidden__list-right 08:00–20:00
+															.order-mobile__delivery-hidden__list-item.d-flex 
+																.order-mobile__delivery-hidden__list-left сб
+																.order-mobile__delivery-hidden__list-right 09:00–20:00
+															.order-mobile__delivery-hidden__list-item.d-flex 
+																.order-mobile__delivery-hidden__list-left вс
+																.order-mobile__delivery-hidden__list-right 10:00–18:00
+
+												a.order-mobile__delivery-open.d-flex.change-link(href="#hiddenDeliveryInfo" data-bs-toggle="collapse" data-default="подробнее" data-change="свернуть")
+													span.order-mobile__delivery-open-txt.change-link__output подробнее
+													span.order-mobile__delivery-open-icon.centered 
+														+svg('down', '16', '16')
+												a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddressPost" data-bs-toggle="offcanvas") изменить адрес
+							else
+								.order-mobile__group
+									.order-mobile__delivery
+										.order-mobile__delivery-top.d-flex 
+											.order-mobile__delivery-info.d-flex 
+												.order-mobile__delivery-info-icon.centered 
+													+svg('delivery', '20', '20') 
+												.order-mobile__delivery-info-txt Доставка 
+											.order-mobile__delivery-price Бесплатно
+										
+										.order-mobile__delivery-bottom 
+										if (!courier)
+											a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddressPost" data-bs-toggle="offcanvas") указать адрес
+										else
+											a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddress" data-bs-toggle="offcanvas") указать адрес
+							if (selectedInfo)
+								.order-mobile__group
+									.order-mobile__item
+										.order-mobile__item-btn.d-flex
+											span.order-mobile__item-btn-icon.centered 
+												+svg('clock', '20', '20') 
+											span.order-mobile__item-btn-txt Доставим в течение 7–14 дней
+										.order-mobile__item-info.order-form__info
+											.order-form__info-txt.d-flex 
+												.order-form__info-txt-icon.centered 
+													+svg('info')
+												.order-form__info-txt-value Отгрузка происходит в течение 1–2 рабочих дней. Вам придёт СМС-уведомление.
+							.order-mobile__group
+								if (selectedInfo)
+									.order-mobile__item
+										a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
+											span.order-mobile__item-btn-icon.centered 
+												+svg('user', '20', '20') 
+											span.order-mobile__item-btn-txt Алевтина Круглова
+											span.order-mobile__item-btn-arrow.centered 
+												+svg('right', '14', '14')
+										.order-mobile__item-desc 
+											.order-mobile__item-list 
+												.order-mobile__item-txt +7 903 483-38-34
+												.order-mobile__item-txt alya@mail.ru
+								else 
+									.order-mobile__item
+										a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas") 
+											span.order-mobile__item-btn-icon.centered 
+												+svg('user', '20', '20') 
+											span.order-mobile__item-btn-txt Получатель
+											span.order-mobile__item-btn-arrow.centered 
+												+svg('right', '14', '14')
+							.order-mobile__group
+								if (selectedInfo)
+									.order-mobile__item
+										a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas")
+											span.order-mobile__item-btn-icon.centered 
+												+svg('comment', '20', '20') 
+											span.order-mobile__item-btn-txt Комментарий к заказу
+											span.order-mobile__item-btn-arrow.centered 
+												+svg('right', '14', '14')
+										.order-mobile__item-desc 
+											.order-mobile__item-list 
+												.order-mobile__item-txt +7 903 483-38-34
+								else
+									.order-mobile__item
+										a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas") 
+											span.order-mobile__item-btn-icon.centered 
+												+svg('comment', '20', '20') 
+											span.order-mobile__item-btn-txt Комментарий к заказу
+											span.order-mobile__item-btn-arrow.centered 
+												+svg('right', '14', '14')
+							if(courier)
+								.order-mobile__group
+									.order-mobile__item
+										.order-mobile__item-btn.d-flex
+											span.order-mobile__item-btn-icon.centered 
+												+svg('clock', '20', '20') 
+											span.order-mobile__item-btn-txt Дата и время
+										.order-mobile__item-payments
+											include ../pages/order/date
+							.order-mobile__group
+								.order-mobile__item
+									.order-mobile__item-btn.d-flex
+										span.order-mobile__item-btn-icon.centered 
+											+svg('cash', '20', '20') 
+										span.order-mobile__item-btn-txt Способ оплаты
+									.order-mobile__item-payments.order-form__payments
+										include ../pages/order/payments
+							.order-mobile__group
+								.order-mobile__item
+									.order-mobile__item-btn.d-flex
+										span.order-mobile__item-btn-icon.centered 
+											+svg('basket', '20', '20') 
+										span.order-mobile__item-btn-txt Ваш заказ
+										a.order-mobile__item-btn-link(href="#") Изменить
+									.order-mobile__item-products 
+										.order-mobile__item-products-list.flex
+											.order-mobile__item-products-item 
+												.order-mobile__item-product.centered 
+													.order-mobile__item-product-img
+														+pngC('stphoto_ru')
+													.order-mobile__item-product-size.centered 36
+											.order-mobile__item-products-item 
+												.order-mobile__item-product.centered 
+													.order-mobile__item-product-img
+														+pngC('stphoto_ru')
+													.order-mobile__item-product-size.centered 36
+									.order-info__promocode
+										include ../modules/forms/promocode
+									.order-info__price.d-flex.ttl
+										a.order-info__price-name.d-flex(href="#hiddenPriceInfo" data-bs-toggle="offcanvas") 
+											.order-info__price-name-txt Итого
+											.order-info__price-name-icon.centered
+												+svg('info', '16', '16')
+										.order-info__price-value 18 336 ₽
+									.order-info__total.d-flex 
+										.order-info__total-qty 3 товара
+										.order-info__total-price Экономия 2839 ₽ 
+									.order-info__controls 
+										.order-info__controls-btn
+											button.order-form__btn#orderBtn(type="submit" disabled) оплатить заказ 
+										.order-info__controls-txt  Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
+								.order-mobile__stickyPay.visible.animate
+									.order-mobile__stickyPay-inner.d-flex 
+										.order-mobile__stickyPay-left 
+											.order-mobile__stickyPay-type Оплата картой
+											.order-mobile__stickyPay-value.ttl 18 336 ₽
+										.order-mobile__stickyPay-right 
+											a.order-mobile__stickyPay-btn.btn(href="#") оплатить заказ
+								.order-mobile__dropdownPrice.offcanvas.offcanvas-bottom#hiddenPriceInfo
+									a.order-mobile__dropdownPrice-close.icon(href="#" data-bs-dismiss="offcanvas") 
+										+svg('close', '14', '14')
+									.order-mobile__dropdownPrice-inner
+										.order-mobile__dropdownPrice-top 
+											.order-total__list 
+												.order-total__list-item.d-flex
+													.order-total__list-item__name Сумма
+													.order-total__list-item__value 22 765 ₽
+												.order-total__list-item.d-flex
+													.order-total__list-item__name Скидка на товары
+													.order-total__list-item__value.order-total__list-item__value--red — 2 584 ₽
+												.order-total__list-item.d-flex
+													.order-total__list-item__name Скидка по промокоду
+													.order-total__list-item__value.order-total__list-item__value--red — 3 586 ₽
+												.order-total__list-item.d-flex
+													.order-total__list-item__name Доставка
+													.order-total__list-item__value 0 ₽
+										.order-mobile__dropdownPrice-bottom 
+											.order-info__price.d-flex.ttl
+												.order-info__price-name.d-flex
+													.order-info__price-name-txt Итого
+												.order-info__price-value 18 336 ₽
+											.order-info__total.d-flex 
+												.order-info__total-qty 3 товара
+												.order-info__total-price Экономия 2839 ₽ 
+
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		include ../modules/popups/orderMobile
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/simplebar.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+		script(src="static/js/postoffice.js")
+		block script

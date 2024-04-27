@@ -1,0 +1,23 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body.no-padding
+		.wrapper
+			include ../modules/header/header-black-transparent
+			block content
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		block script

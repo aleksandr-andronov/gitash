@@ -1,0 +1,53 @@
+.ashgirls {
+    &-slider {
+        &__slide {
+            width: 394px;
+        }
+    }
+    &-item {
+        &__img {
+            margin-bottom: 16px;
+            img {
+                width: 100%;
+            }
+        }
+        &__txt {
+            color: var(--black);
+            line-height: normal;
+            text-transform: uppercase;
+            span {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .ashgirls {
+        &-slider {
+            &__slide {
+                width: 284px;
+            }
+        }
+        &-item {
+            &__img {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .ashgirls {
+        &-slider {
+            &__slide {
+                width: 162px;
+            }
+        }
+        &-item {
+            &__img {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}

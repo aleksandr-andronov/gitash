@@ -1,0 +1,276 @@
+header.header.header-black-transparent
+    .container 
+        .header__content.d-flex 
+            .header__open-menu 
+                a.open-menu(href="#menu" data-bs-toggle="offcanvas") 
+                    span.open-menu__icon 
+                        span.open-menu__icon-burger.svg 
+                            +icon('burger')
+                        span.open-menu__icon-close.svg 
+                            +icon('close')
+                    span.open-menu__txt меню
+            .header__link 
+                a.header-link(href="#") ashworld
+            .header__logo 
+                a.logo(href="/" aria-label="ash")
+                    span.logo__img.svg
+                        +icon('logo') 
+            .header__search 
+                a.open-search.svg(href="#search" data-bs-toggle="offcanvas" aria-label='поиск') 
+                    +icon('search')
+            .header__user-menu
+                ul.user-menu.flex 
+                    li.user-menu__item.user-menu__item--m-hidden 
+                        a.user-menu__link.svg(href="#" aria-label='профиль') 
+                            +icon('user')
+                    li.user-menu__item 
+                        a.user-menu__link.svg(href="#" aria-label='избранное') 
+                            +icon('heart')
+                    li.user-menu__item 
+                        a.user-menu__link.svg(href="#cart" data-bs-toggle="offcanvas"  aria-label='корзина') 
+                            +icon('bag')
+    .header__menu
+        - let wMenu3 = ['Новая коллекция FW’23', 'Made in italy', 'AshxSample', 'Re/Ash', 'Addict/Air', 'Moby']
+        - let wMenu3img = ['menu-1', 'menu-2', 'menu-3', 'menu-4', 'menu-5', 'menu-6']
+        - let wMenu1 = ['Все товары', 'Кроссовки', 'Кеды', 'Казаки', 'Босоножки', 'Ботинки', 'Ботильоны', 'Ботфорты', 'Лоферы', 'Сабо', 'Сандалии', 'Сапоги', 'Слипоны', 'Шлепанцы', 'Челси']
+        - let wMenu2 = ['Последняя пара', 'Final sale', 'Дутые формы', 'Анималистичные принты']
+        .header__menu-inner
+            .header__menu-inner__animate(style="min-height: 0;")
+                .container 
+                    .header-menu.tabs
+                        .header-menu__controls
+                            a.header-menu__close.svg(href="#")
+                                +icon('close') 
+                            a.header-menu__user(href="#") 
+                                span.header-menu__user-txt 5%
+                                span.header-menu__user-icon.svg 
+                                    +icon('user')
+                        .header-menu__navigation 
+                            ul.header-tabs.d-flex
+                                li.header-tabs__item 
+                                    a.header-tabs__link.tabs-link.selected(href="#" data-tabs="women") Женщинам
+                                li.header-tabs__item 
+                                    a.header-tabs__link.tabs-link(href="#" data-tabs="men") Мужчинам
+                                li.header-tabs__item 
+                                    a.header-tabs__link.tabs-link(href="#" data-tabs="buyer") Покупателю
+                                li.header-tabs__item.header-tabs__item--mobile 
+                                    a.header-tabs__link(href="#") Ashworld 
+                        .header-menu__content 
+                            .tabs-content.active.animate(data-tabs="women")
+                                .header-menu__row.flex 
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-category
+                                            li.header-category__item.header-category__item--long.header-category__item--white 
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-1', '347', '92')
+                                                    span.header-category__link-txt Новая коллекция FW’23
+                                            li.header-category__item.header-category__item--long
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-2', '347', '92')
+                                                    span.header-category__link-txt Made in italy
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-3', '170', '92')
+                                                    span.header-category__link-txt Re/Ash
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-4', '170', '92')
+                                                    span.header-category__link-txt AshxSample
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-5', '170', '92')
+                                                    span.header-category__link-txt Moby
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-6', '170', '92')
+                                                    span.header-category__link-txt Addict/Air
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-nav
+                                            - for (let i = 0; i < wMenu1.length; i++)
+                                                li.header-nav__item 
+                                                    a.header-nav__link(href="#") 
+                                                        span.header-nav__link-img 
+                                                            +jpgC('menu-img', '50', '50')
+                                                        span.header-nav__link-txt #{wMenu1[i]}
+                                                        span.header-nav__link-arrow.icon
+                                                            +icon('right')
+                                    .header-menu__col
+                                        .header-menu__title Подборки
+                                        ul.header-nav.header-nav-img
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-7', '170', '92')
+                                                    span.header-nav-img__link-txt Последняя пара
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Final sale
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Дутые формы
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-9', '170', '92')
+                                                    span.header-nav-img__link-txt Анималистичные принты
+                                    .header-menu__col.header-menu__col--image
+                                        .header-banner
+                                            +jpgC('h-banner', '430', '599')
+                            .tabs-content(data-tabs="men")
+                                .header-menu__row.flex 
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-category
+                                            li.header-category__item.header-category__item--long.header-category__item--white 
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-1', '347', '92')
+                                                    span.header-category__link-txt Новая коллекция FW’23
+                                            li.header-category__item.header-category__item--long
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-2', '347', '92')
+                                                    span.header-category__link-txt Made in italy
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-3', '170', '92')
+                                                    span.header-category__link-txt Re/Ash
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-4', '170', '92')
+                                                    span.header-category__link-txt AshxSample
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-5', '170', '92')
+                                                    span.header-category__link-txt Moby
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-6', '170', '92')
+                                                    span.header-category__link-txt Addict/Air
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-nav
+                                            - for (let i = 0; i < wMenu1.length; i++)
+                                                li.header-nav__item 
+                                                    a.header-nav__link(href="#") 
+                                                        span.header-nav__link-img 
+                                                            +jpgC('menu-img', '50', '50')
+                                                        span.header-nav__link-txt #{wMenu1[i]}
+                                                        span.header-nav__link-arrow.icon
+                                                            +icon('right')
+                                    .header-menu__col
+                                        .header-menu__title Подборки
+                                        ul.header-nav.header-nav-img
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-7', '170', '92')
+                                                    span.header-nav-img__link-txt Последняя пара
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Final sale
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Дутые формы
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-9', '170', '92')
+                                                    span.header-nav-img__link-txt Анималистичные принты
+                                    .header-menu__col.header-menu__col--image
+                                        .header-banner
+                                            +jpgC('h-banner', '430', '599')
+                            .tabs-content(data-tabs="buyer")
+                                .header-menu__row.flex 
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-category
+                                            li.header-category__item.header-category__item--long.header-category__item--white 
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-1', '347', '92')
+                                                    span.header-category__link-txt Новая коллекция FW’23
+                                            li.header-category__item.header-category__item--long
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-2', '347', '92')
+                                                    span.header-category__link-txt Made in italy
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-3', '170', '92')
+                                                    span.header-category__link-txt Re/Ash
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-4', '170', '92')
+                                                    span.header-category__link-txt AshxSample
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-5', '170', '92')
+                                                    span.header-category__link-txt Moby
+                                            li.header-category__item
+                                                a.header-category__link(href="#") 
+                                                    span.header-category__link-img 
+                                                        +jpgC('menu-6', '170', '92')
+                                                    span.header-category__link-txt Addict/Air
+                                    .header-menu__col
+                                        .header-menu__title Категории
+                                        ul.header-nav
+                                            - for (let i = 0; i < wMenu1.length; i++)
+                                                li.header-nav__item 
+                                                    a.header-nav__link(href="#") 
+                                                        span.header-nav__link-img 
+                                                            +jpgC('menu-img', '50', '50')
+                                                        span.header-nav__link-txt #{wMenu1[i]}
+                                                        span.header-nav__link-arrow.icon
+                                                            +icon('right')
+                                    .header-menu__col
+                                        .header-menu__title Подборки
+                                        ul.header-nav.header-nav-img
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-7', '170', '92')
+                                                    span.header-nav-img__link-txt Последняя пара
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Final sale
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-8', '170', '92')
+                                                    span.header-nav-img__link-txt Дутые формы
+                                            li.header-nav__item.header-nav-img__item 
+                                                a.header-nav__link.header-nav-img__link.header-nav-img__link--m-white(href="#")
+                                                    span.header-nav-img__link-img 
+                                                        +jpgC('menu-9', '170', '92')
+                                                    span.header-nav-img__link-txt Анималистичные принты
+                                    .header-menu__col.header-menu__col--image
+                                        .header-banner
+                                            +jpgC('h-banner', '430', '599')
+    .header__bg
+                        

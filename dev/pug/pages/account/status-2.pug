@@ -1,0 +1,27 @@
+.account-status
+    .account-status__lines
+        .account-status__inner.d-flex 
+            .account-status__inner-col
+                .account-status__item.account-status__item--ready
+                    .account-status__item-line.account-status__item-line--first 
+                    .account-status__item-txt оплачен
+            .account-status__inner-col
+                .account-status__item.account-status__item--cancel
+                    .account-status__item-line
+                    .account-status__item-txt отменён
+            .account-status__inner-col
+                .account-status__item
+                    .account-status__item-line
+                    .account-status__item-txt 
+            .account-status__inner-col
+                .account-status__item
+                    .account-status__item-line.account-status__item-line--last
+                    .account-status__item-txt 
+    .account-status__warning 
+        .account-warning
+            .account-warning__inner.d-flex 
+                .account-warning__inner-icon 
+                    .account-warning__icon.icon 
+                        include ../../icons/info
+                .account-warning__inner-info
+                    .account-warning__txt.txt-base К сожалению, товара нет в наличии на складе. Деньги вернутся вам <br>на карту в течение 1-2 рабочих дней

@@ -1,0 +1,20 @@
+.intro
+    .intro-slider.slider 
+        .swiper-wrapper 
+            - for (let i = 0; i < 5; i++)
+                .swiper-slide 
+                    .intro-item
+                        .intro-item__img 
+                            .intro-item__img-desctop
+                                +jpgC('intro-img', '1920', '960')
+                            .intro-item__img-mobile
+                                +jpgC('intro-img-m', '375', '602')
+                        .intro-item__content.centered
+                            .intro-item__content-inner
+                                .intro-item__title.banner-title.ttl Новая коллекция
+                                .intro-item__subtitle.base-up Коллекция обуви, в&nbsp;которой сошлись отличный дизайн и&nbsp;экологичный подход
+                                a.intro-item__btn.btn.base-up(href="#") 
+                                    span.intro-item__btn-txt к покупкам
+                                    span.intro-item__btn-icon.svg
+                                        +icon('link')
+    .intro-pagination.slider-pagination

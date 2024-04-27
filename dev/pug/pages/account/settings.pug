@@ -1,0 +1,102 @@
+.account-head.account-head--desctop
+    .account-head__title.h4.ttl привет, алевтина!
+.account-mobileHead
+    .account-mobileHead__group.d-flex 
+        a.account-mobileHead__btn.btn-circle(href="#")
+            +svg('arrow-left', '16', '16')
+        .account-mobileHead__qty (2)
+    .account-mobileHead__title.ttl настройки
+
+form.account-settings.form(action="/")
+    .account-settings__top 
+        .account-settings__row.flex 
+            .account-settings__col
+                .form-item
+                    .form-item__group 
+                        .form-item__label имя
+                        input.form-input(type="text")
+            .account-settings__col
+                .form-item
+                    .form-item__group 
+                        .form-item__label фамилия
+                        input.form-input(type="text")
+            .account-settings__col
+                .form-item
+                    .form-item__group 
+                        .form-item__label дата рождения
+                        input.form-input(type="text")
+            .account-settings__col
+                .account-settings__group.flex 
+                    .account-settings__group-col 
+                        label.account-settings__gender
+                            input(type="radio" name="gender")
+                            span.account-settings__gender-btn.outline-border.centered женский
+                    .account-settings__group-col 
+                        label.account-settings__gender
+                            input(type="radio" name="gender")
+                            span.account-settings__gender-btn.outline-border.centered мужской
+            .account-settings__col
+                .form-item.form-item-select
+                    .form-item__group 
+                        .form-item__label размер обуви
+                        input.form-input(type="text")
+                        .form-item__arrow.icon
+                            +icon('down')
+                    .form-item__dropdown.outline-border
+                        .form-item__dropdown-scroll(data-simplebar)
+                            .form-item__list
+                                - for (let i = 0; i < 10; i++)
+                                    .form-item__list-item 
+                                        label.form-item__dropdown-label
+                                            input(type="radio" name="size" data-value="37")
+                                            span.form-item__dropdown-label__txt 37
+            .account-settings__col.account-settings__col--fake
+            .account-settings__col
+                .form-item.form-phone
+                    .form-phone__inner.d-flex 
+                        .form-phone__left 
+                            a.form-phone__btn.d-flex(href="#") 
+                                span.form-phone__btn-flag.centered 
+                                    +svg('rus', '24', '17')
+                                span.form-phone__btn-txt +7
+                                span.form-phone__btn-icon.icon 
+                                    +icon('down')
+                        .form-phone__right
+                            .form-item__group 
+                                .form-item__label.form-item__label--hidden телефон*
+                                input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" )
+                    .form-phone__dropdown.form-item__dropdown.outline-border
+                        .form-item__dropdown-scroll(data-simplebar)
+                            .form-item__list
+                                .form-item__list-item 
+                                    label.form-item__country
+                                        input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+                                        span.form-item__country-inner.d-flex 
+                                            span.form-item__country-flag.centered 
+                                                +svg('bel', '24', '17') 
+                                            span.form-item__country-txt Беларусь
+                                .form-item__list-item 
+                                    label.form-item__country
+                                        input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+                                        span.form-item__country-inner.d-flex 
+                                            span.form-item__country-flag.centered 
+                                                +svg('kz', '24', '17') 
+                                            span.form-item__country-txt Казахстан
+                                .form-item__list-item 
+                                    label.form-item__country
+                                        input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+                                        span.form-item__country-inner.d-flex 
+                                            span.form-item__country-flag.centered 
+                                                +svg('rus', '24', '17') 
+                                            span.form-item__country-txt Россия
+            .account-settings__col
+                .form-item
+                    .form-item__group 
+                        .form-item__label e-mail
+                        input.form-input(type="email")
+    .account-settings__bottom
+        .account-settings__bottom-item
+            button.account-settings__btn.btn(type="button") сохранить
+        .account-settings__bottom-item
+            .account-settings__txt Нажимая на кнопку «сохранить», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и 
+                a(href="#" target="_blank")  политики конфиденциальности

@@ -1,0 +1,57 @@
+.saleBanners {
+    &-content {
+        &__col {
+            width: 50%;
+        }
+    }
+    &-item {
+        display: block;
+        position: relative;
+        color: var(--white);
+        &__img {
+            img {
+                width: 100%;
+            }
+        }
+        &__info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            flex-direction: column;
+        }
+        &__subtitle {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .saleBanners {
+        &-item {
+            &__subtitle {
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .saleBanners {
+        &-content {
+            &__col {
+                width: 100%;
+                margin-bottom: 8px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-item {
+            &__subtitle {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}

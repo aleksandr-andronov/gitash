@@ -1,0 +1,32 @@
+.season {
+    &-head {
+        max-width: 566px;
+    }
+    &__title {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .season {
+        &-head {
+            max-width: 435px;
+        }
+        &__title {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .season {
+        &-head {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        &__title {
+            margin-bottom: 0;
+        }
+    }
+}

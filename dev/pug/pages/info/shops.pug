@@ -1,0 +1,36 @@
+h1.infoPage__title.ttl.h3 МАГАЗИНЫ
+
+.shops
+    .shops-links
+        .shops-links__list.d-flex 
+            .shops-links__list-item 
+                a.shops-links__item.selected(href="#" data-type="list") список
+            .shops-links__list-item 
+                a.shops-links__item(href="#" data-type="map") на карте
+    .shops-map
+        #map
+        .shops-mobile
+            .shops-mobile__info.shopInfo
+                a.shopInfo__close.icon(href="#")
+                    +svg('close', '14', '14') 
+                .shopInfo__title ash внуково
+                .shopInfo__list 
+                    .shopInfo__list-item 
+                        .shopInfo__item.d-flex
+                            .shopInfo__item-icon
+                                +svg('shop-icon-1') 
+                            .shopInfo__item-txt г. Москва ул. Шарикоподшипниковская, д. 4, стр. 4а
+                    .shopInfo__list-item 
+                        .shopInfo__item.d-flex
+                            .shopInfo__item-icon
+                                +svg('shop-icon-2') 
+                            .shopInfo__item-txt ежедневно с 10:00 до 22:00
+                    .shopInfo__list-item 
+                        .shopInfo__item.d-flex
+                            .shopInfo__item-icon
+                                +svg('shop-icon-3') 
+                            .shopInfo__item-txt 
+                                a(href="#")  +7 495 909-83-14 доб 202
+                .shopInfo__links.d-flex
+                    .shopInfo__links-item 
+                        a(href="#") координаты 

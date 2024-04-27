@@ -1,0 +1,30 @@
+.order-form__margin-bottom
+    .saveInfo
+        .saveInfo__top
+            .saveInfo__group 
+                .saveInfo__group-inner.d-flex
+                    .saveInfo__title.title Доставка курьером по адресу
+                    a.saveInfo__change(href="#addresses" data-type="addAddress" data-bs-toggle="offcanvas") Изменить
+            .saveInfo__address Москва,  ул. Безымянная 47/1, кв. 6, п3, этаж 5
+            .saveInfo__comment
+                .saveInfo__comment-inner.d-flex.txt-sm
+                    .saveInfo__comment-icon.icon 
+                        img(src="static/images/general/icons/comment-grey-16.svg", alt="comment")
+                    .saveInfo__comment-txt Позвоните, когда будете у шлагбаума
+        .saveInfo__bottom 
+            .saveInfo__row-wrapper 
+                .saveInfo__row.flex 
+                    .saveInfo__col
+                        .saveInfo-item
+                            .saveInfo-item__icon.icon 
+                                +svg('user')
+                            .saveInfo-item__txt
+                                .saveInfo-item__txt-item Алевтина Круглова
+                                .saveInfo-item__txt-item +7 903 483-38-34
+                    .saveInfo__col
+                        .saveInfo-item
+                            .saveInfo-item__icon.icon 
+                                +svg('comment')
+                            .saveInfo-item__txt
+                                .saveInfo-item__txt-item Комментарий к заказу
+                            .saveInfo-item__sm-txt.txt-sm Проверить перед отгрузкой

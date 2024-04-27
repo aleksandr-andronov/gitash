@@ -1,0 +1,25 @@
+.popular.mainSection 
+    .container 
+        .mainSection-head 
+            .mainSection-head__inner.d-flex 
+                .mainSection__title.ttl.h2 
+                    a(href="#") Популярное
+                a.mainSection__link.d-flex(href="#") 
+                    span.mainSection__link-txt смотреть все
+                    span.mainSection__link-icon.icon 
+                        include ../../icons/link
+        .mainSection-content.popular-content
+            .popular-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .popular-slider__slide.mainSection-slider__slide.swiper-slide 
+                            +newCard()
+            .popular-item
+                .popular-item__title.ttl.h6 дополнительная скидка 10%🔥
+                .popular-controls.outline-border 
+                    a.popular-btn.popular-prev.icon(href="#")
+                        include ../../icons/prev 
+                    a.popular-btn.popular-next.icon(href="#")
+                        include ../../icons/next 
+
+                

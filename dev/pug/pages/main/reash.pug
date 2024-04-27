@@ -1,0 +1,42 @@
+.reash.mainSection 
+    .container 
+        .mainSection__group 
+            .mainSection-content.list 
+                .mainSection-content__col.col 
+                    .mainSection__img
+                        +jpgC('reash-img', '916', '963')
+                .mainSection-content__col.col 
+                    .mainSection__info
+                        .mainSection__info-item.mainSection__info-item--img.mainSection__info-item--top-right
+                            .mainSection__sm-img 
+                                +jpgC('reash-img-sm', '454', '440')
+                        .mainSection__info-item
+                            .reash-info
+                                .reash-info__title.ttl.h2 re/ash
+                                .reash-info__txt.txt-sm Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
+                                a.mainSection__link.d-flex(href="#") 
+                                    span.mainSection__link-txt смотреть все
+                                    span.mainSection__link-icon.icon 
+                                        include ../../icons/link
+                        
+        .mainSection__group 
+            .reash-slider 
+                .swiper-wrapper 
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.reash-slider__slide--big.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()
+                    .reash-slider__slide.swiper-slide 
+                        +newCard()

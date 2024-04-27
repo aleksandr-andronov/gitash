@@ -1,0 +1,83 @@
+#search2.offcanvas.offcanvas-top(tabindex="-1")
+    .search
+        .search__top.d-flex
+            .search__top-form 
+                form.search-form(action="/") 
+                    input.search-form__input.ttl(type="text" placeholder="я ищу")
+                    button.search-form__clear.icon(type="button")
+                        +svg('close', '14', '14')
+            .search__top-close
+                button.search-close(type="button" data-bs-dismiss="offcanvas" aria-label="закрыть") ЗАКРЫТЬ
+        .search__bottom
+            .search-content.d-flex 
+                .search-content__left 
+                    .search-menu
+                        .search-menu__group 
+                            .search-menu__title Часто ищут
+                            .search-menu__list
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('search-grey', '16', '16')
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('search-grey', '16', '16')
+                        .search-menu__group 
+                            .search-menu__title искать в категориях
+                            .search-menu__list
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>Сапоги</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('right-grey', '16', '16')
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>Ботильоны</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('right-grey', '16', '16')
+                        .search-menu__group 
+                            .search-menu__title искать в коллекциях
+                            .search-menu__list
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>Be king</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('right-grey', '16', '16')
+                                .search-menu__list-item
+                                    a.search-menu__list-link.d-flex(href="#") 
+                                        span.search-menu__list-link__txt <span>FW’24</span> / Женщинам
+                                        span.search-menu__list-link__icon.icon
+                                            +svg('right-grey', '16', '16')
+                .search-content__right
+                    .search__title результаты поиска(45)
+                    .search__list
+                        .search-list.flex 
+                            .search-list__item 
+                                +productCard('img1', false)
+                            .search-list__item 
+                                +productCard('img2', false)
+                            .search-list__item 
+                                +productCard('img3', false)
+                            .search-list__item 
+                                +productCard('img1', false)
+                            .search-list__item 
+                                +productCard('img2', false)
+                            .search-list__item 
+                                +productCard('img3', false)
+                            .search-list__item 
+                                +productCard('img1', false)
+                            .search-list__item 
+                                +productCard('img2', false)
+                            .search-list__item 
+                                +productCard('img3', false)
+                            .search-list__item 
+                                +productCard('img1', false)
+                            .search-list__item 
+                                +productCard('img2', false)
+                            .search-list__item 
+                                +productCard('img3', false)
+                    .search__more
+                        a.search__more-btn.btn(href="#") ПОКАЗАТЬ ВСЕ РЕЗУЛЬТАТЫ(20) 

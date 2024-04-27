@@ -1,0 +1,16 @@
+.popular.mainSection 
+    .container 
+        .mainSection-head 
+            .mainSection-head__inner.d-flex 
+                .mainSection__title.ttl.h2 
+                    a(href="#") Популярное
+                a.mainSection__link.d-flex(href="#") 
+                    span.mainSection__link-txt смотреть все
+                    span.mainSection__link-icon.icon 
+                        include ../../icons/link
+        .mainSection-content 
+            .mainSection-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .mainSection-slider__slide.swiper-slide 
+                            +newCard()

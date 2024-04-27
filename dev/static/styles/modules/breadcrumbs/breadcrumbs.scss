@@ -1,0 +1,28 @@
+.breadcrumbs {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: normal;
+    &-list {
+        &__link {
+            display: flex;
+            align-items: center;
+            color: var(--grey-10);
+            &::after {
+                content: "/";
+                margin: 0 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .breadcrumbs {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 932px) {
+    .breadcrumbs {
+        display: none;
+    }
+}

@@ -1,0 +1,97 @@
+.ashclub {
+    &-content {
+        position: relative;
+        &__img {
+            img {
+                width: 100%;
+            }
+        }
+        &__info {
+            width: 704px;
+            max-width: 100%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    &-info {
+        background: var(--black);
+        color: var(--white);
+        padding: 72px 72px 32px 72px;
+        &__title {
+            margin-bottom: 24px;
+        }
+        &__txt {
+            margin-bottom: 24px;
+            max-width: 444px;
+        }
+        &__links {
+            margin-bottom: 64px;
+            &-item {
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &__link {
+            span {
+                text-decoration: underline;
+            }
+            &:hover {
+                span {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .ashclub {
+        &-content {
+            &__info {
+                width: 536px;
+            }
+        }
+        &-info {
+            padding: 60px 60px 28px 60px;
+            &__title {
+                margin-bottom: 20px;
+            }
+            &__txt {
+                max-width: 370px;
+                margin-bottom: 20px;
+            }
+            &__links {
+                margin-bottom: 52px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .ashclub {
+        &-content {
+            margin-left: -14px;
+            margin-right: -14px;
+            &__info {
+                width: 316px;
+                right: 26px;
+                bottom: 48px;
+            }
+        }
+        &-info {
+            padding: 32px 32px 20px 32px;
+            &__title {
+                margin-bottom: 16px;
+            }
+            &__txt {
+                margin-bottom: 16px;
+            }
+            &__links {
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

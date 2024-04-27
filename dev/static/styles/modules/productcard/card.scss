@@ -1,0 +1,286 @@
+.card {
+    --card--bg: #F3F3F3;
+    position: relative;
+    height: 100%;
+    background: var(--card--bg);
+    display: block;
+    &-img-mobile {
+        display: none;
+        background: var(--card--bg);
+        img {
+            width: 100%;
+            mix-blend-mode: darken;
+        }
+    }
+    &-img {
+        height: 100%;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: darken;
+        }
+        &__slider-img {
+            background: var(--card--bg);
+        }
+        &__pagination {
+            position: absolute;
+            z-index: 10;
+            top: 0 !important;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            
+            .swiper-pagination-bullet {
+                margin: 0 !important;
+                height: 100%;
+                flex: 1 0 0%;
+                background: none;
+            }
+        }
+    }
+    &-hidden {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        right: 0;
+        padding: 0 36px 24px;
+        z-index: 11;
+        transition: .2s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        background: var(--card--bg);
+        &__sizes {
+            margin-bottom: 8px;
+        }
+    }
+    &-sizes {
+        justify-content: center;
+        &__item {
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &--disabled {
+                color: var(--text-disable);
+            }
+        }
+    }
+    &-colors {
+        max-width: 382px;
+        margin-left: auto;
+        margin-right: auto;
+        &__list {
+            margin-left: -1px;
+            margin-right: -1px;
+            justify-content: center;
+            &-item {
+                padding-left: 1px;
+                padding-right: 1px;
+                width: calc(100% / 6);
+            }
+        }
+        &__item {
+            height: 100%;
+            background: var(--card--bg);
+            img {
+                mix-blend-mode: darken;
+            }
+            &--txt {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 14px;
+            }
+        }
+    }
+    &-info {
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 28px;
+        &__name {
+            margin-bottom: 6px;
+        }
+    }
+    &-price {
+        display: flex;
+        justify-content: center;
+        letter-spacing: -0.015em;
+        &__new {
+            margin-right: 4px;
+        }
+        &__old {
+            color: var(--text-disable);
+            text-decoration: line-through;
+        }
+    }
+    &-favorite {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 11;
+        .svg-sprite-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .icon-heart-fill {
+            visibility: hidden;
+        }
+        &.active {
+            .icon-heart-fill {
+                visibility: visible;
+            }
+            .icon-heart {
+                visibility: hidden;
+            }
+        }
+    }
+    &-stickers {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 11;
+        &__item {
+            &--sale {
+                color: #EC9D71;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        &:hover {
+            z-index: 99;
+            .card-info {
+                pointer-events: none;
+                visibility: hidden;
+            }
+            .card-hidden {
+                visibility: visible;
+                opacity: 1;
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 8px;
+                    background: var(--white);
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .card {
+        &:hover {
+            .card-hidden {
+                &::after {
+                    height: 6px;
+                    bottom: -6px;
+                }
+            }
+        }
+        &-info {
+            padding: 24px;
+            &__name {
+                margin-bottom: 4px;
+                line-height: normal;
+            }
+        }
+        &-price {
+            line-height: normal;
+        }
+        &-stickers {
+            left: 12px;
+            top: 12px;
+        }
+        &-favorite {
+            top: 12px;
+            right: 12px;
+            width: 20px;
+            height: 20px;
+        }
+        &-price {
+            letter-spacing: 0;
+            &__new {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+            &__old {
+                font-size: 15px;
+            }
+        }
+        &-hidden {
+            bottom: -40px;
+            padding: 0 30px 20px;
+            &__sizes {
+                margin-bottom: 6px;
+            }
+        }
+        &-sizes {
+            &__item {
+                margin-right: 16px;
+            }
+        }
+        &-colors {
+            max-width: 280px;
+            &__item {
+                &--txt {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .card {
+        &-img {
+            display: none;
+            img {
+                min-height: 254px;
+            }
+        }
+        &-img-mobile {
+            display: block;
+        }
+        &-info {
+            padding: 20px;
+            &__name {
+                letter-spacing: -0.02em;
+            }
+        }
+        &-price {
+            letter-spacing: -0.015em;
+            &__old {
+                font-size: 14px;
+            }
+        }
+        &-favorite {
+            top: 10px;
+            right: 10px;
+            width: 16px;
+            height: 16px;
+        }
+        &-stickers {
+            top: 10px;
+            left: 10px;
+        }
+    }
+}

@@ -1,0 +1,436 @@
+.address {
+    &-list {
+        &__item {
+            margin-bottom: 8px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-item {
+        input {
+            &:checked + .address-item__inner {
+                &::before {
+                    border-color: var(--black);
+                }
+            }
+        }
+        &__more {
+            display: none;
+        }
+        &__inner {
+            justify-content: space-between;
+            padding: 24px 20px;
+            border-radius: 6px;
+            background: var(--element-second);
+            width: 100%;
+            &::before {
+                border-color: var(--element-second);
+            }
+            &-left {
+                width: 390px;
+            }
+        }
+        &__info {
+            &-info {
+                padding-left: 14px;
+                display: flex;
+                flex-direction: column;
+            }
+            &-title {
+                margin-bottom: 12px;
+            }
+            &-txt {
+                color: var(--text-background);
+                &__item {
+                    display: block;
+                    margin-bottom: 24px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            &-comment {
+                align-items: center;
+                margin-top: 4px;
+                color: var(--text-background);
+                fill: var(--text-background);
+                &__icon {
+                    width: 14px;
+                    height: 14px;
+                }
+                &__txt {
+                    width: calc(100% - 14px);
+                    padding-left: 12px;
+                }
+            }
+            &-status {
+                margin-top: 16px;
+                color: var(--status-green);
+                font-weight: 600;
+                font-size: 14px;
+                line-height: normal;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                &::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    flex-shrink: 0;
+                    border-radius: 50%;
+                    background: var(--status-green);
+                    margin-right: 10px;
+                }
+            }
+        }
+        &__actions {
+            &-item {
+                margin-right: 20px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            &-btn {
+                fill: var(--text-standart);
+                &__txt {
+                    display: none;
+                }
+                &__icon {
+                    width: 16px;
+                    height: 16px;
+                }
+                &:hover {
+                    fill: var(--text-hover);
+                }
+            }
+            &-close {
+                display: none;
+            }
+        }
+    }
+    &-add {
+        margin-top: 32px;
+        &__btn {
+            justify-content: center;
+            text-transform: uppercase;
+            line-height: normal;
+            &-icon {
+                width: 16px;
+                height: 16px;
+                margin-right: 8px;
+            }
+        }
+    }
+    &-form {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        .order-form__info {
+            margin-bottom: 20px;
+        }
+        &__group {
+            margin-bottom: 32px;
+            &-title {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: normal;
+                margin-bottom: 20px;
+            }
+        }
+        &__foot {
+            margin-top: auto;
+        }
+        &__btn {
+            width: 100%;
+        }
+    }
+}
+
+#postOfficeMap {
+    width: 100%;
+    height: 100%;
+}
+
+.postOffice {
+    &-info {
+        position: absolute;
+        z-index: 9;
+        top: 12px;
+        left: 12px;
+        border-radius: 10px;
+        background: var(--white);
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04), 0px 4.4px 7px rgba(0, 0, 0, 0.04);
+        max-width: 506px;
+        display: none;
+        &.visible {
+            display: block;
+        }
+        &__inner {
+            padding: 32px;
+        }
+        &__title {
+            margin-bottom: 14px;
+        }
+        &__address {
+            margin-bottom: 24px;
+        }
+        &__work {
+            margin-bottom: 24px;
+            &-item {
+                margin-bottom: 8px;
+                &__left {
+                    width: 56px;
+                    margin-right: 32px;
+                }
+            }
+        }
+        &__btn {
+            width: 100%;
+            line-height: 115%;
+            padding: 10px;
+        }
+        &__close {
+            display: none;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 16px;
+            right: 14px;
+        }
+    }
+}
+
+.get-location {
+    padding: 12px 16px 12px 20px;
+    background: var(--white);
+    position: absolute;
+    bottom: 40px;
+    right: 44px;
+    z-index: 9;
+    color: var(--black);
+    stroke: var(--black);
+    text-transform: initial;
+    border-radius: 44px;
+    &__icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .address {
+        &-list {
+            &__item {
+                margin-bottom: 6px;
+            }
+        }
+        &-item {
+            &__inner {
+                padding: 20px 16px;
+                border-radius: 4px;
+                &-left {
+                    width: 324px;
+                }
+            }
+            &__info {
+                &-title {
+                    margin-bottom: 8px;
+                }
+                &-txt {
+                    &__item {
+                        margin-bottom: 20px;
+                    }
+                }
+                &-comment {
+                    margin-top: 2px;
+                    &__txt {
+                        padding-left: 8px;
+                    }
+                }
+                &-status {
+                    margin-top: 12px;
+                    font-size: 12px;
+                    &::before {
+                        width: 6px;
+                        height: 6px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+            &__actions {
+                &-item {
+                    margin-right: 16px;
+                }
+                &-btn {
+                    &__icon {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+        &-add {
+            margin-top: 24px;
+            &__btn {
+                &-icon {
+                    width: 14px;
+                    height: 14px;
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    .postOffice {
+        &-info {
+            max-width: 448px;
+            &__inner {
+                padding: 24px;
+            }
+            &__title {
+                margin-bottom: 12px;
+            }
+            &__address {
+                margin-bottom: 20px;
+            }
+            &__work {
+                &-item {
+                    &__left {
+                        width: 50px;
+                    }
+                }
+            }
+            &__btn {
+                padding-top: 9px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+
+    .get-location {
+        padding: 11px 12px 11px 16px;
+        bottom: 40px;
+        right: 30px;
+        &__icon {
+            width: 14px;
+            height: 14px;
+            margin-left: 8px;
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .get-location {
+        bottom: 26px;
+        right: 26px;
+        &.bottom {
+            bottom: 340px;
+        }
+    }
+
+    .postOffice {
+        &-info {
+            position: fixed;
+            display: block;
+            bottom: 0;
+            top: initial;
+            left: 0;
+            right: 0;
+            max-width: initial;
+            transform: translateY(100%);
+            visibility: hidden;
+            transition: .2s ease-in-out;
+            &.visible {
+                transform: translateY(0%);
+                visibility: visible;
+            }
+            &__close {
+                display: flex;
+            }
+            &__inner {
+                padding: 40px 14px 10px;
+            }
+            &__address {
+                max-width: 298px;
+            }
+            &__btn {
+                border-radius: 4px;
+                padding-top: 17px;
+                padding-bottom: 16px;
+            }
+        }
+    }
+
+    .address {
+        &-item {
+            &__inner {
+                padding-right: 10px;
+                &-left {
+                    width: calc(100% - 18px);
+                }
+            }
+            &__more {
+                display: flex;
+                fill: var(--grey-7);
+            }
+            &__actions {
+                display: none;
+                &.visible {
+                    display: block;
+                }
+                &-overlay {
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.12);
+                    z-index: 99;
+                }
+                &-content {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background: var(--white);
+                    border-radius: 20px 20px 0 0;
+                    z-index: 101;
+                    padding: 50px 14px 10px;
+                    transform: translateY(100%);
+                    transition: transform .3s ease-in-out;
+                    &.visible {
+                        transform: translateY(0%);
+                    }
+                }
+                &-close {
+                    position: absolute;
+                    top: 18px;
+                    right: 14px;
+                    width: 14px;
+                    height: 14px;
+                    display: flex;
+                }
+                &-list {
+                    flex-direction: column;
+                }
+                &-item {
+                    border-top: 1px solid var(--stroke-element);
+                    margin-right: 0;
+                    width: 100%;
+                }
+                &-btn {
+                    padding: 16px 0;
+                    display: block;
+                    &__icon {
+                        display: none;
+                    }
+                    &__txt {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

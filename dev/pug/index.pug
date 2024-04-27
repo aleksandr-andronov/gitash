@@ -1,0 +1,116 @@
+extends template/main
+
+block variables
+	- var title = 'Список страниц'
+
+block content
+	.container(style="padding: 40px 14px;") 
+		.h4.ttl(style="margin: 40px 0;") Страницы
+		ul 
+			li 
+				a(href="./main.html" target="_blank") Главная
+			li 
+				a(href="./catalog.html" target="_blank") Каталог
+			li 
+				a(href="./catalog-banner.html" target="_blank") Каталог с баннером 
+			li 
+				a(href="./product.html" target="_blank") Страница товара
+			li 
+				a(href="./product-2.html" target="_blank") Страница товара 2 вариант размеров
+			li 
+				a(href="./product-3.html" target="_blank") Страница товара подписанный на размер
+			li 
+				a(href="./product-null.html" target="_blank") Страница товара нет в наличии
+		.h4.ttl(style="margin: 40px 0;") Аккаунт
+		ul 
+			li 
+				a(href="./account-1.html" target="_blank") статус заказа сразу после оплаты 
+			li 
+				a(href="./account-2.html" target="_blank") статус заказа не подтвержден
+			li 
+				a(href="./account-3.html" target="_blank") статус заказа после подтверждения
+			li 
+				a(href="./account-4.html" target="_blank") статус заказа после сборки
+			li 
+				a(href="./account-5.html" target="_blank") статус заказа после того, как товар доставлен
+			li 
+				a(href="./account-6.html" target="_blank") статус неоплаченного заказа
+			li 
+				a(href="./account-7.html" target="_blank") статус заказа сразу после оплаты почта россии 
+			li 
+				a(href="./account-8.html" target="_blank") статус неоплаченного заказа почта россии 
+			li 
+				a(href="./account-mobile-1.html" target="_blank") мобильное меню 1
+			li 
+				a(href="./account-mobile-2.html" target="_blank") мобильное меню 2
+			li 
+				a(href="./account-subscriptions.html" target="_blank") страница подписок
+			li 
+				a(href="./account-orders.html" target="_blank") страница заказов
+			li 
+				a(href="./account-favorite.html" target="_blank") страница избранного
+			li 
+				a(href="./account-addresses.html" target="_blank") страница адресов
+			li 
+				a(href="./account-settings.html" target="_blank") страница с настройками
+		.h4.ttl(style="margin: 40px 0;") оформление заказа
+		ul 
+			li 
+				a(href="./order-default.html" target="_blank") Страница по умолчанию 
+			li 
+				a(href="./order-post-choose.html" target="_blank") Прогрузка оформления почтой россии
+			li 
+				a(href="./order-post-selected.html" target="_blank") Выбран пункт выдачи
+			li 
+				a(href="./order-post-second.html" target="_blank") Оформление заказа 2-й и следующие разы почта
+			li 
+				a(href="./order-courier.html" target="_blank") Прогрузка оформления курьерской доставкой
+			li 
+				a(href="./order-courier-second.html" target="_blank") Оформление заказа 2-й и следующие разы курьер
+			li 
+				a(href="./order-post-mobile-default.html" target="_blank") Страница мобильная почтой
+			li 
+				a(href="./order-post-mobile-selected.html" target="_blank") Страница мобильная почтой заполнены поля
+			li 
+				a(href="./order-courier-mobile-default.html" target="_blank") Страница мобильная курьером
+			li 
+				a(href="./order-courier-mobile-selected.html" target="_blank") Страница мобильная курьер заполнены поля
+				
+		.h4.ttl(style="margin: 40px 0;") Выпадающие элементы
+		ul 
+			li 
+				a(href="#loginModal" data-bs-toggle="modal") Вход
+			li 
+				a(href="#determineSize" data-bs-toggle="offcanvas") определить размер
+			li 
+				a(href="#paymentShares" data-bs-toggle="offcanvas") попап долями
+			li 
+				a(href="#cart" data-bs-toggle="offcanvas") корзина
+			//- li 
+			//- 	a(href="#cart2" data-bs-toggle="offcanvas") корзина неавторизованного пользователя
+			li 
+				a(href="#subscribeSize" data-bs-toggle="offcanvas") подписка на размер 
+			li 
+				a(href="#subscribeSizeCart" data-bs-toggle="offcanvas") подписка на размер корзина
+			li 
+				a(href="#feedback" data-bs-toggle="offcanvas") обратная связь
+			li 
+				a(href="#search" data-bs-toggle="offcanvas") поиск
+			li 
+				a(href="#search2" data-bs-toggle="offcanvas") поиск много результатов
+
+		
+		.h4.ttl(style="margin: 40px 0;") Пользователю 
+		ul 
+			li 
+				a(href="./infoShops.html" target="_blank") магазины
+			li 
+				a(href="./infoFaq.html" target="_blank") faq
+			li 
+				a(href="./infoPayment.html" target="_blank") способы оплаты
+			li 
+				a(href="./infoDelivery.html" target="_blank") доставка
+			li 
+				a(href="./infoCare.html" target="_blank") уход
+			li 
+				a(href="./infoRefunds.html" target="_blank") возвраты

@@ -1,0 +1,240 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body
+		.wrapper
+			include ../modules/header/header-only-logo
+			.order
+				.container
+					.order__inner
+						.order__subhead
+							.order__subhead-inner.d-flex 
+								.order__subhead-item
+									a.order__back.btn-circle(href="#") 
+										+icon('a-left-sm')
+								.order__subhead-item 
+									.order__qty 
+										span.desctop 16 товаров
+										span.mobile (2)
+						.order__title.ttl.h3 оформление заказа
+						.order__content.flex
+							.order__col.order__col-3
+							.order__col.order__col-6
+								form.order-form.form(action="/") 
+									.order-form__group 
+										.order-form__title.h6.ttl Доставка
+										.order-form__pricedelivery.d-flex
+											.order-form__pricedelivery-name.title Стоимость доставки
+											.order-form__pricedelivery-value Бесплатно
+										if (first)
+											.order-form__subtitle Адрес доставки
+											.form-item.form-item-dropdown
+												.form-item__group 
+													.form-item__label населенный пункт*
+													input.form-input(type="text" data-validate)
+												.form-item__dropdown.outline-border
+													.form-item__dropdown-scroll(data-simplebar)
+														.form-item__list
+															- for (let i = 0; i < 20; i++)
+																.form-item__list-item 
+																	label.form-item__dropdown-label
+																		input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+																		span.form-item__dropdown-label__txt г. Новосибирск, 
+																			span Новосибирская обл.
+										if (post == 'choose')
+											include ../pages/order/post-choose
+										else if (post == 'selected')
+											include ../pages/order/post-selected
+
+										if (secondPost)
+											include ../pages/order/save-post
+										if (courier)
+											include ../pages/order/courier
+										if (courierSecond)
+											include ../pages/order/save-courier
+										if (date)
+											include ../pages/order/date
+
+									if (recipient)
+										.order-form__group 
+											.order-form__title.h6.ttl получатель
+											.order-form__row-wrapper
+												.order-form__row.flex 
+													.order-form__col 
+														.form-item
+															.form-item__group 
+																.form-item__label имя*
+																input.form-input(type="text" data-validate)
+													.order-form__col 
+														.form-item
+															.form-item__group 
+																.form-item__label фамилия*
+																input.form-input(type="text" data-validate)
+											.order-form__subtitle Контакты
+											.order-form__row-wrapper.order-form__row-wrapper--mb-2
+												.order-form__row.flex
+													.order-form__col 
+														.form-item.form-phone
+															.form-phone__inner.d-flex 
+																.form-phone__left 
+																	a.form-phone__btn.d-flex(href="#") 
+																		span.form-phone__btn-flag.centered 
+																			+svg('rus', '24', '17')
+																		span.form-phone__btn-txt +7
+																		span.form-phone__btn-icon.icon 
+																			+icon('down')
+																.form-phone__right
+																	.form-item__group 
+																		.form-item__label.form-item__label--hidden телефон*
+																		input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" data-validate)
+															.form-phone__dropdown.form-item__dropdown.outline-border
+																.form-item__dropdown-scroll(data-simplebar)
+																	.form-item__list
+																		.form-item__list-item 
+																			label.form-item__country
+																				input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+																				span.form-item__country-inner.d-flex 
+																					span.form-item__country-flag.centered 
+																						+svg('bel', '24', '17') 
+																					span.form-item__country-txt Беларусь
+																		.form-item__list-item 
+																			label.form-item__country
+																				input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+																				span.form-item__country-inner.d-flex 
+																					span.form-item__country-flag.centered 
+																						+svg('kz', '24', '17') 
+																					span.form-item__country-txt Казахстан
+																		.form-item__list-item 
+																			label.form-item__country
+																				input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+																				span.form-item__country-inner.d-flex 
+																					span.form-item__country-flag.centered 
+																						+svg('rus', '24', '17') 
+																					span.form-item__country-txt Россия
+													.order-form__col 
+														.form-item
+															.form-item__group 
+																.form-item__label e-mail*
+																input.form-input(type="email" data-validate)
+															.form-item__txt.txt-label для отправки чека
+											.order-form__row-wrapper
+												.order-form__row.flex
+													.order-form__col
+														label.form-checkbox.txt-sm
+															input(type="checkbox")
+															span.form-checkbox__content 
+																span.form-checkbox__icon
+																span.form-checkbox__info Не звонить для подтверждения заказа
+													.order-form__col
+														.order-form__switch.switch.txt-sm
+															.switch__content.d-flex 
+																.switch__content-btn 
+																	label.switch-btn
+																		input(type="checkbox" checked name="news")
+																		span.switch-btn__content 
+																			span
+																.switch__content-txt Подписаться на новости
+											.order-form__row-wrapper
+												.order-form__row.flex
+													.order-form__col.order-form__col--fw 
+														.form-item
+															.form-item__group 
+																.form-item__label комментарий к заказу
+																input.form-input(type="text")
+									.order-form__group 
+										.order-form__title.h6.ttl способ оплаты
+										.order-form__payments
+											include ../pages/order/payments
+										.order-form__controls
+											.order-form__controls-btn 
+												button.order-form__btn(type="submit" disabled) оплатить заказ
+											if (switchSave)
+												.order-form__controls-save 
+													.switch.txt-sm
+														.switch__content.d-flex 
+															.switch__content-btn 
+																label.switch-btn
+																	input(type="checkbox" checked name="news")
+																	span.switch-btn__content 
+																		span
+															.switch__content-txt Сохранить данные для авторизации
+											.order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>		
+							.order__col.order__col-3
+								.order-total.outline-border 
+									.order-total__head
+										.order-total__head-inner.d-flex 
+											.order-total__head-title.ttl.h6 Ваш заказ
+											a.order-total__head-link.tech-14 изменить
+									.order-total__products.outline-border.outline-border-top 
+										if (products == 1)
+											.order-card
+												.order-card__inner.d-flex 
+													.order-card__img
+														+jpgC('total-img-1', '124', '152')
+													.order-card__info 
+														.order-card__title Addict
+														.order-card__category Ботинки
+														.order-card__size
+															.order-card__size-inner.d-flex
+																.order-card__size-txt 38
+																.order-card__size-color(style="background: #EBE3CF;") 
+														.order-card__price 12 990 ₽
+										else 
+											.order-products.flex 
+												.order-products__item 
+													.order-card
+														.order-card__inner.d-flex 
+															.order-card__img
+																+jpgC('total-img-2', '124', '152')
+																.order-card__size-absolute.centered 39
+												.order-products__item 
+													.order-card
+														.order-card__inner.d-flex 
+															.order-card__img
+																+jpgC('total-img-1', '124', '152')
+																.order-card__size-absolute.centered 39
+									.order-total__promocode 
+										include ../modules/forms/promocode
+									.order-total__info.outline-border.outline-border-bottom 
+										.order-total__list 
+											.order-total__list-item.d-flex
+												.order-total__list-item__name Сумма
+												.order-total__list-item__value 22 765 ₽
+											.order-total__list-item.d-flex
+												.order-total__list-item__name Скидка на товары
+												.order-total__list-item__value -3 670 ₽
+											.order-total__list-item.d-flex
+												.order-total__list-item__name Скидка по промокоду
+												.order-total__list-item__value -3 586 ₽
+											.order-total__list-item.d-flex
+												.order-total__list-item__name Доставка
+												.order-total__list-item__value 0 ₽
+									.order-total__bottom
+										.order-total__bottom-inner.d-flex 
+											.order-total__bottom-item
+												.order-total__bottom-item__title.ttl Итого
+												.order-total__bottom-item__txt.tech-14 3 товара
+											.order-total__bottom-item
+												.order-total__bottom-item__title.ttl 18 336 ₽
+												.order-total__bottom-item__txt.tech-14 Экономия 2 839 ₽
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		include ../modules/popups/order
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/simplebar.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+		script(src="static/js/postoffice.js")
+		block script

@@ -1,0 +1,274 @@
+.order
+    .container
+        .order__inner
+            .order__subhead
+                .order__subhead-inner.d-flex 
+                    .order__subhead-item
+                        a.order__back.btn-circle(href="#") 
+                            +icon('a-left-sm')
+                    .order__subhead-item 
+                        .order__qty 
+                            span.desctop 16 товаров
+                            span.mobile (2)
+            .order__title.ttl.h3 оформление заказа
+            .order__content.flex
+                .order__col.order__col-3
+                .order__col.order__col-6
+                    form.order-form(action="/") 
+                        .order-form__group 
+                            .order-form__title.h6.ttl Доставка
+                            .order-form__pricedelivery.d-flex
+                                .order-form__pricedelivery-name Стоимость доставки
+                                .order-form__pricedelivery-value Бесплатно
+                            .order-form__subtitle Адрес доставки
+
+                            .form-item.form-item-dropdown
+                                .form-item__group 
+                                    .form-item__label населенный пункт*
+                                    input.form-input(type="text" data-validate)
+                                .form-item__dropdown.outline-border
+                                    .form-item__dropdown-scroll(data-simplebar)
+                                        .form-item__list
+                                            - for (let i = 0; i < 20; i++)
+                                                .form-item__list-item 
+                                                    label.form-item__dropdown-label
+                                                        input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                        span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                            span Новосибирская обл.
+                            .order-form__info
+                                .order-form__info-txt.d-flex 
+                                    .order-form__info-txt-icon.centered 
+                                        +svg('info')
+                                    .order-form__info-txt-value В ваш регион доступна доставка Почтой России.
+                                a.order-form__info-btn.outline-border(href="#") выбрать пункт выдачи
+                            
+                            .order-form__subtitle.d-flex 
+                                .order-form__subtitle-txt Сроки доставки
+                                .order-form__subtitle-txt-sm 7-14 дней
+                            .order-form__info
+                                .order-form__info-txt.d-flex 
+                                    .order-form__info-txt-icon.centered 
+                                        +svg('info')
+                                    .order-form__info-txt-value Отгрузка происходит в течение 1-2 рабочих дней. Вам придет смс-уведомление.
+                        .order-form__group 
+                            .order-form__title.h6.ttl получатель
+                            .order-form__row.flex 
+                                .order-form__col 
+                                    .form-item
+                                        .form-item__group 
+                                            .form-item__label имя*
+                                            input.form-input(type="text" data-validate)
+                                .order-form__col 
+                                    .form-item
+                                        .form-item__group 
+                                            .form-item__label фамилия*
+                                            input.form-input(type="text" data-validate)
+                            
+                            .order-form__subtitle Контакты
+                            .order-form__row.flex.order-form__row--mb-20 
+                                .order-form__col 
+                                    .form-item
+                                        .form-item__group 
+                                            .form-item__label телефон*
+                                            input.form-input(type="tel" data-validate)
+                                .order-form__col 
+                                    .form-item
+                                        .form-item__group 
+                                            .form-item__label e-mail*
+                                            input.form-input(type="email")
+                                        .form-item__txt.txt-label для отправки чека
+                            .order-form__row.flex
+                                .order-form__col
+                                    label.order-form__checkbox
+                                        input(type="checkbox")
+                                        span.order-form__checkbox-content.d-flex 
+                                            span.order-form__checkbox-check 
+                                            span.order-form__checkbox-txt Не звонить для подтверждения заказа
+                                .order-form__col
+                                    .order-form__switch.switch
+                                        .switch__content.d-flex 
+                                            .switch__content-btn 
+                                                label.switch-btn
+                                                    input(type="checkbox" checked name="news")
+                                                    span.switch-btn__content 
+                                                        span
+                                            .switch__content-txt Подписаться на новости
+                            .order-form__row.flex
+                                .order-form__col.order-form__col--fw 
+                                    .form-item
+                                        .form-item__group 
+                                            .form-item__label комментарий к заказу
+                                            input.form-input(type="text")
+                        .order-form__group 
+                            .order-form__title.h6.ttl способ оплаты
+                            .order-form__payments
+                                .order-form__payments-item 
+                                    label.order-form__payment
+                                        input(type="radio" name="payment")
+                                        span.order-form__payment-content.d-flex.outline-border 
+                                            span.order-form__payment-check.centered 
+                                            span.order-form__payment-txt СБП
+                                            span.order-form__payment-icon.centered 
+                                                +svg('payment-1')
+                                .order-form__payments-item 
+                                    label.order-form__payment
+                                        input(type="radio" name="payment" checked)
+                                        span.order-form__payment-content.d-flex.outline-border 
+                                            span.order-form__payment-check.centered 
+                                            span.order-form__payment-txt Картой онлайн
+                                            span.order-form__payment-icon.centered 
+                                                +svg('payment-2')
+                                .order-form__payments-item 
+                                    label.order-form__payment
+                                        input(type="radio" name="payment")
+                                        span.order-form__payment-content.d-flex.outline-border 
+                                            span.order-form__payment-check.centered 
+                                            span.order-form__payment-txt Долями
+                                            span.order-form__payment-icon.centered 
+                                                +svg('payment-3')
+                                .order-form__payments-item 
+                                    label.order-form__payment
+                                        input(type="radio" name="payment")
+                                        span.order-form__payment-content.d-flex.outline-border 
+                                            span.order-form__payment-check.centered 
+                                            span.order-form__payment-txt SberPay
+                                            span.order-form__payment-icon.centered 
+                                                +svg('payment-4')
+                            .order-form__controls
+                                .order-form__controls-btn 
+                                    button.order-form__btn(type="submit" disabled) оплатить заказ
+                                .order-form__controls-save 
+                                    .switch
+                                        .switch__content.d-flex 
+                                            .switch__content-btn 
+                                                label.switch-btn
+                                                    input(type="checkbox" checked name="news")
+                                                    span.switch-btn__content 
+                                                        span
+                                            .switch__content-txt Сохранить данные для авторизации
+                                .order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
+                    form.order-mobile(action="/")
+                        .order-mobile__group
+                            .order-mobile__delivery
+                                .order-mobile__delivery-top.d-flex 
+                                    .order-mobile__delivery-info.d-flex 
+                                        .order-mobile__delivery-info-icon.centered 
+                                            +svg('delivery', '20', '20') 
+                                        .order-mobile__delivery-info-txt Доставка
+                                    .order-mobile__delivery-price Бесплатно
+                                .order-mobile__delivery-bottom 
+                                    a.order-mobile__delivery-btn.outline-border(href="#") указать адрес
+                        .order-mobile__group
+                            .order-mobile__item
+                                a.order-mobile__item-btn.d-flex(href="#") 
+                                    span.order-mobile__item-btn-icon.centered 
+                                        +svg('user', '20', '20') 
+                                    span.order-mobile__item-btn-txt Получатель
+                                    span.order-mobile__item-btn-arrow.centered 
+                                        +svg('right', '14', '14')
+                        .order-mobile__group
+                            .order-mobile__item
+                                a.order-mobile__item-btn.d-flex(href="#") 
+                                    span.order-mobile__item-btn-icon.centered 
+                                        +svg('comment', '20', '20') 
+                                    span.order-mobile__item-btn-txt Комментарий к заказу
+                                    span.order-mobile__item-btn-arrow.centered 
+                                        +svg('right', '14', '14')
+                        .order-mobile__group
+                            .order-mobile__item
+                                .order-mobile__item-btn.d-flex
+                                    span.order-mobile__item-btn-icon.centered 
+                                        +svg('cash', '20', '20') 
+                                    span.order-mobile__item-btn-txt Способ оплаты
+                                .order-mobile__item-payments.order-form__payments
+                                    .order-form__payments-item 
+                                        label.order-form__payment
+                                            input(type="radio" name="payment")
+                                            span.order-form__payment-content.d-flex.outline-border 
+                                                span.order-form__payment-check.centered 
+                                                span.order-form__payment-txt СБП
+                                                span.order-form__payment-icon.centered 
+                                                    +svg('payment-1')
+                                    .order-form__payments-item 
+                                        label.order-form__payment
+                                            input(type="radio" name="payment" checked)
+                                            span.order-form__payment-content.d-flex.outline-border 
+                                                span.order-form__payment-check.centered 
+                                                span.order-form__payment-txt Картой онлайн
+                                                span.order-form__payment-icon.centered 
+                                                    +svg('payment-2')
+                                    .order-form__payments-item 
+                                        label.order-form__payment
+                                            input(type="radio" name="payment")
+                                            span.order-form__payment-content.d-flex.outline-border 
+                                                span.order-form__payment-check.centered 
+                                                span.order-form__payment-txt Долями
+                                                span.order-form__payment-icon.centered 
+                                                    +svg('payment-3')
+                                    .order-form__payments-item 
+                                        label.order-form__payment
+                                            input(type="radio" name="payment")
+                                            span.order-form__payment-content.d-flex.outline-border 
+                                                span.order-form__payment-check.centered 
+                                                span.order-form__payment-txt SberPay
+                                                span.order-form__payment-icon.centered 
+                                                    +svg('payment-4')
+                        .order-mobile__group
+                            .order-mobile__item
+                                .order-mobile__item-btn.d-flex
+                                    span.order-mobile__item-btn-icon.centered 
+                                        +svg('basket', '20', '20') 
+                                    span.order-mobile__item-btn-txt Ваш заказ
+                                    a.order-mobile__item-btn-link(href="#") Изменить
+                                .order-mobile__item-products 
+                                    .order-mobile__item-products-list.flex
+                                        .order-mobile__item-products-item 
+                                            .order-mobile__item-product.centered 
+                                                .order-mobile__item-product-img
+                                                    +pngC('stphoto_ru')
+                                                .order-mobile__item-product-size.centered 36
+                                        .order-mobile__item-products-item 
+                                            .order-mobile__item-product.centered 
+                                                .order-mobile__item-product-img
+                                                    +pngC('stphoto_ru')
+                                                .order-mobile__item-product-size.centered 36
+                                .order-info__promocode
+                                    input.order-info__promocode-input(type="text" placeholder="Введите промокод")
+                                    button.order-info__promocode-btn(type="button") Применить
+                                .order-info__price.d-flex.ttl
+                                    .order-info__price-name.d-flex
+                                        .order-info__price-name-txt Итого
+                                        .order-info__price-name-icon.centered
+                                            +svg('info', '16', '16')
+                                    .order-info__price-value 18 336 ₽
+                                .order-info__total.d-flex 
+                                    .order-info__total-qty 3 товара
+                                    .order-info__total-price Экономия 2839 ₽ 
+                                .order-info__controls 
+                                    .order-info__controls-btn
+                                        button.order-form__btn(type="submit" disabled) оплатить заказ 
+                                    .order-info__controls-txt  Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
+                                    
+                .order__col.order__col-3
+                    .order-info.outline-border
+                        .order-info__title.d-flex 
+                            .order-info__title-txt.h6.ttl Ваш заказ
+                            a.order-info__title-link(href="#") изменить
+                        .order-info__list.flex 
+                            .order-info__list-item 
+                                a.order-info__product.centered(href="#") 
+                                    span.order-info__product-img 
+                                        +jpgC('stphoto_ru')
+                                    span.order-info__product-size.centered 39
+                        .order-info__promocode
+                            input.order-info__promocode-input(type="text" placeholder="Введите промокод")
+                            button.order-info__promocode-btn(type="button") Применить
+                        .order-info__price.d-flex.ttl
+                            .order-info__price-name.d-flex
+                                .order-info__price-name-txt Итого
+                                .order-info__price-name-icon.centered
+                                    +svg('info', '16', '16')
+                            .order-info__price-value 18 336 ₽
+                        .order-info__total.d-flex 
+                            .order-info__total-qty 3 товара
+                            .order-info__total-price Экономия 2839 ₽ 
