@@ -1,0 +1,12 @@
+extends template/info
+
+block variables
+	- var title = 'МАГАЗИНЫ'
+	- var shop = true
+
+block content
+	include pages/info/shops
+
+block script
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	script(src="static/js/shops.js")

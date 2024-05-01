@@ -3,6 +3,10 @@
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
         display: none;
+        &--buyer {
+            border-top: 1px solid var(--black);
+            padding-top: 28px;
+        }
         &.active {
             display: block;
             
@@ -353,7 +357,13 @@ ul:not([class]) {
 }
 
 @media (max-width: 1440px) {
-    
+    .tabs {
+        &-content {
+            &--buyer {
+                padding-top: 24px;
+            }
+        }
+    }
 
     ul:not([class]) {
         li {
@@ -487,7 +497,14 @@ ul:not([class]) {
 }
 
 @media (max-width: 932px) {
-    
+    .tabs {
+        &-content {
+            &--buyer {
+                padding-top: 0;
+                border: none;
+            }
+        }
+    }
     .desctop {
         display: none;
     }

@@ -664,15 +664,28 @@
         </div>
       </div>
     </div>
-    <div class="offcanvas offcanvas-top offcanvas-fh" id="search" tabindex="-1">
+    <div class="offcanvas offcanvas-top" id="search" tabindex="-1" data-bs-backdrop="false">
       <div class="search">
         <div class="search__top">
           <div class="search__top-inner d-flex">
             <div class="search__top-form"> 
               <form class="search-form" action="/"> 
                 <input class="search-form__input ttl" type="text" placeholder="я ищу">
-                <button class="search-form__clear icon" type="button"><img src="static/images/general/close.svg" width="14" height="14" alt="img"/>
-                </button>
+                <div class="search-form__actions d-flex">
+                  <button class="search-form__clear icon" type="button"><img src="static/images/general/close.svg" width="14" height="14" alt="img"/>
+                  </button>
+                  <button class="search-form__submit centered" type="submit" disabled><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3104_8438)">
+<path d="M14.4528 15.2609L14.8569 15.665L15.665 14.8569L15.2609 14.4528L14.4528 15.2609ZM10.9739 3.30276C13.0923 5.4211 13.0923 8.8556 10.9739 10.9739L11.7821 11.7821C14.3467 9.21741 14.3467 5.05929 11.7821 2.49464L10.9739 3.30276ZM10.9739 10.9739C8.8556 13.0923 5.4211 13.0923 3.30276 10.9739L2.49464 11.7821C5.05929 14.3467 9.21741 14.3467 11.7821 11.7821L10.9739 10.9739ZM3.30276 10.9739C1.18442 8.8556 1.18442 5.42109 3.30276 3.30276L2.49464 2.49464C-0.0700129 5.05929 -0.0700128 9.2174 2.49464 11.7821L3.30276 10.9739ZM3.30276 3.30276C5.42109 1.18442 8.8556 1.18442 10.9739 3.30276L11.7821 2.49464C9.2174 -0.0700128 5.05929 -0.070013 2.49464 2.49464L3.30276 3.30276ZM10.9739 11.7821L14.4528 15.2609L15.2609 14.4528L11.7821 10.9739L10.9739 11.7821Z" fill="#C3C3C3"/>
+</g>
+<defs>
+<clipPath id="clip0_3104_8438">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+                  </button>
+                </div>
               </form>
             </div>
             <div class="search__top-close">
@@ -681,112 +694,1412 @@
           </div>
         </div>
         <div class="search__bottom">
-          <div class="search-content d-flex"> 
-            <div class="search-content__left"> 
-              <div class="search-menu">
-                <div class="search-menu__group"> 
-                  <div class="search-menu__title">Часто ищут</div>
-                  <div class="search-menu__list">
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>Кроссовки</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/search-grey.svg" width="16" height="16" alt="img"/></span></a></div>
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>Кроссовки</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/search-grey.svg" width="16" height="16" alt="img"/></span></a></div>
+          <div class="container"> 
+            <div class="search__result-txt">Результаты поиска(6)</div>
+            <div class="search-list flex">
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
                   </div>
-                </div>
-                <div class="search-menu__group"> 
-                  <div class="search-menu__title">искать в категориях</div>
-                  <div class="search-menu__list">
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>Сапоги</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/right-grey.svg" width="16" height="16" alt="img"/></span></a></div>
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>Ботильоны</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/right-grey.svg" width="16" height="16" alt="img"/></span></a></div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
                   </div>
-                </div>
-                <div class="search-menu__group"> 
-                  <div class="search-menu__title">искать в коллекциях</div>
-                  <div class="search-menu__list">
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>Be king</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/right-grey.svg" width="16" height="16" alt="img"/></span></a></div>
-                    <div class="search-menu__list-item"><a class="search-menu__list-link d-flex" href="#"> <span class="search-menu__list-link__txt"><span>FW’24</span> / Женщинам</span><span class="search-menu__list-link__icon icon"><img src="static/images/general/right-grey.svg" width="16" height="16" alt="img"/></span></a></div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
                   </div>
-                </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
               </div>
-            </div>
-            <div class="search-content__right">
-              <div class="search__title">Популярные товары</div>
-              <div class="search__list">
-                <div class="search-list flex"> 
-                  <div class="search-list__item"> 
-                    <div class="productCard">
-                      <div class="productCard__top">
-                        <div class="productCard__img"> 
-                          <picture>
-                            <source srcset="static/images/content/img1.webp" type="image/webp"/><img src="static/images/content/img1.png" width="305" height="296" alt="img"/>
-                          </picture>
-                        </div>
-                        <div class="productCard__sale ttl sticker">— 30%</div><a class="productCard__favorite icon" href="#"><img src="static/images/general/heart.svg" width="undefined" height="undefined" alt="img"/></a>
-                      </div>
-                      <div class="productCard__bottom">
-                        <div class="productCard__title ttl title1"> <a href="#">MOBY BE KIND </a></div>
-                        <div class="productCard__price ttl title2">
-                          <div class="productCard__price-new">18 990 ₽</div>
-                          <div class="productCard__price-old">22 990 ₽</div>
-                        </div>
-                        <div class="productCard__tags flex">
-                          <div class="productCard__tags-item"> <img src="static/images/general/bekind.svg" width="54" height="24" alt="img"/>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
                           </div>
-                          <div class="productCard__tags-item"> <img src="static/images/general/reash.svg" width="68" height="24" alt="img"/>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="search-list__item"> 
-                    <div class="productCard">
-                      <div class="productCard__top">
-                        <div class="productCard__img"> 
-                          <picture>
-                            <source srcset="static/images/content/img2.webp" type="image/webp"/><img src="static/images/content/img2.png" width="305" height="296" alt="img"/>
-                          </picture>
-                        </div>
-                        <div class="productCard__sale ttl sticker">— 30%</div><a class="productCard__favorite icon" href="#"><img src="static/images/general/heart.svg" width="undefined" height="undefined" alt="img"/></a>
-                      </div>
-                      <div class="productCard__bottom">
-                        <div class="productCard__title ttl title1"> <a href="#">MOBY BE KIND </a></div>
-                        <div class="productCard__price ttl title2">
-                          <div class="productCard__price-new">18 990 ₽</div>
-                          <div class="productCard__price-old">22 990 ₽</div>
-                        </div>
-                        <div class="productCard__tags flex">
-                          <div class="productCard__tags-item"> <img src="static/images/general/bekind.svg" width="54" height="24" alt="img"/>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
                           </div>
-                          <div class="productCard__tags-item"> <img src="static/images/general/reash.svg" width="68" height="24" alt="img"/>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="search-list__item"> 
-                    <div class="productCard">
-                      <div class="productCard__top">
-                        <div class="productCard__img"> 
-                          <picture>
-                            <source srcset="static/images/content/img3.webp" type="image/webp"/><img src="static/images/content/img3.png" width="305" height="296" alt="img"/>
-                          </picture>
-                        </div>
-                        <div class="productCard__sale ttl sticker">— 30%</div><a class="productCard__favorite icon" href="#"><img src="static/images/general/heart.svg" width="undefined" height="undefined" alt="img"/></a>
-                      </div>
-                      <div class="productCard__bottom">
-                        <div class="productCard__title ttl title1"> <a href="#">MOBY BE KIND </a></div>
-                        <div class="productCard__price ttl title2">
-                          <div class="productCard__price-new">18 990 ₽</div>
-                          <div class="productCard__price-old">22 990 ₽</div>
-                        </div>
-                        <div class="productCard__tags flex">
-                          <div class="productCard__tags-item"> <img src="static/images/general/bekind.svg" width="54" height="24" alt="img"/>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
                           </div>
-                          <div class="productCard__tags-item"> <img src="static/images/general/reash.svg" width="68" height="24" alt="img"/>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
+              </div>
+              <div class="search-list__item"> <a class="card" href="#">
+                  <div class="card-img">
+                    <div class="card-img__slider slider">
+                      <div class="swiper-wrapper"> 
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide"> 
+                          <div class="card-img__slider-img">
+                            <picture>
+                              <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-img__pagination"></div>
+                  </div>
+                  <div class="card-img-mobile"> 
+                    <picture>
+                      <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
+                    </picture>
+                  </div>
+                  <div class="card-info">
+                    <div class="card-info__name txt-sm">Zeta </div>
+                    <div class="card-price card-info__price txt-sm">
+                      <div class="card-price__new">18 990 ₽</div>
+                      <div class="card-price__old">22 990 ₽</div>
+                    </div>
+                  </div>
+                  <div class="card-hidden"> 
+                    <div class="card-hidden__sizes"> 
+                      <div class="card-sizes d-flex txt-sm">
+                        <div class="card-sizes__item">35</div>
+                        <div class="card-sizes__item">36</div>
+                        <div class="card-sizes__item">37</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">38</div>
+                        <div class="card-sizes__item">39</div>
+                        <div class="card-sizes__item card-sizes__item--disabled">40</div>
+                        <div class="card-sizes__item">41</div>
+                      </div>
+                    </div>
+                    <div class="card-hidden__colors">
+                      <div class="card-colors">
+                        <div class="card-colors__list d-flex"> 
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item"> 
+                              <picture>
+                                <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="62" height="77" alt="img"/>
+                              </picture>
+                            </div>
+                          </div>
+                          <div class="card-colors__list-item"> 
+                            <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-stickers">
+                    <div class="card-stickers__item card-stickers__item--sale ttl sticker">-30%</div>
+                  </div>
+                  <button class="card-favorite fav-btn icon" type="button">
+                    <svg class="svg-sprite-icon icon-heart">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <svg class="svg-sprite-icon icon-heart-fill">
+                      <use xlink:href="static/images/svg/symbol/sprite.svg#heart-fill"></use>
+                    </svg>
+                  </button></a>
               </div>
             </div>
           </div>
@@ -1957,35 +3270,35 @@
               <div class="cart-recomend__body">
                 <div class="cart-slider"> 
                   <div class="swiper-wrapper"> 
-                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#"> 
+                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#">
                         <div class="card-img">
                           <div class="card-img__slider slider">
                             <div class="swiper-wrapper"> 
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-1.webp" type="image/webp"/><img src="static/images/content/card-1.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-2.webp" type="image/webp"/><img src="static/images/content/card-2.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-3.webp" type="image/webp"/><img src="static/images/content/card-3.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-4.webp" type="image/webp"/><img src="static/images/content/card-4.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
@@ -1998,68 +3311,11 @@
                             <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
                           </picture>
                         </div>
-                        <div class="card-info">
+                        <div class="card-info card-info--cart">
                           <div class="card-info__name txt-sm">Zeta </div>
                           <div class="card-price card-info__price txt-sm">
                             <div class="card-price__new">18 990 ₽</div>
                             <div class="card-price__old">22 990 ₽</div>
-                          </div>
-                        </div>
-                        <div class="card-hidden"> 
-                          <div class="card-hidden__sizes"> 
-                            <div class="card-sizes d-flex txt-sm">
-                              <div class="card-sizes__item">35</div>
-                              <div class="card-sizes__item">36</div>
-                              <div class="card-sizes__item">37</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">38</div>
-                              <div class="card-sizes__item">39</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">40</div>
-                              <div class="card-sizes__item">41</div>
-                            </div>
-                          </div>
-                          <div class="card-hidden__colors">
-                            <div class="card-colors">
-                              <div class="card-colors__list d-flex"> 
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-1.webp" type="image/webp"/><img src="static/images/content/card-color-1.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-2.webp" type="image/webp"/><img src="static/images/content/card-color-2.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-3.webp" type="image/webp"/><img src="static/images/content/card-color-3.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-4.webp" type="image/webp"/><img src="static/images/content/card-color-4.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-5.webp" type="image/webp"/><img src="static/images/content/card-color-5.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="card-stickers">
@@ -2074,35 +3330,35 @@
                           </svg>
                         </button></a>
                     </div>
-                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#"> 
+                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#">
                         <div class="card-img">
                           <div class="card-img__slider slider">
                             <div class="swiper-wrapper"> 
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-1.webp" type="image/webp"/><img src="static/images/content/card-1.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-2.webp" type="image/webp"/><img src="static/images/content/card-2.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-3.webp" type="image/webp"/><img src="static/images/content/card-3.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-4.webp" type="image/webp"/><img src="static/images/content/card-4.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
@@ -2115,68 +3371,11 @@
                             <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
                           </picture>
                         </div>
-                        <div class="card-info">
+                        <div class="card-info card-info--cart">
                           <div class="card-info__name txt-sm">Zeta </div>
                           <div class="card-price card-info__price txt-sm">
                             <div class="card-price__new">18 990 ₽</div>
                             <div class="card-price__old">22 990 ₽</div>
-                          </div>
-                        </div>
-                        <div class="card-hidden"> 
-                          <div class="card-hidden__sizes"> 
-                            <div class="card-sizes d-flex txt-sm">
-                              <div class="card-sizes__item">35</div>
-                              <div class="card-sizes__item">36</div>
-                              <div class="card-sizes__item">37</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">38</div>
-                              <div class="card-sizes__item">39</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">40</div>
-                              <div class="card-sizes__item">41</div>
-                            </div>
-                          </div>
-                          <div class="card-hidden__colors">
-                            <div class="card-colors">
-                              <div class="card-colors__list d-flex"> 
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-1.webp" type="image/webp"/><img src="static/images/content/card-color-1.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-2.webp" type="image/webp"/><img src="static/images/content/card-color-2.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-3.webp" type="image/webp"/><img src="static/images/content/card-color-3.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-4.webp" type="image/webp"/><img src="static/images/content/card-color-4.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-5.webp" type="image/webp"/><img src="static/images/content/card-color-5.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="card-stickers">
@@ -2191,35 +3390,35 @@
                           </svg>
                         </button></a>
                     </div>
-                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#"> 
+                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#">
                         <div class="card-img">
                           <div class="card-img__slider slider">
                             <div class="swiper-wrapper"> 
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-1.webp" type="image/webp"/><img src="static/images/content/card-1.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-2.webp" type="image/webp"/><img src="static/images/content/card-2.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-3.webp" type="image/webp"/><img src="static/images/content/card-3.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-4.webp" type="image/webp"/><img src="static/images/content/card-4.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
@@ -2232,68 +3431,11 @@
                             <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
                           </picture>
                         </div>
-                        <div class="card-info">
+                        <div class="card-info card-info--cart">
                           <div class="card-info__name txt-sm">Zeta </div>
                           <div class="card-price card-info__price txt-sm">
                             <div class="card-price__new">18 990 ₽</div>
                             <div class="card-price__old">22 990 ₽</div>
-                          </div>
-                        </div>
-                        <div class="card-hidden"> 
-                          <div class="card-hidden__sizes"> 
-                            <div class="card-sizes d-flex txt-sm">
-                              <div class="card-sizes__item">35</div>
-                              <div class="card-sizes__item">36</div>
-                              <div class="card-sizes__item">37</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">38</div>
-                              <div class="card-sizes__item">39</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">40</div>
-                              <div class="card-sizes__item">41</div>
-                            </div>
-                          </div>
-                          <div class="card-hidden__colors">
-                            <div class="card-colors">
-                              <div class="card-colors__list d-flex"> 
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-1.webp" type="image/webp"/><img src="static/images/content/card-color-1.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-2.webp" type="image/webp"/><img src="static/images/content/card-color-2.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-3.webp" type="image/webp"/><img src="static/images/content/card-color-3.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-4.webp" type="image/webp"/><img src="static/images/content/card-color-4.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-5.webp" type="image/webp"/><img src="static/images/content/card-color-5.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="card-stickers">
@@ -2308,35 +3450,35 @@
                           </svg>
                         </button></a>
                     </div>
-                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#"> 
+                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#">
                         <div class="card-img">
                           <div class="card-img__slider slider">
                             <div class="swiper-wrapper"> 
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-1.webp" type="image/webp"/><img src="static/images/content/card-1.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-2.webp" type="image/webp"/><img src="static/images/content/card-2.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-3.webp" type="image/webp"/><img src="static/images/content/card-3.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-4.webp" type="image/webp"/><img src="static/images/content/card-4.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
@@ -2349,68 +3491,11 @@
                             <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
                           </picture>
                         </div>
-                        <div class="card-info">
+                        <div class="card-info card-info--cart">
                           <div class="card-info__name txt-sm">Zeta </div>
                           <div class="card-price card-info__price txt-sm">
                             <div class="card-price__new">18 990 ₽</div>
                             <div class="card-price__old">22 990 ₽</div>
-                          </div>
-                        </div>
-                        <div class="card-hidden"> 
-                          <div class="card-hidden__sizes"> 
-                            <div class="card-sizes d-flex txt-sm">
-                              <div class="card-sizes__item">35</div>
-                              <div class="card-sizes__item">36</div>
-                              <div class="card-sizes__item">37</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">38</div>
-                              <div class="card-sizes__item">39</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">40</div>
-                              <div class="card-sizes__item">41</div>
-                            </div>
-                          </div>
-                          <div class="card-hidden__colors">
-                            <div class="card-colors">
-                              <div class="card-colors__list d-flex"> 
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-1.webp" type="image/webp"/><img src="static/images/content/card-color-1.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-2.webp" type="image/webp"/><img src="static/images/content/card-color-2.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-3.webp" type="image/webp"/><img src="static/images/content/card-color-3.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-4.webp" type="image/webp"/><img src="static/images/content/card-color-4.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-5.webp" type="image/webp"/><img src="static/images/content/card-color-5.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="card-stickers">
@@ -2425,35 +3510,35 @@
                           </svg>
                         </button></a>
                     </div>
-                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#"> 
+                    <div class="cart-slider__slide swiper-slide"> <a class="card" href="#">
                         <div class="card-img">
                           <div class="card-img__slider slider">
                             <div class="swiper-wrapper"> 
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-1.webp" type="image/webp"/><img src="static/images/content/card-1.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-2.webp" type="image/webp"/><img src="static/images/content/card-2.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-3.webp" type="image/webp"/><img src="static/images/content/card-3.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
                               <div class="swiper-slide"> 
                                 <div class="card-img__slider-img">
                                   <picture>
-                                    <source srcset="static/images/content/card-4.webp" type="image/webp"/><img src="static/images/content/card-4.jpg" width="454" height="563" alt="img"/>
+                                    <source srcset="static/images/content/img-card.webp" type="image/webp"/><img src="static/images/content/img-card.jpg" width="454" height="563" alt="img"/>
                                   </picture>
                                 </div>
                               </div>
@@ -2466,68 +3551,11 @@
                             <source srcset="static/images/content/card-m.webp" type="image/webp"/><img src="static/images/content/card-m.jpg" width="346" height="508" alt="img"/>
                           </picture>
                         </div>
-                        <div class="card-info">
+                        <div class="card-info card-info--cart">
                           <div class="card-info__name txt-sm">Zeta </div>
                           <div class="card-price card-info__price txt-sm">
                             <div class="card-price__new">18 990 ₽</div>
                             <div class="card-price__old">22 990 ₽</div>
-                          </div>
-                        </div>
-                        <div class="card-hidden"> 
-                          <div class="card-hidden__sizes"> 
-                            <div class="card-sizes d-flex txt-sm">
-                              <div class="card-sizes__item">35</div>
-                              <div class="card-sizes__item">36</div>
-                              <div class="card-sizes__item">37</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">38</div>
-                              <div class="card-sizes__item">39</div>
-                              <div class="card-sizes__item card-sizes__item--disabled">40</div>
-                              <div class="card-sizes__item">41</div>
-                            </div>
-                          </div>
-                          <div class="card-hidden__colors">
-                            <div class="card-colors">
-                              <div class="card-colors__list d-flex"> 
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-1.webp" type="image/webp"/><img src="static/images/content/card-color-1.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-2.webp" type="image/webp"/><img src="static/images/content/card-color-2.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-3.webp" type="image/webp"/><img src="static/images/content/card-color-3.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-4.webp" type="image/webp"/><img src="static/images/content/card-color-4.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item"> 
-                                    <picture>
-                                      <source srcset="static/images/content/card-color-5.webp" type="image/webp"/><img src="static/images/content/card-color-5.jpg" width="62" height="77" alt="img"/>
-                                    </picture>
-                                  </div>
-                                </div>
-                                <div class="card-colors__list-item"> 
-                                  <div class="card-colors__item card-colors__item--txt txt-sm">+3</div>
-                                </div>
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="card-stickers">

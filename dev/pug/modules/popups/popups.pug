@@ -1,76 +1,79 @@
-#search.offcanvas.offcanvas-top.offcanvas-fh(tabindex="-1")
+#search.offcanvas.offcanvas-top(tabindex="-1" data-bs-backdrop="false")
     .search
         .search__top
             .search__top-inner.d-flex
                 .search__top-form 
                     form.search-form(action="/") 
                         input.search-form__input.ttl(type="text" placeholder="я ищу")
-                        button.search-form__clear.icon(type="button")
-                            +svg('close', '14', '14')
+                        .search-form__actions.d-flex
+                            button.search-form__clear.icon(type="button")
+                                +svg('close', '14', '14')
+                            button.search-form__submit.centered(type="submit" disabled)
+                                include ../../icons/search
                 .search__top-close
                     button.search-close(type="button" data-bs-dismiss="offcanvas" aria-label="закрыть") 
                         span.search-close__txt ЗАКРЫТЬ
                         span.search-close__icon 
                             +svg('arrow-left', '14', '14')
         .search__bottom
-            .search-content.d-flex 
-                .search-content__left 
-                    .search-menu
-                        .search-menu__group 
-                            .search-menu__title Часто ищут
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('search-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('search-grey', '16', '16')
-                        .search-menu__group 
-                            .search-menu__title искать в категориях
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Сапоги</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Ботильоны</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                        .search-menu__group 
-                            .search-menu__title искать в коллекциях
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Be king</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>FW’24</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                .search-content__right
-                    .search__title Популярные товары
-                    .search__list
-                        .search-list.flex 
-                            .search-list__item 
-                                +productCard('img1', false)
-                            .search-list__item 
-                                +productCard('img2', false)
-                            .search-list__item 
-                                +productCard('img3', false)
-                            //- .search-list__item 
-                            //-     +productCard('img1', false)
-                            //- .search-list__item 
-                            //-     +productCard('img2', false)
-                            //- .search-list__item 
-                            //-     +productCard('img3', false)
+            .container 
+                .search__result-txt Результаты поиска(6)
+                .search-list.flex
+                    - for (let i = 0; i < 12; i++)
+                        .search-list__item 
+                            +newCard(false, false)
+            //- .search-content.d-flex 
+            //-     .search-content__left 
+            //-         .search-menu
+            //-             .search-menu__group 
+            //-                 .search-menu__title Часто ищут
+            //-                 .search-menu__list
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('search-grey', '16', '16')
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('search-grey', '16', '16')
+            //-             .search-menu__group 
+            //-                 .search-menu__title искать в категориях
+            //-                 .search-menu__list
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>Сапоги</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('right-grey', '16', '16')
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>Ботильоны</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('right-grey', '16', '16')
+            //-             .search-menu__group 
+            //-                 .search-menu__title искать в коллекциях
+            //-                 .search-menu__list
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>Be king</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('right-grey', '16', '16')
+            //-                     .search-menu__list-item
+            //-                         a.search-menu__list-link.d-flex(href="#") 
+            //-                             span.search-menu__list-link__txt <span>FW’24</span> / Женщинам
+            //-                             span.search-menu__list-link__icon.icon
+            //-                                 +svg('right-grey', '16', '16')
+            //-     .search-content__right
+            //-         .search__title Популярные товары
+            //-         .search__list
+            //-             .search-list.flex 
+            //-                 .search-list__item 
+            //-                     +productCard('img1', false)
+            //-                 .search-list__item 
+            //-                     +productCard('img2', false)
+            //-                 .search-list__item 
+            //-                     +productCard('img3', false)
 
 #search2.offcanvas.offcanvas-top.offcanvas-fh(tabindex="-1")
     .search
@@ -763,27 +766,7 @@
                             .swiper-wrapper 
                                 - for (let i = 0; i < 5; i++)
                                     .cart-slider__slide.swiper-slide 
-                                        +newCard()
-                                        //- .cart-card
-                                        //-     .cart-card__top 
-                                        //-         .cart-card__sale.ttl — 30%
-                                        //-         a.cart-card__favorite.icon(href="#")
-                                        //-             +svg('heart')
-                                        //-         .cart-card__img 
-                                        //-             +pngC('stphoto_ru3', '186', '180')
-                                        //-     .cart-card__bottom.ttl
-                                        //-         .cart-card__title.title1
-                                        //-             a(href="#") MOBY BE KIND
-                                        //-         .cart-card__price.title2
-                                        //-             .cart-card__price-inner.d-flex 
-                                        //-                 .cart-card__price-new 18 990 ₽
-                                        //-                 .cart-card__price-old 22 990 ₽
-                                        //-         .cart-card__tags
-                                        //-             .cart-card__tags-inner.flex 
-                                        //-                 .cart-card__tags-item.centered
-                                        //-                     +svg('bekind', '54', '24')
-                                        //-                 .cart-card__tags-item.centered
-                                        //-                     +svg('reash', '68', '24')
+                                        +newCard(false, true)
 
 //- #cart2.offcanvas.offcanvas-end(tabindex="-1")
 //-     .offcanvas__inner 

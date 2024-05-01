@@ -29,7 +29,7 @@ html(lang="ru-RU")
 								.product-gallery(class= availability ? 'product-gallery--null' : '')
 									.product-gallery__list.flex
 										.product-gallery__item
-											.product-gallery__img 
+											.product-gallery__img(data-img="1") 
 												+jpgC('img-1', '1070', '1332')
 												a.product-back.btn-circle(href="#")
 													+icon('a-left-sm') 
@@ -40,7 +40,7 @@ html(lang="ru-RU")
 														+svg('reash', '68', '24')
 										- for (let i = 1; i < 8; i++)
 											.product-gallery__item 
-												.product-gallery__img 
+												.product-gallery__img(data-img=`${i+1}`) 
 													+jpgC(`img-${i+1}`, '1070', '1332')
 								.product-galleryMobile(class= availability ? 'product-galleryMobile--null' : '')
 									.product-galleryMobile__slider.slider
@@ -384,6 +384,21 @@ html(lang="ru-RU")
 								.product-more__list-item 
 									+newCard()
 					.gallery
+						.gallery__inner 
+							.gallery-fullImg
+								.gallery-fullImg__item.active(data-img=`1`)
+									+jpgC('big-img', '1224', '1518')
+								- for (let i = 0; i < 7; i++)
+									.gallery-fullImg__item(data-img=`${i+2}`)
+										+jpgC('big-img', '1224', '1518')
+							.gallery-thumbs
+								.gallery-thumbs__item.active.outline-border(data-img=`1`)
+									+jpgC(`thumb-1`, '76', '94')
+								- for (let i = 0; i < 7; i++)
+									.gallery-thumbs__item.outline-border(data-img=`${i+2}`)
+										+jpgC(`thumb-${i+1}`, '76', '94')
+						a.gallery-close.centered(href="#")
+							+icon('close') 
 			include ../modules/footer/footer
 		include ../modules/modals/modals
 		include ../modules/popups/popups

@@ -1,3 +1,64 @@
+// галлерея на странице товара
+function productGallery() {
+    const gallery = document.querySelector('.gallery')
+    if (!gallery) return
+    const galleryImg = gallery.querySelectorAll('.gallery-fullImg__item')
+    const galleryThumbs = gallery.querySelectorAll('.gallery-thumbs__item')
+    const openImg = document.querySelectorAll('.product-gallery__img')
+    const closeBtn = gallery.querySelector('.gallery-close')
+
+
+    function galleryClose() {
+        document.documentElement.classList.remove('o-hidden')
+        gallery.classList.remove('animate')
+        setTimeout(() => {
+            gallery.classList.remove('visible')
+        }, 300)
+    }
+
+    openImg.forEach(item => {
+        item.addEventListener('click', () => {
+            galleryImg.forEach(i => i.classList.remove('active'))
+            galleryThumbs.forEach(i => i.classList.remove('active'))
+            const currentImg = item.dataset.img
+            document.querySelector(`.gallery-fullImg__item[data-img="${currentImg}"]`).classList.add('active')
+            document.querySelector(`.gallery-thumbs__item[data-img="${currentImg}"]`).classList.add('active')
+
+            gallery.classList.add('visible')
+            document.documentElement.classList.add('o-hidden')
+            setTimeout(() => {
+                gallery.classList.add('animate')
+            })
+        })
+    })
+
+
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        galleryClose()
+    })
+
+    galleryImg.forEach(item => {
+        item.addEventListener('click', () => {
+            galleryClose()
+        })
+    })
+
+    galleryThumbs.forEach(item => {
+        item.addEventListener('click', () => {
+            galleryImg.forEach(i => i.classList.remove('active'))
+            galleryThumbs.forEach(i => i.classList.remove('active'))
+            const currentImg = item.dataset.img
+            document.querySelector(`.gallery-fullImg__item[data-img="${currentImg}"]`).classList.add('active')
+            item.classList.add('active')
+        })
+    })
+}
+
+productGallery()
+
+
+
 // отображаение выпдающего списка при вводе в поле
 function showDropdownInput() {
     const items = document.querySelectorAll('.form-item-dropdown')
@@ -492,15 +553,14 @@ showActionsAddress()
 
 
 function productCardFavorite() {
-    const links = document.querySelectorAll('.productCard__favorite')
+    const links = document.querySelectorAll('.card-favorite')
     if (!links.length) return
 
     links.forEach(link => {
-        const parent = link.closest('.productCard')
+        const parent = link.closest('.card')
 
         link.addEventListener('click', (e) => {
-            link.classList.toggle('active')
-            if (parent.classList.contains('productCard-favorite')) {
+            if (parent.classList.contains('card-selected')) {
                 parent.classList.toggle('unfavorite')
             }
         })
@@ -1191,48 +1251,79 @@ function customSelect() {
 customSelect()
 
 function search() {
-    const mains = document.querySelectorAll('.search')
+    const main = document.querySelector('.search')
+    if (!main) return
+    const list = main.querySelector('.search-list')
+    const moreBtnWrapper = main.querySelector('.search__more')
+    const moreBtn = main.querySelector('.search__more-btn')
+    const formWrapper = main.querySelector('.search__top')
+    const form = main.querySelector('.search-form')
+    const input = form.querySelector('.search-form__input')
+    const clearBtn = form.querySelector('.search-form__clear')
+    const submitBtn = form.querySelector('.search-form__submit')
+    const wrapper = document.getElementById('search')
 
-    mains.forEach(main => {
-        const list = main.querySelector('.search-list')
-        const moreBtnWrapper = main.querySelector('.search__more')
-        const moreBtn = main.querySelector('.search__more-btn')
-        const formWrapper = main.querySelector('.search__top')
-        const form = main.querySelector('.search-form')
-        const input = form.querySelector('.search-form__input')
-        const clearBtn = form.querySelector('.search-form__clear')
-
-        input.addEventListener('input', () => {
-            if (input.value) {
-                form.classList.add('has-text')
-            } else {
-                form.classList.remove('has-text')
-            }
-        })
-        input.addEventListener('focusin', () => {
-            formWrapper.classList.add('focused')
-        })
-        input.addEventListener('focusout', () => {
-            formWrapper.classList.remove('focused')
-        })
-        clearBtn.addEventListener('click', () => {
-            input.value = ''
-        })
-
-        if (moreBtn) {
-            moreBtn.addEventListener('click', (e) => {
-                e.preventDefault()
-                list.classList.add('full')
-                moreBtnWrapper.classList.add('hidden')
-            })
+    input.addEventListener('input', () => {
+        if (input.value) {
+            form.classList.add('has-text')
+            submitBtn.removeAttribute('disabled')
+        } else {
+            form.classList.remove('has-text')
+            submitBtn.setAttribute('disabled', 'disabled')
         }
     })
+    input.addEventListener('focusin', () => {
+        formWrapper.classList.add('focused')
+    })
+    input.addEventListener('focusout', () => {
+        formWrapper.classList.remove('focused')
+    })
+    clearBtn.addEventListener('click', () => {
+        input.value = ''
+        form.classList.remove('has-text', 'show-result')
+        submitBtn.setAttribute('disabled', 'disabled')
+    })
 
-    
-    
+    if (moreBtn) {
+        moreBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            list.classList.add('full')
+            moreBtnWrapper.classList.add('hidden')
+        })
+    }
+
+    wrapper.addEventListener('hidden.bs.offcanvas', () => {
+        console.log(1)
+        input.value = ''
+        form.classList.remove('has-text')
+        submitBtn.setAttribute('disabled', 'disabled')
+    })
 }
 
 search()
+
+// показать блок с товравми в поиске
+function showSearchResult() {
+    const form = document.querySelector('.search-form')
+    const content = document.querySelector('.search__bottom')
+    const main = document.getElementById('search')
+    if (!form) return
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        content.classList.add('visible')
+        form.classList.add('show-result')
+    })
+
+    main.addEventListener('hidden.bs.offcanvas', () => {
+        content.classList.remove('visible')
+        form.classList.remove('show-result')
+    })
+
+}
+
+showSearchResult()
+
 
 
 function tabs() {

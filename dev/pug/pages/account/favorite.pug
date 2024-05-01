@@ -7,8 +7,8 @@
         .account-mobileHead__qty (2)
     .account-mobileHead__title.ttl избранное
 
-.account-listRow.flex
-    - for (let i = 0; i < 6; i++)
-        .account-listRow__item 
-            +newCard()
-            //- +productCardFavorite('product-img')
+.account-listRow-wrapper
+    .account-listRow.flex
+        - for (let i = 0; i < 6; i++)
+            .account-listRow__item 
+                +newCard(true)
