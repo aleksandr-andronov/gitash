@@ -1440,16 +1440,29 @@ function discountDetails() {
 
         btn.addEventListener('click', (e) => {
             e.preventDefault()
+            e.stopPropagation(); // Остановка всплытия события
             content.classList.toggle('visible')
             setTimeout(() => {
                 content.classList.toggle('animate')
             })
         })
 
+        document.addEventListener('click', (e) => {
+            const target = e.target
+            if (!content.contains(target) && target !== btn) {
+                if (content.classList.contains('visible')) {
+                    content.classList.remove('visible')
+                    setTimeout(() => {
+                        content.classList.remove('animate')
+                    })
+                }
+            }
+        })
     })
 }
 
 discountDetails()
+
 
 function cartDropdownTotal() {
     const btn = document.querySelector('.order-info__price-name-icon')
@@ -1458,14 +1471,29 @@ function cartDropdownTotal() {
 
     btn.addEventListener('click', (e) => {
         e.preventDefault()
+        e.stopPropagation(); // Остановка всплытия события
         content.classList.toggle('visible')
         setTimeout(() => {
             content.classList.toggle('animate')
         })
     })
+
+    document.addEventListener('click', (e) => {
+        const target = e.target
+        if (!content.contains(target) && target !== btn) {
+            if (content.classList.contains('visible')) {
+                content.classList.remove('visible')
+                setTimeout(() => {
+                    content.classList.remove('animate')
+                })
+            }
+        }
+    })
 }
 
 cartDropdownTotal()
+
+
 
 
 function cartDropdownMobile() {
@@ -1494,14 +1522,45 @@ function setupCartSaleInfo() {
 
     btn.addEventListener('click', (e) => {
         e.preventDefault()
+        e.stopPropagation(); // Остановка всплытия события
         content.classList.toggle('visible')
         setTimeout(() => {
             content.classList.toggle('animate')
         })
     })
+
+    document.addEventListener('click', (e) => {
+        const target = e.target
+        if (!content.contains(target) && target !== btn) {
+            if (content.classList.contains('visible')) {
+                content.classList.remove('visible')
+                setTimeout(() => {
+                    content.classList.remove('animate')
+                })
+            }
+        }
+    })
 }
 
 setupCartSaleInfo()
+
+
+
+function enableBtnPromocode() {
+    const input = document.querySelector('.cart-total__promocode-input');
+    const button = document.querySelector('.order-info__promocode-btn');
+
+    input.addEventListener('input', function() {
+        if (this.value.trim() !== '') {
+            button.removeAttribute('disabled');
+        } else {
+            button.setAttribute('disabled', true);
+        }
+    });
+}
+
+// Вызов функции для активации функциональности
+enableBtnPromocode();
 
 
 // функция увелечения и уменьшения количества товаров в корзине

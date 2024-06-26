@@ -9,6 +9,11 @@
             opacity: 0.3;
         }
     }
+    &.card-no-colors {
+        .card-hidden {
+            bottom: 0;
+        }
+    }
     &-img-mobile {
         display: none;
         background: var(--card--bg);
@@ -29,6 +34,7 @@
         }
         &__slider-img {
             background: var(--card--bg);
+            margin-top: -52px;
         }
         &__pagination {
             position: absolute;
@@ -213,6 +219,11 @@
                 }
             }
         }
+        &-img {
+            &__slider-img {
+                margin-top: -32px;
+            }
+        }
         &-info {
             padding: 24px;
             &__name {
@@ -268,6 +279,7 @@
 
 @media (max-width: 932px) {
     .card {
+        overflow: hidden;
         &-img {
             display: none;
             img {
@@ -276,6 +288,10 @@
         }
         &-img-mobile {
             display: block;
+            &__inner {
+                position: relative;
+                top: -32px;
+            }
         }
         &-info {
             padding: 20px;

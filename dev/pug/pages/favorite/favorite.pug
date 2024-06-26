@@ -1,0 +1,26 @@
+.favoritePage
+    .container
+        .favoritePage-back
+            a.order__back.btn-circle(href="#") 
+                +icon('a-left-sm')
+        .favoritePage-content
+            .favoritePage-content__inner.list 
+                .favoritePage-content__col.col
+                    .favoritePage-content__img
+                        +svg('favorite-null', '404', '367')
+                .favoritePage-content__col.col
+                    .favoritePage-content__info 
+                        .favoritePage-content__title.h3.ttl Избранное
+                        .favoritePage-content__txt Тут пока пусто. Нажимайте на <span> <img src="static/images/general/heart-icon.svg"> </span>, чтобы добавить товар в избранное
+        .favoritePage-recomend
+            .product-more__title.ttl.h3 вам может <br>понравиться
+            .mainSection-slider-wrapper.product-slider-wrapper
+                .product-slider 
+                    .swiper-wrapper 
+                        - for (let i = 0; i < 10; i++)
+                            .product-slider__slide.swiper-slide
+                                +newCard()
+                button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+                    include ../../icons/left-12
+                button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+                    include ../../icons/right-12

@@ -1,83 +1,127 @@
-#search2.offcanvas.offcanvas-top(tabindex="-1")
+#search.offcanvas.offcanvas-top(tabindex="-1" data-bs-backdrop="false")
     .search
-        .search__top.d-flex
-            .search__top-form 
-                form.search-form(action="/") 
-                    input.search-form__input.ttl(type="text" placeholder="я ищу")
-                    button.search-form__clear.icon(type="button")
-                        +svg('close', '14', '14')
-            .search__top-close
-                button.search-close(type="button" data-bs-dismiss="offcanvas" aria-label="закрыть") ЗАКРЫТЬ
+        .search__top
+            .search__top-inner.d-flex
+                .search__top-form 
+                    form.search-form(action="/") 
+                        input.search-form__input.ttl(type="text" placeholder="я ищу")
+                        .search-form__actions.d-flex
+                            button.search-form__clear.icon(type="button")
+                                +svg('close', '14', '14')
+                            button.search-form__submit.centered(type="submit" disabled)
+                                include ../../icons/search
+                .search__top-close
+                    button.search-close(type="button" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        span.search-close__txt ЗАКРЫТЬ
+                        span.search-close__icon 
+                            +svg('arrow-left', '14', '14')
         .search__bottom
-            .search-content.d-flex 
-                .search-content__left 
-                    .search-menu
-                        .search-menu__group 
-                            .search-menu__title Часто ищут
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('search-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Кроссовки</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('search-grey', '16', '16')
-                        .search-menu__group 
-                            .search-menu__title искать в категориях
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Сапоги</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Ботильоны</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                        .search-menu__group 
-                            .search-menu__title искать в коллекциях
-                            .search-menu__list
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>Be king</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                                .search-menu__list-item
-                                    a.search-menu__list-link.d-flex(href="#") 
-                                        span.search-menu__list-link__txt <span>FW’24</span> / Женщинам
-                                        span.search-menu__list-link__icon.icon
-                                            +svg('right-grey', '16', '16')
-                .search-content__right
-                    .search__title результаты поиска(45)
-                    .search__list
-                        .search-list.flex 
-                            .search-list__item 
-                                +productCard('img1', false)
-                            .search-list__item 
-                                +productCard('img2', false)
-                            .search-list__item 
-                                +productCard('img3', false)
-                            .search-list__item 
-                                +productCard('img1', false)
-                            .search-list__item 
-                                +productCard('img2', false)
-                            .search-list__item 
-                                +productCard('img3', false)
-                            .search-list__item 
-                                +productCard('img1', false)
-                            .search-list__item 
-                                +productCard('img2', false)
-                            .search-list__item 
-                                +productCard('img3', false)
-                            .search-list__item 
-                                +productCard('img1', false)
-                            .search-list__item 
-                                +productCard('img2', false)
-                            .search-list__item 
-                                +productCard('img3', false)
-                    .search__more
-                        a.search__more-btn.btn(href="#") ПОКАЗАТЬ ВСЕ РЕЗУЛЬТАТЫ(20) 
+            .container
+                .search__bottom-null
+                    .search-null
+                        .search-null__inner.d-flex 
+                            .search-null__left 
+                                .search-null__img
+                                    +svg('search-null', '463', '345')
+                            .search-null__right 
+                                .search-null__info 
+                                    .search-null__title.h3.ttl ничего не найдено
+                                    .search-null__txt Попробуйте изменить запрос и мы поищем ещё раз.
+                    .search-recomend
+                        .product-more__title.ttl.h3 вам может <br>понравиться
+                        .mainSection-slider-wrapper.product-slider-wrapper
+                            .product-slider 
+                                .swiper-wrapper 
+                                    - for (let i = 0; i < 10; i++)
+                                        .product-slider__slide.swiper-slide
+                                            +newCard()
+                            button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+                                include ../../icons/left-12
+                            button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+                                include ../../icons/right-12
+
+#cart.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 корзина
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            .cart
+                .cart-null Здесь пока пусто. Посмотрите наши новинки или воспользуйтесь поиском, если ищете что-то конкретное
+                .cart-recomend
+                    .cart-recomend__head
+                        .cart-recomend__head-inner.d-flex 
+                            .cart-recomend__head-title 
+                                .cart-recomend__title.ttl.h6 рекомендуем
+                            .cart-recomend__head-controls 
+                                .cart-recomend__controls.d-flex 
+                                    a.cart-recomend__controls-btn.cart-recomend__controls-prev.centered(href="#") 
+                                        +svg('prev', '16', '16')
+                                    a.cart-recomend__controls-btn.cart-recomend__controls-next.centered(href="#") 
+                                        +svg('next', '16', '16')
+                    .cart-recomend__body
+                        .cart-slider 
+                            .swiper-wrapper 
+                                - for (let i = 0; i < 5; i++)
+                                    .cart-slider__slide.swiper-slide 
+                                        +newCard(false, true)
+
+#subscribeSize.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 подписаться на&nbsp;размер
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body 
+            form.offcanvas-subscribe.form(action="/") 
+                .offcanvas-subscribe__checkboxes 
+                    .offcanvas-subscribe__checkboxes-inner.d-flex 
+                        .offcanvas-subscribe__checkboxes-col 
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 35
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 36
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 37
+                        .offcanvas-subscribe__checkboxes-col 
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 38
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 39
+                            .offcanvas-subscribe__checkboxes-item 
+                                label.form-checkbox
+                                    input(type="checkbox")
+                                    span.form-checkbox__content 
+                                        span.form-checkbox__icon
+                                        span.form-checkbox__info 40
+                .offcanvas-subscribe__txt Мы обязательно напишем вам, когда нужный размер появится в&nbsp;наличии
+                .offcanvas-subscribe__group.d-flex
+                    .offcanvas-subscribe__group-right 
+                        button.offcanvas-subscribe__btn.btn(type="submit") подписаться

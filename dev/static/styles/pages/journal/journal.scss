@@ -1,0 +1,159 @@
+.journalPage {
+    &-header {
+        padding-top: 30px;
+        &__content {
+            align-items: center;
+            &-menu {
+                margin-left: auto;
+            }
+            &-actions {
+                margin-left: 44px;
+            }
+        }
+    }
+    &-menu {
+        font-weight: 500;
+        &__item {
+            margin-right: 16px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &-intro {
+        --intro-mb: 24px;
+        padding-top: 64px;
+        margin-bottom: 64px;
+        padding-bottom: var(--intro-mb);
+        border-bottom: 1px solid var(--black);
+        position: relative;
+        &__title {
+            padding-bottom: var(--intro-mb);
+            border-bottom: 1px solid var(--black);
+            margin-bottom: var(--intro-mb);
+        }
+        &__stats {
+            margin-bottom: var(--intro-mb);
+        }
+        &__img {
+            text-align: center;
+            max-width: 916px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &-title {
+        font-size: vw(86, 1920);
+        line-height: 77%;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+    }
+    &-h2 {
+        padding-left: vw(464, 1920);
+        padding-right: vw(246, 1920);
+        font-size: vw(68, 1920);
+    }
+    &-caption {
+        font-size: vw(32, 1920);
+        line-height: 102%;
+        letter-spacing: -0.04em;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+    }
+    &-stats {
+        justify-content: space-between;
+        font-size: 18px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &-share {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 10px 16px;
+        text-transform: initial;
+        border-radius: 28px;
+        position: absolute;
+        right: 0;
+        bottom: var(--intro-mb);
+        &__icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+    }
+    &-content {
+        &__group {
+            margin-bottom: vw(138, 1920);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-item {
+        &__group {
+            margin-bottom: vw(54, 1920);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    &-text {
+        font-size: vw(18, 1920);
+        line-height: 156%;
+        p {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-text-center {
+        max-width: vw(916, 1920);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-twoImg {
+        width: 1376px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        &__list {
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+        &__col {
+            width: 50%;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        &__item {
+            height: 100%;
+            &--px-1 {
+                padding: 0px 46px;
+            }
+        }
+    }
+    &-card {
+        &__img {
+            margin-bottom: 16px;
+        }
+        &__title {
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.015em;
+            margin-bottom: 10px;
+        }
+        &__price {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            line-height: normal;
+            letter-spacing: 0.06em;
+            &-old {
+                margin-right: 10px;
+                text-decoration: line-through;
+            }
+        }
+    }
+}

@@ -1,13 +1,13 @@
 .account.account--gray
     .container 
         .account-mobile
-            .account-mobile__top 
+            .account-mobile__top.account-mobile__top--mb-2  
                 .account-mobile__title.ttl привет, АЛЕВТИНА
-            .account-mobile__banner
-                .account-mobile__banner-img 
-                    +jpgG('sale-banner', '348', '154')
-                .account-mobile__banner-title.ttl.title1 Моя персональная <br>скидка
-                .account-mobile__banner-value.ttl 5%
+            .account-banner
+                .account-banner__inner
+                    .account-banner__title.ttl Моя персональная скидка
+                    .account-banner__txt применяется автоматически в&nbsp;каталоге
+                    .account-banner__sale.ttl 5%
             .account-mobile__middle 
                 .account-mobile__orders 
                     .account-mobile__orders-inner.d-flex 
@@ -26,7 +26,9 @@
                 .account-mobile__menu 
                     ul.account-menu
                         li.account-menu__item 
-                            a.account-menu__link.outline-border(href="#") Возвраты
+                            a.account-menu__link.outline-border(href="#") 
+                                span.account-menu__link-txt Возвраты
+                                span.account-menu__link-qty.centered 1
                         li.account-menu__item 
                             a.account-menu__link.outline-border(href="#") Адреса
                         li.account-menu__item 
@@ -34,11 +36,13 @@
                         li.account-menu__item 
                             a.account-menu__link.outline-border(href="#") Подарки
                         li.account-menu__item 
-                            a.account-menu__link.outline-border(href="#") Сертификаты
+                            a.account-menu__link.outline-border(href="#") 
+                                span.account-menu__link-txt Сертификаты
+                                span.account-menu__link-qty.centered 1
                         li.account-menu__item 
                             a.account-menu__link.outline-border(href="#") Настройки
                         li.account-menu__item 
-                            a.account-menu__link.outline-border(href="#") 
+                            a.account-menu__link.account-menu__link--logout.outline-border(href="#") 
                                 span.account-menu__link-txt Выйти
                                 span.account-menu__link-icon.icon 
                                     +svg('logout', '14', '14')

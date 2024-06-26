@@ -1,0 +1,84 @@
+.journalPage
+    .journalPage-header 
+        .container
+            .journalPage-header__content.d-flex 
+                .journalPage-header__content-logo 
+                    a.journalPage-logo(href="/") 
+                        +svg('logo-world')
+                .journalPage-header__content-menu 
+                    ul.journalPage-menu.flex
+                        li.journalPage-menu__item   
+                            a.journalPage-menu__link(href="#") раздел 1
+                        li.journalPage-menu__item   
+                            a.journalPage-menu__link(href="#") раздел 1
+                        li.journalPage-menu__item   
+                            a.journalPage-menu__link(href="#") раздел 1
+                        li.journalPage-menu__item   
+                            a.journalPage-menu__link(href="#") раздел 1
+                .journalPage-header__content-actions 
+                    ul.journalPage-actions.flex
+                        li.journalPage-actions__item 
+                            a.journalPage-actions__link.icon(href="#")
+                                +icon('search-bold') 
+    .journalPage-body 
+        .container
+            .journalPage-intro
+                .journalPage-intro__title
+                    h1.journalPage-title.ttl мечты о лете
+                .journalPage-intro__stats 
+                    .journalPage-stats.d-flex
+                        .journalPage-stats__item 12  мая 2024
+                        .journalPage-stats__item 5 мин чтения
+                        .journalPage-stats__item style icon
+                .journalPage-intro__img
+                    img(src="static/images/content/j-1.png", alt="img")
+                a.journalPage-share.btn.btn-outline(href="#") 
+                    span.journalPage-share__txt поделиться
+                    span.journalPage-share__icon.icon 
+                        +icon('share')
+            .journalPage-content
+                .journalPage-content__group
+                    .journalPage-item
+                        .journalPage-caption.ttl Продолжаем знакомить вас с <span class="grey-text">новой коллекцией SS24</span>. Ее название <span class="grey-text">(Sunday + daze)</span> — это состояние расслабленности, которое может посетить нас в неспешное воскресенье. Чтобы вас это состояние умиротворения не покидало, мы добавили надпись на язычки кроссовок.
+                        .journalPage-text.journalPage-text-center
+                            p Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи. Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи.
+                            p Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи. Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи.
+                .journalPage-content__group
+                    .journalPage-item
+                        .journalPage-item__group 
+                            h2.journalPage-h2.ttl Дух свободы
+                        .journalPage-item__group 
+                            .journalPage-twoImg
+                                .journalPage-twoImg__list.flex 
+                                    .journalPage-twoImg__col
+                                        .journalPage-twoImg__item.centered.journalPage-twoImg__item--px-1 
+                                            img(src="static/images/content/j-2.png", alt="img")
+                                    .journalPage-twoImg__col
+                                        .journalPage-twoImg__item.centered
+                                            img(src="static/images/content/j-3.png", alt="img")
+                        .journalPage-item__group
+                            .journalPage-text.journalPage-text-center
+                                p Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи. Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи.
+                        .journalPage-item__group
+                            .journalPage-slider
+                                .swiper-wrapper 
+                                    - for (let i = 0; i < 4; i++)
+                                        .swiper-slide 
+                                            +journalCard()
+                .journalPage-content__group
+                    .journalPage-item
+                        .journalPage-item__group 
+                            h2.journalPage-h2.ttl 10 новых ботфортов на осень
+                        .journalPage-item__group 
+                            .journalPage-text.journalPage-text-center
+                                p Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи. Многослойный образ от @yana.koroed: водолазка под рубашку, а сверху — шерстяной пиджак в тон казакам FAME. Идеально для переменчивой весенней погоды и похода на выставку в ГЭС-2 или новый корпус Третьяковской галереи.
+                        .journalPage-item__group
+                            .journalPage-blockTwo
+                                .journalPage-blockTwo__inner.flex 
+                                    .journalPage-blockTwo__col
+                                        .journalPage-blockTwo__img 
+                                            img(src="static/images/content/j-4.png", alt="img") 
+                                    .journalPage-blockTwo__col
+                        .journalPage-item__group
+                        .journalPage-item__group
+                            .journalPage-caption.ttl Продолжаем знакомить вас с <span class="grey-text">новой коллекцией SS24</span>. Ее название <span class="grey-text">(Sunday + daze)</span> — это состояние расслабленности, которое может посетить нас в неспешное воскресенье. Чтобы вас это состояние умиротворения не покидало, мы добавили надпись на язычки кроссовок.

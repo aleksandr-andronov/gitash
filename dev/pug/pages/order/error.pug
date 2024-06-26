@@ -1,0 +1,65 @@
+.order.order--statusPage
+    .container
+        .order__inner
+            .order__content.flex
+                .order__col.order__col-3
+                .order__col.order__col-6
+                    .content__info
+                        .order-status-wrapper
+                            .order-status
+                                .order-status__top 
+                                    .order-status__info
+                                        .order-status__info-img.order-status__info-img--success 
+                                            +svg('order-error', '310', '290')
+                                        .order-status__info-title.order-status__info-title--error.h4.ttl платеж <br>не&nbsp;прошел
+                                        .order-status__info-desc
+                                            .order-status__info-desc__item К сожалению платеж не прошел. Попробуйте снова или выберите другой способ оплаты
+                                .order-status__bottom.order-status__bottom--mt
+                                    .order-form__title.h6.ttl способ оплаты
+                                    .order-form__payments
+                                        .order-form__payments-item 
+                                            label.order-form__payment
+                                                input(type="radio" data-type="notinshares" name="payment")
+                                                span.order-form__payment-content.d-flex.outline-border 
+                                                    span.order-form__payment-check.centered 
+                                                    span.order-form__payment-txt СБП
+                                                    span.order-form__payment-icon.centered 
+                                                        +svg('payment-1')
+                                        .order-form__payments-item 
+                                            label.order-form__payment
+                                                input(type="radio" data-type="notinshares" name="payment" checked)
+                                                span.order-form__payment-content.d-flex.outline-border 
+                                                    span.order-form__payment-check.centered 
+                                                    span.order-form__payment-txt Картой онлайн
+                                                    span.order-form__payment-icon.centered 
+                                                        +svg('payment-2')
+                                        .order-form__payments-item 
+                                            label.order-form__payment
+                                                input(type="radio" data-type="inshares" name="payment")
+                                                span.order-form__payment-content.flex.outline-border 
+                                                    span.order-form__payment-content__group.d-flex
+                                                        span.order-form__payment-check.centered 
+                                                        span.order-form__payment-txt Долями
+                                                        span.order-form__payment-icon.centered 
+                                                            +svg('payment-3')
+                                                    span.order-form__payment-content__hidden-wrapper.collapse#paymentHidden
+                                                        span.order-form__payment-content__hidden 
+                                                            span.order-form__payment-txt-2 Раздели покупку на четыре платежа по 4 584 ₽. 
+                                                            a.order-form__payment-link.d-flex(href="#paymentShares" data-bs-toggle="offcanvas") 
+                                                                span.order-form__payment-link__txt подробнее
+                                                                span.order-form__payment-link__icon.icon 
+                                                                    +icon('right')
+                                        .order-form__payments-item 
+                                            label.order-form__payment
+                                                input(type="radio" data-type="notinshares" name="payment")
+                                                span.order-form__payment-content.d-flex.outline-border 
+                                                    span.order-form__payment-check.centered 
+                                                    span.order-form__payment-txt SberPay
+                                                    span.order-form__payment-icon.centered 
+                                                        +svg('payment-4')
+                                    .order-form__controls
+                                        .order-form__controls-btn 
+                                            button.order-form__btn(type="submit") оплатить заказ
+                .order__col.order__col-3
+                    a.order__close-btn.btn-circle(href="#") 
+                        +svg('close')

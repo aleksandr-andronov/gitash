@@ -8,7 +8,7 @@
         }
         &__group {
             position: relative;
-            &.focused {
+            &.focused, &.error {
                 .form-item__label {
                     font-size: 14px;
                     padding: 1px 6px;
@@ -33,6 +33,14 @@
                     &-active {
                         display: flex;
                     }
+                }
+            }
+            &.error {
+                .form-input {
+                    border-color: var(--error);
+                }
+                .form-item__label {
+                    color: var(--error);
                 }
             }
             &.filled {
@@ -497,7 +505,7 @@
         }
         &-item {
             &__group {
-                &.focused {
+                &.focused, &.error {
                     .form-item__label {
                         font-size: 12px;
                     }
@@ -626,7 +634,7 @@
     .form {
         &-select {
             &.opened {
-                z-index: 99;
+                z-index: 151;
                 .form-select__backdrop  {
                     display: block;
                 }

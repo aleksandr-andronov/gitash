@@ -11,9 +11,17 @@
             justify-content: space-between;
         }
     }
+    &__result-title {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 12px;
+    }
     &__title {
         text-align: center;
         margin-bottom: 32px;
+        &--mb-2 {
+            margin-bottom: 56px;
+        }
     }
     &__actions {
         margin-bottom: 24px;
@@ -173,6 +181,9 @@
             height: 40px;
             border-radius: 10px;
             transition: background .2s ease-in-out;
+            &::before {
+                border-color: transparent;
+            }
             &:hover {
                 background: var(--element-hover);
             }
@@ -219,6 +230,20 @@
     }
 }
 
+.tooltip {
+    --bs-tooltip-font-size: 16px;
+    --bs-tooltip-bg: #FFFFFF;
+    --bs-tooltip-opacity: 1;
+    &-inner {
+        --bs-tooltip-bg: #FFFFFF;
+        --bs-tooltip-padding-x: 20px;
+        --bs-tooltip-padding-y: 12px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04), 0px 4.4px 7px rgba(0, 0, 0, 0.04);
+        line-height: 1;
+    }
+}
+
 .sorting {
     position: relative;
     
@@ -242,6 +267,7 @@
         width: 358px;
         border-radius: 4px;
         background: var(--white);
+        z-index: 99;
         &::before {
             border-color: var(--black);
         }
@@ -292,6 +318,15 @@
             height: 356px;
             padding-top: 130px;
             margin-bottom: 44px;
+        }
+    }
+
+    .tooltip {
+        --bs-tooltip-font-size: 14px;
+        &-inner {
+            --bs-tooltip-padding-x: 16px;
+            --bs-tooltip-padding-y: 8px;
+            border-radius: 8px;
         }
     }
 
@@ -391,10 +426,28 @@
                 }
             }
         }
+        &__head {
+            width: 100%;
+        }
+        &__title {
+            width: 100%;
+        }
         &-banner {
-            height: 238px;
+            height: 413px;
             padding-top: 78px;
+            padding-bottom: 78px;
             color: var(--white);
+            .container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .catalog-banner__title {
+                margin: auto;
+                max-width: 248px;
+                font-size: 32px;
+                line-height: 76%;
+            }
         }
     }
 

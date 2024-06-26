@@ -1,0 +1,21 @@
+#addComment.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 комментарий к&nbsp;заказу
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .form-item
+                        .form-item__group 
+                            .form-item__label комментарий
+                            input.form-input#commentInput(type="text")
+                .address-form__foot 
+                    button.address-form__btn.btn#commentBtn(type="button" data-default="пропустить" data-change="сохранить и продолжить" data-bs-dismiss="offcanvas") пропустить

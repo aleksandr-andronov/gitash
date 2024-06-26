@@ -1,0 +1,43 @@
+.order.order--statusPage
+    .container
+        .order__inner
+            .order__content.flex
+                .order__col.order__col-3
+                .order__col.order__col-6
+                    .content__info
+                        .order-status-wrapper
+                            .order-status
+                                .order-status__top 
+                                    .order-status__info
+                                        .order-status__info-img.order-status__info-img--success 
+                                            +svg('order-success', '321', '296')
+                                        .order-status__info-title.h4.ttl заказ успешно оплачен
+                                        .order-status__info-desc
+                                            .order-status__info-desc__item
+                                                .order-status__info-desc__item-inner.d-flex 
+                                                    .order-status__info-desc__item-txt № заказа 48087
+                                                    .order-status__info-desc__item-icon.icon 
+                                                        include ../../icons/copy
+                                            .order-status__info-desc__item С информацией о заказе и статусе можно ознакомиться в личном кабинете.
+                                        a.order-status__info-link.btn.btn-outline(href="#")  посмотреть заказ
+                                .order-status__bottom
+                                    .order-information.outline-border 
+                                        .order-information__title Информация об операции
+                                        .order-information__list
+                                            .order-information__list-item.d-flex 
+                                                .order-information__list-item__name Услуга
+                                                .order-information__list-item__value оплата заказа
+                                            .order-information__list-item.d-flex 
+                                                .order-information__list-item__name Сумма платежа
+                                                .order-information__list-item__value 18 336 ₽
+                                            .order-information__list-item.d-flex 
+                                                .order-information__list-item__name Дата и время
+                                                .order-information__list-item__value 09.08.2023 <br> 12:09
+                                            .order-information__list-item.d-flex 
+                                                .order-information__list-item__name Номер транзакции
+                                                .order-information__list-item__value 43948398
+                                    .order__grey-txt.tech-14 По вопросам, связанным с выполнением оплаченного заказа, обращайтесь в  ООО "ФЭШН РИТЕЙЛ" по эл. почте <a href="mailto:support@ashrussia.ru">support@ashrussia.ru</a>. или телефону 
+                                        a(href="tel:88005007682") 8 (800) 500-76-82
+                .order__col.order__col-3
+                    a.order__close-btn.btn-circle(href="#") 
+                        +svg('close')

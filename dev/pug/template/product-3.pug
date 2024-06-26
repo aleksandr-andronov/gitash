@@ -1,0 +1,447 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	body.productPage
+		.wrapper
+			include ../modules/header/header
+			.product-page
+				.container
+					.breadcrumbs
+						ul.breadcrumbs-list.flex 
+							li.breadcrumbs-list__item 
+								a.breadcrumbs-list__link(href="#") главная
+							li.breadcrumbs-list__item 
+								a.breadcrumbs-list__link(href="#") женщинам
+							li.breadcrumbs-list__item 
+								a.breadcrumbs-list__link(href="#") Новая коллекция ASH SS’23
+							li.breadcrumbs-list__item кроссовки женские addict серые
+					.product
+						.product__inner.d-flex 
+							.product__left 
+								.product-gallery(class= availability ? 'product-gallery--null' : '')
+									.product-gallery__list.flex
+										.product-gallery__item
+											.product-gallery__img(data-img="1") 
+												+jpgC('img-1', '1070', '1332')
+												a.product-back.btn-circle(href="#")
+													+icon('a-left-sm') 
+												.product-badges.d-flex
+													.product-badges__item
+														+svg('bekind', '54', '24')
+													.product-badges__item
+														+svg('reash', '68', '24')
+										- for (let i = 1; i < 8; i++)
+											.product-gallery__item 
+												.product-gallery__img(data-img=`${i+1}`) 
+													+jpgC(`img-${i+1}`, '1070', '1332')
+								.product-galleryMobile(class= availability ? 'product-galleryMobile--null' : '')
+									.product-galleryMobile__slider.slider
+										.swiper-wrapper 
+											- for (let i = 0; i < 5; i++)
+												.swiper-slide 
+													.product-galleryMobile__img 
+														+jpgC('img-m', '375', '462')
+									.product-galleryMobile__pagination.slider-pagination
+									a.product-back.btn-circle(href="#")
+										+icon('a-left-sm') 
+									.product-badges.d-flex
+										.product-badges__item
+											+svg('bekind', '54', '24')
+										.product-badges__item
+											+svg('reash', '68', '24')
+							.product__right
+								h1.product__title.ttl.h4 кроссовки женские Addict
+								.product__price 
+									.product-price
+										.product-price__new.h5.ttl 17 140 ₽ 
+
+										if (badge == 'new')
+											.product-price__sticker
+												.product-price__sticker__item
+													.product-price__sticker-sale.d-flex 
+														.product-price__sticker-sale__txt.sticker.sticker--new.ttl new
+										else if(badge == 'last')
+											.product-price__sticker
+												.product-price__sticker__item
+													.product-price__sticker-sale.d-flex 
+														.product-price__sticker-sale__txt.sticker.sticker--sale.ttl -30%
+														.product-price__sticker-sale__icon
+															.product-price__sticker-sale__icon-btn.icon
+																include ../icons//info
+															.product-price__dropdown
+																.product-price__dropdown-backdrop.backdrop.product-price__close
+																.product-price__dropdown-inner 
+																	a.product-price__dropdown-close.icon.product-price__close(href="#")
+																		+svg('close', '14', '14')  
+																	.product-price__dropdown-title Детализация скидки
+																	.product-price__dropdown-content 
+																		.product-price__dropdown-item.d-flex 
+																			.product-price__dropdown-item__name Скидка на товары
+																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																		.product-price__dropdown-item.d-flex 
+																			.product-price__dropdown-item__name Последняя пара
+																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																.product-price__dropdown-arrow 
+																	+svg('dropdown-arrow', '32', '16')
+												.product-price__sticker__item
+													.product-price__sticker-sale.d-flex 
+														.product-price__sticker-sale__txt.sticker.ttl last -10%
+											
+										else
+											.product-price__old.ttl 24 490 ₽
+											.product-price__sticker
+												.product-price__sticker__item
+													.product-price__sticker-sale.d-flex 
+														.product-price__sticker-sale__txt.sticker.sticker--sale.ttl -30%
+														.product-price__sticker-sale__icon
+															.product-price__sticker-sale__icon-btn.icon
+																include ../icons//info
+															.product-price__dropdown
+																.product-price__dropdown-backdrop.backdrop.product-price__close
+																.product-price__dropdown-inner 
+																	a.product-price__dropdown-close.icon.product-price__close(href="#")
+																		+svg('close', '14', '14')  
+																	.product-price__dropdown-title Детализация скидки
+																	.product-price__dropdown-content 
+																		.product-price__dropdown-item.d-flex 
+																			.product-price__dropdown-item__name Скидка на товары
+																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																		.product-price__dropdown-item.d-flex 
+																			.product-price__dropdown-item__name Последняя пара
+																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																.product-price__dropdown-arrow 
+																	+svg('dropdown-arrow', '32', '16')
+												
+								.product__installments
+									.product-installments.outline-border 
+										.product-installments__txt.txt-sm 4 платежа по 4 522 ₽
+										a.product-installments__link(href="#paymentShares" data-bs-toggle="offcanvas") 
+											span.product-installments__link-img 
+												+svg('dolyame_black', '81', '14')
+											span.product-installments__link-icon.icon 
+												include ../icons//right
+								.product__colors 
+									.product__subtitle
+										.product__subtitle-txt.base-up цвет
+									.product-colors.slider 
+										.swiper-wrapper 
+											- for (let i = 0; i < 5; i++)
+												.product-colors__slide.swiper-slide
+													a.product-colors__item(href="#") 
+														+jpgC('color', '121', '151')
+								.product__size 
+									.product__subtitle
+										.product__subtitle-txt.base-up.product-size__title(data-default="размер" data-error="выберите размер") Размер
+										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
+
+									if (size2)
+										.product-size
+											.product-size__list-wrapper 
+												.product-size__list.flex 
+													.product-size__list-item
+														a.product-size__btn.outline-border.centered(href="#") 35 
+													.product-size__list-item 
+														a.product-size__btn.outline-border.centered(href="#") 36
+													.product-size__list-item 
+														a.product-size__btn.disabled.outline-border.selected.centered(href="#") 37
+													.product-size__list-item 
+														a.product-size__btn.outline-border.centered(href="#") 38
+													.product-size__list-item 
+														a.product-size__btn.disabled.outline-border.centered(href="#") 39
+													.product-size__list-item 
+														a.product-size__btn.outline-border.centered(href="#") 40
+													.product-size__list-item 
+														a.product-size__btn.outline-border.centered(href="#") 41
+											.product-size__actions.d-flex
+												.product-size__actions-left 
+													.product-size__btn-wrapper.product-size__btn-default.hidden
+														a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+															span.product-cartBtn__output добавить в корзину
+															span.product-cartBtn__animate 
+																span 
+																span 
+																span 
+																span 
+													.product-size__btn-wrapper.product-size__btn-change
+														if (signed)
+															a.product-cartBtn.btn.btn-outline(href="#subscribeSize" data-bs-toggle="offcanvas")
+																span.product-cartBtn__icon.icon 
+																	+svg('bell-active', '20', '20') 
+																span.product-cartBtn__txt вы подписаны
+														else
+															a.product-cartBtn.btn.btn-outline(href="#subscribeSize" data-bs-toggle="offcanvas")
+																span.product-cartBtn__icon.icon 
+																	+svg('bell', '20', '20') 
+																span.product-cartBtn__txt сообщить о поступлении 
+												.product-size__actions-right
+													a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+														span.product-favoriteBtn__icon.icon 
+															+icon('heart')
+															+icon('heart-fill')
+									else
+										.product-size
+											.product-size__select 
+												.form-select.size-select
+													.form-select__backdrop.backdrop
+													a.form-select__btn.outline-border(href="#") 
+														.form-select__btn-txt не выбран
+														.form-select__btn-icon.icon 
+															+svg('down-black', '16', '16')
+													.form-select__dropdown.outline-border
+														.form-select__dropdown-inner-wrapper
+															a.form-select__close.icon(href="#" aria-label="close")
+																+svg('close', '14', '14') 
+															.form-select__head
+																.form-select__head-inner.d-flex 
+																	.form-select__head-txt Размер
+																	a.form-select__head-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
+															.form-select__dropdown-inner
+																.form-select__list
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="35")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 35
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="36")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 
+																					span 36
+																					span.sale Последний размер — 10%
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		.form-select__radio
+																			a.form-select__radio-content.form-select__radio-content--disabled(href="#subscribeSize" data-bs-toggle="offcanvas") 
+																				span.form-select__radio-txt 37
+																				span.form-select__radio-subscription
+																					span.form-select__radio-subscription__icon.icon
+																						+svg('bell', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="38")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 38
+																				span.form-select__radio-subscription
+																					span.form-select__radio-subscription__txt.txt-sm Вы подписаны
+																					span.form-select__radio-subscription__icon.icon 
+																						+svg('bell-active', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="39")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 39
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="40")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 40
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="41")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 41
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="42")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 42
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+																	.form-select__list-item 
+																		label.form-select__radio
+																			input.product-size__radio(type="radio" name="selectSize" data-value="43")
+																			span.form-select__radio-content 
+																				span.form-select__radio-txt 43
+																				span.form-select__radio-icon.icon 
+																					+svg('check-circle', '16', '16')
+											.product-size__actions-wrapper
+												.product-size__actions.d-flex(class= !availability ? 'product-size__actions--fixed' : '')
+													.product-size__actions-left 
+														if (availability)
+															a.product-cartBtn.btn(href="#" disabled) нет в наличии
+														else
+															a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+																span.product-cartBtn__output добавить в корзину
+																span.product-cartBtn__animate 
+																	span 
+																	span 
+																	span 
+																	span 
+													.product-size__actions-right
+														a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+															span.product-favoriteBtn__icon.icon 
+																+icon('heart')
+																+icon('heart-fill')
+								.product__notification
+									.product-notification
+										.product-notification__item.d-flex 
+											.product-notification__item-icon.icon 
+												include ../icons//wallet
+											.product-notification__item-txt.txt-sm Оплата банковской картой онлайн
+										.product-notification__item.d-flex 
+											.product-notification__item-icon.product-notification__item-icon--outline.icon 
+												include ../icons//car
+											.product-notification__item-txt.txt-sm Бесплатная доставка курьером по всей России
+								.product__info 
+									.product-info
+										.product-info__group 
+											.product-info__item
+												a.product-info__item-btn.d-flex(href="#")
+													span.product-info__item-btn__txt.txt-sm артикул 440515
+													span.product-info__item-btn__icon.icon 
+														+icon('copy')
+										.product-info__group 
+											.product-info__item
+												a.product-info__item-btn.d-flex(href="#hiddenInfo1" data-bs-toggle="collapse")
+													span.product-info__item-btn__txt.txt-sm описание
+													span.product-info__item-btn__icon.icon 
+														+icon('plus-circle')
+														+icon('minus-circle')
+												.product-info__hidden.collapse#hiddenInfo1 
+													.product-info__txt.txt-sm Культовый силуэт бренда ASH – кроссовки ADDICT в серой гамме на массивной, но лёгкой подошве из EVA, дополненный декоративными элементами серебряного цвета. Фактурный дизайн из текстиля, кожи, замши и нубука. Задник украшен логотипом.
+										.product-info__group 
+											.product-info__item
+												a.product-info__item-btn.d-flex(href="#hiddenInfo2" data-bs-toggle="collapse")
+													span.product-info__item-btn__txt.txt-sm детали
+													span.product-info__item-btn__icon.icon 
+														+icon('plus-circle')
+														+icon('minus-circle')
+												.product-info__hidden.collapse#hiddenInfo2 
+													.product-info__item-list.txt-sm
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Цвет:
+															.product-info__item-list__value коричневый
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Сезон:
+															.product-info__item-list__value демисезон
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал верха:
+															.product-info__item-list__value велюр, кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал подкладки:
+															.product-info__item-list__value кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал подошвы:
+															.product-info__item-list__value кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Высота каблука:
+															.product-info__item-list__value 4.5 см
+					.product-more.product-more--mood
+						.product-more__title.ttl.h3 mood
+						.product-mood 
+							.swiper-wrapper 
+								.product-mood__slide.swiper-slide
+									.product-mood__img 
+										+jpgC('mood-1', '394', '664')
+								.product-mood__slide.swiper-slide
+									.product-mood__img 
+										+jpgC('mood-2', '394', '394')
+								.product-mood__slide.swiper-slide
+									.product-mood__img 
+										+jpgC('mood-3', '394', '533')
+								.product-mood__slide.swiper-slide
+									.product-mood__img 
+										+jpgC('mood-4', '394', '394')
+						if (mood == 5)
+
+							.product-mobileMood
+								.product-mobileMood__col
+									.product-mobileMood__item 
+										+pngC('md1') 
+									.product-mobileMood__item 
+										+pngC('md2') 
+								.product-mobileMood__col
+									.product-mobileMood__item 
+										+pngC('md3') 
+									.product-mobileMood__item 
+										+pngC('md4') 
+									.product-mobileMood__item 
+										+pngC('md5') 
+						else
+							.product-mobileMood
+								.product-mobileMood__col
+									.product-mobileMood__item
+										+pngC('m1', '173', '333')
+								.product-mobileMood__col
+									.product-mobileMood__item
+										+pngC('m2', '172', '166')
+									.product-mobileMood__item
+										+pngC('m3', '172', '166')
+							//- .product-moodMobile
+							//- 	.product-moodMobile__item
+							//- 		+pngC('m1', '173', '333')
+							//- 	.product-moodMobile__item
+							//- 		+pngC('m2', '172', '166')
+							//- 	.product-moodMobile__item
+							//- 		+pngC('m3', '172', '166')
+										
+					.product-more
+						.product-more__title.ttl.h3 вы смотрели
+						.mainSection-slider-wrapper.product-slider-wrapper
+							.product-slider 
+								.swiper-wrapper 
+									- for (let i = 0; i < 10; i++)
+										.product-slider__slide.swiper-slide
+											+newCard()
+							button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+								include ../icons/left-12
+							button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+								include ../icons/right-12
+					.product-more
+						.product-more__title.ttl.h3 вам может <br>понравиться
+						.mainSection-slider-wrapper.product-slider-wrapper
+							.product-slider 
+								.swiper-wrapper 
+									- for (let i = 0; i < 10; i++)
+										.product-slider__slide.swiper-slide
+											+newCard()
+							button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+								include ../icons/left-12
+							button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+								include ../icons/right-12
+						.product-more__list 
+							- for (let i = 0; i < 2; i++)
+								.product-more__list-item 
+									+newCard()
+					.gallery
+						.gallery__inner 
+							.gallery-fullImg
+								.gallery-fullImg__item.active(data-img=`1`)
+									+jpgC('big-img', '1224', '1518')
+								- for (let i = 0; i < 7; i++)
+									.gallery-fullImg__item(data-img=`${i+2}`)
+										+jpgC('big-img', '1224', '1518')
+							.gallery-thumbs
+								.gallery-thumbs__item.active.outline-border(data-img=`1`)
+									+jpgC(`thumb-1`, '76', '94')
+								- for (let i = 0; i < 7; i++)
+									.gallery-thumbs__item.outline-border(data-img=`${i+2}`)
+										+jpgC(`thumb-${i+1}`, '76', '94')
+						a.gallery-close.centered(href="#")
+							+icon('close') 
+			include ../modules/footer/footer
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		block script

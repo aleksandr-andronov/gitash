@@ -194,6 +194,11 @@
             font-size: 16px;
             line-height: normal;
         }
+        &__mobile-links {
+          display: none;
+          border-bottom: 1px solid var(--stroke-element);
+          margin-top: 6px;
+        }
         &__controls {
           display: none;
           align-items: center;
@@ -507,6 +512,9 @@
             &__title {
               display: none;
             }
+            &__mobile-links {
+              display: block;
+            }
             &__content {
               transform: initial;
             }
@@ -538,6 +546,9 @@
               }
               &--white {
                 color: var(--white);
+              }
+              &--mobile-hidden {
+                display: none;
               }
             }
             &__link {
@@ -578,6 +589,9 @@
               &--py-0 {
                 padding: 0;
               }
+              &--mobile-hidden {
+                display: none;
+              }
               &:last-child {
                 border-bottom: 1px solid var(--stroke-element);
               }
@@ -615,6 +629,7 @@
               padding: 0 3px;
               border: none !important;
               margin-bottom: 6px;
+              
             }
             &__link {
               display: block;
@@ -654,7 +669,7 @@
               }
             }
             &__link {
-              color: var(--text-disable);
+              color: var(--grey-16);
               font-size: 14px;
               line-height: 130%;
               border-radius: 0;

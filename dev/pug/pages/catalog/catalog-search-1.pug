@@ -1,0 +1,96 @@
+.catalog
+    .container 
+        .catalog__head
+            .catalog__head-inner.d-flex 
+                .catalog__head-item
+                    a.back-btn.btn-circle(href="#")
+                        +icon('a-left-sm') 
+                .catalog__head-item
+                    .catalog__qty.txt-sm
+                        .catalog__qty-desctop.desctop 16 товаров
+                        .catalog__qty-mobile.mobile (19)
+        .catalog__result-title результаты по запросу
+        h1.catalog__title.ttl.h2 кроссовки
+        .catalog__actions
+            .catalog__actions-inner.d-flex 
+                .catalog__actions-item
+                    a.filter-btn.d-flex(href="#filter" data-bs-toggle="offcanvas") 
+                        span.filter-btn__icon.icon 
+                            +icon('filter')
+                        span.filter-btn__txt Фильтры
+                        span.filter-btn__qty.centered#FilterGroupQty 0
+                .catalog__actions-item
+                    .sorting
+                        a.sorting-btn.d-flex(href="#")
+                            span.sorting-btn__txt По популярности
+                            span.sorting-btn__icon.icon 
+                                +icon('sorting')
+                        .sorting-dropdown.mobileBottom.outline-border
+                            .mobileBottom__backdrop.backdrop(data-close)
+                            .mobileBottom__content 
+                                .mobileBottom__head 
+                                    a.mobileBottom-close.icon(href="#" data-close) 
+                                        +svg('close', '14', '14')
+                                .mobileBottom__title Сортировка
+                                .mobileBottom__info 
+                                    .sorting-dropdown__list
+                                        .sorting-dropdown__list-item 
+                                            label.form-select__radio
+                                                input(type="radio" name="sorting" checked data-value="по популярности")
+                                                span.form-select__radio-content 
+                                                    span.form-select__radio-txt по популярности
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+                                        .sorting-dropdown__list-item 
+                                            label.form-select__radio
+                                                input(type="radio" name="sorting" data-value="по возрастанию цены")
+                                                span.form-select__radio-content 
+                                                    span.form-select__radio-txt по возрастанию цены
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+                                        .sorting-dropdown__list-item 
+                                            label.form-select__radio
+                                                input(type="radio" name="sorting" data-value="по убыванию цены")
+                                                span.form-select__radio-content 
+                                                    span.form-select__radio-txt по убыванию цены
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+                                        .sorting-dropdown__list-item 
+                                            label.form-select__radio
+                                                input(type="radio" name="sorting" data-value="по новинкам")
+                                                span.form-select__radio-content 
+                                                    span.form-select__radio-txt по новинкам
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+                                        .sorting-dropdown__list-item 
+                                            label.form-select__radio
+                                                input(type="radio" name="sorting" data-value="по скидкам")
+                                                span.form-select__radio-content 
+                                                    span.form-select__radio-txt по скидкам
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+        .catalog__content 
+            .catalog-list.flex
+                - for (let i = 0; i < 1; i++)
+                    .catalog-list__item 
+                        +newCard(false, false, true)
+                - for (let i = 0; i < 1; i++)
+                    .catalog-list__item 
+                        +newCard()
+                .catalog-list__item.catalog-list__item--image 
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                .catalog-list__item.catalog-list__item--image.desctop
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                - for (let i = 0; i < 4; i++)
+                    .catalog-list__item  
+                        +newCard()
+                .catalog-list__item.catalog-list__item--image.mobile
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                - for (let i = 0; i < 6; i++)
+                    .catalog-list__item 
+                        +newCard()
+
+include filter

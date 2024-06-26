@@ -18,8 +18,13 @@
                             .mainSection__sm-img 
                                 +jpgC('season-2', '454', '440')
         .mainSection__group 
-            .mainSection-slider
-                .swiper-wrapper
-                    - for (let i = 0; i < 10; i++)
-                        .mainSection-slider__slide.swiper-slide 
-                            +newCard()
+            .mainSection-slider-wrapper
+                .mainSection-slider
+                    .swiper-wrapper
+                        - for (let i = 0; i < 10; i++)
+                            .mainSection-slider__slide.swiper-slide 
+                                +newCard()
+                button.mainSection-btn.mainSection-prev.centered(type="button")
+                    include ../../icons/left-12
+                button.mainSection-btn.mainSection-next.centered(type="button")
+                    include ../../icons/right-12

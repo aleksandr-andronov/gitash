@@ -134,21 +134,19 @@ html(lang="ru-RU")
 									.product-colors.slider 
 										.swiper-wrapper 
 											- for (let i = 0; i < 5; i++)
-												.product-colors__slide.swiper-slide 
-													label.product-colors__item
-														input(type="radio" name="color")
-														span.product-colors__item-img.outline-border 
-															+jpgC('color', '121', '151')
+												.product-colors__slide.swiper-slide
+													a.product-colors__item(href="#") 
+														+jpgC('color', '121', '151')
 								.product__size 
 									.product__subtitle
-										.product__subtitle-txt.base-up Размер
+										.product__subtitle-txt.base-up.product-size__title(data-default="размер" data-error="выберите размер") Размер
 										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
 
 									if (size2)
 										.product-size
 											.product-size__list-wrapper 
 												.product-size__list.flex 
-													.product-size__list-item 
+													.product-size__list-item
 														a.product-size__btn.outline-border.centered(href="#") 35 
 													.product-size__list-item 
 														a.product-size__btn.outline-border.centered(href="#") 36
@@ -164,9 +162,15 @@ html(lang="ru-RU")
 														a.product-size__btn.outline-border.centered(href="#") 41
 											.product-size__actions.d-flex
 												.product-size__actions-left 
-													.product-size__btn-wrapper.product-size__btn-default.hidden
-														a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="выберите размер" data-change="добавить в корзину") выберите размер
-													.product-size__btn-wrapper.product-size__btn-change 
+													.product-size__btn-wrapper.product-size__btn-default
+														a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+															span.product-cartBtn__output добавить в корзину
+															span.product-cartBtn__animate 
+																span 
+																span 
+																span 
+																span 
+													.product-size__btn-wrapper.product-size__btn-change.hidden  
 														if (signed)
 															a.product-cartBtn.btn.btn-outline(href="#subscribeSize" data-bs-toggle="offcanvas")
 																span.product-cartBtn__icon.icon 
@@ -185,7 +189,7 @@ html(lang="ru-RU")
 									else
 										.product-size
 											.product-size__select 
-												.form-select
+												.form-select.size-select
 													.form-select__backdrop.backdrop
 													a.form-select__btn.outline-border(href="#") 
 														.form-select__btn-txt не выбран
@@ -203,14 +207,14 @@ html(lang="ru-RU")
 																.form-select__list
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="35")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="35")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 35
 																				span.form-select__radio-icon.icon 
 																					+svg('check-circle', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="36")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="36")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 
 																					span 36
@@ -226,7 +230,7 @@ html(lang="ru-RU")
 																						+svg('bell', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="38")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="38")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 38
 																				span.form-select__radio-subscription
@@ -235,35 +239,35 @@ html(lang="ru-RU")
 																						+svg('bell-active', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="39")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="39")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 39
 																				span.form-select__radio-icon.icon 
 																					+svg('check-circle', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="40")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="40")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 40
 																				span.form-select__radio-icon.icon 
 																					+svg('check-circle', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="41")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="41")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 41
 																				span.form-select__radio-icon.icon 
 																					+svg('check-circle', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="42")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="42")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 42
 																				span.form-select__radio-icon.icon 
 																					+svg('check-circle', '16', '16')
 																	.form-select__list-item 
 																		label.form-select__radio
-																			input(type="radio" name="selectSize" data-value="43")
+																			input.product-size__radio(type="radio" name="selectSize" data-value="43")
 																			span.form-select__radio-content 
 																				span.form-select__radio-txt 43
 																				span.form-select__radio-icon.icon 
@@ -274,7 +278,13 @@ html(lang="ru-RU")
 														if (availability)
 															a.product-cartBtn.btn(href="#" disabled) нет в наличии
 														else
-															a.product-cartBtn.btn(href="#") добавить в корзину
+															a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+																span.product-cartBtn__output добавить в корзину
+																span.product-cartBtn__animate 
+																	span 
+																	span 
+																	span 
+																	span 
 													.product-size__actions-right
 														a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
 															span.product-favoriteBtn__icon.icon 
@@ -315,7 +325,25 @@ html(lang="ru-RU")
 														+icon('plus-circle')
 														+icon('minus-circle')
 												.product-info__hidden.collapse#hiddenInfo2 
-													.product-info__txt.txt-sm Культовый силуэт бренда ASH – кроссовки ADDICT в серой гамме на массивной, но лёгкой подошве из EVA, дополненный декоративными элементами серебряного цвета. Фактурный дизайн из текстиля, кожи, замши и нубука. Задник украшен логотипом.
+													.product-info__item-list.txt-sm
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Цвет:
+															.product-info__item-list__value коричневый
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Сезон:
+															.product-info__item-list__value демисезон
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал верха:
+															.product-info__item-list__value велюр, кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал подкладки:
+															.product-info__item-list__value кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Материал подошвы:
+															.product-info__item-list__value кожа натуральная
+														.product-info__item-list__item.d-flex 
+															.product-info__item-list__name Высота каблука:
+															.product-info__item-list__value 4.5 см
 					.product-more.product-more--mood
 						.product-more__title.ttl.h3 mood
 						.product-mood 
@@ -367,18 +395,28 @@ html(lang="ru-RU")
 										
 					.product-more
 						.product-more__title.ttl.h3 вы смотрели
-						.product-slider 
-							.swiper-wrapper 
-								- for (let i = 0; i < 10; i++)
-									.product-slider__slide.swiper-slide
-										+newCard()
+						.mainSection-slider-wrapper.product-slider-wrapper
+							.product-slider 
+								.swiper-wrapper 
+									- for (let i = 0; i < 10; i++)
+										.product-slider__slide.swiper-slide
+											+newCard()
+							button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+								include ../icons/left-12
+							button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+								include ../icons/right-12
 					.product-more
 						.product-more__title.ttl.h3 вам может <br>понравиться
-						.product-slider 
-							.swiper-wrapper 
-								- for (let i = 0; i < 10; i++)
-									.product-slider__slide.swiper-slide
-										+newCard()
+						.mainSection-slider-wrapper.product-slider-wrapper
+							.product-slider 
+								.swiper-wrapper 
+									- for (let i = 0; i < 10; i++)
+										.product-slider__slide.swiper-slide
+											+newCard()
+							button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+								include ../icons/left-12
+							button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+								include ../icons/right-12
 						.product-more__list 
 							- for (let i = 0; i < 2; i++)
 								.product-more__list-item 

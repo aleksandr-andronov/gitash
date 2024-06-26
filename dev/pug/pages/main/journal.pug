@@ -9,38 +9,43 @@
                         span.mainSection__link-icon.icon 
                             include ../../icons/link
             .journal-content__right
-                .journal-slider 
-                    .swiper-wrapper
-                        - for (let i = 0; i < 2; i++)
-                            .journal-slider__slide.swiper-slide
-                                .journal-item
-                                    .journal-item__img
-                                        +jpgC('journal-1', '454', '379')
-                                    .journal-item__info 
-                                        .journal-item__category.tech-14 Style icon 
-                                        .journal-item__title.ttl.title1 
-                                            a.full-link(href="#") 10 новых ботфортов на осень
-                            .journal-slider__slide.swiper-slide
-                                .journal-item
-                                    .journal-item__img
-                                        +jpgC('journal-2', '454', '295')
-                                    .journal-item__info 
-                                        .journal-item__category.tech-14 Style icon 
-                                        .journal-item__title.ttl.title1 
-                                            a.full-link(href="#") 10 новых ботфортов на осень
-                            .journal-slider__slide.swiper-slide
-                                .journal-item
-                                    .journal-item__img
-                                        +jpgC('journal-3', '454', '507')
-                                    .journal-item__info 
-                                        .journal-item__category.tech-14 Style icon 
-                                        .journal-item__title.ttl.title1 
-                                            a.full-link(href="#") 10 новых ботфортов на осень
-                            .journal-slider__slide.swiper-slide
-                                .journal-item
-                                    .journal-item__img
-                                        +jpgC('journal-2', '454', '295')
-                                    .journal-item__info 
-                                        .journal-item__category.tech-14 Style icon 
-                                        .journal-item__title.ttl.title1 
-                                            a.full-link(href="#") 10 новых ботфортов на осень
+                .mainSection-slider-wrapper
+                    .journal-slider 
+                        .swiper-wrapper
+                            - for (let i = 0; i < 2; i++)
+                                .journal-slider__slide.swiper-slide
+                                    .journal-item
+                                        .journal-item__img
+                                            +jpgC('journal-1', '454', '379')
+                                        .journal-item__info 
+                                            .journal-item__category.tech-14 Style icon 
+                                            .journal-item__title.ttl.title1 
+                                                a.full-link(href="#") 10 новых ботфортов на осень
+                                .journal-slider__slide.swiper-slide
+                                    .journal-item
+                                        .journal-item__img
+                                            +jpgC('journal-2', '454', '295')
+                                        .journal-item__info 
+                                            .journal-item__category.tech-14 Style icon 
+                                            .journal-item__title.ttl.title1 
+                                                a.full-link(href="#") 10 новых ботфортов на осень
+                                .journal-slider__slide.swiper-slide
+                                    .journal-item
+                                        .journal-item__img
+                                            +jpgC('journal-3', '454', '507')
+                                        .journal-item__info 
+                                            .journal-item__category.tech-14 Style icon 
+                                            .journal-item__title.ttl.title1 
+                                                a.full-link(href="#") 10 новых ботфортов на осень
+                                .journal-slider__slide.swiper-slide
+                                    .journal-item
+                                        .journal-item__img
+                                            +jpgC('journal-2', '454', '295')
+                                        .journal-item__info 
+                                            .journal-item__category.tech-14 Style icon 
+                                            .journal-item__title.ttl.title1 
+                                                a.full-link(href="#") 10 новых ботфортов на осень
+                    button.mainSection-btn.mainSection-prev.centered.journal-prev(type="button")
+                        include ../../icons/left-12
+                    button.mainSection-btn.mainSection-next.centered.journal-next(type="button")
+                        include ../../icons/right-12

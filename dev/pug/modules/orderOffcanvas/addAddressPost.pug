@@ -1,0 +1,34 @@
+#addAddressPost.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 новый адрес
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .form-item.form-item-dropdown
+                        .form-item__group 
+                            .form-item__label населенный пункт*
+                            input.form-input(type="text" data-validate)
+                        .form-item__dropdown.outline-border
+                            .form-item__dropdown-scroll(data-simplebar)
+                                .form-item__list
+                                    - for (let i = 0; i < 20; i++)
+                                        .form-item__list-item 
+                                            label.form-item__dropdown-label
+                                                input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                    span Новосибирская обл.
+                    .order-form__info
+                        .order-form__info-txt.d-flex 
+                            .order-form__info-txt-icon.centered 
+                                +svg('info')
+                            .order-form__info-txt-value В ваш регион доступна доставка Почтой России.
+                        a.order-form__info-btn.outline-border(href="#chooseOffice" data-bs-toggle="offcanvas") выбрать пункт выдачи

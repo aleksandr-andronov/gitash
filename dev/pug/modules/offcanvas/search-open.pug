@@ -1,0 +1,17 @@
+#search.offcanvas.offcanvas-top.show(tabindex="-1" data-bs-backdrop="false" data-bs-scroll="true")
+    .search
+        .search__top
+            .search__top-inner.d-flex
+                .search__top-form 
+                    form.search-form.has-text(action="/") 
+                        input.search-form__input.ttl(type="text" placeholder="я ищу" value="кроссовки")
+                        .search-form__actions.d-flex
+                            button.search-form__clear.icon(type="button")
+                                +svg('close', '14', '14')
+                            //- button.search-form__submit.centered(type="submit" disabled)
+                            //-     include ../../icons/search
+                .search__top-close
+                    button.search-close(type="button" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        span.search-close__txt ЗАКРЫТЬ
+                        span.search-close__icon 
+                            +svg('arrow-left', '14', '14')

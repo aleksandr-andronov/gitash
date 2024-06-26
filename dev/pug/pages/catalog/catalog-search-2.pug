@@ -1,0 +1,39 @@
+.catalog
+    .container 
+        .catalog__head
+            .catalog__head-inner.d-flex 
+                .catalog__head-item
+                    a.back-btn.btn-circle(href="#")
+                        +icon('a-left-sm') 
+                .catalog__head-item
+                    .catalog__qty.txt-sm
+                        .catalog__qty-desctop.desctop 16 товаров
+                        .catalog__qty-mobile.mobile (19)
+        .catalog__result-title результаты по запросу
+        h1.catalog__title.ttl.h2.catalog__title--mb-2 кроссовки
+        
+        .catalog__content 
+            .catalog-list.flex
+                - for (let i = 0; i < 1; i++)
+                    .catalog-list__item 
+                        +newCard(false, false, true)
+                - for (let i = 0; i < 1; i++)
+                    .catalog-list__item 
+                        +newCard()
+                .catalog-list__item.catalog-list__item--image 
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                .catalog-list__item.catalog-list__item--image.desctop
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                - for (let i = 0; i < 4; i++)
+                    .catalog-list__item  
+                        +newCard()
+                .catalog-list__item.catalog-list__item--image.mobile
+                    .catalog__img
+                        +jpgC('catalog-img', '917', '563')
+                - for (let i = 0; i < 6; i++)
+                    .catalog-list__item 
+                        +newCard()
+
+include filter

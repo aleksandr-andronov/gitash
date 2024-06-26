@@ -1,0 +1,89 @@
+#addresses.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 адреса
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            .address
+                .address-list 
+                    .address-list__item 
+                        label.address-item.radio
+                            input(type="radio" checked name="address")
+                            span.address-item__inner.d-flex.outline-border.radio-content 
+                                span.address-item__inner-left
+                                    span.address-item__info
+                                        span.address-item__info-content.d-flex 
+                                            span.address-item__info-icon.radio-icon 
+                                            span.address-item__info-info
+                                                span.address-item__info-title Курьером по адресу
+                                                span.address-item__info-txt.txt-sm
+                                                    span.address-item__info-txt__item г. Москва, ул. Безымянная 47/1, кв. 6, п3, этаж 5
+                                                    span.address-item__info-txt__item Иванов Иван +7 913 211-43-13)
+                                                span.address-item__info-comment.d-flex.txt-sm
+                                                    span.address-item__info-comment__icon.icon
+                                                        +icon('comment-sm')
+                                                    span.address-item__info-comment__txt Позвоните, когда будете у шлагбаума
+                                                span.address-item__info-status основной
+                                span.address-item__inner-right
+                                    a.address-item__more.icon(href="#")
+                                        +icon('more') 
+                                    span.address-item__actions
+                                        span.address-item__actions-overlay
+                                        span.address-item__actions-content
+                                            span.address-item__actions-close.icon
+                                                +svg('close', '14', '14')
+                                            span.address-item__actions-list.d-flex 
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#addAddress" data-bs-toggle="offcanvas") 
+                                                        span.address-item__actions-btn__txt Редактировать
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('edit')
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#") 
+                                                        span.address-item__actions-btn__txt Удалить
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('trash')
+                    .address-list__item 
+                        label.address-item.radio
+                            input(type="radio" name="address")
+                            span.address-item__inner.d-flex.outline-border.radio-content 
+                                span.address-item__inner-left
+                                    span.address-item__info
+                                        span.address-item__info-content.d-flex 
+                                            span.address-item__info-icon.radio-icon 
+                                            span.address-item__info-info
+                                                span.address-item__info-title Курьером по адресу
+                                                span.address-item__info-txt.txt-sm
+                                                    span.address-item__info-txt__item г. Москва, ул. Безымянная 47/1, кв. 6, п3, этаж 5
+                                                    span.address-item__info-txt__item Иванов Иван +7 913 211-43-13)
+                                span.address-item__inner-right
+                                    a.address-item__more.icon(href="#")
+                                        +icon('more') 
+                                    span.address-item__actions
+                                        span.address-item__actions-overlay
+                                        span.address-item__actions-content
+                                            span.address-item__actions-close.icon
+                                                +svg('close', '14', '14')
+                                            span.address-item__actions-list.d-flex 
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#addAddress" data-bs-toggle="offcanvas") 
+                                                        span.address-item__actions-btn__txt Редактировать
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('edit')
+                                                span.address-item__actions-item 
+                                                    a.address-item__actions-btn(href="#") 
+                                                        span.address-item__actions-btn__txt Удалить
+                                                        span.address-item__actions-btn__icon.icon 
+                                                            +icon('trash')
+            .address-add
+                a.address-add__btn.d-flex.txt-sm(href="#addAddress" data-bs-toggle="offcanvas") 
+                    span.address-add__btn-icon.icon 
+                        +icon('plus')
+                    span.address-add__btn-txt добавить новый адрес 

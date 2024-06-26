@@ -6,3 +6,9 @@
 @import "../../../../node_modules/bootstrap/scss/modal";
 @import "../../../../node_modules/bootstrap/scss/dropdown";
 @import "../../../../node_modules/bootstrap/scss/offcanvas";
+@import "../../../../node_modules/bootstrap/scss/tooltip";
+
+
+@function vw($px, $viewport) {
+    @return ($px * 100vw / $viewport);
+}

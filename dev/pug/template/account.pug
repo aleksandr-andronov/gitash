@@ -34,8 +34,8 @@ html(lang="ru-RU")
 											a.account-userMenu__link.account-userMenu__link--selected.d-flex.outline-border(href="#") 
 												span.account-userMenu__link-icon.icon 
 													+svg('sale', '20', '20')
-												span.account-userMenu__link-txt Моя скидка
-												span.account-userMenu__link-qty.account-userMenu__link-qty--black 5%
+												span.account-userMenu__link-txt Главная
+												//- span.account-userMenu__link-qty.account-userMenu__link-qty--black 5%
 										li.account-userMenu__item 
 											a.account-userMenu__link.d-flex.outline-border(href="#") 
 												span.account-userMenu__link-icon.icon 
@@ -51,9 +51,13 @@ html(lang="ru-RU")
 								.account__left-menu 
 									ul.account-menu
 										li.account-menu__item 
-											a.account-menu__link.outline-border(href="#") Возвраты
+											a.account-menu__link.outline-border(href="#") 
+												span.account-menu__link-txt Возвраты
+												span.account-menu__link-qty.centered 1
 										li.account-menu__item 
-											a.account-menu__link.outline-border(href="#") Адреса
+											a.account-menu__link.outline-border(href="#") 
+												span.account-menu__link-txt Адреса
+												span.account-menu__link-qty.centered 1
 										li.account-menu__item 
 											a.account-menu__link.outline-border(href="#") Управление подписками
 										li.account-menu__item 

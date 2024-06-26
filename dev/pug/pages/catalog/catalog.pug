@@ -70,7 +70,10 @@
                                                         +svg('check-circle', '16', '16')
         .catalog__content 
             .catalog-list.flex
-                - for (let i = 0; i < 2; i++)
+                - for (let i = 0; i < 1; i++)
+                    .catalog-list__item 
+                        +newCard(false, false, true)
+                - for (let i = 0; i < 1; i++)
                     .catalog-list__item 
                         +newCard()
                 .catalog-list__item.catalog-list__item--image 
@@ -80,7 +83,7 @@
                     .catalog__img
                         +jpgC('catalog-img', '917', '563')
                 - for (let i = 0; i < 4; i++)
-                    .catalog-list__item 
+                    .catalog-list__item  
                         +newCard()
                 .catalog-list__item.catalog-list__item--image.mobile
                     .catalog__img

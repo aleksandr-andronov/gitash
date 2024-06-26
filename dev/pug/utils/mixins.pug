@@ -92,8 +92,8 @@ mixin productCardFavorite(img)
 				.productCard__tags-item 
 					+svg('reash', '68', '24')
 
-mixin newCard(favorite, cart)
-	a.card(href="#", class=favorite ? 'card-selected' : '')
+mixin newCard(favorite, cart, colors)
+	a.card(href="#", class=favorite ? 'card-selected' : '', class=colors ? 'card-no-colors' : '')
 		.card-img
 			.card-img__slider.slider
 				.swiper-wrapper 
@@ -110,8 +110,9 @@ mixin newCard(favorite, cart)
 						.card-img__slider-img
 							+jpgC('img-card', '454', '563')
 			.card-img__pagination
-		.card-img-mobile 
-			+jpgC('card-m', '346', '508')
+		.card-img-mobile
+			.card-img-mobile__inner 
+				+jpgC('card-m-2', '346', '508')
 		.card-info(class=cart ? 'card-info--cart' : '')
 			.card-info__name.txt-sm Zeta 
 			.card-price.card-info__price.txt-sm
@@ -128,15 +129,16 @@ mixin newCard(favorite, cart)
 						.card-sizes__item 39
 						.card-sizes__item.card-sizes__item--disabled 40
 						.card-sizes__item 41
-				.card-hidden__colors
-					.card-colors
-						.card-colors__list.d-flex 
-							- for (let i = 1; i < 6; i++)
+				if (!colors)
+					.card-hidden__colors
+						.card-colors
+							.card-colors__list.d-flex 
+								- for (let i = 1; i < 6; i++)
+									.card-colors__list-item 
+										.card-colors__item 
+											+jpgC(`img-card`, '62', '77')
 								.card-colors__list-item 
-									.card-colors__item 
-										+jpgC(`img-card`, '62', '77')
-							.card-colors__list-item 
-								.card-colors__item.card-colors__item--txt.txt-sm +3
+									.card-colors__item.card-colors__item--txt.txt-sm +3
 
 		.card-stickers
 			.card-stickers__item.card-stickers__item--sale.ttl.sticker -30%
@@ -148,3 +150,14 @@ mixin newCard(favorite, cart)
 			button.card-favorite.fav-btn.icon.active(type="button")
 				+icon('heart') 
 				+icon('heart-fill')
+
+mixin journalCard()
+	.journalPage-card
+		.journalPage-card__img 
+			img(src="static/images/content/j-card.png", alt="img")
+		.journalPage-card__info 
+			.journalPage-card__title 
+				a(href="#") FAME
+			.journalPage-card__price
+				.journalPage-card__price-old 29 890 ₽
+				.journalPage-card__price-new 29 890 ₽

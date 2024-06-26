@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Halvar Breit Md';
-    src: url('../fonts/HalvarBreit-Md.woff2') format('woff2'),
-        url('../fonts/HalvarBreit-Md.woff') format('woff');
+    src: url('../fonts/../fonts/HalvarBreit-Md.woff2') format('woff2'),
+        url('../fonts/../fonts/HalvarBreit-Md.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Arimo';
-    src: url('../fonts/Arimo-SemiBold.woff2') format('woff2'),
-        url('../fonts/Arimo-SemiBold.woff') format('woff');
+    src: url('../fonts/../fonts/Arimo-SemiBold.woff2') format('woff2'),
+        url('../fonts/../fonts/Arimo-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'Arimo';
-    src: url('../fonts/Arimo-Regular.woff2') format('woff2'),
-        url('../fonts/Arimo-Regular.woff') format('woff');
+    src: url('../fonts/../fonts/Arimo-Regular.woff2') format('woff2'),
+        url('../fonts/../fonts/Arimo-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -27,8 +27,17 @@
 
 @font-face {
     font-family: 'Arimo';
-    src: url('../fonts/Arimo-Medium.woff2') format('woff2'),
-        url('../fonts/Arimo-Medium.woff') format('woff');
+    src: url('../fonts/../fonts/Arimo-Medium.woff2') format('woff2'),
+        url('../fonts/../fonts/Arimo-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FK Screamer Trial';
+    src: url('../fonts/FKScreamerTrial-Medium.woff2') format('woff2'),
+        url('../fonts/FKScreamerTrial-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

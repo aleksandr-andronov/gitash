@@ -251,18 +251,28 @@
                             
         .product-more
             .product-more__title.ttl.h3 вы смотрели
-            .product-slider 
-                .swiper-wrapper 
-                    - for (let i = 0; i < 10; i++)
-                        .product-slider__slide.swiper-slide
-                            +newCard()
+            .mainSection-slider-wrapper.product-slider-wrapper
+                .product-slider 
+                    .swiper-wrapper 
+                        - for (let i = 0; i < 10; i++)
+                            .product-slider__slide.swiper-slide
+                                +newCard()
+                button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+                    include ../../icons/left-12
+                button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+                    include ../../icons/right-12
         .product-more
             .product-more__title.ttl.h3 вам может <br>понравиться
-            .product-slider 
-                .swiper-wrapper 
-                    - for (let i = 0; i < 10; i++)
-                        .product-slider__slide.swiper-slide
-                            +newCard()
+            .mainSection-slider-wrapper.product-slider-wrapper
+                .product-slider 
+                    .swiper-wrapper 
+                        - for (let i = 0; i < 10; i++)
+                            .product-slider__slide.swiper-slide
+                                +newCard()
+                button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+                    include ../../icons/left-12
+                button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+                    include ../../icons/right-12
             .product-more__list 
                 - for (let i = 0; i < 2; i++)
                     .product-more__list-item 
