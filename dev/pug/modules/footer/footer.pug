@@ -12,8 +12,11 @@ footer.footer
                                 +pngG('qr', '195', '195')
                             .footer-download__info 
                                 .footer-download__txt.txt-base Скачивайте приложение ASH – мы позаботились о том, чтобы шопинг был максимально комфортным
-                                a.footer-download__link(href="#") 
-                                    +svg('app-stote', '145', '55')
+                                .footer-download__links.d-flex
+                                    a.footer-download__link(href="#") 
+                                        +svg('app-stote', '145', '55')
+                                    a.footer-download__link(href="#") 
+                                        +svg('google-play', '153', '55')
                 .footer__col.footer__col-6
                     .footer__content.d-flex
                         .footer__col.footer__col-3

@@ -114,6 +114,11 @@
                                     input(type="checkbox" name="color")
                                     span.filter-color__content.outline-border.centered(data-bs-toggle="tooltip" data-bs-offset="0,10"  data-bs-placement="top" data-bs-title="Цвет")
                                         span(style="background: #000000;")
+                            .filter-colors__item 
+                                label.filter-color.centered
+                                    input(type="checkbox" name="color")
+                                    span.filter-color__content.outline-border.centered(data-bs-toggle="tooltip" data-bs-offset="0,10"  data-bs-placement="top" data-bs-title="Цвет")
+                                        span.leopard
                     .filter__group
                         .filter__group-head.d-flex
                             .filter__title.base-up 
@@ -158,4 +163,4 @@
                                     include ../../icons/x
                                 span.filter__clear-txt сбросить все
                     .filter__bottom-btn 
-                        button.filter__btn.btn(type="submit" disabled) показать результаты
+                        button.filter__btn.btn(type="button" data-bs-dismiss="offcanvas") показать результаты

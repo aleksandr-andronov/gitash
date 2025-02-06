@@ -1,0 +1,43 @@
+.advent-content
+    .container 
+        .advent-content__group
+            .advent__block-lg 
+                .advent-gift
+                    .advent-gift__title.h4.ttl Как получить подарок:
+                    .advent-gift__txt.advent-gift__txt--center
+                        p Введите промокод в мобильном приложении ИЛЬ&nbsp;ДЕ&nbsp;БОТЭ <br>или&nbsp;<a href="#">интернет-магазине</a>  на этапе оформления корзины при покупке <br>от&nbsp;15000 рублей (после скидки)
+                    .advent-gift__promocode(data-change="промокод скопирован")
+                        .advent-gift__promocode-title 
+                            .advent-gift__promocode-title__txt промокод
+                            .advent-gift__promocode-title__icon.centered
+                                +svg('done-check')
+                        .advent-gift__promocode-value.d-flex 
+                            .advent-gift__promocode-value__txt IDBASH2025
+                            .advent-gift__promocode-value__icon 
+                                +pngG('advent-gift-icon', '24', '24')
+                    .advent-gift__txt.advent-gift__txt--bottom.advent-gift__txt--center
+                        p Промокод действителен с 12.12.2024 по 12.01.2025. Скидка не суммируется с другими скидками и не распространяется на другие акции. Промокод не предоставляет скидку при приобретении пополняемых подарочных карт. Скидка за бонусы не применяется. Есть исключения: ACCA KAPPA, CHANEL, CHRISTIAN DIOR, Coola, DOLCE&GABBANA, GUERLAIN, JO MALONE, KEUNE, KILIAN, LA COLLINE, LA PRAIRIE, MAC, MARC-ANTOINE BARROIS, MARVIS, MBR, PRORASO, SISLEY, TOM FORD, VISEART, BORNTOSTANDOUT, Sesderma.
+                .advent-decor 
+                    +pngG('advent-decor')
+        .advent-content__group
+            .advent__block-xl 
+                .advent-info
+                    .advent-info__title.ttl.h4 о проекте
+                    .advent-info__content.list
+                        .advent-info__content-col.col
+                            .advent-info__img 
+                                +jpgC('advent-img-2', '609', '637')
+                        .advent-info__content-col.col
+                            .advent-info__desc
+                                .advent-info__desc-top.centered 
+                                    .advent-info__desc-logo 
+                                        img(src="static/images/content/advent-logo-2.svg", alt="img" width="132" height="132")
+                                .advent-info__desc-bottom
+                                    .advent-info__desc-txt ИЛЬ ДЕ БОТЭ - это всегда высокий уровень обслуживания, широкий ассортимент любимых мировых брендов и&nbsp;профессиональные сервисы красоты.
+        .advent-content__group
+            .advent__block-lg 
+                .advent__txt
+                    p Вас ждут скидки по карте клиента, кешбэк бонусами при покупке, КЛУБ ИЛЬ ДЕ БОТЭ, сервисы красоты, персональные предложения и возможность раньше других узнавать о новинках и акциях. Каждая покупка приносит вам бонусы, а также приближает к статусу GOLD* и его привилегиям.
+                    p *GOLD – золотой.
+    script
+        include copy.js

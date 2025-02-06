@@ -1,0 +1,37 @@
+.form-item.form-phone
+    .form-phone__inner.d-flex 
+        .form-phone__left 
+            a.form-phone__btn.d-flex(href="#") 
+                span.form-phone__btn-flag.centered 
+                    +svg('rus', '24', '17')
+                span.form-phone__btn-txt +7
+                span.form-phone__btn-icon.icon 
+                    +icon('down')
+        .form-phone__right
+            .form-item__group 
+                .form-item__label.form-item__label--hidden телефон*
+                input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" data-validate)
+    .form-phone__dropdown.form-item__dropdown.outline-border
+        .form-item__dropdown-scroll(data-simplebar)
+            .form-item__list
+                .form-item__list-item 
+                    label.form-item__country
+                        input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+                        span.form-item__country-inner.d-flex 
+                            span.form-item__country-flag.centered 
+                                +svg('bel', '24', '17') 
+                            span.form-item__country-txt Беларусь
+                .form-item__list-item 
+                    label.form-item__country
+                        input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+                        span.form-item__country-inner.d-flex 
+                            span.form-item__country-flag.centered 
+                                +svg('kz', '24', '17') 
+                            span.form-item__country-txt Казахстан
+                .form-item__list-item 
+                    label.form-item__country
+                        input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+                        span.form-item__country-inner.d-flex 
+                            span.form-item__country-flag.centered 
+                                +svg('rus', '24', '17') 
+                            span.form-item__country-txt Россия

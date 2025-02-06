@@ -1,0 +1,101 @@
+.notification {
+    &-top {
+        background: var(--black);
+        color: var(--white);
+        padding-top: 17px;
+        padding-bottom: 18px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1;
+        text-transform: uppercase;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 151;
+        display: none;
+        &.visible {
+            display: block;
+        }
+        a {
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+.has-notification {
+    padding-top: 174px;
+    .header {
+        top: 50px;
+        .header__content {
+            height: var(--height-scroll);
+        }
+          .header__logo {
+            bottom: 16px;
+          }
+          .header__menu {
+            height: calc(100% - var(--height-scroll));
+          }
+          .header-menu__navigation {
+            padding-top: 0;
+          }
+    }
+    .catalog-banner {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .notification {
+        &-top {
+            font-size: 13px;
+            padding-top: 15px;
+            padding-bottom: 14px;
+        }
+    }
+    .has-notification {
+        padding-top: 142px;
+        .header {
+            top: 42px;
+            .header__logo {
+                bottom: 12px;
+            }
+        }
+        .catalog-banner {
+            margin-top: 42px;
+        }
+    }
+}
+
+@media (max-width: 932px) {
+
+    .has-notification {
+        padding-top: 103px;
+        .header {
+            top: 42px;
+            .header__logo {
+                bottom: 4px;
+            }
+            .header__menu {
+                top: 42px;
+            }
+            &.opened {
+                
+            }
+        }
+        &.body-pt-scroll {
+            .header__menu {
+                top: 0;
+                height: 100svh;
+            }
+        }
+        .catalog:has(.catalog-banner) .catalog__head {
+            padding-top: 78px;
+        }
+    }
+}

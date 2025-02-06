@@ -1,0 +1,141 @@
+.downloadPopup {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    width: 614px;
+    background: var(--black);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 28px 28px 28px 280px;
+    display: none;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    &.visible {
+        display: block;
+    }
+    &.animate {
+        opacity: 1;
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        left: -66px;
+        width: 348px;
+    }
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        svg {
+            width: 16px;
+        }
+    }
+    &__qr {
+        margin-bottom: 24px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        margin-bottom: 12px;
+    }
+    &__txt {
+        max-width: 290px;
+        margin-bottom: 20px;
+    }
+    &__btn {
+        padding: 10px 16px;
+        color: var(--white);
+        border-radius: 46px;
+        &::before {
+            border-color: var(--white);
+        }
+    }
+    &__img-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 1440px) {
+    .downloadPopup {
+        width: 516px;
+        bottom: 30px;
+        right: 30px;
+        padding: 24px 24px 24px 214px;
+        &__img {
+            width: 286px;
+            right: -58px;
+        }
+        &__qr {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        &__title {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        &__txt {
+            margin-bottom: 16px;
+            max-width: 256px;
+        }
+        &__btn {
+            line-height: 18px;
+            padding: 8px 14px;
+        }
+        &__close {
+            top: 12px;
+            right: 12px;
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .downloadPopup {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        padding: 46px 12px 240px;
+        transform: translateY(100%);
+        border-radius: 10px 10px 0 0;
+        &.animate {
+            transform: translateY(0%);
+        }
+        &__close {
+            right: 12px;
+        }
+        &__info {
+            max-width: 256px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        &__qr {
+            display: none;
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__txt {
+            margin-bottom: 16px;
+        }
+        &__btn {
+            display: none;
+        }
+        &__img {
+            width: 277px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__img-btn {
+            display: block;
+        }
+    }
+}

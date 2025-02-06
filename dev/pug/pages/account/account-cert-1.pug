@@ -1,0 +1,18 @@
+.account-certificate 
+    .account-certificate__group 
+        .account-certificate__subtitle.title1 Полученные сертификаты
+        .account-certificate__list.list 
+            .account-certificate__list-item
+                .account-certCard
+                    .account-certCard__inner.d-flex 
+                        .account-certCard__left 
+                            .account-certCard__img
+                                .account-certCard__img-photo
+                                    +svg('account-cert-2', '281', '254')
+                                .account-certCard__img-txt.h6.ttl.centered.hidden 10 000 ₽ 
+                        .account-certCard__right
+                            .account-certCard__right-center.centered 
+                                .account-certCard__group.d-flex 
+                                    .account-certCard__price.h5.ttl ВАМ ПОДАРОК!
+                                    a.account-certCard__btn.btn-circle(href="#cert" data-bs-toggle="offcanvas")
+                                        +icon('arrow-right-13') 

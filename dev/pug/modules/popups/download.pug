@@ -1,0 +1,17 @@
+.downloadPopup
+    .downloadPopup__info 
+        .downloadPopup__qr 
+            +pngG('qr-popup', '120', '120')
+        .downloadPopup__title.ttl Скачайте приложение&nbsp;ASH
+        .downloadPopup__txt Скидка -15% на заказ в приложении по промокоду NEW15
+        //- a.downloadPopup__btn.btn.btn-outline(href="#") скачать приложение
+        a.downloadPopup__img-btn(href="#")
+            +svg('app-stote', '130', '46') 
+        a.downloadPopup__close.btn-circle(href="#")
+            +icon('close') 
+    .downloadPopup__img
+        picture
+            source(srcset=`static/images/general/download-img-m.webp`, type='image/webp', media="(max-width: 480px)")
+            source(srcset=`static/images/general/download-img.webp`, type='image/webp')
+            img(src="static/images/general/download-img.png", alt="img")
+

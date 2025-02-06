@@ -1,11 +1,20 @@
 .form {
     &-item {
         position: relative;
-        &-select {
-            .form-item__group.focused + .form-item__dropdown {
-                display: block;
-            }
+        z-index: 9;
+        &.opened {
+            z-index: 10;
         }
+        &:has(.focused), &:has(.show-date) {
+            z-index: 10;
+        }
+        // &-select {
+        //     .form-item__group.focused + .form-item__dropdown {
+        //         display: block;
+        //         opacity: 1;
+        //     }
+        // }
+        
         &__group {
             position: relative;
             &.focused, &.error {
@@ -22,18 +31,21 @@
                 }
                 .form-input {
                     border-color: var(--black);
+                    &--light {
+                        border-color: #D4D4D4;
+                    }
                 }
                 .form-item__dropdown {
                     display: block;
                 }
-                .form-item__clear {
-                    &-default {
-                        display: none;
-                    }
-                    &-active {
-                        display: flex;
-                    }
-                }
+                // .form-item__clear {
+                //     &-default {
+                //         display: none;
+                //     }
+                //     &-active {
+                //         display: flex;
+                //     }
+                // }
             }
             &.error {
                 .form-input {
@@ -54,13 +66,23 @@
                         visibility: hidden;
                     }
                 }
-                .form-item__clear {
-                    &-default {
-                        display: none;
-                    }
-                    &-active {
-                        display: flex;
-                    }
+                // .form-item__clear {
+                //     &-default {
+                //         display: none;
+                //     }
+                //     &-active {
+                //         display: flex;
+                //     }
+                // }
+            }
+            &.show-date {
+                .form-input {
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    border-color: var(--black);
+                }
+                .form-item__dropdown-calendar {
+                    display: block;
                 }
             }
         }
@@ -87,17 +109,16 @@
             margin-top: 8px;
         }
         &__dropdown {
-            --max-height: 400px;
-
+            --max-height: 362px;
             position: absolute;
             z-index: 9;
             top: 100%;
             width: 100%;
-            margin-top: 8px;
+            margin-top: 6px;
+            display: none;
             background: var(--white);
             border-radius: 4px;
-            display: none;
-            max-height: var(--max-height);
+            overflow: hidden;
             &--rounded {
                 border-radius: 15px;
             }
@@ -107,6 +128,15 @@
             &::before {
                 border-color: var(--black);
                 z-index: 9;
+            }
+            &-content {
+                background: var(--white);
+                border-radius: 4px;
+                max-height: var(--max-height);
+                padding: 6px 1px;
+                &::before {
+                    border-color: var(--black);
+                }
             }
             &-scroll {
                 max-height: var(--max-height);
@@ -119,16 +149,41 @@
                     display: none;
                     &:checked + span {
                         background: var(--grey-2);
+                        .form-item__dropdown-label__icon {
+                            opacity: 1;
+                        }
                     }
                 }
-                &__txt {
+                &__info {
+                    align-items: center;
+                    justify-content: space-between;
+                    line-height: 22px;
                     padding: 14px 20px;
-                    display: block;
                     transition: background .2s ease-in-out;
-                    min-height: 50px;
+                    &:hover {
+                        background: var(--grey-2);
+                    }
+                }
+                &__icon {
+                    width: 16px;
+                    height: 16px;
+                    opacity: 0;
+                }
+                &__txt {
+                    display: block;
+                    padding: 10px 16px;
+                    transition: background .2s ease-in-out;
                     span {
                         color: var(--grey-3);
                     }
+                    &:hover {
+                        background: var(--grey-2);
+                    }
+                }
+                &__content {
+                    display: block;
+                    padding: 14px 20px;
+                    transition: background .2s ease-in-out;
                     &:hover {
                         background: var(--grey-2);
                     }
@@ -174,6 +229,14 @@
             &-active {
                 display: none;
             }
+            &.active {
+                .form-item__clear-default {
+                    display: none;
+                }
+                .form-item__clear-active {
+                    display: flex;
+                }
+            }
         }
         &__arrow {
             position: absolute;
@@ -182,16 +245,100 @@
             right: 20px;
             width: 14px;
             height: 14px;
+            pointer-events: none;
+        }
+        &__right-info {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--grey-7);
+            fill: var(--grey-7);
+        }
+        &__right-icon {
+            width: 16px;
+            height: 16px;
+            &.active {
+                fill: var(--black);
+            }
+        }
+        &__dropdown-calendar {
+            position: absolute;
+            left: calc(100% - 1px);
+            top: 0;
+            z-index: 9;
+            padding: 10px 12px 12px;
+            border-radius: 0 4px 4px 4px;
+            background: var(--white);
+            display: none;
+            &::before {
+                border-color: var(--black);
+            }
+        }
+    }
+    &-datepicker {
+        .air-datepicker {
+            border: none;
+            border-radius: 0;
+            background: none;
+            --adp-cell-background-color-selected: #000000;
+        }
+        .air-datepicker-nav {
+            border: none;
+        }
+        .air-datepicker-cell.-selected- {
+            background: none;
+            position: relative;
+            &::before {
+                content: "";
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                background: var(--black);
+                z-index: -1;
+                border-radius: 50%;
+            }
+            &.-year- {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .air-datepicker-cell.-selected-.-focus- {
+            background: none;
+        }
+        .air-datepicker-body--cells.-days-, .air-datepicker-body--day-names {
+            grid-column-gap: 12px;
+            grid-row-gap: 4px;
+        }
+        .air-datepicker--content {
+            padding: 0;
+        }
+        .air-datepicker {
+            width: 324px;
+        }
+        .air-datepicker-cell {
+            height: 36px;
+        }
+        .air-datepicker-body--day-names {
+            padding-top: 10px;
+            margin-bottom: 4px;
+        }
+        .air-datepicker-body--day-name {
+            height: 36px;
+            color: #333333;
         }
     }
     &-input {
         display: block;
         width: 100%;
         height: 50px;
+        min-height: 50px;
         border: 1px solid var(--stroke-element);
         border-radius: 4px;
-        padding: 0 20px;
+        padding: 14px 20px;
         transition: border-color .2s ease-in-out;
+        overflow: hidden;
         &::placeholder {
             color: var(--grey-4);
         }
@@ -200,7 +347,19 @@
         }
         &--rounded {
             border-radius: 40px;
-            height: 44px;
+        }
+        &--hidden-placeholder {
+            &::placeholder {
+                color: transparent;
+            }
+            &:focus {
+                &::placeholder {
+                    color: var(--grey-4);
+                }
+            }
+        }
+        &--light {
+
         }
     }
     &-phone {
@@ -209,9 +368,9 @@
         transition: border-color .2s ease-in-out;
         border-radius: 4px;
         --flag-width: 24px;
-        // --left-width: 126px;
         &.active {
             border-color: var(--black);
+            z-index: 99;
         }
         &__inner {
             align-items: center;
@@ -225,6 +384,7 @@
         &__input {
             border: none;
             height: 48px;
+            min-height: 48px;
         }
         &__btn {
             align-items: center;
@@ -481,6 +641,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            
             &::before {
                 content: "";
                 width: 10px;
@@ -488,6 +649,12 @@
                 border-radius: 2px;
                 background: var(--black);
                 opacity: 0;
+            }
+            &--circle {
+                border-radius: 50%;
+                &::before {
+                    border-radius: inherit;
+                }
             }
         }
         &__info {
@@ -497,11 +664,19 @@
     }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 @media (max-width: 1440px) {
     .form {
         &-input {
             height: 40px;
-            padding: 0 16px;
+            min-height: 40px;
+            padding: 10px 16px;
         }
         &-item {
             &__group {
@@ -523,6 +698,9 @@
                 --max-height: 320px;
                 &-label {
                     &__txt {
+                        padding: 9px 16px 10px;
+                    }
+                    &__content {
                         padding: 9px 16px 10px;
                     }
                 }
@@ -562,6 +740,7 @@
             }
             &__input {
                 height: 38px;
+                min-height: 38px;
             }
             
         }
@@ -632,6 +811,34 @@
 
 @media (max-width: 932px) {
     .form {
+        &-datepicker {
+            .air-datepicker {
+                --adp-color: #333333;
+                --adp-color-other-month: #333333;
+                --adp-color-current-date: #333333;
+                --adp-nav-color-secondary: #333333;
+            }
+            .air-datepicker-body--cells.-days- {
+                row-gap: 0px;
+            }
+        }
+        &-item {
+            &__dropdown {
+                &-label {
+                    input {
+                        &:checked + span {
+                            background: transparent;
+                        }
+                    }
+                    &__info {
+                        padding: 16px 0;
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
         &-select {
             &.opened {
                 z-index: 151;
@@ -670,14 +877,14 @@
                     &::-webkit-scrollbar {
                         width: 3px;
                     }
-                    max-height: 495px;
+                    max-height: 390px;
                 }
             }
             &__close {
                 display: flex;
             }
             &__list {
-                padding-right: 10px;
+                padding-right: 14px;
                 padding-left: 14px;
                 &-item {
                     border-top: 1px solid #EDEDED;

@@ -6,13 +6,15 @@
     }
     &-content {
         &__left {
-            width: 462px;
+            width: 502px;
             background: var(--white);
             position: relative;
             z-index: 3;
+            // margin-left: calc(-1 * var(--container-padding));
+            padding-left: var(--container-padding);
         }
         &__right {
-            width: calc(100% - 462px);
+            width: calc(100% - 502px);
         }
     }
     &-info {
@@ -52,10 +54,10 @@
     .journal {
         &-content {
             &__left {
-                width: 347px;
+                width: 378px;
             }
             &__right {
-                width: calc(100% - 347px);
+                width: calc(100% - 378px);
             }
         }
         &-slider {
@@ -90,6 +92,7 @@
             }
             &__right {
                 width: 100%;
+                padding-left: var(--container-padding);
             }
         }
         &-slider {

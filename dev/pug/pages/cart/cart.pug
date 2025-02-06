@@ -1,0 +1,302 @@
+.cartPage
+    .container
+        .content.list
+            .content__col.content__col-6.content__col-center.col 
+                .cart.cartPage__inner
+                    h1.cartPage__title.ttl.h3 корзина
+                    
+                    .cart-list
+                        .cart-list__item
+                            .account-orderItem.account-orderItem--in-cart
+                                .account-orderItem__inner.d-flex 
+                                    .account-orderItem__inner-img 
+                                        a.account-orderItem__img.centered(href="#") 
+                                            +pngC('stphoto_ru2', '100', '96')
+                                    .account-orderItem__inner-info 
+                                        .account-orderItem__top 
+                                            .account-orderItem__group.d-flex
+                                                .account-orderItem__group-name 
+                                                    .account-orderItem__title.ttl.title1 
+                                                        a(href="#") Addict
+                                                    .account-orderItem__category 
+                                                        a(href="#") Ботинки 
+                                                    .account-orderItem__size
+                                                        .account-orderItem__size-txt 38
+                                                        .account-orderItem__size-icon.outline-border(style="background: #FFFFFF;")
+                                                .account-orderItem__group-favorite
+                                                    button.account-orderItem__favorite.fav-btn.centered(type="button")
+                                                        span.account-orderItem__favorite-icon.icon
+                                                            +icon('heart')
+                                                            +icon('heart-fill')
+                                .account-orderItem__bottom.account-orderItem__bottom--cart
+                                    .account-orderItem__hidden 
+                                        .account-orderItem__hidden-inner.d-flex
+                                            .account-orderItem__remove-wrapper 
+                                                button.account-orderItem__remove.outline-border(type="button")
+                                                    include ../../icons/trash
+                                            .account-orderItem__qty-wrapper.account-orderItem__qty-wrapper--end 
+                                                .account-orderItem__null.txt-sm последний
+                                            
+                                    .account-orderItem__price.account-orderItem__price--column.d-flex
+                                        .account-orderItem__price-new.ttl.title2 12 990 ₽
+                                        .account-orderItem__price-old
+                                            .account-orderItem__price-old-value 20 990 ₽
+                                            .account-orderItem__price-old-icon
+                                                .account-orderItem__price-old-icon__btn.icon 
+                                                    include ../../icons/info
+                                                .account-orderItem__price-dropdown.mobileBottom.account-orderItem__price-dropdown--right 
+                                                    .mobileBottom__backdrop.backdrop(data-close)
+                                                    .mobileBottom__content
+                                                        .mobileBottom__head 
+                                                            a.mobileBottom-close.icon(href="#" data-close) 
+                                                                +svg('close', '14', '14')
+                                                        .mobileBottom__title Детализация скидки
+                                                        .mobileBottom__info
+                                                            .account-orderItem__price-dropdown__content 
+                                                                .product-price__dropdown-item.d-flex 
+                                                                    .product-price__dropdown-item__name Скидка на товары
+                                                                    .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                .product-price__dropdown-item.d-flex 
+                                                                    .product-price__dropdown-item__name Последняя пара
+                                                                    .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                            .account-orderItem__price-dropdown__arrow
+                                                                +svg('dropdown-arrow', '32', '16')
+                        .cart-list__item
+                            .account-orderItem.account-orderItem--in-cart
+                                .account-orderItem__inner.d-flex 
+                                    .account-orderItem__inner-img 
+                                        a.account-orderItem__img.centered(href="#") 
+                                            +pngC('stphoto_ru2', '100', '96')
+                                    .account-orderItem__inner-info 
+                                        .account-orderItem__top 
+                                            .account-orderItem__group.d-flex
+                                                .account-orderItem__group-name 
+                                                    .account-orderItem__title.ttl.title1 
+                                                        a(href="#") Addict
+                                                    .account-orderItem__category 
+                                                        a(href="#") Ботинки 
+                                                    .account-orderItem__size
+                                                        .account-orderItem__size-txt 38
+                                                        .account-orderItem__size-icon.outline-border(style="background: #FFFFFF;")
+                                                .account-orderItem__group-favorite
+                                                    button.account-orderItem__favorite.fav-btn.centered(type="button")
+                                                        span.account-orderItem__favorite-icon.icon
+                                                            +icon('heart')
+                                                            +icon('heart-fill')
+                                .account-orderItem__bottom.account-orderItem__bottom--cart
+                                    .account-orderItem__hidden 
+                                        .account-orderItem__hidden-inner.d-flex
+                                            .account-orderItem__remove-wrapper 
+                                                button.account-orderItem__remove.outline-border(type="button")
+                                                    include ../../icons/trash
+                                            .account-orderItem__qty-wrapper 
+                                                .account-orderItem__qty.d-flex.outline-border 
+                                                    button.account-orderItem__qty-btn.account-orderItem__qty-minus(type="button" disabled)
+                                                        include ../../icons/minus
+                                                    input.account-orderItem__qty-input(value="1")
+                                                    button.account-orderItem__qty-btn.account-orderItem__qty-plus(type="button")
+                                                        include ../../icons/plus-2
+                                            
+                                    .account-orderItem__price.account-orderItem__price--column.d-flex
+                                        .account-orderItem__price-new.ttl.title2 12 990 ₽
+                                        .account-orderItem__price-old
+                                            .account-orderItem__price-old-value 20 990 ₽
+                                            .account-orderItem__price-old-icon
+                                                .account-orderItem__price-old-icon__btn.icon 
+                                                    include ../../icons/info
+                                                .account-orderItem__price-dropdown.mobileBottom.account-orderItem__price-dropdown--right 
+                                                    .mobileBottom__backdrop.backdrop(data-close)
+                                                    .mobileBottom__content
+                                                        .mobileBottom__head 
+                                                            a.mobileBottom-close.icon(href="#" data-close) 
+                                                                +svg('close', '14', '14')
+                                                        .mobileBottom__title Детализация скидки
+                                                        .mobileBottom__info
+                                                            .account-orderItem__price-dropdown__content 
+                                                                .product-price__dropdown-item.d-flex 
+                                                                    .product-price__dropdown-item__name Скидка на товары
+                                                                    .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                .product-price__dropdown-item.d-flex 
+                                                                    .product-price__dropdown-item__name Последняя пара
+                                                                    .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                            .account-orderItem__price-dropdown__arrow
+                                                                +svg('dropdown-arrow', '32', '16')
+                        - for (let i = 0; i < 1; i++)
+                            .cart-list__item
+                                .account-orderItem.account-orderItem--in-cart
+                                    .account-orderItem__inner.d-flex 
+                                        .account-orderItem__inner-img 
+                                            a.account-orderItem__img.centered(href="#") 
+                                                +pngC('stphoto_ru2', '100', '96')
+                                        .account-orderItem__inner-info 
+                                            .account-orderItem__top 
+                                                .account-orderItem__group.d-flex
+                                                    .account-orderItem__group-name 
+                                                        .account-orderItem__title.ttl.title1 
+                                                            a(href="#") Addict
+                                                        .account-orderItem__category 
+                                                            a(href="#") Ботинки 
+                                                        .account-orderItem__size
+                                                            .account-orderItem__size-txt 38
+                                                            .account-orderItem__size-icon(style="background: linear-gradient(122.28deg, #7DFFA2 -1.81%, #FDF99B 45.91%, #FF1091 100%);")
+                                                    .account-orderItem__group-favorite
+                                                        button.account-orderItem__favorite.fav-btn.centered(type="button")
+                                                            span.account-orderItem__favorite-icon.icon
+                                                                +icon('heart')
+                                                                +icon('heart-fill')
+                                    .account-orderItem__bottom.account-orderItem__bottom--cart
+                                        .account-orderItem__hidden 
+                                            .account-orderItem__hidden-inner.d-flex
+                                                .account-orderItem__remove-wrapper 
+                                                    button.account-orderItem__remove.outline-border(type="button")
+                                                        include ../../icons/trash
+                                                .account-orderItem__qty-wrapper 
+                                                    .account-orderItem__qty.d-flex.outline-border 
+                                                        button.account-orderItem__qty-btn.account-orderItem__qty-minus(type="button" disabled)
+                                                            include ../../icons/minus
+                                                        input.account-orderItem__qty-input(value="1")
+                                                        button.account-orderItem__qty-btn.account-orderItem__qty-plus(type="button")
+                                                            include ../../icons/plus-2
+                                                
+                                        .account-orderItem__price.account-orderItem__price--column.d-flex
+                                            .account-orderItem__price-new.ttl.title2 12 990 ₽
+                                            .account-orderItem__price-old
+                                                .account-orderItem__price-old-value 20 990 ₽
+                                                .account-orderItem__price-old-icon
+                                                    .account-orderItem__price-old-icon__btn.icon 
+                                                        include ../../icons/info
+                                                    .account-orderItem__price-dropdown.mobileBottom.account-orderItem__price-dropdown--right 
+                                                        .mobileBottom__backdrop.backdrop(data-close)
+                                                        .mobileBottom__content
+                                                            .mobileBottom__head 
+                                                                a.mobileBottom-close.icon(href="#" data-close) 
+                                                                    +svg('close', '14', '14')
+                                                            .mobileBottom__title Детализация скидки
+                                                            .mobileBottom__info
+                                                                .account-orderItem__price-dropdown__content 
+                                                                    .product-price__dropdown-item.d-flex 
+                                                                        .product-price__dropdown-item__name Скидка на товары
+                                                                        .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                    .product-price__dropdown-item.d-flex 
+                                                                        .product-price__dropdown-item__name Последняя пара
+                                                                        .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                .account-orderItem__price-dropdown__arrow
+                                                                    +svg('dropdown-arrow', '32', '16')
+                                        
+                        .cart-list__item
+                            .account-orderItem.account-orderItem--in-cart.disabled
+                                .account-orderItem__inner.d-flex 
+                                    .account-orderItem__inner-img 
+                                        a.account-orderItem__img.centered(href="#") 
+                                            +pngC('stphoto_ru2', '100', '96')
+                                    .account-orderItem__inner-info 
+                                        .account-orderItem__top 
+                                            .account-orderItem__group.d-flex
+                                                .account-orderItem__group-name 
+                                                    .account-orderItem__title.ttl.title1 
+                                                        a(href="#")  Addict
+                                                    .account-orderItem__category 
+                                                        a(href="#") Ботинки 
+                                                    .account-orderItem__size
+                                                        .account-orderItem__size-txt 38
+                                                        .account-orderItem__size-icon(style="background: #EBE3CF;")
+                                                .account-orderItem__group-favorite
+                                                    a.account-orderItem__subscribe.d-flex.change-link.active(href="#" data-default="вы подписаны" data-change="подписаться") 
+                                                        span.change-link__output подписаться
+                                                        span.account-orderItem__subscribe-icon.icon
+                                                            span.account-orderItem__subscribe-icon__bell 
+                                                                include ../../icons/bell
+                                                            span.account-orderItem__subscribe-icon__unbell 
+                                                                include ../../icons/bell-active
+                                .account-orderItem__bottom.account-orderItem__bottom--cart
+                                    .account-orderItem__hidden.visible
+                                        .account-orderItem__hidden-inner.d-flex
+                                            .account-orderItem__remove-wrapper 
+                                                button.account-orderItem__remove.outline-border(type="button")
+                                                    include ../../icons/trash
+                                    .account-orderItem__null.txt-sm нет в наличии
+                    .cart-promocode 
+                        .cart-total__promocode.order-info__promocode.error
+                            .order-info__promocode-inner
+                                .order-info__promocode-error промокод не найден
+                                input.cart-total__promocode-input.order-info__promocode-input(type="text" placeholder="Введите промокод")
+                                button.order-info__promocode-btn.cart-total__promocode-btn(type="button" disabled) Применить
+                            .order-info__promocode-list.flex 
+                                .order-info__promocode-list__item
+                                    .order-info__promocode-badge.d-flex
+                                        .order-info__promocode-badge__txt SUMMER2024
+                                        .order-info__promocode-badge__icon
+                                            include ../../icons/x
+                                .order-info__promocode-list__item
+                                    .order-info__promocode-badge.d-flex
+                                        .order-info__promocode-badge__txt СЕРТИФИКАТ
+                                        .order-info__promocode-badge__icon
+                                            include ../../icons/x
+
+                    .cart-total
+                        .order-info__price.d-flex
+                            .order-info__price-name.d-flex
+                                .order-info__price-name-txt.ttl.order-info__price-title Итого
+                                .order-info__price-name-icon.icon
+                                    include ../../icons/info
+                                .order-info__dropdown.mobileBottom 
+                                    .mobileBottom__backdrop.backdrop(data-close)
+                                    .mobileBottom__content
+                                        .mobileBottom__head 
+                                            a.mobileBottom-close.icon(href="#" data-close) 
+                                                +svg('close', '14', '14')
+                                        .mobileBottom__info
+                                            .order-info__dropdown-content 
+                                                .order-info__dropdown-list
+                                                    .order-info__dropdown-list__item 
+                                                        .order-info__dropdown-list__item-name Сумма
+                                                        .order-info__dropdown-list__item-value 22 670 ₽
+                                                    .order-info__dropdown-list__item 
+                                                        .order-info__dropdown-list__item-name Скидка на товары
+                                                        .order-info__dropdown-list__item-value.order-info__dropdown-list__item-value--red -2 584 ₽
+                                                    .order-info__dropdown-list__item 
+                                                        .order-info__dropdown-list__item-name Скидка по промокоду
+                                                        .order-info__dropdown-list__item-value.order-info__dropdown-list__item-value--red -4 584 ₽
+                                                    .order-info__dropdown-list__item 
+                                                        .order-info__dropdown-list__item-name Доставка
+                                                        .order-info__dropdown-list__item-value 0 ₽
+                                                .order-info__dropdown-line 
+                                                .order-info__dropdown-total 
+                                                    .order-total__bottom-inner.d-flex 
+                                                        .order-total__bottom-item
+                                                            .order-total__bottom-item__title.ttl Итого
+                                                            .order-total__bottom-item__txt.tech-14 3 товара
+                                                        .order-total__bottom-item
+                                                            .order-total__bottom-item__title.ttl 18 336 ₽
+                                                            .order-total__bottom-item__txt.tech-14 Экономия 2 839 ₽
+                                            .order-info__dropdown-arrow 
+                                                +svg('dropdown-arrow', '32', '16')
+                            .order-info__price-value.ttl.order-info__price-title 18 336 ₽
+                        .order-info__total.d-flex 
+                            .order-info__total-qty 3 товара
+                            .order-info__total-price Экономия 2839 ₽ 
+                        a.cart-total__btn.btn(href="#") оформить заказ
+                    .cart-delivery
+                        .cart-total__delivery
+                            .cart-total__delivery-inner.d-flex
+                                .cart-total__delivery-icon.icon
+                                    +svg('delivery', '16', '16')
+                                .cart-total__delivery-txt.txt-sm Бесплатная доставка курьером по всей России
+                    .cart-recomend
+                        .cart-recomend__head
+                            .cart-recomend__head-inner.d-flex 
+                                .cart-recomend__head-title 
+                                    .cart-recomend__title.ttl.h6 рекомендуем
+                                .cart-recomend__head-controls 
+                                    .cart-recomend__controls.d-flex 
+                                        a.cart-recomend__controls-btn.cart-recomend__controls-prev.centered(href="#") 
+                                            +svg('prev', '16', '16')
+                                        a.cart-recomend__controls-btn.cart-recomend__controls-next.centered(href="#") 
+                                            +svg('next', '16', '16')
+                        .cart-recomend__body
+                            .cart-slider 
+                                .swiper-wrapper 
+                                    - for (let i = 0; i < 5; i++)
+                                        .cart-slider__slide.swiper-slide 
+                                            +newCard(false, true)
+                

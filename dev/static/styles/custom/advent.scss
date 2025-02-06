@@ -1,0 +1,361 @@
+.adventPage {
+    --accent-color: #30533B;
+}
+
+
+.advent {
+    &-intro {
+        border-radius: 0 0 38px 38px;
+        overflow: hidden;
+        --accent-color: #30533B;
+        &__img {
+            height: 566px;
+        }
+        &__content {
+            align-items: flex-end;
+            padding-bottom: 148px;
+            text-align: center;
+            &-inner {
+                max-width: 100%;
+            }
+            &-img {
+                margin-bottom: 6px;
+            }
+            &-title {
+                color: var(--accent-color);
+            }
+        }
+    }
+    &-content {
+        padding-top: 40px;
+        padding-bottom: 112px;
+        --accent-color: #30533B;
+        color: var(--accent-color);
+        ul:not([class]) li::before {
+            background: var(--accent-color);
+        }
+        &__group {
+            margin-bottom: 36px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__block-sm {
+        width: 620px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__block-lg {
+        width: 770px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__block-xl {
+        width: 1224px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__txt {
+        
+        > * {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-gift {
+        background: #D9D9D9 url(../../static/images/general/advent-bg.png) left 0 bottom 0 no-repeat;
+        background-size: cover;
+        padding: 60px 48px 60px 44px;
+        border-radius: 38px;
+        &__title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        &__txt {
+            margin-bottom: 24px;
+            &--center {
+                text-align: center;
+            }
+            > * {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &--bottom {
+                margin-top: 24px;
+            }
+            
+            
+        }
+        &__promocode {
+            width: 299px;
+            height: 115px;
+            background: url(../../static/images/general/advent-gift.png) 0 0 no-repeat;
+            background-size: contain;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 30px;
+            color: var(--white);
+            text-align: center;
+            cursor: pointer;
+            &.copied {
+                .advent-gift__promocode-title__icon {
+                    display: flex;
+                }
+            }
+            &-title {
+                font-size: 14px;
+                line-height: 120%;
+                margin-bottom: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &__icon {
+                    display: none;
+                    margin-left: 8px;
+                }
+            }
+            &-value {
+                font-size: 26px;
+                line-height: 109%;
+                font-weight: 500;
+                justify-content: center;
+                cursor: pointer;
+                &__txt {
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+    &-info {
+        &__title {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        &__content {
+            &-col {
+                width: 50%;
+            }
+        }
+        &__img {
+            img {
+                border-radius: 38px;
+            }
+        }
+        &__desc {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 38px;
+            background: #D9D9D9 url(../../static/images/general/advent-bg-2.png) left 0 bottom 0 no-repeat;
+            background-size: cover;
+            padding: 22px 36px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 140%;
+            &-top {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .advent {
+        &-intro {
+            border-radius: 0 0 28px 28px;
+            &__img {
+                height: 425px;
+            }
+            &__content {
+                padding-bottom: 80px;
+                &-img {
+                    margin-bottom: 12px;
+                    img {
+                        max-width: 418px;
+                    }
+                }
+            }
+        }
+        &-content {
+            padding-top: 32px;
+            padding-bottom: 64px;
+            &__group {
+                margin-bottom: 32px;
+            }
+        }
+        
+        &__block-sm {
+            width: 610px;
+        }
+        &__block-lg {
+            width: 610px;
+        }
+        &__block-xl {
+            width: 918px;
+        }
+        &-gift {
+            margin-bottom: 20px;
+            padding: 48px 24px 48px 28px;
+            &__title {
+                margin-bottom: 20px;
+            }
+            &__txt {
+                margin-bottom: 20px;
+                &--bottom {
+                    margin-top: 20px;
+                }
+            }
+        }
+        &-decor {
+            height: 68px;
+            display: flex;
+            align-items: center;
+        }
+        &-info {
+            &__title {
+                margin-bottom: 32px;
+            }
+            &__desc {
+                font-size: 15px;
+                line-height: 140%;
+                padding: 24px 16px;
+                border-radius: 28px;
+            }
+            &__img {
+                img {
+                    border-radius: 28px;
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 932px) {
+    .advent {
+        &-intro {
+            &__img {
+                height: 320px;
+            }
+            &__content {
+                padding-bottom: 72px;
+                padding-left: 24px;
+                padding-right: 24px;
+                &-img {
+                    margin-bottom: 8px;
+                    img {
+                        max-width: 238px;
+                    }
+                }
+                &-title {
+                    font-size: 24px;
+                }
+            }
+        }
+        &-content {
+            padding-top: 24px;
+            padding-bottom: 48px;
+            &__group {
+                margin-bottom: 24px;
+            }
+        }
+        
+        &-gift {
+            padding: 36px 16px;
+            margin-bottom: 24px;
+            &__title {
+                text-align: left;
+                margin-bottom: 24px;
+                font-size: 20px;
+            }
+            &__txt {
+                margin-bottom: 24px;
+                &--bottom {
+                    margin-top: 24px;
+                }
+                br {
+                    display: none;
+                }
+            }
+        }
+        &-decor {
+            height: 54px;
+        }
+        &-info {
+            font-size: 15px;
+            &__title {
+                margin-bottom: 24px;
+            }
+            &__content {
+                border-radius: 24px;
+            }
+            &__img {
+                
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__desc {
+                
+                padding: 30px 12px;
+                
+                &-top {
+                    padding-bottom: 12px;
+                }
+                &-logo {
+                    img {
+                        width: 100px;
+                        border-radius: 24px;
+                    }
+                }
+                &-img {
+                    padding-bottom: -48px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .advent {
+        &-info {
+            &__content {
+                background: #D9D9D9 url(../../static/images/general/advent-bg-2.png) left 0 bottom 0 no-repeat;
+                background-size: cover;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 0 0 24px 24px;
+                &-col {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+            &__desc {
+                background: none;
+            }
+            &__img {
+                margin-bottom: -82px;
+            }
+        }
+    }
+}

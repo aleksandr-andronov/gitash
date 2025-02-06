@@ -5,10 +5,50 @@ block variables
 
 block content
 	.container(style="padding: 40px 14px;") 
+		.h4.ttl(style="margin: 40px 0;") оформление заказа
+		ul 
+			li 
+				a(href="./order-default.html" target="_blank") Страница по умолчанию 
+			li 
+				a(href="./order-default-city.html" target="_blank") Страница по умолчанию 2
+			li 
+				a(href="./order-second.html" target="_blank") Страница по умолчанию 3
+			li 
+				a(href="./order-points.html" target="_blank") Выбран пункт выдачи с примеркой
+			li 
+				a(href="./order-points-2.html" target="_blank") Выбран пункт выдачи без примерки
+			li 
+				a(href="./order-default-city-no-date.html" target="_blank") курьер без слотов времени
+		.h4.ttl(style="margin: 40px 0;") Выпадающие элементы
+		ul 
+			li 
+				a(href="#fridayModal" data-bs-toggle="modal") Окно черная пятница
+			li 
+				a(href="#splitModal" data-bs-toggle="offcanvas") Окно сплит
+			li 
+				a(href="#loginModal" data-bs-toggle="modal") Вход
+			li 
+				a(href="#determineSizeWomen" data-bs-toggle="offcanvas") определить размер женщины
+			li 
+				a(href="#determineSizeMen" data-bs-toggle="offcanvas") определить размер мужчины
+			li 
+				a(href="#paymentShares" data-bs-toggle="offcanvas") попап долями
+			li 
+				a(href="#cart" data-bs-toggle="offcanvas") корзина
+			li 
+				a(href="#subscribeSize" data-bs-toggle="offcanvas") подписка на размер 
+			li 
+				a(href="#subscribeSizeCart" data-bs-toggle="offcanvas") подписка на размер корзина
+			li 
+				a(href="#feedback" data-bs-toggle="offcanvas") обратная связь
+			li 
+				a(href="#search" data-bs-toggle="offcanvas") поиск
 		.h4.ttl(style="margin: 40px 0;") Технические Страницы
 		ul 
 			li 
 				a(href="./order-success.html" target="_blank") заказ успешно оплачен 
+			li 
+				a(href="./order-success-2.html" target="_blank") счет по заказу готов
 			li 
 				a(href="./order-error.html" target="_blank") платеж не прошел
 			li 
@@ -18,11 +58,15 @@ block content
 		.h4.ttl(style="margin: 40px 0;") Страницы
 		ul 
 			li 
+				a(href="./main-2.html" target="_blank") Главная полная
+			li 
 				a(href="./main.html" target="_blank") Главная
 			li 
 				a(href="./catalog.html" target="_blank") Каталог
 			li 
 				a(href="./catalog-banner.html" target="_blank") Каталог с баннером 
+			li 
+				a(href="./catalog-discount.html" target="_blank") Каталог со скидками
 			li 
 				a(href="./catalog-search-1.html" target="_blank") страница с результатами поиска
 			li 
@@ -35,8 +79,19 @@ block content
 				a(href="./product-3.html" target="_blank") Страница товара подписанный на размер
 			li 
 				a(href="./product-null.html" target="_blank") Страница товара нет в наличии
+			li 
+				a(href="./certificate.html" target="_blank") Сертификат
 		.h4.ttl(style="margin: 40px 0;") Аккаунт
 		ul 
+			li 
+				a(href="./account-favorite-null.html" target="_blank") избранное пустое
+			li 
+				a(href="./account-orders-null.html" target="_blank") заказы пустое
+			li 
+				a(href="./account-returns-null.html" target="_blank") возвраты пустое
+			li 
+				a(href="./account-addresses-null.html" target="_blank") адреса пустое
+				
 			li 
 				a(href="./account-main.html" target="_blank") лк главная
 			li 
@@ -56,10 +111,6 @@ block content
 			li 
 				a(href="./account-8.html" target="_blank") статус неоплаченного заказа почта россии 
 			li 
-				a(href="./account-mobile-1.html" target="_blank") мобильное меню 1
-			li 
-				a(href="./account-mobile-2.html" target="_blank") мобильное меню 2
-			li 
 				a(href="./account-subscriptions.html" target="_blank") страница подписок
 			li 
 				a(href="./account-orders.html" target="_blank") страница заказов
@@ -69,53 +120,25 @@ block content
 				a(href="./account-addresses.html" target="_blank") страница адресов
 			li 
 				a(href="./account-settings.html" target="_blank") страница с настройками
-		.h4.ttl(style="margin: 40px 0;") оформление заказа
-		ul 
-			li 
-				a(href="./order-default.html" target="_blank") Страница по умолчанию 
-			li 
-				a(href="./order-default-courier.html" target="_blank") Страница по умолчанию с окном курьера
-			li 
-				a(href="./order-post-choose.html" target="_blank") Прогрузка оформления почтой россии
-			li 
-				a(href="./order-post-selected.html" target="_blank") Выбран пункт выдачи
-			li 
-				a(href="./order-post-second.html" target="_blank") Оформление заказа 2-й и следующие разы почта
-			li 
-				a(href="./order-courier.html" target="_blank") Прогрузка оформления курьерской доставкой
-			li 
-				a(href="./order-courier-second.html" target="_blank") Оформление заказа 2-й и следующие разы курьер
-			li 
-				a(href="./order-post-mobile-default.html" target="_blank") Страница мобильная почтой
-			li 
-				a(href="./order-post-mobile-selected.html" target="_blank") Страница мобильная почтой заполнены поля
-			li 
-				a(href="./order-courier-mobile-default.html" target="_blank") Страница мобильная курьером
-			li 
-				a(href="./order-courier-mobile-selected.html" target="_blank") Страница мобильная курьер заполнены поля
-				
-		.h4.ttl(style="margin: 40px 0;") Выпадающие элементы
-		ul 
-			li 
-				a(href="#loginModal" data-bs-toggle="modal") Вход
-			li 
-				a(href="#determineSize" data-bs-toggle="offcanvas") определить размер
-			li 
-				a(href="#paymentShares" data-bs-toggle="offcanvas") попап долями
-			li 
-				a(href="#cart" data-bs-toggle="offcanvas") корзина
-			li 
-				a(href="#subscribeSize" data-bs-toggle="offcanvas") подписка на размер 
-			li 
-				a(href="#subscribeSizeCart" data-bs-toggle="offcanvas") подписка на размер корзина
-			li 
-				a(href="#feedback" data-bs-toggle="offcanvas") обратная связь
-			li 
-				a(href="#search" data-bs-toggle="offcanvas") поиск
 
+
+			li 
+				a(href="./account-main-2.html" target="_blank") лк главная с сертификатами
+			li 
+				a(href="./account-cert-1.html" target="_blank") полученный сертификат
+			li 
+				a(href="./account-cert-2.html" target="_blank") купленные сертификаты со статусами
+			li 
+				a(href="./account-cert-3.html" target="_blank") купленные и полученные сертификаты вместе
+			li 
+				a(href="./account-cert-null.html" target="_blank") пустая страница сертификатов
+
+		
 		
 		.h4.ttl(style="margin: 40px 0;") Пользователю 
 		ul 
+			li 
+				a(href="./infoContacts.html" target="_blank") Контакты
 			li 
 				a(href="./infoShops.html" target="_blank") магазины
 			li 

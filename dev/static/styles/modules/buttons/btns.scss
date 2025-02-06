@@ -1,0 +1,58 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 12px 16px 12px 18px;
+    background: var(--white);
+    gap: 10px;
+    border-radius: 26px;
+    line-height: 20px;
+    &--icon-left {
+        padding: 12px 18px 12px 16px;
+    }
+    &__icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.button-label {
+    input {
+        display: none;
+        &:checked + span {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+    &__content {
+        &::before {
+            border-color: var(--black);
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .button {
+        gap: 8px;
+        padding: 10px 14px 10px 16px;
+        &--icon-left {
+            padding: 10px 16px 10px 14px;
+        }
+        &__icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .button {
+        padding: 6px 12px 7px 14px;
+        &--icon-left {
+            padding: 6px 14px 7px 12px;
+        }
+    }
+}

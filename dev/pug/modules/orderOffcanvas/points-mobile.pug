@@ -1,0 +1,120 @@
+mixin pickupPoints(title, hanger, address, date)
+    a.pickupPoint-item(href="#pickupPoint" data-bs-toggle="offcanvas") 
+        .pickupPoint-item__title.d-flex.medium
+            .pickupPoint-item__title-txt #{title}
+            .pickupPoint-item__title-icon.centered
+                if (hanger)
+                    +svg('hanger', '16', '16')
+                else 
+                    +svg('unhanger', '16', '16')
+        .pickupPoint-item__address.txt-sm #{address}
+        .pickupPoint-item__date #{date}
+
+#pickupPointsMobile.offcanvas.offcanvas-end(tabindex="-1" data-bs-scroll="false" data-bs-keyboard="false" data-bs-backdrop="false" aria-hidden="true")
+    .offcanvas__inner.offcanvas__inner--flex.offcanvas__inner--m-no-overflow.tabs 
+        .offcanvas__head.offcanvas__head--m-pb-0
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-back
+                    a.offcanvas-close.btn-circle.pickupPoint-closePoints(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('arrow-left')
+                    a.offcanvas-close.btn-circle.pickupPoint-closeSearch.offcanvas-close--hidden(href="#" aria-label="назад") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 Выбор пункта выдачи
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle.hideMap(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+            .offcanvas__head-tabs
+                .pickupPoint-tabs__list.d-flex 
+                    .pickupPoint-tabs__list-item    
+                        a.pickupPoint-tabs__link.tabs-link(href="#" data-tabs="list") список
+                    .pickupPoint-tabs__list-item    
+                        a.pickupPoint-tabs__link.tabs-link.selected(href="#" data-tabs="map") на карте
+        .offcanvas__body.offcanvas__body--no-padding.offcanvas__body--m-overflow
+            .pickupPoint-mobile-actions.pickupPoint-mobile-actions--absolute
+                .orderMap-actions__list.list
+                    .orderMap-actions__list-item
+                        button.pickupPoint-openSearch.btn-circle.btn-circle--white(type="button")
+                            +icon('search')
+                    .orderMap-actions__list-item.col
+                        label.button-label
+                            input(type="checkbox" name="size")
+                            span.button-label__content.outline-border.button.button--icon-left
+                                span.button__icon.centered 
+                                    +svg('hanger', '16', '16')
+                                span.button__txt с примеркой  
+                    .orderMap-actions__list-item.col
+                        .sorting
+                            a.sorting-btn.d-flex.button(href="#")
+                                span.button__txt.sorting-btn__txt службы выдачи
+                                span.button__icon.icon 
+                                    +icon('down')
+                            .sorting-dropdown.mobileBottom.outline-border.sorting-dropdown--rounded
+                                .mobileBottom__backdrop.backdrop(data-close)
+                                .mobileBottom__content 
+                                    .mobileBottom__head 
+                                        a.mobileBottom-close.icon(href="#" data-close) 
+                                            +svg('close', '14', '14')
+                                    .mobileBottom__info 
+                                        .sorting-dropdown__list
+                                            .sorting-dropdown__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" checked data-value="СДЕК")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt СДЕК
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Boxberry")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Boxberry
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Яндекс")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Яндекс
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Почта России")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Почта России
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+            .pickupPoint-content
+                .pickupPoint-content__item.tabs-content(data-tabs="list")
+                    .pickupPoint-list
+                        - for (let i = 0; i < 10; i++)
+                            .pickupPoint-list__item 
+                                +pickupPoints('СДЕК', true, 'ул. Шарикоподшипниковская, д. 4, стр. 4а', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('boxberry', false, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('Почта России', true, 'ул. Мосфильмовская, д. 34', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('яндекс доставка', true, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')
+                .pickupPoint-content__item.tabs-content.active.animate(data-tabs="map")
+                    #pickupPointsMapMobile
+            .pickupPoint-mSearch
+                form.pickupPoint-mSearch__form(action="#") 
+                    .orderMap-search.form-item.form-item-dropdown.form-item-search
+                        .form-item__group 
+                            input.orderMap-search__input.form-input.form-input--rounded#searchPoints(type="text")
+                            button.form-item__clear(type="button")
+                                span.form-item__clear-active.form-item__clear-icon
+                                    +svg('close')
+                .pickupPoint-mSearch__list
+                    .pickupPoint-list
+                        - for (let i = 0; i < 1; i++)
+                            .pickupPoint-list__item 
+                                +pickupPoints('СДЕК', true, 'ул. Шарикоподшипниковская, д. 4, стр. 4а', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('boxberry', false, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('Почта России', true, 'ул. Мосфильмовская, д. 34', 'дата доставки: 14-18 ноября')
+                            .pickupPoint-list__item 
+                                +pickupPoints('яндекс доставка', true, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')

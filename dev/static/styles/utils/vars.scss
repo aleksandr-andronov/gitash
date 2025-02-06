@@ -7,7 +7,7 @@
   --sale: #EC9D71;
   --new: #3E9B2F;
   --gray: #F9F9F9;
-  --element-second: #F6F6F6;
+  --element-second: #F6F6F6; 
   --stroke-element: #F0F0F0;
   --stroke-element-hover: #D6D6D6;
   --text-hover: #A2A2A2;
@@ -15,9 +15,12 @@
   --text-standart: #BEBEBE;
   --text-background: #adadad;
   --text-disable: #C3C3C3;
+  --text-disable-2: #E3E3E3;
   --element-hover: #F0F0F0;
   --btn-hover: #222222;
   --card--bg: #F3F3F3;
+  --green: #55C776;
+  --light-peach: #FFCCB2;
 
 
   --grey-1: #B0B0B0;
@@ -39,4 +42,37 @@
   --grey-17: #E1E1E1;
 
   --status-green: #42A56B;
+
+
+  --container-width: 1860px;
+  --container-padding: 40px;
+  --gutter-x: 10px;
+
+  --height-content: 124px;
+  --height-scroll: 118px;
+
+
+  --content-center: 770px;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --container-width: 1400px;
+    --container-padding: 30px;
+    --gutter-x: 14px;
+
+
+    --height-content: 102px;
+    --height-scroll: 94px;
+
+    --content-center: 614px;
+  }
+}
+
+@media (max-width: 932px) {
+  :root {
+    --height-content: 61px;
+    --height-scroll: 61px;
+    --container-padding: 14px;
+  }
 }

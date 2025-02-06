@@ -9,6 +9,8 @@
 @import "../../../../node_modules/bootstrap/scss/tooltip";
 
 
-@function vw($px, $viewport) {
-    @return ($px * 100vw / $viewport);
+@function vw($px, $viewport, $precision: 2) {
+    $value: ($px * 100 / $viewport);
+    $multiplier: pow(10, $precision);
+    @return (round($value * $multiplier) / $multiplier) * 1vw;
 }

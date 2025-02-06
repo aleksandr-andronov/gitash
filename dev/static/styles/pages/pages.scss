@@ -12,16 +12,29 @@
 
 @import "order/order";
 @import "order/order-2";
+@import "order/shipment";
 @import "order/address";
+@import "order/infoBlock";
+@import "order/map";
+
+
 @import "account/account";
 @import "info/info";
 @import "cart/cart";
 @import "search/search";
 @import "product/product";
+@import "product/gallery";
 @import "catalog/catalog";
+@import "catalog/catalognew";
 @import "favorite/favorite";
 @import "null/null";
 
 
-@import "journal/journal";
-@import "journal/text";
+@import "certificate/certificate";
+
+@import "certificate/price";
+@import "certificate/form";
+@import "certificate/image";
+
+// @import "journal/journal";
+// @import "journal/text";

@@ -23,13 +23,31 @@
                 span.order-form__payment-txt Долями
                 span.order-form__payment-icon.centered 
                     +svg('payment-3')
-            span.order-form__payment-content__hidden-wrapper.collapse#paymentHidden
+            span.order-form__payment-content__hidden-wrapper.collapse
                 span.order-form__payment-content__hidden 
                     span.order-form__payment-txt-2 Раздели покупку на четыре платежа по 4 584 ₽. 
                     a.order-form__payment-link.d-flex(href="#paymentShares" data-bs-toggle="offcanvas") 
                         span.order-form__payment-link__txt подробнее
                         span.order-form__payment-link__icon.icon 
                             +icon('right')
+
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" name="payment")
+        span.order-form__payment-content.flex.outline-border 
+            span.order-form__payment-content__group.d-flex
+                span.order-form__payment-check.centered 
+                span.order-form__payment-txt Яндекс сплит
+                span.order-form__payment-icon.centered 
+                    +svg('split-icon')
+            span.order-form__payment-content__hidden-wrapper.collapse
+                span.order-form__payment-content__hidden 
+                    span.order-form__payment-txt-2 Сплитуйте на срок до 2 лет 
+                    a.order-form__payment-link.d-flex(href="#splitModal" data-bs-toggle="offcanvas") 
+                        span.order-form__payment-link__txt подробнее
+                        span.order-form__payment-link__icon.icon 
+                            +icon('right')
+
 .order-form__payments-item 
     label.order-form__payment
         input(type="radio" data-type="notinshares" name="payment")

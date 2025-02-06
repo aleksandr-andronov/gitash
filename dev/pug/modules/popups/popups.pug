@@ -19,10 +19,15 @@
             .container
                 .search__bottom-result
                     .search__result-txt Результаты поиска(6)
-                    .search-list.flex
-                        - for (let i = 0; i < 12; i++)
+                    .search-list-wrapper
+                        .search-list.flex
                             .search-list__item 
-                                +newCard(false, false)
+                                +newCardSubscribe(true)
+                            .search-list__item 
+                                +newCardSubscribe(false)
+                            - for (let i = 0; i < 10; i++)
+                                .search-list__item 
+                                    +newCard(false, false)
 
 #subscribeSize.offcanvas.offcanvas-end(tabindex="-1")
     .offcanvas__inner 
@@ -146,8 +151,8 @@
                     .offcanvas-subscribe__group-left 
                         .form-item
                             .form-item__group 
-                                .form-item__label e-mail
-                                input.form-input(type="email")
+                                .form-item__label(data-default="e-mail" data-error="пожалуйста введите e-mail") e-mail
+                                input.form-input(type="email" data-validate)
                     .offcanvas-subscribe__group-right 
                         button.offcanvas-subscribe__btn.btn(type="submit") подписаться
                 .offcanvas-subscribe__bottom-txt Нажимая на кнопку «Подписаться», я соглашаюсь на обработку моих персональных данных, ознакомлен(а) и согласен(а) с условиями Публичной оферты
@@ -291,9 +296,15 @@
                                             +svg('remove')
                 .offcanvas-feedback__foot 
                     button.offcanvas-feedback__btn.btn(type="submit") отправить
+    .offcanvas-feedback__status
+        .offcanvas-feedback__status-inner.centered
+            .offcanvas-feedback__status-img 
+                +svg('success', '80', '80')
+            .offcanvas-feedback__status-title.h6.ttl отправлено 
+            //- .offcanvas-feedback__status-txt Попробуйте еще раз
 
 
-#determineSize.offcanvas.offcanvas-end(tabindex="-1")
+#determineSizeWomen.offcanvas.offcanvas-end(tabindex="-1")
     .offcanvas__inner 
         .offcanvas__head
             .offcanvas__head-inner.d-flex 
@@ -310,10 +321,27 @@
                             td Длина стопы, см
                             td Размер
                     tbody 
-                        - for (let i = 0; i < 7; i++)
-                            tr 
-                                td 22,5
-                                td 35
+                        tr 
+                            td 22,5
+                            td 35
+                        tr 
+                            td 23
+                            td 36
+                        tr 
+                            td 23,8
+                            td 37
+                        tr 
+                            td 24,5
+                            td 38
+                        tr 
+                            td 25,2
+                            td 39
+                        tr 
+                            td 26
+                            td 40
+                        tr 
+                            td 26,8
+                            td 41
                 .offcanvas-determine__desc 
                     .offcanvas-determine__title Как определить свой размер
                     .offcanvas-determine__txt
@@ -325,6 +353,57 @@
                         p Встаньте прямо на твёрдой плоской поверхности, касаясь стены пятками. При необходимости попросите кого-нибудь помочь вам снять мерки. Прижав пятки к стене, измерьте длину стопы от основания пятки до крайней точки самого длинного пальца.
                         p Обязательно измерьте обе стопы и используйте наибольшую величину для определения размера.
 
+#determineSizeMen.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 определить размер
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body 
+            .offcanvas-determine
+                table.offcanvas-determine__table
+                    thead 
+                        tr 
+                            td Длина стопы, см
+                            td Размер
+                    tbody 
+                        tr 
+                            td 22,5 - 26
+                            td 40
+                        tr 
+                            td 26,5 - 27
+                            td 41
+                        tr 
+                            td 27 - 27,5
+                            td 42
+                        tr 
+                            td 27,5 - 28
+                            td 43
+                        tr 
+                            td 28,5 - 29
+                            td 44
+                        tr 
+                            td 30
+                            td 45
+                        tr 
+                            td 30,5
+                            td 46
+                        tr 
+                            td 30,5 - 31
+                            td 47
+                .offcanvas-determine__desc 
+                    .offcanvas-determine__title Как определить свой размер
+                    .offcanvas-determine__txt
+                        p Чтобы выбрать правильный размер обуви, рекомендуем измерить стопу в соответствии с приведёнными ниже правилами.
+                    .offcanvas-determine__img 
+                        +jpgG('determine-img', '576', '330')
+                    .offcanvas-determine__txt 
+                        p Наденьте чулки или носки, которые вы обычно носите с таким видом обуви.
+                        p Встаньте прямо на твёрдой плоской поверхности, касаясь стены пятками. При необходимости попросите кого-нибудь помочь вам снять мерки. Прижав пятки к стене, измерьте длину стопы от основания пятки до крайней точки самого длинного пальца.
+                        p Обязательно измерьте обе стопы и используйте наибольшую величину для определения размера.
 
 
 #paymentShares.offcanvas.offcanvas-end(tabindex="-1")
@@ -390,14 +469,14 @@
                 .offcanvas-desc__title Как оплатить долями
                 .offcanvas-shares__list
                     .offcanvas-shares__list-item
-                        .offcanvas-shares__list-item__title 1. Соберите корзину
+                        .offcanvas-shares__list-item__title 1. Соберите корзину 
                         .offcanvas-shares__list-item__txt Добавьте товары на сумму до 50 000 рублей и перейдите к&nbsp;оформлению
                     .offcanvas-shares__list-item
                         .offcanvas-shares__list-item__title 2. Выберите долями
-                        .offcanvas-shares__list-item__txt Вы оплачиваете заказ четырьмя равными платежами в&nbsp;течение шести недель. Купите то, что давно хотели, прямо сейчас.
+                        .offcanvas-shares__list-item__txt И нажмите оформить заказ
                     .offcanvas-shares__list-item
                         .offcanvas-shares__list-item__title 3. Оплатите 25% и получите заказ
-                        .offcanvas-shares__list-item__txt Вы оплачиваете заказ четырьмя равными платежами в&nbsp;течение шести недель. Купите то, что давно хотели, прямо сейчас.
+                        .offcanvas-shares__list-item__txt Оставшаяся сумма спишется тремя равными платежами с&nbsp;интервалом 2 недели.
 
 #cart.offcanvas.offcanvas-end(tabindex="-1")
     .offcanvas__inner 
@@ -444,6 +523,61 @@
                                             .cart-sale__dropdown-info__bottom-item 50 000 ₽
                                             .cart-sale__dropdown-info__bottom-item 100 000 ₽
                 .cart-list
+                    .cart-list__item
+                        .account-orderItem.account-orderItem--in-cart
+                            .account-orderItem__inner.d-flex 
+                                .account-orderItem__inner-img 
+                                    a.account-orderItem__img.centered(href="#") 
+                                        +pngC('stphoto_ru2', '100', '96')
+                                .account-orderItem__inner-info 
+                                    .account-orderItem__top 
+                                        .account-orderItem__group.d-flex
+                                            .account-orderItem__group-name 
+                                                .account-orderItem__title.ttl.title1 
+                                                    a(href="#") Addict
+                                                .account-orderItem__category 
+                                                    a(href="#") Ботинки 
+                                                .account-orderItem__size
+                                                    .account-orderItem__size-txt 38
+                                                    .account-orderItem__size-icon.outline-border(style="background: #FFFFFF;")
+                                            .account-orderItem__group-favorite
+                                                button.account-orderItem__favorite.fav-btn.centered(type="button")
+                                                    span.account-orderItem__favorite-icon.icon
+                                                        +icon('heart')
+                                                        +icon('heart-fill')
+                            .account-orderItem__bottom.account-orderItem__bottom--cart
+                                .account-orderItem__hidden 
+                                    .account-orderItem__hidden-inner.d-flex
+                                        .account-orderItem__remove-wrapper 
+                                            button.account-orderItem__remove.outline-border(type="button")
+                                                include ../../icons/trash
+                                        .account-orderItem__qty-wrapper.account-orderItem__qty-wrapper--end 
+                                            .account-orderItem__null.txt-sm последний
+                                        
+                                .account-orderItem__price.account-orderItem__price--column.d-flex
+                                    .account-orderItem__price-new.ttl.title2 12 990 ₽
+                                    .account-orderItem__price-old
+                                        .account-orderItem__price-old-value 20 990 ₽
+                                        .account-orderItem__price-old-icon
+                                            .account-orderItem__price-old-icon__btn.icon 
+                                                include ../../icons/info
+                                            .account-orderItem__price-dropdown.mobileBottom.account-orderItem__price-dropdown--right 
+                                                .mobileBottom__backdrop.backdrop(data-close)
+                                                .mobileBottom__content
+                                                    .mobileBottom__head 
+                                                        a.mobileBottom-close.icon(href="#" data-close) 
+                                                            +svg('close', '14', '14')
+                                                    .mobileBottom__title Детализация скидки
+                                                    .mobileBottom__info
+                                                        .account-orderItem__price-dropdown__content 
+                                                            .product-price__dropdown-item.d-flex 
+                                                                .product-price__dropdown-item__name Скидка на товары
+                                                                .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                            .product-price__dropdown-item.d-flex 
+                                                                .product-price__dropdown-item__name Последняя пара
+                                                                .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                        .account-orderItem__price-dropdown__arrow
+                                                            +svg('dropdown-arrow', '32', '16')
                     .cart-list__item
                         .account-orderItem.account-orderItem--in-cart
                             .account-orderItem__inner.d-flex 
@@ -682,3 +816,116 @@
                                 - for (let i = 0; i < 5; i++)
                                     .cart-slider__slide.swiper-slide 
                                         +newCard(false, true)
+
+
+#splitModal.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner
+        .offcanvas__img 
+            +pngG('split-img', '656', '364')
+            a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                +svg('close')
+        .offcanvas__body.offcanvas__body--py-1
+            .offcanvas-split
+                .offcanvas-split__title Оплачивайте покупки частями и&nbsp;без&nbsp;переплат в сплит
+                .offcanvas-split__subtitle 2040 ₽ сегодня, а остальное потом
+                .offcanvas-split__tabs.tabs 
+                    .offcanvas-split__tabs-nav
+                        .offcanvas-split__tabs-nav__list.d-flex
+                            .offcanvas-split__tabs-nav__col 
+                                a.offcanvas-split__tabs-nav__link.tabs-link.selected.txt-sm(href="#" data-tabs="1") 2 месяца
+                            .offcanvas-split__tabs-nav__col 
+                                a.offcanvas-split__tabs-nav__link.tabs-link.txt-sm(href="#" data-tabs="2") 4 месяца
+                            .offcanvas-split__tabs-nav__col 
+                                a.offcanvas-split__tabs-nav__link.tabs-link.txt-sm(href="#" data-tabs="3") 6 месяцев
+                    .offcanvas-split__tabs-content.tabs-content.active.animate(data-tabs="1")
+                        .offcanvas-split__tabs-info.d-flex
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item.active
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                        .offcanvas-split__tabs-txt.txt-sm Комиссия 0 рублей. Услуга доступна для держателей карт любых банков и при наличии Яндекс аккаунта.
+                    .offcanvas-split__tabs-content.tabs-content(data-tabs="2")
+                        .offcanvas-split__tabs-info.d-flex
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item.active
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                            .offcanvas-split__tabs-info__col.offcanvas-split__tabs-info__col-75 
+                                .offcanvas-split__tabs-info__item
+                                    .offcanvas-split__tabs-info__item-name.tech-14 Далее 3 платежа ежемесячно
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                        .offcanvas-split__tabs-txt.txt-sm Сервис берет комиссию, точный расчет будет произведен на странице оплаты. Услуга доступна для держателей карт любых банков и при наличии Яндекс аккаунта.
+                    .offcanvas-split__tabs-content.tabs-content(data-tabs="3")
+                        .offcanvas-split__tabs-info.d-flex
+                            .offcanvas-split__tabs-info__col 
+                                .offcanvas-split__tabs-info__item.active
+                                    .offcanvas-split__tabs-info__item-name.tech-14 сегодня
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                            .offcanvas-split__tabs-info__col.offcanvas-split__tabs-info__col-75 
+                                .offcanvas-split__tabs-info__item
+                                    .offcanvas-split__tabs-info__item-name.tech-14 И еще 5 платежей каждое 30-е число
+                                    .offcanvas-split__tabs-info__item-value.title 5 433 ₽
+                                    .offcanvas-split__tabs-info__item-line
+                        .offcanvas-split__tabs-txt.txt-sm Сервис берет комиссию, точный расчет будет произведен на странице оплаты. Услуга доступна для держателей карт любых банков и при наличии Яндекс аккаунта.
+                .offcanvas-split__txt 
+                    ul 
+                        li Сейчас только 1/4 цены, остальное позже
+                        li Покупка сразу ваша
+                        li Всё удобно и быстро, никаких анкет
+                        li Сплит на 2 месяца бесплатный, на 4 и 6 — с небольшой доплатой
+                        li Можно покупать товары до 150 000 ₽
+                .offcanvas-split__title.offcanvas-split__title--mb-1 Как оплатить частями
+                .offcanvas-split__guide
+                    .offcanvas-split__guide-list.flex 
+                        .offcanvas-split__guide-col 
+                            .offcanvas-split__guide-item 
+                                .offcanvas-split__guide-item__img 
+                                    +svg('split-icon-1', '32', '32')
+                                .offcanvas-split__guide-item__txt 1.Выберите Сплит <br>в способах оплаты
+                        .offcanvas-split__guide-col 
+                            .offcanvas-split__guide-item 
+                                .offcanvas-split__guide-item__img 
+                                    +svg('split-icon-2', '32', '32')
+                                .offcanvas-split__guide-item__txt 2.Выберите комфортный срок  
+                        .offcanvas-split__guide-col 
+                            .offcanvas-split__guide-item 
+                                .offcanvas-split__guide-item__img 
+                                    +svg('split-icon-3', '32', '32')
+                                .offcanvas-split__guide-item__txt 3.Оплатите первую часть, и покупка сразу ваша 
+                        .offcanvas-split__guide-col 
+                            .offcanvas-split__guide-item 
+                                .offcanvas-split__guide-item__img 
+                                    +svg('split-icon-4', '32', '32')
+                                .offcanvas-split__guide-item__txt 4.Остальные платежи спишутся позже — по&nbsp;графику 
+                .offcanvas-split__title.offcanvas-split__title--mb-1 Популярные вопросы
+                .offcanvas-split__faq
+                    .offcanvas-split__faq-item 
+                        .offcanvas-split__faq-item__title.title 1. Что если я захочу вернуть товар? 
+                        .offcanvas-split__faq-item__txt Заказ, оплаченный в сплит, можно вернуть так же, как обычный. А деньги, которые вы уже заплатили, мы отправим обратно на карту.
+                    .offcanvas-split__faq-item 
+                        .offcanvas-split__faq-item__title.title 2. Где посмотреть предстоящие платежи?
+                        .offcanvas-split__faq-item__txt Дату каждого платежа вы видите уже при оформлении, поэтому списания не станут неожиданностью. Также график списаний придёт вам в письме, а ещё его всегда можно посмотреть в приложении Яндекс Пэй. Все платежи спишутся с карты автоматически.
+                .offcanvas-split__consent.tech-14 
+                    p Яндекс Пэй — информационный сервис, позволяющий сохранять и использовать данные банковских карт. Подробнее в Условиях использования сервиса.
+                    p Сервис Яндекс Сплит предоставляется ООО «Яндекс Пэй» (ОГРН 1187746900428, ИНН 7703466743, 115035, г. Москва, ул. Садовническая, д. 82, стр. 2, пом. 5В26). Оформление заказа осуществляется в соответствии с договором поручения. Не является публичной офертой, есть ограничения на использование сервиса.
+                    p Подробности на 
+                        a(href="#" target="_blank") официальном сайте “Яндекс Сплит”

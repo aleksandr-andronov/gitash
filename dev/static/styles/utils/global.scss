@@ -52,12 +52,19 @@ input, textarea {
     touch-action: none;
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 textarea {
     resize: none;
 }
 
 .wrapper {
-    overflow-x: hidden;
+    // overflow-x: hidden;
     // display: flex;
     // flex-direction: column;
     // height: 100%;
@@ -96,6 +103,18 @@ textarea {
     svg, path {
         stroke: inherit;
     }
+}
+
+.icon-black {
+    stroke: var(--black);
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.s-bold {
+    font-weight: 600;
 }
 
 .bold {

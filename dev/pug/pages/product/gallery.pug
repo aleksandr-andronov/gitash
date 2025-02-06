@@ -1,0 +1,27 @@
+.gallery 
+    .gallery__inner
+        .gallery-thumbs-wrapper 
+            .gallery-thumbs 
+                .swiper-wrapper 
+                    - for (let i = 0; i < 8; i++)
+                        .gallery-thumbs__slide.swiper-slide.outline-border 
+                            .gallery-thumbs__img.grey-img 
+                                +pngC('g-sm-img', '76', '94')
+        .gallery-list-wrapper 
+            .gallery-list 
+                .swiper-wrapper 
+                    - for (let i = 0; i < 8; i++)
+                        .gallery-list__slide.swiper-slide 
+                            .gallery-list__img.grey-img 
+                                +pngC('g-big-img', '1224', '1518')
+        .gallery-mobile-wrapper 
+            .gallery-mobile 
+                .swiper-wrapper 
+                    - for (let i = 0; i < 5; i++)
+                        .gallery-mobile__slide.swiper-slide
+                            .swiper-zoom-container
+                                .gallery-mobile__img.grey-img 
+                                    +jpgC('g-big-img', '375', '499')
+            .gallery-mobile__pagination.slider-pagination
+    a.gallery-close.svg(href="#")
+        +icon('close') 

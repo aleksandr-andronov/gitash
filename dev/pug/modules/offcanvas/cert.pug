@@ -1,0 +1,191 @@
+#cert.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close')
+        .offcanvas__body.offcanvas__body--py-1.offcanvas__body--cerificate-bg(style="--cert-bg: #EEB1F4; --cert-color: #EE661C;")
+            .offcanvas-cert
+                .offcanvas-cert__decor
+                    +svg('cert-decor', '656', '715')
+                .certificate-img.certificate-img-shadow
+                    .certificate-img__inner
+                        .certificate-img__content
+                            .certificate-img__content-logo 
+                                .certificate-img__logo.icon 
+                                    +icon('logo')
+                            .certificate-img__content-group
+                                .certificate-img__content-name 
+                                    .certificate-img__name.ttl.outputWhom елена!
+                                .certificate-img__content-text 
+                                    .certificate-img__txt.outputTxt Пусть красивые мечты превращаются <br>в счастливые моменты
+                            .certificate-img__content-foot.visible.full
+                                .certificate-img__content-foot__col
+                                    .certificate-img__info.certificate-img__info-whom.visible
+                                        .certificate-img__info-name вам дарит сертификат
+                                        .certificate-img__info-value.ttl.outputFrom Светлана
+                                .certificate-img__content-foot__col   
+                                    .certificate-img__info.certificate-img__info-price.visible
+                                        .certificate-img__info-name номинал
+                                        .certificate-img__info-value.ttl.outputPrice 10 000 ₽ 
+                        .certificate-img__picture.outputPicture 
+                            include ../../pages/certificate/i1.html
+                    .certificate-img__promocode
+                        .certificate-img__promocode-inner.certificate-img__promocode-inner--col-3.d-flex 
+                            .certificate-img__promocode-txt промокод
+                            .certificate-img__promocode-value 7676767
+                            .certificate-img__promocode-right
+                                a.certificate-img__promocode-copy.icon(href="#")
+                                    +icon('copy') 
+                .certificate-form__step-img__txt.certificate-form__step-txt 
+                    p Для использования сертификата примените промокод в корзине. 
+                    p Сертификат действителен  до 17.04.2024
+
+
+
+
+#cert2.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close')
+        .offcanvas__body.offcanvas__body--py-1(style="--cert-bg: #EEB1F4; --cert-color: #EE661C;")
+            .offcanvas-cert.offcanvas-cert--start
+                .certificate-img
+                    .certificate-img__inner
+                        .certificate-img__content
+                            .certificate-img__content-logo 
+                                .certificate-img__logo.icon 
+                                    +icon('logo')
+                            .certificate-img__content-group
+                                .certificate-img__content-name 
+                                    .certificate-img__name.ttl.outputWhom елена!
+                                .certificate-img__content-text 
+                                    .certificate-img__txt.outputTxt Пусть красивые мечты превращаются <br>в счастливые моменты
+                            .certificate-img__content-foot.visible.full
+                                .certificate-img__content-foot__col
+                                    .certificate-img__info.certificate-img__info-whom.visible
+                                        .certificate-img__info-name вам дарит сертификат
+                                        .certificate-img__info-value.ttl.outputFrom Светлана
+                                .certificate-img__content-foot__col   
+                                    .certificate-img__info.certificate-img__info-price.visible
+                                        .certificate-img__info-name номинал
+                                        .certificate-img__info-value.ttl.outputPrice 10 000 ₽ 
+                        .certificate-img__picture.outputPicture 
+                            include ../../pages/certificate/i2.html
+                    .certificate-img__promocode
+                        .certificate-img__promocode-inner.d-flex 
+                            .certificate-img__promocode-txt промокод
+                            .certificate-img__promocode-value 7676767
+                .offcanvas-cert__status
+                    .offcanvas-cert__status-group 
+                        .account-certCard__right-item.d-flex 
+                            .account-certCard__date
+                                .account-certCard__date-name Дата и время отправки
+                                .account-certCard__date-value 
+                                    span 18 сентября, 12:00
+                            .account-certCard__status.account-order__status.account-order__status--ready.ttl 
+                                .account-order__status-txt ОТПРАВЛЕН
+                                .account-order__status-icon.icon
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99972 14.387C4.4718 14.387 1.61248 11.5276 1.61248 7.99972C1.61248 4.4718 4.4718 1.61248 7.99972 1.61248C11.5276 1.61248 14.387 4.4718 14.387 7.99972C14.387 11.5276 11.5276 14.387 7.99972 14.387Z" stroke="#050505" stroke-width="1.22495" stroke-linecap="square"></path><path d="M11.1106 6.44531L7.22191 10.334L4.88867 8.0008" stroke="#050505" stroke-width="1.22495" stroke-linecap="square"></path></svg> 
+                    .offcanvas-cert__status-group  
+                        a.offcanvas-cert__btn.btn.btn-outline(href="#") отправить ещё раз
+                .certificate-form__step-img__txt.certificate-form__step-txt 
+                    p Получатель увидит сертификат в письме на почте и в личном кабинете. Чтобы видеть сертификат в личном кабинете и отслеживать баланс на нем, получателю необходимо авторизоваться по номеру телефона, указанному в сертификате
+
+
+#cert3.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close')
+        .offcanvas__body.offcanvas__body--py-1(style="--cert-bg: #EEB1F4; --cert-color: #EE661C;")
+            .offcanvas-cert.offcanvas-cert--start
+                .certificate-img
+                    .certificate-img__inner
+                        .certificate-img__content
+                            .certificate-img__content-logo 
+                                .certificate-img__logo.icon 
+                                    +icon('logo')
+                            .certificate-img__content-group
+                                .certificate-img__content-name 
+                                    .certificate-img__name.ttl.outputWhom елена!
+                                .certificate-img__content-text 
+                                    .certificate-img__txt.outputTxt Пусть красивые мечты превращаются <br>в счастливые моменты
+                            .certificate-img__content-foot.visible.full
+                                .certificate-img__content-foot__col
+                                    .certificate-img__info.certificate-img__info-whom.visible
+                                        .certificate-img__info-name вам дарит сертификат
+                                        .certificate-img__info-value.ttl.outputFrom Светлана
+                                .certificate-img__content-foot__col   
+                                    .certificate-img__info.certificate-img__info-price.visible
+                                        .certificate-img__info-name номинал
+                                        .certificate-img__info-value.ttl.outputPrice 10 000 ₽ 
+                        .certificate-img__picture.outputPicture 
+                            include ../../pages/certificate/i3.html
+                    .certificate-img__promocode
+                        .certificate-img__promocode-inner.d-flex 
+                            .certificate-img__promocode-txt промокод
+                            .certificate-img__promocode-value ХХХХХХХ
+                .offcanvas-cert__status
+                    .offcanvas-cert__status-group 
+                        .account-certCard__right-item.d-flex 
+                            .account-certCard__date
+                                .account-certCard__date-name Дата и время отправки
+                                .account-certCard__date-value.account-certCard__date-value--active 
+                                    span 18 сентября, 12:00
+                            .account-certCard__status.account-order__status.account-order__status--cancel.ttl 
+                                .account-order__status-txt ожидает оплаты
+                    .offcanvas-cert__status-group  
+                        .offcanvas-cert__status-group__item
+                            include ../../pages/order/payments
+                        .offcanvas-cert__status-group__item
+                            .certificate-form__step-payment__foot-item
+                                button.certificate-form__btn.btn(type="submit") оплатить сертификат
+                            .certificate-form__step-payment__foot-item
+                                .certificate-form__step-payment__txt Нажимая на кнопку «перейти к оплате», я принимаю условия <a href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a>
+                .certificate-form__step-img__txt.certificate-form__step-txt 
+                    p Получатель увидит сертификат в письме на почте и в личном кабинете. Чтобы видеть сертификат в личном кабинете и отслеживать баланс на нем, получателю необходимо авторизоваться по номеру телефона, указанному в сертификате
+
+
+#cert4.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close')
+        .offcanvas__body.offcanvas__body--py-1(style="--cert-bg: #EEB1F4; --cert-color: #EE661C;")
+            .offcanvas-cert.offcanvas-cert--start
+                .certificate-img
+                    .certificate-img__inner
+                        .certificate-img__content
+                            .certificate-img__content-logo 
+                                .certificate-img__logo.icon 
+                                    +icon('logo')
+                            .certificate-img__content-group
+                                .certificate-img__content-name 
+                                    .certificate-img__name.ttl.outputWhom елена!
+                                .certificate-img__content-text 
+                                    .certificate-img__txt.outputTxt Пусть красивые мечты превращаются <br>в счастливые моменты
+                            .certificate-img__content-foot.visible.full
+                                .certificate-img__content-foot__col
+                                    .certificate-img__info.certificate-img__info-whom.visible
+                                        .certificate-img__info-name вам дарит сертификат
+                                        .certificate-img__info-value.ttl.outputFrom Светлана
+                                .certificate-img__content-foot__col   
+                                    .certificate-img__info.certificate-img__info-price.visible
+                                        .certificate-img__info-name номинал
+                                        .certificate-img__info-value.ttl.outputPrice 10 000 ₽ 
+                        .certificate-img__picture.outputPicture 
+                            include ../../pages/certificate/i4.html
+                    .certificate-img__promocode
+                        .certificate-img__promocode-inner.d-flex 
+                            .certificate-img__promocode-txt промокод
+                            .certificate-img__promocode-value xxxxxxx
+                .offcanvas-cert__status
+                    .offcanvas-cert__status-group 
+                        .account-certCard__right-item.d-flex 
+                            .account-certCard__date
+                                .account-certCard__date-name Дата и время отправки
+                                .account-certCard__date-value 
+                                    span 18 сентября, 12:00
+                            .account-certCard__status.account-order__status.ttl 
+                                .account-order__status-txt отправить сейчас
+                    .offcanvas-cert__status-group  
+                        a.offcanvas-cert__btn.btn.btn-outline(href="#") отправить сейчас
+                .certificate-form__step-img__txt.certificate-form__step-txt 
+                    p Получатель увидит сертификат в письме на почте и в личном кабинете. Чтобы видеть сертификат в личном кабинете и отслеживать баланс на нем, получателю необходимо авторизоваться по номеру телефона, указанному в сертификате

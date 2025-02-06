@@ -1,0 +1,426 @@
+.certificate
+    .container 
+        .certificate__inner
+            .certificate__actions
+                .container
+                    .certificate__actions-inner.d-flex 
+                        .certificate__actions-item
+                            a.certificate__actions-btn.btn-circle.certificate__prev(href="#" data-step="1") 
+                                +icon('a-left-sm')
+                        .certificate__actions-item
+                            a.certificate__actions-btn.btn-circle(href="#") 
+                                +icon('close')
+            .certificate__step-mobile-img 
+                .certificate__mobile-img 
+                    .certificate__mobile-img__item(data-item="0")
+                        include i1.html
+                    .certificate__mobile-img__item.hidden(data-item="1")
+                        include i2.html
+                    .certificate__mobile-img__item.hidden(data-item="2")
+                        include i3.html
+                    .certificate__mobile-img__item.hidden(data-item="3")
+                        include i4.html
+                    .certificate__mobile-img__item.hidden(data-item="4")
+                        include i1.html
+                    .certificate__mobile-img__item.hidden(data-item="5")
+                        include i2.html
+                    .certificate__mobile-img__item.hidden(data-item="6")
+                        include i3.html
+                    .certificate__mobile-img__item.hidden(data-item="7")
+                        include i4.html
+            .certificate__step.certificate__first-step.active
+                .certificate__step-content
+                    .certificate__head
+                        .certificate__head-inner.d-flex 
+                            .certificate__head-title.h4.ttl создайте <br>дизайн 
+                            .certificate__head-step-current 1/4
+                    .certificate__design 
+                        .certificate-design
+                            .certificate-design__mobile 
+                                .certificate-mobileSlider 
+                                    .swiper-wrapper 
+                                        - for (let i = 0; i < 2; i++)
+                                            .certificate-mobileSlider__slide.swiper-slide 
+                                                .certificate-images__item.outline-border
+                                                    include i1.html
+                                            .certificate-mobileSlider__slide.swiper-slide 
+                                                .certificate-images__item.outline-border
+                                                    include i2.html
+                                            .certificate-mobileSlider__slide.swiper-slide 
+                                                .certificate-images__item.outline-border
+                                                    include i3.html
+                                            .certificate-mobileSlider__slide.swiper-slide 
+                                                .certificate-images__item.outline-border
+                                                    include i4.html
+                            .certificate-design__colors 
+                                .certificate-colors
+                                    .certificate-colors__list.d-flex 
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#F4F5F0" data-color="#FFD600") 
+                                                +svg('cert-color-1', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered.selected(href="#" data-bg="#EEB1F4" data-color="#EE661C") 
+                                                +svg('cert-color-2', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#BFD157" data-color="#F3A4AA") 
+                                                +svg('cert-color-3', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#EBA2F1" data-color="#8148F9") 
+                                                +svg('cert-color-4', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#E7EC48" data-color="#28C2DE") 
+                                                +svg('cert-color-5', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#FFD600" data-color="#F4F5F0") 
+                                                +svg('cert-color-6', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#EEB1F4" data-color="#EE661C") 
+                                                +svg('cert-color-7', '30', '30')
+                                        .certificate-colors__list-item 
+                                            a.certificate-colors__btn.centered(href="#" data-bg="#FFD600" data-color="#F4F5F0") 
+                                                +svg('cert-color-8', '30', '30')
+                            .certificate-design__slider 
+                                .certificate-images
+                                    .certificate-images__list-wrapper
+                                        .certificate-images__list
+                                            //- - for (let i = 0; i < 2; i++)
+                                            //-     .certificate-images__list-item 
+                                            //-         .certificate-images__item
+                                            //-             include i1.html
+                                            //-     .certificate-images__list-item 
+                                            //-         .certificate-images__item
+                                            //-             include i2.html
+                                            //-     .certificate-images__list-item 
+                                            //-         .certificate-images__item
+                                            //-             include i3.html
+                                            //-     .certificate-images__list-item 
+                                            //-         .certificate-images__item
+                                            //-             include i4.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i1.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i2.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i3.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i4.html
+                                            .certificate-images__list-item.certificate-images__list-item--active
+                                                .certificate-images__item
+                                                    include i1.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i2.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i3.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i4.html
+                                            .certificate-images__list-item 
+                                                .certificate-images__item
+                                                    include i3.html
+                                        .certificate-images__decor
+                                    a.certificate-slider__btn.certificate-slider__prev(href="#" aria-label="prev")
+                                    a.certificate-slider__btn.certificate-slider__next(href="#" aria-label="next")
+                            .certificate-design__controls
+                                a.certificate-design__btn.btn#firstBtnStep(href="#") продолжить
+            .certificate__step.certificate__second-step
+                form.certificate-form(action="/")
+                    .certificate-form__filling
+                        .certificate-form__inner.d-flex 
+                            .certificate-form__left.certificate-form__col 
+                                .certificate-img
+                                    .certificate-img__inner
+                                        .certificate-img__content
+                                            .certificate-img__content-logo 
+                                                .certificate-img__logo.icon 
+                                                    +icon('logo')
+                                            .certificate-img__content-group
+                                                .certificate-img__content-name 
+                                                    .certificate-img__name.ttl.outputWhom.hidden
+                                                .certificate-img__content-text 
+                                                    .certificate-img__txt.outputTxt.hidden
+                                            .certificate-img__content-foot
+                                                .certificate-img__content-foot__col
+                                                    .certificate-img__info.certificate-img__info-whom
+                                                        .certificate-img__info-name вам дарит сертификат
+                                                        .certificate-img__info-value.ttl.outputFrom ash
+                                                .certificate-img__content-foot__col   
+                                                    .certificate-img__info.certificate-img__info-price
+                                                        .certificate-img__info-name номинал
+                                                        .certificate-img__info-value.ttl.outputPrice
+                                        .certificate-img__picture.outputPicture 
+                                            
+                            .certificate-form__right.certificate-form__col
+                                .certificate-form__step.certificate-form__step-first.active
+                                    .certificate-form__step-head
+                                        .certificate-form__head.d-flex 
+                                            .certificate-form__head-title 
+                                                .certificate-form__title.ttl.h4 укажите сумму
+                                            .certificate-form__head-progress
+                                                .certificate-form__progress 2/4
+                                    .certificate-form__step-body.certificate-form__step-body--center
+                                        .certificate-form__price
+                                            .certificate-form__price-title Укажите свою сумму или выберите из списка
+                                            .certificate-form__price-input-wrapper 
+                                                input.certificate-form__price-input.ttl.h2(type="tel" placeholder="сумма ₽")
+                                            .certificate-form__price-fast
+                                                .certificate-form__price-list.list 
+                                                    .certificate-form__price-list__item.col 
+                                                        label.certificate-form__fast-label.ttl
+                                                            input(type="radio" name="fastPrice" value="5000" data-value="5 000 ₽")
+                                                            span.outline-border 5 000 ₽
+                                                    .certificate-form__price-list__item.col 
+                                                        label.certificate-form__fast-label.ttl
+                                                            input(type="radio" name="fastPrice" value="10000" data-value="10 000 ₽")
+                                                            span.outline-border 10 000 ₽
+                                                    .certificate-form__price-list__item.col 
+                                                        label.certificate-form__fast-label.ttl
+                                                            input(type="radio" name="fastPrice" value="20000" data-value="20 000 ₽")
+                                                            span.outline-border 20 000 ₽
+                                    .certificate-form__step-foot 
+                                        button.certificate-form__btn.btn#firstBtnForm(type="button" data-step="2") продолжить 
+                                .certificate-form__step.certificate-form__step-second
+                                    .certificate-form__step-head
+                                        .certificate-form__head.d-flex 
+                                            .certificate-form__head-title 
+                                                .certificate-form__title.ttl.h4 заполните <br>данные
+                                            .certificate-form__head-progress
+                                                .certificate-form__progress 3/4
+                                    .certificate-form__step-body
+                                        .certificate-form__step-group
+                                            .certificate-form__step-name.d-flex
+                                                .certificate-form__step-name__left
+                                                    .certificate-form__subtitle.order-form__subtitle Кому
+                                                .certificate-form__step-name__right 
+                                                    .order-form__switch.switch.txt-sm
+                                                        .switch__content.d-flex 
+                                                            
+                                                            .switch__content-btn 
+                                                                label.switch-btn
+                                                                    input.inputSelf(type="checkbox" name="self")
+                                                                    span.switch-btn__content 
+                                                                        span
+                                                            .switch__content-txt себе
+                                            .order-form__row-wrapper
+                                                .order-form__row.flex
+                                                    .order-form__col
+                                                        .form-item
+                                                            .form-item__group 
+                                                                .form-item__label(data-default="имя*" data-error="введите имя*") имя*
+                                                                input.form-input.inputName(type="text" data-validate)
+                                                    .order-form__col
+                                                        .form-item
+                                                            .form-item__group 
+                                                                .form-item__label(data-default="e-mail*" data-error="введите e-mail*") e-mail*
+                                                                input.form-input(type="text" data-validate)
+                                                    .order-form__col.order-form__col--fw
+                                                        .form-item.form-phone
+                                                            .form-phone__inner.d-flex 
+                                                                .form-phone__left 
+                                                                    a.form-phone__btn.d-flex(href="#") 
+                                                                        span.form-phone__btn-flag.centered 
+                                                                            +svg('rus', '24', '17')
+                                                                        span.form-phone__btn-txt +7
+                                                                        span.form-phone__btn-icon.icon 
+                                                                            +icon('down')
+                                                                .form-phone__right
+                                                                    .form-item__group 
+                                                                        .form-item__label.form-item__label--hidden(data-default="телефон*" data-error="Введите номер телефона") телефон*
+                                                                        input.form-input.form-phone__input(type="tel" data-ruSm data-placeholder="(___)__-__-__" data-validate)
+                                                            .form-phone__dropdown.form-item__dropdown.outline-border
+                                                                .form-item__dropdown-scroll(data-simplebar)
+                                                                    .form-item__list
+                                                                        //- .form-item__list-item 
+                                                                        //-     label.form-item__country
+                                                                        //-         input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+                                                                        //-         span.form-item__country-inner.d-flex 
+                                                                        //-             span.form-item__country-flag.centered 
+                                                                        //-                 +svg('bel', '24', '17') 
+                                                                        //-             span.form-item__country-txt Беларусь
+                                                                        //- .form-item__list-item 
+                                                                        //-     label.form-item__country
+                                                                        //-         input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+                                                                        //-         span.form-item__country-inner.d-flex 
+                                                                        //-             span.form-item__country-flag.centered 
+                                                                        //-                 +svg('kz', '24', '17') 
+                                                                        //-             span.form-item__country-txt Казахстан
+                                                                        .form-item__list-item 
+                                                                            label.form-item__country
+                                                                                input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+                                                                                span.form-item__country-inner.d-flex 
+                                                                                    span.form-item__country-flag.centered 
+                                                                                        +svg('rus', '24', '17') 
+                                                                                    span.form-item__country-txt Россия
+                                                    .order-form__col.order-form__col--fw
+                                                        .form-item
+                                                            .form-item__group 
+                                                                .form-item__label текст поздравления
+                                                                textarea.form-input.inputText.textareaAutoHeight(contenteditable)
+                                        .certificate-form__step-group
+                                            .certificate-form__step-name.d-flex
+                                                .certificate-form__step-name__left
+                                                    .certificate-form__subtitle.order-form__subtitle От кого
+                                            .order-form__row-wrapper
+                                                .order-form__row.flex
+                                                    .order-form__col.certificate-form__col-name
+                                                        .form-item
+                                                            .form-item__group 
+                                                                .form-item__label.changeLabel(data-default="Имя" data-change="Ash") Имя
+                                                                input.form-input.inputWhom(type="text")
+                                                    .order-form__col.certificate-form__col-email.visible
+                                                        .form-item
+                                                            .form-item__group 
+                                                                .form-item__label(data-default="e-mail*"  data-error="введите e-mail*") e-mail*
+                                                                input.form-input.inputGiver(type="email" data-validate)
+                                                            .form-item__txt.txt-label отправим подтверждение заказа и оплаты
+                                        .certificate-form__step-group
+                                            .certificate-form__radios.flex 
+                                                .certificate-form__radios-item
+                                                    label.form-checkbox
+                                                        input.inputDateRadio(type="radio" data-value="now" checked name="date")
+                                                        span.form-checkbox__content
+                                                            span.form-checkbox__icon.form-checkbox__icon--circle 
+                                                            span.form-checkbox__info Отправить сейчас
+                                                .certificate-form__radios-item
+                                                    label.form-checkbox
+                                                        input.inputDateRadio(type="radio" data-value="then" name="date")
+                                                        span.form-checkbox__content
+                                                            span.form-checkbox__icon.form-checkbox__icon--circle 
+                                                            span.form-checkbox__info Выбрать время
+                                            .certificate-form__hidden-date
+                                                .order-form__row-wrapper.desctop
+                                                    .order-form__row.flex
+                                                        .order-form__col
+                                                            .form-item
+                                                                .form-item__group
+                                                                    input.form-input.inputDate.inputPlaceholderChange(type="text" data-placeholder="дата" data-placeholderChange="дд.мм.гггг" placeholder="дата")
+                                                                    a.form-item__right-info.form-item__right-icon.icon.openCalendar(href="#")
+                                                                        +icon('calendar') 
+                                                                    .form-item__dropdown-calendar.outline-border.form-datepicker
+                                                                        #certCalendar
+                                                        .order-form__col
+                                                            .form-item
+                                                                .form-item__group 
+                                                                    input.form-input.inputTime.inputPlaceholderChange(type="text" data-placeholder="время" data-placeholderChange="чч:00" placeholder="время")
+                                                                    .form-item__right-info МСК
+                                                .order-form__row-wrapper.mobile 
+                                                    .certificate-form__mDate.tabs 
+                                                        .certificate-form__mDate-head.d-flex 
+                                                            a.certificate-form__mDate-link.tabs-link.outline-border.selected(href="#" data-tabs="1") 
+                                                                span.certificate-form__mDate-link__icon.icon 
+                                                                    +icon('calendar') 
+                                                                span.certificate-form__mDate-link__txt#outputmDate 10.02.2024
+                                                            a.certificate-form__mDate-link.tabs-link.outline-border(href="#" data-tabs="2") 
+                                                                span.certificate-form__mDate-link__icon.icon 
+                                                                    +icon('clock') 
+                                                                span.certificate-form__mDate-link__txt#outputmTime 12:00
+                                                        .certificate-form__mDate-body.outline-border 
+                                                            .certificate-form__mDate-item.tabs-content.active.animate.form-datepicker(data-tabs="1")
+                                                                #certCalendarM
+                                                            .certificate-form__mDate-item.tabs-content(data-tabs="2")
+                                                                .time-slider 
+                                                                    .time-slider__inner.swiper-wrapper
+                                                                        .time-slider__slide.swiper-slide 
+                                                                            .time-slider__item(data-time="00:00") 00
+                                                                        .time-slider__slide.swiper-slide 
+                                                                            .time-slider__item(data-time="01:00") 01
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="02:00") 02
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="03:00") 03
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="04:00") 04
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="05:00") 05
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="06:00") 06
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="07:00") 07
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="08:00") 08
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="09:00") 09
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="10:00") 10
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="11:00") 11
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="12:00") 12
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="13:00") 13
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="14:00") 14
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="15:00") 15
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="16:00") 16
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="17:00") 17
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="18:00") 18
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="19:00") 19
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="20:00") 20
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="21:00") 21
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="22:00") 22
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="23:00") 23
+                                                                        .time-slider__slide.swiper-slide
+                                                                            .time-slider__item(data-time="00:00") 00
+                                                                .time-slider__txt МСК
+                                    .certificate-form__step-foot 
+                                        button.certificate-form__btn.btn#secondBtnForm(type="button") продолжить 
+                    .certificate-form__payment.hidden
+                        .certificate-form__col.certificate-form__center 
+                            .certificate-form__step.certificate-form__step-second.active
+                                .certificate-form__step-head
+                                    .certificate-form__head.d-flex 
+                                        .certificate-form__head-title 
+                                            .certificate-form__title.ttl.h4 Проверьте ваш <br>заказ
+                                        .certificate-form__head-progress
+                                            .certificate-form__progress 4/4
+                                    .certificate-form__head-txt.certificate-form__step-txt Это увидит получатель на почте
+                                .certificate-form__step-img 
+                                    .certificate-img
+                                        .certificate-img__inner
+                                            .certificate-img__content
+                                                .certificate-img__content-logo 
+                                                    .certificate-img__logo.icon 
+                                                        +icon('logo')
+                                                .certificate-img__content-group
+                                                    .certificate-img__content-name 
+                                                        .certificate-img__name.ttl.outputWhom.hidden
+                                                    .certificate-img__content-text 
+                                                        .certificate-img__txt.outputTxt.hidden
+                                                .certificate-img__content-foot
+                                                    .certificate-img__content-foot__col
+                                                        .certificate-img__info.certificate-img__info-whom
+                                                            .certificate-img__info-name вам дарит сертификат
+                                                            .certificate-img__info-value.ttl.outputFrom ash
+                                                    .certificate-img__content-foot__col   
+                                                        .certificate-img__info.certificate-img__info-price
+                                                            .certificate-img__info-name номинал
+                                                            .certificate-img__info-value.ttl.outputPrice
+                                            .certificate-img__picture.outputPicture 
+                                        .certificate-img__promocode
+                                            .certificate-img__promocode-inner.d-flex 
+                                                .certificate-img__promocode-txt промокод
+                                                .certificate-img__promocode-value ХХХХХХХ
+                                    .certificate-form__step-img__txt.certificate-form__step-txt Для использования сертификата примените промокод в корзине. <br>Сертификат действителен  до 17.04.2024
+                                .certificate-form__step-payment
+                                    .certificate-form__step-payment__title.ttl.h6 способ оплаты
+                                    .certificate-form__step-payment__list
+                                        include ../order/payments
+                                    .certificate-form__step-payment__foot
+                                        .certificate-form__step-payment__foot-item
+                                            button.certificate-form__btn.btn(type="submit") перейти к оплате 
+                                        .certificate-form__step-payment__foot-item
+                                            .certificate-form__step-payment__txt Нажимая на кнопку «перейти к оплате», я принимаю условия <a href="#">публичной оферты</a> и <a href="#">политики конфиденциальности</a>

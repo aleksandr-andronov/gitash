@@ -10,14 +10,14 @@ html(lang="ru-RU")
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-	body
+	body.has-notification
 		.wrapper
 			include ../modules/header/header
 			.account 
 				
 				.container 
-					.content.flex 
-						.content__col.content__col-3
+					.content.list
+						.content__col.content__col-3.col
 							.account__left
 								.account__left-user
 									.account-user.outline-border
@@ -73,13 +73,15 @@ html(lang="ru-RU")
 												span.account-userMenu__link-icon.icon 
 													+svg('logout', '20', '20')
 												span.account-userMenu__link-txt Выйти
-						.content__col.content__col-6
+						.content__col.content__col-6.col
 							.content__info
 								block content
-						.content__col.content__col-3
+						.content__col.content__col-3.col
+							block right
 			include ../modules/footer/footer
 		include ../modules/modals/modals
 		include ../modules/popups/popups
+		include ../modules/notification/notification-top
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/simplebar.min.js")

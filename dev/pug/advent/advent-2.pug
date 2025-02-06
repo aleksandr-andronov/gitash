@@ -1,0 +1,12 @@
+extends template/mainPage
+
+block variables
+	- var title = 'оформление заказа'
+	- var bodyClass = 'adventPage'
+
+block content
+	include pages/advent/intro-2
+	include pages/advent/content-2
+	
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/advent.css")

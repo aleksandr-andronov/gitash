@@ -1,9 +1,28 @@
-form.promocode-form.form(action="/")
-    .promocode-form__group
-        .form-item
-            .form-item__group 
-                .form-item__label.form-item__label--hidden 
-                    .form-item__label-default Введите промокод
-                    .form-item__label-error промокод не найден
-                input.form-input.promocode-form__input(type="text" data-validate)
-        button.promocode-form__btn.tech-14(type="button") Применить
+//- form.promocode-form.form(action="/")
+//-     .promocode-form__group
+//-         .form-item
+//-             .form-item__group 
+//-                 .form-item__label.form-item__label--hidden 
+//-                     .form-item__label-default Введите промокод
+//-                     .form-item__label-error промокод не найден
+//-                 input.form-input.promocode-form__input(type="text" data-validate)
+//-         button.promocode-form__btn.tech-14(type="button") Применить
+
+
+.cart-promocode 
+    .cart-total__promocode.order-info__promocode
+        .order-info__promocode-inner
+            .order-info__promocode-error промокод не найден
+            input.cart-total__promocode-input.order-info__promocode-input(type="text" placeholder="Введите промокод")
+            button.order-info__promocode-btn.cart-total__promocode-btn(type="button" disabled) Применить
+        //- .order-info__promocode-list.flex 
+        //-     .order-info__promocode-list__item
+        //-         .order-info__promocode-badge.d-flex
+        //-             .order-info__promocode-badge__txt SUMMER2024
+        //-             .order-info__promocode-badge__icon
+        //-                 include ../../icons/x
+        //-     .order-info__promocode-list__item
+        //-         .order-info__promocode-badge.d-flex
+        //-             .order-info__promocode-badge__txt СЕРТИФИКАТ
+        //-             .order-info__promocode-badge__icon
+        //-                 include ../../icons/x

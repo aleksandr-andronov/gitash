@@ -1,0 +1,52 @@
+.advent-content
+    .container 
+        .advent-content__group
+            .advent__block-sm
+                .advent__txt
+                    p Более 1000 отелей по всей России — от уютных глэмпингов до курортов премиум-класса. В каждом сертификате сотни вариантов — куда и когда отправиться, получатель выберет сам, а отдохнуть можно вдвоем или всей семьей.
+        .advent-content__group
+            .advent__block-lg 
+                .advent-gift
+                    .advent-gift__title.h4.ttl Как получить подарок:
+                    .advent-gift__txt 
+                        ul 
+                            li Перейдите на сайт Cuva и наполните корзину
+                            li Введите промокод перед оплатой
+                    .advent-gift__promocode(data-change="промокод скопирован")
+                        .advent-gift__promocode-title 
+                            .advent-gift__promocode-title__txt промокод
+                            .advent-gift__promocode-title__icon.centered
+                                +svg('done-check')
+                        .advent-gift__promocode-value.d-flex 
+                            .advent-gift__promocode-value__txt NYCUVA
+                            .advent-gift__promocode-value__icon 
+                                +pngG('advent-gift-icon', '24', '24')
+                    .advent-gift__txt.advent-gift__txt--bottom 
+                        p Предложение действует до 09.01.2025
+                .advent-decor 
+                    +pngG('advent-decor')
+        .advent-content__group
+            .advent__block-xl 
+                .advent-info
+                    .advent-info__title.ttl.h4 о проекте
+                    .advent-info__content.list
+                        .advent-info__content-col.col
+                            .advent-info__img 
+                                +jpgC('advent-img', '609', '637')
+                        .advent-info__content-col.col
+                            .advent-info__desc
+                                .advent-info__desc-top.centered 
+                                    .advent-info__desc-logo 
+                                        img(src="static/images/content/advent-logo.svg", alt="img" width="132" height="132")
+                                .advent-info__desc-bottom
+                                    .advent-info__desc-txt Cuva — это сервис подарочных сертификатов на отдых в&nbsp;загородных отелях России 
+        .advent-content__group
+            .advent__block-lg 
+                .advent__txt
+                    p Как это работает? 
+                    ul 
+                        li Вы дарите сертификат;
+                        li Получатель выбирает отель;
+                        li Сервис оформляет бронь и высылает подтверждение.
+    script
+        include copy.js

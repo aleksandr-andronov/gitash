@@ -125,3 +125,148 @@
                 .offcanvas-subscribe__group.d-flex
                     .offcanvas-subscribe__group-right 
                         button.offcanvas-subscribe__btn.btn(type="submit") подписаться
+
+#feedback.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 обратная связь
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body 
+            form.offcanvas-feedback.form(action="/") 
+                .offcanvas-feedback__txt 
+                    p Уважаемые посетили!
+                    p Не стесняйтесь задавать нам любые вопросы по работе нашего сайта. Наши менеджеры постараются помочь вам в кратчайшие сроки.
+                .offcanvas-feedback__fields
+                    .offcanvas-feedback__fields-item 
+                        .form-item
+                            .form-item__group 
+                                .form-item__label имя*
+                                input.form-input(type="text" required)
+                    .offcanvas-feedback__fields-item 
+                        .form-item
+                            .form-item__group 
+                                .form-item__label телефон*
+                                input.form-input(type="text" required)
+                    .offcanvas-feedback__fields-item 
+                        .form-item
+                            .form-item__group 
+                                .form-item__label e-mail
+                                input.form-input(type="email")
+                    .offcanvas-feedback__fields-item 
+                        .form-select
+                            a.form-select__btn.outline-border(href="#") 
+                                .form-select__btn-txt по заказу
+                                .form-select__btn-icon.icon 
+                                    +svg('down-black', '16', '16')
+                            .form-select__dropdown.outline-border
+                                .form-select__dropdown-inner-wrapper
+                                    a.form-select__close.icon(href="#" aria-label="close")
+                                        +svg('close', '14', '14') 
+                                    .form-select__dropdown-inner
+                                        .form-select__list
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" checked name="problem" data-value="По заказу")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По заказу
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="Проблема при оформлении заказа")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Проблема при оформлении заказа
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="По доставке заказа")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По доставке заказа
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="По оплате заказа")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По оплате заказа
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="Отмена заказа")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Отмена заказа
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="Обслуживание в интернет магазине")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt Обслуживание в интернет магазине
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="По оптовому сотрудничеству")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По оптовому сотрудничеству
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="По оптовому сотрудничеству")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По оптовому сотрудничеству
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .form-select__list-item 
+                                                label.form-select__radio
+                                                    input(type="radio" name="problem" data-value="По оптовому сотрудничеству")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt По оптовому сотрудничеству
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                    .offcanvas-feedback__fields-item 
+                        .form-item
+                            .form-item__group 
+                                .form-item__label № заказа
+                                input.form-input(type="text")
+                    .offcanvas-feedback__fields-item 
+                        .form-item
+                            .form-item__group 
+                                .form-item__label.form-item__label--textarea комментарий
+                                input.form-input.form-textarea
+                .offcanvas-feedback__files 
+                    .form-files
+                        label.form-files__label
+                            input(type="file")
+                            span.form-files__label-btn.btn.btn-outline выбрать файлы
+                        .form-files__list
+                            .form-files__list-item
+                                .form-files__item.form-files__item--loaded
+                                    .form-files__item-name фото1.jpg
+                                    .form-files__item-load.form-files__item-icon.icon 
+                                        +svg('load', '16', '16')
+                                    .form-files__item-remove.form-files__item-icon.icon 
+                                        +svg('remove')
+                            - for (let i = 0; i < 3; i++)
+                                .form-files__list-item
+                                    .form-files__item
+                                        .form-files__item-name фото1.jpg
+                                        .form-files__item-load.form-files__item-icon.icon 
+                                            +svg('load', '16', '16')
+                                        .form-files__item-remove.form-files__item-icon.icon 
+                                            +svg('remove')
+                .offcanvas-feedback__foot 
+                    button.offcanvas-feedback__btn.btn(type="submit") отправить
+    .offcanvas-feedback__status
+        .offcanvas-feedback__status-inner.centered
+            .offcanvas-feedback__status-img 
+                +svg('error', '80', '80')
+            .offcanvas-feedback__status-title.h6.ttl ошибка
+            .offcanvas-feedback__status-txt Попробуйте еще раз

@@ -3,7 +3,7 @@
         .offcanvas__head
             .offcanvas__head-inner.d-flex 
                 .offcanvas__head-back 
-                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
+                    a.offcanvas-close.btn-circle#addAddressBack(href="#" data-bs-dismiss="offcanvas") 
                         +svg('arrow-left')
                 .offcanvas__head-left 
                     .offcanvas__title.offcanvas__title--m-center.ttl.h4 новый адрес
@@ -16,7 +16,7 @@
                     .form-item.form-item-dropdown
                         .form-item__group 
                             .form-item__label населенный пункт*
-                            input.form-input(type="text" data-validate)
+                            input.form-input(type="text")
                         .form-item__dropdown.outline-border
                             .form-item__dropdown-scroll(data-simplebar)
                                 .form-item__list
@@ -26,29 +26,95 @@
                                                 input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
                                                 span.form-item__dropdown-label__txt г. Новосибирск, 
                                                     span Новосибирская обл.
-                    include ../../pages/order/courier
-                    .address-form__group-title Получатель
-                    .order-form__row-wrapper
-                        .order-form__row.flex
-                            .order-form__col 
-                                .form-item
-                                    .form-item__group 
-                                        .form-item__label имя
-                                        input.form-input(type="text")
-                            .order-form__col 
-                                .form-item
-                                    .form-item__group 
-                                        .form-item__label фамилия
-                                        input.form-input(type="text")
-                            .order-form__col.order-form__col--fw 
-                                .form-item
-                                    .form-item__group 
-                                        .form-item__label телефон
-                                        input.form-input(type="text")
-                            .order-form__col.order-form__col--fw
-                                .form-item
-                                    .form-item__group 
-                                        .form-item__label комментарий к заказу
-                                        input.form-input(type="text")
+                    a.determineLocation.d-flex(href="#")
+                        span.determineLocation__icon.icon 
+                            include ../../icons/location
+                        span.determineLocation__txt определить местоположение
+                    
+                    .order-form__subtitle-group
+                        .order-form__subtitle Тип доставки
+                        .order-form__subtitle-group__txt Появится после выбора населенного пункта
+
+                    .address-form__shipment 
+                        .address-form__shipment-slider
+                            .swiper-wrapper 
+                                .address-form__shipment-slider__slide.swiper-slide 
+                                    label.shipment-item.radio
+                                        input(type="radio" name="shipment" data-type="courier")
+                                        span.shipment-item__inner.radio-content 
+                                            span.shipment-item__check 
+                                                span.address-item__info-icon.radio-icon
+                                            span.shipment-item__info 
+                                                span.shipment-item__name СДЭК
+                                                span.shipment-item__txt.txt-sm Курьерская доставка, есть примерка - 15 минут
+                                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                                            span.shipment-item__img
+                                                +svg('cdek', '46', '24')
+                                .address-form__shipment-slider__slide.swiper-slide 
+                                    label.shipment-item.radio
+                                        input(type="radio" name="shipment" data-type="courier")
+                                        span.shipment-item__inner.radio-content 
+                                            span.shipment-item__check 
+                                                span.address-item__info-icon.radio-icon
+                                            span.shipment-item__info 
+                                                span.shipment-item__name Яндекс доставка
+                                                span.shipment-item__txt.txt-sm Курьерская доставка, есть примерка - 15 минут
+                                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                                            span.shipment-item__img
+                                                +pngG('yd', '54', '24')
+                                .address-form__shipment-slider__slide.swiper-slide
+                                    label.shipment-item.radio
+                                        input(type="radio" name="shipment" data-type="post")
+                                        span.shipment-item__inner.radio-content 
+                                            span.shipment-item__check 
+                                                span.address-item__info-icon.radio-icon
+                                            span.shipment-item__info 
+                                                span.shipment-item__name Почта россии
+                                                span.shipment-item__txt.txt-sm Доставка до ближайшего вам почтового отделения. Менеджер позвонит и уточнит удобный вам адрес отделения.
+                                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                                            span.shipment-item__img
+                                                +svg('post', '46', '24')
+                        .order-form__hidden-block
+                            .order-form__row-wrapper
+                                .order-form__row.flex
+                                    .order-form__col.order-form__col--fw 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label улица*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label дом*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label квартира*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col.order-form__col--courier
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label подъезд
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--courier
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label этаж
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--fw.order-form__col--courier
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label комментарий курьеру
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--fw
+                                        .order-form__switch.switch.txt-sm
+                                            .switch__content.d-flex 
+                                                .switch__content-btn 
+                                                    label.switch-btn
+                                                        input(type="checkbox" name="mainAddress")
+                                                        span.switch-btn__content 
+                                                            span
+                                                .switch__content-txt Сделать основным
                 .address-form__foot 
-                    button.address-form__btn.btn(type="submit") сохранить и продолжить
+                    button.address-form__btn.btn(type="button" data-bs-toggle="offcanvas" data-bs-target="#addRecipient") сохранить и продолжить

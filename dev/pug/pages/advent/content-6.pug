@@ -1,0 +1,53 @@
+.intro.advent-intro
+    .intro-slider.slider 
+        .swiper-wrapper 
+            .swiper-slide 
+                .intro-item
+                    .advent-intro__img.intro-item__img
+                        video(playsinline autoplay muted loop)
+                            //- source(src="static/videos/ASH_LAPTOP_nologo.webm", type="video/webm") 
+                            source(src="static/videos/partner_page.mp4", type="video/mp4") 
+                    .advent-intro__content.intro-item__content.centered
+                        .advent-intro__content-inner.intro-item__content-inner
+                            .advent-intro__content-img 
+                                +pngG('advent-title', '551', '95')
+                            .advent-intro__content-title.h3.ttl доступ ко&nbsp;всем тренировкам <br>Sculpt&nbsp;Online до&nbsp;конца января <br>2024&nbsp;г.
+
+.advent-content
+    .container 
+        .advent-content__group
+            .advent__block-lg 
+                .advent-gift
+                    .advent-gift__title.h4.ttl Как получить подарок:
+                    .advent-gift__txt
+                        p Войдите в личный кабинет на <a href="https://sculptonline.ru/" target="_blank">сайте</a>, доступ открыт <br>ко всем занятиям платформы: 
+                        ul 
+                            li логин: 
+                                span.s-bold ashadvent@sculptonline.ru
+                            li пароль: 
+                                span.s-bold happyash
+                    .advent-gift__txt.advent-gift__txt--bottom
+                        p Срок действия: до 31 января.
+                .advent-decor 
+                    +pngG('advent-decor')
+        .advent-content__group
+            .advent__block-xl 
+                .advent-info
+                    .advent-info__title.ttl.h4 о проекте
+                    .advent-info__content.list
+                        .advent-info__content-col.col
+                            .advent-info__img 
+                                +jpgC('advent-img-6', '609', '637')
+                        .advent-info__content-col.col
+                            .advent-info__desc
+                                .advent-info__desc-top.centered 
+                                    .advent-info__desc-logo 
+                                        +pngC('advent-logo-6', '132', '132')
+                                .advent-info__desc-bottom
+                                    .advent-info__desc-txt Sculpt Online — это платформа онлайн-тренировок от&nbsp;студии здорового фитнеса Sculpt. 
+        .advent-content__group
+            .advent__block-lg 
+                .advent__txt
+                    p На платформе — более 180 занятий в записи по направлениям разной интенсивности (силовые, пилатес, комплексы для здоровой гибкости и тренировки для беременных). Можно выбирать занятия самостоятельно с помощью удобной системы фильтров или следовать готовым фитнес-планам от тренеров.
+    script
+        include copy.js

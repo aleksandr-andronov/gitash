@@ -1,0 +1,55 @@
+.intro.advent-intro
+    .intro-slider.slider 
+        .swiper-wrapper 
+            .swiper-slide 
+                .intro-item
+                    .advent-intro__img.intro-item__img
+                        video(playsinline autoplay muted loop)
+                            //- source(src="static/videos/ASH_LAPTOP_nologo.webm", type="video/webm") 
+                            source(src="static/videos/partner_page.mp4", type="video/mp4") 
+                    .advent-intro__content.intro-item__content.centered
+                        .advent-intro__content-inner.intro-item__content-inner
+                            .advent-intro__content-img 
+                                +pngG('advent-title', '551', '95')
+                            .advent-intro__content-title.h3.ttl Дарим скидку 500&nbsp;рублей <br>на&nbsp;любой печатный продукт <br>в&nbsp;Периодике
+
+.advent-content
+    .container 
+        .advent-content__group
+            .advent__block-lg 
+                .advent-gift
+                    .advent-gift__title.h4.ttl Как получить подарок:
+                    .advent-gift__txt
+                        ul 
+                            li При оформлении заказа на <a href="https://periodica.press/" target="_blank">сайте</a> введите промокод
+                    .advent-gift__promocode(data-change="промокод скопирован")
+                        .advent-gift__promocode-title 
+                            .advent-gift__promocode-title__txt промокод
+                            .advent-gift__promocode-title__icon.centered
+                                +svg('done-check')
+                        .advent-gift__promocode-value.d-flex 
+                            .advent-gift__promocode-value__txt ASHGIFT
+                            .advent-gift__promocode-value__icon 
+                                +pngG('advent-gift-icon', '24', '24')
+                    .advent-gift__txt.advent-gift__txt--bottom
+                        p Промокод действует на&nbsp;любой заказ, кроме подарочных сертификатов. Не&nbsp;суммируется с&nbsp;другими акциями и&nbsp;промокодами.
+                        p **При заказе фотокниги через услугу <a href="https://periodica.press/design-photobook/" target="_blank">«Соберем фотокнигу за&nbsp;вас»</a> введите промокод в&nbsp;поле «Комментарий». Дизайнер применит его&nbsp;при оформлении готового заказа (на&nbsp;оплату самой услуги скидка не&nbsp;распространяется).
+                .advent-decor 
+                    +pngG('advent-decor')
+        .advent-content__group
+            .advent__block-xl 
+                .advent-info
+                    .advent-info__title.ttl.h4 о проекте
+                    .advent-info__content.list
+                        .advent-info__content-col.col
+                            .advent-info__img 
+                                +jpgC('advent-img-5', '609', '637')
+                        .advent-info__content-col.col
+                            .advent-info__desc
+                                .advent-info__desc-top.centered 
+                                    .advent-info__desc-logo 
+                                        +pngC('advent-logo-5', '132', '132')
+                                .advent-info__desc-bottom
+                                    .advent-info__desc-txt Периодика — удобный сервис печати фотокниг, который помогает сохранять воспоминания о самых важных и дорогих сердцу моментах
+    script
+        include copy.js

@@ -1,18 +1,31 @@
-.ashclub.mainSection
-    .container 
-        .ashclub-content
-            .ashclub-content__img 
-                .ashclub-content__img-desctop.desctop
-                    +jpgG('ashclub-img', '1840', '946') 
-                .ashclub-content__img-mobile.mobile
-                    +jpgG('ashclub-img-m', '375', '468') 
-            .ashclub-content__info 
-                .ashclub-info
-                    .ashclub-info__title.ttl.h2 ASHGIRLS club
-                    .ashclub-info__txt.base-up Модные инспиры и подборки, секретные скидки и ранний доступ к новинкам доступны с подпиской на
-                    .ashclub-info__links.d-flex.base-up
-                        .ashclub-info__links-item 
-                            a.ashclub-info__link(href="#") <span>TELEGRAM</span>
-                        .ashclub-info__links-item 
-                            a.ashclub-info__link(href="#") <span>INSTARGRAM</span>*
-                    .ashclub-info__bottom-txt.tech-14 Meta - запрещённая в россии организация
+//- .ashclub.mainSection
+//-     .container 
+//-         .ashclub-content
+//-             .ashclub-content__img 
+//-                 .ashclub-content__img-desctop.desctop
+//-                     +jpgG('ashclub-img', '1840', '946') 
+//-                 .ashclub-content__img-mobile.mobile
+//-                     +jpgG('ashclub-img-m', '375', '468') 
+//-             .ashclub-content__info 
+//-                 .ashclub-info
+//-                     .ashclub-info__title.ttl.h2 ASHGIRLS club
+//-                     .ashclub-info__txt.base-up Модные инспиры и подборки, секретные скидки и ранний доступ к новинкам доступны с подпиской на
+//-                     .ashclub-info__links.d-flex.base-up
+//-                         .ashclub-info__links-item 
+//-                             a.ashclub-info__link(href="#") <span>TELEGRAM</span>
+//-                         .ashclub-info__links-item 
+//-                             a.ashclub-info__link(href="#") <span>INSTARGRAM</span>*
+//-                     .ashclub-info__bottom-txt.tech-14 Meta - запрещённая в россии организация
+
+
+.ashclub
+    .ashclub-content
+        .ashclub-content__img 
+            +jpgG2('ashclub-img2', '1920', '937', [{mw: '480', name: 'ashclub-img2-m'}])
+        .ashclub-content__info 
+            .ashclub-info
+                .ashclub-info__title.ttl.h2 ASHGIRLS club
+                .ashclub-info__txt.base-up Модные инспиры и подборки, секретные скидки и ранний доступ к новинкам доступны с подпиской на
+                .ashclub-info__links.d-flex.base-up
+                    .ashclub-info__links-item 
+                        a.ashclub-info__link(href="https://t.me/ashrussia") <span>TELEGRAM</span>

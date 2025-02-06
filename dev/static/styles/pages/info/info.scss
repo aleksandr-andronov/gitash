@@ -7,10 +7,12 @@
         }
     }
     &__right {
-        padding-top: 150px;
-        &--map {
-            padding-top: 108px;
-        }
+        position: sticky;
+        top: 144px;
+        // padding-top: 150px;
+        // &--map {
+        //     padding-top: 108px;
+        // }
     }
     &-menu {
         font-size: 17px;
@@ -21,6 +23,7 @@
     &-questions {
         font-size: 16px;
         line-height: 130%;
+        
         &__title {
             font-size: 17px;
             font-weight: 500;
@@ -77,10 +80,48 @@
             width: 50%;
         }
     }
+    &-contacts {
+        max-width: 736px;
+        &__row {
+            margin-left: -24px;
+            margin-right: -24px;
+            margin-bottom: 40px;
+        }
+        &__col {
+            width: 50%;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        &__title {
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        &__txt {
+            margin-bottom: 24px;
+        }
+        &__link {
+            a {
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        &__bottom {
+            max-width: 652px;
+        }
+        &__btn {
+            margin-left: 0;
+        }
+    }
 }
 
 .slideToggle {
     border-top: 1px solid var(--stroke-element);
+    &--bottom {
+        margin-top: 40px;
+    }
     &-list {
         &__item {
             border-bottom: 1px solid var(--stroke-element);
@@ -136,16 +177,23 @@
             &-mb24 {
                 margin-bottom: 24px;
             }
-            * {
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-            p {
+            
+            p, .tab-wrap {
                 margin-bottom: 16px;
             }
             ul {
                 margin-bottom: 24px;
+            }
+            a {
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        &__txt > * {
+            &:last-child {
+                margin-bottom: 0;
             }
         }
         &__info  {
@@ -383,14 +431,60 @@
     }
 }
 
+.tab-wrap {
+    overflow-x: auto
+}
+
+.tab {
+    border-top: 1px solid #ddd
+}
+
+.tab td,.tab th {
+    border-bottom: 1px solid #ddd
+}
+
+.tab th {
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    color: #777
+}
+
+.tab td {
+    padding: 10px
+}
+
+.tab tr:nth-child(odd) td {
+    background: #f7f7f7
+}
+
+.tab-innerborder td {
+    border-right: 1px solid #ddd
+}
+
+.tab-innerborder tr td:last-child {
+    border-right: 0
+}
+
+.sizetab {
+    width: 30%
+}
+
+.sizetab td,.sizetab th {
+    padding: 5px 10px;
+    text-align: center
+}
+
 @media (max-width: 1440px) {
     .infoPage {
         padding: 94px 0;
         &__right {
-            padding-top: 122px;
-            &--map {
-                padding-top: 86px;
-            }
+            top: 116px;
+            // padding-top: 122px;
+            // &--map {
+            //     padding-top: 86px;
+            // }
         }
         &-menu {
             font-size: 15px;
@@ -423,9 +517,34 @@
         &__title {
             margin-bottom: 44px;
         }
+
+        &-contacts {
+            max-width: 600px;
+            &__row {
+                margin-left: -10px;
+                margin-right: -10px;
+                margin-bottom: 32px;
+            }
+            &__col {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &__title {
+                margin-bottom: 10px;
+            }
+            &__txt {
+                margin-bottom: 16px;
+            }
+            &__bottom {
+                max-width: 100%;
+            }
+        }
     }
 
     .slideToggle {
+        &--bottom {
+            margin-top: 32px;
+        }
         &-item {
             &__open {
                 padding: 16px 0;
@@ -544,11 +663,11 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 932px) {
     .infoPage {
-        padding: 16px 0 142px;
+        padding: 16px 0 90px;
         &__left {
-            max-width: 614px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 24px;
@@ -561,11 +680,23 @@
         }
         &__right {
             padding-top: 36px;
-            max-width: 614px;
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
             &--map {
                 padding-top: 0;
+            }
+        }
+        &-contacts {
+            &__col {
+                width: 100%;
+                margin-bottom: 32px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &__txt {
+                margin-bottom: 12px;
             }
         }
     }
@@ -598,6 +729,7 @@
 
 @media (max-width: 932px) {
     .infoPage {
+        
         &__title {
             font-size: 24px;
             letter-spacing: -0.48px;

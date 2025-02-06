@@ -1,0 +1,276 @@
+.order
+    .container
+        .order__inner
+            .order__subhead
+                .order__subhead-inner.d-flex 
+                    .order__subhead-item
+                        a.order__back.btn-circle(href="#") 
+                            +icon('a-left-sm')
+            .order__title.ttl.h3 оформление заказа
+            .order__content.flex 
+                .order__col.order__col-3
+                .order__col.order__col-6
+                    form.order-form.form(action="/")
+                        .order-form__group
+                            .order-form__title.h6.ttl.order-form__title--mb-1 Адрес и способ доставки
+                            .form-item.form-item-dropdown
+                                .form-item__group 
+                                    .form-item__label населенный пункт*
+                                    input.form-input(type="text")
+                                .form-item__dropdown.outline-border
+                                    .form-item__dropdown-scroll(data-simplebar)
+                                        .form-item__list
+                                            - for (let i = 0; i < 20; i++)
+                                                .form-item__list-item 
+                                                    label.form-item__dropdown-label
+                                                        input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                        span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                            span Новосибирская обл.
+                            .order-form__shipment.visible
+                                .shipment
+                                    .shipment-list.flex
+                                        .shipment-list__col
+                                            label.shipment-item.radio
+                                                input(type="radio" name="shipment" data-type="courier")
+                                                span.shipment-item__inner.radio-content.outline-border 
+                                                    span.shipment-item__check 
+                                                        span.address-item__info-icon.radio-icon
+                                                    span.shipment-item__info 
+                                                        span.shipment-item__name Курьером по адресу
+                                                        span.shipment-item__txt Есть примерка, 15 минут
+                                                        span.shipment-item__price 249 ₽
+                                        .shipment-list__col
+                                            label.shipment-item.radio
+                                                input(type="radio" name="shipment" checked  data-type="delivery")
+                                                span.shipment-item__inner.radio-content.outline-border 
+                                                    span.shipment-item__check 
+                                                        span.address-item__info-icon.radio-icon
+                                                    span.shipment-item__info 
+                                                        span.shipment-item__name Пункт выдачи
+                                                        span.shipment-item__txt Доставка в СДЕК, Boxberry, Почта России, есть примерка
+                                                        span.shipment-item__free бесплатно
+                            .order-form__info-block
+                                .order-form__row-wrapper
+                                    .order-infoBlock.outline-border
+                                        .order-infoBlock__group.d-flex 
+                                            .order-infoBlock__left 
+                                                .order-infoBlock__title 
+                                                    .order-infoBlock__title-inner.d-flex 
+                                                        .order-infoBlock__title-txt СДЕК
+                                                        a.order-infoBlock__title-icon.icon.icon-black(href="#pickupPoint" data-bs-toggle="offcanvas")
+                                                            include ../../icons/info-11
+                                                .order-infoBlock__txt
+                                                    .order-infoBlock__txt-item Москва, ул. Безымянная 47/1
+                                            .order-infoBlock__right 
+                                                a.order-infoBlock__btn.btn.btn-outline.btn-rounded(href="#pickupPoints" data-bs-toggle="offcanvas") изменить
+                                        .order-infoBlock__bottom
+                                            .pickupPoint-detail__type.d-flex
+                                                .pickupPoint-detail__type-icon 
+                                                    +svg('hanger', '16', '16')
+                                                .pickupPoint-detail__type-txt с примеркой
+                                            .pickupPoint-detail__date дата доставки: 14-18 ноября
+                        .order-form__group
+                            .order-form__title.h6.ttl получатель
+                            .order-form__row-wrapper
+                                .order-form__row.flex 
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label имя*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label фамилия*
+                                                input.form-input(type="text" data-validate)
+                            .order-form__subtitle Контакты
+                            .order-form__row-wrapper.order-form__row-wrapper--mb-2
+                                .order-form__row.flex
+                                    .order-form__col 
+                                        .form-item.form-phone
+                                            .form-phone__inner.d-flex 
+                                                .form-phone__left 
+                                                    a.form-phone__btn.d-flex(href="#") 
+                                                        span.form-phone__btn-flag.centered 
+                                                            +svg('rus', '24', '17')
+                                                        span.form-phone__btn-txt +7
+                                                        span.form-phone__btn-icon.icon 
+                                                            +icon('down')
+                                                .form-phone__right
+                                                    .form-item__group 
+                                                        .form-item__label.form-item__label--hidden телефон*
+                                                        input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" data-validate)
+                                            .form-phone__dropdown.form-item__dropdown.outline-border
+                                                .form-item__dropdown-scroll(data-simplebar)
+                                                    .form-item__list
+                                                        .form-item__list-item 
+                                                            label.form-item__country
+                                                                input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+                                                                span.form-item__country-inner.d-flex 
+                                                                    span.form-item__country-flag.centered 
+                                                                        +svg('bel', '24', '17') 
+                                                                    span.form-item__country-txt Беларусь
+                                                        .form-item__list-item 
+                                                            label.form-item__country
+                                                                input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+                                                                span.form-item__country-inner.d-flex 
+                                                                    span.form-item__country-flag.centered 
+                                                                        +svg('kz', '24', '17') 
+                                                                    span.form-item__country-txt Казахстан
+                                                        .form-item__list-item 
+                                                            label.form-item__country
+                                                                input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+                                                                span.form-item__country-inner.d-flex 
+                                                                    span.form-item__country-flag.centered 
+                                                                        +svg('rus', '24', '17') 
+                                                                    span.form-item__country-txt Россия
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label e-mail*
+                                                input.form-input(type="email" data-validate)
+                                            .form-item__txt.tech-14 для отправки чека
+                            .order-form__row-wrapper
+                                .order-form__row.flex
+                                    .order-form__col
+                                        label.form-checkbox.txt-sm
+                                            input(type="checkbox")
+                                            span.form-checkbox__content 
+                                                span.form-checkbox__icon
+                                                span.form-checkbox__info Не звонить для подтверждения заказа
+                                    .order-form__col
+                                        .order-form__switch.switch.txt-sm
+                                            .switch__content.d-flex 
+                                                .switch__content-btn 
+                                                    label.switch-btn
+                                                        input(type="checkbox" checked name="news")
+                                                        span.switch-btn__content 
+                                                            span
+                                                .switch__content-txt Подписаться на новости
+                            .order-form__row-wrapper
+                                .order-form__row.flex
+                                    .order-form__col.order-form__col--fw 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label комментарий к заказу
+                                                input.form-input(type="text")
+                        .order-form__group 
+                            .order-form__title.h6.ttl способ оплаты
+                            .order-form__payments
+                                include ../order/payments
+                            .order-form__controls
+                                .order-form__controls-btn 
+                                    button.order-form__btn(type="submit" disabled) оплатить заказ
+                                .order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>	
+                    form.order-mobile(action="/")
+                        .order-mobile__group.order-mobile__group--no-border
+                            .order-mobile__delivery
+                                .order-mobile__delivery-top.d-flex 
+                                    .order-mobile__delivery-info.d-flex 
+                                        .order-mobile__delivery-info-icon.icon
+                                            +icon('delivery-icon') 
+                                        .order-mobile__delivery-info-txt Курьером по адресу
+                                    .order-mobile__delivery-price Бесплатно
+                                .order-mobile__delivery-bottom 
+                                    .order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
+                                    .order-mobile__delivery-txt Дата доставки: 14-18 ноября
+                                    a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addAddressMobile" data-bs-toggle="offcanvas") изменить адрес и тип доставки
+                        .order-mobile__group
+                            .order-mobile__item
+                                a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
+                                    span.order-mobile__item-btn-icon.centered 
+                                        +icon('user-icon') 
+                                    span.order-mobile__item-btn-txt Алевтина Круглова
+                                    span.order-mobile__item-btn-arrow.centered 
+                                        +icon('right-icon')
+                                .order-mobile__item-desc 
+                                    .order-mobile__item-list 
+                                        .order-mobile__item-txt +7 903 483-38-34
+                                        .order-mobile__item-txt alya@mail.ru
+                        .order-mobile__group
+                            .order-mobile__item
+                                a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas") 
+                                    span.order-mobile__item-btn-icon.icon 
+                                        +icon('comment-icon') 
+                                    span.order-mobile__item-btn-txt Комментарий к заказу
+                                    span.order-mobile__item-btn-arrow.icond 
+                                        +icon('right-icon')
+                        .order-mobile__group
+                            .order-mobile__item
+                                .order-mobile__item-btn.d-flex
+                                    span.order-mobile__item-btn-icon.icon
+                                        +icon('cash-icon') 
+                                    span.order-mobile__item-btn-txt Способ оплаты
+                                .order-mobile__item-payments.order-form__payments
+                                    include ../order/payments
+                        .order-mobile__group
+                            .order-mobile__item
+                                .order-mobile__item-btn.d-flex
+                                    span.order-mobile__item-btn-icon.icon 
+                                        +icon('order-icon') 
+                                    span.order-mobile__item-btn-txt Ваш заказ
+                                    a.order-mobile__item-btn-link(href="#") Изменить
+                                .order-mobile__item-products 
+                                    .order-mobile__item-products-list.flex
+                                        .order-mobile__item-products-item 
+                                            .order-mobile__item-product.centered 
+                                                .order-mobile__item-product-img
+                                                    +pngC('stphoto_ru')
+                                                .order-mobile__item-product-size.centered 36
+                                        .order-mobile__item-products-item 
+                                            .order-mobile__item-product.centered 
+                                                .order-mobile__item-product-img
+                                                    +pngC('stphoto_ru')
+                                                .order-mobile__item-product-size.centered 36
+                                .order-info__promocode
+                                    include ../../modules/forms/promocode
+                                .order-info__price.d-flex.ttl
+                                    a.order-info__price-name.d-flex(href="#hiddenPriceInfo" data-bs-toggle="offcanvas") 
+                                        .order-info__price-name-txt Итого
+                                        .order-info__price-name-icon.centered
+                                            +svg('info', '16', '16')
+                                    .order-info__price-value 18 336 ₽
+                                .order-info__total.d-flex 
+                                    .order-info__total-qty 3 товара
+                                    .order-info__total-price Экономия 2839 ₽ 
+                                .order-info__controls 
+                                    .order-info__controls-btn
+                                        button.order-form__btn#orderBtn(type="submit" disabled) оплатить заказ 
+                                    .order-info__controls-txt  Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
+                            .order-mobile__stickyPay.visible.animate
+                                .order-mobile__stickyPay-inner.d-flex 
+                                    .order-mobile__stickyPay-left 
+                                        .order-mobile__stickyPay-type Оплата картой
+                                        .order-mobile__stickyPay-value.ttl 18 336 ₽
+                                    .order-mobile__stickyPay-right 
+                                        a.order-mobile__stickyPay-btn.btn(href="#") оплатить заказ
+                            .order-mobile__dropdownPrice.offcanvas.offcanvas-bottom#hiddenPriceInfo
+                                a.order-mobile__dropdownPrice-close.icon(href="#" data-bs-dismiss="offcanvas") 
+                                    +svg('close', '14', '14')
+                                .order-mobile__dropdownPrice-inner
+                                    .order-mobile__dropdownPrice-top 
+                                        .order-total__list 
+                                            .order-total__list-item.d-flex
+                                                .order-total__list-item__name Сумма
+                                                .order-total__list-item__value 22 765 ₽
+                                            .order-total__list-item.d-flex
+                                                .order-total__list-item__name Скидка на товары
+                                                .order-total__list-item__value.order-total__list-item__value--red — 2 584 ₽
+                                            .order-total__list-item.d-flex
+                                                .order-total__list-item__name Скидка по промокоду
+                                                .order-total__list-item__value.order-total__list-item__value--red — 3 586 ₽
+                                            .order-total__list-item.d-flex
+                                                .order-total__list-item__name Доставка
+                                                .order-total__list-item__value 0 ₽
+                                    .order-mobile__dropdownPrice-bottom 
+                                        .order-info__price.d-flex.ttl
+                                            .order-info__price-name.d-flex
+                                                .order-info__price-name-txt Итого
+                                            .order-info__price-value 18 336 ₽
+                                        .order-info__total.d-flex 
+                                            .order-info__total-qty 3 товара
+                                            .order-info__total-price Экономия 2839 ₽ 
+                .order__col.order__col-3
+                    include right
+
+include map

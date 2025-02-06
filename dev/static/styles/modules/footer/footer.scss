@@ -47,8 +47,15 @@
             text-transform: uppercase;
             margin-bottom: 52px;
         }
+        &__links {
+
+        }
         &__link {
             display: block;
+            margin-right: 8px;
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
     &__middle {
@@ -263,8 +270,10 @@
                 margin-bottom: 25px;
             }
             &__link {
+                margin-right: 6px;
                 img {
-                    width: 124px;
+                    height: 46px;
+                    width: auto;
                 }
             }
         }
@@ -392,6 +401,12 @@
             &__info {
                 padding-left: 0;
                 text-align: center;
+            }
+            &__links {
+                justify-content: center;
+            }
+            &__link {
+                margin-right: 8px;
             }
             &__txt {
                 font-size: 14px;

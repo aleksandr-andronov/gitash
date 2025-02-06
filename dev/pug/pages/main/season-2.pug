@@ -1,0 +1,107 @@
+.season.mainSection 
+    .mainSection__group 
+        .mainSection-content.list 
+            .mainSection-content__col.col 
+                .mainSection__info
+                    .mainSection__info-item
+                        .season-head.season-head--left
+                            .season__title.ttl.h2 re/ash
+                            .season__txt.txt-sm Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
+                            a.season__link.mainSection__link.d-flex(href="#") 
+                                span.mainSection__link-txt смотреть все
+                                span.mainSection__link-icon.icon 
+                                    include ../../icons/link
+                    .mainSection__info-item.mainSection__info-item--img
+                        .mainSection__info-imgGroup.list 
+                            .mainSection__info-imgGroup__col.col
+                                .mainSection__sm-img
+                                    a(href="#")
+                                        +jpgC('sd2', '474', '459') 
+            .mainSection-content__col.col.mainSection-content__col--img 
+                .mainSection__img
+                    a(href="#") 
+                        +jpgC('sd1', '956', '963')
+    .mainSection__group 
+        .mainSection-slider-wrapper
+            .mainSection-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .mainSection-slider__slide.swiper-slide 
+                            +newCard()
+            button.mainSection-btn.mainSection-prev.centered(type="button")
+                include ../../icons/left-12
+            button.mainSection-btn.mainSection-next.centered(type="button")
+                include ../../icons/right-12
+
+
+.season.mainSection 
+    .mainSection__group 
+        .mainSection-content.list 
+            .mainSection-content__col.col.mainSection-content__col--img 
+                .mainSection__img
+                    a(href="#") 
+                        +jpgC('sd1', '956', '963')
+            .mainSection-content__col.col 
+                .mainSection__info
+                    .mainSection__info-item
+                        .season-head
+                            .season__title.ttl.h2 MID SEASON SALE
+                            a.season__link.mainSection__link.d-flex(href="#") 
+                                span.mainSection__link-txt смотреть все
+                                span.mainSection__link-icon.icon 
+                                    include ../../icons/link
+                    .mainSection__info-item.mainSection__info-item--img.mainSection__info-item--bottom-right
+                        .mainSection__info-imgGroup.list 
+                            .mainSection__info-imgGroup__col.col
+                                .mainSection__sm-img
+                                    a(href="#")
+                                        +jpgC('sd2', '474', '459') 
+            
+    .mainSection__group 
+        .mainSection-slider-wrapper
+            .mainSection-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .mainSection-slider__slide.swiper-slide 
+                            +newCard()
+            button.mainSection-btn.mainSection-prev.centered(type="button")
+                include ../../icons/left-12
+            button.mainSection-btn.mainSection-next.centered(type="button")
+                include ../../icons/right-12
+
+.season.mainSection 
+    .mainSection__group 
+        .mainSection-content.list 
+            .mainSection-content__col.col.mainSection-content__col--img 
+                .mainSection__img
+                    a(href="#") 
+                        +jpgC('sd1', '956', '963')
+            .mainSection-content__col.col 
+                .mainSection__info
+                    .mainSection__info-item.mainSection__info-item--img.mainSection__info-item--top-right
+                        .mainSection__info-imgGroup.list 
+                            .mainSection__info-imgGroup__col.col
+                                .mainSection__sm-img
+                                    a(href="#")
+                                        +jpgC('sd2', '474', '459') 
+                    .mainSection__info-item
+                        .season-head
+                            .season__title.ttl.h2 re/ash
+                            .season__txt.txt-sm Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
+                            a.season__link.mainSection__link.d-flex(href="#") 
+                                span.mainSection__link-txt смотреть все
+                                span.mainSection__link-icon.icon 
+                                    include ../../icons/link
+                    
+            
+    .mainSection__group 
+        .mainSection-slider-wrapper
+            .mainSection-slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 10; i++)
+                        .mainSection-slider__slide.swiper-slide 
+                            +newCard()
+            button.mainSection-btn.mainSection-prev.centered(type="button")
+                include ../../icons/left-12
+            button.mainSection-btn.mainSection-next.centered(type="button")
+                include ../../icons/right-12

@@ -1,0 +1,153 @@
+#addAddressMobile.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle#addAddressMobileBack(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 Адрес и способ доставки
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            form.address-form.form(action="/")
+                .address-form__top
+                    .form-item.form-item-dropdown
+                        .form-item__group 
+                            .form-item__label населенный пункт*
+                            input.form-input(type="text")
+                        .form-item__dropdown.outline-border
+                            .form-item__dropdown-scroll(data-simplebar)
+                                .form-item__list
+                                    - for (let i = 0; i < 20; i++)
+                                        .form-item__list-item 
+                                            label.form-item__dropdown-label
+                                                input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                                span.form-item__dropdown-label__txt г. Новосибирск, 
+                                                    span Новосибирская обл.
+                    a.determineLocation.d-flex(href="#")
+                        span.determineLocation__icon.icon 
+                            include ../../icons/location
+                        span.determineLocation__txt определить местоположение
+                    
+                    //- .order-form__subtitle-group
+                    //-     .order-form__subtitle Тип доставки
+                    //-     .order-form__subtitle-group__txt Появится после выбора населенного пункта
+
+                    .address-form__shipment 
+                        .shipment
+                            .shipment-list.flex
+                                .shipment-list__col
+                                    label.shipment-item.radio
+                                        input(type="radio" name="shipment" data-type="courier")
+                                        span.shipment-item__inner.radio-content.outline-border 
+                                            span.shipment-item__check 
+                                                span.address-item__info-icon.radio-icon
+                                            span.shipment-item__info 
+                                                span.shipment-item__name Курьером по адресу
+                                                span.shipment-item__txt Есть примерка, 15 минут
+                                                span.shipment-item__price 249 ₽
+                                .shipment-list__col
+                                    label.shipment-item.radio
+                                        input(type="radio" name="shipment" data-type="delivery")
+                                        span.shipment-item__inner.radio-content.outline-border 
+                                            span.shipment-item__check 
+                                                span.address-item__info-icon.radio-icon
+                                            span.shipment-item__info 
+                                                span.shipment-item__name Пункт выдачи
+                                                span.shipment-item__txt Доставка в СДЕК, Boxberry, Почта России, есть примерка
+                                                span.shipment-item__free бесплатно
+                        .address-form__shipment-selected
+                            .order-infoBlock.outline-border
+                                    .order-infoBlock__group.d-flex 
+                                        .order-infoBlock__left 
+                                            .order-infoBlock__title 
+                                                .order-infoBlock__title-inner.d-flex 
+                                                    .order-infoBlock__title-txt СДЕК
+                                                    a.order-infoBlock__title-icon.icon.icon-black(href="#pickupPoint" data-bs-toggle="offcanvas")
+                                                        include ../../icons/info-11
+                                            .order-infoBlock__txt
+                                                .order-infoBlock__txt-item Москва, ул. Безымянная 47/1
+                                        .order-infoBlock__right 
+                                            a.order-infoBlock__btn.btn-circle.order-infoBlock__btn--m-circle(href="#pickupPointsMobile" data-bs-toggle="offcanvas")
+                                                include ../../icons/edit-11
+                                    .order-infoBlock__bottom
+                                        .pickupPoint-detail__type.d-flex
+                                            .pickupPoint-detail__type-icon 
+                                                +svg('unhanger', '16', '16')
+                                            .pickupPoint-detail__type-txt без примерки
+                                        .pickupPoint-detail__date дата доставки: 14-18 ноября
+                        .order-form__hidden-block
+                            .order-form__row-wrapper
+                                .order-form__row.flex
+                                    .order-form__col.order-form__col--fw 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label улица*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label дом*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col 
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label квартира*
+                                                input.form-input(type="text" data-validate)
+                                    .order-form__col.order-form__col--33
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label подъезд
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--33
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label этаж
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--33
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label домофон
+                                                input.form-input(type="text")
+                                    .order-form__col.order-form__col--fw.order-form__col--courier
+                                        .form-item
+                                            .form-item__group 
+                                                .form-item__label комментарий курьеру
+                                                input.form-input(type="text")
+                                    //- .order-form__col.order-form__col--fw
+                                    //-     .order-form__switch.switch.txt-sm
+                                    //-         .switch__content.d-flex 
+                                    //-             .switch__content-btn 
+                                    //-                 label.switch-btn
+                                    //-                     input(type="checkbox" name="mainAddress")
+                                    //-                     span.switch-btn__content 
+                                    //-                         span
+                                    //-             .switch__content-txt Сделать основным
+                        .order-form__hidden-block
+                            .order-form__date-wrapper
+                                .order-form__subtitle
+                                    .order-form__subtitle-default Дата и время доставки
+                                    .order-form__subtitle-error Пожалуйста выберите дату и время доставки
+                                .order-form__day-slider.slider
+                                    .swiper-wrapper 
+                                        - for (let i = 0; i < 5; i++)
+                                            .order-form__day-slider__item.swiper-slide 
+                                                label.order-form__day
+                                                    input(type="radio" name="day")
+                                                    span.order-form__day-content.outline-border 
+                                                        span.order-form__day-icon 
+                                                        span.order-form__day-info 
+                                                            span.order-form__day-day пн
+                                                            span.order-form__day-date 24 июля
+                                .order-form__time-slider.slider
+                                    .swiper-wrapper
+                                        - for (let i = 0; i < 4; i++)
+                                            .order-form__time-slider__item.swiper-slide 
+                                                label.order-form__time
+                                                    input(type="radio" name="time")
+                                                    span.order-form__time-content.outline-border 14:00–16:00
+                .address-form__foot 
+                    //- button.address-form__btn.btn(type="button" data-bs-toggle="offcanvas" data-bs-target="#addRecipientMobile") сохранить и продолжить
+                    button.address-form__btn.btn(type="button") сохранить и продолжить

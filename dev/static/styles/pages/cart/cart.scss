@@ -270,7 +270,20 @@
     }
 }
 
+.cartPage {
+    padding: 64px 0;
+    &__inner {
+        overflow-x: hidden;
+    }
+    &__title {
+        margin-bottom: 32px;
+    }
+}
+
 @media (max-width: 1440px) {
+    .cartPage {
+        padding: 48px 0;
+    }
     .cart {
         &-list {
             margin-bottom: 16px;
@@ -417,6 +430,9 @@
 }
 
 @media (max-width: 932px) {
+    .cartPage {
+        padding: 32px 0;
+    }
     .cart {
         &-sale {
             margin-left: -14px;

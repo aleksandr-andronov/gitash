@@ -37,6 +37,18 @@ mixin jpgG(name, w, h)
 		source(srcset=`static/images/general/${name}.webp`, type='image/webp')
 		img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
 
+mixin jpgG2(name, w, h, arr)
+	if (arr)
+		picture
+			each item in arr
+				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${item.name}.webp`, type="image/webp")
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
+	else 
+		picture
+			source(srcset=`static/images/content/${name}.webp`, type='image/webp')
+			img(src=`static/images/content/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
+
 
 //- mixin responsiveImage(name, name2)
 //- 	picture
@@ -92,32 +104,70 @@ mixin productCardFavorite(img)
 				.productCard__tags-item 
 					+svg('reash', '68', '24')
 
-mixin newCard(favorite, cart, colors)
+
+
+mixin newCardSubscribe(subscribe)
+	a.card.null(href="#")
+		.card-img
+			.card-img__slider.slider
+				.swiper-wrapper  
+					.swiper-slide 
+						.card-img__slider-img
+							+pngC('card-photo', '303', '404')
+					.swiper-slide 
+						.card-img__slider-img
+							+pngC('card-photo', '303', '404')
+					.swiper-slide 
+						.card-img__slider-img
+							+pngC('card-photo', '303', '404')
+					.swiper-slide 
+						.card-img__slider-img
+							+pngC('card-photo', '303', '404')
+			.card-img__pagination
+		.card-img-mobile
+			+pngC('card-photo-m', '134', '180')
+		.card-info
+			.card-info__name.txt-sm Zeta
+			.card-price.card-info__price.txt-sm.card-price--null нет в наличии
+		if (subscribe)
+			button.card-subscribe.txt-sm(type="button" data-bs-target="#subscribeSize" data-bs-toggle="offcanvas")
+				span.card-subscribe__txt подписаться
+				span.card-subscribe__icon
+					//- +icon('unbell')
+					include ../icons/bell
+		else 
+			button.card-subscribe.txt-sm(type="button" data-bs-target="#subscribeSize" data-bs-toggle="offcanvas")
+				span.card-subscribe__txt вы подписаны
+				span.card-subscribe__icon
+					include ../icons/bell-active
+		
+
+mixin newCard(favorite, cart, colors, discount)
 	a.card(href="#", class=favorite ? 'card-selected' : '', class=colors ? 'card-no-colors' : '')
 		.card-img
 			.card-img__slider.slider
 				.swiper-wrapper 
 					.swiper-slide 
 						.card-img__slider-img
-							+jpgC('img-card', '454', '563')
+							+pngC('card-photo', '303', '404')
 					.swiper-slide 
 						.card-img__slider-img
-							+jpgC('img-card', '454', '563')
+							+pngC('card-photo', '303', '404')
 					.swiper-slide 
 						.card-img__slider-img
-							+jpgC('img-card', '454', '563')
+							+pngC('card-photo', '303', '404')
 					.swiper-slide 
 						.card-img__slider-img
-							+jpgC('img-card', '454', '563')
+							+pngC('card-photo', '303', '404')
 			.card-img__pagination
 		.card-img-mobile
-			.card-img-mobile__inner 
-				+jpgC('card-m-2', '346', '508')
+			//- .card-img-mobile__inner 
+			+pngC('card-photo-m', '134', '180')
 		.card-info(class=cart ? 'card-info--cart' : '')
-			.card-info__name.txt-sm Zeta 
+			.card-info__name.txt-sm НАЗВАНИЕ КАПСОМ
 			.card-price.card-info__price.txt-sm
 				.card-price__new 18 990 ₽
-				.card-price__old 22 990 ₽
+				.card-price__old 22 990 ₽ 
 		if (!cart)
 			.card-hidden 
 				.card-hidden__sizes 
@@ -141,7 +191,12 @@ mixin newCard(favorite, cart, colors)
 									.card-colors__item.card-colors__item--txt.txt-sm +3
 
 		.card-stickers
-			.card-stickers__item.card-stickers__item--sale.ttl.sticker -30%
+			if (discount == '50')
+				.card-stickers__item.card-stickers__item--sale-2.ttl.sticker -50%
+			else if (discount == '70')
+				.card-stickers__item.card-stickers__item--sale-3.ttl.sticker -50%
+			else 
+				.card-stickers__item.card-stickers__item--sale.ttl.sticker -30%
 		if (!favorite)
 			button.card-favorite.fav-btn.icon(type="button")
 				+icon('heart') 

@@ -1,7 +1,163 @@
-h1.infoPage__title.ttl.h3 faq
+//- h1.infoPage__title.ttl.h3 faq
 .infoPage__desc.txt-base
+    .infoPage__desc-mb-32 
+        p Отвечаем на наиболее частые вопросы клиентов, чтобы ваш процесс покупки в интернет-магазине был максимально прозрачным и комфортным.
     .faq
         .faq__group 
+            .faq__title Общие вопросы
+            .slideToggle
+                .slideToggle-list 
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#common1" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Где найти ваш магазин?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#common1
+                                .slideToggle-item__txt
+                                    p Список наших магазинов:
+                                    .title ASH ЦВЕТНОЙ
+                                    p Универмаг «Цветной», Цветной бульвар д.15, стр. 1. Этаж 3
+                                    .title ASH АФИМОЛЛ
+                                    p ТЦ «Афимолл», Пресненская наб, 2. Этаж 2
+                                    .title ASH АВИАПАРК
+                                    p ТЦ «Авиапарк», Ходынский б-р, 4. Этаж 1
+                                    .title ASH ВНУКОВО
+                                    p Vnukovo outlet Village , пос. Московский, дер. Лапшинка, вл. 8, корп. 1
+                                    .title ASH МЕТРОПОЛИС
+                                    p ТЦ «Метрополис», Ленинградское шоссе, 16а. Этаж 1
+                                    .title ASH НОВАЯ РИГА
+                                    p Novaya Riga outlet Village, Московская область, городской округ Истра, деревня Покровское, улица Центральная, здание 33
+                                    .title ASH АТРИУМ
+                                    p ТРК «Атриум», Земляной Вал 33. Этаж 1
+                                    .title ASH ПАВЕЛЕЦКАЯ ПЛАЗА
+                                    p ТРЦ «Павелецкая плаза», Москва, Павелецкая площадь, дом 3, этаж: -1
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#common2" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Где найти промокод или узнать об акциях?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#common2
+                                .slideToggle-item__txt
+                                    p Вы можете присоединиться к нашему клубу ASH и узнавать в числе первых о закрытых распродажах, акциях и клиентских днях. Для этого просто оформите подписку на новости на нашем сайте или активируйте подписку в настройках личного кабинета.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#common3" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как подобрать размер?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#common3
+                                .slideToggle-item__txt
+                                    p Чтобы подобрать корректный размер, рекомендуем ориентироваться на размерную сетку в карточке товара к каждой паре.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#common4" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как ухаживать за обувью?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#common4
+                                .slideToggle-item__txt
+                                    p Пожалуйста, посетите раздел “Памятка по уходу”. В нём вы найдете все рекомендации.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#common5" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как узнать наличие товара в розничном магазине?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#common5
+                                .slideToggle-item__txt
+                                    p Чтобы узнать наличие нужного вам товара и размера в розничном магазине нашего бренда, воспользуйтесь <a href="https://t.me/ashrussia_support_bot">ботом поддержки</a> в нашем телеграм-канале.
+        .faq__group 
+            .faq__title Оформление заказа
+            .slideToggle
+                .slideToggle-list 
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering1" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как мне понять, что заказ оформлен?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering1
+                                .slideToggle-item__txt
+                                    p После оформления заказа, на вашу электронную почту придет сообщение с подтверждением заказа и его номером. 
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering2" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Не успел оплатить заказ, что делать?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering2
+                                .slideToggle-item__txt
+                                    p После размещения заказа, на почту приходит письмо с подтверждением и ссылкой на оплату. Перейдите по ссылке в письме из браузера на вашем ПК и завершите процесс оплаты.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering3" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Сколько времени сохраняется заказ без оплаты?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering3
+                                .slideToggle-item__txt
+                                    p Если вы создали заказ, но не оплатили его, заказ аннулируется через час после его размещения. Обращаем ваше внимание, что создание заказа не гарантирует бронь товара под вас. 
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering4" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как оплатить заказ с помощью сервиса Тинькофф Долями?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering4
+                                .slideToggle-item__txt
+                                    p Чтобы оплатить заказ частями, во время оформления заказа укажите способ оплаты “Оплата долями” и далее следуйте инструкции. Обращаем ваше внимание, что ссылка на оплату данным сервисом работает единожды.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering5" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Могу ли я изменить адрес доставки?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering5
+                                .slideToggle-item__txt
+                                    p Как только ваша доставка будет подтверждена, мы не сможем перенаправить посылку на другой адрес. Пожалуйста, обратитесь в службу поддержки клиентов в случае, если вы не сможете получить его по первоначальному адресу.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering6" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Каковы сроки обработки заказа?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering6
+                                .slideToggle-item__txt
+                                    p Срок обработки, подтверждения и отправки заказа занимает 1-3 рабочих дня*. <br>*Сроки обработки заказа могут быть увеличены в период распродаж и праздничных дней.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering7" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как узнать мой номер заказа?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering7
+                                .slideToggle-item__txt
+                                    p Номер заказа состоит из пяти цифр. Найти его можно в письме-подтверждении заказа на электронной почте или в личном кабинете в разделе “Ваши заказы”.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#ordering8" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как мне отменить заказ после оформления?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#ordering8
+                                .slideToggle-item__txt
+                                    p Чтобы отменить оформленный заказ достаточно связаться с командой интернет-магазина по телефону 8 (800) 909-83-14 и сообщить номер заказа или написать в <a href="https://t.me/ash_russia">чат поддержки</a> в нашем телеграм-канале.
+        .faq__group  
             .faq__title Доставка
             .slideToggle
                 .slideToggle-list 
@@ -9,127 +165,168 @@ h1.infoPage__title.ttl.h3 faq
                         .slideToggle-item
                             .slideToggle-item__head 
                                 a.slideToggle-item__open.d-flex(href="#toggle1" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Как оформить доставку?
+                                    span.slideToggle-item__open-left Какие опции доставки существуют?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
                             .slideToggle-item__body.collapse#toggle1
                                 .slideToggle-item__txt
-                                    p В соответствии с законом «о защите прав потребителя» интернет магазин и фирменные розничные магазины «ASH» осуществляет приём возврата или обмен новой обуви в течение 14 дней со дня продажи, при наличии документов продажи, при условии сохранения товарного вида обуви. Принимает претензии по качеству обуви в течение 30 календарных дней со дня продажи, при наличии документов продажи, с учётом сроков сезонности на отдельные виды обуви. Обувь принимается в чистом и сухом виде. Интернет магазин оставляет за собой право на проведение экспертизы в течении 20 дней со дня приёма товара по заявлению от покупателя.
+                                    p Для доставки заказов мы пользуемся услугами курьерской службы СДЭК и Почтой России. Заказы Почтой России отправляются 1-м классом.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
                                 a.slideToggle-item__open.d-flex(href="#toggle2" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Сколько стоит доставка с примеркой?
+                                    span.slideToggle-item__open-left Есть ли доставка до ПВЗ СДЭК?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
                             .slideToggle-item__body.collapse#toggle2
                                 .slideToggle-item__txt
-                                    p Сколько стоит доставка с примеркой?
+                                    p Да. Вы можете оформить доставку до ближайшего к вам пункта выдачи курьерской службы СДЭК. Для этого укажите адрес нужного ПВЗ во время оформления заказа. 
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
                                 a.slideToggle-item__open.d-flex(href="#toggle3" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Есть ли доставка в регионы России?
+                                    span.slideToggle-item__open-left Можно ли заказать доставку в розничный магазин?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
                             .slideToggle-item__body.collapse#toggle3
                                 .slideToggle-item__txt
-                                    p Сколько стоит доставка с примеркой?
+                                    p Нет. Доставка заказов, размещенных на ashrussia.ru, возможна только до личного адреса клиента. 
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
                                 a.slideToggle-item__open.d-flex(href="#toggle4" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Где купить товары офлайн?
+                                    span.slideToggle-item__open-left Сколько стоит доставка?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
                             .slideToggle-item__body.collapse#toggle4
                                 .slideToggle-item__txt
-                                    p Сколько стоит доставка с примеркой?
-        .faq__group 
+                                    p Мы предлагаем бесплатную доставку по России для каждого заказа, размещенного с ashrussia.ru. Стоимость международной доставки зависит от региона и рассчитывается индивидуально во время оформления заказа.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#toggle5" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Когда я получу свой заказ?*
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#toggle5
+                                .slideToggle-item__txt
+                                    p Сроки доставки зависят от региона. В них не входит время обработки заказа.
+                                    p Стандартная доставка по Москве и Московской области занимает 1-3 рабочих дня.
+                                    p Стандартная доставка по Санкт-Петербургу и Ленинградской области занимает 2-3 рабочих дня.
+                                    p Стандартная доставка по регионам России занимает 3-12 рабочих дней, в зависимости от региона.
+                                    p Доставка за рубеж рассчитывается индивидуально. Детали уточняйте у службы поддержки клиентов по электронной почте info@ashrussia.ru, либо по телефону 8 (800) 500-76-82. <br>*Сроки доставки могут быть увеличены в период распродаж и праздничных дней.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#toggle6" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как мне получить трек-номер для отслеживания доставки?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#toggle6
+                                .slideToggle-item__txt
+                                    p Как только ваш заказ будет передан в доставку, на электронную почту вам придет подтверждение со ссылкой для отслеживания. Ссылка станет активна, когда перевозчик получит и отсканирует ваш груз, поэтому она может не сработать в ту минуту, когда вы получите ее в письме-подтверждении доставки. 
+                                    p Если трек-номер не пришел, свяжитесь со службой поддержки клиентов по электронной почте info@ashrussia.ru, либо по телефону 8 (800) 500-76-82.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#toggle7" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как поменять день доставки?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#toggle7
+                                .slideToggle-item__txt
+                                    p При оформлении заказа, вы можете уточнить удобный день доставки в комментариях к заказу. Мы постараемся реализовать доставку в удобное для вас время. <br>В случае, если у вас поменялись планы, вы можете самостоятельно связаться с курьерской службой по контактному номеру на их сайте и внести изменения, либо изменить дату в личном кабинете на сайте курьерской службы. 
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#toggle8" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как работает опция примерки?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#toggle8
+                                .slideToggle-item__txt
+                                    p Опция примерки доступна для большинства клиентов в крупных городах России. Наличие возможности примерить заказ отображается во время оформления заказа на этапе заполнения адреса и выбора способа доставки. На примерку отводится 15 минут. Вы сможете вернуть заказ частично или полностью курьеру. Это бесплатно.
+                    .slideToggle-list__item 
+                        .slideToggle-item
+                            .slideToggle-item__head 
+                                a.slideToggle-item__open.d-flex(href="#toggle9" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Сколько стоит доставка?
+                                    span.slideToggle-item__open-right.icon 
+                                        +svg('arrow-down', '16', '16')
+                            .slideToggle-item__body.collapse#toggle9
+                                .slideToggle-item__txt
+                                    p Нет. Все заказы отправляются после полной оплаты заказа на сайте или в мобильном приложении. В случае наличия возможности примерить заказ во время доставки, опция примерки сохраняется за клиентом.
+        .faq__group  
             .faq__title Возврат
             .slideToggle
                 .slideToggle-list 
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle5" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left как оформить возврат?
+                                a.slideToggle-item__open.d-flex(href="#refund1" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Можно ли обменять товар?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle5
+                            .slideToggle-item__body.collapse#refund1
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Если вы хотите обменять товар, вам нужно вернуть оригинальный товар согласно стандартной процедуре возврата, а затем оформить новый заказ. После того, как мы получим оригинальный товар, мы вернем вам денежные средства в полном объеме.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle6" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left возврат платный или бесплатный?
+                                a.slideToggle-item__open.d-flex(href="#refund2" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Мне пришел товар с дефектом, что делать?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle6
+                            .slideToggle-item__body.collapse#refund2
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Пожалуйста, посетите раздел “Возврат” и следуйте инструкциям в нём.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle7" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Есть ли доставка в регионы России?
+                                a.slideToggle-item__open.d-flex(href="#refund3" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как вернуть товар надлежащего качества?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle7
+                            .slideToggle-item__body.collapse#refund3
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Пожалуйста, посетите раздел “Возврат” и следуйте инструкциям в нём.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle8" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Где купить товары офлайн?
+                                a.slideToggle-item__open.d-flex(href="#refund4" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Сколько есть времени на возврат?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle8
+                            .slideToggle-item__body.collapse#refund4
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
-        .faq__group 
-            .faq__title Товар
-            .slideToggle
-                .slideToggle-list 
+                                    p Если по какой-либо причине вы не полностью удовлетворены своим заказом на ashrussia.ru, у вас есть законное право вернуть товар и запросить возврат денежных средств в течение 14 дней с даты доставки заказа.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle9" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left как оформить возврат?
+                                a.slideToggle-item__open.d-flex(href="#refund6" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Каковы сроки зачисления денежных средств после возврата?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle9
+                            .slideToggle-item__body.collapse#refund6
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Когда мы обработаем ваш возврат, вам придет письмо на электронную почту. Обычно срок ожидания денежных средств занимает 1-5 банковских дней.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle10" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left возврат платный или бесплатный?
+                                a.slideToggle-item__open.d-flex(href="#refund7" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Можно ли вернуть заказ в розничный магазин?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle10
+                            .slideToggle-item__body.collapse#refund7
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Нет, любой товар, купленный онлайн на ashrussia.ru, должен быть возвращен в интернет-магазин.
                     .slideToggle-list__item 
                         .slideToggle-item
                             .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle11" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Есть ли доставка в регионы России?
+                                a.slideToggle-item__open.d-flex(href="#refund8" data-bs-toggle="collapse") 
+                                    span.slideToggle-item__open-left Как вернуть товар, если он был оплачен с помощью сервиса Тинькофф Долями?
                                     span.slideToggle-item__open-right.icon 
                                         +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle11
+                            .slideToggle-item__body.collapse#refund8
                                 .slideToggle-item__txt
-                                    p как оформить возврат?
-                    .slideToggle-list__item 
-                        .slideToggle-item
-                            .slideToggle-item__head 
-                                a.slideToggle-item__open.d-flex(href="#toggle12" data-bs-toggle="collapse") 
-                                    span.slideToggle-item__open-left Где купить товары офлайн?
-                                    span.slideToggle-item__open-right.icon 
-                                        +svg('arrow-down', '16', '16')
-                            .slideToggle-item__body.collapse#toggle12
-                                .slideToggle-item__txt
-                                    p как оформить возврат?
+                                    p Пожалуйста, посетите раздел “Возврат” и следуйте инструкциям в нём. Денежные средства за возврат будут возвращены согласно стандартным правилам и срокам, и пересчитаны автоматически.

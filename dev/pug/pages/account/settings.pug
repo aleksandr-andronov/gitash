@@ -1,5 +1,5 @@
 .account-head.account-head--desctop
-    .account-head__title.h4.ttl привет, алевтина!
+    .account-head__title.h3.ttl привет, алевтина!
 .account-mobileHead
     .account-mobileHead__group.d-flex 
         a.account-mobileHead__btn.btn-circle(href="#")
@@ -13,8 +13,8 @@ form.account-settings.form(action="/")
             .account-settings__col
                 .form-item
                     .form-item__group 
-                        .form-item__label имя
-                        input.form-input(type="text")
+                        .form-item__label(data-default="Имя" data-error="пожалуйста введите имя") имя
+                        input.form-input(type="text" data-validate )
             .account-settings__col
                 .form-item
                     .form-item__group 
@@ -24,7 +24,7 @@ form.account-settings.form(action="/")
                 .form-item
                     .form-item__group 
                         .form-item__label дата рождения
-                        input.form-input(type="text")
+                        input.form-input.form-input--hidden-placeholder(type="text" data-input-date placeholder="дд.мм.гггг")
             .account-settings__col
                 .account-settings__group.flex 
                     .account-settings__group-col 
@@ -36,20 +36,48 @@ form.account-settings.form(action="/")
                             input(type="radio" name="gender")
                             span.account-settings__gender-btn.outline-border.centered мужской
             .account-settings__col
-                .form-item.form-item-select
-                    .form-item__group 
+                .form-item.form-item-select.form-select
+                    .form-select__backdrop.backdrop(data-close)
+                    .form-item__group
                         .form-item__label размер обуви
                         input.form-input(type="text")
                         .form-item__arrow.icon
                             +icon('down')
-                    .form-item__dropdown.outline-border
-                        .form-item__dropdown-scroll(data-simplebar)
-                            .form-item__list
-                                - for (let i = 0; i < 10; i++)
-                                    .form-item__list-item 
-                                        label.form-item__dropdown-label
-                                            input(type="radio" name="size" data-value="37")
-                                            span.form-item__dropdown-label__txt 37
+                    .form-select__dropdown.outline-border
+                        .form-select__dropdown-inner-wrapper
+                            a.form-select__close.icon(href="#" aria-label="close")
+                                +svg('close', '14', '14') 
+                            .form-select__head
+                                .form-select__head-inner.d-flex 
+                                    .form-select__head-txt Размер
+                            .form-select__dropdown-inner
+                                .form-select__list
+                                    - for (let i = 0; i < 10; i++)
+                                        .form-select__list-item 
+                                            label.form-select__radio.form-item__dropdown-label
+                                                input.product-size__radio(type="radio" name="size" data-value="39")
+                                                span.form-item__dropdown-label__info.d-flex 
+                                                    span.form-select__radio-txt 39
+                                                    span.form-select__radio-icon.icon 
+                                                        +svg('check-circle', '16', '16')
+                    //- .form-select__dropdown.form-item__dropdown.mobileBottom
+                    //-     .mobileBottom__backdrop.backdrop(data-close)
+                    //-     .mobileBottom__content
+                    //-         .mobileBottom__head
+                    //-             a.mobileBottom-close.icon(href="#" data-close)
+                    //-                 +svg('close', '14', '14')
+                    //-         .mobileBottom__info
+                    //-             .form-item__dropdown-content.outline-border
+                    //-                 .form-item__dropdown-scroll(data-simplebar)
+                    //-                     .form-item__list
+                    //-                         - for (let i = 0; i < 10; i++)
+                    //-                             .form-item__list-item 
+                    //-                                 label.form-item__dropdown-label
+                    //-                                     input(type="radio" name="size" data-value="37")
+                    //-                                     span.form-item__dropdown-label__info.d-flex 
+                    //-                                         span.form-item__dropdown-label__txt 37
+                    //-                                         span.form-item__dropdown-label__icon.icon 
+                    //-                                             +svg('check-circle', '16', '16')
             .account-settings__col.account-settings__col--fake
             .account-settings__col
                 .form-item.form-phone
@@ -93,10 +121,10 @@ form.account-settings.form(action="/")
                 .form-item
                     .form-item__group 
                         .form-item__label e-mail
-                        input.form-input(type="email")
+                        input.form-input(type="email" name="email")
     .account-settings__bottom
         .account-settings__bottom-item
-            button.account-settings__btn.btn(type="button") сохранить
+            button.account-settings__btn.btn(type="submit") сохранить
         .account-settings__bottom-item
             .account-settings__txt Нажимая на кнопку «сохранить», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и 
                 a(href="#" target="_blank")  политики конфиденциальности

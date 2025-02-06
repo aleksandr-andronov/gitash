@@ -1,0 +1,13 @@
+extends template/main-nofooter
+
+block variables
+	- var title = 'certificate'
+
+block content
+	include pages/certificate/certificate
+
+block styles 
+	link(rel="stylesheet" type='text/css' href="static/css/air-datepicker.min.css")
+
+block script
+	script(src="static/js/air-datepicker.min.js")

@@ -1,4 +1,4 @@
-h1.infoPage__title.ttl.h3 доставка
+//- h1.infoPage__title.ttl.h3 доставка
 .infoPage__desc.txt-base
     .slideToggle
         .slideToggle-list 
@@ -6,44 +6,54 @@ h1.infoPage__title.ttl.h3 доставка
                 .slideToggle-item
                     .slideToggle-item__head 
                         a.slideToggle-item__open.d-flex(href="#toggle1" data-bs-toggle="collapse") 
-                            span.slideToggle-item__open-left Доставка по москве
+                            span.slideToggle-item__open-left Доставка по Москве и Московской области  с примеркой
                             span.slideToggle-item__open-right.icon 
                                 +svg('arrow-down', '16', '16')
                     .slideToggle-item__body.collapse#toggle1
                         .slideToggle-item__txt
-                            p При наличии товара на складе Интернет магазина доставка по Москве и Московской области осуществляется на следующий день, в случае, если заказ был подтверждён менеджером до 14:00. Если заказ поступил позже 14:00, доставка осуществляется через день.
-                            .infoPage-columnDesc
-                                - for (let i = 0; i < 4; i++)
-                                    .infoPage-columnDesc__item.d-flex 
-                                        .infoPage-columnDesc__col На зимнюю обувь:
-                                        .infoPage-columnDesc__col с 1 ноября по 1 марта;
+                            p При наличии товара на складе Интернет магазина доставка по Москве и Московской области осуществляется на следующий день, в случае, если заказ был подтвержден менеджером до 14:00. Если заказ поступил позже 14:00, доставка осуществляется через день.
+                            p Время на примерку одного заказа - 15 минут.
+                            include table-1.html
+                            //- .infoPage-columnDesc
+                            //-     - for (let i = 0; i < 4; i++)
+                            //-         .infoPage-columnDesc__item.d-flex 
+                            //-             .infoPage-columnDesc__col На зимнюю обувь:
+                            //-             .infoPage-columnDesc__col с 1 ноября по 1 марта;
             .slideToggle-list__item 
                 .slideToggle-item
                     .slideToggle-item__head 
                         a.slideToggle-item__open.d-flex(href="#toggle2" data-bs-toggle="collapse") 
-                            span.slideToggle-item__open-left Доставка по Санкт-Петербургу
+                            span.slideToggle-item__open-left Доставка по Санкт-Петербургу  с примеркой
                             span.slideToggle-item__open-right.icon 
                                 +svg('arrow-down', '16', '16')
                     .slideToggle-item__body.collapse#toggle2
                         .slideToggle-item__txt 
-                            p  При наличии товара на складе Интернет магазина доставка по Москве и Московской области осуществляется на следующий день, в случае, если заказ был подтверждён менеджером до 14:00. Если заказ поступил позже 14:00, доставка осуществляется через день.
-                            .infoPage-columnDesc
-                                - for (let i = 0; i < 4; i++)
-                                    .infoPage-columnDesc__item.d-flex 
-                                        .infoPage-columnDesc__col На зимнюю обувь:
-                                        .infoPage-columnDesc__col с 1 ноября по 1 марта;
+                            p  При наличии товара на складе Интернет магазина доставка по Санкт-Петербургу осуществляется на следующий день, в случае, если заказ был подтвержден менеджером до 14:00. Если заказ поступил позже 14:00, доставка осуществляется через день.
+                            p Время на примерку одного заказа - 15 минут.
+                            p Срок доставки, интервал доставки, дополнительные условия, уточняйте у менеджера при подтверждении заказа. При покупке товаров, отказе от покупки или частичном отказе от покупки стоимость доставки оплачивается клиентом.
+                            include table-2.html
+                            //- .infoPage-columnDesc
+                            //-     - for (let i = 0; i < 4; i++)
+                            //-         .infoPage-columnDesc__item.d-flex 
+                            //-             .infoPage-columnDesc__col На зимнюю обувь:
+                            //-             .infoPage-columnDesc__col с 1 ноября по 1 марта;
             .slideToggle-list__item 
                 .slideToggle-item
                     .slideToggle-item__head 
                         a.slideToggle-item__open.d-flex(href="#toggle3" data-bs-toggle="collapse") 
-                            span.slideToggle-item__open-left Доставка по регионам РФ и зарубеж
+                            span.slideToggle-item__open-left Доставка по Регионам РФ и зарубеж  с примеркой
                             span.slideToggle-item__open-right.icon 
                                 +svg('arrow-down', '16', '16')
                     .slideToggle-item__body.collapse#toggle3
                         .slideToggle-item__txt 
-                            p При наличии товара на складе Интернет магазина доставка по Москве и Московской области осуществляется на следующий день, в случае, если заказ был подтверждён менеджером до 14:00. Если заказ поступил позже 14:00, доставка осуществляется через день.
-                            .infoPage-columnDesc
-                                - for (let i = 0; i < 4; i++)
-                                    .infoPage-columnDesc__item.d-flex 
-                                        .infoPage-columnDesc__col На зимнюю обувь:
-                                        .infoPage-columnDesc__col с 1 ноября по 1 марта;
+                            p При наличии товара на складе Интернет магазина отправка в курьерскую службу осуществляется в течение одного рабочего дня с момента подтверждения заказа. Сроки, условия, стоимость доставки и оплаты в Ваш регион уточняйте у менеджера при подтверждении заказа.
+                            p В случае, осуществления доставки почтой России после подтверждения заказа менеджером Интернет магазина отправка осуществляется бесплатно 
+                                strong при 100% предоплате.
+                            include table-3.html
+                            p * - в период распродаж сроки доставки увеличены
+                            p ? - уточняйте у менеджера
+                            //- .infoPage-columnDesc
+                            //-     - for (let i = 0; i < 4; i++)
+                            //-         .infoPage-columnDesc__item.d-flex 
+                            //-             .infoPage-columnDesc__col На зимнюю обувь:
+                            //-             .infoPage-columnDesc__col с 1 ноября по 1 марта;

@@ -129,6 +129,9 @@
         .order-form__info {
             margin-bottom: 20px;
         }
+        .order-form__subtitle-group {
+            margin-top: 16px;
+        }
         &__group {
             margin-bottom: 32px;
             &-title {
@@ -140,9 +143,26 @@
         }
         &__foot {
             margin-top: auto;
+            position: sticky;
+            bottom: 0;
+            z-index: 9;
+            padding: 14px;
+            margin-left: -14px;
+            margin-right: -14px;
+            background: var(--white);
         }
         &__btn {
             width: 100%;
+        }
+        &__shipment {
+            &-slider {
+                &__slide {
+                    max-width: 376px;
+                }
+            }
+            &-selected {
+                margin-top: 12px;
+            }
         }
     }
 }
@@ -267,6 +287,15 @@
                     &__icon {
                         width: 14px;
                         height: 14px;
+                    }
+                }
+            }
+        }
+        &-form {
+            &__shipment {
+                &-slider {
+                    &__slide {
+                        max-width: 302px;
                     }
                 }
             }
@@ -428,6 +457,15 @@
                     }
                     &__txt {
                         display: block;
+                    }
+                }
+            }
+        }
+        &-form {
+            &__shipment {
+                &-slider {
+                    &__slide {
+                        max-width: 204px;
                     }
                 }
             }

@@ -1,0 +1,20 @@
+._catalog
+    ._catalog__top._catalog__top--banner  
+        .catalog-banner(data-bg="static/images/content/catalog-banner.jpg" data-mobilebg="static/images/content/catalog-banner-m.jpg")
+        ._catalog__top-content 
+            .container 
+                .catalog__head
+                    .catalog__head-inner.d-flex 
+                        .catalog__head-item
+                            a.back-btn.btn-circle(href="#")
+                                +icon('a-left-sm') 
+                        .catalog__head-item
+                            .catalog__qty.txt-sm
+                                .catalog__qty-desctop.desctop 16 товаров
+                                .catalog__qty-mobile.mobile (19)
+                    h1.catalog__title.ttl.h2 кроссовки
+    ._catalog__bottom
+        ._catalog__bottom-actions 
+        ._catalog__bottom-content 
+            include _products
+

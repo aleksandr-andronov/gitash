@@ -1,0 +1,115 @@
+.order-form__shipment
+    .shipment
+        .shipment-list.flex
+            .shipment-list__col
+                .shipment-list__item
+                    label.shipment-item.radio
+                        input(type="radio" name="shipment" data-type="courier")
+                        span.shipment-item__inner.radio-content 
+                            span.shipment-item__check 
+                                span.address-item__info-icon.radio-icon
+                            span.shipment-item__info 
+                                span.shipment-item__name СДЭК
+                                span.shipment-item__txt.txt-sm Курьерская доставка, есть примерка - 15 минут
+                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                            span.shipment-item__img
+                                +svg('cdek', '46', '24')
+                .shipment-list__item
+                    label.shipment-item.radio
+                        input(type="radio" name="shipment" data-type="courier")
+                        span.shipment-item__inner.radio-content 
+                            span.shipment-item__check 
+                                span.address-item__info-icon.radio-icon
+                            span.shipment-item__info 
+                                span.shipment-item__name Яндекс доставка
+                                span.shipment-item__txt.txt-sm Курьерская доставка, есть примерка - 15 минут
+                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                            span.shipment-item__img
+                                +pngG('yd', '54', '24')
+            .shipment-list__col
+                .shipment-list__item
+                    label.shipment-item.radio
+                        input(type="radio" name="shipment" data-type="post")
+                        span.shipment-item__inner.radio-content 
+                            span.shipment-item__check 
+                                span.address-item__info-icon.radio-icon
+                            span.shipment-item__info 
+                                span.shipment-item__name Почта россии
+                                span.shipment-item__txt.txt-sm Доставка до ближайшего вам почтового отделения. Менеджер позвонит и уточнит удобный вам адрес отделения.
+                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+                            span.shipment-item__img
+                                +svg('post', '46', '24')
+                .shipment-list__item
+                    label.shipment-item.radio
+                        input(type="radio" name="shipment" data-type="courier")
+                        span.shipment-item__inner.radio-content 
+                            span.shipment-item__check 
+                                span.address-item__info-icon.radio-icon
+                            span.shipment-item__info 
+                                span.shipment-item__name Курьерская доставка
+                                span.shipment-item__txt.txt-sm Eсть примерка - 15 минут
+                                span.shipment-item__txt-bottom Сроки доставки - 3-5 рабочих дней
+
+.order-form__hidden-block
+    .order-form__row-wrapper
+        .order-form__row.flex
+            .order-form__col.order-form__col--fw 
+                .form-item
+                    .form-item__group 
+                        .form-item__label улица*
+                        input.form-input(type="text" data-validate)
+            .order-form__col 
+                .form-item
+                    .form-item__group 
+                        .form-item__label дом*
+                        input.form-input(type="text" data-validate)
+            .order-form__col 
+                .form-item
+                    .form-item__group 
+                        .form-item__label квартира*
+                        input.form-input(type="text" data-validate)
+            .order-form__col.order-form__col--courier
+                .form-item
+                    .form-item__group 
+                        .form-item__label подъезд
+                        input.form-input(type="text")
+            .order-form__col.order-form__col--courier
+                .form-item
+                    .form-item__group 
+                        .form-item__label этаж
+                        input.form-input(type="text")
+            .order-form__col.order-form__col--fw.order-form__col--courier
+                .form-item
+                    .form-item__group 
+                        .form-item__label комментарий курьеру
+                        input.form-input(type="text")
+    .order-form__row-wrapper.noCourierInfo
+        .order-form__subtitle.d-flex 
+            .order-form__subtitle-txt Сроки доставки
+            .order-form__subtitle-txt-sm 7-14 дней
+        .order-form__info
+            .order-form__info-txt.d-flex 
+                .order-form__info-txt-icon.centered 
+                    +svg('info')
+                .order-form__info-txt-value Отгрузка происходит в течение 1–2 рабочих дней. Менеджер позвонит и уточнит удобный вам адрес отделения. 
+    .order-form__row-wrapper.courierInfo
+        .order-form__date-wrapper
+            .order-form__subtitle(data-default="Дата и время доставки*" data-error="Пожалуйста выберите дату и время доставки*") Дата и время доставки*
+            .order-form__day-slider.slider
+                .swiper-wrapper 
+                    - for (let i = 0; i < 5; i++)
+                        .order-form__day-slider__item.swiper-slide 
+                            label.order-form__day
+                                input(type="radio" name="day")
+                                span.order-form__day-content.outline-border 
+                                    span.order-form__day-icon 
+                                    span.order-form__day-info 
+                                        span.order-form__day-day пн
+                                        span.order-form__day-date 24 июля
+            .order-form__time-slider.slider
+                .swiper-wrapper
+                    - for (let i = 0; i < 4; i++)
+                        .order-form__time-slider__item.swiper-slide 
+                            label.order-form__time
+                                input(type="radio" name="time")
+                                span.order-form__time-content.outline-border 14:00–16:00

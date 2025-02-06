@@ -9,7 +9,7 @@
                     .catalog__qty.txt-sm
                         .catalog__qty-desctop.desctop 16 товаров
                         .catalog__qty-mobile.mobile (19)
-        h1.catalog__title.ttl.h2 кроссовки
+            h1.catalog__title.ttl.h2 кроссовки
         .catalog__actions
             .catalog__actions-inner.d-flex 
                 .catalog__actions-item
@@ -69,27 +69,28 @@
                                                     span.form-select__radio-icon.icon 
                                                         +svg('check-circle', '16', '16')
         .catalog__content 
-            .catalog-list.flex
-                - for (let i = 0; i < 1; i++)
-                    .catalog-list__item 
-                        +newCard(false, false, true)
-                - for (let i = 0; i < 1; i++)
-                    .catalog-list__item 
-                        +newCard()
-                .catalog-list__item.catalog-list__item--image 
-                    .catalog__img
-                        +jpgC('catalog-img', '917', '563')
-                .catalog-list__item.catalog-list__item--image.desctop
-                    .catalog__img
-                        +jpgC('catalog-img', '917', '563')
-                - for (let i = 0; i < 4; i++)
-                    .catalog-list__item  
-                        +newCard()
-                .catalog-list__item.catalog-list__item--image.mobile
-                    .catalog__img
-                        +jpgC('catalog-img', '917', '563')
-                - for (let i = 0; i < 6; i++)
-                    .catalog-list__item 
-                        +newCard()
+            .catalog-list-wrapper
+                .catalog-list.flex
+                    - for (let i = 0; i < 1; i++)
+                        .catalog-list__item 
+                            +newCard(false, false, true)
+                    - for (let i = 0; i < 1; i++)
+                        .catalog-list__item 
+                            +newCard()
+                    .catalog-list__item.catalog-list__item--image 
+                        .catalog__img
+                            +jpgC('catalog-img', '917', '563')
+                    .catalog-list__item.catalog-list__item--image.desctop
+                        .catalog__img
+                            +jpgC('catalog-img', '917', '563')
+                    - for (let i = 0; i < 4; i++)
+                        .catalog-list__item  
+                            +newCard()
+                    .catalog-list__item.catalog-list__item--image.mobile
+                        .catalog__img
+                            +jpgC('catalog-img', '917', '563')
+                    - for (let i = 0; i < 6; i++)
+                        .catalog-list__item 
+                            +newCard()
 
 include filter

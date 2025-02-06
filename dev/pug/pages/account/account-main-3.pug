@@ -1,0 +1,106 @@
+.account-head
+    .account-head__title.h3.ttl привет, алевтина!
+
+.account-banner-wrapper
+    .account-banner-scroll.d-flex
+        .account-banner.account-banner--sm
+            .account-banner__inner
+                .account-banner__title.ttl Моя персональная скидка
+                .account-banner__txt применяется автоматически в&nbsp;каталоге
+                .account-banner__sale.ttl 5%
+        .account-banner-list.d-flex
+            .account-banner-list__item
+                .account-certificateBanner
+                    .account-certificateBanner__img 
+                        +svg('account-cert', '228', '208')
+                    .account-certificateBanner__info 
+                        .account-certificateBanner__txt Подарочный <br>сертификат
+                        .account-certificateBanner__price.ttl 10 000 ₽
+.account-links
+    .account-links__list.list
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('basket', '20', '20')
+                span.account-mobile__link-txt.d-flex Мои заказы 
+                    span.centered 2
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('heart', '20', '20')
+                span.account-mobile__link-txt.d-flex Избранное
+                    span.centered 34
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('return', '20', '20')
+                span.account-mobile__link-txt.d-flex Мои возвраты
+                    span.centered 6
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('home', '20', '20')
+                span.account-mobile__link-txt.d-flex Адреса
+                    span.centered 34
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('subscription', '20', '20')
+                span.account-mobile__link-txt.d-flex Управление подписками
+                    span.centered 4
+        .account-links__list-item.col 
+            a.account-mobile__link(href="#") 
+                span.account-mobile__link-icon.icon 
+                    +svg('cert', '20', '20')
+                span.account-mobile__link-txt.d-flex Сертификаты
+                    span.centered 1
+.account-mobile
+    .account-mobile__middle 
+        .account-mobile__orders 
+            .account-mobile__orders-inner.d-flex 
+                .account-mobile__orders-col 
+                    a.account-mobile__link(href="#") 
+                        span.account-mobile__link-icon.icon 
+                            +svg('basket', '18', '18')
+                        span.account-mobile__link-txt.d-flex Мои заказы 
+                            span.centered 1
+                .account-mobile__orders-col 
+                    a.account-mobile__link(href="#") 
+                        span.account-mobile__link-icon.icon 
+                            +svg('heart', '18', '18')
+                        span.account-mobile__link-txt.d-flex Избранное
+                            span.centered 23
+        .account-mobile__menu 
+            ul.account-menu
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") 
+                        span.account-menu__link-txt Возвраты
+                        span.account-menu__link-qty.centered 1
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") Адреса
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") Управление подписками
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") Подарки
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") 
+                        span.account-menu__link-txt Сертификаты
+                        span.account-menu__link-qty.centered 1
+                li.account-menu__item 
+                    a.account-menu__link.outline-border(href="#") Настройки
+                li.account-menu__item 
+                    a.account-menu__link.account-menu__link--logout.outline-border(href="#") 
+                        span.account-menu__link-txt Выйти
+                        span.account-menu__link-icon.icon 
+                            +svg('logout', '14', '14')
+    .account-mobile__foot
+        .account-user.outline-border
+            .account-user__inner.d-flex 
+                .account-user__inner-left 
+                    .account-user__avatar.centered.ttl a
+                .account-user__inner-middle
+                    .account-user__name.ttl Алевтина
+                    .account-user__mail +7 999 999-99-99
+                .account-user__inner-right 
+                    a.account-user__edit.centered(href="#")
+                        include ../../icons/edit 

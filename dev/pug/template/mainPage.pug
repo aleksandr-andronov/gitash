@@ -6,10 +6,12 @@ html(lang="ru-RU")
 	head
 		meta(charset="utf-8")
 		title #{title}
-		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-	body.no-padding
+		meta(name="theme-color" content="#000000")
+		block styles
+	body.no-padding(  class=bodyClass ? `${bodyClass} custom-header` : '' )
 		.wrapper
 			include ../modules/header/header-nobg
 			block content

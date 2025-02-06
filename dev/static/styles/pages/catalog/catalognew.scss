@@ -1,0 +1,25 @@
+._catalog {
+    .catalog-banner {
+        margin-bottom: 0;
+    }
+    &__top {
+        &--banner {
+            position: sticky;
+            top: 0;
+            ._catalog__top-content {
+                position: absolute;
+                top: 160px;
+                left: 0;
+                width: 100%;
+            }
+        }
+        &-content {
+            padding-top: 36px;
+        }
+    }
+    &__bottom {
+        background: var(--white);
+        position: relative;
+        z-index: 9;
+    }
+}

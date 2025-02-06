@@ -4,16 +4,17 @@ body {
     font-size: 17px;
     line-height: 130%;
     padding-top: 124px;
+    transition: padding-top .2s ease-in-out;
     &.no-padding {
         padding-top: 0 !important;
     }
     &.body-pt-scroll {
         padding-top: 118px;
     }
-    &::-webkit-scrollbar {
-        display: none;
-    }
 }
+
+
+
 
 @media (max-width: 1440px) {
     body {
@@ -31,6 +32,12 @@ body {
         padding-top: 61px;
         &.body-pt-scroll {
             padding-top: 61px;
+        }
+    }
+
+    body:has(.account-certificateNull) {
+        .header__bg {
+            background: var(--grey-14);
         }
     }
 }

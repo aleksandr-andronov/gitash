@@ -29,34 +29,34 @@ html(lang="ru-RU")
 								.product-gallery(class= availability ? 'product-gallery--null' : '')
 									.product-gallery__list.flex
 										.product-gallery__item
-											.product-gallery__img(data-img="1") 
+											.product-gallery__img.grey-img.js-gallery-open(data-img="1") 
 												+jpgC('img-1', '1070', '1332')
-												a.product-back.btn-circle(href="#")
-													+icon('a-left-sm') 
-												.product-badges.d-flex
-													.product-badges__item
-														+svg('bekind', '54', '24')
-													.product-badges__item
-														+svg('reash', '68', '24')
+											a.product-back.btn-circle(href="#")
+												+icon('a-left-sm') 
+											.product-badges.d-flex
+												.product-badges__item
+													img(src="static/images/content/tag-1.svg", alt="img")
+												.product-badges__item
+													img(src="static/images/content/tag-2.svg", alt="img")
 										- for (let i = 1; i < 8; i++)
-											.product-gallery__item 
-												.product-gallery__img(data-img=`${i+1}`) 
+											.product-gallery__item
+												.product-gallery__img.product-gallery__img--sm.grey-img.js-gallery-open(data-img=`${i+1}`) 
 													+jpgC(`img-${i+1}`, '1070', '1332')
 								.product-galleryMobile(class= availability ? 'product-galleryMobile--null' : '')
 									.product-galleryMobile__slider.slider
 										.swiper-wrapper 
 											- for (let i = 0; i < 5; i++)
 												.swiper-slide 
-													.product-galleryMobile__img 
+													.product-galleryMobile__img.grey-img.js-gallery-open 
 														+jpgC('img-m', '375', '462')
 									.product-galleryMobile__pagination.slider-pagination
 									a.product-back.btn-circle(href="#")
 										+icon('a-left-sm') 
 									.product-badges.d-flex
 										.product-badges__item
-											+svg('bekind', '54', '24')
+											img(src="static/images/content/tag-1.svg", alt="img")
 										.product-badges__item
-											+svg('reash', '68', '24')
+											img(src="static/images/content/tag-2.svg", alt="img")
 							.product__right
 								h1.product__title.ttl.h4 кроссовки женские Addict
 								.product__price 
@@ -122,12 +122,9 @@ html(lang="ru-RU")
 												
 								.product__installments
 									.product-installments.outline-border 
-										.product-installments__txt.txt-sm 4 платежа по 4 522 ₽
-										a.product-installments__link(href="#paymentShares" data-bs-toggle="offcanvas") 
-											span.product-installments__link-img 
-												+svg('dolyame_black', '81', '14')
-											span.product-installments__link-icon.icon 
-												include ../icons//right
+										.product-installments__icon 
+											+svg('product-split-icon', '37', '14')
+										.product-installments__txt.txt-sm Частями от 4 522 ₽
 								.product__colors 
 									.product__subtitle
 										.product__subtitle-txt.base-up цвет
@@ -135,7 +132,7 @@ html(lang="ru-RU")
 										.swiper-wrapper 
 											- for (let i = 0; i < 5; i++)
 												.product-colors__slide.swiper-slide
-													a.product-colors__item(href="#") 
+													a.product-colors__item.grey-img(href="#") 
 														+jpgC('color', '121', '151')
 								.product__size 
 									.product__subtitle
@@ -147,9 +144,9 @@ html(lang="ru-RU")
 											.product-size__list-wrapper 
 												.product-size__list.flex 
 													.product-size__list-item
-														a.product-size__btn.outline-border.centered(href="#") 35 
+														a.product-size__btn.outline-border.centered(href="#" data-sizeWarning="true" data-sizeQtyText='последний размер -10%') 35 
 													.product-size__list-item 
-														a.product-size__btn.outline-border.centered(href="#") 36
+														a.product-size__btn.outline-border.centered(href="#" data-sizeWarning="true" data-sizeQtyText='осталось мало') 36
 													.product-size__list-item 
 														a.product-size__btn.disabled.outline-border.selected.centered(href="#") 37
 													.product-size__list-item 
@@ -160,6 +157,8 @@ html(lang="ru-RU")
 														a.product-size__btn.outline-border.centered(href="#") 40
 													.product-size__list-item 
 														a.product-size__btn.outline-border.centered(href="#") 41
+												.product-size__warning.collapse#sizeWarning
+													.product-size__warning-txt.tech-14 осталось мало
 											.product-size__actions.d-flex
 												.product-size__actions-left 
 													.product-size__btn-wrapper.product-size__btn-default
@@ -346,22 +345,29 @@ html(lang="ru-RU")
 															.product-info__item-list__value 4.5 см
 					.product-more.product-more--mood
 						.product-more__title.ttl.h3 mood
-						.product-mood 
-							.swiper-wrapper 
-								.product-mood__slide.swiper-slide
-									.product-mood__img 
-										+jpgC('mood-1', '394', '664')
-								.product-mood__slide.swiper-slide
-									.product-mood__img 
-										+jpgC('mood-2', '394', '394')
-								.product-mood__slide.swiper-slide
-									.product-mood__img 
-										+jpgC('mood-3', '394', '533')
-								.product-mood__slide.swiper-slide
-									.product-mood__img 
-										+jpgC('mood-4', '394', '394')
+						.product-mood-wrapper
+							.product-mood 
+								.swiper-wrapper 
+									.product-mood__slide.swiper-slide
+										.product-mood__img 
+											+jpgC('mood-1', '394', '664')
+									.product-mood__slide.swiper-slide
+										.product-mood__img 
+											+jpgC('mood-2', '394', '394')
+									.product-mood__slide.swiper-slide
+										.product-mood__img 
+											+jpgC('mood-3', '394', '533')
+									.product-mood__slide.swiper-slide
+										.product-mood__img 
+											+jpgC('mood-4', '394', '394')
+									.product-mood__slide.swiper-slide
+										.product-mood__img 
+											+jpgC('mood-4', '394', '394')
+							button.mainSection-btn.mainSection-prev.centered.mood-prev(type="button")
+								include ../icons/left-12
+							button.mainSection-btn.mainSection-next.centered.mood-next(type="button")
+								include ../icons/right-12
 						if (mood == 5)
-
 							.product-mobileMood
 								.product-mobileMood__col
 									.product-mobileMood__item 
@@ -421,22 +427,23 @@ html(lang="ru-RU")
 							- for (let i = 0; i < 2; i++)
 								.product-more__list-item 
 									+newCard()
-					.gallery
-						.gallery__inner 
-							.gallery-fullImg
-								.gallery-fullImg__item.active(data-img=`1`)
-									+jpgC('big-img', '1224', '1518')
-								- for (let i = 0; i < 7; i++)
-									.gallery-fullImg__item(data-img=`${i+2}`)
-										+jpgC('big-img', '1224', '1518')
-							.gallery-thumbs
-								.gallery-thumbs__item.active.outline-border(data-img=`1`)
-									+jpgC(`thumb-1`, '76', '94')
-								- for (let i = 0; i < 7; i++)
-									.gallery-thumbs__item.outline-border(data-img=`${i+2}`)
-										+jpgC(`thumb-${i+1}`, '76', '94')
-						a.gallery-close.centered(href="#")
-							+icon('close') 
+					include ../pages/product/gallery
+					//- .gallery
+					//- 	.gallery__inner 
+					//- 		.gallery-fullImg
+					//- 			.gallery-fullImg__item.active(data-img=`1`)
+					//- 				+jpgC('big-img', '1224', '1518')
+					//- 			- for (let i = 0; i < 7; i++)
+					//- 				.gallery-fullImg__item(data-img=`${i+2}`)
+					//- 					+jpgC('big-img', '1224', '1518')
+					//- 		.gallery-thumbs
+					//- 			.gallery-thumbs__item.active.outline-border(data-img=`1`)
+					//- 				+jpgC(`thumb-1`, '76', '94')
+					//- 			- for (let i = 0; i < 7; i++)
+					//- 				.gallery-thumbs__item.outline-border(data-img=`${i+2}`)
+					//- 					+jpgC(`thumb-${i+1}`, '76', '94')
+					//- 	a.gallery-close.centered(href="#")
+					//- 		+icon('close') 
 			include ../modules/footer/footer
 		include ../modules/modals/modals
 		include ../modules/popups/popups

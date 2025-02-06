@@ -1,0 +1,80 @@
+.orderMap
+    .orderMap-actions
+        .orderMap-actions__list.list
+            .orderMap-actions__list-item.col.orderMap-actions__list-item--search
+                .orderMap-search.form-item.form-item-dropdown.form-item-search
+                    .form-item__group 
+                        .form-item__label.form-item__label--hidden Поиск по адресу
+                        input.orderMap-search__input.form-input.form-input--rounded(type="text" data-validate)
+                        button.form-item__clear(type="button")
+                            span.form-item__clear-default.form-item__clear-icon
+                                +svg('search-grey')
+                            span.form-item__clear-active.form-item__clear-icon
+                                +svg('close')
+                    .form-item__dropdown.form-item__dropdown--rounded.outline-border
+                        .form-item__dropdown-scroll(data-simplebar)
+                            .form-item__list
+                                - for (let i = 0; i < 1; i++)
+                                    .form-item__list-item 
+                                        label.form-item__dropdown-label
+                                            input(type="radio" name="city" data-value="СДЕК / Советская, д. 4, к4")
+                                            span.form-item__dropdown-label__content <span class="medium">СДЕК</span> / Советская, д. 4, к4
+                                    .form-item__list-item 
+                                        label.form-item__dropdown-label
+                                            input(type="radio" name="city" data-value="Boxberry / Советская, д. 90")
+                                            span.form-item__dropdown-label__content <span class="medium">Boxberry</span> / Советская, д. 90
+                                    .form-item__list-item 
+                                        label.form-item__dropdown-label
+                                            input(type="radio" name="city" data-value="Почта России / Советская, д. 145")
+                                            span.form-item__dropdown-label__content <span class="medium">Почта России</span> / Советская, д. 145
+            .orderMap-actions__list-item.col
+                label.button-label
+                    input(type="checkbox" name="size")
+                    span.button-label__content.outline-border.button.button--icon-left
+                        span.button__icon.centered 
+                            +svg('hanger', '16', '16')
+                        span.button__txt с примеркой  
+            .orderMap-actions__list-item.col
+                .sorting
+                    a.sorting-btn.d-flex.button(href="#")
+                        span.button__txt.sorting-btn__txt службы выдачи
+                        span.button__icon.icon 
+                            +icon('down')
+                    .sorting-dropdown.mobileBottom.outline-border.sorting-dropdown--rounded
+                        .mobileBottom__backdrop.backdrop(data-close)
+                        .mobileBottom__content 
+                            .mobileBottom__head 
+                                a.mobileBottom-close.icon(href="#" data-close) 
+                                    +svg('close', '14', '14')
+                            .mobileBottom__info 
+                                .sorting-dropdown__list
+                                    .sorting-dropdown__list-item 
+                                        label.form-select__radio
+                                            input(type="radio" name="sorting" checked data-value="СДЕК")
+                                            span.form-select__radio-content 
+                                                span.form-select__radio-txt СДЕК
+                                                span.form-select__radio-icon.icon 
+                                                    +svg('check-circle', '16', '16')
+                                    .sorting-dropdown__list-item 
+                                        label.form-select__radio
+                                            input(type="radio" name="sorting" data-value="Boxberry")
+                                            span.form-select__radio-content 
+                                                span.form-select__radio-txt Boxberry
+                                                span.form-select__radio-icon.icon 
+                                                    +svg('check-circle', '16', '16')
+                                    .sorting-dropdown__list-item 
+                                        label.form-select__radio
+                                            input(type="radio" name="sorting" data-value="Яндекс")
+                                            span.form-select__radio-content 
+                                                span.form-select__radio-txt Яндекс
+                                                span.form-select__radio-icon.icon 
+                                                    +svg('check-circle', '16', '16')
+                                    .sorting-dropdown__list-item 
+                                        label.form-select__radio
+                                            input(type="radio" name="sorting" data-value="Почта России")
+                                            span.form-select__radio-content 
+                                                span.form-select__radio-txt Почта России
+                                                span.form-select__radio-icon.icon 
+                                                    +svg('check-circle', '16', '16')
+    .orderMap-content
+        #pickupPointsMap

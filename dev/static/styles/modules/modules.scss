@@ -1,13 +1,29 @@
 @import "buttons/buttons";
+@import "buttons/btns";
 @import "texts/texts";
 @import "footer/footer";
 
-@import "modals/modals";
+
+
+
+
+
 @import "offcanvas/offcanvas";
+@import "offcanvas/split";
+@import "offcanvas/cert";
 @import "header/header";
 @import "form/form";
 @import "productcard/productcard";
 @import "productcard/row-card";
 @import "productcard/card";
 @import "breadcrumbs/breadcrumbs";
-@import "gallery/gallery";
+
+@import "popups/download";
+@import "notification/notification";
+@import "warning/warning";
+
+
+
+@import "modals/modals";
+@import "modals/blackfriday";
+ 

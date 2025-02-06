@@ -1,0 +1,32 @@
+mixin pickupPoints(title, hanger, address, date)
+    a.pickupPoint-item(href="#pickupPoint" data-bs-toggle="offcanvas") 
+        .pickupPoint-item__title.d-flex.medium
+            .pickupPoint-item__title-txt #{title}
+            .pickupPoint-item__title-icon.centered
+                if (hanger)
+                    +svg('hanger', '16', '16')
+                else 
+                    +svg('unhanger', '16', '16')
+        .pickupPoint-item__address.txt-sm #{address}
+        .pickupPoint-item__date #{date}
+
+#pickupPoints.offcanvas.offcanvas-end(tabindex="-1" data-bs-scroll="false" data-bs-keyboard="false" data-bs-backdrop="false" aria-hidden="true")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 Выбор пункта выдачи
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle.hideMap(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            .pickupPoint-list
+                - for (let i = 0; i < 3; i++)
+                    .pickupPoint-list__item 
+                        +pickupPoints('СДЕК', true, 'ул. Шарикоподшипниковская, д. 4, стр. 4а', 'дата доставки: 14-18 ноября')
+                    .pickupPoint-list__item 
+                        +pickupPoints('boxberry', false, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')
+                    .pickupPoint-list__item 
+                        +pickupPoints('Почта России', true, 'ул. Мосфильмовская, д. 34', 'дата доставки: 14-18 ноября')
+                    .pickupPoint-list__item 
+                        +pickupPoints('яндекс доставка', true, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')

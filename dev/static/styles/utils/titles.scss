@@ -1,0 +1,20 @@
+h2, .h2 {
+    font-size: 3.5vw;
+    line-height: 90%;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    h2, .h2 {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 428px) {
+    h2, .h2 {
+        font-size: 6.4vw;
+        letter-spacing: -0.02em;
+    }
+}

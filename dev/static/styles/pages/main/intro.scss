@@ -1,10 +1,54 @@
 .intro {
     position: relative;
+    &-head {
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 24px 14px;
+        display: none;
+        &__inner {
+            justify-content: space-between;
+        }
+        &__btn {
+            background: var(--white);
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        &__search {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+        &__cart {
+            height: 36px;
+            padding-left: 12px;
+            padding-right: 12px;
+            border-radius: 32px;
+            &-txt {
+                min-width: 16px;
+                text-align: center;
+                margin-right: 8px;
+            }
+        }
+    }
     &-item {
         position: relative;
         text-align: center;
         color: var(--white);
         &__img {
+            height: 100vh;
+            > div {
+                height: 100%;
+            }
+            img, video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
             &-mobile {
                 display: none;
             }
@@ -25,7 +69,7 @@
         }
         &__subtitle {
             margin-bottom: 20px;
-        }
+        } 
         &__btn {
             margin-left: auto;
             margin-right: auto;
@@ -89,10 +133,8 @@
                 }
             }
             &__img {
-                height: 720px;
-                > div {
-                    height: 100%;
-                }
+                // height: 720px;
+                
                 img {
                     height: 100%;
                     object-fit: cover;
@@ -113,20 +155,14 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 932px) {
     .intro {
+        &-head {
+            display: block;
+        }
         &-item {
             &__img {
-                height: auto;
-                &-desctop {
-                    display: none;
-                }
-                &-mobile {
-                    display: block;
-                    img {
-                        width: 100%;
-                    }
-                }
+                height: 100svh;
             }
             &__content {
                 &-inner {
@@ -139,6 +175,24 @@
         }
         &-pagination {
             bottom: 32px !important;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .intro {
+        &-item {
+            &__img {
+                &-desctop {
+                    display: none;
+                }
+                &-mobile {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }

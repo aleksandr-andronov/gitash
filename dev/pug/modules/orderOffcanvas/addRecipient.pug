@@ -2,9 +2,9 @@
     .offcanvas__inner.offcanvas__inner--flex 
         .offcanvas__head
             .offcanvas__head-inner.d-flex 
-                .offcanvas__head-back 
-                    a.offcanvas-close.btn-circle(href="#addresses" data-bs-toggle="offcanvas") 
-                        +svg('arrow-left')
+                //- .offcanvas__head-back 
+                //-     a.offcanvas-close.btn-circle#addRecipientBack(href="#" data-bs-dismiss="offcanvas") 
+                //-         +svg('arrow-left')
                 .offcanvas__head-left 
                     .offcanvas__title.offcanvas__title--m-center.ttl.h4 получатель
                 .offcanvas__head-right 
@@ -15,25 +15,46 @@
                 .address-form__top
                     .order-form__row-wrapper
                         .order-form__row.flex
-                            .order-form__col 
+                            .order-form__col
                                 .form-item
                                     .form-item__group 
                                         .form-item__label имя
-                                        input.form-input(type="text")
-                            .order-form__col 
+                                        input.form-input(type="text" data-validate value="Алевтина")
+                            .order-form__col
                                 .form-item
                                     .form-item__group 
                                         .form-item__label фамилия
-                                        input.form-input(type="text")
-                            .order-form__col.order-form__col--fw 
+                                        input.form-input(type="text" value="Круглова")
+                            .order-form__col.order-form__col--fw
                                 .form-item
                                     .form-item__group 
                                         .form-item__label телефон
-                                        input.form-input(type="text")
+                                        input.form-input(type="tel" data-validate data-phone value="+7(999)999-99-99")
                             .order-form__col.order-form__col--fw
                                 .form-item
                                     .form-item__group 
                                         .form-item__label комментарий к заказу
-                                        input.form-input(type="text")
+                                        input.form-input(type="text" value="Позвонить, когда будете у шлагбаума")
+                                //- .order-form__col-item
+                                //-     label.form-checkbox.txt-sm
+                                //-         input(type="checkbox")
+                                //-         span.form-checkbox__content 
+                                //-             span.form-checkbox__icon
+                                //-             span.form-checkbox__info Не звонить для подтверждения заказа
+                            //- .order-form__col.order-form__col--fw 
+                            //-     .form-item
+                            //-         .form-item__group 
+                            //-             .form-item__label e-mail
+                            //-             input.form-input(type="email")
+                            //-         .form-item__txt.txt-label для отправки чека
+                            //- .order-form__col.order-form__col--fw
+                            //-     .order-form__switch.switch.txt-sm
+                            //-         .switch__content.d-flex 
+                            //-             .switch__content-btn 
+                            //-                 label.switch-btn
+                            //-                     input(type="checkbox" checked name="news")
+                            //-                     span.switch-btn__content 
+                            //-                         span
+                            //-             .switch__content-txt Подписаться на новости
                 .address-form__foot 
                     button.address-form__btn.btn(type="submit") сохранить и продолжить

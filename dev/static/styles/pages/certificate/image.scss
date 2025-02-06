@@ -1,0 +1,236 @@
+.certificate {
+    &-img {
+        &__inner {
+            position: relative;
+        }
+        &__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 60px 36px 36px;
+            display: flex;
+            flex-direction: column;
+            &-logo {
+
+            }
+            &-group {
+                margin: auto;
+                width: 100%;
+                max-width: 424px;
+                text-align: center;
+            }
+            &-foot {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px;
+                margin-left: -10px;
+                margin-right: -10px;
+                &__col {
+                    max-width: 50%;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                &.full {
+                    border-top: 1px solid var(--black);
+                }
+            }
+            &-text {
+                margin-top: 38px;
+                min-height: 108px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        &__picture {
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__logo {
+            width: 44px;
+            height: 61px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__info {
+            &.visible {
+                display: block;
+            }
+            &-whom {
+                display: none;
+            }
+            &-price {
+                display: none;
+            }
+            &-name {
+                font-size: 16px;
+                line-height: normal;
+                margin-bottom: 2px;
+            }
+            &-value {
+                font-size: 26px;
+                line-height: normal;
+                text-transform: uppercase;
+                word-break: break-word;
+            }
+        }
+        &__name {
+            font-size: 38px;
+            line-height: normal;
+            text-transform: uppercase;
+            word-break: break-word;
+            // &.hidden {
+            //     display: none;
+            // }
+        }
+        &__txt {
+            font-size: 18px;
+            line-height: normal;
+            text-align: center;
+            width: 100%;
+            word-break: break-word;
+            // &.hidden {
+            //     display: none;
+            // }
+        }
+        &__promocode {
+            padding: 16px 20px;
+            border-radius: 4px;
+            background: var(--cert-bg);
+            margin-top: 6px;
+            &-inner {
+                align-items: center;
+                justify-content: space-between;
+                &--col-3 {
+                    > * {
+                        width: calc(100% / 3);
+                        &:nth-child(2) {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            &-txt {
+                font-size: 18px;
+            }
+            &-value {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: normal;
+            }
+            &-copy {
+                margin-left: auto;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .certificate {
+        &-img {
+            &__picture {
+                svg {
+                    max-width: 100%;
+                }
+            }
+            &__content {
+                padding: 44px 30px 34px;
+                &-text {
+                    min-height: 88px;
+                    margin-top: 36px;
+                }
+                &-foot {
+                    padding-top: 16px;
+                }
+                &-group {
+                    max-width: 356px;
+                }
+            }
+            &__logo {
+                width: 37px;
+                height: 52px;
+            }
+            &__name {
+                font-size: 32px;
+            }
+            &__txt {
+                font-size: 16px;
+            }
+            &__info {
+                &-name {
+                    font-size: 14px;
+                    margin-bottom: 2px;
+                }
+                &-value {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .certificate {
+        &-img {
+            &__content {
+                padding: 30px 20px 24px;
+                &-text {
+                    min-height: 60px;
+                    margin-top: 24px;
+                }
+                &-group {
+                    max-width: 246px;
+                }
+                &-foot {
+                    padding-top: 12px;
+                }
+            }
+            &__logo {
+                width: 26px;
+                height: 36px;
+            }
+            &__name {
+                font-size: 22px;
+            }
+            &__txt {
+                font-size: 11px;
+            }
+            &__info {
+                &-name {
+                    font-size: 10px;
+                    margin-bottom: 2px;
+                }
+                &-value {
+                    font-size: 15px;
+                }
+            }
+            &__promocode {
+                &-txt {
+                    font-size: 16px;
+                }
+                &-value {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.certificate-form__step-img__txt.certificate-form__step-txt {
+    p {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 932px) {
+    .certificate-form__step-img__txt.certificate-form__step-txt {
+        p {
+            margin-bottom: 4px;
+        }
+    }
+}

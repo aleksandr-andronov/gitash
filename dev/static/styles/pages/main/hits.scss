@@ -39,8 +39,12 @@
             width: 50%;
         }
         &__img {
+            aspect-ratio: 1/1;
+            
             img {
-                width: 100%;
+                width: auto;
+                height: 218px;
+                margin-top: -68px;
             }
         }
     }
@@ -49,12 +53,29 @@
     }
 }
 
+.grey-img {
+    background: var(--card--bg);
+    display: flex;
+    justify-content: center;
+    img {
+        mix-blend-mode: darken;
+        width: auto;
+    }
+}
+
+.mainSections {
+    overflow: hidden;
+}
+
 .mainSection {
-    margin: 182px 0;
+    margin: 9.5vw 0;
+    
     &:first-child {
+        // margin-top: vw(112, 1920);
         margin-top: 112px;
     }
     &:last-child {
+        // margin-bottom: vw(112, 1920);
         margin-bottom: 112px;
     }
     &__group {
@@ -93,11 +114,16 @@
     }
     &-slider-wrapper {
         position: relative;
+       
         &:hover {
             .mainSection-btn {
                 opacity: 1;
             }
         }
+    }
+    &-slider-fullWidth {
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
     }
     &-btn {
         width: 44px;
@@ -107,9 +133,13 @@
         transform: translateY(-50%);
         z-index: 9;
         opacity: 0;
-        border: 1px solid var(--black);
+        background: var(--white);
         border-radius: 50%;
         transition: opacity .2s ease-in-out;
+        box-shadow: 0px 2px 10.1px rgba(0, 0, 0, 0.08);
+        &.swiper-button-lock, &.swiper-button-disabled {
+            display: none;
+        }
     }
     &-prev {
         left: 20px;
@@ -130,10 +160,19 @@
         justify-content: space-between;
         &-item {
             &--bottom-right {
-                margin-left: auto;
+                .list {
+                    justify-content: flex-end;
+                }
             }
             &--top-right {
-                margin-left: auto;
+                .list {
+                    justify-content: flex-end;
+                }
+            }
+        }
+        &-imgGroup {
+            &__col {
+                width: 50%;
             }
         }
     }
@@ -143,7 +182,7 @@
         }
     }
     &__sm-img {
-        width: 454px;
+        // width: 454px;
         max-width: 100%;
         img {
             width: 100%;
@@ -155,9 +194,11 @@
     .mainSection {
         margin: 137px 0;
         &:first-child {
+            // margin-top: vw(84, 1440);
             margin-top: 84px;
         }
         &:last-child {
+            // margin-bottom: vw(84, 1440);
             margin-bottom: 84px;
         }
         &__group {
@@ -172,7 +213,7 @@
             }
         }
         &__sm-img {
-            width: 340px;
+            // width: 340px;
         }
         &-btn {
             width: 40px;
@@ -198,10 +239,20 @@
         &-info {
             &__title {
                 margin-bottom: 32px;
+                margin-left: -10px;
+                margin-right: -10px;
             }
             &__list {
                 width: 370px;
                 margin-bottom: 32px;
+            }
+        }
+        &-list {
+            &__img {
+                img {
+                    height: 160px;
+                    margin-top: -48px;
+                }
             }
         }
     }
@@ -230,6 +281,10 @@
             &-txt {
                 display: none;
             }
+            &-icon {
+                margin-left: 4px;
+                margin-top: 2px;
+            }
         }
         &-slider {
             &__slide {
@@ -240,9 +295,12 @@
             flex-wrap: wrap;
             &__col {
                 width: 100%;
-                &:last-child {
-                    order: -1;
+                &--img {
+                    order: 2;
                 }
+                // &:last-child {
+                //     order: -1;
+                // }
             }
         }
         &__info {
@@ -279,5 +337,26 @@
                 margin-bottom: 12px;
             }
         }
+        &-list {
+            &__img {
+                img {
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 428px) {
+    .hits {
+        &-content {
+            &__img {
+                margin-bottom: 12vw;
+            }
+        }
+    }
+
+    .mainSection {
+        margin: 19vw 0;
     }
 }

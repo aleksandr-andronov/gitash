@@ -9,13 +9,13 @@ html(lang="ru-RU")
 		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-	body
+	body.has-notification
 		.wrapper
 			include ../modules/header/header
 			.account 
 				.container 
-					.content.flex 
-						.content__col.content__col-3
+					.content.list 
+						.content__col.content__col-3.col
 							.account__left
 								.account__left-user
 									.account-user.outline-border
@@ -71,238 +71,274 @@ html(lang="ru-RU")
 												span.account-userMenu__link-icon.icon 
 													+svg('logout', '20', '20')
 												span.account-userMenu__link-txt Выйти
-						.content__col.content__col-6
-							.content__info
-								.account-head
-									.account-head__inner.d-flex 
-										.account-head__left 
-											a.order__back.circle-btn(href="#") 
-												+svg('arrow-left', '16', '16')
-										.account-head__middle 
-											.account-head__number.d-flex
-												.account-head__number-txt Заказ №A79772
-												.account-head__number-icon.icon 
-													<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6049 5.45437C3.14499 5.45437 2.77273 5.82663 2.77273 6.28654V12.8949C2.77273 13.3548 3.14499 13.7271 3.6049 13.7271H10.2133C10.6732 13.7271 11.0455 13.3548 11.0455 12.8949V6.28654C11.0455 5.82663 10.6732 5.45437 10.2133 5.45437H3.6049ZM1.5 6.28654C1.5 5.12372 2.44208 4.18164 3.6049 4.18164H10.2133C11.3761 4.18164 12.3182 5.12372 12.3182 6.28654V12.8949C12.3182 14.0577 11.3761 14.9998 10.2133 14.9998H3.6049C2.44208 14.9998 1.5 14.0577 1.5 12.8949V6.28654Z" fill="#BEBEBE"/><path fill-rule="evenodd" clip-rule="evenodd" d="M6.68164 2.27273C6.27969 2.27273 5.95437 2.59804 5.95437 3V4.81818C5.95437 5.16964 5.66946 5.45455 5.318 5.45455C4.96655 5.45455 4.68164 5.16964 4.68164 4.81818V3C4.68164 1.89514 5.57678 1 6.68164 1H13.4998C14.6047 1 15.4998 1.89514 15.4998 3V9.81818C15.4998 10.923 14.6047 11.8182 13.4998 11.8182H11.6816C11.3302 11.8182 11.0453 11.5333 11.0453 11.1818C11.0453 10.8304 11.3302 10.5455 11.6816 10.5455H13.4998C13.9018 10.5455 14.2271 10.2201 14.2271 9.81818V3C14.2271 2.59804 13.9018 2.27273 13.4998 2.27273H6.68164Z" fill="#BEBEBE"/></svg>
-											.account-head__date.h4.ttl от 24 сентября
-										.account-head__right
-											.account-head__qty (2)
-								block status
-								if (post)
-									.account-orderInfo
-										.account-orderInfo__list.flex 
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('delivery', '20', '20') 
-													.account-orderInfo__item-black В отделение почты России
-													.account-orderInfo__item-gray № 119285 по адресу г Москва, ул Мосфильмовская, дом 34, индекc 438232
-													.account-orderInfo__hidden.collapse#hiddenInfo
-														.account-orderInfo__hidden-inner 
-															.account-orderInfo__hidden-item График работы
-															.account-orderInfo__hidden-item 
-																span пн-пт 
-																span 08:00–20:00
-															.account-orderInfo__hidden-item
-																span сб
-																span 09:00–20:00
-															.account-orderInfo__hidden-item
-																span вс
-																span 10:00–18:00
-													a.account-orderInfo__open.change-link(href="#hiddenInfo" data-bs-toggle="collapse" data-default="подробнее" data-change="свернуть")
-														span.account-orderInfo__open-txt.change-link__output подробнее
-														span.account-orderInfo__open-icon.icon 
-															include ../icons/arrow-down
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('clock', '20', '20') 
-													.account-orderInfo__item-black Доставим в течение <br>7-14 дней
-													.account-orderInfo__item-gray Отгрузка происходит в течение 1-2 рабочих дней. Вам придет смс-уведомление.
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('user', '20', '20') 
-													.account-orderInfo__item-black Алевтина Круглова
+						.content__col.content__col-9.col
+							.content.list 
+								.content__col.content__col-8.col
+									.content__info
+										.account-head
+											.account-head__inner.d-flex 
+												.account-head__left 
+													a.order__back.btn-circle(href="#") 
+														+svg('arrow-left', '16', '16')
+												.account-head__middle 
+													.account-head__number.d-flex
+														.account-head__number-txt Заказ №A79772
+														.account-head__number-icon.icon 
+															<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.6049 5.45437C3.14499 5.45437 2.77273 5.82663 2.77273 6.28654V12.8949C2.77273 13.3548 3.14499 13.7271 3.6049 13.7271H10.2133C10.6732 13.7271 11.0455 13.3548 11.0455 12.8949V6.28654C11.0455 5.82663 10.6732 5.45437 10.2133 5.45437H3.6049ZM1.5 6.28654C1.5 5.12372 2.44208 4.18164 3.6049 4.18164H10.2133C11.3761 4.18164 12.3182 5.12372 12.3182 6.28654V12.8949C12.3182 14.0577 11.3761 14.9998 10.2133 14.9998H3.6049C2.44208 14.9998 1.5 14.0577 1.5 12.8949V6.28654Z" fill="#BEBEBE"/><path fill-rule="evenodd" clip-rule="evenodd" d="M6.68164 2.27273C6.27969 2.27273 5.95437 2.59804 5.95437 3V4.81818C5.95437 5.16964 5.66946 5.45455 5.318 5.45455C4.96655 5.45455 4.68164 5.16964 4.68164 4.81818V3C4.68164 1.89514 5.57678 1 6.68164 1H13.4998C14.6047 1 15.4998 1.89514 15.4998 3V9.81818C15.4998 10.923 14.6047 11.8182 13.4998 11.8182H11.6816C11.3302 11.8182 11.0453 11.5333 11.0453 11.1818C11.0453 10.8304 11.3302 10.5455 11.6816 10.5455H13.4998C13.9018 10.5455 14.2271 10.2201 14.2271 9.81818V3C14.2271 2.59804 13.9018 2.27273 13.4998 2.27273H6.68164Z" fill="#BEBEBE"/></svg>
+													.account-head__date.h4.ttl от 24 сентября
+												.account-head__right
+													.account-head__qty (2)
+										block status
+								.content__col.content__col-8.col
+									.content__info
+										if (offline)
+											.account-orderInfo
+												.account-orderInfo__list.flex 
+													.account-orderInfo__col 
+														.account-orderInfo__item
+															.account-orderInfo__item-icon.icon 
+																+svg('home', '20', '20') 
+															.account-orderInfo__item-black ТЦ Метрополис, Ленинградское шоссе, 16а.&nbsp;Этаж 1
+													.account-orderInfo__col 
+														.account-orderInfo__item
+															.account-orderInfo__item-icon.icon 
+																+svg('clock', '20', '20') 
+															.account-orderInfo__item-black 03.09.2024
+								
+													.account-orderInfo__col 
+														.account-orderInfo__item
+															.account-orderInfo__item-icon.icon 
+																+svg('cash', '20', '20') 
+															.account-orderInfo__item-black Оплата картой
+													.account-orderInfo__col.mobile 
+														.account-orderInfo__item
+															.account-orderInfo__item-icon.icon 
+																+svg('basket', '20', '20') 
+															.account-orderInfo__item-black Ваш заказ
+										else
+											if (post)
+												.account-orderInfo
+													.account-orderInfo__list.flex 
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('delivery', '20', '20') 
+																.account-orderInfo__item-black В отделение почты России
+																.account-orderInfo__item-gray № 119285 по адресу г Москва, ул Мосфильмовская, дом 34, индекc 438232
+																.account-orderInfo__hidden.collapse#hiddenInfo
+																	.account-orderInfo__hidden-inner 
+																		.account-orderInfo__hidden-item График работы
+																		.account-orderInfo__hidden-item 
+																			span пн-пт 
+																			span 08:00–20:00
+																		.account-orderInfo__hidden-item
+																			span сб
+																			span 09:00–20:00
+																		.account-orderInfo__hidden-item
+																			span вс
+																			span 10:00–18:00
+																a.account-orderInfo__open.change-link(href="#hiddenInfo" data-bs-toggle="collapse" data-default="подробнее" data-change="свернуть")
+																	span.account-orderInfo__open-txt.change-link__output подробнее
+																	span.account-orderInfo__open-icon.icon 
+																		include ../icons/arrow-down
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('clock', '20', '20') 
+																.account-orderInfo__item-black Доставим в течение <br>7-14 дней
+																.account-orderInfo__item-gray Отгрузка происходит в течение 1-2 рабочих дней. Вам придет смс-уведомление.
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('user', '20', '20') 
+																.account-orderInfo__item-black Алевтина Круглова
 
-													.account-orderInfo__item-contacts
-														.account-orderInfo__item-contacts-txt +7 903 483-38-34
-														.account-orderInfo__item-contacts-txt.mobile alya@mail.ru
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('comment', '20', '20') 
-													.account-orderInfo__item-black Комментарий к заказу
-													.account-orderInfo__item-gray Проверить перед отгрузкой
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('cash', '20', '20') 
-													.account-orderInfo__item-black Оплата онлайн
-											.account-orderInfo__col.mobile 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('basket', '20', '20') 
-													.account-orderInfo__item-black Ваш заказ
-								else
-									.account-orderInfo
-										.account-orderInfo__list.flex 
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('delivery', '20', '20') 
-													.account-orderInfo__item-black Москва, ул. Безымянная, 47/1, <br>п. 3, кв. 6
-													.account-orderInfo__item-gray Позвонить, когда будете <br>у шлагбаума
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('clock', '20', '20') 
-													.account-orderInfo__item-black 3 сентября, с 13:00 до 18:00
-													.account-orderInfo__item-gray Курьер позвонит за 40 мин.<br> до&nbsp;визита
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('user', '20', '20') 
-													.account-orderInfo__item-black Алевтина Круглова
+																.account-orderInfo__item-contacts
+																	.account-orderInfo__item-contacts-txt +7 903 483-38-34
+																	.account-orderInfo__item-contacts-txt.mobile alya@mail.ru
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('comment', '20', '20') 
+																.account-orderInfo__item-black Комментарий к заказу
+																.account-orderInfo__item-gray Проверить перед отгрузкой
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('cash', '20', '20') 
+																.account-orderInfo__item-black Оплата онлайн
+														.account-orderInfo__col.mobile 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('basket', '20', '20') 
+																.account-orderInfo__item-black Ваш заказ
+											else
+												.account-orderInfo
+													.account-orderInfo__list.flex 
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('delivery', '20', '20') 
+																.account-orderInfo__item-black Москва, ул. Безымянная, 47/1, <br>п. 3, кв. 6
+																.account-orderInfo__item-gray Позвонить, когда будете <br>у шлагбаума
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('clock', '20', '20') 
+																.account-orderInfo__item-black 03.09.2024
+																.account-orderInfo__item-gray Курьер позвонит за 40 мин.<br> до&nbsp;визита
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('user', '20', '20') 
+																.account-orderInfo__item-black Алевтина Круглова
 
-													.account-orderInfo__item-contacts
-														.account-orderInfo__item-contacts-txt +7 903 483-38-34
-														.account-orderInfo__item-contacts-txt.mobile alya@mail.ru
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('comment', '20', '20') 
-													.account-orderInfo__item-black Комментарий к заказу
-													.account-orderInfo__item-gray Проверить перед отгрузкой
-											.account-orderInfo__col 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('cash', '20', '20') 
-													.account-orderInfo__item-black Оплата онлайн
-											.account-orderInfo__col.mobile 
-												.account-orderInfo__item
-													.account-orderInfo__item-icon.icon 
-														+svg('basket', '20', '20') 
-													.account-orderInfo__item-black Ваш заказ
-								.account-orderList
-									- for (let i = 0; i < 2; i++)
-										.account-orderList__item
-											.account-orderItem
-												.account-orderItem__inner.d-flex 
-													.account-orderItem__inner-img 
-														a.account-orderItem__img.centered(href="#") 
-															+pngC('stphoto_ru2', '100', '96')
-															.account-orderItem__img-size.mobile 36
-													.account-orderItem__inner-info 
-														.account-orderItem__top 
-															.account-orderItem__group.d-flex
-																.account-orderItem__group-name 
-																	.account-orderItem__title.ttl.title1 
-																		a(href="#")  Addict
-																	.account-orderItem__category 
-																		a(href="#") Ботинки 
-																	.account-orderItem__size
-																		.account-orderItem__size-txt 38
-																		.account-orderItem__size-icon(style="background: #EBE3CF;")
-																.account-orderItem__group-qty 
-																	.account-orderItem__qty 1 шт
-																.account-orderItem__group-favorite
-																	button.account-orderItem__favorite.fav-btn.centered(type="button")
-																		span.account-orderItem__favorite-icon.icon
-																			+icon('heart')
-																			+icon('heart-fill')
-														.account-orderItem__bottom
-															.account-orderItem__price.d-flex
-																.account-orderItem__price-new.ttl.title2 12 990 ₽
-																.account-orderItem__price-old
-																	.account-orderItem__price-old-value 20 990 ₽
-																	.account-orderItem__price-old-icon
-																		.account-orderItem__price-old-icon__btn.icon 
-																			include ../icons/info
-																		.account-orderItem__price-dropdown.mobileBottom 
-																			.mobileBottom__backdrop.backdrop(data-close)
-																			.mobileBottom__content
-																				.mobileBottom__head 
-																					a.mobileBottom-close.icon(href="#" data-close) 
-																						+svg('close', '14', '14')
-																				.mobileBottom__title Детализация скидки
-																				.mobileBottom__info
-																					.account-orderItem__price-dropdown__content 
-																						.product-price__dropdown-item.d-flex 
-																							.product-price__dropdown-item__name Скидка на товары
-																							.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																						.product-price__dropdown-item.d-flex 
-																							.product-price__dropdown-item__name Последняя пара
-																							.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																					.account-orderItem__price-dropdown__arrow
-																						+svg('dropdown-arrow', '32', '16')
-						.content__col.content__col-3
-							.account__right
-								.account__right-total
-									.account-orderTotal.outline-border
-										.account-orderTotal__top 
-											.account-orderTotal__list
-												.account-orderTotal__list-item 
-													.account-orderTotal__item.d-flex 
-														.account-orderTotal__item-name Сумма
-														.account-orderTotal__item-value 22 765 ₽
-												.account-orderTotal__list-item 
-													.account-orderTotal__item.d-flex 
-														.account-orderTotal__item-name Скидка на товары
-														.account-orderTotal__item-value -3 670 ₽
-												.account-orderTotal__list-item 
-													.account-orderTotal__item.d-flex 
-														.account-orderTotal__item-name Скидка по промокоду
-														.account-orderTotal__item-value -3 586 ₽
-												.account-orderTotal__list-item 
-													.account-orderTotal__item.d-flex 
-														.account-orderTotal__item-name Доставка
-														.account-orderTotal__item-value 0 ₽
-										.account-orderTotal__bottom 
-											.order-info__price.d-flex.ttl
-												.order-info__price-name.d-flex
-													.order-info__price-name-txt Итого
-													.order-info__price-name-icon.centered
-														include ../icons/info
-												.order-info__price-value 18 336 ₽
-											.order-info__total.d-flex.order-info__total--mb-0 
-												.order-info__total-qty 3 товара
-												.order-info__total-price Экономия 2839 ₽ 
-								if (ready)
-									.account__right-group.d-flex
-										a.account-receipt.link-icon(href="#") 
-											span.account-receipt__icon.link-icon__icon.icon 
-												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.94922 4.05846H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 7.22839H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 10.3964H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.94342 15.0648L5.30448 13.7449C5.08094 13.6331 4.81855 13.6331 4.5958 13.7449L2.35322 14.8666C2.08925 14.9982 1.7793 14.8071 1.7793 14.5123V1.67748C1.7793 1.2399 2.13443 0.884766 2.57201 0.884766H13.67C14.1075 0.884766 14.4627 1.2399 14.4627 1.67748V14.5123C14.4627 14.8071 14.1527 14.9982 13.8887 14.8666L11.6462 13.7449C11.4226 13.6331 11.1602 13.6331 10.9375 13.7449L8.29855 15.0648C8.18678 15.1211 8.05519 15.1211 7.94342 15.0648Z" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 4.04474C11.2885 4.04474 11.2869 4.04632 11.2869 4.0487C11.2869 4.05108 11.2885 4.05266 11.2909 4.05266C11.2933 4.05266 11.2949 4.05108 11.2949 4.0487C11.2949 4.04632 11.2933 4.04474 11.2909 4.04474" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2928 7.21466C11.2905 7.21466 11.2889 7.21624 11.2889 7.21862C11.2889 7.221 11.2905 7.22258 11.2928 7.22258C11.2952 7.22258 11.2968 7.221 11.2968 7.21862C11.2968 7.21624 11.2952 7.21466 11.2928 7.21466" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 10.3846C11.2885 10.3846 11.2869 10.3862 11.2869 10.3885C11.2869 10.3909 11.2885 10.3925 11.2909 10.3925C11.2933 10.3925 11.2949 10.3909 11.2949 10.3885C11.2949 10.3862 11.2933 10.3846 11.2909 10.3846" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-											span.link-icon__txt электроннный чек
+																.account-orderInfo__item-contacts
+																	.account-orderInfo__item-contacts-txt +7 903 483-38-34
+																	.account-orderInfo__item-contacts-txt.mobile alya@mail.ru
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('comment', '20', '20') 
+																.account-orderInfo__item-black Комментарий к заказу
+																.account-orderInfo__item-gray Проверить перед отгрузкой
+														.account-orderInfo__col 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('cash', '20', '20') 
+																.account-orderInfo__item-black Оплата онлайн
+														.account-orderInfo__col.mobile 
+															.account-orderInfo__item
+																.account-orderInfo__item-icon.icon 
+																	+svg('basket', '20', '20') 
+																.account-orderInfo__item-black Ваш заказ
+										.account-orderList
+											- for (let i = 0; i < 2; i++)
+												.account-orderList__item
+													.account-orderItem
+														.account-orderItem__inner.d-flex 
+															.account-orderItem__inner-img 
+																a.account-orderItem__img.centered(href="#") 
+																	+pngC('stphoto_ru2', '100', '96')
+																	.account-orderItem__img-size.mobile 36
+															.account-orderItem__inner-info 
+																.account-orderItem__top 
+																	.account-orderItem__group.d-flex
+																		.account-orderItem__group-name 
+																			.account-orderItem__title.ttl.title1 
+																				a(href="#")  Addict
+																			.account-orderItem__category 
+																				a(href="#") Ботинки 
+																			.account-orderItem__size
+																				.account-orderItem__size-txt 38
+																				.account-orderItem__size-icon(style="background: #EBE3CF;")
+																		.account-orderItem__group-qty 
+																			.account-orderItem__qty 1 шт
+																		.account-orderItem__group-favorite
+																			button.account-orderItem__favorite.fav-btn.centered(type="button")
+																				span.account-orderItem__favorite-icon.icon
+																					+icon('heart')
+																					+icon('heart-fill')
+																.account-orderItem__bottom
+																	.account-orderItem__price.d-flex
+																		.account-orderItem__price-new.ttl.title2 12 990 ₽
+																		.account-orderItem__price-old
+																			.account-orderItem__price-old-value 20 990 ₽
+																			.account-orderItem__price-old-icon
+																				.account-orderItem__price-old-icon__btn.icon 
+																					include ../icons/info
+																				.account-orderItem__price-dropdown.mobileBottom 
+																					.mobileBottom__backdrop.backdrop(data-close)
+																					.mobileBottom__content
+																						.mobileBottom__head 
+																							a.mobileBottom-close.icon(href="#" data-close) 
+																								+svg('close', '14', '14')
+																						.mobileBottom__title Детализация скидки
+																						.mobileBottom__info
+																							.account-orderItem__price-dropdown__content 
+																								.product-price__dropdown-item.d-flex 
+																									.product-price__dropdown-item__name Скидка на товары
+																									.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																								.product-price__dropdown-item.d-flex 
+																									.product-price__dropdown-item__name Последняя пара
+																									.product-price__dropdown-item__value — 3 670 ₽ (20%)
+																							.account-orderItem__price-dropdown__arrow
+																								+svg('dropdown-arrow', '32', '16')
+								.content__col.content__col-4.col
+									.account__right
+										.account__right-total
+											.account-orderTotal.outline-border
+												.account-orderTotal__top 
+													.account-orderTotal__list
+														.account-orderTotal__list-item 
+															.account-orderTotal__item.d-flex 
+																.account-orderTotal__item-name Сумма
+																.account-orderTotal__item-value 22 765 ₽
+														.account-orderTotal__list-item 
+															.account-orderTotal__item.d-flex 
+																.account-orderTotal__item-name Скидка на товары
+																.account-orderTotal__item-value -3 670 ₽
+														.account-orderTotal__list-item 
+															.account-orderTotal__item.d-flex 
+																.account-orderTotal__item-name Скидка по промокоду
+																.account-orderTotal__item-value -3 586 ₽
+														.account-orderTotal__list-item 
+															.account-orderTotal__item.d-flex 
+																.account-orderTotal__item-name Доставка
+																.account-orderTotal__item-value 0 ₽
+												.account-orderTotal__bottom 
+													.order-info__price.d-flex.ttl
+														.order-info__price-name.d-flex
+															.order-info__price-name-txt Итого
+															//- .order-info__price-name-icon.centered
+															//- 	include ../icons/info
+														.order-info__price-value 18 336 ₽
+													.order-info__total.d-flex.order-info__total--mb-0 
+														.order-info__total-qty 3 товара
+														.order-info__total-price Экономия 2839 ₽ 
+										if (ready)
+											.account__right-group.d-flex
+												a.account-receipt.link-icon(href="#") 
+													span.account-receipt__icon.link-icon__icon.icon 
+														<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.94922 4.05846H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 7.22839H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 10.3964H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.94342 15.0648L5.30448 13.7449C5.08094 13.6331 4.81855 13.6331 4.5958 13.7449L2.35322 14.8666C2.08925 14.9982 1.7793 14.8071 1.7793 14.5123V1.67748C1.7793 1.2399 2.13443 0.884766 2.57201 0.884766H13.67C14.1075 0.884766 14.4627 1.2399 14.4627 1.67748V14.5123C14.4627 14.8071 14.1527 14.9982 13.8887 14.8666L11.6462 13.7449C11.4226 13.6331 11.1602 13.6331 10.9375 13.7449L8.29855 15.0648C8.18678 15.1211 8.05519 15.1211 7.94342 15.0648Z" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 4.04474C11.2885 4.04474 11.2869 4.04632 11.2869 4.0487C11.2869 4.05108 11.2885 4.05266 11.2909 4.05266C11.2933 4.05266 11.2949 4.05108 11.2949 4.0487C11.2949 4.04632 11.2933 4.04474 11.2909 4.04474" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2928 7.21466C11.2905 7.21466 11.2889 7.21624 11.2889 7.21862C11.2889 7.221 11.2905 7.22258 11.2928 7.22258C11.2952 7.22258 11.2968 7.221 11.2968 7.21862C11.2968 7.21624 11.2952 7.21466 11.2928 7.21466" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 10.3846C11.2885 10.3846 11.2869 10.3862 11.2869 10.3885C11.2869 10.3909 11.2885 10.3925 11.2909 10.3925C11.2933 10.3925 11.2949 10.3909 11.2949 10.3885C11.2949 10.3862 11.2933 10.3846 11.2909 10.3846" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+													span.link-icon__txt электроннный чек
 
-										a.account-return.link-icon(href="#") 
-											span.account-receipt__icon.link-icon__icon.icon 
-												include ../icons/return
-											span.link-icon__txt оформить возврат
-								else if (receipt)
-									.account__right-receipt
-										a.account-receipt.link-icon(href="#") 
-											span.account-receipt__icon.link-icon__icon.icon 
-												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.94922 4.05846H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 7.22839H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 10.3964H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.94342 15.0648L5.30448 13.7449C5.08094 13.6331 4.81855 13.6331 4.5958 13.7449L2.35322 14.8666C2.08925 14.9982 1.7793 14.8071 1.7793 14.5123V1.67748C1.7793 1.2399 2.13443 0.884766 2.57201 0.884766H13.67C14.1075 0.884766 14.4627 1.2399 14.4627 1.67748V14.5123C14.4627 14.8071 14.1527 14.9982 13.8887 14.8666L11.6462 13.7449C11.4226 13.6331 11.1602 13.6331 10.9375 13.7449L8.29855 15.0648C8.18678 15.1211 8.05519 15.1211 7.94342 15.0648Z" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 4.04474C11.2885 4.04474 11.2869 4.04632 11.2869 4.0487C11.2869 4.05108 11.2885 4.05266 11.2909 4.05266C11.2933 4.05266 11.2949 4.05108 11.2949 4.0487C11.2949 4.04632 11.2933 4.04474 11.2909 4.04474" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2928 7.21466C11.2905 7.21466 11.2889 7.21624 11.2889 7.21862C11.2889 7.221 11.2905 7.22258 11.2928 7.22258C11.2952 7.22258 11.2968 7.221 11.2968 7.21862C11.2968 7.21624 11.2952 7.21466 11.2928 7.21466" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 10.3846C11.2885 10.3846 11.2869 10.3862 11.2869 10.3885C11.2869 10.3909 11.2885 10.3925 11.2909 10.3925C11.2933 10.3925 11.2949 10.3909 11.2949 10.3885C11.2949 10.3862 11.2933 10.3846 11.2909 10.3846" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-											span.link-icon__txt электроннный чек
-						if (pay)
-							.content__col
-								.content__info
-									.account-payment
-										.account-payment__btn-wrapper 
-											a.order-form__btn(href="#") оплатить заказ
-										.account-payment__save 
-											.switch
-												.switch__content.d-flex 
-													.switch__content-btn 
-														label.switch-btn
-															input(type="checkbox" checked name="news")
-															span.switch-btn__content 
-																span
-													.switch__content-txt Сохранить данные для авторизации
-										.account-payment__txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
+												a.account-return.link-icon(href="#") 
+													span.account-receipt__icon.link-icon__icon.icon 
+														include ../icons/return
+													span.link-icon__txt оформить возврат
+										else if (receipt)
+											.account__right-receipt
+												a.account-receipt.link-icon(href="#") 
+													span.account-receipt__icon.link-icon__icon.icon 
+														<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.94922 4.05846H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 7.22839H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 10.3964H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.94342 15.0648L5.30448 13.7449C5.08094 13.6331 4.81855 13.6331 4.5958 13.7449L2.35322 14.8666C2.08925 14.9982 1.7793 14.8071 1.7793 14.5123V1.67748C1.7793 1.2399 2.13443 0.884766 2.57201 0.884766H13.67C14.1075 0.884766 14.4627 1.2399 14.4627 1.67748V14.5123C14.4627 14.8071 14.1527 14.9982 13.8887 14.8666L11.6462 13.7449C11.4226 13.6331 11.1602 13.6331 10.9375 13.7449L8.29855 15.0648C8.18678 15.1211 8.05519 15.1211 7.94342 15.0648Z" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 4.04474C11.2885 4.04474 11.2869 4.04632 11.2869 4.0487C11.2869 4.05108 11.2885 4.05266 11.2909 4.05266C11.2933 4.05266 11.2949 4.05108 11.2949 4.0487C11.2949 4.04632 11.2933 4.04474 11.2909 4.04474" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2928 7.21466C11.2905 7.21466 11.2889 7.21624 11.2889 7.21862C11.2889 7.221 11.2905 7.22258 11.2928 7.22258C11.2952 7.22258 11.2968 7.221 11.2968 7.21862C11.2968 7.21624 11.2952 7.21466 11.2928 7.21466" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 10.3846C11.2885 10.3846 11.2869 10.3862 11.2869 10.3885C11.2869 10.3909 11.2885 10.3925 11.2909 10.3925C11.2933 10.3925 11.2949 10.3909 11.2949 10.3885C11.2949 10.3862 11.2933 10.3846 11.2909 10.3846" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+													span.link-icon__txt электроннный чек
+							if (pay)
+								.content__col.content__col-8
+									.content__info
+										.account-payment
+											.account-payment__methods
+												.account-payment__methods-title.h6.ttl 
+													.account-payment__methods-title-icon.icon 
+														+icon('cash')
+													.account-payment__methods-title-txt Способ оплаты
+												include ../pages/order/payments
+											.account-payment__btn-wrapper 
+												a.order-form__btn(href="#") оплатить заказ
+											//- .account-payment__save 
+											//- 	.switch
+											//- 		.switch__content.d-flex 
+											//- 			.switch__content-btn 
+											//- 				label.switch-btn
+											//- 					input(type="checkbox" checked name="news")
+											//- 					span.switch-btn__content 
+											//- 						span
+											//- 			.switch__content-txt Сохранить данные для авторизации
+											.account-payment__txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>
 			include ../modules/footer/footer
 		include ../modules/modals/modals
 		include ../modules/popups/popups
+		include ../modules/notification/notification-top
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/imask.js")

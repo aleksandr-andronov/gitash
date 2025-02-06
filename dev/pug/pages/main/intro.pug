@@ -1,18 +1,43 @@
 .intro
     .intro-slider.slider 
         .swiper-wrapper 
+            .swiper-slide 
+                .intro-item
+                    .intro-item__img
+                        .intro-item__img-desctop
+                            video(playsinline autoplay muted loop)
+                                source(src="static/videos/ASH_LAPTOP_nologo.webm", type="video/webm") 
+                                source(src="static/videos/ASH_LAPTOP_nologo.mp4", type="video/mp4") 
+                        .intro-item__img-mobile 
+                            video(playsinline autoplay muted loop)
+                                source(src="static/videos/ASH_IPHONE_nologo.webm", type="video/webm") 
+                                source(src="static/videos/ASH_IPHONE_nologo.mp4", type="video/mp4") 
+                        //- .intro-item__img-desctop
+                        //-     +jpgC('intro-img', '1920', '960') 
+                        //- .intro-item__img-mobile
+                        //-     video(playsinline autoplay muted loop)
+                        //-         source(src="static/videos/prefall.webm", type="video/webm") 
+                        //-         source(src="static/videos/intro.mp4", type="video/mp4") 
+                    .intro-item__content.centered
+                        .intro-item__content-inner
+                            .intro-item__title.banner-title.ttl Новая коллекция
+                            .intro-item__subtitle.base-up Актуальные кеды, сандалии и&nbsp;босоножки, которые будут сопровождать вас этим летом
+                            a.intro-item__btn.btn.base-up(href="#") 
+                                span.intro-item__btn-txt к покупкам
+                                span.intro-item__btn-icon.svg
+                                    +icon('link')
             - for (let i = 0; i < 5; i++)
                 .swiper-slide 
                     .intro-item
                         .intro-item__img 
                             .intro-item__img-desctop
-                                +jpgC('intro-img', '1920', '960')
+                                +jpgC('intro-img', '1920', '960') 
                             .intro-item__img-mobile
-                                +jpgC('intro-img-m', '375', '602')
+                                +jpgC('intro-m', '860', '1482')
                         .intro-item__content.centered
                             .intro-item__content-inner
                                 .intro-item__title.banner-title.ttl Новая коллекция
-                                .intro-item__subtitle.base-up Коллекция обуви, в&nbsp;которой сошлись отличный дизайн и&nbsp;экологичный подход
+                                .intro-item__subtitle.base-up Актуальные кеды, сандалии и&nbsp;босоножки, которые будут сопровождать вас этим летом
                                 a.intro-item__btn.btn.base-up(href="#") 
                                     span.intro-item__btn-txt к покупкам
                                     span.intro-item__btn-icon.svg

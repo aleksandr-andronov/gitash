@@ -1,0 +1,31 @@
+.account-status
+    .account-status__lines
+        .account-status__inner.d-flex 
+            .account-status__inner-col
+                .account-status__item.account-status__item--current
+                    .account-status__item-line.account-status__item-line--first 
+                    .account-status__item-txt.nowrap в ожидании оплаты
+            .account-status__inner-col
+                .account-status__item
+                    .account-status__item-line
+                    .account-status__item-txt
+            .account-status__inner-col
+                .account-status__item
+                    .account-status__item-line
+                    .account-status__item-txt 
+            .account-status__inner-col
+                .account-status__item
+                    .account-status__item-line.account-status__item-line--last
+                    .account-status__item-txt 
+    .account-status__warning 
+        .account-warning.account-warning--orange
+            .account-warning__inner.d-flex 
+                .account-warning__inner-icon 
+                    .account-warning__icon.icon 
+                        include ../../icons/info
+                .account-warning__inner-info
+                    .account-warning__txt.txt-base Скачайте счет и заполните платежное поручение для оплаты в банке. Срок действия - 60 дней. Отгрузка производится сразу после оплаты.
+            a.account-warning__btn.btn(href="#") 
+                span.btn__icon.icon 
+                    include ../../icons/download-12
+                span.btn__txt скачать счет

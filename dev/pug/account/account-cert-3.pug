@@ -1,0 +1,15 @@
+extends template/account-right-col
+
+block variables
+	- var title = 'аккаунт'
+	- var receipt = true
+
+block content
+	include pages/account/account-cert-3
+	include modules/offcanvas/cert
+
+block right 
+	include pages/account/account-right
+
+block head 
+	include pages/account/account-head

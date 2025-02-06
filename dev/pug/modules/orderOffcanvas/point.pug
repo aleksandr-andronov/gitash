@@ -1,0 +1,46 @@
+#pickupPoint.offcanvas.offcanvas-end(tabindex="-1" data-bs-scroll="false" data-bs-keyboard="false" data-bs-backdrop="false")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle#pickupPointsBack(href="#pickupPoints" data-pickup="back" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left')
+                    a.offcanvas-close.btn-circle.offcanvas-close--hidden(href="#" data-pickup="close" data-bs-dismiss="offcanvas") 
+                        +svg('arrow-left')
+                .offcanvas__head-left 
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 Выбор пункта выдачи
+                .offcanvas__head-right
+        .offcanvas__body
+            .pickupPoint-detail
+                .pickupPoint-detail__groups
+                    .pickupPoint-detail__group
+                        .pickupPoint-detail__title.title СДЕК
+                        .pickupPoint-detail__address Москва, ул. Безымянная 47/1, кв. 6, п3, этаж 5
+                        .pickupPoint-detail__type.d-flex
+                            .pickupPoint-detail__type-icon 
+                                +svg('hanger', '16', '16')
+                            .pickupPoint-detail__type-txt с примеркой
+                        .pickupPoint-detail__date дата доставки: 14-18 ноября
+                        .pickupPoint-detail__info.infoBlock
+                            .infoBlock__inner.d-flex 
+                                .infoBlock__icon.icon 
+                                    include ../../icons/info-11
+                                .infoBlock__txt.txt-sm Вам на почту придет номер отслеживания
+                    .pickupPoint-detail__group
+                        .pickupPoint-detail__title.title График работы
+                        .pickupPoint-detail__work
+                            - for (let i = 0; i < 3; i++)
+                                .pickupPoint-detail__work-item.d-flex 
+                                    .pickupPoint-detail__work-item__left пн-пт
+                                    .pickupPoint-detail__work-item__right 08:00–20:00
+                    .pickupPoint-detail__group
+                        .pickupPoint-detail__title.title Телефон
+                        .pickupPoint-detail__txt 8 (917)455-89-89
+                    .pickupPoint-detail__group
+                        .pickupPoint-detail__title.title Сроки хранения
+                        .pickupPoint-detail__txt 7 дней
+                    .pickupPoint-detail__group
+                        .pickupPoint-detail__title.title Как добраться
+                        .pickupPoint-detail__txt БВПЗ находится на пересечение улицы Батырская и Авроры, напротив остановки 4й роддом, на красной линии
+                .pickupPoint-detail__foot 
+                    button.pickupPoint-detail__btn.btn(type="button" data-bs-dismiss="offcanvas") заберу отсюда

@@ -1,6 +1,19 @@
 .offcanvas {
     background: var(--white);
-    
+    &:has(.search) {
+        box-shadow: none;
+    }
+    &.search-opened {
+        .offcanvas__head-tabs, .pickupPoint-mobile-actions, .pickupPoint-content {
+            display: none;
+        }
+        .pickupPoint-mSearch {
+            display: block;
+        }
+        .offcanvas__head {
+            padding-bottom: 20px;
+        }
+    }
     &__inner {
         height: 100%;
         overflow: auto;
@@ -32,11 +45,16 @@
     &__head {
         padding: 64px 40px 44px;
         flex: 0 0 auto;
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 11;
         &--has-search {
             padding-bottom: 20px;
         }
         &--image {
             padding: 38px 46px 50px;
+            position: static;
         }
         &-back  {
             width: 40px;
@@ -58,20 +76,35 @@
         &-search {
             margin-top: 20px;
         }
+        
     }
     &__body {
         padding: 0 40px 40px;
         flex: 1 0 auto;
         position: relative;
+        > .form {
+            margin-top: 10px;
+        }
+        &--cerificate-bg {
+            background: var(--cert-bg);
+        }
         &--no-padding {
             padding: 0 !important;
+        }
+        &--py-1 {
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
     }
     &-close {
         &--absolute {
-            position: absolute;
+            position: fixed;
+            z-index: 9;
             top: 64px;
             right: 40px;
+        }
+        &--hidden {
+            display: none;
         }
         img {
             width: 16px;
@@ -267,6 +300,26 @@
     }
 
     &-feedback {
+        &__status {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 9;
+            padding: 16px;
+            &-inner {
+                flex-direction: column;
+                min-height: 100%;
+            }
+            &-img {
+                margin-bottom: 36px;
+            }
+            &-txt {
+                margin-top: 6px;
+            }
+        }
         &__txt {
             margin-bottom: 20px;
             p {
@@ -333,6 +386,13 @@
         }
         &__body {
             padding: 0 30px 30px;
+            > .form {
+                margin-top: 6px;
+            }
+            &--py-1 {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
         }
         &-desc {
             &__title {
@@ -456,6 +516,14 @@
             &__btn {
                 padding: 17px 24px 16px;
             }
+            &__status {
+                &-img {
+                    margin-bottom: 32px;
+                    img {
+                        width: 64px;
+                    }
+                }
+            }
         }
     }
 }
@@ -482,6 +550,9 @@
         }
         &__inner {
             overflow-x: hidden;
+            &--m-no-overflow {
+                overflow: hidden;
+            }
         }
         &__head {
             padding: 20px 14px;
@@ -491,10 +562,18 @@
             &--image {
                 padding: 22px 26px 28px;
             }
+            &--m-pb-0 {
+                padding-bottom: 0;
+            }
             &-back {
                 margin-right: 24px;
                 &--mobile {
                     display: block;
+                }
+            }
+            &-hiddenSearch {
+                &__inner {
+                    padding-top: 16px;
                 }
             }
         }
@@ -505,6 +584,14 @@
         }
         &__body {
             padding: 0 14px 14px;
+            &--py-1 {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            &--m-overflow {
+                overflow-y: auto;
+                height: 100%;
+            }
         }
         &-close {
             &--absolute {
@@ -547,6 +634,14 @@
         &-feedback {
             &__btn {
                 width: 100%;
+            }
+            &__status {
+                &-img {
+                    margin-bottom: 24px;
+                }
+                &-title {
+                    font-size: 24px;
+                }
             }
         }
     }

@@ -1,0 +1,64 @@
+.intro.advent-intro
+    .intro-slider.slider 
+        .swiper-wrapper 
+            .swiper-slide 
+                .intro-item
+                    .advent-intro__img.intro-item__img
+                        video(playsinline autoplay muted loop)
+                            //- source(src="static/videos/ASH_LAPTOP_nologo.webm", type="video/webm") 
+                            source(src="static/videos/partner_page.mp4", type="video/mp4") 
+                    .advent-intro__content.intro-item__content.centered
+                        .advent-intro__content-inner.intro-item__content-inner
+                            .advent-intro__content-img 
+                                +pngG('advent-title', '551', '95')
+                            .advent-intro__content-title.h3.ttl Скидка 31% на годовую подписку<br> Синхронизации
+
+.advent-content
+    .container 
+        .advent-content__group
+            .advent__block-sm
+                .advent__txt Онлайн-курсы по 20 направлениям: от искусства и литературы до нейробиологии и философии. Забирайте себе или дарите близким!
+        .advent-content__group
+            .advent__block-lg 
+                .advent-gift
+                    .advent-gift__title.h4.ttl Как получить подарок:
+                    .advent-gift__txt
+                        ul 
+                            li Перейдите на 
+                                a(href="https://online.synchronize.ru/sub" target="_blank") сайт 
+                            li Выберите тариф на 12 месяцев и нажмите «Оформить»
+                            li Заполните форму и введите промокод* 
+                    .advent-gift__promocode(data-change="промокод скопирован")
+                        .advent-gift__promocode-title 
+                            .advent-gift__promocode-title__txt промокод
+                            .advent-gift__promocode-title__icon.centered
+                                +svg('done-check')
+                        .advent-gift__promocode-value.d-flex 
+                            .advent-gift__promocode-value__txt ЧЕРЕВИЧКИ
+                            .advent-gift__promocode-value__icon 
+                                +pngG('advent-gift-icon', '24', '24')
+                    .advent-gift__txt.advent-gift__txt--bottom.advent-gift__txt--center
+                        p *действителен до 9.01.2025.
+                .advent-decor 
+                    +pngG('advent-decor')
+        .advent-content__group
+            .advent__block-xl 
+                .advent-info
+                    .advent-info__title.ttl.h4 о проекте
+                    .advent-info__content.list
+                        .advent-info__content-col.col
+                            .advent-info__img 
+                                +jpgC('advent-img-4', '609', '637')
+                        .advent-info__content-col.col
+                            .advent-info__desc
+                                .advent-info__desc-top.centered 
+                                    .advent-info__desc-logo 
+                                        +pngC('advent-logo-4', '132', '132')
+                                .advent-info__desc-bottom
+                                    .advent-info__desc-txt Синхронизация — онлайн-лекторий с курсами, которые вдохновляют. 
+        .advent-content__group
+            .advent__block-lg 
+                .advent__txt
+                    p Вас ждёт более 100 курсов по 20 направлениям: от искусства и литературы до нейробиологии и философии. Интересный и развивающий досуг на год вперед - себе или в подарок близким.
+    script
+        include copy.js

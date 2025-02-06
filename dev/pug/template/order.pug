@@ -10,7 +10,7 @@ html(lang="ru-RU")
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-	body
+	body.has-notification
 		.wrapper
 			include ../modules/header/header-only-logo
 			.order
@@ -21,10 +21,10 @@ html(lang="ru-RU")
 								.order__subhead-item
 									a.order__back.btn-circle(href="#") 
 										+icon('a-left-sm')
-								.order__subhead-item 
-									.order__qty 
-										span.desctop 16 товаров
-										span.mobile (2)
+								//- .order__subhead-item 
+								//- 	.order__qty 
+								//- 		span.desctop 16 товаров
+								//- 		span.mobile (2)
 						.order__title.ttl.h3 оформление заказа
 						.order__content.flex 
 							.order__col.order__col-3
@@ -36,11 +36,13 @@ html(lang="ru-RU")
 											.order-form__pricedelivery-name.title Стоимость доставки
 											.order-form__pricedelivery-value Бесплатно
 										if (first)
-											.order-form__subtitle Адрес доставки
+											.order-form__subtitle-group
+												.order-form__subtitle Тип доставки
+												.order-form__subtitle-group__txt Появится после выбора населенного пункта
 											.form-item.form-item-dropdown
 												.form-item__group 
 													.form-item__label населенный пункт*
-													input.form-input(type="text" data-validate)
+													input.form-input(type="text")
 												.form-item__dropdown.outline-border
 													.form-item__dropdown-scroll(data-simplebar)
 														.form-item__list
@@ -50,6 +52,24 @@ html(lang="ru-RU")
 																		input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
 																		span.form-item__dropdown-label__txt г. Новосибирск, 
 																			span Новосибирская обл.
+											//- .form-item.form-item-select
+											//- 	.form-item__group 
+											//- 		.form-item__label населенный пункт*
+											//- 		input.form-input(type="text" data-validate) 
+											//- 	.form-item__dropdown.outline-border
+											//- 		.form-item__dropdown-scroll(data-simplebar)
+											//- 			.form-item__list
+											//- 				- for (let i = 0; i < 20; i++)
+											//- 					.form-item__list-item 
+											//- 						label.form-item__dropdown-label
+											//- 							input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+											//- 							span.form-item__dropdown-label__txt г. Новосибирск, 
+											//- 								span Новосибирская обл.
+
+											if (delivery)
+												include ../pages/order/delivery
+											
+
 										if (post == 'choose')
 											include ../pages/order/post-choose
 										else if (post == 'selected')
@@ -157,16 +177,16 @@ html(lang="ru-RU")
 										.order-form__controls
 											.order-form__controls-btn 
 												button.order-form__btn(type="submit" disabled) оплатить заказ
-											if (switchSave)
-												.order-form__controls-save 
-													.switch.txt-sm
-														.switch__content.d-flex 
-															.switch__content-btn 
-																label.switch-btn
-																	input(type="checkbox" checked name="news")
-																	span.switch-btn__content 
-																		span
-															.switch__content-txt Сохранить данные для авторизации
+											//- if (switchSave)
+											//- 	.order-form__controls-save 
+											//- 		.switch.txt-sm
+											//- 			.switch__content.d-flex 
+											//- 				.switch__content-btn 
+											//- 					label.switch-btn
+											//- 						input(type="checkbox" checked name="news")
+											//- 						span.switch-btn__content 
+											//- 							span
+											//- 				.switch__content-txt Сохранить данные для авторизации
 											.order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>		
 								form.order-mobile(action="/")
 									if (selected)
@@ -175,20 +195,20 @@ html(lang="ru-RU")
 												.order-mobile__delivery
 													.order-mobile__delivery-top.d-flex 
 														.order-mobile__delivery-info.d-flex 
-															.order-mobile__delivery-info-icon.centered 
-																+svg('delivery', '20', '20') 
+															.order-mobile__delivery-info-icon.icon
+																+icon('delivery-icon') 
 															.order-mobile__delivery-info-txt Курьером по адресу
 														.order-mobile__delivery-price Бесплатно
 													.order-mobile__delivery-bottom 
 														.order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
-														a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddress"  data-bs-toggle="offcanvas") изменить адрес
+														a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddress"  data-bs-toggle="offcanvas") изменить адрес и тип доставки
 										else
 											.order-mobile__group
 												.order-mobile__delivery
 													.order-mobile__delivery-top.d-flex 
 														.order-mobile__delivery-info.d-flex 
-															.order-mobile__delivery-info-icon.centered 
-																+svg('delivery', '20', '20') 
+															.order-mobile__delivery-info-icon.icon 
+																+icon('delivery-icon') 
 															.order-mobile__delivery-info-txt В отделение почты России
 														.order-mobile__delivery-price Бесплатно
 													.order-mobile__delivery-bottom 
@@ -211,97 +231,116 @@ html(lang="ru-RU")
 															span.order-mobile__delivery-open-txt.change-link__output подробнее
 															span.order-mobile__delivery-open-icon.centered 
 																+svg('down', '16', '16')
-														a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddressPost" data-bs-toggle="offcanvas") изменить адрес
+														a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addresses" data-type="addAddressPost" data-bs-toggle="offcanvas") изменить адрес и тип доставки
 									else
-										.order-mobile__group
-											.order-mobile__delivery
-												.order-mobile__delivery-top.d-flex 
-													.order-mobile__delivery-info.d-flex 
-														.order-mobile__delivery-info-icon.centered 
-															+svg('delivery', '20', '20') 
-														.order-mobile__delivery-info-txt Доставка 
-													.order-mobile__delivery-price Бесплатно
-												
-												.order-mobile__delivery-bottom 
-												if (!courierOffcanvas)
-													a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddressPost" data-bs-toggle="offcanvas") указать адрес
-												else
-													a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddress" data-bs-toggle="offcanvas") указать адрес
-									if (selectedInfo)
-										.order-mobile__group
-											.order-mobile__item
-												.order-mobile__item-btn.d-flex
-													span.order-mobile__item-btn-icon.centered 
-														+svg('clock', '20', '20') 
-													span.order-mobile__item-btn-txt Доставим в течение 7–14 дней
-												.order-mobile__item-info.order-form__info
-													.order-form__info-txt.d-flex 
-														.order-form__info-txt-icon.centered 
-															+svg('info')
-														.order-form__info-txt-value Отгрузка происходит в течение 1–2 рабочих дней. Вам придёт СМС-уведомление.
+										if(!error)
+											.order-mobile__group
+												.order-mobile__delivery
+													.order-mobile__delivery-top.d-flex 
+														.order-mobile__delivery-info.d-flex 
+															.order-mobile__delivery-info-icon.icon
+																+icon('delivery-icon') 
+															.order-mobile__delivery-info-txt Доставка 
+														.order-mobile__delivery-price Бесплатно
+													
+													.order-mobile__delivery-bottom 
+														a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddressMobile" data-bs-toggle="offcanvas") указать тип и адрес доставки
+										else 
+											.order-mobile__group
+												.order-mobile__delivery.error
+													.order-mobile__delivery-top.d-flex 
+														.order-mobile__delivery-info.d-flex 
+															.order-mobile__delivery-info-icon.icon
+																+icon('delivery-icon') 
+															.order-mobile__delivery-info-txt Укажите адрес
+														.order-mobile__delivery-price Бесплатно
+													
+													.order-mobile__delivery-bottom 
+														a.order-mobile__delivery-btn.btn.btn-outline(href="#addAddressMobile" data-bs-toggle="offcanvas") указать тип и адрес доставки
+									//- if (selectedInfo)
+									//- 	.order-mobile__group
+									//- 		.order-mobile__item
+									//- 			.order-mobile__item-btn.d-flex
+									//- 				span.order-mobile__item-btn-icon.icon 
+									//- 					+icon('clock-icon') 
+									//- 				span.order-mobile__item-btn-txt Доставим в течение 7–14 дней
+									//- 			.order-mobile__item-info.order-form__info
+									//- 				.order-form__info-txt.d-flex 
+									//- 					.order-form__info-txt-icon.centered 
+									//- 						+svg('info')
+									//- 					.order-form__info-txt-value Отгрузка происходит в течение 1–2 рабочих дней. Менеджер позвонит и уточнит удобный вам адрес отделения. 
 									.order-mobile__group
 										if (selectedInfo)
 											.order-mobile__item
 												a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
 													span.order-mobile__item-btn-icon.centered 
-														+svg('user', '20', '20') 
+														+icon('user-icon') 
 													span.order-mobile__item-btn-txt Алевтина Круглова
 													span.order-mobile__item-btn-arrow.centered 
-														+svg('right', '14', '14')
+														+icon('right-icon')
 												.order-mobile__item-desc 
 													.order-mobile__item-list 
 														.order-mobile__item-txt +7 903 483-38-34
 														.order-mobile__item-txt alya@mail.ru
-										else 
-											.order-mobile__item
-												a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas") 
-													span.order-mobile__item-btn-icon.centered 
-														+svg('user', '20', '20') 
-													span.order-mobile__item-btn-txt Получатель
-													span.order-mobile__item-btn-arrow.centered 
-														+svg('right', '14', '14')
+										else
+											if (!error)
+												.order-mobile__item
+													a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas") 
+														span.order-mobile__item-btn-icon.icon
+															+icon('user-icon') 
+														span.order-mobile__item-btn-txt Получатель
+														span.order-mobile__item-btn-arrow.icon
+															+icon('right-icon')
+											else 
+												.order-mobile__item.error
+													a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas") 
+														span.order-mobile__item-btn-icon.icon
+															+icon('user-icon') 
+														span.order-mobile__item-btn-txt Укажите получателя
+														span.order-mobile__item-btn-arrow.icon
+															+icon('right-icon')
 									.order-mobile__group
 										if (selectedInfo)
 											.order-mobile__item
 												a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas")
-													span.order-mobile__item-btn-icon.centered 
-														+svg('comment', '20', '20') 
+													span.order-mobile__item-btn-icon.icon
+														+icon('comment-icon') 
 													span.order-mobile__item-btn-txt Комментарий к заказу
-													span.order-mobile__item-btn-arrow.centered 
-														+svg('right', '14', '14')
+													span.order-mobile__item-btn-arrow.icon 
+														+icon('right-icon')
 												.order-mobile__item-desc 
 													.order-mobile__item-list 
 														.order-mobile__item-txt +7 903 483-38-34
 										else
 											.order-mobile__item
 												a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas") 
-													span.order-mobile__item-btn-icon.centered 
-														+svg('comment', '20', '20') 
+													span.order-mobile__item-btn-icon.icon 
+														+icon('comment-icon') 
 													span.order-mobile__item-btn-txt Комментарий к заказу
-													span.order-mobile__item-btn-arrow.centered 
-														+svg('right', '14', '14')
+													span.order-mobile__item-btn-arrow.icond 
+														+icon('right-icon')
 									if(courier)
 										.order-mobile__group
 											.order-mobile__item
 												.order-mobile__item-btn.d-flex
-													span.order-mobile__item-btn-icon.centered 
-														+svg('clock', '20', '20') 
+													span.order-mobile__item-btn-icon.icon
+														+icon('clock-icon') 
 													span.order-mobile__item-btn-txt Дата и время
 												.order-mobile__item-payments
 													include ../pages/order/date
 									.order-mobile__group
 										.order-mobile__item
 											.order-mobile__item-btn.d-flex
-												span.order-mobile__item-btn-icon.centered 
-													+svg('cash', '20', '20') 
+												span.order-mobile__item-btn-icon.icon
+													+icon('cash-icon') 
 												span.order-mobile__item-btn-txt Способ оплаты
 											.order-mobile__item-payments.order-form__payments
 												include ../pages/order/payments
 									.order-mobile__group
 										.order-mobile__item
 											.order-mobile__item-btn.d-flex
-												span.order-mobile__item-btn-icon.centered 
-													+svg('basket', '20', '20') 
+												span.order-mobile__item-btn-icon.icon 
+													+icon('order-icon') 
 												span.order-mobile__item-btn-txt Ваш заказ
 												a.order-mobile__item-btn-link(href="#") Изменить
 											.order-mobile__item-products 
@@ -383,23 +422,23 @@ html(lang="ru-RU")
 															.order-card__size-inner.d-flex
 																.order-card__size-txt 38
 																.order-card__size-color(style="background: #EBE3CF;") 
-														.order-card__price 12 990 ₽
+														.order-card__price 12 990 ₽ 
 										else 
 											.order-products.flex 
 												.order-products__item 
 													.order-card
 														.order-card__inner.d-flex 
-															.order-card__img
+															.order-card__img.order-card__img--fw
 																+jpgC('total-img-2', '124', '152')
 																.order-card__size-absolute.centered 39
 												.order-products__item 
 													.order-card
 														.order-card__inner.d-flex 
-															.order-card__img
+															.order-card__img.order-card__img--fw
 																+jpgC('total-img-1', '124', '152')
 																.order-card__size-absolute.centered 39
 									.order-total__promocode 
-										include ../modules/forms/promocode
+										include ../modules/forms/promocode 
 									.order-total__info.outline-border.outline-border-bottom 
 										.order-total__list 
 											.order-total__list-item.d-flex
@@ -423,13 +462,16 @@ html(lang="ru-RU")
 												.order-total__bottom-item__title.ttl 18 336 ₽
 												.order-total__bottom-item__txt.tech-14 Экономия 2 839 ₽
 			include ../modules/footer/footer
+			include ../modules/notification/notification-top
 		include ../modules/modals/modals
 		include ../modules/popups/popups
 		include ../modules/orderOffcanvas/chooseOffice
 		include ../modules/orderOffcanvas/addresses
 		include ../modules/orderOffcanvas/addAddress
+		include ../modules/orderOffcanvas/addAddressMobile
 		include ../modules/orderOffcanvas/addAddressPost
 		include ../modules/orderOffcanvas/addRecipient
+		include ../modules/orderOffcanvas/addRecipientMobile
 		include ../modules/orderOffcanvas/addComment
 		//- include ../modules/popups/order
 		script(src="static/js/libs.js")

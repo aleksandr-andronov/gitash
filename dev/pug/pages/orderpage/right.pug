@@ -1,0 +1,44 @@
+.order-total.outline-border 
+    .order-total__head
+        .order-total__head-inner.d-flex 
+            .order-total__head-title.ttl.h6 Ваш заказ
+            a.order-total__head-link.tech-14 изменить
+    .order-total__products.outline-border.outline-border-top 
+        .order-products.flex 
+            - for (let i = 0; i < 2; i++)
+                .order-products__item 
+                    .order-card
+                        .order-card__inner.d-flex 
+                            .order-card__img.order-card__img--fw
+                                +jpgC('total-img-2', '124', '152')
+                                .order-card__size-absolute.centered 39
+                .order-products__item 
+                    .order-card
+                        .order-card__inner.d-flex 
+                            .order-card__img.order-card__img--fw
+                                +jpgC('total-img-1', '124', '152')
+                                .order-card__size-absolute.centered 39
+    .order-total__promocode 
+        include ../../modules/forms/promocode 
+    .order-total__info.outline-border.outline-border-bottom 
+        .order-total__list 
+            .order-total__list-item.d-flex
+                .order-total__list-item__name Сумма
+                .order-total__list-item__value 22 765 ₽
+            .order-total__list-item.d-flex
+                .order-total__list-item__name Скидка на товары
+                .order-total__list-item__value -3 670 ₽
+            .order-total__list-item.d-flex
+                .order-total__list-item__name Скидка по промокоду
+                .order-total__list-item__value -3 586 ₽
+            .order-total__list-item.d-flex
+                .order-total__list-item__name Доставка
+                .order-total__list-item__value 0 ₽
+    .order-total__bottom
+        .order-total__bottom-inner.d-flex 
+            .order-total__bottom-item
+                .order-total__bottom-item__title.ttl Итого
+                .order-total__bottom-item__txt.tech-14 3 товара
+            .order-total__bottom-item
+                .order-total__bottom-item__title.ttl 18 336 ₽
+                .order-total__bottom-item__txt.tech-14 Экономия 2 839 ₽

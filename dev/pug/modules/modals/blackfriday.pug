@@ -1,0 +1,22 @@
+#fridayModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-dialog-friday
+        .modal-content.modal-friday.modal-content--p-0
+            .modal-friday__inner.d-flex 
+                .modal-friday__col
+                    .modal-friday__img
+                        +jpgG('friday-img', '563', '599')
+                .modal-friday__col 
+                    .modal-friday__info
+                        .modal-friday__info-inner
+                            .modal-friday__title.ttl близится черная пятница!
+                            .modal-friday__txt 24 ноября стартует черная пятница. Оставь свой e-mail, чтобы не попустить старт черной пятницы.
+                            form.modal-friday__form.form(action="/") 
+                                .modal-friday__form-item
+                                    .form-item
+                                        .form-item__group 
+                                            //- .form-item__label e-mail
+                                            input.form-input.form-input--light.modal-friday__form-input(type="email" data-validate placeholder="e-mail")
+                                .modal-friday__form-item
+                                    button.modal-friday__form-btn.btn.btn-white.btn-rounded(type="submit") подписаться
+            button.modal-close.btn-circle.modal-close--absolute(type='button' data-bs-dismiss='modal' aria-label='Close')
+                +svg('close', '20', '20')
