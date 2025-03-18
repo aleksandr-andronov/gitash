@@ -30,6 +30,7 @@ ul[class], ol[class] {
 
 ul, ol {
     margin: 0;
+    padding-left: 24px;
 }
 
 img {
@@ -83,6 +84,10 @@ textarea {
     display: flex;
 }
 
+.d-grid {
+    display: grid;
+}
+
 .centered {
     display: flex;
     align-items: center;
@@ -103,6 +108,15 @@ textarea {
     svg, path {
         stroke: inherit;
     }
+}
+
+.icon-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .icon-black {
@@ -130,6 +144,10 @@ textarea {
         top: 0;
         left: 0;
     }
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 @media (max-width: 1440px) {

@@ -1,11 +1,12 @@
 #addAddressMobile.offcanvas.offcanvas-end(tabindex="-1")
     .offcanvas__inner.offcanvas__inner--flex 
-        .offcanvas__head
+        .offcanvas__head.offcanvas__head--has-step
             .offcanvas__head-inner.d-flex 
                 .offcanvas__head-back 
                     a.offcanvas-close.btn-circle#addAddressMobileBack(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
                         +svg('arrow-left')
-                .offcanvas__head-left 
+                .offcanvas__head-left
+                    .offcanvas__head-step Шаг 1/3
                     .offcanvas__title.offcanvas__title--m-center.ttl.h4 Адрес и способ доставки
                 .offcanvas__head-right 
                     a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 

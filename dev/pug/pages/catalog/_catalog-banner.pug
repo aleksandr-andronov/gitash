@@ -1,4 +1,4 @@
-._catalog
+._catalog._catalog--has-banner
     ._catalog__top._catalog__top--banner  
         .catalog-banner(data-bg="static/images/content/catalog-banner.jpg" data-mobilebg="static/images/content/catalog-banner-m.jpg")
         ._catalog__top-content 
@@ -14,7 +14,106 @@
                                 .catalog__qty-mobile.mobile (19)
                     h1.catalog__title.ttl.h2 кроссовки
     ._catalog__bottom
-        ._catalog__bottom-actions 
+        ._catalog__bottom-actions
+            ._catalog__actions
+                ._catalog__actions-top 
+                    ._catalog-types
+                        ._catalog-types__slider.slider 
+                            .swiper-wrapper
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox" checked)
+                                        span.button-badge__content.outline-border Все товары 
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Кроссовки
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Кеды
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Босоножки
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Туфли
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Кроссовки
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Кеды
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Босоножки
+                                ._catalog-types__slider-slide.swiper-slide 
+                                    label.button-badge
+                                        input(type="checkbox")
+                                        span.button-badge__content.outline-border Туфли
+                ._catalog__actions-bottom
+                    ._catalog__actions-group.d-flex 
+                        ._catalog__actions-group__col
+                            a.filter-btn.d-flex(href="#filter" data-bs-toggle="offcanvas") 
+                                span.filter-btn__icon.icon 
+                                    +icon('filter')
+                                span.filter-btn__txt Фильтры
+                                span.filter-btn__qty.centered#FilterGroupQty 0
+                        ._catalog__actions-group__col
+                            .sorting
+                                a.sorting-btn.d-flex(href="#")
+                                    span.sorting-btn__txt По популярности
+                                    span.sorting-btn__icon.icon 
+                                        +icon('sorting')
+                                .sorting-dropdown.mobileBottom.outline-border
+                                    .mobileBottom__backdrop.backdrop(data-close)
+                                    .mobileBottom__content 
+                                        .mobileBottom__head 
+                                            a.mobileBottom-close.icon(href="#" data-close) 
+                                                +svg('close', '14', '14')
+                                        .mobileBottom__title Сортировка
+                                        .mobileBottom__info 
+                                            .sorting-dropdown__list
+                                                .sorting-dropdown__list-item 
+                                                    label.form-select__radio
+                                                        input(type="radio" name="sorting" checked data-value="по популярности")
+                                                        span.form-select__radio-content 
+                                                            span.form-select__radio-txt по популярности
+                                                            span.form-select__radio-icon.icon 
+                                                                +svg('check-circle', '16', '16')
+                                                .sorting-dropdown__list-item 
+                                                    label.form-select__radio
+                                                        input(type="radio" name="sorting" data-value="по возрастанию цены")
+                                                        span.form-select__radio-content 
+                                                            span.form-select__radio-txt по возрастанию цены
+                                                            span.form-select__radio-icon.icon 
+                                                                +svg('check-circle', '16', '16')
+                                                .sorting-dropdown__list-item 
+                                                    label.form-select__radio
+                                                        input(type="radio" name="sorting" data-value="по убыванию цены")
+                                                        span.form-select__radio-content 
+                                                            span.form-select__radio-txt по убыванию цены
+                                                            span.form-select__radio-icon.icon 
+                                                                +svg('check-circle', '16', '16')
+                                                .sorting-dropdown__list-item 
+                                                    label.form-select__radio
+                                                        input(type="radio" name="sorting" data-value="по новинкам")
+                                                        span.form-select__radio-content 
+                                                            span.form-select__radio-txt по новинкам
+                                                            span.form-select__radio-icon.icon 
+                                                                +svg('check-circle', '16', '16')
+                                                .sorting-dropdown__list-item 
+                                                    label.form-select__radio
+                                                        input(type="radio" name="sorting" data-value="по скидкам")
+                                                        span.form-select__radio-content 
+                                                            span.form-select__radio-txt по скидкам
+                                                            span.form-select__radio-icon.icon 
+                                                                +svg('check-circle', '16', '16')
         ._catalog__bottom-content 
             include _products
 

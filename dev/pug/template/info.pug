@@ -40,9 +40,10 @@ html(lang="ru-RU")
 											a.account-menu__link.infoPage-menu__link.outline-border(href="#") Договор оферты
 						.content__col.col.content__col-9
 							.content.list
-								.content__col.col.content__col-8
-									.content__info
-										h1.infoPage__title.ttl.h3 #{title}
+								if (!noTitle)
+									.content__col.col.content__col-8
+										.content__info
+											h1.infoPage__title.ttl.h3 #{title}
 								.content__col.col.content__col-8
 									if (shop)
 										.content__info.content__info--map

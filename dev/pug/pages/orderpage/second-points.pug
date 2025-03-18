@@ -163,8 +163,8 @@
                                     button.order-form__btn(type="submit" disabled) оплатить заказ
                                 .order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>	
                     form.order-mobile(action="/")
-                        .order-mobile__group.order-mobile__group--no-border
-                            .order-mobile__delivery
+                        .order-mobile__group
+                            .order-mobile__item.order-mobile__delivery
                                 .order-mobile__delivery-top.d-flex 
                                     .order-mobile__delivery-info.d-flex 
                                         .order-mobile__delivery-info-icon.icon
@@ -175,25 +175,26 @@
                                     .order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
                                     .order-mobile__delivery-txt Дата доставки: 14-18 ноября
                                     a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addAddressMobile" data-bs-toggle="offcanvas") изменить адрес и тип доставки
-                        .order-mobile__group
-                            .order-mobile__item
-                                a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
-                                    span.order-mobile__item-btn-icon.centered 
-                                        +icon('user-icon') 
-                                    span.order-mobile__item-btn-txt Алевтина Круглова
-                                    span.order-mobile__item-btn-arrow.centered 
-                                        +icon('right-icon')
-                                .order-mobile__item-desc 
-                                    .order-mobile__item-list 
-                                        .order-mobile__item-txt +7 903 483-38-34
-                                        .order-mobile__item-txt alya@mail.ru
+                        include components/customer-filled
+                        //- .order-mobile__group
+                        //-     .order-mobile__item
+                        //-         a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
+                        //-             span.order-mobile__item-btn-icon.centered 
+                        //-                 +icon('user-icon') 
+                        //-             span.order-mobile__item-btn-txt Алевтина Круглова
+                        //-             span.order-mobile__item-btn-arrow.centered 
+                        //-                 +icon('right-icon')
+                        //-         .order-mobile__item-desc 
+                        //-             .order-mobile__item-list 
+                        //-                 .order-mobile__item-txt +7 903 483-38-34
+                        //-                 .order-mobile__item-txt alya@mail.ru
                         .order-mobile__group
                             .order-mobile__item
                                 a.order-mobile__item-btn.d-flex(href="#addComment" data-bs-toggle="offcanvas") 
                                     span.order-mobile__item-btn-icon.icon 
                                         +icon('comment-icon') 
                                     span.order-mobile__item-btn-txt Комментарий к заказу
-                                    span.order-mobile__item-btn-arrow.icond 
+                                    span.order-mobile__item-btn-arrow.icon
                                         +icon('right-icon')
                         .order-mobile__group
                             .order-mobile__item

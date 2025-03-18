@@ -17,37 +17,29 @@ if (closeDetailedBtn) {
     })
 }
 
+const offcanvasIds = [
+    'pickupPoints',
+    'pickupPointsMobile',
+    'pickupPoint',
+    'addAddressMobile'
+];
+
+const modals = {};
+
+offcanvasIds.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        modals[id] = bootstrap.Offcanvas.getOrCreateInstance(element);
+    }
+});
+
+console.log(modals); // Проверяем, создались ли модалки
+
+
+
 
 
 const modalPickupPointsElement = document.querySelector('#pickupPoints')
-let modalPickupPoints; 
-
-if (modalPickupPointsElement) {
-    modalPickupPoints = bootstrap.Offcanvas.getOrCreateInstance(modalPickupPointsElement)
-}
-
-
-const modalPickupPointsMobileElement = document.querySelector('#pickupPointsMobile')
-let modalPickupPointsMobile; 
-
-if (modalPickupPointsMobileElement) {
-    modalPickupPointsMobile = bootstrap.Offcanvas.getOrCreateInstance(modalPickupPointsMobileElement)
-}
-
-
-const modalPickupPointElement = document.querySelector('#pickupPoint')
-let modalPickupPoint;
-if (modalPickupPointElement) {
-    modalPickupPoint = bootstrap.Offcanvas.getOrCreateInstance(modalPickupPointElement)
-}
-
-const modalAddAddressMobileElement = document.querySelector('#addAddressMobile')
-let modalAddAddressMobile;
-if (modalAddAddressMobileElement) {
-    modalAddAddressMobile = bootstrap.Offcanvas.getOrCreateInstance(modalAddAddressMobileElement)
-}
-
-
 
 modalPickupPointsElement.addEventListener('shown.bs.offcanvas', () => {
     mapContent.classList.add('visible')
@@ -142,9 +134,11 @@ function typeDelivery() {
                 hiddenContent.forEach(i => i.classList.remove('visible'))
                 
                 if (isMobile) {
-                    modalPickupPointsMobile.show()
+                    modals.pickupPointsMobile.show();
+                    modals.addAddressMobile.hide()
+                    backBtn.setAttribute('href', '#pickupPointsMobile');
                 } else {
-                    modalPickupPoints.show()
+                    modals.pickupPoints.show()
                 }
 
 
@@ -251,9 +245,6 @@ function init() {
         zIndex: 20000
     });
     
-    
-    
-
     // Данные для меток
     const pointsData = [
         { coords: [55.751574, 37.573856], type: 'hanger', name: 'CDEK' },
@@ -267,7 +258,66 @@ function init() {
     // Добавляем метки в кластер
     clusterer.add(placemarks);
     map.geoObjects.add(clusterer);
+
+    const controls = document.querySelectorAll('.orderMap-controls');
+    controls.forEach(control => {
+        addMapControlsListeners(map, control);
+    });
 }
+
+function addMapControlsListeners(map, control) {
+    control.addEventListener('click', (event) => {
+        if (event.target.closest('.orderMap-locationBtn')) {
+            // Кнопка "определить местоположение"
+            locateUser(map);
+        } else if (event.target.closest('.orderMap-controls__zoom-item')) {
+            // Кнопки увеличения/уменьшения масштаба
+            const zoomItem = event.target.closest('.orderMap-controls__zoom-item');
+            const zoomIn = zoomItem.previousElementSibling === null; // Проверяем, есть ли предыдущий элемент
+
+            zoomMap(map, zoomIn);
+        }
+    });
+}
+
+function zoomMap(map, zoomIn) {
+    const currentZoom = map.getZoom();
+    const newZoom = zoomIn ? currentZoom + 1 : currentZoom - 1;
+    map.setZoom(newZoom, { duration: 200 });
+}
+
+
+let userPlacemark; // Добавляем переменную для хранения метки пользователя
+
+function locateUser(map) {
+    if (!navigator.geolocation) {
+        console.error('Геолокация не поддерживается браузером');
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition((position) => {
+        const userCoords = [position.coords.latitude, position.coords.longitude];
+        console.log('Координаты пользователя:', userCoords);
+        map.setCenter(userCoords, 15);
+
+        if (userPlacemark) {
+            map.geoObjects.remove(userPlacemark);
+        }
+
+        userPlacemark = new ymaps.Placemark(userCoords, {}, {
+            iconLayout: 'default#image',
+            iconImageHref: './static/images/general/locateicon.svg',
+            iconImageSize: [32, 32],
+            iconImageOffset: [-16, -16],
+        });
+
+        map.geoObjects.add(userPlacemark);
+    }, (error) => {
+        console.error('Ошибка геолокации:', error.message);
+    });
+}
+
+
 
 function createPlacemark(point, isMobile) {
     const isLargeScreen = window.innerWidth > 1440; // Проверка ширины экрана
@@ -334,11 +384,11 @@ function createPlacemark(point, isMobile) {
     placemark.events.add('click', () => {
         if (isMobile) {
             backBtn.setAttribute('href', '#pickupPointsMobile');
-            modalPickupPointsMobile.hide();
-            modalAddAddressMobile.hide();
+            modals.pickupPointsMobile.hide();
+            modals.addAddressMobile.hide();
         } else {
             backBtn.setAttribute('href', '#pickupPoints');
-            modalPickupPoints.hide();
+            modals.pickupPoints.hide();
         }
 
         // Сбрасываем предыдущую активную метку
@@ -367,7 +417,7 @@ function createPlacemark(point, isMobile) {
         lastActivePlacemark = placemark;
         lastActivePlacemark.properties.set('type', point.type);
 
-        modalPickupPoint.show();
+        modals.pickupPoint.show();
     });
 
     // Устанавливаем пользовательское свойство type

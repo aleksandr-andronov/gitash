@@ -22,6 +22,8 @@
   --green: #55C776;
   --light-peach: #FFCCB2;
 
+  --text-grey: #C5C4CC;
+
 
   --grey-1: #B0B0B0;
   --grey-2: #F5F5F5;
@@ -66,6 +68,9 @@
     --height-scroll: 94px;
 
     --content-center: 614px;
+
+
+    --h5: 24px;
   }
 }
 
@@ -74,5 +79,15 @@
     --height-content: 61px;
     --height-scroll: 61px;
     --container-padding: 14px;
+
+
+    
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --h3-375: 22px;
+    --h4-375: 20px;
   }
 }

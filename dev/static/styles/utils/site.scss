@@ -479,11 +479,9 @@ ul:not([class]) {
 
     .content {
         &__info {
-            // max-width: 614px;
             padding-left: 36px;
             padding-right: 36px;
             &--map {
-                // max-width: 640px;
                 padding-left: 24px;
                 padding-right: 24px;
             }
@@ -513,13 +511,6 @@ ul:not([class]) {
     }
 }
 
-// @media (max-width: 1024px) {
-//     .content {
-//         &__col {
-//             width: 100%;
-//         }
-//     }
-// }
 
 @media (max-width: 932px) {
     *::-webkit-scrollbar {
@@ -536,9 +527,9 @@ ul:not([class]) {
         }
     }
 
-    .wrapper {
-        overflow-x: hidden;
-    }
+    // .wrapper {
+    //     overflow-x: hidden;
+    // }
 
     .tabs {
         &-content {

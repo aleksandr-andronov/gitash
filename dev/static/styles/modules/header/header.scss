@@ -478,6 +478,9 @@
         
         &.opened {
           height: 100%;
+          .header__bg {
+            height: 0;
+          }
         }
         &.scrolled {
           .header__logo {
@@ -510,6 +513,7 @@
             }
           }
         }
+        
         &__content {
             padding-bottom: 0;
             align-items: center;

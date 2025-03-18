@@ -14,8 +14,11 @@ mixin icon2(name,mod)
 		svg(class="svg-sprite-icon icon-" + name)
 			use(xlink:href="static/images/svg/symbol/spriteoutline.svg#" + name)
 			
-mixin svg(name, w, h)
-	img(src=`static/images/general/${name}.svg`, width=`${w}` height=`${h}` alt="img")
+mixin svg(name, w, h, folder)
+	if (folder)
+		img(src=`static/images/general/${folder}/${name}.svg`, width=`${w}` height=`${h}` alt="img")
+	else 
+		img(src=`static/images/general/${name}.svg`, width=`${w}` height=`${h}` alt="img")
 
 mixin pngG(name, w, h)
 	picture
@@ -32,10 +35,15 @@ mixin jpgC(name, w, h)
 		source(srcset=`static/images/content/${name}.webp`, type='image/webp')
 		img(src=`static/images/content/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
 
-mixin jpgG(name, w, h)
-	picture
-		source(srcset=`static/images/general/${name}.webp`, type='image/webp')
-		img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
+mixin jpgG(name, w, h, folder)
+	if(folder)
+		picture
+			source(srcset=`static/images/general/${folder}/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${folder}/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
+	else 
+		picture
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
 
 mixin jpgG2(name, w, h, arr)
 	if (arr)
@@ -46,8 +54,20 @@ mixin jpgG2(name, w, h, arr)
 			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
 	else 
 		picture
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
+
+mixin pngG2(name, w, h, arr)
+	if (arr)
+		picture
+			each item in arr
+				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${item.name}.webp`, type="image/webp")
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt="ㅤ")
+	else 
+		picture
 			source(srcset=`static/images/content/${name}.webp`, type='image/webp')
-			img(src=`static/images/content/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
+			img(src=`static/images/content/${name}.png`, width=`${w}`, height=`${h}`, alt="ㅤ")
 
 
 //- mixin responsiveImage(name, name2)

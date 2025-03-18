@@ -1,0 +1,22 @@
+extends template/main
+
+block variables
+	- var title = 'оформление заказа'
+
+block content
+	include pages/orderpage/default-city
+
+block modals
+	include modules/orderOffcanvas/addAddressMobile
+	include modules/orderOffcanvas/addRecipientCourier
+	include modules/orderOffcanvas/addRecipient
+	include modules/orderOffcanvas/addRecipientMobile
+	include modules/orderOffcanvas/addComment
+	include modules/orderOffcanvas/points
+	include modules/orderOffcanvas/points-mobile
+	include modules/orderOffcanvas/point
+	include modules/warnings/order
+
+block script
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	script(src="static/js/pickuppoints.js")

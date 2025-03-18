@@ -237,6 +237,9 @@
 @media (max-width: 932px) {
     .certificate {
         --black-stroke: #2B2B2B;
+        &-theme-dark {
+
+        }
         &-form {
             .order-form__col {
                 width: 100%;
@@ -335,7 +338,7 @@
                     top: 0;
                     left: 0;
                     border-radius: inherit;
-                    background: rgba(255, 255, 255, 0.32);
+                    background: var(--before-bg);
                     backdrop-filter: blur(35px);
                 }
             }

@@ -673,6 +673,10 @@
             margin-bottom: 24px;
             &-controls {
                 display: flex;
+                .btn-circle {
+                    position: relative;
+                    z-index: 3;
+                }
             }
             &-menu {
                 display: none;

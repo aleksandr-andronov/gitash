@@ -3,9 +3,24 @@
 .certificate {
     --cert-color: #D9D9D9;
     --cert-bg: #F8F8F8;
+
+    --text-color: #000000;
+    --before-bg: rgba(255, 255, 255, 0.32);
+    
+
     position: relative;
     *.hidden {
         display: none;
+    }
+    &-theme-dark {
+        --text-color: #E4E4E4;
+        --before-bg: #ffffff;
+    }
+    &-img {
+        color: var(--text-color);
+        &__logo {
+            fill: var(--text-color);
+        }
     }
     &__actions {
         position: fixed;

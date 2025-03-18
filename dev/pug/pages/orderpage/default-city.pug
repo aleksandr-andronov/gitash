@@ -1,4 +1,5 @@
 .order
+    include components/m-head
     .container
         .order__inner
             .order__subhead
@@ -49,23 +50,23 @@
                                                         span.shipment-item__name Пункт выдачи
                                                         span.shipment-item__txt Доставка в СДЕК, Boxberry, Почта России, есть примерка
                                                         span.shipment-item__free бесплатно
-                            .order-form__hidden-block
+                            .order-form__hidden-block.visible
                                 .order-form__row-wrapper
                                     .order-form__row.flex
                                         .order-form__col.order-form__col--fw 
                                             .form-item
-                                                .form-item__group 
-                                                    .form-item__label улица*
+                                                .form-item__group.error 
+                                                    .form-item__label(data-default="улица*" data-error="введите пожалуйста улицу") улица*
                                                     input.form-input(type="text" data-validate)
                                         .order-form__col 
                                             .form-item
-                                                .form-item__group 
-                                                    .form-item__label дом*
+                                                .form-item__group.error 
+                                                    .form-item__label(data-default="дом*" data-error="введите пожалуйста дом*") дом*
                                                     input.form-input(type="text" data-validate)
                                         .order-form__col 
                                             .form-item
-                                                .form-item__group 
-                                                    .form-item__label квартира*
+                                                .form-item__group.error 
+                                                    .form-item__label(data-default="квартира*" data-error="введите пожалуйста квартиру*") квартира*
                                                     input.form-input(type="text" data-validate)
                                         .order-form__col.order-form__col--33 
                                             .form-item
@@ -87,9 +88,9 @@
                                                 .form-item__group 
                                                     .form-item__label комментарий курьеру
                                                     input.form-input(type="text")
-                            .order-form__hidden-block
+                            .order-form__hidden-block.visible
                                 .order-form__date-wrapper
-                                    .order-form__subtitle
+                                    .order-form__subtitle.error
                                         .order-form__subtitle-default Дата и время доставки*
                                         .order-form__subtitle-error Пожалуйста выберите дату и время доставки*
                                     .order-form__day-slider.slider
@@ -116,14 +117,14 @@
                                 .order-form__row.flex 
                                     .order-form__col 
                                         .form-item
-                                            .form-item__group 
-                                                .form-item__label имя*
+                                            .form-item__group.error 
+                                                .form-item__label(data-default="имя*" data-error="введите пожалуйста имя") имя*
                                                 input.form-input(type="text" data-validate)
                                     .order-form__col 
                                         .form-item
                                             .form-item__group 
-                                                .form-item__label фамилия*
-                                                input.form-input(type="text" data-validate)
+                                                .form-item__label фамилия
+                                                input.form-input(type="text")
                             .order-form__subtitle Контакты
                             .order-form__row-wrapper.order-form__row-wrapper--mb-2
                                 .order-form__row.flex
@@ -138,7 +139,7 @@
                                                         span.form-phone__btn-icon.icon 
                                                             +icon('down')
                                                 .form-phone__right
-                                                    .form-item__group 
+                                                    .form-item__group.error 
                                                         .form-item__label.form-item__label--hidden телефон*
                                                         input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" data-validate)
                                             .form-phone__dropdown.form-item__dropdown.outline-border
@@ -204,30 +205,21 @@
                                     button.order-form__btn(type="submit" disabled) оплатить заказ
                                 .order-form__controls-txt Нажимая на кнопку «оплатить заказ», я принимаю условия <a href="#" target="_blank">публичной оферты</a> и <a href="#" target="_blank">политики конфиденциальности</a>	
                     form.order-mobile(action="/")
-                        .order-mobile__group.order-mobile__group--no-border
-                            .order-mobile__delivery
-                                .order-mobile__delivery-top.d-flex 
-                                    .order-mobile__delivery-info.d-flex 
-                                        .order-mobile__delivery-info-icon.icon
-                                            +icon('delivery-icon') 
-                                        .order-mobile__delivery-info-txt Курьером по адресу
-                                    .order-mobile__delivery-price Бесплатно
-                                .order-mobile__delivery-bottom 
-                                    .order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
-                                    .order-mobile__delivery-txt Дата доставки: 14-18 ноября
-                                    a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addAddressMobile" data-bs-toggle="offcanvas") изменить адрес и тип доставки
-                        .order-mobile__group
-                            .order-mobile__item
-                                a.order-mobile__item-btn.d-flex(href="#addRecipient" data-bs-toggle="offcanvas")  
-                                    span.order-mobile__item-btn-icon.centered 
-                                        +icon('user-icon') 
-                                    span.order-mobile__item-btn-txt Алевтина Круглова
-                                    span.order-mobile__item-btn-arrow.centered 
-                                        +icon('right-icon')
-                                .order-mobile__item-desc 
-                                    .order-mobile__item-list 
-                                        .order-mobile__item-txt +7 903 483-38-34
-                                        .order-mobile__item-txt alya@mail.ru
+                        //- .order-mobile__group
+                        //-     .order-mobile__item.order-mobile__delivery
+                        //-         .order-mobile__delivery-top.d-flex 
+                        //-             .order-mobile__delivery-info.d-flex 
+                        //-                 .order-mobile__delivery-info-icon.icon
+                        //-                     +icon('delivery-icon') 
+                        //-                 .order-mobile__delivery-info-txt Курьером по адресу
+                        //-             .order-mobile__delivery-price Бесплатно
+                        //-         .order-mobile__delivery-bottom 
+                        //-             .order-mobile__delivery-txt г. Москва, ул Мосфильмовская, дом 34,  кв. 45, п&nbsp;3
+                        //-             .order-mobile__delivery-txt Дата доставки: 14-18 ноября
+                        //-             a.order-mobile__delivery-btn.btn.btn-outline.toggle-href(href="#addAddressMobile" data-bs-toggle="offcanvas") изменить адрес и тип доставки
+                        include components/delivery-type
+                        include components/customer-filled
+                        
                         .order-mobile__group
                             .order-mobile__item
                                 .order-mobile__item-btn.d-flex

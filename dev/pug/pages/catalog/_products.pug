@@ -1,5 +1,8 @@
 .catalog-list-wrapper
+    include buttons
     .catalog-list.flex
         - for (let i = 0; i < 12; i++)
             .catalog-list__item 
                 +newCard(false, false, true)
+
+    

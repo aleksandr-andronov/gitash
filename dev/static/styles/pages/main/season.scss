@@ -7,7 +7,10 @@
         }
     }
     &__title {
-        // margin-bottom: 32px;
+        &-icon {
+            display: none;
+            stroke: var(--black);
+        }
     }
     &__txt {
         max-width: 460px;
@@ -24,6 +27,7 @@
         &-head {
             max-width: 435px;
             margin-left: 24px;
+            
         }
         &__title {
             
@@ -43,15 +47,18 @@
     .season {
         &-head {
             display: flex;
-            align-items: flex-start;
+            align-items: flex-end;
             flex-wrap: wrap;
             margin-bottom: 16px;
             margin-left: 0;
             padding-left: var(--container-padding);
             padding-right: var(--container-padding);
+            position: relative;
         }
         &__title {
             margin-bottom: 0;
+            max-width: calc(100% - 14px);
+            padding-right: 4px;
         }
         &__txt {
             margin-top: 12px;
@@ -60,7 +67,18 @@
         }
         &__link {
             margin-top: 0;
-            margin-bottom: 0;
+            margin-bottom: 6px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .mainSection__link-icon {
+                margin: 0;
+            }
         }
     }
 }

@@ -1,0 +1,14 @@
+extends template/order
+
+block variables
+	- var title = 'оформление заказа'
+	- var first = true
+	- var recipient = true
+	- var switchSave = true
+	- var products = 1
+
+
+	- var delivery = true // Выводить типы доставки
+
+//- block content
+//- 	include pages/order/order-default

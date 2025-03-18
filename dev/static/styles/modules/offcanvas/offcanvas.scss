@@ -556,6 +556,9 @@
         }
         &__head {
             padding: 20px 14px;
+            &--has-step {
+                padding: 16px 20px 20px;
+            }
             &--has-search {
                 padding-bottom: 12px;
             }
@@ -576,8 +579,15 @@
                     padding-top: 16px;
                 }
             }
+            &-step {
+                text-align: center;
+                font-size: 12px;
+                line-height: normal;
+                margin-bottom: 8px;
+            }
         }
         &__title {
+            font-size: 18px;
             &--m-center {
                 text-align: center;
             }
@@ -590,7 +600,8 @@
             }
             &--m-overflow {
                 overflow-y: auto;
-                height: 100%;
+                max-height: 100%;
+                flex-grow: 1;
             }
         }
         &-close {
@@ -643,6 +654,19 @@
                     font-size: 24px;
                 }
             }
+        }
+    }
+
+    .second-open {
+        .offcanvas__head-step {
+            display: none;
+        }
+        .offcanvas__head-right {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .offcanvas__head {
+            padding: 20px var(--container-padding);
         }
     }
 }

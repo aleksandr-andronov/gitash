@@ -1,5 +1,36 @@
-// предупреждение
+// повторное открытие окна в заказе
 
+function secondOpenOffcanvas() {
+    const links = document.querySelectorAll('[data-bs-second]')
+    if (!links.length) return
+
+    links.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault()
+            const href = link.href
+
+            const url = new URL(href)
+            const id = url.hash.slice(1)
+
+            if (id) {
+                const targetEl = document.getElementById(id)
+                if (targetEl) {
+                    document.querySelectorAll('.second-open').forEach(el => el.classList.remove('second-open'))
+                    targetEl.classList.add('second-open')
+                } else {
+                    console.warn(`Элемент с id="${id}" не найден на странице`)
+                }
+            }
+        })
+    })
+}
+
+secondOpenOffcanvas()
+
+
+
+
+// предупреждение
 function manageClass(element, className, action, delay) {
     setTimeout(() => {
         element.classList[action](className)
@@ -25,6 +56,17 @@ setTimeout(() => {
     ashWarning()
 }, 2000)
 
+
+
+const slider = new Swiper('._catalog-types__slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 6,
+    breakpoints: {
+        1441: {
+            spaceBetween: 8,
+        }
+    }
+});
 
 
 function catalogSizes() {
@@ -273,9 +315,14 @@ function checkInputsValue() {
             validateInputs.forEach(input => {
                 if (!input.value) {
                     e.preventDefault()
-
                     const parent = input.closest('.form-item__group')
+                    const label = parent.querySelector('.form-item__label')
                     parent.classList.add('error')
+
+
+                    if (label && label.hasAttribute('data-error')) {
+                        label.textContent = label.dataset.error
+                    }
                 }
                 
             })
@@ -284,6 +331,24 @@ function checkInputsValue() {
 }
 
 checkInputsValue()
+
+function setInitialErrors() {
+    const forms = document.querySelectorAll('.form')
+    if (!forms.length) return
+
+    forms.forEach(form => {
+        const errorGroups = form.querySelectorAll('.form-item__group.error')
+        errorGroups.forEach(group => {
+            const label = group.querySelector('.form-item__label')
+            if (label && label.hasAttribute('data-error')) {
+                label.textContent = label.dataset.error
+            }
+        })
+    })
+}
+
+setInitialErrors()
+
 
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -1774,7 +1839,7 @@ function maskPhoneSm() {
     if (!elements.length) return;
   
     elements.forEach(item => {
-      const mask = IMask(item, { mask: '+7(000)000-00-00'});
+      const mask = IMask(item, { mask: '(000)000-00-00'});
       
       item.addEventListener('input', () => {
         let value = item.value.replace(/\D/g, '').replace(/^8|^7|^\+7/, ''); // Убираем +7, 8 или 7
@@ -1847,6 +1912,10 @@ function formInputsLabel() {
                     }
                 }, 200)
                 
+
+                if (label && label.hasAttribute('data-error')) {
+                    label.textContent = label.dataset.default
+                }
             })
         }) 
     }
@@ -2347,6 +2416,7 @@ function certImages() {
         const activeColorBtn = main.querySelector('.certificate-colors__btn.selected')
         const bgColor = activeColorBtn.dataset.bg
         const color = activeColorBtn.dataset.color
+        const theme = activeColorBtn.dataset.theme
 
         const outputPictures = document.querySelectorAll('.outputPicture');
         const promocodeBlock = document.querySelector('.certificate-img__promocode');
@@ -2356,16 +2426,13 @@ function certImages() {
         const activeItem = main.querySelector('.certificate-images__list-item--active')
 
 
-        // items.forEach(item => {
-        //     item.classList.remove('certificate-images__list-item--active')
-        //     item.removeAttribute('style')
-        // });
-
         const contentToClone = activeItem.innerHTML;
 
-        // activeItem.classList.add('certificate-images__list-item--active');
         main.style.setProperty('--cert-bg', bgColor);
         main.style.setProperty('--cert-color', color);
+
+        main.classList.add(`certificate-theme-${theme}`)
+        
 
 
         mobileImages.style.setProperty('--cert-bg', bgColor);
@@ -2429,6 +2496,8 @@ certImages()
 function changeColorCertificate() {
     const main = document.querySelector('.certificate')
     if (!main) return
+
+
     const buttons = main.querySelectorAll('.certificate-colors__btn')
     const outputPictures = main.querySelectorAll('.outputPicture')
     const promocodeBlock = main.querySelector('.certificate-img__promocode')
@@ -2444,6 +2513,16 @@ function changeColorCertificate() {
 
             const bgColor = btn.dataset.bg
             const color = btn.dataset.color
+
+            const theme = btn.dataset.theme
+
+            if (theme == 'dark') {
+                main.classList.add(`certificate-theme-dark`)
+                main.classList.remove(`certificate-theme-image`)
+            } else {
+                main.classList.remove(`certificate-theme-dark`)
+                main.classList.add(`certificate-theme-image`)
+            }
 
             buttons.forEach(i => i.classList.remove('selected'))
             btn.classList.add('selected')
@@ -2874,3 +2953,93 @@ textareaHeight();
 
 
   
+
+
+
+
+function catalogActionsSticky() {
+    const stickyElement = document.querySelector('._catalog__bottom-actions');
+    const btns = document.querySelectorAll('._catalog__a-btn')
+    const header = document.querySelector('.header');
+
+    if (!stickyElement || !header) {
+        return;
+    }
+
+    
+
+    const headerHeight = header.offsetHeight;
+    let lastScrollY = window.scrollY;
+    let isTopAdded = false;
+    let lastDirection = null;
+
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        const stickyOffsetTop = stickyElement.getBoundingClientRect().top + currentScrollY;
+
+        // Проверяем, достиг ли элемент высоты header
+        if (currentScrollY + headerHeight >= stickyOffsetTop) {
+            if (!isTopAdded) {
+                stickyElement.classList.add('_catalog__bottom-actions--top');
+                isTopAdded = true;
+            }
+
+            // Определяем направление прокрутки
+            const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+
+            if (direction !== lastDirection) {
+                if (direction === 'down') {
+                    stickyElement.classList.add('_catalog__bottom-actions--down');
+                    stickyElement.classList.remove('_catalog__bottom-actions--up');
+
+                    setTimeout(() => {
+                        if (btns.length) {
+                            btns.forEach(i => {
+                                i.classList.add('down')
+                                i.classList.remove('up')
+                            })
+                        }  
+                    }, 200)
+
+                } else {
+                    stickyElement.classList.add('_catalog__bottom-actions--up');
+                    stickyElement.classList.remove('_catalog__bottom-actions--down');
+
+                    setTimeout(() => {
+                        if (btns.length) {
+                            btns.forEach(i => {
+                                i.classList.remove('down')
+                                i.classList.add('up')
+                            })
+                        } 
+                    })
+
+                    
+                }
+
+                lastDirection = direction;
+            }
+        } else {
+            if (isTopAdded) {
+                stickyElement.classList.remove('_catalog__bottom-actions--top', '_catalog__bottom-actions--down', '_catalog__bottom-actions--up');
+                if (btns.length) {
+                    btns.forEach(i => {
+                        i.classList.remove('down', 'up')
+                    })
+                } 
+                isTopAdded = false;
+            }
+            lastDirection = null;
+        }
+
+        lastScrollY = currentScrollY;
+    };
+
+    // Привязываем обработчик к событию прокрутки
+    window.addEventListener('scroll', handleScroll);
+
+    // Выполняем обработчик сразу после загрузки страницы
+    window.addEventListener('load', handleScroll);
+}
+
+catalogActionsSticky();

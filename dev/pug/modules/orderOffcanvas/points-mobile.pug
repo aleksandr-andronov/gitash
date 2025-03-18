@@ -12,14 +12,15 @@ mixin pickupPoints(title, hanger, address, date)
 
 #pickupPointsMobile.offcanvas.offcanvas-end(tabindex="-1" data-bs-scroll="false" data-bs-keyboard="false" data-bs-backdrop="false" aria-hidden="true")
     .offcanvas__inner.offcanvas__inner--flex.offcanvas__inner--m-no-overflow.tabs 
-        .offcanvas__head.offcanvas__head--m-pb-0
+        .offcanvas__head.offcanvas__head--m-pb-0.offcanvas__head--has-step
             .offcanvas__head-inner.d-flex
                 .offcanvas__head-back
-                    a.offcanvas-close.btn-circle.pickupPoint-closePoints(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                    a.offcanvas-close.btn-circle.pickupPoint-closePoints(href="#addAddressMobile" data-bs-toggle="offcanvas" aria-label="закрыть") 
                         +svg('arrow-left')
                     a.offcanvas-close.btn-circle.pickupPoint-closeSearch.offcanvas-close--hidden(href="#" aria-label="назад") 
                         +svg('arrow-left')
                 .offcanvas__head-left 
+                    .offcanvas__head-step Шаг 1/3
                     .offcanvas__title.offcanvas__title--m-center.ttl.h4 Выбор пункта выдачи
                 .offcanvas__head-right 
                     a.offcanvas-close.btn-circle.hideMap(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
@@ -57,28 +58,28 @@ mixin pickupPoints(title, hanger, address, date)
                                             +svg('close', '14', '14')
                                     .mobileBottom__info 
                                         .sorting-dropdown__list
-                                            .sorting-dropdown__list-item 
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
                                                 label.form-select__radio
                                                     input(type="radio" name="sorting" checked data-value="СДЕК")
                                                     span.form-select__radio-content 
                                                         span.form-select__radio-txt СДЕК
                                                         span.form-select__radio-icon.icon 
                                                             +svg('check-circle', '16', '16')
-                                            .sorting-dropdown__list-item 
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
                                                 label.form-select__radio
                                                     input(type="radio" name="sorting" data-value="Boxberry")
                                                     span.form-select__radio-content 
                                                         span.form-select__radio-txt Boxberry
                                                         span.form-select__radio-icon.icon 
                                                             +svg('check-circle', '16', '16')
-                                            .sorting-dropdown__list-item 
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
                                                 label.form-select__radio
                                                     input(type="radio" name="sorting" data-value="Яндекс")
                                                     span.form-select__radio-content 
                                                         span.form-select__radio-txt Яндекс
                                                         span.form-select__radio-icon.icon 
                                                             +svg('check-circle', '16', '16')
-                                            .sorting-dropdown__list-item 
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
                                                 label.form-select__radio
                                                     input(type="radio" name="sorting" data-value="Почта России")
                                                     span.form-select__radio-content 
@@ -99,6 +100,7 @@ mixin pickupPoints(title, hanger, address, date)
                                 +pickupPoints('яндекс доставка', true, 'ул. Айская, д.48', 'дата доставки: 14-18 ноября')
                 .pickupPoint-content__item.tabs-content.active.animate(data-tabs="map")
                     #pickupPointsMapMobile
+                    include ../../pages/orderpage/mapControls
             .pickupPoint-mSearch
                 form.pickupPoint-mSearch__form(action="#") 
                     .orderMap-search.form-item.form-item-dropdown.form-item-search

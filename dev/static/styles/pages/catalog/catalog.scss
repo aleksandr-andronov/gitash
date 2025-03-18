@@ -90,7 +90,7 @@
         }
     }
     &__head {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
         &--has-tab {
             position: relative;
             padding-bottom: 84px;
@@ -182,6 +182,8 @@
     }
     &__qty {
         letter-spacing: -0.03em;
+        font-size: 14px;
+        line-height: normal;
     }
     &-list {
         margin-left: -4px;
@@ -228,6 +230,7 @@
 .filter {
     &-btn {
         align-items: center;
+        position: relative;
         &:hover {
             color: var(--text-black-hover);
             fill: var(--text-black-hover);
@@ -254,6 +257,11 @@
             font-size: 14px;
             line-height: 1;
             opacity: 0;
+
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(calc(100% + 8px), -50%);
         }
     }
     height: 100%;
@@ -476,6 +484,9 @@
                 top: 130px;
             }
         }
+        &__qty {
+            font-size: 12px;
+        }
         &__head {
             margin-bottom: 24px;
             &--has-tab {
@@ -680,6 +691,7 @@
         }
         &__head {
             margin-bottom: 24px;
+            margin-bottom: 12px;
             &--has-tab {
                 margin-bottom: 28px;
                 padding-bottom: 48px;
@@ -767,7 +779,7 @@
                 padding-right: 14px;
                 padding-top: 0;
                 padding-bottom: 0px;
-                margin-top: -38px;
+                // margin-top: -38px;
                 margin-bottom: 52px;
                 transition: .2s ease-in-out;
                 &::before {
@@ -916,6 +928,11 @@
                 line-height: 76%;
             }
         }
+        &-banner + .container {
+            .catalog__actions--sticky {
+                margin-top: -38px;
+            }
+        }
         &__result {
             &-title {
                 font-size: 12px;
@@ -989,6 +1006,18 @@
             font-weight: 500;
             justify-content: flex-end;
             height: 14px;
+            &.button {
+                font-size: 15px;
+            }
+        }
+        &-dropdown {
+            &__list {
+                &-item {
+                    &--m-border {
+                        border-top: 1px solid var(--stroke-element);
+                    }
+                }
+            }
         }
     }
 

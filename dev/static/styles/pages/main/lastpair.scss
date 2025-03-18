@@ -1,0 +1,84 @@
+.lastpair {
+    &-head {
+        padding-left: vw(40, 1920);
+        padding-right: vw(54, 1920);
+        margin-bottom: vw(32, 1920);
+        &__inner {
+            align-items: center;
+            column-gap: vw(56, 1920);
+        }
+    }
+    &__title {
+        font-size: vw(112, 1920);
+        line-height: 81%;
+        letter-spacing: -0.05em;
+        // line-height: 1;
+    }
+    &__txt {
+        text-align: center;
+        font-size: vw(26, 1920);
+        line-height: 116%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .lastpair {
+        &-head {
+            padding-left: vw(32, 1440);
+            padding-right: vw(32, 1440);
+            &__inner {
+                column-gap: vw(44, 1440);
+            }
+        }
+        &__title {
+            
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .lastpair {
+        &-head {
+            background: var(--card--bg);
+            padding: vw(32, 1024) vw(28, 1024);
+            color: #F08346;
+            &__inner {
+                flex-wrap: wrap;
+                row-gap: vw(48, 1024);
+                justify-content: space-between;
+            }
+        }
+        &__title {
+            font-size: vw(92, 1024);
+            letter-spacing: -0.02em;
+        }
+        &__txt {
+            font-size: vw(30, 1024);
+            line-height: 90%;
+            text-align: left;
+        }
+        &__sale {   
+            font-size: vw(64, 1024);
+        }
+    }
+}
+
+@media (max-width: 834px) {
+    .lastpair {
+        &-head {
+            padding: vw(28, 744) vw(30, 744);
+            &__inner {
+                row-gap: vw(72, 744);
+            }
+        }
+        &__title {
+            font-size: vw(96, 744);
+        }
+        &__txt {
+            font-size: vw(32, 744);
+        }
+        &__sale {
+            font-size: vw(78, 744);
+        }
+    }
+}
