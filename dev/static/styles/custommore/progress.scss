@@ -1,0 +1,288 @@
+.ashQuiz {
+    overflow: hidden;
+    &-progress {
+        flex-direction: column;
+        display: none;
+        // min-height: calc(100vh - 6.125rem);
+        flex-grow: 1;
+        &.full {
+            .ashQuiz-progress__img {
+                top: -74px;
+                left: -16px;
+                right: -16px;
+                height: 100vh;
+                &::before {
+                    opacity: 0.2;
+                }
+                img {
+                    width: rem(2467);
+                    right: -500px;
+                    transform: scale(1);
+                    top: -60px;
+                    right: -494px;
+                }
+            }
+            .ashQuiz-progress__logo {
+                animation: fadeOut 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0) forwards;
+            }
+            .ashQuiz-progress__tickets {
+                opacity: 0;
+            }
+        }
+        &.show-promo {
+            .ashQuiz-progress__content {
+                height: 0;
+            }
+            .ashQuiz-progress__logo {
+                display: none;
+            }
+            // .ashQuiz-final {
+            //     display: block;
+            // }
+        }
+        &.show-logo {
+            .ashQuiz-progress__logo {
+                display: block;
+                margin-top: 0;
+            }
+        }
+        &__img {
+            overflow: hidden;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            transition:  .8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #1B1B1D;
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+                z-index: 3;
+                pointer-events: none;
+            }
+            &-inner {
+                width: 494px;
+                position: relative;
+            }
+            img {
+                position: absolute;
+                max-width: initial;
+                width: 1718px;
+                top: -170px;
+                right: -250px;
+                transition:  .8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+                transform-origin: top right;
+            }
+        }
+        &__content {
+            position: relative;
+            height: rem(412);
+        }
+        &__tickets {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            &.hide-items {
+                .ashQuiz-progress__tickets-item:not(.error) {
+                    .ashQuiz-progress__tickets-item__bg {
+                        opacity: 0;
+                    }
+                    .ashQuiz-progress__tickets-item__inner {
+                        transition: .2s ease-in-out;
+                        opacity: 0;
+                    }
+                }
+                .ashQuiz-progress__tickets-line {
+                    opacity: 0;
+                }
+            }
+            &-line {
+                height: 2px;
+                width: 100%;
+                position: relative;
+                flex-shrink: 0;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    background: #ECF5FB;
+                    height: 100%;
+                    transition: height .2s ease-in-out;
+                }
+            }
+            &-item {
+                flex-grow: 1;
+                padding-left: rem(16);
+                padding-right: rem(8);
+                position: relative;
+                color: var(--black);
+                &.animate {
+                    color: var(--white);
+                    // &::before {
+                    //     opacity: 1;
+                    // }
+                    .ashQuiz-progress__tickets-item__bg {
+                        left: initial;
+                        right: 0;
+                        width: 0%;
+                    }
+                }
+                &.animate-ticket {
+                    &::before {
+                        opacity: 0;
+                    }
+                    .ashQuiz-progress__tickets-item__prize {
+                        animation: rotateTicket 0.4s ease-in forwards;
+                        &-img {
+                            path {
+                                fill: var(--white);
+                            }
+                        }
+                    }
+                }
+                &.no-info {
+                    .ashQuiz-progress__tickets-item__inner {
+                        opacity: 0;
+                    }
+                }
+                &--burn {
+                    &.animate-ticket {
+                        .ashQuiz-progress__tickets-item__prize {
+                            &-img {
+                                path {
+                                    fill: #83C9FF;
+                                }
+                            }
+                        }
+                    }
+                }
+                &::before {
+                    opacity: 0;
+                    border-color: #356095;
+                }
+                &.error {
+                    .ashQuiz-progress__tickets-item__inner {
+                        opacity: 0;
+                    }
+                    .ashQuiz-progress__tickets-item__bg {
+                        left: initial;
+                        right: 0;
+                        width: 0%;
+                    }
+                }
+                &--burn {
+                    color: #025191;
+                }
+                &.active {
+                    color: var(--white);
+                }
+                &__bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    background: var(--white);
+                    transition: .4s ease-in;
+                }
+                &__inner {
+                    height: 100%;
+                    align-items: center;
+                    position: relative;
+                    z-index: 3;
+                }
+                &__prize {
+                    margin-left: auto;
+                    position: relative;
+                    &-img {
+                        width: rem(76);
+                        height: rem(28);
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        path {
+                            fill: #EEEEEE;
+                        }
+                        &--blue {
+                            path {
+                                fill: #83C9FF;
+                            }
+                        }
+                    }
+                    &-txt {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        color: #025191;
+                    }
+                }
+                &__txt {
+                    margin-right: rem(8);
+                    
+                }
+            }
+        }
+        &__logo {
+            text-align: center;
+            margin-top: rem(84);
+            position: relative;
+            z-index: 3;
+            transition: opacity .2s ease-in;
+            &.show {
+                animation: initial;
+                opacity: 1 !important;
+            }
+            img {
+                width: rem(264);
+            }
+        }
+    }
+}
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes rotateTicket {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

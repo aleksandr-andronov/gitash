@@ -1,12 +1,39 @@
 .sCollection.mainSection
-    .sCollection__inner
-        .sCollection-info
+    .sCollection__inner.ashBanner-content
+        .sCollection-info.ashBanner-content__info
             .sCollection-info__inner 
                 .sCollection__title.banner-title.ttl
-                    a.d-flex(href="#") Беззаботные дни 
-                        span.icon
-                            include ../../icons/link 
-                .sCollection__txt Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
+                    a.d-flex(href="#") 
+                        span Беззаботные дни 
+                        span.icon-outline
+                            include ../../icons/link-12
+                .sCollection__txt.uppercase Коллекция обуви, в которой сошлись отличный дизайн и экологичный подход, — оба ориентированы на здоровье человека и всей нашей планеты.
         .sCollection-image
             .sCollection-image__horizontal 
                 +jpgG('main-img', '1920', '892', 'scollection')
+            .sCollection-image__vertical 
+                +jpgG('main-img-m', '1920', '892', 'scollection')
+            a.sCollection-card(href="#")
+                .sCollection-card__inner
+                    .card-img
+                        .sCollection-card__img 
+                            +pngC('scol', '176', '235')
+                    .card-bottom-info 
+                        .card-info__name.txt-sm Zeta
+                        .card-price.card-info__price.txt-sm 
+                            .card-price__new 18 990 ₽
+                            .card-price__old 22 990 ₽
+                    .card-stickers
+                        .card-stickers__item.card-stickers__item--sale.ttl.sticker -30%
+                    .card-top-right-icon 
+                        .sCollection-card__icon.icon-outline
+                            include ../../icons/link-12
+                        button.sCollection-card__close.icon-outline(type="button")
+                            include ../../icons/x-11
+            button.sCollection-dot(type="button")
+                .sCollection-dot__inner
+                .sCollection-dot__back
+                    span
+            button.sCollection-favorite.btn-circle(type="button")
+                +icon('heart') 
+                +icon('heart-fill')

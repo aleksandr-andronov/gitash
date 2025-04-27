@@ -1,0 +1,95 @@
+#paymentPodeli.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close', '16', '16')
+        .offcanvas-podeli
+            .offcanvas-podeli__logo-wrapper
+                .offcanvas-podeli__logo 
+                    +svg('podeli-logo', '115', '32')
+            .offcanvas-podeli__title.bold Оплатите сейчас только 25% стоимости покупки
+            .offcanvas-podeli__txt Остальное — равными платежами раз в две недели
+            .offcanvas-podeli__info
+                .offcanvas-podeli__info-inner
+                    .offcanvas-podeli__info-head.d-flex.items-center
+                        .offcanvas-podeli__info-price.s-bold 10 800 ₽ 
+                        .offcanvas-podeli__logo.ml-auto 
+                            +svg('podeli-logo', '115', '32')
+                    .offcanvas-podeli__info-body 
+                        .offcanvas-podeli__info-switch.d-grid 
+                            .offcanvas-podeli__info-switch__item 
+                                label.offcanvas-podeli__info-label
+                                    input.d-none(type="radio" name="podeli" checked)
+                                    span.offcanvas-podeli__info-label__content.centered.flex-col 
+                                        span.offcanvas-podeli__info-label__qty 4 платежа
+                                        span.offcanvas-podeli__info-label__price.s-bold 2 700 ₽
+                            .offcanvas-podeli__info-switch__item 
+                                label.offcanvas-podeli__info-label
+                                    input.d-none(type="radio" name="podeli")
+                                    span.offcanvas-podeli__info-label__content.centered.flex-col 
+                                        span.offcanvas-podeli__info-label__qty 6 платежей
+                                        span.offcanvas-podeli__info-label__price.s-bold 1 800
+                            .offcanvas-podeli__info-switch__item 
+                                label.offcanvas-podeli__info-label
+                                    input.d-none(type="radio" name="podeli")
+                                    span.offcanvas-podeli__info-label__content.centered.flex-col 
+                                        span.offcanvas-podeli__info-label__qty 10 платежей
+                                        span.offcanvas-podeli__info-label__price.s-bold 1 080 ₽
+                    .offcanvas-podeli__info-foot
+                        .offcanvas-podeli__info-lines.d-grid
+                            .offcanvas-podeli__info-lines__left 
+                                .offcanvas-podeli__info-lines__txt Сегодня
+                                .offcanvas-podeli__info-lines__line
+                                .offcanvas-podeli__info-lines__today.s-bold
+                                    .offcanvas-podeli__info-lines__today-inner 2 700 ₽
+                            .offcanvas-podeli__info-lines__right
+                                .offcanvas-podeli__info-lines__txt далее раз в 2 недели
+                                .offcanvas-podeli__info-lines__line.offcanvas-podeli__info-lines__line--grey 
+                                .offcanvas-podeli__info-lines__group.d-flex.items-center 
+                                    .offcanvas-podeli__info-lines__then.s-bold 3 платежа по 2 700 ₽
+                                    .offcanvas-podeli__info-lines__warning-wrapper.ml-auto
+                                        .offcanvas-podeli__info-lines__warning.centered 
+                                            +svg('TooltipIcon', '10', '10')
+            .offcanvas-podeli__txt-2 А ещё — скидка до 25% на последний платеж при оформлении бесплатной дебетовой Альфа-Карты, но только для новых клиентов Альфа-Банка.
+            .offcanvas-podeli__title.bold Как воспользоваться?
+            .offcanvas-podeli__desc 
+                .offcanvas-podeli__slider-wrapper 
+                    .offcanvas-podeli__slider.slider 
+                        .swiper-wrapper 
+                            .swiper-slide
+                                .offcanvas-podeli__slide.d-flex.items-center
+                                    .offcanvas-podeli__slide-info
+                                        .offcanvas-podeli__slide-step Шаг 1
+                                        .offcanvas-podeli__slide-title.bold Соберите корзину товаров в магазине из списка наших партнёров
+                                        .offcanvas-podeli__slide-txt Например, в Золотом Яблоке, Gloria Jeans, ZARINA, Sima-land и многих других. <br>Все магазины по ссылке: 
+                                            a.underline(href="podeli.ru/shoping" target="_blank") podeli.ru/shoping
+                                    .offcanvas-podeli__slide-img 
+                                        +pngG('podeli-img-1', '293', '182')
+                            .swiper-slide
+                                .offcanvas-podeli__slide.d-flex.items-center
+                                    .offcanvas-podeli__slide-info
+                                        .offcanvas-podeli__slide-step Шаг 2
+                                        .offcanvas-podeli__slide-title.bold При оформлении заказа выберите способ оплаты «Подели»
+                                        .offcanvas-podeli__slide-txt Всё так же просто, как и обычная оплата картой. Без комиссий и переплат.
+                                    .offcanvas-podeli__slide-img 
+                                        +pngG('podeli-img-2', '293', '182')
+                            .swiper-slide
+                                .offcanvas-podeli__slide.d-flex.items-center
+                                    .offcanvas-podeli__slide-info
+                                        .offcanvas-podeli__slide-step Шаг 3
+                                        .offcanvas-podeli__slide-title.bold Оплатите сегодня только 1/4 суммы, остальные три платежа будут списываться раз в 2 недели
+                                        .offcanvas-podeli__slide-txt Мы сделали подборку из 5 популярных магазинов косметики, одежды и техники.
+                                    .offcanvas-podeli__slide-img 
+                                        +pngG('podeli-img-3', '293', '182')
+                            .swiper-slide
+                                .offcanvas-podeli__slide.d-flex.items-center
+                                    .offcanvas-podeli__slide-info
+                                        .offcanvas-podeli__slide-step Шаг 4
+                                        .offcanvas-podeli__slide-title.bold Сделайте покупку ещё выгоднее с&nbsp;нашими скидками и акциями
+                                        .offcanvas-podeli__slide-txt Следите за акциями на <a href="podeli.ru" class="underline" target="_blank">podeli.ru</a>, чтобы получать промокоды на скидку и узнавать о других выгодах при оплате с Подели <br>в магазинах-партнёрах.
+                                    .offcanvas-podeli__slide-img 
+                                        +pngG('podeli-img-4', '293', '182')
+                .offcanvas-podeli__pagination
+            .offcanvas-podeli__foot
+                .offcanvas-podeli__foot-txt.offcanvas-podeli__foot-txt--grey ООО «А-4 Технологии», ОГРН 1227700064734. 115432, г. Москва, пр-кт Андропова, д. 18, к. 3, этаж/пом./ком. 9/XIV/1. 
+                .offcanvas-podeli__foot-txt Подробнее на 
+                    a.underline(href="https://podeli.ru/" target="_blank") podeli.ru

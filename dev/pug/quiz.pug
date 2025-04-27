@@ -1,0 +1,14 @@
+extends template/quiz
+
+block variables
+	- var title = 'quiz'
+	- var bodyClass = 'quizPage'
+
+block content
+	include pages/quiz/quiz
+
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/quiz.css") 
+
+block script
+	script(src="static/js/quiz.js?v2")

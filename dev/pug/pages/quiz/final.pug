@@ -1,0 +1,14 @@
+.ashQuiz-final
+    .ashQuiz-final__img 
+        +svg('ash-quiz-logo', '264', '96', 'quiz') 
+    .ashQuiz-final__head
+        .ashQuiz-final__title А мы знакомы?
+        .ashQuiz-final__txt Упс, кажется, вы не угадали. Чтобы получить промокод, надо пройти чуть дальше. Попробуете ещё раз?
+    .ashQuiz-final__body 
+        .ashQuiz-final__promocode.centered SSPROMO25
+    .ashQuiz-final__foot
+        .ashQuiz-final__buttons.d-grid 
+            button.ashQuiz-final__btn.btn#copyPromo(type="button") Cкопировать промокод
+            button.ashQuiz-final__btn.btn.btn-outline#repeatQuiz(type="button") Cыграть еще раз
+                span.ashQuiz-final__btn-icon
+                    +svg('again', '54', '15', 'quiz')

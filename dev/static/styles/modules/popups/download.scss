@@ -1,3 +1,19 @@
+#downloadPopup {
+    --img-left: -66px;
+    --img-bottom: 0px;
+    --img-width: 348px;
+    --qr-size: 120px;
+    --pl: 280px;
+}
+
+#quizPopup {
+    --img-left: -30px;
+    --img-bottom: -12px;
+    --img-width: 284px;
+    --qr-size: 129px;
+    --pl: 280px;
+}
+
 .downloadPopup {
     position: fixed;
     bottom: 40px;
@@ -7,21 +23,23 @@
     background: var(--black);
     color: var(--white);
     border-radius: 10px;
-    padding: 28px 28px 28px 280px;
+    padding: 28px 28px 28px var(--pl);
     display: none;
     opacity: 0;
     transition: .2s ease-in-out;
+    min-height: 360px;
+    align-items: center;
     &.visible {
-        display: block;
+        display: flex;
     }
     &.animate {
         opacity: 1;
     }
     &__img {
         position: absolute;
-        bottom: 0;
-        left: -66px;
-        width: 348px;
+        bottom: var(--img-bottom);
+        left: var(--img-left);
+        width: var(--img-width);
     }
     &__close {
         position: absolute;
@@ -32,7 +50,11 @@
         }
     }
     &__qr {
+        width: var(--qr-size);
         margin-bottom: 24px;
+        img {
+            width: 100%;
+        }
     }
     &__title {
         font-size: 24px;
@@ -43,7 +65,7 @@
     }
     &__txt {
         max-width: 290px;
-        margin-bottom: 20px;
+        
     }
     &__btn {
         padding: 10px 16px;
@@ -56,20 +78,39 @@
     &__img-btn {
         display: none;
     }
+    &__button {
+        display: none;
+    }
 }
 
 @media (max-width: 1440px) {
+
+    #downloadPopup {
+        --img-left: -58px;
+        --img-width: 286px;
+        --qr-size: 100px;
+        --pl: 214px;
+    }
+    
+    #quizPopup {
+        --img-left: -28px;
+        --img-width: 239px;
+        --qr-size: 112px;
+        --pl: 230px;
+    }
+    
+
     .downloadPopup {
         width: 516px;
         bottom: 30px;
         right: 30px;
-        padding: 24px 24px 24px 214px;
+        padding: 24px 24px 24px var(--pl);
+        min-height: 302px;
         &__img {
-            width: 286px;
-            right: -58px;
+            
         }
         &__qr {
-            width: 100px;
+            
             margin-bottom: 20px;
         }
         &__title {
@@ -77,7 +118,6 @@
             margin-bottom: 8px;
         }
         &__txt {
-            margin-bottom: 16px;
             max-width: 256px;
         }
         &__btn {
@@ -96,13 +136,30 @@
 }
 
 @media (max-width: 480px) {
+
+    #downloadPopup {
+        
+        --img-width: 277px;
+        --pb: 240px;
+        
+    }
+    
+    #quizPopup {
+        
+        --img-width: 356px;
+        --pb: 124px;
+        --img-bottom: 0px;
+        
+    }
+
     .downloadPopup {
         bottom: 0;
         right: 0;
         width: 100%;
-        padding: 46px 12px 240px;
+        padding: 46px 12px var(--pb);
         transform: translateY(100%);
         border-radius: 10px 10px 0 0;
+        min-height: initial;
         &.animate {
             transform: translateY(0%);
         }
@@ -128,7 +185,6 @@
             display: none;
         }
         &__img {
-            width: 277px;
             left: 0;
             right: 0;
             margin-left: auto;
@@ -136,6 +192,17 @@
         }
         &__img-btn {
             display: block;
+        }
+        &__button {
+            display: flex;
+            gap: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 9px 10px 8px 14px;
+            &-icon {
+                width: 14px;
+                height: 14px;
+            }
         }
     }
 }

@@ -1,0 +1,85 @@
+.ashQuiz {
+    &-final {
+        // min-height: calc(100vh - 6.125rem);
+        flex-grow: 1;
+        color: var(--white);
+        flex-direction: column;
+        display: none;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+        position: relative;
+        z-index: 9;
+        &.animate {
+            opacity: 1;
+        }
+        &__img {
+            display: none;
+            justify-content: center;
+            transition: opacity .2s ease-in;
+            &.animate {
+                opacity: 1;
+            }
+        }
+        &__body {
+            margin: auto;
+        }
+        &__title {
+            font-size: rem(28);
+            line-height: 105%;
+            margin-bottom: rem(12);
+            transition: .2s ease-in;
+            &.hide {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+        &__txt {
+            line-height: 120%;
+            max-width: rem(272);
+            transition: opacity .2s ease-in;
+            &.hide {
+                opacity: 0;
+            }
+        }
+        &__buttons {
+            gap: rem(12);
+            transition: opacity .2s ease-in;
+            &.hide {
+                opacity: 0;
+                
+            }
+            &.hide-2 {
+                opacity: 1;
+                .ashQuiz-final__btn {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &__btn {
+            width: 100%;
+            position: relative;
+            &-icon  {
+                width: rem(54);
+                position: absolute;
+                top: rem(8);
+                right: rem(12);
+            }
+        }
+        &__promocode {
+            width: rem(240);
+            height: rem(56);
+            margin-left: auto;
+            margin-right: auto;
+            background: url(../../static/images/general/quiz/ticket-big.svg) 0 0 no-repeat;
+            font-size: rem(28);
+            color: var(--white);
+            transition: width .2s ease-in-out; 
+            overflow: hidden;
+            &.hide {
+                width: 0rem;
+            }
+        }
+    }
+}

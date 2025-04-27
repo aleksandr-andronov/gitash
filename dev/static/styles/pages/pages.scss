@@ -7,6 +7,7 @@
 @import "main/new";
 @import "main/reash";
 @import "main/banner";
+@import "main/collection";
 @import "main/sale";
 @import "main/ashclub";
 @import "main/lastpair";
@@ -21,9 +22,13 @@
 
 @import "account/account";
 @import "info/info";
+@import "info/delivery";
 @import "cart/cart";
 @import "search/search";
 @import "product/product";
+@import "product/tooltip";
+@import "product/price";
+@import "product/points";
 @import "product/gallery";
 @import "catalog/catalog";
 @import "catalog/catalognew";

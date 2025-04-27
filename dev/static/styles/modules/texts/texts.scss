@@ -1,7 +1,7 @@
 .sticker {
     font-size: 14px;
-    letter-spacing: 0.03em;
-    line-height: normal;
+    letter-spacing: -0.01em;
+    line-height: 1;
     text-transform: uppercase;
     &--sale {
         color: var(--sale);
@@ -9,8 +9,10 @@
     &--new {
         color: var(--new);
     }
+    &--grey {
+        color: #606060;
+    }
 }
-
 
 
 .banner-title {
@@ -66,6 +68,12 @@
     font-weight: 500;
 }
 
+
+.technic {
+    font-size: 14px;
+    line-height: 1;
+}
+
 @media (max-width: 1440px) {
     // .banner-title {
     //     font-size: 75px;
@@ -92,6 +100,11 @@
     }
 
     .sticker {
+        font-size: 12px;
+    }
+
+
+    .technic {
         font-size: 12px;
     }
 }

@@ -8,13 +8,6 @@
         &:has(.focused), &:has(.show-date) {
             z-index: 10;
         }
-        // &-select {
-        //     .form-item__group.focused + .form-item__dropdown {
-        //         display: block;
-        //         opacity: 1;
-        //     }
-        // }
-        
         &__group {
             position: relative;
             &.focused, &.error {
@@ -38,14 +31,6 @@
                 .form-item__dropdown {
                     display: block;
                 }
-                // .form-item__clear {
-                //     &-default {
-                //         display: none;
-                //     }
-                //     &-active {
-                //         display: flex;
-                //     }
-                // }
             }
             &.error {
                 .form-input {
@@ -282,6 +267,7 @@
             border-radius: 0;
             background: none;
             --adp-cell-background-color-selected: #000000;
+            --adp-background-color-selected-other-month-focused: transparent;
         }
         .air-datepicker-nav {
             border: none;
@@ -340,7 +326,7 @@
         transition: border-color .2s ease-in-out;
         overflow: hidden;
         &::placeholder {
-            color: var(--grey-4);
+            color: var(--text-grey);
         }
         &--no-border {
             border: none;
@@ -354,7 +340,7 @@
             }
             &:focus {
                 &::placeholder {
-                    color: var(--grey-4);
+                    color: var(--text-grey);
                 }
             }
         }

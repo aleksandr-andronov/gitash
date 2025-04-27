@@ -1,0 +1,6 @@
+include delivery/search
+.delivery-content
+    if (result == 'null')
+        include delivery/null
+    else if (result == 'result')
+        include delivery/result

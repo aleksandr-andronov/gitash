@@ -2174,6 +2174,13 @@ body:has(.account-mobile__foot) .wrapper {
         &__left {
             display: none;
         }
+        &-status {
+            margin-left: calc(-1 * var(--container-padding));
+            margin-right: calc(-1 * var(--container-padding));
+            padding-left: var(--container-padding);
+            padding-right: var(--container-padding);
+            overflow: hidden;
+        }
         &-mobile {
             display: block;
             padding-top: 0;

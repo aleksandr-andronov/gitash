@@ -1,0 +1,38 @@
+mixin label(txt, name, status)
+    label.ashQuiz-form__label
+        input.ashQuiz-form__label-input(type="radio" name=`${name}` data-answer=`${status ? 'correct' : 'wrong'}`)
+        span.ashQuiz-form__label-content.outline-border 
+            span.ashQuiz-form__label-content__inner.d-flex
+                span.ashQuiz-form__label-txt #{txt}
+                span.ashQuiz-form__label-icon.icon 
+                    include icons/select
+
+mixin labelImg(txt, name, status, img)
+    label.ashQuiz-form__label
+        input.ashQuiz-form__label-input(type="radio" name=`${name}` data-answer=`${status ? 'correct' : 'wrong'}`)
+        span.ashQuiz-form__label-content.outline-border.ashQuiz-form__label-content--ha
+            span.ashQuiz-form__label-img 
+                +jpgG(`${img}`, '171', '150', 'quiz')
+            span.ashQuiz-form__label-bottom #{txt}
+.ashQuiz
+    include intro
+    .ashQuiz-questions
+        .ashQuiz-head.outline-border 
+            .ashQuiz-head__inner.d-grid 
+                .ashQuiz-head__inner-item.centered 
+                    button.ashQuiz-head__btn.ashQuiz-head__btn-progress.centered#showProgress(type="button")
+                        include icons/progress
+                        include icons/back
+                .ashQuiz-head__inner-item.centered
+                    .ashQuiz-head__ask Вопрос <span>1</span> из 9
+                    .ashQuiz-head__ask Прогресс
+                .ashQuiz-head__inner-item.centered        
+                    a.ashQuiz-head__btn.centered(href="/")
+                        include icons/close
+        include form
+        include answer
+        include progress
+    include getprize
+        
+        
+    

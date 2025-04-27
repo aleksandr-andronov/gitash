@@ -1,0 +1,162 @@
+form.ashQuiz-form(action="/") 
+    .ashQuiz-form__steps 
+        .ashQuiz-form__step.active(data-step="1") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Сколько сейчас офлайн магазинов ASH в Москве?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 300 ₽
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('8', 'stores', true)
+                    .ashQuiz-form__questions-item
+                        +label('5', 'stores', false)
+                    .ashQuiz-form__questions-item
+                        +label('7', 'stores', false)
+                    .ashQuiz-form__questions-item
+                        +label('10', 'stores', false)
+        .ashQuiz-form__step(data-step="2") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Символ линейки Be Kind?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 500 ₽
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Бабочка', 'symbol', false)
+                    .ashQuiz-form__questions-item
+                        +label('Цветок', 'symbol', true)
+                    .ashQuiz-form__questions-item
+                        +label('Солнце', 'symbol', false)
+                    .ashQuiz-form__questions-item
+                        +label('Божья коровка', 'symbol', false)
+        .ashQuiz-form__step(data-step="3") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Как мы называем поклонниц бренда? 
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 1 000 ₽
+                        .ashQuiz-form__burn не сгорит
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('#ASHgirl', 'fan', true)
+                    .ashQuiz-form__questions-item
+                        +label('#ASHbabe', 'fan', false)
+                    .ashQuiz-form__questions-item
+                        +label('#ASHsister', 'fan', false)
+                    .ashQuiz-form__questions-item
+                        +label('#ASHchick', 'fan', false)
+        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="4" data-bg="bg-4") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Какой национальности основатели бренда ASH?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 1 500 ₽
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Британец и датчанин', 'founder', false)
+                    .ashQuiz-form__questions-item
+                        +label('Австралиец и канадец ', 'founder', false)
+                    .ashQuiz-form__questions-item
+                        +label('Испанец и американец', 'founder', false)
+                    .ashQuiz-form__questions-item
+                        +label('Француз и итальянец', 'founder', true)
+        .ashQuiz-form__step(data-step="5") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Какая из этих моделей — кроссовки?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 2 000 ₽
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Trendy', 'sneakers', false)
+                    .ashQuiz-form__questions-item
+                        +label('Brenda', 'sneakers', false)
+                    .ashQuiz-form__questions-item
+                        +label('Ruby', 'sneakers', false)
+                    .ashQuiz-form__questions-item
+                        +label('Dragon', 'sneakers', true)
+        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="6" data-bg="bg-6") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Где мы снимали кампейн SS25?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 2 500 ₽
+                        .ashQuiz-form__burn не сгорит
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Сен-Тропе', 'location', false)
+                    .ashQuiz-form__questions-item
+                        +label('Портофино', 'location', true)
+                    .ashQuiz-form__questions-item
+                        +label('Майорка', 'location', false)
+                    .ashQuiz-form__questions-item
+                        +label('Санторини', 'location', false)
+        .ashQuiz-form__step(data-step="7") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Кто выступал на сцене в кедах на каблуке ASH? 
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 2 500 ₽
+                        .ashQuiz-form__burn не сгорит
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid.ashQuiz-form__questions--images 
+                    .ashQuiz-form__questions-item
+                        +labelImg('Ариана Гранде', 'star', false, 'star-1')
+                    .ashQuiz-form__questions-item
+                        +labelImg('Рианна', 'star', false, 'star-2')
+                    .ashQuiz-form__questions-item
+                        +labelImg('Мадонна', 'star', true, 'star-3')
+                    .ashQuiz-form__questions-item
+                        +labelImg('Дженифер Лопес', 'star', false, 'star-4')
+        .ashQuiz-form__step(data-step="8") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title Самая популярная модель за всю историю бренда в России? 
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 4 000 ₽
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Кроссовки Addict ', 'popular', true)
+                    .ashQuiz-form__questions-item
+                        +label('Кеды Moonlight ', 'popular', false)
+                    .ashQuiz-form__questions-item
+                        +label('Сандалии Roma', 'popular', false)
+                    .ashQuiz-form__questions-item
+                        +label('Казаки Dylan', 'popular', false)
+        .ashQuiz-form__step(data-step="9") 
+            .ashQuiz-form__head
+                .ashQuiz-form__head-inner.d-grid 
+                    .ashQuiz-form__head-left 
+                        .ashQuiz-form__title С кем из художников у нас была коллаборация?
+                    .ashQuiz-form__head-right
+                        .ashQuiz-form__prize.centered 5 000 ₽
+                        .ashQuiz-form__burn не сгорит
+            .ashQuiz-form__body
+                .ashQuiz-form__questions.d-grid
+                    .ashQuiz-form__questions-item
+                        +label('Филип Паговски', 'collaboration', true)
+                    .ashQuiz-form__questions-item
+                        +label('Такаси Мураками', 'collaboration', false)
+                    .ashQuiz-form__questions-item
+                        +label('Клоди Йонгстра', 'collaboration', false)
+                    .ashQuiz-form__questions-item
+                        +label('Алекс Исраэль', 'collaboration', false)
+    .ashQuiz-form__controls.d-grid 
+        button.ashQuiz-form__controls-btn.btn.btn-outline#getPrize(type="button") Забрать приз
+        button.ashQuiz-form__controls-btn.btn#answer(type="button") Ответить

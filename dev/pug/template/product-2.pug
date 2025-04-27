@@ -38,6 +38,7 @@ html(lang="ru-RU")
 													img(src="static/images/content/tag-1.svg", alt="img")
 												.product-badges__item
 													img(src="static/images/content/tag-2.svg", alt="img")
+											
 										- for (let i = 1; i < 8; i++)
 											.product-gallery__item
 												.product-gallery__img.grey-img.product-gallery__img--sm.js-gallery-open(data-img=`${i+1}`) 
@@ -57,93 +58,108 @@ html(lang="ru-RU")
 											img(src="static/images/content/tag-1.svg", alt="img")
 										.product-badges__item
 											img(src="static/images/content/tag-2.svg", alt="img")
+								.product-sticker
+									if (badge == 'special')
+										.sticker.ttl.sticker--grey special offer
+									else 
+										.sticker.ttl.sticker--sale -30%
 							.product__right
 								h1.product__title.ttl.h4 Кроссовки женские 
 									span Addict
 								.product__price 
 									.product-price
-										.product-price__new.h5.ttl 17 140 ₽ 
+										.product-price__inner.d-flex.items-center 
+											.product-price__left 
+												.product-price__new.h5.ttl 17 140 ₽
+											.product-price__right
+												.product-price__old.d-flex.items-center 
+													.product-price__old-value 24 490 ₽
+													.product-price__old-icon
+														.product-tooltip.product-tooltip--right
+															.product-tooltip__btn.icon-outline
+																include ../icons/info-12
+															.product-tooltip__dropdown 
+																.product-tooltip__backdrop.product-tooltip__close
+																.product-tooltip__content
+																	button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+																		include ../icons/x-11
+																	.product-tooltip__title.mobile.medium Детализация скидки
+																	.product-tooltip__content-inner.d-flex.flex-col
+																		.product-tooltip__content-item
+																			.product-tooltip__item.d-flex
+																				.product-tooltip__item-name Скидка на товары
+																				.product-tooltip__item-value.medium — 3 670 ₽ (20%)
+																		.product-tooltip__content-item
+																			.product-tooltip__item.d-flex
+																				.product-tooltip__item-name Последняя пара
+																				.product-tooltip__item-value.medium — 3 670 ₽ (20%)
+																.product-tooltip__arrow
+																	+svg('dropdown-arrow', '32', '16')
+													//- .product-price__old-icon.icon-outline.product-price__sticker-sale__icon-btn 
+													//- 	include ../icons/info-12
+													//- .product-price__dropdown
+													//- 	.product-price__dropdown-backdrop.backdrop.product-price__close
+													//- 	.product-price__dropdown-inner 
+													//- 		a.product-price__dropdown-close.icon.product-price__close(href="#")
+													//- 			+svg('close', '14', '14')  
+													//- 		.product-price__dropdown-title Детализация скидки
+													//- 		.product-price__dropdown-content 
+													//- 			.product-price__dropdown-item.d-flex 
+													//- 				.product-price__dropdown-item__name Скидка на товары
+													//- 				.product-price__dropdown-item__value — 3 670 ₽ (20%)
+													//- 			.product-price__dropdown-item.d-flex 
+													//- 				.product-price__dropdown-item__name Последняя пара
+													//- 				.product-price__dropdown-item__value — 3 670 ₽ (20%)
+													//- 	.product-price__dropdown-arrow 
+													//- 		+svg('dropdown-arrow', '32', '16')
+										.product-price__points
+											.product-points
+												.product-points__inner.d-flex.items-center
+													.product-points__group.d-flex.items-center 
+														.product-points__icon.centered 
+															+svg('ya-plus', '14', '14')
+														.product-points__value 3500
+													.product-points__txt.technic баллов Плюса
 
-										if (badge == 'new')
-											.product-price__sticker
-												.product-price__sticker__item
-													.product-price__sticker-sale.d-flex 
-														.product-price__sticker-sale__txt.sticker.sticker--new.ttl new
-										else if(badge == 'last')
-											.product-price__sticker
-												.product-price__sticker__item
-													.product-price__sticker-sale.d-flex 
-														.product-price__sticker-sale__txt.sticker.sticker--sale.ttl -30%
-														.product-price__sticker-sale__icon
-															.product-price__sticker-sale__icon-btn.icon
-																include ../icons//info
-															.product-price__dropdown
-																.product-price__dropdown-backdrop.backdrop.product-price__close
-																.product-price__dropdown-inner 
-																	a.product-price__dropdown-close.icon.product-price__close(href="#")
-																		+svg('close', '14', '14')  
-																	.product-price__dropdown-title Детализация скидки
-																	.product-price__dropdown-content 
-																		.product-price__dropdown-item.d-flex 
-																			.product-price__dropdown-item__name Скидка на товары
-																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																		.product-price__dropdown-item.d-flex 
-																			.product-price__dropdown-item__name Последняя пара
-																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																.product-price__dropdown-arrow 
-																	+svg('dropdown-arrow', '32', '16')
-												.product-price__sticker__item
-													.product-price__sticker-sale.d-flex 
-														.product-price__sticker-sale__txt.sticker.ttl last -10%
-											
-										else
-											.product-price__old.ttl 24 490 ₽
-											.product-price__sticker
-												.product-price__sticker__item
-													.product-price__sticker-sale.d-flex 
-														.product-price__sticker-sale__txt.sticker.sticker--sale.ttl -30%
-														.product-price__sticker-sale__icon
-															.product-price__sticker-sale__icon-btn.icon
-																include ../icons//info
-															.product-price__dropdown
-																.product-price__dropdown-backdrop.backdrop.product-price__close
-																.product-price__dropdown-inner 
-																	a.product-price__dropdown-close.icon.product-price__close(href="#")
-																		+svg('close', '14', '14')  
-																	.product-price__dropdown-title Детализация скидки
-																	.product-price__dropdown-content 
-																		.product-price__dropdown-item.d-flex 
-																			.product-price__dropdown-item__name Скидка на товары
-																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																		.product-price__dropdown-item.d-flex 
-																			.product-price__dropdown-item__name Последняя пара
-																			.product-price__dropdown-item__value — 3 670 ₽ (20%)
-																.product-price__dropdown-arrow 
-																	+svg('dropdown-arrow', '32', '16')
+
+
 												
-								.product__installments
+								.product__installments.d-flex.flex-col
+									if (badge == 'special')
+										.product-installments.outline-border
+											.product-installments__left
+												.product-installments__group.d-flex.items-center
+													.product-installments__txt.txt-sm -30% по промокоду SP30
+													.product-installments__hint 
+														.product-tooltip
+															.product-tooltip__btn.icon-outline
+																include ../icons/info-12
+															.product-tooltip__dropdown 
+																.product-tooltip__backdrop.product-tooltip__close 
+																.product-tooltip__content 
+																	button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+																			include ../icons/x-11
+																	.product-tooltip__content-inner.d-flex.flex-col
+																		.product-tooltip__content-item
+																			.txt-sm Товар из раздела <a class="underline" href="#">SPECIAL OFFER</a>. Для получения скидки 30% примените промокод в корзине.
+																		.product-tooltip__content-item
+																			.tech-14 Скидка не суммируется с другими акциями
+																.product-tooltip__arrow
+																	+svg('dropdown-arrow', '32', '16')
+											.product-installments__right.product-installments__right--dots
+												.product-installments__promocode.ttl.uppercase sp30
 									.product-installments.outline-border 
-										.product-installments__icon 
-											+svg('product-split-icon', '37', '14')
-										.product-installments__txt.txt-sm Частями от 4 522 ₽
-										//- a.product-installments__link(href="#paymentShares" data-bs-toggle="offcanvas") 
-										//- 	span.product-installments__link-img 
-										//- 		+svg('dolyame_black', '81', '14')
-										//- 	span.product-installments__link-icon.icon 
-										//- 		include ../icons//right
-								.product__colors 
-									.product__subtitle
-										.product__subtitle-txt.base-up цвет
-									.product-colors.slider 
-										.swiper-wrapper 
-											- for (let i = 0; i < 5; i++)
-												.product-colors__slide.swiper-slide
-													a.product-colors__item.grey-img(href="#") 
-														+jpgC('color', '121', '151')
+										.product-installments__left
+											.product-installments__txt.txt-sm Частями от 4 522 ₽
+										.product-installments__right
+											.product-installments__icon 
+												+svg('product-split-icon', '37', '14')
+								.product__hr
 								.product__size 
 									.product__subtitle
 										.product__subtitle-txt.base-up.product-size__title(data-default="размер" data-error="выберите размер") Размер
-										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
+										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить разме
+									.product__size-warning.italic (Внимание! Модель большемерит на пол размера)
 									if (size2)
 										.product-size
 											.product-size__list-wrapper 
@@ -305,14 +321,25 @@ html(lang="ru-RU")
 											.product-notification__item-icon.product-notification__item-icon--outline.icon 
 												include ../icons//car
 											.product-notification__item-txt.txt-sm Бесплатная доставка курьером по всей России
+								.product__hr
+								.product__colors 
+									.product__subtitle
+										.product__subtitle-txt.base-up в других цветах
+									.product-colors.slider 
+										.swiper-wrapper 
+											- for (let i = 0; i < 5; i++)
+												.product-colors__slide.swiper-slide
+													a.product-colors__item.grey-img(href="#") 
+														+jpgC('color', '121', '151')
 								.product__info 
 									.product-info
 										.product-info__group 
 											.product-info__item
-												a.product-info__item-btn.d-flex(href="#")
+												a.product-info__item-btn.d-flex.copy_code(href="javascript:void(0);")
 													span.product-info__item-btn__txt.txt-sm артикул 440515
 													span.product-info__item-btn__icon.icon 
 														+icon('copy')
+														+icon('check-12')
 										.product-info__group 
 											.product-info__item
 												a.product-info__item-btn.d-flex(href="#hiddenInfo1" data-bs-toggle="collapse")

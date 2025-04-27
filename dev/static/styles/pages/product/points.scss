@@ -1,0 +1,41 @@
+.product {
+    &-points {
+        &__inner {
+            gap: 4px;
+        }
+        &__group {
+            background: #EDEFF2;
+            border-radius: 9px 2px 2px 9px;
+            height: 18px;
+            padding-left: 2px;
+            padding-right: 3px;
+            font-size: 15px;
+            gap: 3px;
+        }
+        &__value {
+            line-height: 1;
+        }
+        &__icon {
+            flex-shrink: 0;
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .product {
+        &-points {
+            &__group {
+                border-radius: 7px 2px 2px 7px;
+                height: 14px;
+                padding-right: 2px;
+                font-size: 12px;
+            }
+            &__icon {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}

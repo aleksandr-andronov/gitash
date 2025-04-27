@@ -1,0 +1,32 @@
+.ashTimer {
+    &-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    &-item {
+        background: var(--button-default);
+        color: #EBEBF4;
+        padding: 12px;
+        text-align: center;
+        border-radius: 8px;
+        &::before {
+            border-color: #65636E;
+        }
+        &__value {
+            font-size: 44px;
+            line-height: normal;
+        }
+        &__name {
+            font-size: 14px;
+            margin-top: -4px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .ashTimer {
+        &-grid {
+            gap: 2px;
+        }
+    }
+}

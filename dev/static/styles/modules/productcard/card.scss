@@ -215,6 +215,9 @@
                     color: #C26BF4;
                 }
             }
+            &--grey {
+                color: #606060;
+            }
         }
     }
 }
@@ -387,6 +390,9 @@
         &-stickers {
             top: 10px;
             left: 10px;
+            &__item {
+                font-size: 11px;
+            }
         }
     }
 }

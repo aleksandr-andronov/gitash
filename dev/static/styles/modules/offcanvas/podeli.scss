@@ -1,0 +1,380 @@
+.offcanvas {
+    &-podeli {
+        --podeli-red: #EF3124;
+        padding: 64px var(--offcanvas-px);
+        &__logo {
+            
+            img {
+                border-radius: 10px;
+            }
+        }
+        &__logo-wrapper {
+            padding-bottom: 4px;
+            margin-bottom: 20px;
+        }
+        &__title {
+            font-size: 37px;
+            line-height: 34px;
+            letter-spacing: -0.5px;
+        }
+        &__txt {
+            margin-top: 16px;
+            &-2 {
+                margin-top: 20px;
+                margin-bottom: 64px;
+            }
+        }
+        &__info {
+            background: linear-gradient(180deg, #F7F7F7 0%, #FFFFFF 100%);
+            border-radius: 32px;
+            padding: 1px;
+            margin-top: 20px;
+            box-shadow: 0px 14px 14px rgba(77, 50, 50, 0.08);
+            &-inner {
+                background: var(--white);
+                padding: 26px 26px 22px;
+                border-radius: inherit;
+            }
+            &-price {
+                font-size: 20px;
+                line-height: 120%;
+            }
+            &-body {
+                margin-top: 22px;
+                background: var(--stroke-default);
+                padding: 3px;
+                border-radius: 16px;
+                backdrop-filter: blur(18px)
+            }
+            &-switch {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3px;
+                &__item {
+
+                }
+            }
+            &-label {
+                display: block;
+                color: #24252E;
+                input {
+                    &:checked + span {
+                        background: var(--white);
+                    }
+                }
+                &__content {
+                    border-radius: 14px;
+                    height: 54px;
+                    gap: 4px;
+                }
+                &__qty {
+                    font-size: 14px;
+                    line-height: 1;
+                }
+                &__price {
+                    font-size: 16px;
+                    line-height: 1;
+                }
+            }
+
+            &-foot {
+                margin-top: 22px;
+            }
+            &-lines {
+                grid-template-columns: 124px 1fr;
+                gap: 10px;
+                &__txt {
+                    color: #A6A2AD;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    line-height: 130%;
+                }
+                &__line {
+                    height: 5px;
+                    border-radius: 26px;
+                    background: var(--podeli-red);
+                    &--grey {
+                        background: var(--stroke-default);
+                    }
+                }
+                &__group {
+                    margin-top: 14px;
+                }
+                &__then {
+                    font-size: 14px;
+                    line-height: 1;
+                }
+                &__warning {
+                    width: 22px;
+                    height: 22px;
+                    background: var(--stroke-default);
+                    border-radius: 50%;
+                }
+                &__today {
+                    position: relative;
+                    font-size: 14px;
+                    line-height: 1;
+                    margin-top: 10px;
+                    color: var(--white);
+                    width: fit-content; 
+                    &::before {
+                        content: "";
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 2px;
+                        transform: rotate(45deg);
+                        background: var(--podeli-red);
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: -2px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    &-inner {
+                        background: var(--podeli-red);
+                        padding: 6px 10px;
+                        border-radius: 22px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+        &__desc {
+            margin-top: 24px;
+        }
+        &__slider-wrapper {
+            margin-right: calc(-1 * var(--offcanvas-px));
+        }
+
+        &__slide {
+            height: 182px;
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
+            &-info {
+                max-width: 340px;
+            }
+            &-step {
+                font-size: 14px;
+                line-height: 22px;
+                margin-bottom: 6px;
+                color: #A6A2AD;
+            }
+            &-title {
+                font-size: 17px;
+                line-height: 125%;
+            }
+            &-txt {
+                margin-top: 24px;
+                font-size: 14px;
+                line-height: 125%;
+                color: #A6A2AD;
+            }
+            &-img {
+                position: absolute;
+                top: 0;
+                right: -70px;
+            }
+        }
+        &__pagination {
+            --swiper-pagination-bullet-horizontal-gap: 5px;
+            --swiper-pagination-bullet-size: 16px;
+            --swiper-pagination-bullet-inactive-opacity: 1;
+            --swiper-pagination-bullet-inactive-color: #E2E1E7;
+            --swiper-pagination-color: var(--podeli-red);
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        &__foot {
+            margin-top: 28px;
+            padding-top: 12px;
+            border-top: 1px solid #CCCCCC;
+            &-txt {
+                font-size: 14px;
+                line-height: 130%;
+                letter-spacing: -0.02em;
+                margin-bottom: 16px;
+                &--grey {
+                    color: var(--text-grey);
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .offcanvas {
+        &-podeli {
+            padding-top: 54px;
+            padding-bottom: 54px;
+            &__logo {
+                img {
+                    border-radius: 8px;
+                    height: 24px;
+                    width: auto;
+                }
+            }
+            &__logo-wrapper {
+                padding-bottom: 5px;
+                margin-bottom: 12px;
+            }
+            &__title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            &__txt {
+                margin-top: 12px;
+                &-2 {
+                    margin-top: 16px;
+                    margin-bottom: 52px;
+                }
+            }
+            &__info {
+                border-radius: 24px;
+                margin-top: 16px;
+                &-inner {
+                    padding: 20px 20px 16px;
+                }
+                &-price {
+                    font-size: 16px;
+                }
+                &-body {
+                    margin-top: 16px;
+                    padding: 2px;
+                    border-radius: 12px;
+                    backdrop-filter: blur(14px)
+                }
+                &-switch {
+                    gap: 2px;
+                }
+                &-label {
+                    &__content {
+                        border-radius: 10px;
+                        height:42px;
+                    }
+                    &__qty {
+                        font-size: 12px;
+                    }
+                    &__price {
+                        font-size: 14px;
+                    }
+                }
+    
+                &-foot {
+                    margin-top: 16px;
+                }
+                &-lines {
+                    grid-template-columns: 92px 1fr;
+                    gap: 5px;
+                    &__txt {
+                        font-size: 12px;
+                        margin-bottom: 8px;
+                    }
+                    &__line {
+                        height: 4px;
+                    }
+                    &__group {
+                        margin-top: 10px;
+                    }
+                    &__then {
+                        font-size: 12px;
+                    }
+                    &__warning {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    &__today {
+                        font-size: 12px;
+                        margin-top: 8px;
+                        &::before {
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 1px;
+                            top: -1px;
+                        }
+                        &-inner {
+                            padding: 4px 8px;
+                        }
+                    }
+                }
+            }
+            &__desc {
+                margin-top: 20px;
+            }
+            &__slide {
+                height: 150px;
+                &-info {
+                    max-width: 254px;
+                }
+                &-step {
+                    font-size: 12px;
+                    line-height: 16px;
+                    margin-bottom: 4px;
+                }
+                &-title {
+                    font-size: 15px;
+                }
+                &-txt {
+                    margin-top: 20px;
+                    font-size: 12px;
+                }
+                &-img {
+                    bottom: 0;
+                    right: -58px;
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+            &__pagination {
+                --swiper-pagination-bullet-horizontal-gap: 4px;
+                --swiper-pagination-bullet-size: 12px;
+            }
+            &__foot {
+                padding-top: 10px;
+                &-txt {
+                    font-size: 12px;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .offcanvas {
+        &-podeli {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            &__info {
+                &-lines {
+                    grid-template-columns: 76px 1fr;
+                    gap: 4px;
+                }
+            }
+            
+            &__slide {
+                height: 192px;
+                &-info {
+                    max-width: 185px;
+                }
+                
+                
+                &-img {
+                    bottom: 0;
+                    right: -124px;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        height: 172px;
+                    }
+                }
+            }
+        }
+    }
+}

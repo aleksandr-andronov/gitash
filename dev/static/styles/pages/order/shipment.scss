@@ -83,10 +83,10 @@
 .determineLocation {
     align-items: center;
     margin-top: 16px;
-    margin-bottom: 28px;
+    // margin-bottom: 28px;
     font-size: 16px;
     line-height: normal;
-    display: none;
+    // display: none;
     &__icon {
         width: 16px;
         height: 16px;
@@ -108,6 +108,7 @@
 }
 
 @media (max-width: 1440px) {
+    
     .shipment {
         &-list {
             margin-left: -6px;
@@ -139,14 +140,32 @@
             }
         }
     }
+
+    .determineLocation {
+        margin-top: 12px;
+        &__icon {
+            width: 14px;
+            height: 14px;
+        }  
+    } 
 }
 
 @media (max-width: 932px) {
     .determineLocation {
         display: flex;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+        height: 40px;
     }
     .shipment {
+        &-list {
+            margin-left: -4px;
+            margin-right: -4px;
+            &__col {
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+        }
         &-item {
             
             &__check {

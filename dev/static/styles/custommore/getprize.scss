@@ -1,0 +1,48 @@
+.ashQuiz {
+    &-getPrize {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(36px);
+        position: fixed;
+        z-index: 156;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        padding: rem(24) rem(16);
+        &.burn {
+            .ashQuiz-getPrize__content-default {
+                display: none;
+            }
+            .ashQuiz-getPrize__content-burn {
+                display: block;
+            }
+        }
+        &__content {
+            margin: auto;
+            width: 100%;
+            &-burn {
+                display: none;
+            }
+        }
+        &__title {
+            max-width: rem(316);
+            margin-bottom: rem(12);
+        }
+        &__txt {
+            font-size: rem(16);
+            line-height: 120%;
+        }
+        &__buttons {
+            width: 100%;
+            button {
+                width: 100%;
+            }
+            &-list {
+                grid-template-columns: 1fr;
+                gap: rem(12);
+            }
+        }
+    }
+}

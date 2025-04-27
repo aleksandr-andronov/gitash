@@ -1,0 +1,18 @@
+.downloadPopup#quizPopup
+    .downloadPopup__info 
+        .downloadPopup__qr 
+            +svg('qr-popup-quiz', '129', '129')
+        .downloadPopup__title.ttl ash quiz
+        .downloadPopup__txt Как хорошо вы знаете ASH? Проверьте себя в квизе и получите подарки. Квиз уже в мобильной версии и приложении ASH
+        a.downloadPopup__button.btn.btn-rounded.btn-white(href="#")
+            span.downloadPopup__button-txt играть
+            span.downloadPopup__button-icon.icon-outline
+                include ../../icons/link-11
+        a.downloadPopup__close.btn-circle(href="#") 
+            +icon('close') 
+    .downloadPopup__img
+        picture
+            source(srcset=`static/images/general/quiz-popup-m.webp`, type='image/webp', media="(max-width: 480px)")
+            source(srcset=`static/images/general/quiz-popup.webp`, type='image/webp')
+            img(src="static/images/general/quiz-popup.png", alt="img")
+

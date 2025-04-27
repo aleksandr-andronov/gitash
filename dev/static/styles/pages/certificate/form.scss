@@ -236,43 +236,62 @@
 
 @media (max-width: 932px) {
     .certificate {
+        --input-stroke: #2B2B2B;
         --black-stroke: #2B2B2B;
+        --label-color: #1B1B1D;
+        --label-color-error: #FFFFFF;
+        --label-bg-error: #D43705;
+        --label-backdrop: blur(5px);
+        --label-bg: rgba(245, 245, 245, 0.36);
+        
         &-theme-dark {
-
+            --input-stroke: #E2E1E7;
+            --label-color: #BCB8C4;
+            --label-bg-error: #FFFFFF;
+            --label-color-error: #DE4819;
+            --label-backdrop: initial;
+            --label-bg: #FFFFFF;
+            .certificate-form .switch-btn__content {
+                background: #F0F0F0;
+                &::before {
+                    border-color: transparent;
+                }
+            }
         }
         &-form {
+            
             .order-form__col {
                 width: 100%;
             }
             .form-input {
                 background: transparent;
-                border-color: var(--black-stroke);
+                border-color: var(--input-stroke);
                 &::placeholder {
-                    color: var(--black-stroke);
+                    color: var(--input-stroke);
                 }
             }
             .form-phone {
-                border-color: var(--black-stroke);
+                border-color: var(--input-stroke);
                 &__btn {
                     border-color: rgba(#000, .16);
                 }
             }
             .form-item__label, .form-item__txt {
-                color: var(--black-stroke);
+                color: var(--label-color);
             }
             .form-checkbox__icon {
-                border-color: var(--black-stroke);
+                border-color: var(--label-color);
             }
             .form-item__group.filled .form-item__label {
                 border-radius: 25px;
-                background: rgba(245, 245, 245, 0.36);
-                backdrop-filter: blur(5px);
+                background: var(--label-bg);
+                backdrop-filter: var(--label-backdrop);
             }
             .form-item__group.error .form-item__label {
                 border-radius: 25px;
-                background: #D43705;
-                color: var(--white);
-                backdrop-filter: blur(5px);
+                background: var(--label-bg-error);
+                color: var(--label-color-error);
+                backdrop-filter: var(--label-backdrop);
             }
             .form-item__group.error .form-input {
                 border-color: #D43705;
@@ -346,6 +365,7 @@
                 &-label {
                     span {
                         padding: 10px 12px;
+                        background: var(--fast-price-bg);
                     }
                 }
             }

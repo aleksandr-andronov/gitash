@@ -4,15 +4,14 @@
 @import "footer/footer";
 
 
-
-
-
-
 @import "offcanvas/offcanvas";
 @import "offcanvas/split";
+@import "offcanvas/yaPay";
+@import "offcanvas/podeli";
 @import "offcanvas/cert";
 @import "header/header";
 @import "form/form";
+@import "form/delivery";
 @import "productcard/productcard";
 @import "productcard/row-card";
 @import "productcard/card";
@@ -21,9 +20,11 @@
 @import "popups/download";
 @import "notification/notification";
 @import "warning/warning";
+@import "timer/timer";
 
 
 
 @import "modals/modals";
 @import "modals/blackfriday";
+@import "modals/presale";
  

@@ -1,0 +1,14 @@
+form.delivery-form.form(action="/") 
+    .form-item.form-item-dropdown
+        .form-item__group
+            input.delivery-form__input.form-input.ttl(type="text" autofocus placeholder="ваш населенный пункт")
+        .form-item__dropdown.outline-border
+            .form-item__dropdown-scroll(data-simplebar)
+                .form-item__list
+                    - for (let i = 0; i < 20; i++)
+                        .form-item__list-item 
+                            label.form-item__dropdown-label
+                                input(type="radio" name="city" data-value="г. Новосибирск, Новосибирская обл.")
+                                span.form-item__dropdown-label__txt г. Новосибирск, 
+                                    span Новосибирская обл.
+    .delivery-form__txt Введите название населенного пункта, чтобы посмотреть условия доставки

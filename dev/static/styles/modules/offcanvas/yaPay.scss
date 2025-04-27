@@ -1,0 +1,213 @@
+.offcanvas {
+    &-yaPay {
+        &__head {
+            margin-top: 50px;
+            padding-top: 28px;
+            padding-bottom: 20px;
+        }
+        &__logo {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        &__title {
+            font-size: 38px;
+            line-height: 40px;
+            letter-spacing: -0.59px;
+        }
+        &__txt {
+            max-width: 296px;
+            display: none;
+        }
+        &__subtitle {
+            font-size: 28px;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+        &__add {
+            padding: 24px 40px 32px;
+            &-content {
+                background: var(--Fill-Default-50, #F3F5F7);
+                border-radius: 8px;
+                padding: 24px;
+            }
+            &-title {
+                margin-bottom: 28px;
+            }
+            &-list {
+                &__item {
+                    &:not(:last-child) {
+                        padding-bottom: 20px;
+                        margin-bottom: 20px;
+                        border-bottom: 1px solid var(--stroke-default);
+                    }
+                }
+            }
+            &-item {
+                &__icon {
+                    margin-right: 8px;
+                }
+            }
+        }
+        &__work {
+            padding-left: var(--offcanvas-px);
+            padding-right: var(--offcanvas-px);
+            &-list {
+                position: relative;
+                &::before {
+                    content: "";
+                    height: 1px;
+                    width: 75%;
+                    position: absolute;
+                    top: 30px;
+                    left: 0;
+                    background: var(--stroke-default);
+                }
+                &__item {
+                    width: 25%;
+                }
+            }
+            &-item {
+                font-size: 15px;
+                line-height: 16px;
+                &__img {
+                    position: relative;
+                    z-index: 3;
+                    img {
+                        height: 79px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+        &__faq {
+            margin-top: 64px;
+            padding-left: var(--offcanvas-px);
+            padding-right: var(--offcanvas-px);
+            &-list {
+                padding-bottom: 24px;
+            }
+            &-txt {
+                padding: 16px 0;
+            }
+        }
+        &__btn {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .offcanvas {
+        &-yaPay {
+            &__head {
+                margin-top: 0;
+                padding-top: 54px;
+                padding-bottom: 16px;
+            }
+            &__logo {
+                margin-bottom: 32px;
+                img {
+                    height: 28px;
+                    width: auto;
+                }
+            }
+            &__title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            &__subtitle {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            &__add {
+                padding: 20px 36px 28px;
+                &-content {
+                    padding: 20px;
+                }
+                &-title {
+                    margin-bottom: 20px;
+                }
+                &-list {
+                    &__item {
+                        &:not(:last-child) {
+                            padding-bottom: 16px;
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+                &-item {
+                    &__icon {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 6px;
+                    }
+                }
+            }
+            &__work {
+                
+                &-item {
+                    font-size: 13px;
+                    line-height: 16px;
+                    &__img {
+                        img {
+                            height: 60px;
+                        }
+                    }
+                }
+            }
+            &__faq {
+                margin-top: 52px;
+                &-list {
+                    padding-bottom: 0;
+                }
+                &-txt {
+
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .offcanvas {
+        &-yaPay {
+            &__head {
+                padding-top: 20px;
+                padding-bottom: 0;
+            }
+            &__title {
+                font-size: 26px;
+                line-height: 28px;
+            }
+            &__txt {
+                display: block;
+                margin-top: 12px;
+            }
+            &__add {
+                padding: 36px 14px 28px;
+            }
+            &__work {
+                &-list-wrapper {
+                    overflow: auto;
+                    margin-right: calc(-1 * var(--offcanvas-px));
+                    padding-right: var(--offcanvas-px);
+                }
+                &-list {
+                    width: 400px;
+                    &__item {
+                        &:last-child {
+                            .offcanvas-yaPay__work-item__txt {
+                                margin-right: -8px;
+                            }
+                        }
+                    }
+                }
+                &-item {
+                    &__img {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

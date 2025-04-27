@@ -1,0 +1,130 @@
+#paymentYaPay.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner
+        a.offcanvas-close.btn-circle.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close', '16', '16')
+        .offcanvas-yaPay
+            .offcanvas-yaPay__head
+                .offcanvas-yaPay__logo 
+                    +svg('ya-pay-logo', '104', '38')
+                .offcanvas-yaPay__title.medium.text-center До 1800 баллов Плюса <br>за оплату с&nbsp;Яндекс&nbsp;Пэй
+                .offcanvas-yaPay__txt.text-center.mx-auto Начислим сразу после оплаты или получения заказа — в дополнение к бонусам от вашего банка
+            .offcanvas-yaPay__body
+                .offcanvas-yaPay__add
+                    .offcanvas-yaPay__add-content 
+                        .offcanvas-yaPay__add-title.title Сколько баллов начислим
+                        .offcanvas-yaPay__add-list
+                            .offcanvas-yaPay__add-list__item 
+                                .offcanvas-yaPay__add-item.d-flex.items-center
+                                    .offcanvas-yaPay__add-item__icon.icon
+                                        +svg('ya-plus', '18', '18') 
+                                    .offcanvas-yaPay__add-item__txt 1200 за оплату картой любого банка
+                            .offcanvas-yaPay__add-list__item 
+                                .offcanvas-yaPay__add-item.d-flex.items-center
+                                    .offcanvas-yaPay__add-item__icon.icon
+                                        +svg('ya-plus', '18', '18') 
+                                    .offcanvas-yaPay__add-item__txt 1800 за оплату картой Яндекс Пэй
+                .offcanvas-yaPay__work
+                    .offcanvas-yaPay__subtitle.s-bold Как это работает
+                    .offcanvas-yaPay__work-list-wrapper
+                        .offcanvas-yaPay__work-list.d-flex 
+                            .offcanvas-yaPay__work-list__item 
+                                .offcanvas-yaPay__work-item
+                                    .offcanvas-yaPay__work-item__img
+                                        +pngG('ya-pay-img-1', '48', '60')
+                                    .offcanvas-yaPay__work-item__txt Соберите <br>заказ
+                            .offcanvas-yaPay__work-list__item 
+                                .offcanvas-yaPay__work-item
+                                    .offcanvas-yaPay__work-item__img
+                                        +pngG('ya-pay-img-2', '48', '60')
+                                    .offcanvas-yaPay__work-item__txt Выберите <br>для оплаты <br>Яндекс Пэй
+                            .offcanvas-yaPay__work-list__item 
+                                .offcanvas-yaPay__work-item
+                                    .offcanvas-yaPay__work-item__img
+                                        +pngG('ya-pay-img-3', '48', '60')
+                                    .offcanvas-yaPay__work-item__txt Оплатите <br>картой
+                            .offcanvas-yaPay__work-list__item 
+                                .offcanvas-yaPay__work-item
+                                    .offcanvas-yaPay__work-item__img
+                                        +pngG('ya-pay-img-4', '48', '60')
+                                    .offcanvas-yaPay__work-item__txt Баллы придут <br>сразу или вместе<br> с заказом
+                .offcanvas-yaPay__faq
+                    .offcanvas-yaPay__subtitle.s-bold Отвечаем на вопросы
+                    .offcanvas-yaPay__faq-list
+                        .slideToggle
+                            .slideToggle-list#yaPayFaq 
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info1" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Что такое Яндекс Пэй
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info1(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Яндэкс Пэй и Яндекс Сплит — продукты Яндекса для оплаты покупок в интернете и офлайн-магазинах. Пэй и Сплит живут в едином продукте Яндекс Пэй, чтобы люди сами могли выбрать, оплатить сразу и получить за это баллы Плюса или разделить оплату на несколько частей
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info2" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Какие бонусы я получу за оплату с Яндекс Пэй??
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info2(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Сумма баллов Плюса показана на странице товара и/или странице оплаты. Проверить количество начисленных баллов Плюса можно в приложении Яндекс Пэй и в <a href="https://bank.yandex.ru/pay" class="underline" target="_blank">личном кабинете</a>.
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info3" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Что такое баллы Плюса и зачем они нужны? 
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info3(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Баллы можно тратить в сервисах Яндекса — например, оплачивать поездки в Go, заказы на Маркете, в Еде и Лавке. Чтобы копить и тратить баллы, нужна активная подписка на 
+                                                    a.underline(href="https://plus.yandex.ru/" target="_blank") Яндекс Плюс
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info4" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Когда придут баллы Плюса и где проверить начисление??
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info4(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p В течение 14 дней после оплаты. Проверить начисление баллов можно в приложении Яндекс Пэй или в 
+                                                    a.underline(href="https://bank.yandex.ru/pay" target="_blank") личном кабинете
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info5" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Что делать, если кешбэк не начислили?
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info5(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Напишите в поддержку Яндекс Плюса: в <a href="https://yandex.ru/chat#/user/80027008-e39a-986b-5f64-822d65ab117c" class="underline" target="_blank">чате</a> или на почту 
+                                                    a.underline(href="mailto:plus@support.yandex.ru") plus@support.yandex.ru
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info6" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Можно ли платить через СБП? 
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info6(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Да, можно платить с Яндекс Пэй через СБП — если такой способ оплаты доступен на форме Яндекс Пэй. Для этого при оплате выберите СБП и перейдите по ссылке в мобильное приложение. Если оформляете заказ с компьютера — отсканируйте QR-код. Если вы уже привязали СБП в других сервисах Яндекса, приложение не понадобится. 
+                                .slideToggle-list__item 
+                                    .slideToggle-item
+                                        .slideToggle-item__head 
+                                            a.slideToggle-item__open.d-flex(href="#info7" data-bs-toggle="collapse") 
+                                                span.slideToggle-item__open-left Как вернуть товар, оплаченный с Яндекс Пэй? 
+                                                span.slideToggle-item__open-right.icon 
+                                                    +svg('arrow-down', '16', '16')
+                                        .slideToggle-item__body.collapse#info7(data-bs-parent="#yaPayFaq")
+                                            .slideToggle-item__txt 
+                                                p Покупки, оплаченные с Яндекс Пэй, можно вернуть, как и любые другие — оформите возврат, а деньги вернутся на карту, которой вы платили.  
+                    .offcanvas-yaPay__faq-txt Остались вопросы? Возможно вы найдёте ответ в справке
+        .offcanvas__sticky-foot 
+            button.offcanvas-yaPay__btn.btn(type="button" data-bs-dismiss="offcanvas") понятно

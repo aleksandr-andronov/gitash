@@ -1,0 +1,18 @@
+#preSaleModal.modal.fade(tabindex='-1' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-dialog-presale
+        .modal-content.modal-content--p-0
+            .modal-presale
+                .modal-presale__top 
+                    .modal-presale__img
+                        +jpgG('presale-modal-img', '671', '278')
+                .modal-presale__bottom 
+                    .modal-presale__timer 
+                    .modal-presale__desc
+                        .modal-presale__desc-suptitle.uppercase осталось до 
+                        .modal-presale__desc-title.ttl старта закрытого <br>pre sale
+                        .modal-presale__desc-txt 24 ноября стартует черная пятница. Оставь свой e-mail, чтобы не попустить старт черной пятницы. 
+                    form.modal-presale__form.d-grid(action="/") 
+                        .form-item
+                            .form-item__group
+                                input.modal-presale__form-input.form-input.form-input--rounded(type="email" data-validate placeholder="e-mail")
+                        button.modal-presale__form-btn.btn.btn-white.btn-rounded(type="submit") подписаться

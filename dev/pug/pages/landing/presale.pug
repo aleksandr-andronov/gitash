@@ -1,0 +1,50 @@
+.preSaleLanding
+    .preSaleLanding__inner
+        .container
+            .preSaleLanding-first
+                .preSaleLanding-first__inner.d-flex 
+                    .preSaleLanding-first__left 
+                        .preSaleLanding-first__title.preSaleLanding__title.ttl.banner-title закрытый pre sale
+                        .preSaleLanding-first__txt.preSaleLanding__txt.uppercase.medium 24 ноября стартует черная пятница. Оставь свой e-mail, чтобы не попустить старт черной пятницы.
+                    .preSaleLanding-first__right
+                        .preSaleLanding-timer
+                            .preSaleLanding-timer__title.uppercase до старта осталось:
+                            .preSaleLanding-timer__content 
+                                .ashTimer
+                                    .ashTimer-grid.d-grid 
+                                        .ashTimer-col
+                                            .ashTimer-item.outline-border
+                                                .ashTimer-item__value.ttl 23
+                                                .ashTimer-item__name часов
+                                        .ashTimer-col
+                                            .ashTimer-item.outline-border
+                                                .ashTimer-item__value.ttl 15
+                                                .ashTimer-item__name минут
+                                        .ashTimer-col
+                                            .ashTimer-item.outline-border
+                                                .ashTimer-item__value.ttl 44
+                                                .ashTimer-item__name секунд
+            .preSaleLanding-second
+                .preSaleLanding-second__inner.d-flex 
+                    .preSaleLanding-second__info 
+                        .preSaleLanding-second__title.preSaleLanding__title.ttl.banner-title скидки до -60%
+                        .preSaleLanding-second__txt.preSaleLanding__txt.uppercase.medium 24 ноября стартует черная пятница. Оставь свой e-mail, чтобы не попустить старт черной пятницы.
+            
+        .preSaleLanding-img
+            .preSaleLanding-img__top 
+                +pngC('top-img', '1367', '1123', 'presalelanding')
+            .preSaleLanding-img__bottom
+                +pngC('bottom-img', '967', '1291', 'presalelanding')
+    .preSaleLanding-form-wrapper 
+        .container
+            form.preSaleLanding-form.form(action="/") 
+                .preSaleLanding-form__inner.d-flex 
+                    .preSaleLanding-form__left 
+                        .preSaleLanding-form__title.ttl.h5 подпишись, чтобы <br>не пропустить старт
+                    .preSaleLanding-form__right.d-grid
+                        .preSaleLanding-form__input-wrap
+                            .form-item
+                                .form-item__group
+                                    input.preSaleLanding-form__input.form-input.form-input--rounded(type="email" data-validate placeholder="e-mail")
+                        .preSaleLanding-form__btn-wrap
+                            button.preSaleLanding-form__btn.btn.btn-white.btn-rounded(type="submit") подписаться

@@ -14,6 +14,33 @@
             span.order-form__payment-txt Картой онлайн
             span.order-form__payment-icon.centered 
                 +svg('payment-2')
+
+
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" name="payment")
+        span.order-form__payment-content.flex.outline-border 
+            span.order-form__payment-content__group.d-flex
+                span.order-form__payment-check.centered 
+                span.order-form__payment-txt Картой любого банка
+                span.order-form__payment-icon.centered 
+                    +svg('payment-yapay')
+            span.order-form__payment-content__hidden-wrapper.collapse
+                span.order-form__payment-content__hidden 
+                    span.order-form__payment-txt-2 
+                        span.order-form__payment-points.d-flex.items-center 
+                            span.order-form__payment-points__value.d-flex.items-center 
+                                span.order-form__payment-points__value-icon.centered 
+                                    +svg('ya-plus-white', '18', '18')
+                                span.order-form__payment-points__value-txt 3500
+                            span.order-form__payment-points__txt баллов Плюса
+                    a.order-form__payment-link.d-flex(href="#paymentYaPay" data-bs-toggle="offcanvas") 
+                        span.order-form__payment-link__txt подробнее
+                        span.order-form__payment-link__icon.icon 
+                            +icon('right')
+            
+
+
 .order-form__payments-item 
     label.order-form__payment
         input(type="radio" data-type="inshares" name="payment")
@@ -44,6 +71,23 @@
                 span.order-form__payment-content__hidden 
                     span.order-form__payment-txt-2 Сплитуйте на срок до 2 лет 
                     a.order-form__payment-link.d-flex(href="#splitModal" data-bs-toggle="offcanvas") 
+                        span.order-form__payment-link__txt подробнее
+                        span.order-form__payment-link__icon.icon 
+                            +icon('right')
+
+.order-form__payments-item 
+    label.order-form__payment
+        input(type="radio" name="payment")
+        span.order-form__payment-content.flex.outline-border 
+            span.order-form__payment-content__group.d-flex
+                span.order-form__payment-check.centered 
+                span.order-form__payment-txt Подели
+                span.order-form__payment-icon.centered 
+                    +svg('payment-podeli')
+            span.order-form__payment-content__hidden-wrapper.collapse
+                span.order-form__payment-content__hidden 
+                    span.order-form__payment-txt-2 Дели на 4 платежа без комиссий и переплат
+                    a.order-form__payment-link.d-flex(href="#paymentPodeli" data-bs-toggle="offcanvas") 
                         span.order-form__payment-link__txt подробнее
                         span.order-form__payment-link__icon.icon 
                             +icon('right')

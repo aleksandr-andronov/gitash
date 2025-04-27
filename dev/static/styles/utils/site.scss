@@ -4,6 +4,12 @@
 //     }
 // }
 
+
+body {
+    background: var(--white);
+    color: var(--base-color);
+}
+
 .tabs {
     &-content {
         opacity: 0;
@@ -40,11 +46,21 @@
             }
         }
     }
+
+    &-full-width {
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+        overflow: hidden;
+    }
 }
 
 .o-hidden {
     overflow: hidden;
 }
+
+
 
 .link {
     text-decoration: underline;
@@ -65,6 +81,7 @@
 
 .ttl {
     font-family: 'Halvar Breit Md';
+    letter-spacing: -0.04em;
 }
 
 
@@ -578,5 +595,15 @@ ul:not([class]) {
 
     .mobile-overlflow-hidden {
         overflow: hidden;
+    }
+
+    .mobile-overflow-hidden {
+        overflow: hidden;
+    }
+    
+    .mobile-overflow-hidden {
+        .header {
+            z-index: 99;
+        }
     }
 }

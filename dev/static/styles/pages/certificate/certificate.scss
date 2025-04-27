@@ -7,6 +7,7 @@
     --text-color: #000000;
     --before-bg: rgba(255, 255, 255, 0.32);
     
+    
 
     position: relative;
     *.hidden {
@@ -455,6 +456,12 @@
         }
     }
     .certificate {
+        --fast-price-bg: #FFFFFF;
+        --input-stroke: #2B2B2B;
+        &-theme-dark {
+            --fast-price-bg: #F6F6F6;
+            --input-stroke: #E2E1E7;
+        }
         .container {
             padding-left: 0;
             padding-right: 0;

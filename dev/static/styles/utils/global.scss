@@ -80,12 +80,30 @@ textarea {
     flex-wrap: wrap;
 }
 
+.d-none {
+    display: none;
+}
+
 .d-flex {
     display: flex;
 }
 
 .d-grid {
     display: grid;
+}
+
+.d-grid {
+    > * {
+        min-width: 0;
+    }
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
 }
 
 .centered {
@@ -117,6 +135,10 @@ textarea {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .icon-black {
@@ -149,6 +171,37 @@ textarea {
 .uppercase {
     text-transform: uppercase;
 }
+
+.italic {
+    font-style: italic;
+}
+
+.lh-90 {
+    line-height: 90%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
 
 @media (max-width: 1440px) {
     .icon {

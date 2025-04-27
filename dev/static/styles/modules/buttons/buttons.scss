@@ -1,16 +1,16 @@
 .btn-circle {
-    width: 40px;
-    height: 40px;
+    --btn-size: 40px;
+    --btn-size-icon: 16px;
+    width: var(--btn-size);
+    height: var(--btn-size);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--element-second);
-   
-    
     img, svg {
-        width:  16px;
-        height: 16px;
+        width:  var(--btn-size-icon);
+        height: var(--btn-size-icon);
     }
     &--white {
         background: var(--white);
@@ -93,12 +93,8 @@
 
 @media (max-width: 1440px) {
     .btn-circle {
-        width: 34px;
-        height: 34px;
-        img, svg {
-            width: 14px;
-            height: 14px;
-        }
+        --btn-size: 34px;
+        --btn-size-icon: 14px;
     }
 
     .back-btn {

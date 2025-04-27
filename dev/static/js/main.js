@@ -1,5 +1,57 @@
-// повторное открытие окна в заказе
+const podeliSlider = new Swiper('.offcanvas-podeli__slider', {
+    effect: 'fade',
+    autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.offcanvas-podeli__pagination',
+        clickable: true
+    }
+})
 
+
+document.querySelector('.copy_code')?.addEventListener('click', function(e) {
+    e.preventDefault()
+
+    this.classList.add('active')
+    setTimeout(() => {
+        this.classList.remove('active')
+    }, 5000)
+})
+
+function sCollectionActions() {
+    const main = document.querySelector('.sCollection')
+    if (!main) return
+    const btn = main.querySelector('.sCollection-favorite')
+    const dot = main.querySelector('.sCollection-dot')
+    const card = main.querySelector('.sCollection-card')
+    const close = card.querySelector('.sCollection-card__close')
+    if (btn) {
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active')
+        })
+    }
+
+    if (dot) {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault()
+            main.classList.add('card-visible')
+        })
+    }
+
+    if (close) {
+        close.addEventListener('click', (e) => {
+            e.preventDefault()
+            main.classList.remove('card-visible')
+        })
+    }
+}
+
+sCollectionActions()
+
+
+// повторное открытие окна в заказе
 function secondOpenOffcanvas() {
     const links = document.querySelectorAll('[data-bs-second]')
     if (!links.length) return
@@ -217,8 +269,8 @@ if (myOffcanvas) {
 
 
 // поп ап “скачать приложение”
-function downloadPopup() {
-    const main = document.querySelector('.downloadPopup')
+function downloadPopup(id) {
+    const main = document.querySelector(id)
     if (!main) return
     const close = main.querySelector('.downloadPopup__close')
 
@@ -239,7 +291,7 @@ function downloadPopup() {
     })
 }
 
-// downloadPopup()
+downloadPopup('#quizPopup')
 
 
 function hideNotification() {
@@ -1472,8 +1524,83 @@ const ashgirlsSlider = new Swiper('.ashgirls-slider', {
 })
 
 
+function dropdownProductTooltip() {
+    const items = document.querySelectorAll('.product-tooltip')
+    const body = document.documentElement
+    if (!items.length) return
+
+    document.addEventListener('click', e => {
+        items.forEach(item => {
+            const content = item.querySelector('.product-tooltip__dropdown')
+            const contentInner = item.querySelector('.product-tooltip__content')
+            if (!item.contains(e.target)) {
+                contentInner.classList.remove('visible')
+                setTimeout(() => {
+                    content.classList.remove('visible')
+                    body.classList.remove('mobile-overflow-hidden')
+                }, 200)
+            }
+        })
+    })
+
+    items.forEach(item => {
+        const btn = item.querySelector('.product-tooltip__btn')
+        const content = item.querySelector('.product-tooltip__dropdown')
+        const contentInner = item.querySelector('.product-tooltip__content')
+        const closes = item.querySelectorAll('.product-tooltip__close')
+
+        btn.addEventListener('click', e => {
+            e.stopPropagation()
+
+            items.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherContent = otherItem.querySelector('.product-tooltip__dropdown')
+                    const otherInner = otherItem.querySelector('.product-tooltip__content')
+                    otherInner.classList.remove('visible')
+                    setTimeout(() => {
+                        otherContent.classList.remove('visible')
+                    }, 200)
+                }
+            })
+
+            const isVisible = content.classList.contains('visible')
+            if (!isVisible) {
+                content.classList.add('visible')
+                setTimeout(() => {
+                    contentInner.classList.add('visible')
+                    body.classList.add('mobile-overflow-hidden')
+                }, 1)
+            } else {
+                contentInner.classList.remove('visible')
+                setTimeout(() => {
+                    content.classList.remove('visible')
+                    body.classList.remove('mobile-overflow-hidden')
+                }, 200)
+            }
+        })
+
+        closes.forEach(closeBtn => {
+            closeBtn.addEventListener('click', e => {
+                e.preventDefault()
+                e.stopPropagation()
+                contentInner.classList.remove('visible')
+                setTimeout(() => {
+                    content.classList.remove('visible')
+                    body.classList.remove('mobile-overflow-hidden')
+                }, 200)
+            })
+        })
+    })
+}
+
+dropdownProductTooltip()
+
+
+
+
+
 function dropdownProductPrice() {
-    const btn = document.querySelector('.product-price__sticker-sale__icon-btn')
+    const btn = document.querySelector('.product-price__old-icon')
     if (!btn) return
     const content = document.querySelector('.product-price__dropdown')
     const contentInner = content.querySelector('.product-price__dropdown-inner')
@@ -1499,7 +1626,7 @@ function dropdownProductPrice() {
     })
 }
 
-dropdownProductPrice()
+// dropdownProductPrice()
 
 
 function addFavoriteProduct() {

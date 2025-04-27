@@ -1,0 +1,23 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html.quizHtml(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+		block styles
+	body.no-padding(  class=bodyClass ? `${bodyClass} custom-header` : '' )
+		.wrapper
+			include ../modules/header/header-nobg
+			block content
+		include ../modules/modals/modals
+		include ../modules/popups/popups
+		script(src="static/js/libs.js")
+		script(src="static/js/swiper-bundle.min.js")
+		script(src="static/js/imask.js")
+		script(src="static/js/main.js")
+		block script

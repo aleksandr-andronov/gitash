@@ -118,13 +118,13 @@
 }
 
 .slideToggle {
-    border-top: 1px solid var(--stroke-element);
+    border-top: 1px solid var(--stroke-default);
     &--bottom {
         margin-top: 40px;
     }
     &-list {
         &__item {
-            border-bottom: 1px solid var(--stroke-element);
+            border-bottom: 1px solid var(--stroke-default);
         }
     }
     &-item {

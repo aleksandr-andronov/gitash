@@ -1,0 +1,12 @@
+.modal {
+    &-dialog {
+        &-presale {
+            max-width: 670px;
+        }
+    }
+    &-presale {
+        &__img {
+            height: 278px;
+        }
+    }
+}
