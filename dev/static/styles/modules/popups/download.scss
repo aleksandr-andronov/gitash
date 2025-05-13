@@ -21,7 +21,7 @@
     z-index: 99;
     width: 614px;
     background: var(--black);
-    color: var(--white);
+    color: #E4E4E4;
     border-radius: 10px;
     padding: 28px 28px 28px var(--pl);
     display: none;
@@ -137,18 +137,18 @@
 
 @media (max-width: 480px) {
 
-    #downloadPopup {
-        
+    #downloadPopup { 
         --img-width: 277px;
         --pb: 240px;
+        --info-width: 256px;
         
     }
     
     #quizPopup {
-        
         --img-width: 356px;
         --pb: 124px;
         --img-bottom: 0px;
+        --info-width: 312px;
         
     }
 
@@ -167,7 +167,8 @@
             right: 12px;
         }
         &__info {
-            max-width: 256px;
+            max-width: var(--info-width);
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
@@ -179,6 +180,7 @@
             font-size: 24px;
         }
         &__txt {
+            max-width: 100%;
             margin-bottom: 16px;
         }
         &__btn {

@@ -1,19 +1,25 @@
 .btn-circle {
     --btn-size: 40px;
     --btn-size-icon: 16px;
+    --btn-bg: var(--element-second);
+    --btn-bg-hover: var(--element-hover);
     width: var(--btn-size);
     height: var(--btn-size);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--element-second);
+    background: var(--btn-bg);
+    &:hover {
+        background: var(--btn-bg-hover);
+    }
     img, svg {
         width:  var(--btn-size-icon);
         height: var(--btn-size-icon);
     }
     &--white {
-        background: var(--white);
+        --btn-bg: var(--white);
+        --btn-bg-hover: #F8F8F8;
     }
 } 
 

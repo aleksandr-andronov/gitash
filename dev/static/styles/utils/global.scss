@@ -197,6 +197,12 @@ textarea {
     text-decoration: underline;
 }
 
+a.underline {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .text-center {
     text-align: center;
 }
@@ -204,7 +210,7 @@ textarea {
 
 
 @media (max-width: 1440px) {
-    .icon {
+    .icon, .icon-outline {
         width: 18px;
         height: 18px;
     }

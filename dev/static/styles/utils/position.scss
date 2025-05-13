@@ -1,0 +1,17 @@
+.fixed {
+    position: fixed;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+@media (max-width: 932px) {
+    .static-m {
+        position: static;
+    }
+}

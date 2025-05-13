@@ -77,17 +77,40 @@ function ashQuiz() {
     const defaultTxt = 'Упс, кажется, вы&nbsp;не&nbsp;угадали. Чтобы получить промокод, надо пройти чуть дальше. Попробуете ещё раз?';
 
     const getPrizeTitle = 'Решили не&nbsp;рисковать?';
-    const getPrizeTxt = 'Ваш промокод уже у&nbsp;вас! Используйте его в&nbsp;приложении или на&nbsp;сайте ASH. И&nbsp;возвращайтесь&nbsp;&mdash; вдруг в&nbsp;следующий раз пойдёте ва-банк?';
+    const getPrizeTxt = (sum) => `Промокод на ${sum} рублей уже у вас! Используйте его в приложении или на сайте ASH. И возвращайтесь — вдруг в следующий раз пойдете ва-банк?`;
 
     const burnThreeTitle = 'Не&nbsp;всё потеряно!';
-    const burnThreeTxt = 'Вы&nbsp;ошиблись, но&nbsp;дошли до&nbsp;третьего вопроса&nbsp;&mdash; а&nbsp;это первая несгораемая сумма. Сохраняйте промокод на&nbsp;1000 рублей и&nbsp;используйте его на&nbsp;сайте или в&nbsp;приложении.';
+    const burnThreeTxt = 'Вы&nbsp;ошиблись, но&nbsp;дошли до&nbsp;третьего вопроса&nbsp;&mdash; а&nbsp;это первая несгораемая сумма. Сохраняйте промокод на&nbsp;700 рублей и&nbsp;используйте его на&nbsp;сайте или в&nbsp;приложении.';
 
     const burnSixTitle = 'Было близко!';
-    const burnSixTxt = 'Вы&nbsp;ответили правильно на&nbsp;шесть вопросов&nbsp;&mdash; это уже серьёзно. Хотя дальше не&nbsp;получилось, ваш промокод на&nbsp;2500 рублей остался с&nbsp;вами.';
+    const burnSixTxt = 'Вы&nbsp;ответили правильно на&nbsp;шесть вопросов&nbsp;&mdash; это уже серьёзно. Хотя дальше не&nbsp;получилось, ваш промокод на&nbsp;1700 рублей остался с&nbsp;вами.';
 
     const burnNineTitle = 'Вы&nbsp;случайно не&nbsp;работаете в&nbsp;ASH?';
-    const burnNineTxt = 'Тогда откуда вы&nbsp;столько о&nbsp;нас знаете? Вы&nbsp;ответили правильно на&nbsp;все вопросы и&nbsp;выиграли максимальный приз&nbsp;&mdash; промокод на&nbsp;5000&nbsp;рублей. Хорошего шоппинга!';
+    const burnNineTxt = 'Тогда откуда вы&nbsp;столько о&nbsp;нас знаете? Вы&nbsp;ответили правильно на&nbsp;все вопросы и&nbsp;выиграли максимальный приз&nbsp;&mdash; промокод на&nbsp;3000&nbsp;рублей. Хорошего шоппинга!';
+
+
+    const getPrizeOutputTitle = main.querySelector('.ashQuiz-getPrize__content-default .ashQuiz-getPrize__title');
+    const getPrizeOutputTxt = main.querySelector('.ashQuiz-getPrize__content-default .ashQuiz-getPrize__txt');
+
+    const getPrizeDefaultTitle = 'Хотите закончить игру и забрать выигрыш?';
+    const getPrizeDefaultTxt = 'Следующий вопрос может принести ещё больше.';
+    const getPrizeChangeTitle = 'Хотите попробовать ответить?';
+    const getPrizeThreeTxt = 'Если угадаете, ваша несгораемая сумма увеличится до 700 ₽.';
+    const getPrizeSixTxt = 'Если угадаете, ваша несгораемая сумма увеличится до 1 700 ₽.';
+
+    const promo300 = 'QUIZ300';
+    const promo500 = '500ASH';
+    const promo700 = '700QUIZ';
+    const promo1000 = 'ASH1000';
+    const promo1500 = 'QUIZ1500';
+    const promo1700 = '1700ASH';
+    const promo2000 = 'ASH2000';
+    const promo2500 = 'QUIZ2500';
+    const promo3000 = 'QUIZ25';
+
     
+
+
     const correctSound = new Audio('./static/audio/correct.mp3');
     const wrongSound = new Audio('./static/audio/wrong.mp3');
     const levelSound = new Audio('./static/audio/level.mp3');
@@ -101,7 +124,7 @@ function ashQuiz() {
       questions.classList.add('visible');
       blockForm.classList.add('visible');
 
-      backgroundSound.play();
+      
     })
 
     let quizStatus = true;
@@ -111,13 +134,32 @@ function ashQuiz() {
 
     getPrizeBtn.addEventListener('click', () => {
       const currentStep = main.querySelector('.ashQuiz-form__step.active');
-      const currentStepNumber = currentStep.dataset.step;
-      if (currentStepNumber == 4 || currentStepNumber == 7 || +currentStepNumber == 10) {
+      const currentStepNumber = +currentStep.dataset.step; 
+    
+      
+      const prizeMessages = {
+        3: { title: getPrizeChangeTitle, txt: getPrizeThreeTxt },
+        6: { title: getPrizeChangeTitle, txt: getPrizeSixTxt }
+      };
+    
+      
+      const { title, txt } = prizeMessages[currentStepNumber] || {
+        title: getPrizeDefaultTitle,
+        txt: getPrizeDefaultTxt
+      };
+    
+      getPrizeOutputTitle.textContent = title;
+      getPrizeOutputTxt.textContent = txt;
+    
+   
+      const burnSteps = [4, 7, 10];
+      if (burnSteps.includes(currentStepNumber)) {
         getPrizeContent.classList.add('burn');
       }
+    
       getPrizeContent.classList.add('visible');
-      retainClasses(questions, ['ashQuiz-questions', 'visible']);
-    })
+    });
+    
 
 
 
@@ -125,13 +167,11 @@ function ashQuiz() {
       blockHead.classList.toggle('show-progress');
     
       if (blockProgress.classList.contains('visible')) {
-        // если progress открыт — закрываем его и возвращаем предыдущий блок
         blockProgress.classList.remove('visible');
         if (previousVisibleBlock) {
           previousVisibleBlock.classList.add('visible');
         }
       } else {
-        // если progress закрыт — открываем его и запоминаем текущий активный блок
         if (blockForm.classList.contains('visible')) {
           previousVisibleBlock = blockForm;
         } else if (blockAnswer.classList.contains('visible')) {
@@ -140,11 +180,9 @@ function ashQuiz() {
           previousVisibleBlock = null;
         }
     
-        // скрываем все блоки кроме head и progress
         blockForm.classList.remove('visible');
         blockAnswer.classList.remove('visible');
     
-        // показываем progress
         blockProgress.classList.add('visible');
       }
     });
@@ -169,14 +207,17 @@ function ashQuiz() {
         case (stepNumber >= 10):
           finalTitle.innerHTML = burnNineTitle;
           finalTxt.innerHTML = burnNineTxt;
+          promocode.textContent = promo3000;
           break;
         case (stepNumber >= 8):
           finalTitle.innerHTML = burnSixTitle;
           finalTxt.innerHTML = burnSixTxt;
+          promocode.textContent = promo1700;
           break;
         case (stepNumber >= 5):
           finalTitle.innerHTML = burnThreeTitle;
           finalTxt.innerHTML = burnThreeTxt;
+          promocode.textContent = promo700;
           break;
         default:
           finalTitle.innerHTML = defaultTitle;
@@ -203,6 +244,19 @@ function ashQuiz() {
     }
     
 
+    const prizeData = {
+      1: { promo: promo300, title: getPrizeTitle },
+      2: { promo: promo500, title: getPrizeTitle },
+      3: { promo: promo700, title: getPrizeTitle }, 
+      4: { promo: promo1000, title: getPrizeTitle },
+      5: { promo: promo1500, title: getPrizeTitle },
+      6: { promo: promo1700, title: burnSixTitle, txt: burnSixTxt },
+      7: { promo: promo2000, title: getPrizeTitle },
+      8: { promo: promo2500, title: getPrizeTitle },
+      9: { promo: promo3000, title: burnNineTitle, txt: burnNineTxt },
+      default: { promo: '', title: getPrizeTitle }
+    };
+    
     confirmPrizeBtn.forEach(btn => {
       btn.addEventListener('click', () => {
         const activeStep = main.querySelector('.ashQuiz-form__step.active');
@@ -216,38 +270,26 @@ function ashQuiz() {
     
         showFinal();
     
-        let finalStep;
+        let finalStep = isRadioSelected ? stepNumber : stepNumber - 1;
     
-        if (isRadioSelected) {
-          finalStep = stepNumber;
-        } else {
-          finalStep = stepNumber - 1;
-        }
+        const prevStep = main.querySelector(`.ashQuiz-form__step[data-step="${finalStep}"]`);
+        const prizeSum = prevStep.dataset.prize; 
     
-        // Выставляем текст по финальному шагу
-        switch (finalStep) {
-          case 3:
-            finalTitle.innerHTML = burnThreeTitle;
-            finalTxt.innerHTML = burnThreeTxt;
-            break;
-          case 6:
-            finalTitle.innerHTML = burnSixTitle;
-            finalTxt.innerHTML = burnSixTxt;
-            break;
-          case 9:
-            finalTitle.innerHTML = burnNineTitle;
-            finalTxt.innerHTML = burnNineTxt;
-            break;
-          default:
-            finalTitle.innerHTML = getPrizeTitle;
-            finalTxt.innerHTML = getPrizeTxt;
-        }
+        const prizeItem = prizeData[finalStep] || prizeData.default;
+        const { promo, title, txt } = prizeItem;
+    
+        promocode.textContent = promo;
+        finalTitle.innerHTML = title;
+    
+        finalTxt.innerHTML = txt ? txt : getPrizeTxt(prizeSum);
     
         promocode.classList.remove('hidden');
         copyBtn.classList.remove('hidden');
         repeatBtn.classList.add('btn-outline');
+        retainClasses(questions, ['ashQuiz-questions', 'visible']);
       });
     });
+    
     
     
 
@@ -297,11 +339,14 @@ function ashQuiz() {
       
       retainClasses(questions, ['ashQuiz-questions', 'visible']);
 
-      getPrizeOutputSum.forEach(i => i.innerHTML = '1&nbsp;000');
+      getPrizeOutputSum.forEach(i => i.innerHTML = '700');
     })
 
 
     copyBtn.addEventListener('click', async () => {
+
+      await navigator.clipboard.writeText(promocode.textContent.trim());
+
       promocode.classList.add('hide')
 
       await delay(800)
@@ -440,7 +485,7 @@ function ashQuiz() {
           }
 
           if (+stepNumber >= 7) {
-            getPrizeOutputSum.forEach(i => i.innerHTML = '2&nbsp;500');
+            getPrizeOutputSum.forEach(i => i.innerHTML = '1&nbsp;700');
           }
 
 

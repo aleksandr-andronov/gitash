@@ -1,0 +1,18 @@
+.supportChat.fixed
+    button.supportChat-btn.btn-circle.btn-circle--white(type="button" class=support ? 'active' : '')
+        span.supportChat-btn__icon.icon-outline.relative
+            span.supportChat-btn__icon-inner.centered
+                include ../../icons/message-dots-13
+                include ../../icons/x-13
+            if (support)
+                .supportChat-btn__indicator.absolute
+    .supportChat-dropdown.absolute.d-none
+        .supportChat-dropdown__inner.d-grid.overflow-hidden 
+            .supportChat-dropdown__inner-item
+                a.supportChat-dropdown__btn.centered(href="#")
+                    include ../../icons/tg-13
+            .supportChat-dropdown__inner-item
+                a.supportChat-dropdown__btn.centered(href="#")
+                    include ../../icons/message-lines-13
+        .supportChat-dropdown__arrow.absolute
+            <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.098 10.4497C16.0799 11.25 16.0799 12.75 15.098 13.5503L7.51359 19.7322C6.20709 20.7971 4.25 19.8675 4.25 18.1819L4.25 5.81806C4.25 4.13254 6.2071 3.20289 7.5136 4.2678L15.098 10.4497Z" fill="white"/></svg>

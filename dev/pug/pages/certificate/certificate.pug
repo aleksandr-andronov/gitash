@@ -12,22 +12,24 @@
                                 +icon('close')
             .certificate__step-mobile-img 
                 .certificate__mobile-img 
-                    .certificate__mobile-img__item(data-item="0")
-                        include i1.html
-                    .certificate__mobile-img__item.hidden(data-item="1")
-                        include i2.html
+                    .certificate__mobile-img__item(data-item="1")
+                        include images/image-1.html
                     .certificate__mobile-img__item.hidden(data-item="2")
-                        include i3.html
+                        include images/image-2.html
                     .certificate__mobile-img__item.hidden(data-item="3")
-                        include i4.html
+                        include images/image-3.html
                     .certificate__mobile-img__item.hidden(data-item="4")
-                        include i1.html
+                        include images/image-4.html
                     .certificate__mobile-img__item.hidden(data-item="5")
-                        include i2.html
+                        include images/image-5.html
                     .certificate__mobile-img__item.hidden(data-item="6")
-                        include i3.html
+                        include images/image-6-3.html
                     .certificate__mobile-img__item.hidden(data-item="7")
-                        include i4.html
+                        include images/image-7.html
+                    .certificate__mobile-img__item.hidden(data-item="8")
+                        include images/image-8.html
+                    .certificate__mobile-img__item.hidden(data-item="9")
+                        include images/image-9.html
             .certificate__step.certificate__first-step.active
                 .certificate__step-content
                     .certificate__head
@@ -37,24 +39,37 @@
                     .certificate__design 
                         .certificate-design
                             .certificate-design__mobile 
-                                .certificate-mobileSlider.slider-full-width 
-                                    .swiper-wrapper 
-                                        - for (let i = 0; i < 2; i++)
-                                            .certificate-mobileSlider__slide.swiper-slide 
-                                                .certificate-images__item.outline-border
-                                                    include i1.html
-                                            .certificate-mobileSlider__slide.swiper-slide 
-                                                .certificate-images__item.outline-border
-                                                    include i2.html
-                                            .certificate-mobileSlider__slide.swiper-slide 
-                                                .certificate-images__item.outline-border
-                                                    include i3.html
-                                            .certificate-mobileSlider__slide.swiper-slide 
-                                                .certificate-images__item.outline-border
-                                                    include i4.html
+                                .certificate-mobileSlider.slider-full-width.d-flex.overflow-x-scroll
+                                    .certificate-mobileSlider__item.outline-border.active(data-item="1") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-1', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="2") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-2', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="3") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-3', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="4") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-4', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="5") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-5', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="6") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-6', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="7") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-7', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="8") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-8', '82', '75', 'certificate')
+                                    .certificate-mobileSlider__item.outline-border(data-item="9") 
+                                        .certificate-images__item
+                                            +jpgG('thumb-9', '82', '75', 'certificate')
                             .certificate-design__colors 
                                 .certificate-colors
-                                    .certificate-colors__list.d-flex 
+                                    .certificate-colors__list.d-flex.slider-full-width.overflow-x-scroll 
                                         .certificate-colors__list-item 
                                             a.certificate-colors__btn.centered.selected(href="#" data-theme="image" data-bg="#E4B4F0" data-color="#DE6E34") 
                                                 +svg('cert-color-1', '30', '30', 'certificate')
@@ -74,7 +89,7 @@
                                             a.certificate-colors__btn.centered(href="#" data-theme="image" data-bg="#E0D385" data-color="#E79BBE") 
                                                 +svg('cert-color-6', '30', '30', 'certificate')
                                         .certificate-colors__list-item 
-                                            a.certificate-colors__btn.centered(href="#" data-theme="image" data-bg="#FFD600" data-color="#F4F5F0") 
+                                            a.certificate-colors__btn.centered(href="#" data-theme="image" data-bg="#F4F5F0" data-color="#FFD600") 
                                                 +svg('cert-color-7', '30', '30', 'certificate')
                                         .certificate-colors__list-item 
                                             a.certificate-colors__btn.centered(href="#" data-theme="image" data-bg="#E9E7E2" data-color="#9EDFCE") 
@@ -137,7 +152,7 @@
                                             .certificate-img__content-foot
                                                 .certificate-img__content-foot__col
                                                     .certificate-img__info.certificate-img__info-whom
-                                                        .certificate-img__info-name вам дарит сертификат
+                                                        .certificate-img__info-name от кого
                                                         .certificate-img__info-value.ttl.outputFrom ash
                                                 .certificate-img__content-foot__col   
                                                     .certificate-img__info.certificate-img__info-price
@@ -155,7 +170,7 @@
                                                 .certificate-form__progress 2/4
                                     .certificate-form__step-body.certificate-form__step-body--center
                                         .certificate-form__price
-                                            .certificate-form__price-title Укажите свою сумму или выберите из списка
+                                            .certificate-form__price-title Укажите свою сумму или выберите из предложенных вариантов
                                             .certificate-form__price-input-wrapper 
                                                 input.certificate-form__price-input.ttl.h2(type="tel" placeholder="сумма ₽")
                                             .certificate-form__price-fast
@@ -289,7 +304,7 @@
                                                             .form-item
                                                                 .form-item__group
                                                                     input.form-input.inputDate.inputPlaceholderChange(type="text" data-placeholder="дата" data-placeholderChange="дд.мм.гггг" placeholder="дата")
-                                                                    a.form-item__right-info.form-item__right-icon.icon.openCalendar(href="#")
+                                                                    button.form-item__right-info.form-item__right-icon.icon.openCalendar(type="button")
                                                                         +icon('calendar') 
                                                                     .form-item__dropdown-calendar.outline-border.form-datepicker
                                                                         #certCalendar
@@ -377,7 +392,7 @@
                                             .certificate-form__title.ttl.h4 Проверьте ваш <br>заказ
                                         .certificate-form__head-progress
                                             .certificate-form__progress 4/4
-                                    .certificate-form__head-txt.certificate-form__step-txt Это увидит получатель на почте
+                                    .certificate-form__head-txt.certificate-form__step-txt Так будет выглядеть письмо:
                                 .certificate-form__step-img 
                                     .certificate-img
                                         .certificate-img__inner
@@ -393,7 +408,7 @@
                                                 .certificate-img__content-foot
                                                     .certificate-img__content-foot__col
                                                         .certificate-img__info.certificate-img__info-whom
-                                                            .certificate-img__info-name вам дарит сертификат
+                                                            .certificate-img__info-name от кого
                                                             .certificate-img__info-value.ttl.outputFrom ash
                                                     .certificate-img__content-foot__col   
                                                         .certificate-img__info.certificate-img__info-price

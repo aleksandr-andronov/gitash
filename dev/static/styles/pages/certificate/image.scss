@@ -14,7 +14,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            padding: 45px 36px 38px;
+            padding: 44px 36px 38px;
             display: flex;
             flex-direction: column;
             &-logo {
@@ -42,10 +42,13 @@
                 }
             }
             &-text {
-                margin-top: 35px;
+                margin-top: 36px;
                 min-height: 108px;
-                display: flex;
                 align-items: center;
+                display: none;
+                &.active {
+                    display: flex;
+                }
             }
         }
         &__picture {
@@ -135,49 +138,48 @@
     }
 }
 
-// @media (max-width: 1440px) {
-//     .certificate {
-//         &-img {
-//             &__picture {
-//                 svg {
-//                     max-width: 100%;
-//                 }
-//             }
-//             // &__content {
-//             //     padding: 44px 30px 34px;
-//             //     &-text {
-//             //         min-height: 88px;
-//             //         margin-top: 36px;
-//             //     }
-//             //     &-foot {
-//             //         padding-top: 16px;
-//             //     }
-//             //     &-group {
-//             //         max-width: 356px;
-//             //     }
-//             // }
-//             &__logo {
-//                 // width: 37px;
-//                 // height: 52px;
-//             }
-//             &__name {
-//                 // font-size: 32px;
-//             }
-//             &__txt {
-//                 // font-size: 16px;
-//             }
-//             &__info {
-//                 &-name {
-//                     // font-size: 14px;
-//                     // margin-bottom: 2px;
-//                 }
-//                 &-value {
-//                     // font-size: 21px;
-//                 }
-//             }
-//         }
-//     }
-// }
+@media (max-width: 1440px) {
+    .certificate {
+        &-img {
+            &__picture {
+                svg {
+                    max-width: 100%;
+                }
+            }
+            &__content {
+                padding: 38px 30px 34px;
+                &-text {
+                    min-height: 88px;
+                    margin-top: 36px;
+                }
+                &-foot {
+                    padding-top: 24px;
+                }
+                &-group {
+                    max-width: 356px;
+                }
+            }
+            &__logo {
+                width: 45px;
+                height: 64px;
+            }
+            &__name {
+                font-size: 30px;
+            }
+            &__txt {
+                font-size: 17px;
+            }
+            &__info {
+                &-name {
+                    font-size: 14px;
+                }
+                &-value {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 932px) {
     .certificate {

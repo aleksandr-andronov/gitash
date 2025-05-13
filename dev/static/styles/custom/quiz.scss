@@ -19,6 +19,7 @@ $baseFontSize : 16;
     --error: #F4A8AD;
     --correct-1: #74C8CE;
     --correct-2: #24AEB9;
+    
 }
 
 @keyframes flash-correct-bg {
@@ -81,11 +82,15 @@ $baseFontSize : 16;
     &-intro {
         display: flex;
         flex-direction: column;
-        padding-top: rem(348);
+        padding-top: calc(15.25rem + var(--height-content));
         min-height: 100vh;
         padding-left: 1rem;
         padding-right: 1rem;
         transition: padding-top .4s ease-out;
+        width: rem(480);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         
         &.show-text {
             .ashQuiz-intro__group {
@@ -93,7 +98,7 @@ $baseFontSize : 16;
             }
         }
         &.logo-top {
-            padding-top: rem(90);
+            padding-top: calc(1.75rem + var(--height-content));
             .ashQuiz-intro__logo {
                 &-img {
                     img {
@@ -169,7 +174,7 @@ $baseFontSize : 16;
         &__txt {
             // padding-left: rem(16);
             // padding-right: rem(16);
-            font-size: 14px;
+            font-size: rem(14);
             line-height: 120%;
             color: var(--red);
             margin-top: rem(8);
@@ -215,6 +220,10 @@ $baseFontSize : 16;
     &-head {
         height: rem(44);
         // display: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 448px;
+        max-width: 100%;
         &.show-progress {
             margin-bottom: rem(20);
             .ashQuiz-head__inner-item {
@@ -276,9 +285,19 @@ $baseFontSize : 16;
     &-questions {
         min-height: 100vh;
         display: flex;
-        padding: rem(74) rem(16) rem(24);
+        padding: calc(0.75rem + var(--height-content)) rem(16) rem(24);
         display: none;
         flex-direction: column;
+        
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        // > div, > form {
+        //     width: 448px;
+        //     max-width: 100%;
+        //     margin-left: auto;
+        //     margin-right: auto;
+        // }
         &.bg-4 {
             background: var(--white) url(../../static/images/general/quiz/bg-4.webp) bottom 0 right 0 no-repeat; 
             background-size: cover;
@@ -293,6 +312,10 @@ $baseFontSize : 16;
         display: flex;
         flex-direction: column;
         display: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 448px;
+        max-width: 100%;
         &.hidden {
             display: none;
         }
@@ -340,7 +363,7 @@ $baseFontSize : 16;
         &__burn {
             background: #0D78CE;
             color: var(--white);
-            padding: 1px 2px 3px;
+            padding: rem(1) rem(2) rem(3);
             text-align: center;
         }
 
@@ -450,6 +473,10 @@ $baseFontSize : 16;
         flex-direction: column;
         justify-content: flex-end;
         flex-grow: 1;
+        margin-left: auto;
+        margin-right: auto;
+        width: 448px;
+        max-width: 100%;
         &.active {
             display: flex;
         }
@@ -476,6 +503,97 @@ $baseFontSize : 16;
         }
     }
 }
+
+@media (min-width: 933px) {
+    .ashQuiz {
+        background: var(--white) url(../../static/images/general/quiz/main-bg-d.webp) top 0 center no-repeat; 
+        background-size: cover;
+        &-intro {
+            height: 100vh;
+            
+            &.show-line {
+                height: auto;
+                min-height: 100vh;
+            }
+        }
+        &.second-bg {
+            background: var(--white) url(../../static/images/general/quiz/quiz-bg-d.webp) top 0 center no-repeat; 
+        }
+        &.step-1 {
+            background: var(--white) url(../../static/images/general/quiz/step-1-d.webp) top 0 center no-repeat; 
+        }
+        &.step-2 {
+            background: var(--white) url(../../static/images/general/quiz/step-2-d.webp) top 0 center no-repeat; 
+        }
+        &.step-3 {
+            background: var(--white) url(../../static/images/general/quiz/step-3-d.webp) top 0 center no-repeat; 
+        }
+        &.step-4 {
+            background: var(--white) url(../../static/images/general/quiz/step-4-d.webp) top 0 center no-repeat; 
+        }
+        &.step-5 {
+            background: var(--white) url(../../static/images/general/quiz/step-5-d.webp) top 0 center no-repeat; 
+        }
+        &.step-6 {
+            background: var(--white) url(../../static/images/general/quiz/step-6-d.webp) top 0 center no-repeat; 
+        }
+        &.step-7 {
+            background: var(--white) url(../../static/images/general/quiz/step-7-d.webp) top 0 center no-repeat; 
+        }
+        &.step-8 {
+            background: var(--white) url(../../static/images/general/quiz/step-8-d.webp) top 0 center no-repeat; 
+        }
+        &.step-9 {
+            background: var(--white) url(../../static/images/general/quiz/step-9-d.webp) top 0 center no-repeat; 
+        }
+        &-intro {
+            padding-bottom: rem(24);
+            overflow: hidden;
+            &__img {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            &__group {
+                margin-bottom: rem(24);
+            }
+            &.logo-top {
+                padding-top: calc(2rem + var(--height-content));
+                .ashQuiz-intro__logo-img img {
+                    max-width: rem(198);
+                }
+            }
+        }
+        &-questions {
+            padding-top: calc(2rem + var(--height-content));
+            &.bg-4 {
+                background: var(--white) url(../../static/images/general/quiz/bg-4-d.webp) bottom 0 right 0 no-repeat; 
+                background-size: cover;
+            }
+            &.bg-6 {
+                background: var(--white) url(../../static/images/general/quiz/bg-6-d.webp) bottom 0 right 0 no-repeat; 
+                background-size: cover;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .ashQuiz {
+        &-intro {
+            padding-bottom: rem(40);
+            &.logo-top {
+                padding-top: calc(2.5rem + var(--height-content));
+                .ashQuiz-intro__logo-img img {
+                    max-width: rem(264);
+                }
+            }
+        }
+        &-questions {
+            padding-top: calc(2.5rem + var(--height-content));
+        }
+    }
+}
+
 
 
 @import "../custommore/progress";

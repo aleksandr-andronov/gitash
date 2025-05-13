@@ -65,6 +65,7 @@
                 position: absolute;
                 top: rem(8);
                 right: rem(12);
+                display: none;
             }
         }
         &__promocode {
@@ -79,6 +80,21 @@
             overflow: hidden;
             &.hide {
                 width: 0rem;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 933px) {
+    .ashQuiz {
+        &-final {
+            &__head {
+                text-align: center;
+            }
+            &__txt {
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }

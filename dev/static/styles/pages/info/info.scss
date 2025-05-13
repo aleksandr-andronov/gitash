@@ -2,13 +2,15 @@
     padding: 116px 0;
     &__left {
         max-width: 380px;
+        position: sticky;
+        top: var(--height-content);
         &-controls {
             display: none;
         }
     }
     &__right {
         position: sticky;
-        top: 144px;
+        top: var(--height-content);
         // padding-top: 150px;
         // &--map {
         //     padding-top: 108px;
@@ -480,7 +482,7 @@
     .infoPage {
         padding: 94px 0;
         &__right {
-            top: 116px;
+            
             // padding-top: 122px;
             // &--map {
             //     padding-top: 86px;

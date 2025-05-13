@@ -1,0 +1,9 @@
+.d-block {
+    display: block;
+}
+
+@media (max-width: 932px) {
+    .m-hidden {
+        display: none !important;
+    }
+}

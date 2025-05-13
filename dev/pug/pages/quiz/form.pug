@@ -1,6 +1,6 @@
 form.ashQuiz-form(action="/") 
     .ashQuiz-form__steps 
-        .ashQuiz-form__step.active(data-step="1") 
+        .ashQuiz-form__step.active(data-step="1" data-prize="300") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
@@ -17,7 +17,7 @@ form.ashQuiz-form(action="/")
                         +label('7', 'stores', false)
                     .ashQuiz-form__questions-item
                         +label('10', 'stores', false)
-        .ashQuiz-form__step(data-step="2") 
+        .ashQuiz-form__step(data-step="2" data-prize="500") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
@@ -34,13 +34,13 @@ form.ashQuiz-form(action="/")
                         +label('Солнце', 'symbol', false)
                     .ashQuiz-form__questions-item
                         +label('Божья коровка', 'symbol', false)
-        .ashQuiz-form__step(data-step="3") 
+        .ashQuiz-form__step(data-step="3" data-prize="700") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Как мы называем поклонниц бренда? 
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 1 000 ₽
+                        .ashQuiz-form__prize.centered 700 ₽
                         .ashQuiz-form__burn не сгорит
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
@@ -52,13 +52,13 @@ form.ashQuiz-form(action="/")
                         +label('#ASHsister', 'fan', false)
                     .ashQuiz-form__questions-item
                         +label('#ASHchick', 'fan', false)
-        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="4" data-bg="bg-4") 
+        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="4" data-bg="bg-4" data-prize="1 000") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Какой национальности основатели бренда ASH?
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 1 500 ₽
+                        .ashQuiz-form__prize.centered 1 000 ₽
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
                     .ashQuiz-form__questions-item
@@ -69,13 +69,13 @@ form.ashQuiz-form(action="/")
                         +label('Испанец и американец', 'founder', false)
                     .ashQuiz-form__questions-item
                         +label('Француз и итальянец', 'founder', true)
-        .ashQuiz-form__step(data-step="5") 
+        .ashQuiz-form__step(data-step="5" data-prize="1 500") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Какая из этих моделей — кроссовки?
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 2 000 ₽
+                        .ashQuiz-form__prize.centered 1 500 ₽
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
                     .ashQuiz-form__questions-item
@@ -86,13 +86,13 @@ form.ashQuiz-form(action="/")
                         +label('Ruby', 'sneakers', false)
                     .ashQuiz-form__questions-item
                         +label('Dragon', 'sneakers', true)
-        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="6" data-bg="bg-6") 
+        .ashQuiz-form__step.ashQuiz-form__step-has-bg(data-step="6" data-bg="bg-6" data-prize="1 700") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Где мы снимали кампейн SS25?
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 2 500 ₽
+                        .ashQuiz-form__prize.centered 1 700 ₽
                         .ashQuiz-form__burn не сгорит
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
@@ -104,13 +104,13 @@ form.ashQuiz-form(action="/")
                         +label('Майорка', 'location', false)
                     .ashQuiz-form__questions-item
                         +label('Санторини', 'location', false)
-        .ashQuiz-form__step(data-step="7") 
+        .ashQuiz-form__step(data-step="7" data-prize="2 000") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Кто выступал на сцене в кедах на каблуке ASH? 
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 2 500 ₽
+                        .ashQuiz-form__prize.centered 2 000 ₽
                         .ashQuiz-form__burn не сгорит
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid.ashQuiz-form__questions--images 
@@ -122,13 +122,13 @@ form.ashQuiz-form(action="/")
                         +labelImg('Мадонна', 'star', true, 'star-3')
                     .ashQuiz-form__questions-item
                         +labelImg('Дженифер Лопес', 'star', false, 'star-4')
-        .ashQuiz-form__step(data-step="8") 
+        .ashQuiz-form__step(data-step="8" data-prize="2 500") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title Самая популярная модель за всю историю бренда в России? 
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 4 000 ₽
+                        .ashQuiz-form__prize.centered 2 500 ₽
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
                     .ashQuiz-form__questions-item
@@ -139,13 +139,13 @@ form.ashQuiz-form(action="/")
                         +label('Сандалии Roma', 'popular', false)
                     .ashQuiz-form__questions-item
                         +label('Казаки Dylan', 'popular', false)
-        .ashQuiz-form__step(data-step="9") 
+        .ashQuiz-form__step(data-step="9" data-prize="3 000") 
             .ashQuiz-form__head
                 .ashQuiz-form__head-inner.d-grid 
                     .ashQuiz-form__head-left 
                         .ashQuiz-form__title С кем из художников у нас была коллаборация?
                     .ashQuiz-form__head-right
-                        .ashQuiz-form__prize.centered 5 000 ₽
+                        .ashQuiz-form__prize.centered 3 000 ₽
                         .ashQuiz-form__burn не сгорит
             .ashQuiz-form__body
                 .ashQuiz-form__questions.d-grid
