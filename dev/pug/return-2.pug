@@ -1,0 +1,33 @@
+extends template/account-clear
+
+block variables
+	- var title = 'аккаунт'
+	- var ready = true
+
+block head
+	include pages/refund/head
+
+block content
+	.content__info
+		.accountReturn
+			include pages/refund/status/status-2
+			include pages/refund/reason
+			include pages/refund/method/method-2
+
+
+block modals
+	include modules/returnOffcanvas/return-choice
+	include modules/returnOffcanvas/return-before
+	include modules/returnOffcanvas/return-after
+	include modules/returnOffcanvas/return-method
+	include modules/returnOffcanvas/return-method-2
+
+
+block right
+	include pages/refund/right/right-1
+
+block scriptBefore
+	script(src="static/js/air-datepicker.min.js")
+
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/air-datepicker.min.css")

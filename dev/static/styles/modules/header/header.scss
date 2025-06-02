@@ -546,6 +546,7 @@
             transition: transform .3s ease-in-out;
             display: block;
             min-height: 100vh;
+            padding-bottom: 16px;
             &.open {
               transform: translateX(0%);
               height: 100vh;
@@ -687,7 +688,7 @@
               border-radius: 4px;
               padding: 4px 10px 4px 4px;
               &--no-img {
-                padding: 16px 0;
+                padding: 16px 16px;
               }
               &-img {
                 flex-shrink: 0;

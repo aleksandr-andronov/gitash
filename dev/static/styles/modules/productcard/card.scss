@@ -345,13 +345,22 @@
     .card {
         overflow: hidden;
         &-img {
-            display: none;
+            // display: none;
             img {
-                min-height: 254px;
+                height: 174px;
+            }
+            &__pagination {
+                display: none;
+            }
+            &__slider {
+                &-img {
+                    height: 254px;
+                    padding-top: 22px;
+                }
             }
         }
         &-img-mobile {
-            display: block;
+            // display: block;
             height: 254px;
             padding-top: 22px;
             text-align: center;
@@ -366,6 +375,7 @@
         }
         &-info {
             padding: 16px;
+            pointer-events: none;
             &__name {
                 letter-spacing: -0.02em;
                 font-size: 14px;

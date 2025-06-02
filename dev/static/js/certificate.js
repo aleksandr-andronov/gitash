@@ -304,74 +304,25 @@ function certificateCreate() {
     // выбор времени и даты
     
     const openCalendar = document.querySelector('.openCalendar');
-    const openCalendarParent = openCalendar.closest('.form-item__group');
+    const dateSend = document.getElementById('dateSend');
 
-    const inputsPlaceholderChange = document.querySelectorAll('.inputPlaceholderChange')
-
-
-    inputsPlaceholderChange.forEach(input => {
-        input.addEventListener('focusin', () => {
-            input.setAttribute('placeholder', input.dataset.placeholderchange)
-        })
-        input.addEventListener('blur', () => {
-            input.setAttribute('placeholder', input.dataset.placeholder)
-        })
-    })
-
-
-    const inputDate = document.querySelector('.inputDate')
-    IMask(inputDate,{
-        mask: Date,
-        lazy: true,
-    })
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const commonOptions = {
+    new AirDatepicker('#certCalendarM', {
+        navTitles: {
+            days: 'MMMM yyyy',
+        },
+        prevHtml: '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1.58398L3 7.58398L9 13.584" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>',
+        nextHtml: '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13.584L11 7.58398L5 1.58398" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>',
         inline: true,
         dateFormat: 'dd.MM.yyyy',
-        minDate: today
-    };
-
-    new AirDatepicker('#certCalendar', {
-        ...commonOptions,
-        onSelect({date, formattedDate, datepicker}) {
-            const parent = openCalendar.closest('.form-item__group');
-            inputDate.value = formattedDate;
-            parent.classList.remove('show-date', 'focused');
-            openCalendar.classList.remove('active');
-        }
-    });
-
-    new AirDatepicker('#certCalendarM', {
-        ...commonOptions,
+        minDate: today,
         onSelect({date, formattedDate, datepicker}) {
             document.getElementById('outputmDate').textContent = formattedDate;
-            inputDate.value = formattedDate;
+            dateSend.value = formattedDate;
             openCalendar.classList.remove('active');
-        }
-    });
-
-
-    function handleOutsideClick(event) {
-        if (!openCalendarParent.contains(event.target) && event.target !== openCalendar && openCalendar.classList.contains('active')) {
-            openCalendar.classList.remove('active');
-            openCalendarParent.classList.remove('show-date');
-            document.removeEventListener('click', handleOutsideClick);
-        }
-    }
-    
-    openCalendar.addEventListener('click', (e) => {
-        e.preventDefault();
-        openCalendar.classList.toggle('active');
-    
-        if (openCalendar.classList.contains('active')) {
-            openCalendarParent.classList.add('show-date');
-            document.addEventListener('click', handleOutsideClick);
-        } else {
-            openCalendarParent.classList.remove('show-date');
-            document.removeEventListener('click', handleOutsideClick);
         }
     });
 

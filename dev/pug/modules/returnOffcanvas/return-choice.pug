@@ -1,0 +1,37 @@
+#returnChoiceOffcanvas.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 Что хотите вернуть?
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        .offcanvas__body
+            .account-list
+                - for (let i = 0; i < 2; i++)
+                    .account-list__item
+                        .account-orderItem.account-orderItem--sm
+                            .account-orderItem__inner.d-flex 
+                                .account-orderItem__inner-img 
+                                    a.account-orderItem__img.centered(href="#") 
+                                        +pngC('stphoto_ru2', '100', '96')
+                                        .account-orderItem__img-size.mobile 36
+                                .account-orderItem__inner-info 
+                                    .account-orderItem__top 
+                                        .account-orderItem__group.d-flex
+                                            .account-orderItem__group-name 
+                                                .account-orderItem__title 
+                                                    a(href="#")  Addict
+                                                .account-orderItem__category 
+                                                    a(href="#") Ботинки 
+                                                .account-orderItem__size
+                                                    .account-orderItem__size-txt 38
+                                                    .account-orderItem__size-icon(style="background: #EBE3CF;")
+                                            .account-orderItem__group-favorite
+                                                +checkbox(true, false)
+                                    .account-orderItem__bottom
+                                        .account-orderItem__price.d-flex
+                                            .account-orderItem__price-new.ttl.title2 12 990 ₽
+        .offcanvas__sticky-foot
+            a.btn.w-full(href="#returnBeforeOffcanvas" data-bs-toggle="offcanvas") продолжить

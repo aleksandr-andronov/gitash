@@ -7,6 +7,7 @@ html(lang="ru-RU")
 		meta(charset="utf-8")
 		title #{title}
 		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		block styles
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
 	body.has-notification
@@ -303,8 +304,8 @@ html(lang="ru-RU")
 														<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.94922 4.05846H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 7.22839H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path d="M4.94922 10.3964H8.12006" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.94342 15.0648L5.30448 13.7449C5.08094 13.6331 4.81855 13.6331 4.5958 13.7449L2.35322 14.8666C2.08925 14.9982 1.7793 14.8071 1.7793 14.5123V1.67748C1.7793 1.2399 2.13443 0.884766 2.57201 0.884766H13.67C14.1075 0.884766 14.4627 1.2399 14.4627 1.67748V14.5123C14.4627 14.8071 14.1527 14.9982 13.8887 14.8666L11.6462 13.7449C11.4226 13.6331 11.1602 13.6331 10.9375 13.7449L8.29855 15.0648C8.18678 15.1211 8.05519 15.1211 7.94342 15.0648Z" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 4.04474C11.2885 4.04474 11.2869 4.04632 11.2869 4.0487C11.2869 4.05108 11.2885 4.05266 11.2909 4.05266C11.2933 4.05266 11.2949 4.05108 11.2949 4.0487C11.2949 4.04632 11.2933 4.04474 11.2909 4.04474" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2928 7.21466C11.2905 7.21466 11.2889 7.21624 11.2889 7.21862C11.2889 7.221 11.2905 7.22258 11.2928 7.22258C11.2952 7.22258 11.2968 7.221 11.2968 7.21862C11.2968 7.21624 11.2952 7.21466 11.2928 7.21466" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.2909 10.3846C11.2885 10.3846 11.2869 10.3862 11.2869 10.3885C11.2869 10.3909 11.2885 10.3925 11.2909 10.3925C11.2933 10.3925 11.2949 10.3909 11.2949 10.3885C11.2949 10.3862 11.2933 10.3846 11.2909 10.3846" stroke="#BEBEBE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 													span.link-icon__txt электроннный чек
 
-												a.account-return.link-icon(href="#") 
-													span.account-receipt__icon.link-icon__icon.icon 
+												a.account-return.link-icon(href="#returnChoiceOffcanvas" data-bs-toggle="offcanvas") 
+													span.account-receipt__icon.link-icon__icon.icon-outline 
 														include ../icons/return
 													span.link-icon__txt оформить возврат
 										else if (receipt)
@@ -339,6 +340,10 @@ html(lang="ru-RU")
 		include ../modules/modals/modals
 		include ../modules/popups/popups
 		include ../modules/notification/notification-top
+
+		block modals
+
+		block scriptBefore
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/imask.js")

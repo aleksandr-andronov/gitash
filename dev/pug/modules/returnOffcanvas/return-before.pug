@@ -1,0 +1,79 @@
+mixin reasonLabel(txt, img, tabs)
+    - const labelContentClass = img ? 'offcanvas-return__label-content radio-outline outline-border d-grid align-center' : 'offcanvas-return__label-content radio-outline outline-border d-grid align-center offcanvas-return__label-content--no-img';
+    - const inputClass = tabs ? 'tabsRadio-input' : '';
+    - const dataTabsAttr = tabs ? { 'data-tabs': '1' } : {};
+    label.offcanvas-return__label.radio.radio-bg
+        input.tabsRadio-input(type="radio" name="reason" data-tabs=tabs ? "1" : "2")
+        span(class=labelContentClass)
+            if (img)
+                span.offcanvas-return__label-img
+                    +svg(`${img}`, '38', '38', 'return')
+            span.offcanvas-return__label-txt #{txt}
+            span.offcanvas-return__label-icon
+                span.radio-icon
+
+
+#returnBeforeOffcanvas.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head.offcanvas__head--has-step
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#returnChoiceOffcanvas" data-bs-toggle="offcanvas" aria-label="назад") 
+                        +svg('arrow-left')
+                .offcanvas__head-left
+                    .offcanvas__head-step Шаг 1/2
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 причина возврата
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        form.offcanvas__form.d-flex.flex-col(action="/") 
+            .offcanvas__body
+                .offcanvas-return.tabsRadio
+                    .offcanvas-return__product-wrap
+                        .offcanvas-return__product.d-grid.d-grid-list.align-end 
+                            .offcanvas-return__product-left 
+                                .offcanvas-return__product-img.d-flex.align-center.justify-end.grey-img.relative
+                                    +jpgC('stphoto_ru', '62', '60')
+                                    span.account-order__product-size.centered 39
+                            .offcanvas-return__product-right 
+                                .title Пожалуйста, укажите причину возврата данного товара
+                    .offcanvas-return__reason.d-grid.d-grid-list
+                        +reasonLabel('Мне не подошел размер (большемерит)', 'return-icon-1', false)
+                        +reasonLabel('Мне не подошел размер (маломерит)', 'return-icon-2', false)
+                        +reasonLabel('Мне не подошла модель (неудобная)', 'return-icon-3', false)
+                        +reasonLabel('Товар отличается от фото', 'return-icon-4', true)
+                        +reasonLabel('Нашла (-ел) дешевле', 'return-icon-5', false)
+                        +reasonLabel('Товар поврежден при доставке', 'return-icon-6', true)
+                        +reasonLabel('Привезли не тот товар', 'return-icon-7', false)
+                        +reasonLabel('Проблемы с качеством товара', 'return-icon-8', true)
+                        +reasonLabel('Другое (Опишу в комментарии)', false, true)
+                    .offcanvas-return__files.tabsRadio-content(data-tabs="1")
+                        .offcanvas-return__files-group
+                            .offcanvas-return__files-group__head
+                                .offcanvas-return__files-title.title Добавьте фото*
+                            .form-files
+                                .form-files__list
+                                    .form-files__list-item
+                                        .form-files__item.form-files__item--loaded
+                                            .form-files__item-name фото1.jpg
+                                            .form-files__item-load.form-files__item-icon.icon 
+                                                +svg('load', '16', '16')
+                                            .form-files__item-remove.form-files__item-icon.icon 
+                                                +svg('remove')
+                                    - for (let i = 0; i < 3; i++)
+                                        .form-files__list-item
+                                            .form-files__item
+                                                .form-files__item-name фото1.jpg
+                                                .form-files__item-load.form-files__item-icon.icon 
+                                                    +svg('load', '16', '16')
+                                                .form-files__item-remove.form-files__item-icon.icon 
+                                                    +svg('remove')
+                                label.form-files__label
+                                    input(type="file")
+                                    span.form-files__label-btn.btn.btn-outline выбрать файлы
+                        .offcanvas-return__files-group
+                            .offcanvas-return__files-group__head
+                                .offcanvas-return__files-title.title Для ускорения процесса возврата, просим описать причину подробнее
+                            +formItem('комментарий', 'text')
+            .offcanvas__sticky-foot
+                a.btn.w-full(href="#returnMethodOffcanvas" data-bs-toggle="offcanvas") продолжить

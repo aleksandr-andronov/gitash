@@ -98,6 +98,10 @@ textarea {
     }
 }
 
+.d-grid-list {
+    gap: 8px;
+}
+
 .items-center {
     align-items: center;
 }
@@ -213,5 +217,9 @@ a.underline {
     .icon, .icon-outline {
         width: 18px;
         height: 18px;
+    }
+
+    .d-grid-list {
+        gap: 6px;
     }
 }

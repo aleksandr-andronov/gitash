@@ -1,0 +1,41 @@
+.accountReturn__group
+    .accountReturn__group-item.d-flex.align-center.justify-between
+        .title Способ возврата
+    .accountReturn__group-item
+        .product-notification
+            .product-notification__item.d-flex 
+                .product-notification__item-icon.icon-outline
+                    +icon('i')
+                .product-notification__item-txt Возврат товара осуществляется за счет покупателя
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-1', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара в пункте выдачи заказов СДЭК
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Адрес
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value г. Москва Шарикоподшипниковская, 6/14
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Имя получателя
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value ООО "ФЭШН РИТЕЙЛ"
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Контактный телефон
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value 
+                            a(href="tel:88005007682") 8 (800) 500-76-82
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Трек-номер
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value Укажите трек номер после отправки товара
+                        form.accountReturn-method__form.relative(action="/")
+                            input.accountReturn-method__form-input.form-input(type="text" placeholder="Введите трек-номер")
+                            button.accountReturn-method__form-btn.btn-circle(type="submit" disabled)
+                                include ../../../icons/arrow-right-12

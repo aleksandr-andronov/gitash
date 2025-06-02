@@ -29,12 +29,18 @@
             display: none;
         }
     }
+    &__form {
+        flex-grow: 1;
+    }
     &__sticky-foot {
         background: var(--white);
         position: sticky;
         bottom: 0;
         z-index: 9;
         padding: 16px var(--offcanvas-px) var(--offcanvas-px);
+        &__txt {
+            margin-top: 16px;
+        }
     }
     &.offcanvas-end {
         width: 656px;
@@ -65,6 +71,9 @@
             padding: 38px 46px 50px;
             position: static;
         }
+        &--has-step {
+            padding-top: 40px;
+        }
         &-back  {
             width: 40px;
             flex-shrink: 0;
@@ -84,6 +93,9 @@
         }
         &-search {
             margin-top: 20px;
+        }
+        &-step {
+            margin-bottom: 12px;
         }
         
     }
@@ -310,6 +322,7 @@
 
     &-feedback {
         &__status {
+            --status-padding: 16px;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -317,7 +330,10 @@
             right: 0;
             background: var(--white);
             z-index: 9;
-            padding: 16px;
+            padding: var(--status-padding);
+            &--high {
+                z-index: 99;
+            }
             &-inner {
                 flex-direction: column;
                 min-height: 100%;
@@ -326,7 +342,29 @@
                 margin-bottom: 36px;
             }
             &-txt {
-                margin-top: 6px;
+                margin-top: 16px;
+                max-width: 380px;
+            }
+            &-bottom {
+                margin-top: auto;
+                margin-bottom: calc(78px - var(--status-padding));
+                &__txt {
+                    max-width: 380px;
+                }
+            }
+            &-group {
+                margin: auto;
+                margin-bottom: 0;
+                text-align: center;
+                max-width: 464px;
+            }
+            &-fake {
+                min-height: 66px;
+                margin-top: calc(78px - var(--status-padding));
+            }
+            &-btn {
+                top: 40px;
+                right: 40px;
             }
         }
         &__txt {
@@ -350,7 +388,7 @@
         &__foot {
             margin-top: 32px;
         }
-        &__btn {
+        &__btn { 
             margin-left: auto;
             padding: 17px 25px 16px;
             font-size: 15px;
@@ -377,6 +415,9 @@
             &--has-search {
                 padding-bottom: 16px;
             }
+            &--has-step {
+                padding-top: 32px;
+            }
             &--pb-2 {
                 padding-bottom: 54px;
             }
@@ -389,6 +430,9 @@
             }
             &-search {
                 margin-top: 16px;
+            }
+            &-step {
+                margin-bottom: 8px;
             }
         }
         &-close {
@@ -531,10 +575,30 @@
             }
             &__status {
                 &-img {
-                    margin-bottom: 32px;
+                    margin-bottom: 28px;
                     img {
                         width: 64px;
                     }
+                }
+                &-group {
+                    max-width: 310px;
+                }
+                &-txt {
+
+                }
+                &-bottom {
+                    margin-bottom: calc(64px - var(--status-padding));
+                    &__txt {
+                        max-width: 364px;
+                    }
+                }
+                &-fake {
+                    min-height: 64px;
+                    margin-top: calc(64px - var(--status-padding));
+                }
+                &-btn {
+                    top: 54px;
+                    right: 30px;
                 }
             }
         }
@@ -572,9 +636,9 @@
             padding-top: 8px;
         }
         &__head {
-            padding: 20px 14px;
+            padding: 20px var(--container-padding);
             &--has-step {
-                padding: 16px 20px 20px;
+                padding: 16px var(--container-padding) 20px;
             }
             &--has-search {
                 padding-bottom: 12px;
@@ -610,7 +674,7 @@
             }
         }
         &__body {
-            padding: 0 14px 14px;
+            padding: 0 var(--container-padding) 14px;
             &--py-1 {
                 padding-top: 20px;
                 padding-bottom: 20px;
@@ -669,6 +733,18 @@
                 }
                 &-title {
                     font-size: 24px;
+                }
+                &-btn {
+                    top: 10px;
+                    right: var(--container-padding);
+                }
+                &-txt {
+                    max-width: 264px;
+                }
+                &-bottom {
+                    &__txt {
+                        max-width: 298px;
+                    }
                 }
             }
         }

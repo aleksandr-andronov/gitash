@@ -1,0 +1,120 @@
+.accountReturn__group
+    .accountReturn__group-item.d-flex.align-center.justify-between
+        .title Способ возврата
+        a.link-icon(href="#returnMethodOffcanvas" data-bs-toggle="offcanvas") 
+            span.link-icon__txt Изменить
+            span.link-icon__icon.icon-outline 
+                include ../../icons/edit-12
+    .accountReturn__group-item
+        .product-notification
+            .product-notification__item.d-flex 
+                .product-notification__item-icon.icon-outline
+                    +icon('i')
+                .product-notification__item-txt Возврат товара осуществляется за счет покупателя. Мы компенсируем стоимость только по причине брака товара.
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-1', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара в пункте выдачи заказов СДЭК
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Адрес
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value г. Москва Шарикоподшипниковская, 6/14
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Имя получателя
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value ООО "ФЭШН РИТЕЙЛ"
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Контактный телефон
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value 
+                            a(href="tel:88005007682") 8 (800) 500-76-82
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Трек-номер
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value Укажите трек номер после отправки товара
+                        form.accountReturn-method__form.relative(action="/")
+                            input.accountReturn-method__form-input.form-input(type="text" placeholder="Введите трек-номер")
+                            button.accountReturn-method__form-btn.btn-circle(type="submit" disabled)
+                                include ../../icons/arrow-right-12
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-2', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара в отделение Почты России
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Адрес
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value г. Москва Шарикоподшипниковская, 6/14
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Имя получателя
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value ООО "ФЭШН РИТЕЙЛ"
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Контактный телефон
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value 
+                            a(href="tel:88005007682") 8 (800) 500-76-82
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Трек-номер
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value Укажите трек номер после отправки товара
+                        form.accountReturn-method__form.relative(action="/")
+                            input.accountReturn-method__form-input.form-input(type="text" placeholder="Введите трек-номер")
+                            button.accountReturn-method__form-btn.btn-circle(type="submit" disabled)
+                                include ../../icons/arrow-right-12
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-5', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара курьером
+            .accountReturn-method__txt
+                p Для возврата по Москве в пределах МКАД, Вы можете воспользоваться услугой курьера от бренда.
+                p После оформления возврата менеджер свяжется с вами для уточнения даты и времени.
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Стоимость услуги
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value 499 рублей
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Дата и время визита
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value 19 марта <br>10:00 - 19:00
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-4', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара в офис интернет-магазина
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Адрес
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value г. Москва, Шарикоподшипниковская ул, дом 4 к.4А, находится в БЦ "Seasons"
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name График работы офиса
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value понедельник-пятница 10:00-19:00
+            .accountReturn-method__notification 
+                .product-notification__item.d-flex 
+                    .product-notification__item-icon.icon-outline
+                        +icon('i')
+                    .product-notification__item-txt Необходимо предупредить о визите по телефону: 
+                        a(href="tel:88005007682") 8 (800) 500-76-82

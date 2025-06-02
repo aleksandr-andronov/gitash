@@ -23,7 +23,7 @@
     &__content {
         margin-left: calc(-1 * var(--container-padding));
         margin-right: calc(-1 * var(--container-padding));
-        
+        overflow: hidden;
     }
     &-discounts {
         width: fit-content;
@@ -231,6 +231,7 @@
     &-btn {
         align-items: center;
         position: relative;
+        width: fit-content;
         &:hover {
             color: var(--text-black-hover);
             fill: var(--text-black-hover);

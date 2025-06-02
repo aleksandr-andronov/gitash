@@ -1,0 +1,17 @@
+extends template/main2
+
+block variables
+	- var title = 'Список страниц'
+
+block content
+	.container(style="padding: 40px 14px;") 
+		.h4.ttl(style="margin: 40px 0;") Технические Страницы
+		ul 
+			li 
+				a(href="#search" data-bs-toggle="offcanvas") ничего не найдено
+			li 
+				a(href="#cart" data-bs-toggle="offcanvas") пустая корзина
+			li 
+				a(href="#subscribeSize" data-bs-toggle="offcanvas") для авторизованного пользователя подписаться на размер
+			li 
+				a(href="#feedback" data-bs-toggle="offcanvas") Обратная связь ошибка

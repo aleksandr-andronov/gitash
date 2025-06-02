@@ -66,6 +66,8 @@
         }
         &__title {
             margin-bottom: 28px;
+            display: flex;
+            justify-content: center;
         }
         &__subtitle {
             margin-bottom: 20px;

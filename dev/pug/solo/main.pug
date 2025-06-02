@@ -1,0 +1,26 @@
+extends template/mainPage
+
+block variables
+	- var title = 'оформление заказа'
+
+block content
+	include pages/main/intro
+	.mainSections 
+		include pages/main/hits
+		include pages/main/season-2
+		include pages/main/popular
+		//- include pages/main/season
+		include pages/main/ashgirls
+		include pages/main/journal
+		include pages/main/collection
+		include pages/main/banner
+		include pages/main/sale
+		include pages/main/lastpair
+		include pages/main/ashclub
+	//- 	include pages/main/new
+	//- 	include pages/main/reash
+	//- 	include pages/main/popular-2
+	//- 	include pages/main/sale
+	
+	include modules/popups/quiz
+	//- include modules/notification/notification-top

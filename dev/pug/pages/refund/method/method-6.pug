@@ -1,0 +1,36 @@
+.accountReturn__group
+    .accountReturn__group-item.d-flex.align-center.justify-between
+        .title Способ возврата
+        a.link-icon(href="#returnMethod2Offcanvas" data-bs-toggle="offcanvas") 
+            span.link-icon__txt Изменить
+            span.link-icon__icon.icon-outline 
+                include ../../../icons/edit-12
+    .accountReturn__group-item
+        .product-notification
+            .product-notification__item.d-flex 
+                .product-notification__item-icon.icon-outline
+                    +icon('i')
+                .product-notification__item-txt Возврат товара осуществляется за счет покупателя. Мы компенсируем стоимость только по причине брака товара. Укажите способ возврата после подтверждения.
+    .accountReturn__group-item
+        .accountReturn-method.second-bg.rounded-1
+            .accountReturn-method__head.d-grid.align-center
+                .accountReturn-method__head-img 
+                    +svg('return-method-4', '48', '48', 'return')
+                .accountReturn-method__head-info.medium.uppercase Возврат товара в офис интернет-магазина
+            .accountReturn-method__content 
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name Адрес
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value г.Москва, Шарикоподшипниковская ул, дом 4 к.4А, ООО "ФЭШН РИТЕЙЛ" находится в БЦ "Seasons"
+                .accountReturn-method__item.d-grid
+                    .accountReturn-method__item-left 
+                        .accountReturn-method__item-name График работы офиса
+                    .accountReturn-method__item-right
+                        .accountReturn-method__item-value понедельник-пятница 10:00-19:00
+            .accountReturn-method__notification 
+                .product-notification__item.d-flex 
+                    .product-notification__item-icon.icon-outline
+                        +icon('i')
+                    .product-notification__item-txt Необходимо предупредить о визите по телефону: 
+                        a(href="tel:88005007682") 8 (800) 500-76-82

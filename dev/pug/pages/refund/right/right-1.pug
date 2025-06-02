@@ -1,0 +1,32 @@
+.accountReturn-right
+    .accountReturn-right__title.s-bold.d-none Товар
+    .accountReturn-right__info.rounded-1
+        .accountReturn-right__product 
+            .account-orderItem.account-orderItem--sm
+                .account-orderItem__inner.d-flex 
+                    .account-orderItem__inner-img 
+                        a.account-orderItem__img.centered(href="#") 
+                            +pngC('stphoto_ru2', '100', '96')
+                            .account-orderItem__img-size.mobile 36
+                    .account-orderItem__inner-info 
+                        .account-orderItem__top 
+                            .account-orderItem__group.d-flex
+                                .account-orderItem__group-name 
+                                    .account-orderItem__title 
+                                        a(href="#")  Addict
+                                    .account-orderItem__category 
+                                        a(href="#") Ботинки 
+                                    .account-orderItem__size
+                                        .account-orderItem__size-txt 38
+                                        .account-orderItem__size-icon(style="background: #EBE3CF;")
+                        .account-orderItem__bottom
+                            .account-orderItem__price.d-flex
+                                .account-orderItem__price-new 12 990 ₽
+        .accountReturn-right__price.d-flex.align-center.justify-between.ttl
+            .accountReturn-right__price-name.uppercase Сумма возврата
+            .accountReturn-right__price-value 12 990 ₽
+    .accountReturn-right__notification 
+        .product-notification__item.d-flex 
+            .product-notification__item-icon.icon-outline
+                +icon('i')
+            .product-notification__item-txt Деньги поступят на счет в течение трех рабочих дней после подтверждения возврата

@@ -1,0 +1,103 @@
+.account-head.account-head--desctop
+    .account-head__title.h3.ttl возвраты
+.account-mobileHead
+    .account-mobileHead__group.d-flex 
+        a.account-mobileHead__btn.btn-circle(href="#")
+            +svg('arrow-left', '16', '16')
+        .account-mobileHead__qty (2)
+    .account-mobileHead__title.ttl возвраты
+.account-list
+    .account-list__item 
+        .account-order
+            .account-order__top.d-flex 
+                .account-order__top-info 
+                    .account-order__title Заказ от 1 сентября
+                    .account-order__number.txt-sm Vnukovo Outlet village
+                .account-order__top-price 
+                    .account-order__price.txt-sm 22 849 ₽
+                .account-order__top-status 
+                    .account-order__status.account-order__status--ready.ttl 
+                        .account-order__status-txt выполнен
+                        .account-order__status-icon.icon 
+                            include ../../icons/circle-check
+            .account-order__bottom.d-flex 
+                .account-order__bottom-list 
+                    .account-order__list.flex 
+                        - for (let i = 0; i < 2; i++)
+                            .account-order__list-item 
+                                a.account-order__product(href="#") 
+                                    span.account-order__product-img 
+                                        +pngC('order-img', '80', '100')
+                                    span.account-order__product-size.centered 39
+                .account-order__bottom-btn
+                    a.account-order__btn.btn-circle(href="#")
+                        +svg('arrow-right', '16', '16')
+    .account-list__item 
+        .account-order
+            .account-order__top.d-flex 
+                .account-order__top-info 
+                    .account-order__title Заказ от 26  августа
+                    .account-order__number.txt-sm онлайн
+                .account-order__top-price 
+                    .account-order__price.txt-sm 22 849 ₽
+                .account-order__top-status 
+                    .account-order__status.account-order__status--ready.ttl 
+                        .account-order__status-txt одобрен
+                        .account-order__status-icon.icon 
+                            include ../../icons/circle-check
+            .account-order__bottom.d-flex 
+                .account-order__bottom-list 
+                    .account-order__list.flex 
+                        - for (let i = 0; i < 1; i++)
+                            .account-order__list-item 
+                                a.account-order__product(href="#") 
+                                    span.account-order__product-img 
+                                        +pngC('order-img', '80', '100')
+                                    span.account-order__product-size.centered 39
+                .account-order__bottom-btn
+                    a.account-order__btn.btn-circle(href="#")
+                        +svg('arrow-right', '16', '16')
+    .account-list__item 
+        .account-order
+            .account-order__top.d-flex 
+                .account-order__top-info 
+                    .account-order__title Заказ от 1 сентября
+                    .account-order__number.txt-sm онлайн
+                .account-order__top-price 
+                    .account-order__price.txt-sm 22 849 ₽
+                .account-order__top-status 
+                    .account-order__status.ttl на подтверждении
+            .account-order__bottom.d-flex 
+                .account-order__bottom-list 
+                    .account-order__list.flex 
+                        - for (let i = 0; i < 2; i++)
+                            .account-order__list-item 
+                                a.account-order__product(href="#") 
+                                    span.account-order__product-img 
+                                        +pngC('order-img', '80', '100')
+                                    span.account-order__product-size.centered 39
+                .account-order__bottom-btn
+                    a.account-order__btn.btn-circle(href="#")
+                        +svg('arrow-right', '16', '16')
+    .account-list__item 
+        .account-order
+            .account-order__top.d-flex 
+                .account-order__top-info 
+                    .account-order__title Заказ от 26  августа
+                    .account-order__number.txt-sm онлайн
+                .account-order__top-price 
+                    .account-order__price.txt-sm 22 849 ₽
+                .account-order__top-status 
+                    .account-order__status.account-order__status--cancel.ttl отменён
+            .account-order__bottom.d-flex 
+                .account-order__bottom-list 
+                    .account-order__list.flex 
+                        - for (let i = 0; i < 1; i++)
+                            .account-order__list-item 
+                                a.account-order__product(href="#") 
+                                    span.account-order__product-img 
+                                        +pngC('order-img', '80', '100')
+                                    span.account-order__product-size.centered 39
+                .account-order__bottom-btn
+                    a.account-order__btn.btn-circle(href="#")
+                        +svg('arrow-right', '16', '16')

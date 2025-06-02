@@ -7,6 +7,7 @@ html(lang="ru-RU")
 		meta(charset="utf-8")
 		title #{title}
 		meta(meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		block styles
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
@@ -14,7 +15,6 @@ html(lang="ru-RU")
 		.wrapper
 			include ../modules/header/header
 			.account 
-				
 				.container 
 					.content.list
 						.content__col.content__col-3.col
@@ -73,15 +73,21 @@ html(lang="ru-RU")
 												span.account-userMenu__link-icon.icon 
 													+svg('logout', '20', '20')
 												span.account-userMenu__link-txt Выйти
-						.content__col.content__col-6.col
-							.content__info
-								block content
-						.content__col.content__col-3.col
-							block right
+						.content__col.content__col-9.col
+							.content.list 
+								.content__col.content__col-8.col
+									.content__info
+										block head
+								.content__col.content__col-8.col
+									block content
+								.content__col.content__col-4.col
+									block right
 			include ../modules/footer/footer
 		include ../modules/modals/modals
 		include ../modules/popups/popups
 		include ../modules/notification/notification-top
+		block modals
+		block scriptBefore
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/simplebar.min.js")

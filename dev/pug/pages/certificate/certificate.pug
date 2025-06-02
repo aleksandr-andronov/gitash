@@ -301,10 +301,10 @@
                                                 .order-form__row-wrapper.desctop
                                                     .order-form__row.flex
                                                         .order-form__col
-                                                            .form-item
+                                                            .form-item.form-item-date(data-disable-weekends="false" data-min-date="true" data-calendar-id="certCalendar")
                                                                 .form-item__group
-                                                                    input.form-input.inputDate.inputPlaceholderChange(type="text" data-placeholder="дата" data-placeholderChange="дд.мм.гггг" placeholder="дата")
-                                                                    button.form-item__right-info.form-item__right-icon.icon.openCalendar(type="button")
+                                                                    input.form-input.inputDate.inputPlaceholderChange#dateSend(type="text" data-placeholder="дата" data-placeholderChange="дд.мм.гггг" placeholder="дата")
+                                                                    button.form-item__right-info.form-item__right-icon.icon.openCalendar(type="button" data-calendar-button="#certCalendar")
                                                                         +icon('calendar') 
                                                                     .form-item__dropdown-calendar.outline-border.form-datepicker
                                                                         #certCalendar

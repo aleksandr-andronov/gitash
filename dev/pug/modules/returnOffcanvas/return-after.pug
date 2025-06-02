@@ -1,0 +1,55 @@
+#returnAfterOffcanvas.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#returnChoiceOffcanvas" data-bs-toggle="offcanvas" aria-label="назад") 
+                        +svg('arrow-left')
+                .offcanvas__head-left
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 причина возврата
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        form.offcanvas__form.d-flex.flex-col(action="/") 
+            .offcanvas__body
+                .offcanvas-return
+                    .offcanvas-return__notification
+                        .product-notification.product-notification--peach
+                            .product-notification__item.d-flex 
+                                .product-notification__item-icon.icon-outline
+                                    +icon('i')
+                                .product-notification__item-txt.txt-sm По истечении срока 14 дней мы оформляем возврат только по причине брака товара
+                    .offcanvas-return__files
+                        .offcanvas-return__files-group
+                            .offcanvas-return__files-group__head
+                                .offcanvas-return__files-title.title Опишите причину возврата
+                            +formItem('комментарий', 'text')
+                        .offcanvas-return__files-group
+                            .offcanvas-return__files-group__head
+                                .offcanvas-return__files-title.title Добавьте фото*
+                                .offcanvas-return__files-txt Важно, чтобы повреждения были хорошо видны на фото. Это ускорит процесс возврата товара.
+                            .form-files
+                                .form-files__list
+                                    .form-files__list-item
+                                        .form-files__item.form-files__item--loaded
+                                            .form-files__item-name фото1.jpg
+                                            .form-files__item-load.form-files__item-icon.icon 
+                                                +svg('load', '16', '16')
+                                            .form-files__item-remove.form-files__item-icon.icon 
+                                                +svg('remove')
+                                    - for (let i = 0; i < 3; i++)
+                                        .form-files__list-item
+                                            .form-files__item
+                                                .form-files__item-name фото1.jpg
+                                                .form-files__item-load.form-files__item-icon.icon 
+                                                    +svg('load', '16', '16')
+                                                .form-files__item-remove.form-files__item-icon.icon 
+                                                    +svg('remove')
+                                label.form-files__label
+                                    input(type="file")
+                                    span.form-files__label-btn.btn.btn-outline выбрать файлы
+            .offcanvas__sticky-foot
+                button.btn.w-full(type="submit") оформить возврат
+                .offcanvas__sticky-foot__txt.tech-14 Нажимая на кнопку «Оформить возврат», я принимаю 
+                    a(href="#") условия публичной оферты
+                        

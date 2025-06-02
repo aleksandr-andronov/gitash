@@ -33,6 +33,7 @@
     border-radius: 6px;
     font-size: 17px;
     line-height: 115%;
+    font-weight: normal;
     text-transform: uppercase;
     padding: 20px 40px;
     gap: 10px;
@@ -95,6 +96,10 @@
         width: 16px;
         height: 16px;
     }
+}
+
+.w-full {
+    width: 100%;
 }
 
 @media (max-width: 1440px) {

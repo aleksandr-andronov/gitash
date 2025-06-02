@@ -1,0 +1,262 @@
+.accountReturn {
+    a:not([class]) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__group {
+        margin-bottom: var(--margin-1);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &-item {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-reason {
+        &__info {
+            grid-template-columns: 38px 1fr;
+            gap: 8px;
+            line-height: 140%;
+            &--no-icon {
+                grid-template-columns: 1fr !important;
+            }
+            &-desc {
+                align-self: center;
+            }
+        }
+        &__bottom {
+            margin-top: 24px;
+        }
+        &__images {
+            --list-gutter-x: 1px;
+            row-gap: 2px;
+            &-item {
+                height: 108px;
+                width: 80px;
+            }
+        }
+    }
+    &-method {
+        padding: 28px;
+        &__head {
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+            max-width: 420px;
+            margin-bottom: 24px;
+            &--no-icon {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        &__content {
+            
+        }
+        &__txt {
+            margin-bottom: 16px;
+            p {
+                margin-bottom: 8px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__item {
+            grid-template-columns: 1fr 340px;
+            margin-bottom: 16px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__form {
+            margin-top: 12px;
+            &-btn {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 99;
+                --btn-bg: var(--button-default);
+                --btn-bg-hover: var(--btn-hover);
+                &[disabled] {
+                    --btn-bg: var(--element-second);
+                    --btn-bg-hover: var(--element-second);
+                }
+            }
+            &-input {
+                height: 60px;
+                &.error {
+                    border-color: #DE4819;
+                }
+                &:hover {
+                    border-color: #D3D2DB;
+                }
+                &:focus {
+                    border-color: var(--black);
+                }
+            }
+        }
+        &__notification {
+            margin-top: 24px;
+        }
+    }
+    &-right {
+        &__notification {
+            margin-top: 28px;
+        }
+        &__info {
+            border: 1px dashed var(--stroke-dash);
+            padding: 28px;
+        }
+        &__product {
+            padding-bottom: 28px;
+        }
+        &__price {
+            padding-top: 28px;
+            border-top: 1px dashed var(--stroke-dash);
+            font-size: 18px;
+        }
+        &__title {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        &__priceDetail {
+            border-top: 1px dashed var(--stroke-dash);
+            padding: 20px 0;
+            &-item {
+                margin-bottom: 12px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .accountReturn {
+        &__group {
+            &-item {
+                margin-bottom: 16px;
+            }
+        }
+        &-reason {
+            &__info {
+                grid-template-columns: 32px 1fr;
+            }
+            &__bottom {
+                margin-top: 20px;
+            }
+            &__images {
+                &-item {
+                    width: 66px;
+                    height: 90px;
+                }
+            }
+        }
+        &-method {
+            padding: 24px;
+            &__head {
+                grid-template-columns: 42px 1fr;
+                gap: 14px;
+                max-width: 340px;
+                margin-bottom: 20px;
+            }
+            &__notification {
+                margin-top: 20px;
+            }
+            &__txt {
+                margin-bottom: 10px;
+                p {
+                    margin-bottom: 6px;
+                }
+            }
+            &__item {
+                grid-template-columns: 1fr 268px;
+                margin-bottom: 10px;
+            }
+            &__form {
+                margin-top: 10px;
+                &-input {
+                    height: 50px;
+                }
+                &-btn {
+                    right: 8px;
+                }
+            }
+        }
+        &-right {
+            &__info {
+                padding: 24px;
+            }
+            &__product {
+                padding-bottom: 20px;
+            }
+            &__price {
+                padding-top: 24px;
+                font-size: 16px;
+            }
+            &__notification {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .accountReturn {
+        &-reason {
+            &__images {
+                &-item {
+                    width: 75px;
+                    height: 100px;
+                }
+            }
+        }
+        &-method {
+            padding: 20px;
+            &__head {
+                margin-bottom: 16px;
+            }
+            &__item {
+                grid-template-columns: 1fr;
+                gap: 2px;
+                margin-bottom: 16px;
+                &-name {
+                    font-weight: 600;
+                }
+            }
+            &__form {
+                margin-top: 10px;
+            }
+            &__txt {
+                margin-bottom: 16px;
+            }
+            &__notification {
+                margin-top: 16px;
+            }
+        }
+        &-right {
+            &__title {
+                display: block;
+                margin-top: 20px;
+            }
+            &__info {
+                padding: 20px;
+            }
+            &__product {
+                padding-bottom: 16px;
+            }
+            &__price {
+                font-size: 15px;
+                padding-top: 16px;
+            }
+            &__notification {
+                margin-top: 16px;
+            }
+        }
+    }
+}

@@ -1,3 +1,258 @@
+function statusPosition() {
+  const statusContainer = document.querySelector('.account-status');
+  const transformLine = document.querySelector('.account-status__lines--transform');
+
+  if (statusContainer && transformLine) {
+    if (statusContainer.scrollWidth > statusContainer.clientWidth) {
+      statusContainer.scrollTo({
+        left: statusContainer.scrollWidth,
+        behavior: 'smooth'
+      });
+    }
+  }
+}
+
+statusPosition();
+
+function treckForm() {
+  const form = document.querySelector('.accountReturn-method__form');
+  if (form) {
+    const input = form.querySelector('.accountReturn-method__form-input');
+    const button = form.querySelector('.accountReturn-method__form-btn');
+
+    input.addEventListener('input', () => {
+      if (input.value.trim() !== '') {
+        button.removeAttribute('disabled');
+      } else {
+        button.setAttribute('disabled', 'disabled');
+      }
+    });
+  }
+}
+
+treckForm();
+
+function formRequiredCheck() {
+  document.querySelectorAll('.form-validate-check').forEach(form => {
+    const thanks = document.querySelector(`#${form.dataset.thanks}`);
+    const btn = form.querySelector('.btn[type="submit"]');
+
+    const check = item => {
+      const parent = item.closest('.offcanvas-return__info-group');
+      if (parent) {
+        if (item.type === 'radio') {
+            const group = form.querySelectorAll(`input[name="${item.name}"]`);
+            parent.classList.toggle('error', ![...group].some(i => i.checked));
+        } else {
+            parent.classList.toggle('error', item.type === 'checkbox' ? !item.checked : !item.value.trim());
+        }
+      }
+      btn.removeAttribute('disabled')
+      
+    };
+
+    form.querySelectorAll('[data-validate]').forEach(item => {
+      ['input', 'change'].forEach(evt => {
+        item.addEventListener(evt, () => check(item));
+        
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const active = form.querySelector('.tabsRadio-content.active');
+      active.querySelectorAll('[data-validate]').forEach(check);
+      if (!form.querySelector('.error') && thanks) thanks.classList.remove('d-none');
+    });
+  });
+}
+
+formRequiredCheck();
+
+
+function initDatePickers() {
+  document.querySelectorAll('.form-item-date').forEach(item => {
+    const button = item.querySelector('.openCalendar');
+    const input = item.querySelector('.inputDate');
+    const calendarId = item.dataset.calendarId;
+    const parent = button.closest('.form-item__group') || item;
+    const closeBtn = item.querySelector('.form-item__close');
+
+    if (!button || !input || !calendarId) return;
+
+    IMask(input, { mask: Date, lazy: true });
+
+    const minDate = item.dataset.minDate === 'true' ? new Date() :
+      item.dataset.minDate && item.dataset.minDate !== 'false' ? new Date(item.dataset.minDate) : null;
+
+    const disableWeekends = item.dataset.disableWeekends === 'true';
+    const disable = disableWeekends ? [d => [0, 6].includes(d.getDay())] : [];
+
+
+
+
+
+    const datepicker = new AirDatepicker(`#${calendarId}`, {
+      navTitles: {
+        days: 'MMMM yyyy',
+      },
+      prevHtml: '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1.58398L3 7.58398L9 13.584" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>',
+      nextHtml: '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13.584L11 7.58398L5 1.58398" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>',
+      inline: true,
+      dateFormat: 'dd.MM.yyyy',
+      minDate,
+      disable,
+      onRenderCell({ date, cellType }) {
+        return disableWeekends && cellType === 'day' && [0, 6].includes(date.getDay()) ? { disabled: true } : {};
+      },
+      onSelect({ formattedDate }) {
+        input.value = formattedDate;
+        input.closest('.offcanvas-return__info-group')?.classList.remove('error');
+        close();
+      }
+    });
+
+    const outside = e => !item.contains(e.target) && e.target !== button && close();
+    const open = () => {
+      button.classList.add('active');
+      parent.classList.add('show-date');
+      setTimeout(() => {
+        parent.classList.add('show-date-animate');
+      })
+      document.addEventListener('click', outside);
+    };
+    const close = () => {
+      button.classList.remove('active');
+      parent.classList.remove('show-date-animate');
+      setTimeout(() => {
+        parent.classList.remove('show-date');
+      }, 200)
+      document.removeEventListener('click', outside);
+    };
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+             close();
+        })
+    }
+
+    button.addEventListener('click', e => {
+      e.preventDefault();
+      button.classList.contains('active') ? close() : open();
+    });
+  });
+}
+
+initDatePickers();
+
+
+function changeInputPlaceholder() {
+    const inputsPlaceholderChange = document.querySelectorAll('.inputPlaceholderChange');
+
+    if (!inputsPlaceholderChange.length) return;
+
+    inputsPlaceholderChange.forEach(input => {
+        input.addEventListener('focusin', () => {
+            input.setAttribute('placeholder', input.dataset.placeholderchange);
+        })
+        input.addEventListener('blur', () => {
+            input.setAttribute('placeholder', input.dataset.placeholder);
+        })
+    })
+}
+
+changeInputPlaceholder();
+
+
+// function formRequiredCheck() {
+//   const forms = document.querySelectorAll('.form-validate-check');
+//   if (!forms.length) return;
+
+//   forms.forEach(form => {
+//     const requiredItems = form.querySelectorAll('[data-validate]');
+//     const successBlockName = form.dataset.thanks;
+//     const successBlock = document.querySelector(`#${successBlockName}`);
+
+//     // === Проверка одиночного поля ===
+//     const checkField = (item) => {
+//       const parent = item.closest('.offcanvas-return__info-group');
+//       if (
+//         (item.type === 'checkbox' && !item.checked) ||
+//         (item.type !== 'checkbox' && item.type !== 'radio' && item.value.trim() === '')
+//       ) {
+//         parent.classList.add('error');
+//       } else {
+//         parent.classList.remove('error');
+//       }
+//     };
+
+//     // === Проверка группы radio по name ===
+//     const checkRadioGroup = (radio) => {
+//       const name = radio.name;
+//       const group = form.querySelectorAll(`input[type="radio"][name="${name}"]`);
+//       const isChecked = Array.from(group).some(r => r.checked);
+//       const parent = radio.closest('.offcanvas-return__info-group');
+
+//       if (!isChecked) {
+//         parent.classList.add('error');
+//       } else {
+//         parent.classList.remove('error');
+//       }
+//     };
+
+//     // === Навешиваем обработчики на все поля ===
+//     requiredItems.forEach(item => {
+//       const type = item.type;
+
+//       const handler = () => {
+//         if (type === 'radio') {
+//           checkRadioGroup(item);
+//         } else {
+//           checkField(item);
+//         }
+//       };
+
+//       item.addEventListener('input', handler);
+//       item.addEventListener('change', handler);
+//     });
+
+//     // === Обработка отправки формы ===
+//     form.addEventListener('submit', e => {
+//       e.preventDefault();
+
+//       const activeTab = form.querySelector('.tabsRadio-content.active');
+//       const requiredInputs = activeTab.querySelectorAll('[data-validate]');
+
+//       requiredInputs.forEach(item => {
+//         if (item.type === 'radio') {
+//           checkRadioGroup(item);
+//         } else {
+//           checkField(item);
+//         }
+//       });
+
+//       const errorItems = form.querySelectorAll('.error');
+//       if (!errorItems.length && successBlock) {
+//         successBlock.classList.remove('d-none');
+//       }
+//     });
+//   });
+// }
+
+// formRequiredCheck();
+
+
+const returnOffcanvas = document.getElementById('returnMethodOffcanvas')
+if (returnOffcanvas) {
+    returnOffcanvas.addEventListener('hidden.bs.offcanvas', event => {
+        document.getElementById('statusSuccess').classList.add('d-none')
+    })
+}
+
+
+
+
+
 function supportChat() {
     const main = document.querySelector('.supportChat');
     if (!main) return;
@@ -1011,44 +1266,104 @@ catalogFilter();
 
 
 // слайдер в карточке товара
+
+
 function productCardSlider() {
-    const items = document.querySelectorAll('.card')
-    if (!items.length) return
+    const items = document.querySelectorAll('.card');
+    if (!items.length) return;
 
     items.forEach(item => {
-        const slider = item.querySelector('.card-img__slider')
-        const pagination = item.querySelector('.card-img__pagination')
+        const slider = item.querySelector('.card-img__slider');
+        const pagination = item.querySelector('.card-img__pagination');
 
-        const sliderInit = new Swiper(slider, {
-            spaceBetween: 30,
-            effect: "fade",
-            pagination: {
-                el: pagination,
-                clickable: false,
-            },
-        })
+        let swiperInstance = null;
 
-         // Добавляем обработчик событий для каждого элемента pagination
-         pagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
-            bullet.addEventListener('mouseover', () => {
-                // Используем метод slideTo для переключения на соответствующий слайд
-                sliderInit.slideTo(index);
+        const initSwiper = () => {
+            const isDesktop = window.innerWidth >= 933;
+
+            // Уничтожаем предыдущий инстанс, если он уже есть
+            if (swiperInstance) swiperInstance.destroy(true, true);
+
+            swiperInstance = new Swiper(slider, {
+                spaceBetween: 30,
+                effect: isDesktop ? 'fade' : 'slide',
+                fadeEffect: {
+                    crossFade: true
+                },
+                pagination: {
+                    el: pagination,
+                    clickable: false,
+                },
             });
-        });
 
-        // При наведении на слайдер останавливаем автопрокрутку
-        slider.addEventListener('mouseover', () => {
-            sliderInit.autoplay.stop();
-        });
+            // Навешиваем события на кастомную пагинацию заново
+            pagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
+                bullet.addEventListener('mouseover', () => {
+                    swiperInstance.slideTo(index);
+                });
+            });
+        };
 
-        // При уходе с слайдера возобновляем автопрокрутку
-        slider.addEventListener('mouseout', () => {
-            sliderInit.autoplay.start();
+        // Инициализация при загрузке
+        initSwiper();
+
+        // Обработка ресайза
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                initSwiper();
+            }, 200); 
         });
-    })
+    });
 }
 
-productCardSlider()
+productCardSlider();
+
+
+// function productCardSlider() {
+//     const items = document.querySelectorAll('.card')
+//     if (!items.length) return
+
+//     items.forEach(item => {
+//         const slider = item.querySelector('.card-img__slider')
+//         const pagination = item.querySelector('.card-img__pagination')
+
+//         const isDesktop = window.innerWidth >= 933;
+
+//         const sliderInit = new Swiper(slider, {
+//             spaceBetween: 30,
+//             effect: isDesktop ? 'fade' : 'slide',
+//             fadeEffect: {
+//                 crossFade: true
+//             },
+//             pagination: {
+//                 el: pagination,
+//                 clickable: false,
+//             },
+//         });
+
+//          // Добавляем обработчик событий для каждого элемента pagination
+//          pagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
+//             bullet.addEventListener('mouseover', () => {
+//                 // Используем метод slideTo для переключения на соответствующий слайд
+//                 sliderInit.slideTo(index);
+//             });
+//         });
+
+//         // При наведении на слайдер останавливаем автопрокрутку
+//         slider.addEventListener('mouseover', () => {
+//             sliderInit.autoplay.stop();
+//         });
+
+//         // При уходе с слайдера возобновляем автопрокрутку
+//         slider.addEventListener('mouseout', () => {
+//             sliderInit.autoplay.start();
+//         });
+//     })
+// }
+
+// productCardSlider()
 
 
 
@@ -2309,6 +2624,34 @@ function tabs() {
 }
   
 tabs()
+
+function radioTabs() {
+    const tabs = document.querySelectorAll('.tabsRadio')
+    if (!tabs.length) return
+  
+    tabs.forEach(tab => {
+      const inputs = tab.querySelectorAll('.tabsRadio-input')
+      const contents = tab.querySelectorAll('.tabsRadio-content')
+  
+      inputs.forEach(input => {
+        input.addEventListener('change', () => {
+
+  
+          contents.forEach(i => i.classList.remove('active', 'animate'))
+          const num = input.dataset.tabs
+          const activeTab = tab.querySelector(`.tabsRadio-content[data-tabs="${num}"]`)
+
+          activeTab.classList.add('active')
+    
+          setTimeout(() => {
+            activeTab.classList.add('animate')
+          })
+        })
+      })
+    })
+}
+  
+ radioTabs()
 
 
 // Функция открытия и закрытия меню

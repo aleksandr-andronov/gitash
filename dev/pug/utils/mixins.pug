@@ -239,3 +239,22 @@ mixin journalCard()
 			.journalPage-card__price
 				.journalPage-card__price-old 29 890 ₽
 				.journalPage-card__price-new 29 890 ₽
+
+
+
+
+//- Элементы формы
+
+mixin checkbox(checked, text)
+	label.form-checkbox
+		input(type="checkbox")
+		span.form-checkbox__content
+			span.form-checkbox__icon
+			if (text)
+				span.form-checkbox__txt
+
+mixin formItem(label, type)
+	.form-item
+		.form-item__group
+			.form-item__label #{label}
+			input.form-input(type=`${type}`)

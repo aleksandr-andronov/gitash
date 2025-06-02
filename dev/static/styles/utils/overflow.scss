@@ -5,3 +5,17 @@
 .overflow-x-scroll {
     overflow-x: scroll;
 }
+
+
+@media (max-width: 932px) {
+    .overflow-x-scroll-m {
+        overflow-x: scroll;
+    }
+
+    .list-scroll-m {
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+    }
+}

@@ -776,6 +776,11 @@
         }
         &__time {
             display: block;
+            --label-bg: var(--element-second);
+            --label-bg-hover: var(--element-hover);
+            &--white {
+                --label-bg: var(--white);
+            }
             input {
                 display: none;
                 &:checked + span {
@@ -785,17 +790,20 @@
                 }
             }
             &-content {
-                background: var(--element-second);
+                background: var(--label-bg);
                 border-radius: 24px;
                 display: block;
                 line-height: normal;
                 padding: 12px 18px;
                 transition: background .2s ease-in-out;
                 &:hover {
-                    background: var(--element-hover);
+                    background: var(--label-bg-hover);
+                    &::before {
+                        border-color: transparent;
+                    }
                 }
                 &::before {
-                    border-color: var(--element-second);
+                    border-color: var(--label-bg);
                     transition: border-color .2s ease-in-out;
                 }
             }

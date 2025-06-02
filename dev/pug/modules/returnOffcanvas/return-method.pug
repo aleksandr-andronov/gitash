@@ -1,0 +1,164 @@
+#returnMethodOffcanvas.offcanvas.offcanvas-end(tabindex="-1")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head.offcanvas__head--has-step
+            .offcanvas__head-inner.d-flex 
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#returnBeforeOffcanvas" data-bs-toggle="offcanvas" aria-label="назад") 
+                        +svg('arrow-left')
+                .offcanvas__head-left
+                    .offcanvas__head-step Шаг 2/2
+                    .offcanvas__title.offcanvas__title--m-center.ttl.h4 способ возврата
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        form.offcanvas__form.d-flex.flex-col.form-validate-check(action="/" data-thanks="statusSuccess") 
+            .offcanvas__body
+                .offcanvas-return.tabsRadio
+                    .offcanvas-return__notification
+                        .product-notification
+                            .product-notification__item.d-flex 
+                                .product-notification__item-icon.icon-outline
+                                    +icon('i')
+                                .product-notification__item-txt.txt-sm Возврат товара осуществляется за счет покупателя. Мы компенсируем стоимость только по причине брака товара.
+                    .offcanvas-return__methods
+                        .offcanvas-return__files-group__head
+                            .offcanvas-return__files-title.title Выберите способ возврата
+                        .offcanvas-return__methods-list.list.overflow-x-scroll-m.list-scroll-m
+                            .offcanvas-return__methods-item.col
+                                label.offcanvas-return__methods-label.radio.radio-bg
+                                    input.tabsRadio-input(type="radio" name="returnMethod" data-tabs="1" checked)
+                                    span.offcanvas-return__methods-label__content.radio-outline.outline-border.d-grid.d-grid-list.align-center 
+                                        span.offcanvas-return__methods-label__img
+                                            +svg('return-method-1', '32', '32', 'return')
+                                        span.offcanvas-return__methods-label__txt СДЭК
+                            .offcanvas-return__methods-item.col
+                                label.offcanvas-return__methods-label.radio.radio-bg
+                                    input.tabsRadio-input(type="radio" name="returnMethod" data-tabs="2")
+                                    span.offcanvas-return__methods-label__content.radio-outline.outline-border.d-grid.d-grid-list.align-center 
+                                        span.offcanvas-return__methods-label__img
+                                            +svg('return-method-2', '32', '32', 'return')
+                                        span.offcanvas-return__methods-label__txt Почта России
+                            .offcanvas-return__methods-item.col
+                                label.offcanvas-return__methods-label.radio.radio-bg
+                                    input.tabsRadio-input(type="radio" name="returnMethod" data-tabs="3")
+                                    span.offcanvas-return__methods-label__content.radio-outline.outline-border.d-grid.d-grid-list.align-center 
+                                        span.offcanvas-return__methods-label__img
+                                            +svg('return-method-3', '32', '32', 'return')
+                                        span.offcanvas-return__methods-label__txt Привезу сам
+                            .offcanvas-return__methods-item.col
+                                label.offcanvas-return__methods-label.radio.radio-bg
+                                    input.tabsRadio-input(type="radio" name="returnMethod" data-tabs="4")
+                                    span.offcanvas-return__methods-label__content.radio-outline.outline-border.d-grid.d-grid-list.align-center 
+                                        span.offcanvas-return__methods-label__img
+                                            +svg('return-method-4', '32', '32', 'return')
+                                        span.offcanvas-return__methods-label__txt Курьером (в пределах МКАД)
+                        .offcanvas-return__methods-content 
+                            .tabsRadio-content.active.animate(data-tabs="1")
+                                .offcanvas-return__info.second-bg
+                                    .offcanvas-return__info-content 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-title.s-bold.uppercase Возврат товара в пункте выдачи заказов СДЭК
+                                            .offcanvas-return__info-txt Вы можете вернуть товар в ближайшем к вам пункте выдачи СДЭК. 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Адрес
+                                            .offcanvas-return__info-txt г.Москва Шарикоподшипниковская, 6/14
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Имя получателя
+                                            .offcanvas-return__info-txt ООО "ФЭШН РИТЕЙЛ"
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Контактный телефон
+                                            .offcanvas-return__info-txt 
+                                                a(href="tel:88005007682") 8 (800) 500-76-82
+                                    .offcanvas-return__info-notification
+                                        .product-notification__item.d-flex 
+                                            .product-notification__item-icon.icon-outline
+                                                +icon('i')
+                                            .product-notification__item-txt.txt-sm После отправки товара пришлите трек-номер <br class="m-hidden">на странице возврата в личном кабинете
+                            .tabsRadio-content(data-tabs="2")
+                                .offcanvas-return__info.second-bg
+                                    .offcanvas-return__info-content 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-title.s-bold.uppercase Возврат товара в отделении Почты России
+                                            .offcanvas-return__info-txt Вы можете вернуть товар из ближайшего к вам почтового отделения. 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Адрес
+                                            .offcanvas-return__info-txt г.Москва Шарикоподшипниковская, 6/14
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Имя получателя
+                                            .offcanvas-return__info-txt ООО "ФЭШН РИТЕЙЛ"
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Контактный телефон
+                                            .offcanvas-return__info-txt 
+                                                a(href="tel:88005007682") 8 (800) 500-76-82
+                                    .offcanvas-return__info-notification
+                                        .product-notification__item.d-flex 
+                                            .product-notification__item-icon.icon-outline
+                                                +icon('i')
+                                            .product-notification__item-txt.txt-sm После отправки товара пришлите трек-номер <br class="m-hidden">на странице возврата в личном кабинете
+                            .tabsRadio-content(data-tabs="3")
+                                .offcanvas-return__info.second-bg
+                                    .offcanvas-return__info-content 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-title.s-bold.uppercase Возврат товара в офис интернет-магазина
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Адрес
+                                            .offcanvas-return__info-txt г. Москва, Шарикоподшипниковская ул, дом 4 к.4А, ООО "ФЭШН&nbsp;РИТЕЙЛ" находится в БЦ "Seasons"
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold График работы офиса
+                                            .offcanvas-return__info-txt пн-пт, 10:00-18:00
+                                    .offcanvas-return__info-notification
+                                        .product-notification__item.d-flex 
+                                            .product-notification__item-icon.icon-outline
+                                                +icon('i')
+                                            .product-notification__item-txt.txt-sm Необходимо предупредить о визите по телефону: <br>
+                                                a(href="tel:88005007682") 8 (800) 500-76-82
+                            .tabsRadio-content(data-tabs="4")
+                                .offcanvas-return__info.second-bg
+                                    .offcanvas-return__info-content 
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-title.s-bold.uppercase Возврат товара курьером
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Адрес
+                                            .offcanvas-return__info-txt Для возврата по Москве в пределах МКАД, вы можете воспользоваться услугой вызова курьера от бренда.
+                                            .offcanvas-return__info-txt После оформления возврата менеджер свяжется с&nbsp;вами для подтверждения.
+                                        .offcanvas-return__info-group
+                                            .offcanvas-return__info-subtitle.s-bold Стоимость услуги
+                                            .offcanvas-return__info-txt 499 рублей
+                                        .offcanvas-return__info-group(data-validate-parent)
+                                            .offcanvas-return__info-title.s-bold Укажите дату вызова курьера
+                                            .form-item.form-item-date(data-disable-weekends="true" data-min-date="true" data-calendar-id="returnCalendar")
+                                                .form-item__group
+                                                    input.form-input.inputDate.inputPlaceholderChange.form-input--rounded-right(type="text" data-validate data-placeholder="дата" data-placeholderChange="дд.мм.гггг" placeholder="дата")
+                                                    button.form-item__right-info.form-item__right-icon.icon.openCalendar(type="button" data-calendar-toggle="returnCalendar")
+                                                        +icon('calendar') 
+                                                    .form-item__backdrop.backdrop
+                                                    .form-item__dropdown-calendar.outline-border.form-datepicker.form-item__dropdown-calendar--right
+                                                        button.form-item__close.icon.absolute(type="button")
+                                                            +svg('close')
+                                                        #returnCalendar
+                                        .offcanvas-return__info-group(data-validate-parent)
+                                            .offcanvas-return__info-title.s-bold Выберите время
+                                            .order-form__time-slider.slider
+                                                .swiper-wrapper
+                                                    - for (let i = 0; i < 2; i++)
+                                                        .order-form__time-slider__item.swiper-slide 
+                                                            label.order-form__time.order-form__time--white
+                                                                input(type="radio" name="time" data-validate)
+                                                                span.order-form__time-content.outline-border 14:00–16:00
+            .offcanvas__sticky-foot
+                button.btn.w-full(type="submit") оформить возврат
+                .offcanvas__sticky-foot__txt.tech-14 Нажимая на кнопку «Оформить возврат», я принимаю 
+                    a(href="#") условия публичной оферты
+    .offcanvas-feedback__status.offcanvas-feedback__status--high.d-none#statusSuccess
+        button.offcanvas-feedback__status-btn.offcanvas-close.btn-circle.absolute(data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close')
+        .offcanvas-feedback__status-inner.centered
+            .offcanvas-feedback__status-fake
+            .offcanvas-feedback__status-group
+                .offcanvas-feedback__status-img 
+                    +svg('success', '80', '80')
+                .offcanvas-feedback__status-title.h6.ttl Возврат успешно оформлен
+                .offcanvas-feedback__status-txt.mx-auto Осталось отправить товар и&nbsp;прислать нам трек номер
+            .offcanvas-feedback__status-bottom
+                .offcanvas-feedback__status-bottom__txt.text-center.text-grey  Заявление будет рассмотрено в течение <br>3&nbsp;дней после получения товара. Статус можно отслеживать в 
+                    a(href="#") личном кабинете

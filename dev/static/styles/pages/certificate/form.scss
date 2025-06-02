@@ -259,7 +259,28 @@
             }
         }
         &-form {
-            
+            .air-datepicker {
+                --adp-nav-height: 44px;
+                &--navigation {
+                    max-width: 100%;
+                }
+                &-cell {
+                    height: 38px;
+                }
+                &-body {
+                    &--day-names {
+                        margin-bottom: 0;
+                    }
+                    &--day-name {
+                        height: 32px;
+                    }
+                    &--cells {
+                        &.-days- {
+                            row-gap: 0px;
+                        }
+                    }
+                }
+            }
             .order-form__col {
                 width: 100%;
             }

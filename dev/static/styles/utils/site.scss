@@ -29,6 +29,20 @@ body {
     }
 }
 
+.tabsRadio {
+    &-content {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        display: none;
+        &.active {
+            display: block;
+        }
+        &.animate {
+            opacity: 1;
+        }
+    }
+}
+
 .slider {
     overflow: hidden;
     &-pagination {
@@ -274,11 +288,14 @@ h6, .h6 {
         }
     }
     &__info {
-        // max-width: 770px;
-        padding-left: 72px;
-        padding-right: 72px;
+        max-width: 810px;
+        width: 100%;
+        // padding-left: 72px;
+        // padding-right: 72px;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         &--map {
             // max-width: 856px;
             padding-left: 36px;
@@ -290,6 +307,7 @@ h6, .h6 {
 .link-icon {
     display: flex;
     align-items: center;
+    column-gap: 8px;
     &__icon {
         width: 16px;
         height: 16px;
@@ -297,7 +315,7 @@ h6, .h6 {
     }
     &__txt {
         flex-grow: 1;
-        padding-left: 4px;
+        
     }
 }
 
@@ -331,14 +349,26 @@ ul:not([class]) {
 .radio {
     display: block;
     --icon-size: 20px;
+    --border-color: var(--button-default);
+    &-bg {
+        background: var(--element-second);
+        &:hover {
+            background: var(--element-hover);
+        }
+    }
     input {
         display: none;
-        &:checked + .radio-content {
+        &:checked + .radio-content, &:checked + .radio-outline {
             .radio-icon {
                 border-color: var(--black);
                 &::before {
                     opacity: 1;
                 }
+            }
+        }
+        &:checked + .radio-outline {
+            &::before {
+                opacity: 1;
             }
         }
     }
@@ -363,6 +393,14 @@ ul:not([class]) {
     }
     &-content {
         width: calc(100% - var(--icon-size));
+        
+    }
+    &-outline {
+        border-radius: inherit;
+        &::before {
+            opacity: 0;
+            border-color: var(--border-color);
+        }
     }
 }
 
@@ -385,15 +423,35 @@ ul:not([class]) {
 .list {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -4px;
-    margin-right: -4px;
-    margin-bottom: -8px;
+    margin-left: calc(-1 * var(--list-gutter-x));
+    margin-right: calc(-1 * var(--list-gutter-x));
+    row-gap: 8px;
 }
 
 .col {
-    padding-left: 4px;
-    padding-right: 4px;
-    margin-bottom: 8px;
+    padding-left: var(--list-gutter-x);
+    padding-right: var(--list-gutter-x);
+    // margin-bottom: 8px;
+}
+
+.second-bg {
+    background: var(--element-second);
+}
+
+.height-full {
+    height: 100%;
+}
+
+.img-cover {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.rounded-1 {
+    border-radius: var(--rounded-1);
 }
 
 @media (max-width: 1440px) {
@@ -496,8 +554,9 @@ ul:not([class]) {
 
     .content {
         &__info {
-            padding-left: 36px;
-            padding-right: 36px;
+            // padding-left: 36px;
+            // padding-right: 36px;
+            max-width: 658px;
             &--map {
                 padding-left: 24px;
                 padding-right: 24px;
@@ -516,15 +575,22 @@ ul:not([class]) {
     }
 
     .list {
-        margin-left: -3px;
-        margin-right: -3px;
-        margin-bottom: -6px;
+        
+        // margin-bottom: -6px;
+        row-gap: 6px;
     }
 
     .col {
-        padding-left: 3px;
-        padding-right: 3px;
-        margin-bottom: 6px;
+        
+        // margin-bottom: 6px;
+    }
+
+    .link-icon {
+        column-gap: 6px;
+        &__icon {
+            width: 14px;
+            height: 14px;
+        }
     }
 }
 
@@ -544,9 +610,7 @@ ul:not([class]) {
         }
     }
 
-    // .wrapper {
-    //     overflow-x: hidden;
-    // }
+
 
     .tabs {
         &-content {
@@ -562,11 +626,6 @@ ul:not([class]) {
 
     .mobile {
         display: block;
-    }
-
-    .container {
-        // padding-left: 14px;
-        // padding-right: 14px;
     }
 
     
@@ -597,13 +656,14 @@ ul:not([class]) {
         overflow: hidden;
     }
 
-    .mobile-overflow-hidden {
-        overflow: hidden;
-    }
     
     .mobile-overflow-hidden {
         .header {
             z-index: 99;
         }
+    }
+
+    .link-icon {
+        column-gap: 4px;
     }
 }

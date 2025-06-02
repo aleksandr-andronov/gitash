@@ -179,7 +179,7 @@
             border-left: 1px solid var(--stroke-element);
             height: 25px;
             &::placeholder {
-                color: #ACACAC;
+                color: var(--text-grey);
             }
         }
         &__dropdown {
