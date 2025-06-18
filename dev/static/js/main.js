@@ -299,14 +299,17 @@ const podeliSlider = new Swiper('.offcanvas-podeli__slider', {
 })
 
 
-document.querySelector('.copy_code')?.addEventListener('click', function(e) {
-    e.preventDefault()
+document.querySelectorAll('.copy_code').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault()
 
-    this.classList.add('active')
-    setTimeout(() => {
-        this.classList.remove('active')
-    }, 5000)
+        this.classList.add('active')
+        setTimeout(() => {
+            this.classList.remove('active')
+        }, 5000)
+    })
 })
+
 
 function sCollectionActions() {
     const main = document.querySelector('.sCollection')
@@ -1268,8 +1271,10 @@ catalogFilter();
 // слайдер в карточке товара
 
 
+
+
 function productCardSlider() {
-    const items = document.querySelectorAll('.card');
+    const items = document.querySelectorAll('.catalog__content .card');
     if (!items.length) return;
 
     items.forEach(item => {
@@ -1321,49 +1326,25 @@ function productCardSlider() {
 productCardSlider();
 
 
-// function productCardSlider() {
-//     const items = document.querySelectorAll('.card')
-//     if (!items.length) return
-
-//     items.forEach(item => {
-//         const slider = item.querySelector('.card-img__slider')
-//         const pagination = item.querySelector('.card-img__pagination')
-
-//         const isDesktop = window.innerWidth >= 933;
-
-//         const sliderInit = new Swiper(slider, {
-//             spaceBetween: 30,
-//             effect: isDesktop ? 'fade' : 'slide',
-//             fadeEffect: {
-//                 crossFade: true
-//             },
-//             pagination: {
-//                 el: pagination,
-//                 clickable: false,
-//             },
-//         });
-
-//          // Добавляем обработчик событий для каждого элемента pagination
-//          pagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet, index) => {
-//             bullet.addEventListener('mouseover', () => {
-//                 // Используем метод slideTo для переключения на соответствующий слайд
-//                 sliderInit.slideTo(index);
-//             });
-//         });
-
-//         // При наведении на слайдер останавливаем автопрокрутку
-//         slider.addEventListener('mouseover', () => {
-//             sliderInit.autoplay.stop();
-//         });
-
-//         // При уходе с слайдера возобновляем автопрокрутку
-//         slider.addEventListener('mouseout', () => {
-//             sliderInit.autoplay.start();
-//         });
-//     })
-// }
-
-// productCardSlider()
+const cartRecomend = new Swiper('.cart-slider ', {
+    slidesPerView: 'auto',
+    spaceBetween: 2,
+    speed: 800,
+    observer: true,
+    observeParents: true,
+    navigation: {
+        prevEl: '.cart-recomend__controls-prev',
+        nextEl: '.cart-recomend__controls-next'
+    },
+    breakpoints: {
+        933: {
+            spaceBetween: 6,
+        },
+        1441: {
+            spaceBetween: 8,
+        }
+    }
+});
 
 
 
@@ -1640,6 +1621,39 @@ function showActionsAddress() {
 
 showActionsAddress()
 
+// function productCardFavorite() {
+//   const links = document.querySelectorAll('.card-favorite');
+//   if (!links.length) return;
+
+//   links.forEach(link => {
+//     const parent = link.closest('.card');
+//     const lottieContainer = link.querySelector('.card-favorite__animation');
+
+//     // Загружаем анимацию (можно один раз для всех, если путь одинаковый)
+//     const anim = lottie.loadAnimation({
+//       container: lottieContainer,
+//       renderer: 'svg',
+//       loop: false,
+//       autoplay: false,
+//       path: './static/js/animations/app_heart.json', // путь к твоему JSON-файлу
+//     });
+
+//     link.addEventListener('click', (e) => {
+//       if (parent.classList.contains('card-selected')) {
+//         parent.classList.toggle('unfavorite');
+//         // Можно сделать анимацию удаления, если надо
+//       } else {
+//         // Добавили в избранное
+//         parent.classList.add('card-selected');
+//         link.classList.add('active');
+//         anim.goToAndPlay(0, true); // проигрываем анимацию
+//       }
+//     });
+//   });
+// }
+
+// productCardFavorite()
+
 
 function productCardFavorite() {
     const links = document.querySelectorAll('.card-favorite')
@@ -1657,6 +1671,57 @@ function productCardFavorite() {
 }
 
 productCardFavorite()
+
+// function addFavoriteProduct() {
+//     const btns = document.querySelectorAll('.fav-btn')
+//     if (!btns.length) return
+
+//     btns.forEach(btn => {
+//         btn.addEventListener('click', (e) => {
+//             e.preventDefault()
+
+//             btn.classList.toggle('active')
+//         })
+//     })
+// }
+
+// addFavoriteProduct()
+
+function addFavoriteProduct() {
+    const btns = document.querySelectorAll('.fav-btn')
+    if (!btns.length) return
+
+    btns.forEach(btn => {
+        const animationContainer = btn.querySelector('.card-favorite__animate');
+
+        let animation = {};
+
+        if (animationContainer) {
+            animation = lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: './static/js/animations/app_heart.json'
+        })
+        }
+
+        
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+
+            btn.classList.toggle('active')
+
+            if (btn.classList.contains('active')) {
+                animation.goToAndPlay(0, true)
+            }
+        })
+    })
+}
+
+addFavoriteProduct()
+
 
 
 
@@ -1977,20 +2042,7 @@ function dropdownProductPrice() {
 // dropdownProductPrice()
 
 
-function addFavoriteProduct() {
-    const btns = document.querySelectorAll('.fav-btn')
-    if (!btns.length) return
 
-    btns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault()
-
-            btn.classList.toggle('active')
-        })
-    })
-}
-
-addFavoriteProduct()
 
 
 
@@ -2336,25 +2388,7 @@ maskPhoneSm();
 
 
 
-const cartRecomend = new Swiper('.cart-slider ', {
-    slidesPerView: 'auto',
-    spaceBetween: 2,
-    speed: 800,
-    observer: true,
-    observeParents: true,
-    navigation: {
-        prevEl: '.cart-recomend__controls-prev',
-        nextEl: '.cart-recomend__controls-next'
-    },
-    breakpoints: {
-        933: {
-            spaceBetween: 6,
-        },
-        1441: {
-            spaceBetween: 8,
-        }
-    }
-})
+
 
 
 function formInputsLabel() {
@@ -2702,7 +2736,7 @@ function headerPosition() {
     var header = document.querySelector('.header');
     var body = document.body;
     if (!header) return
-    if (scrollTop > 0) {
+    if (scrollTop > 0.1) {
       header.classList.add('scrolled');
       body.classList.add('body-pt-scroll')
     } else {

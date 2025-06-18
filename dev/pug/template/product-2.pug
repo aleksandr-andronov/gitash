@@ -77,7 +77,7 @@ html(lang="ru-RU")
 													.product-price__old-icon
 														.product-tooltip.product-tooltip--right
 															.product-tooltip__btn.icon-outline
-																include ../icons/info-12
+																+icon('i')
 															.product-tooltip__dropdown 
 																.product-tooltip__backdrop.product-tooltip__close
 																.product-tooltip__content
@@ -133,7 +133,7 @@ html(lang="ru-RU")
 													.product-installments__hint 
 														.product-tooltip
 															.product-tooltip__btn.icon-outline
-																include ../icons/info-12
+																+icon('i')
 															.product-tooltip__dropdown 
 																.product-tooltip__backdrop.product-tooltip__close 
 																.product-tooltip__content 
@@ -147,7 +147,11 @@ html(lang="ru-RU")
 																.product-tooltip__arrow
 																	+svg('dropdown-arrow', '32', '16')
 											.product-installments__right.product-installments__right--dots
-												.product-installments__promocode.ttl.uppercase sp30
+												.product-installments__promocode.ttl.uppercase.d-flex.align-center 
+													.product-installments__promocode-value sp3000
+													button.product-installments__promocode-icon.icon.copy_code
+														+icon('copy')
+														+icon('check-12')
 									.product-installments.outline-border 
 										.product-installments__left
 											.product-installments__txt.txt-sm Частями от 4 522 ₽
@@ -484,6 +488,7 @@ html(lang="ru-RU")
 			include ../modules/notification/notification-top
 		include ../modules/modals/modals
 		include ../modules/popups/popups
+		script(src="static/js/lottie.min.js") 
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/imask.js")

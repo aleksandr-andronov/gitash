@@ -168,8 +168,14 @@
         }
         &__promocode {
             color: #606060;
+            fill: #606060;
+            gap: 8px;
             font-size: 13px;
             letter-spacing: -0.01em;
+            &-icon {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
     &__subtitle {
@@ -671,6 +677,11 @@
             }
             &__promocode {
                 font-size: 11px;
+                gap: 4px;
+                &-icon {
+                    width: 14px;
+                    height: 14px;
+                }
             }
             &__right {
                 padding-left: 24px;

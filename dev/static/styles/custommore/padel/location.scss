@@ -1,0 +1,264 @@
+.padelLocation {
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+    overflow: hidden;
+    &__top {
+        max-width: rem(990);
+        margin-bottom: rem(60);
+    }
+    &__title {
+        line-height: 107%;
+    }
+    &__txt {
+        font-size: rem(22);
+    }
+    &__picture {
+        margin-left: rem(-60);
+        margin-right: rem(-60);
+        position: relative;
+        &-txt {
+            position: absolute;
+            right: rem(108);
+            top: rem(-238);
+            &__content {
+                width: rem(498);
+                height: rem(487);
+                background: url(../../static/images/general/padel/location-bg.svg) 0 0 no-repeat;
+                background-size: cover;
+                // background: #CB5D25;
+                // border-radius: rem(18);
+                // clip-path: path("M0.408203 18.9591C0.408203 7.93468 10.2289 -0.499497 21.1269 1.1656L482.311 71.6298C491.1 72.9727 497.592 80.532 497.592 89.4233V468.127C497.592 479.122 487.821 487.548 476.946 485.932L15.7621 417.389C6.93983 416.078 0.408203 408.503 0.408203 399.584V18.9591Z");
+                display: flex;
+                align-items: center;
+                padding-left: rem(56);
+                font-size: rem(48);
+                line-height: 96%;
+                text-transform: uppercase;
+                letter-spacing: 0em;
+                color: var(--white);
+                position: relative;
+                z-index: 2;
+            }
+            &__decor {
+                position: absolute;
+                width: rem(857);
+                &-1 {
+                    top: rem(204);
+                    right: rem(-330);
+                    z-index: 1;
+                }
+                &-2 {
+                    top: rem(298);
+                    right: rem(-504);
+                    z-index: 3;
+                }
+            }
+        }
+    }
+    &__bottom {
+        width: rem(1392);
+        max-width: 100%;
+        grid-template-columns: rem(896) 1fr;
+        gap: rem(90);
+        margin-top: rem(-70);
+        &-right {
+            padding-top: rem(192);
+        }
+    }
+    &__list {
+        gap: rem(24);
+    }
+    &__item {
+        grid-template-columns: rem(24) 1fr;
+        gap: rem(18);
+        align-items: center;
+        font-size: rem(18);
+        line-height: normal;
+        &-icon {
+            height: rem(24);
+            img {
+                width: 100%;
+            }
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+    &__map {
+        position: relative;
+        &-content {
+            width: rem(896);
+            height: rem(668);
+            clip-path: url(#myClipPath);
+        }
+        &-decor {
+            position: absolute;
+            bottom: rem(2);
+            left: rem(-374);
+            width: rem(1030);
+        }
+    }
+}
+
+.custom-marker {
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+@media (max-width: 1440px) {
+    .padelLocation {
+        padding-top: rem(42);
+        &__top {
+            margin-bottom: rem(56);
+        }
+        &__txt {
+            max-width: rem(644);
+        }
+        &__picture {
+            margin-left: rem(-40);
+            margin-right: rem(-40);
+            &-txt {
+                right: rem(36);
+                top: rem(-180);
+                &__content {
+                    width: rem(402);
+                    height: rem(393);
+                    // clip-path: path('M0 14.3015C0 5.72697 7.63832 -0.832942 16.1145 0.462135L390.115 57.6055C396.951 58.65 402 64.5295 402 71.4449V378.765C402 387.317 394.401 393.871 385.942 392.613L11.9419 337.028C5.08015 336.008 0 330.117 0 323.18V14.3015Z');
+                    padding-left: rem(36);
+                    padding-top: rem(150);
+                    align-items: flex-start;
+                    font-size: rem(39);
+
+                }
+                &__decor {
+                    width: rem(704);
+                    &-1 {
+                        top: rem(196);
+                    }
+                    &-2 {
+                        top: rem(260);
+                        right: rem(-370);
+                    }
+                }
+            }
+        }
+        &__bottom {
+            width: rem(1172);
+            grid-template-columns: rem(717) 1fr;
+            gap: rem(48);
+            margin-top: rem(-22);
+            &-right {
+                padding-top: rem(110); 
+            }
+        }
+
+        &__map {
+            &-content {
+                width: rem(717);
+                height: rem(513);  
+            }
+            &-decor {
+                left: -29.375rem;
+                bottom: rem(-18);
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .padelLocation {
+        padding-top: rem(38);
+        padding-bottom: rem(32);
+        &__top {
+            margin-bottom: rem(28);
+            max-width: rem(352);
+        }
+        &__txt {
+            font-size: rem(16);
+        }
+
+        &__picture {
+            margin-left: rem(-14);
+            margin-right: rem(-14);
+            &-img {
+                img {
+                    min-height: rem(386);
+                    object-fit: cover;
+                }
+            }
+            &-txt {
+                right: initial;
+                top: initial;
+                bottom: rem(-54);
+                left: rem(12);
+                &__content {
+                    width: rem(200);
+                    height: rem(146);
+                    background: url(../../static/images/general/padel/location-bg-m.svg) 0 0 no-repeat;
+                    background-size: cover;
+                    // clip-path: path("M0 10.193C0 4.22566 5.19263 -0.413537 11.1223 0.256165L191.122 20.5856C196.179 21.1567 200 25.4338 200 30.5224V133.841C200 139.796 194.828 144.432 188.908 143.781L8.90796 124.006C3.83826 123.449 0 119.166 0 114.066V10.193Z");
+                    padding-top: rem(48);
+                    padding-left: rem(26);
+                    font-size: rem(18);
+                }
+                &__decor {
+                    width: rem(514);
+                    &-1 {
+                        right: initial;
+                        top: initial;
+                        bottom: rem(36);
+                        left: rem(-296);
+                    }
+                    &-2 {
+                        right: initial;
+                        top: initial;
+                        bottom: rem(26);
+                        left: rem(-404);
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            grid-template-columns: 1fr;
+            gap: rem(42);
+            margin-top: rem(-24);
+            &-right {
+                padding-top: 0;
+            }
+        }
+
+        &__map {
+            &-content {
+                width: 100%;
+                height: rem(410);
+                clip-path: url(#myClipPath390);
+            }
+            &-decor {
+                left: initial;
+                right: rem(-422);
+                bottom: rem(-52);
+                width: rem(618);
+            }
+        }
+
+        &__list {
+            gap: rem(18);
+        }
+        &__item {
+            font-size: rem(16);
+            line-height: rem(19);
+            max-width: rem(352);
+        }
+    }
+}
+
+
+

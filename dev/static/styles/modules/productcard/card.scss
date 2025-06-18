@@ -183,10 +183,12 @@
         top: 16px;
         right: 16px;
         z-index: 11;
+        transform: scale(2);
         .svg-sprite-icon {
             position: absolute;
             top: 0;
             left: 0;
+            transform: scale(0.5);
         }
         .icon-heart-fill {
             visibility: hidden;
@@ -198,6 +200,21 @@
             .icon-heart {
                 visibility: hidden;
             }
+            .card-favorite__animate {
+                opacity: 1;
+            }
+        }
+        &__animate {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            z-index: 20; 
+            display: flex;
+            opacity: 0;
+            // transform: scale(2);
         }
     }
     &-stickers {
@@ -344,6 +361,15 @@
 @media (max-width: 932px) {
     .card {
         overflow: hidden;
+        .card-info, .card-stickers, .card-favorite {
+            will-change: transform;
+            transform: translateZ(0);
+            z-index: 10;
+            touch-action: none;
+        }
+        .card-favorite {
+            transform: scale(2) translateZ(0);
+        }
         &-img {
             // display: none;
             img {
@@ -396,6 +422,7 @@
             right: 10px;
             width: 16px;
             height: 16px;
+            
         }
         &-stickers {
             top: 10px;

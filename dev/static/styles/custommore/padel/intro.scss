@@ -1,0 +1,182 @@
+.padelIntro {
+    padding-left: rem(60);
+    padding-right: rem(142);
+    padding-top: rem(174);
+    padding-bottom: rem(100);
+    overflow: hidden;
+    &-content {
+        justify-content: space-between;
+        &__left {
+            max-width: 100%;
+            width: rem(702);
+            padding-top: rem(182);
+        }
+        &__right {
+            max-width: 100%;
+            width: rem(758);
+        }
+    }
+    &__title {
+        font-size: rem(65);
+        line-height: 107%;
+        color: var(--color-2);
+        margin-bottom: rem(28);
+        text-transform: uppercase;
+        letter-spacing: 0em;
+    }
+    &__txt {
+        font-size: rem(18);
+        line-height: 150%;
+        margin-bottom: rem(40);
+        p {
+            margin-bottom: rem(28);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__btn {
+        
+    }
+    &__picture {
+        position: relative;
+        &-img {
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(1030);
+                height: rem(172);
+                background: url(../../static/images/general/padel/intro-before.svg) 0 0 no-repeat;
+                background-size: cover;
+                position: absolute;
+                bottom: rem(-42);
+                right: rem(-402);
+
+            }
+        }
+        &-txt {
+            width: rem(276);
+            height: rem(124);
+            
+            position: absolute;
+            bottom: rem(370);
+            left: rem(-172);
+            font-weight: 500;
+            padding-top: rem(40);
+            padding-left: rem(32);
+            font-size: rem(20);
+            line-height: 120%;
+            color: var(--white);
+            --border-color: linear-gradient(137.82deg, rgba(255, 255, 255, 0.5) 13.68%, rgba(255, 255, 255, 0.25) 95%);
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: rem(8) rem(16) rem(8) rem(16);
+                transform: skewY(-15deg);
+                background-color: rgba(108, 190, 253, 0.23);
+                backdrop-filter: blur(12px);
+            }
+
+            span {
+                transform: rotate(-15deg);
+                display: inline-block;
+                position: relative;
+                z-index: 9;
+            }
+            &::before {
+                inset: rem(-1);
+                transform: skewY(-15deg);
+                border-radius: rem(8) rem(16) rem(8) rem(16);
+                z-index: 3;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .padelIntro {
+        padding-top: rem(80);
+        padding-left: rem(44);
+        padding-right: rem(100);
+        &-content {
+            &__left {
+                padding-top: rem(160);
+            }
+            &__right {
+                width: rem(566);
+            }
+        }
+        &__title {
+            font-size: rem(55);
+        }
+        &__txt {
+            max-width: rem(540);
+        }
+        &__picture {
+            &-txt {
+                bottom: rem(196);
+                left: rem(-138);
+            }
+            &-img {
+                &::before {
+                    bottom: rem(-60);
+                    right: rem(-516);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .padelIntro {
+        padding-top: rem(0);
+        padding-left: rem(14);
+        padding-right: rem(14);
+        padding-bottom: rem(36);
+        &-content {
+            flex-wrap: wrap;
+            &__left {
+                width: 100%;
+                padding-top: 0;
+            }
+            &__right {
+                width: 100%;
+                margin-bottom: rem(36);
+                order: -1;
+            }
+        }
+        &__title {
+            font-size: rem(32);
+            margin-bottom: rem(24);
+        }
+        &__txt {
+            font-size: rem(16);
+            margin-bottom: rem(32);
+            p {
+                margin-bottom: rem(24);
+            }
+        }
+        &__picture {
+            &-img {
+                &::before {
+                    width: rem(618);
+                    height: rem(104);
+                    bottom: rem(-32);
+                    right: rem(-278);
+                }
+            }
+            &-txt {
+                width: rem(198);
+                height: rem(88);
+                font-size: rem(16);
+                border-radius: rem(10);
+                left: rem(-4);
+                bottom: rem(68);
+                padding-top: rem(24);
+                padding-left: rem(12);
+            }
+        }
+    }
+}

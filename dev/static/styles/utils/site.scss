@@ -186,6 +186,20 @@ h6, .h6 {
     }
 }
 
+.g-border {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        inset: 0;
+        padding: 1px;
+        border-radius: inherit;
+        background: var(--border-color);
+        mask: linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box;
+    }
+}
+
 .switch {
     line-height: 130%;
     &__content {
@@ -429,7 +443,7 @@ ul:not([class]) {
 }
 
 .col {
-    padding-left: var(--list-gutter-x);
+    padding-left: var(--list-gutter-x); 
     padding-right: var(--list-gutter-x);
     // margin-bottom: 8px;
 }

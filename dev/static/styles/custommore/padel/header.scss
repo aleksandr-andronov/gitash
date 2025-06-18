@@ -1,0 +1,141 @@
+.padelHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: rem(64);
+    z-index: 9;
+    &-logo {
+        display: block;
+        width: rem(92);
+        height: rem(131);
+        margin: auto;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.pageFooter {
+    padding-bottom: rem(48);
+    &__content {
+        grid-template-columns: repeat(3, 1fr);
+        &-right {
+            align-self: flex-end
+        }
+    }
+    &__contacts {
+        &-title {
+            margin-bottom: rem(24);
+        }
+        &-group {
+            gap: rem(36);
+        }
+        &-left {
+            gap: rem(12);
+            a {
+                font-weight: 500;
+                font-size: rem(15);
+                line-height: normal;
+            }
+        }
+        &-tg {
+            width: rem(48);
+            height: rem(48);
+            border-radius: 50%;
+            background: #2A2C54;
+            svg {
+                width: rem(18);
+                height: rem(18);
+            }
+        }
+    }
+    &__logo {
+        width: rem(56);
+        height: rem(80);
+        margin-left: auto;
+        margin-right: auto;
+        svg {
+            width: 100%;
+            height: auto;
+            
+        }
+        path {
+            fill: #DFE0EF;
+        }
+    }
+    &__txt {
+        text-align: right;
+        font-size: rem(12);
+        line-height: 130%;
+        gap: rem(4);
+    }
+}
+
+@media (max-width: 1440px) {
+    .padelHeader {
+        padding: rem(52);
+        &-logo {
+            width: rem(66);
+            height: rem(94);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .padelHeader {
+        padding: rem(12);
+        &-logo {
+            width: rem(40);
+            height: rem(58);
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+
+    .pageFooter {
+        position: relative;
+        padding-bottom: rem(24);
+        &__content {
+            grid-template-columns: initial;
+            display: flex;
+            flex-wrap: wrap;
+            &-middle {
+                order: -1;
+
+            }
+            &-right {
+                width: 100%;
+            }
+            &-right {
+                margin-top: rem(38);
+            }
+            &-left {
+                margin-left: auto;
+            }
+        }
+        &__contacts {
+            text-align: right;
+            &-right {
+                position: absolute;
+                bottom: rem(24);
+                right: rem(14);
+            }
+            &-group {
+                display: block;
+                gap: 0;
+                margin-left: auto;
+            }
+        }
+        &__txt {
+                text-align: left;
+                max-width: rem(224);
+            }
+        &__logo {
+            width: rem(52);
+            height: rem(73);
+        }
+    }
+}

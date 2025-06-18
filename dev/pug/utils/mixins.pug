@@ -26,10 +26,15 @@ mixin svg2(name, folder)
 	else 
 		img(src=`static/images/general/${name}.svg`, width=`${w}` height=`${h}` alt="img")
 
-mixin pngG(name, w, h)
-	picture
-		source(srcset=`static/images/general/${name}.webp`, type='image/webp')
-		img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
+mixin pngG(name, w, h, folder)
+	if(folder)
+		picture
+			source(srcset=`static/images/general/${folder}/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
+	else 
+		picture
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
 
 mixin pngC(name, w, h, folder)
 	if (folder)
@@ -222,10 +227,12 @@ mixin newCard(favorite, cart, colors, discount, special)
 				.card-stickers__item.card-stickers__item--grey.ttl.sticker special offer
 		if (!favorite)
 			button.card-favorite.fav-btn.icon(type="button")
+				.card-favorite__animate
 				+icon('heart') 
 				+icon('heart-fill')
 		else 
 			button.card-favorite.fav-btn.icon.active(type="button")
+				.card-favorite__animate
 				+icon('heart') 
 				+icon('heart-fill')
 

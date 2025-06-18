@@ -1,0 +1,18 @@
+extends template/clear
+
+block variables
+	- var title = 'оформление заказа'
+	- var bodyClass = 'padelPage'
+	- var htmlClass = 'html-rem'
+
+block content
+	include pages/landing/padel/map
+	include pages/landing/padel/padel
+	
+	
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/padel.css")
+
+block script
+	script(src="https://api-maps.yandex.ru/v3/?apikey=822806d6-6098-4d91-808f-03786f3cb8f6&lang=ru_RU")
+	script(src="static/js/padel-map.js" )

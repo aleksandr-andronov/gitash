@@ -5,5 +5,17 @@ block variables
 	- var ready = true
 
 block status
-	//- include pages/account/status-head
 	include pages/account/status-5
+
+
+block modals
+	include modules/returnOffcanvas/return-choice
+	include modules/returnOffcanvas/return-before
+	include modules/returnOffcanvas/return-after
+	include modules/returnOffcanvas/return-method
+
+block scriptBefore
+	script(src="static/js/air-datepicker.min.js")
+
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/air-datepicker.min.css")
