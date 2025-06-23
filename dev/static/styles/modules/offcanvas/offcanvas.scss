@@ -29,8 +29,17 @@
             display: none;
         }
     }
-    &__form {
+    &__form, &__tabs {
         flex-grow: 1;
+    }
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+        .tabs-content.active {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
     }
     &__sticky-foot {
         background: var(--white);
@@ -116,6 +125,9 @@
             padding-top: 40px;
             padding-bottom: 40px;
         }
+        &--pt-28 {
+            padding-top: 28px;
+        }
     }
     &-close {
         &--absolute {
@@ -123,6 +135,7 @@
             z-index: 9;
             top: 64px;
             right: 40px;
+            z-index: 10;
         }
         &--hidden {
             display: none;
@@ -357,6 +370,10 @@
                 margin-bottom: 0;
                 text-align: center;
                 max-width: 464px;
+                &--center {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
             }
             &-fake {
                 min-height: 66px;
@@ -365,6 +382,9 @@
             &-btn {
                 top: 40px;
                 right: 40px;
+            }
+            &-number {
+                
             }
         }
         &__txt {
@@ -449,6 +469,9 @@
             &--py-1 {
                 padding-top: 30px;
                 padding-bottom: 30px;
+            }
+            &--pt-28 {
+                padding-top: 24px;
             }
         }
         &-desc {

@@ -16,6 +16,9 @@
     }
     &__picture {
         position: relative;
+        &-img {
+            clip-path: url(#bigClipPath);
+        }
         &-decor {
             position: absolute;
             top: rem(-32);
@@ -83,13 +86,14 @@
     }
 }
 
-@media (max-width: 932px) {
+@media (max-width: 480px) {
     .padelReady {
         padding-left: rem(14);
         padding-right: rem(14);
         padding-top: rem(62);
         padding-bottom: rem(38);
         margin-top: 0;
+        overflow: hidden;
         &-top {
             grid-template-columns: 1fr;
             gap: rem(16);
@@ -99,6 +103,7 @@
             }
         }
         &__picture {
+            
             &-decor {
                 width: rem(618);
                 left: rem(-288);

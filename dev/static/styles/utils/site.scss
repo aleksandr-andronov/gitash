@@ -680,4 +680,15 @@ ul:not([class]) {
     .link-icon {
         column-gap: 4px;
     }
+
+
+    .slider {
+        &-full-width-m {
+            margin-left: calc(-1 * var(--container-padding));
+            margin-right: calc(-1 * var(--container-padding));
+            padding-left: var(--container-padding);
+            padding-right: var(--container-padding);
+            overflow: hidden;
+        }
+    }
 }

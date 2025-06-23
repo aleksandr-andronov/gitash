@@ -1,0 +1,149 @@
+mixin availabilityLabel(name, color, location, address)
+    label.availabilityLabel.radio.radio-bg
+        input(type="radio" name="availabilityLabel")
+        span.availabilityLabel__content.d-grid.radio-outline.outline-border
+            span.availabilityLabel__content-inner.d-grid
+                span.availabilityLabel__icon
+                    span.radio-icon 
+                span.availabilityLabel__info
+                    span.availabilityLabel__info-top 
+                        span.availabilityLabel__info-group.d-flex.flex-wrap.align-center  
+                            span.availabilityLabel__info-name.base-up #{name}
+                            span.availabilityLabel__info-color.d-flex.align-center 
+                                span.availabilityLabel__info-color__icon(style=`background: ${color}`) 
+                                span.availabilityLabel__info-color__txt.txt-sm #{location}
+                        span.availabilityLabel__info-address.txt-sm #{address}
+            span.availabilityLabel__info-bottom.collapse
+                span.availabilityLabel__info-list.d-grid 
+                    span.availabilityLabel__info-item.d-flex
+                        span.availabilityLabel__info-item__icon.icon-outline 
+                            include ../../icons/phone-11
+                        span.availabilityLabel__info-item__txt 
+                            a.underline(href="tel:+74959098314") +7 495 909-83-14 доб 202 
+                    span.availabilityLabel__info-item.d-flex
+                        span.availabilityLabel__info-item__icon.icon-outline 
+                            include ../../icons/calendar-11
+                        span.availabilityLabel__info-item__txt ежедневно с 10:00 до 22:00 
+#availabilityListOffcanvas.offcanvas.offcanvas-end(tabindex="-1" data-bs-backdrop="false")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4 наличие в магазинах
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle.closeAvailabilityMap(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+            .availabilitySize.absolute.static-m
+                .availabilitySize__inner.d-flex.flex-wrap.align-center 
+                    .availabilitySize__inner-item
+                        .availabilitySize-item.d-flex.d-grid-list.align-center
+                            .availabilitySize-item__icon.icon-outline
+                                include ../../icons/pin-outline-12
+                            .availabilitySize-item__txt Москва
+                    .availabilitySize__inner-item
+                        .sorting
+                            a.sorting-btn.d-flex(href="#")
+                                span.sorting-btn__txt Размер: 37
+                                span.sorting-btn__icon.icon-outline 
+                                    include ../../icons/arrow-down
+                            .sorting-dropdown.mobileBottom.outline-border.sorting-dropdown--size
+                                .mobileBottom__backdrop.backdrop(data-close)
+                                .mobileBottom__content 
+                                    .mobileBottom__head 
+                                        a.mobileBottom-close.icon(href="#" data-close) 
+                                            +svg('close', '14', '14')
+                                    .mobileBottom__title.medium Сортировка
+                                    .mobileBottom__info 
+                                        .sorting-dropdown__list
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" checked data-value="Размер: 36")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 36
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Размер: 37")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 37
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Размер: 38")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 38
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Размер: 39")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 39
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Размер: 40")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 40
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                                            .sorting-dropdown__list-item.sorting-dropdown__list-item--m-border 
+                                                label.form-select__radio
+                                                    input(type="radio" name="sorting" data-value="Размер: 41")
+                                                    span.form-select__radio-content 
+                                                        span.form-select__radio-txt 41
+                                                        span.form-select__radio-icon.icon 
+                                                            +svg('check-circle', '16', '16')
+                        //- button.availabilitySize-item.d-flex.d-grid-list.align-center
+                        //-     .availabilitySize-item__txt Размер: 37
+                        //-     .availabilitySize-item__icon.icon-outline 
+                        //-         include ../../icons/arrow-down
+        .offcanvas__tabs.tabs
+            .offcanvas__head-tabs.mobile
+                .pickupPoint-tabs__list.d-flex.pickupPoint-tabs__list--pt-0 
+                    .pickupPoint-tabs__list-item    
+                        a.pickupPoint-tabs__link.tabs-link.selected(href="#" data-tabs="list") список
+                    .pickupPoint-tabs__list-item    
+                        a.pickupPoint-tabs__link.tabs-link(href="#" data-tabs="map") на карте
+            .tabs-content.active.animate(data-tabs="list")
+                .offcanvas__body
+                    .d-grid.d-grid-list
+                        - for (let i = 0; i < 7; i++)
+                            +availabilityLabel('ASH афимолл', '#96D2F0', 'Выставочная', 'ТЦ Афимолл, Пресненская наб, 2. Этаж 2')
+                .offcanvas__sticky-foot
+                    a.btn.w-full#reserveBtn(href="#availabilityProductOffcanvas" data-bs-toggle="offcanvas" disabled) забронировать
+                    .offcanvas__sticky-foot__txt.text-center.txt-sm Бронирование действует в течение <br class="br-1440 br-932">дня до закрытия магазина
+            .tabs-content(data-tabs="map")
+                #availabilityMapMobile
+                .availabilityShopBottom.fixed
+                    button.availabilityShopBottom-close.absolute(type="button")
+                        include ../../icons/x-11
+                    .availabilityShopBottom__content
+                        span.availabilityLabel__info-group.d-flex.flex-wrap.align-center  
+                            span.availabilityLabel__info-name.base-up ash внуково
+                            span.availabilityLabel__info-color.d-flex.align-center 
+                                span.availabilityLabel__info-color__icon(style=`background: #96D2F0`) 
+                                span.availabilityLabel__info-color__txt.txt-sm Выставочная
+                        .availabilityShopBottom__group.availabilityLabel__info-list.d-grid
+                            span.availabilityLabel__info-item.d-flex
+                                span.availabilityLabel__info-item__icon.icon-outline 
+                                    include ../../icons/pin-outline-12
+                                span.availabilityLabel__info-item__txt г. Москва ул. Шарикоподшипниковская, д. 4, стр. 4а
+                            span.availabilityLabel__info-item.d-flex
+                                span.availabilityLabel__info-item__icon.icon-outline 
+                                    include ../../icons/phone-11
+                                span.availabilityLabel__info-item__txt 
+                                    a.underline(href="tel:+74959098314") +7 495 909-83-14 доб 202 
+                            span.availabilityLabel__info-item.d-flex
+                                span.availabilityLabel__info-item__icon.icon-outline 
+                                    include ../../icons/calendar-11
+                                span.availabilityLabel__info-item__txt ежедневно с 10:00 до 22:00 
+                    .availabilityShopBottom__foot
+                        a.btn.w-full#reserveBtn(href="#availabilityProductOffcanvas" data-bs-toggle="offcanvas") забронировать
+                        .offcanvas__sticky-foot__txt.text-center.txt-sm Бронирование действует в течение <br class="br-1440 br-932">дня до закрытия магазина
+.orderMap#availabilityMapWrap
+    .orderMap-content
+        #availabilityMap

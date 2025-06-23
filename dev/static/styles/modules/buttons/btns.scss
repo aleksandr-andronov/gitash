@@ -1,4 +1,5 @@
 .button {
+    --icon-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,9 +13,12 @@
     &--icon-left {
         padding: 12px 18px 12px 16px;
     }
+    &--circle {
+        padding: 12px;
+    }
     &__icon {
-        width: 16px;
-        height: 16px;
+        width: var(--icon-size);
+        height: var(--icon-size);
     }
 }
 

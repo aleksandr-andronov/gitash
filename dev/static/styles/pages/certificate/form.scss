@@ -358,8 +358,9 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 100svh;
-                padding-top: 74px;
+                height: 100vh;
+                padding-top: calc(74px + var(--notification-height));
+                transition: padding .2s linear;
                 overflow: auto;
                 
                 display: flex;
@@ -400,7 +401,8 @@
                 }
             }
             &__payment {
-                padding: 74px 14px;
+                padding: calc(74px + var(--notification-height)) 14px;
+                transition: padding .2s linear;
             }
         }
     }

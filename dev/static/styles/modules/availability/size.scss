@@ -1,0 +1,38 @@
+.availabilitySize {
+    bottom: 0;
+    left: var(--offcanvas-px);
+    &__inner {
+        gap: 16px;
+    }
+    &-item {
+        &__icon {
+            width: 16px;
+            height: 16px;
+            path {
+                stroke: var(--base-color);
+                stroke-width: 1.1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .availabilitySize {
+        &-item {
+            &__icon {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .availabilitySize {
+        margin-top: 12px;
+        &-item {
+            font-size: 12px;
+            gap: 4px;
+        }
+    }
+}

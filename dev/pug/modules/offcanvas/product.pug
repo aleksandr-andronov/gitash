@@ -1,0 +1,205 @@
+#productOffcanvas.offcanvas.offcanvas-end(tabindex="-1")
+    .productOffcanvas
+        a.offcanvas-close.btn-circle.productOffcanvas-close.absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+            +svg('close', '16', '16')
+        .productOffcanvas-top 
+            .productOffcanvas-head.d-grid.d-grid-list 
+                .productOffcanvas-head__left
+                    .productOffcanvas-head__title Kроссовки женские Addict
+                    .productOffcanvas-head__price
+                        .product-price
+                            .product-price__inner.d-flex.align-end 
+                                .product-price__left 
+                                    .product-price__new.h5.ttl 17 140 ₽
+                                .product-price__right.product-price__right--start
+                                    .product-price__old.d-flex.items-center 
+                                        .product-price__old-value 24 490 ₽
+                                        .product-price__old-icon
+                                            .product-tooltip.product-tooltip--bottom-right
+                                                .product-tooltip__btn.icon-outline
+                                                    +icon('i')
+                                                .product-tooltip__dropdown 
+                                                    .product-tooltip__backdrop.product-tooltip__close
+                                                    .product-tooltip__content
+                                                        button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+                                                            include ../../icons/x-11
+                                                        .product-tooltip__title.mobile.medium Детализация скидки
+                                                        .product-tooltip__content-inner.d-flex.flex-col
+                                                            .product-tooltip__content-item
+                                                                .product-tooltip__item.d-flex
+                                                                    .product-tooltip__item-name Скидка на товары
+                                                                    .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                            .product-tooltip__content-item
+                                                                .product-tooltip__item.d-flex
+                                                                    .product-tooltip__item-name Последняя пара
+                                                                    .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                    .product-tooltip__arrow
+                                                        +svg('dropdown-arrow', '32', '16')
+                .productOffcanvas-head__right 
+            .productOffcanvas-galleryWrap.relative
+                .productOffcanvas-galleryCursor.d-grid.d-grid-list.align-center 
+                    .productOffcanvas-galleryCursor__icon.icon 
+                        +icon('gallery-cursor')
+                    .productOffcanvas-galleryCursor__txt открыть галлерею
+                .productOffcanvas-gallery.slider
+                    .swiper-wrapper 
+                        - for (let i = 0; i < 8; i++)
+                            .swiper-slide 
+                                .productOffcanvas-gallery__img.js-gallery-open(data-img=`${i+1}`)
+                                    +pngC('product-img-2', '320', '428')
+                .productOffcanvas-thumbsWrap 
+                    .productOffcanvas-thumbs.slider 
+                        .swiper-wrapper
+                            - for (let i = 0; i < 8; i++)
+                                .swiper-slide
+                                    .productOffcanvas-thumbs__img.outline-border 
+                                        +pngC('product-thumb', '40', '54')
+                .productOffcanvas-sticker.product-sticker
+                    .sticker.ttl.sticker--sale -30%
+                .productOffcanvas-pagination.product-galleryMobile__pagination.slider-pagination
+                button.mainSection-btn.productOffcanvas-galleryPrev(type="button")
+                    include ../../icons/left-12
+                button.mainSection-btn.productOffcanvas-galleryNext(type="button")
+                    include ../../icons/right-12
+        .productOffcanvas-bottom.relative
+            .productOffcanvas-bottom__content.d-grid
+                .productOffcanvas__mobile-info.mobile 
+                    .productOffcanvas-head__title Kроссовки женские Addict
+                    .productOffcanvas-head__price
+                        .product-price
+                            .product-price__inner.d-flex.align-end 
+                                .product-price__left 
+                                    .product-price__new.h5.ttl 17 140 ₽
+                                .product-price__right
+                                    .product-price__old.d-flex.items-center 
+                                        .product-price__old-value 24 490 ₽
+                                        .product-price__old-icon
+                                            .product-tooltip
+                                                .product-tooltip__btn.icon-outline
+                                                    +icon('i')
+                                                .product-tooltip__dropdown 
+                                                    .product-tooltip__backdrop.product-tooltip__close
+                                                    .product-tooltip__content
+                                                        button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+                                                            include ../../icons/x-11
+                                                        .product-tooltip__title.mobile.medium Детализация скидки
+                                                        .product-tooltip__content-inner.d-flex.flex-col
+                                                            .product-tooltip__content-item
+                                                                .product-tooltip__item.d-flex
+                                                                    .product-tooltip__item-name Скидка на товары
+                                                                    .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                            .product-tooltip__content-item
+                                                                .product-tooltip__item.d-flex
+                                                                    .product-tooltip__item-name Последняя пара
+                                                                    .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                    .product-tooltip__arrow
+                                                        +svg('dropdown-arrow', '32', '16')
+                .productOffcanvas__colors 
+                    .product__subtitle
+                        .product__subtitle-txt.base-up в других цветах
+                    .productOffcanvas-colors
+                        .productOffcanvas-colors__slider.slider.slider-full-width-m 
+                            .swiper-wrapper 
+                                .productOffcanvas-colors__slider-slide.swiper-slide 
+                                    a.productOffcanvas-colors__item.centered.productOffcanvas-colors__item--white(href="#")
+                                        span.outline-border(style="background: #FFFFFF;")
+                                - for (let i = 0; i < 10; i++)
+                                    .productOffcanvas-colors__slider-slide.swiper-slide
+                                        a.productOffcanvas-colors__item.centered(href="#")
+                                            span.outline-border(style="background: #53BDF9;")
+
+                .productOffcanvas-bottom__info.d-grid
+                    .productOffcanvas__size 
+                        .product__subtitle
+                            .product__subtitle-txt.base-up.product-size__title(data-default="размер" data-error="выберите размер") Размер
+                            a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
+                        .product-size
+                            .product-size__list.flex 
+                                .product-size__list-item.product-size__list-item--width-auto
+                                    a.product-size__btn.outline-border.centered(href="#" data-sizeWarning="true" data-sizeQtyText='последний размер -10%') 35 
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered(href="#" data-sizeWarning="true" data-sizeQtyText='осталось мало') 36
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.disabled.outline-border.selected.centered(href="#") 37
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered(href="#") 38
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.disabled.outline-border.centered(href="#") 39
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered(href="#") 40
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered(href="#") 41
+                            .product-size__warning.collapse#sizeWarning
+                                .product-size__warning-txt.tech-14 осталось мало
+                    .product-size__actions-wrapper
+                        .product-size__actions.d-flex
+                            .product-size__actions-left 
+                                a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+                                    span.product-cartBtn__output добавить в корзину
+                                    span.product-cartBtn__animate 
+                                        span 
+                                        span 
+                                        span 
+                                        span 
+                            .product-size__actions-right
+                                a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+                                    .card-favorite__animate
+                                    span.product-favoriteBtn__icon.icon 
+                                        +icon('heart')
+                                        +icon('heart-fill')
+                    .product-notification
+                        .product-notification__item.d-flex 
+                            .product-notification__item-icon.icon 
+                                include ../../icons//wallet
+                            .product-notification__item-txt.txt-sm Оплата банковской картой онлайн
+                        .product-notification__item.d-flex 
+                            .product-notification__item-icon.product-notification__item-icon--outline.icon 
+                                include ../../icons//car
+                            .product-notification__item-txt.txt-sm Доставка в ПВЗ или курьером после 100% предоплаты
+                    .product__info 
+                        .product-info
+                            .product-info__group 
+                                .product-info__item
+                                    a.product-info__item-btn.d-flex.copy_code(href="javascript:void(0);")
+                                        span.product-info__item-btn__txt.txt-sm артикул 440515
+                                        span.product-info__item-btn__icon.icon 
+                                            +icon('copy')
+                                            +icon('check-12')
+                            .product-info__group 
+                                .product-info__item
+                                    a.product-info__item-btn.d-flex(href="#hiddenInfo1" data-bs-toggle="collapse")
+                                        span.product-info__item-btn__txt.txt-sm описание
+                                        span.product-info__item-btn__icon.icon 
+                                            +icon('plus-circle')
+                                            +icon('minus-circle')
+                                    .product-info__hidden.collapse#hiddenInfo1 
+                                        .product-info__txt.txt-sm Культовый силуэт бренда ASH – кроссовки ADDICT в серой гамме на массивной, но лёгкой подошве из EVA, дополненный декоративными элементами серебряного цвета. Фактурный дизайн из текстиля, кожи, замши и нубука. Задник украшен логотипом.
+                            .product-info__group 
+                                .product-info__item
+                                    a.product-info__item-btn.d-flex(href="#hiddenInfo2" data-bs-toggle="collapse")
+                                        span.product-info__item-btn__txt.txt-sm детали
+                                        span.product-info__item-btn__icon.icon 
+                                            +icon('plus-circle')
+                                            +icon('minus-circle')
+                                    .product-info__hidden.collapse#hiddenInfo2 
+                                        .product-info__item-list.txt-sm
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Цвет:
+                                                .product-info__item-list__value коричневый
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Сезон:
+                                                .product-info__item-list__value демисезон
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Материал верха:
+                                                .product-info__item-list__value велюр, кожа натуральная
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Материал подкладки:
+                                                .product-info__item-list__value кожа натуральная
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Материал подошвы:
+                                                .product-info__item-list__value кожа натуральная
+                                            .product-info__item-list__item.d-flex 
+                                                .product-info__item-list__name Высота каблука:
+                                                .product-info__item-list__value 4.5 см
+
+include ../../pages/product/gallery

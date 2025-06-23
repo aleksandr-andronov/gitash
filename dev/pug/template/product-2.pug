@@ -162,7 +162,7 @@ html(lang="ru-RU")
 								.product__size 
 									.product__subtitle
 										.product__subtitle-txt.base-up.product-size__title(data-default="размер" data-error="выберите размер") Размер
-										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить разме
+										a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
 									.product__size-warning.italic (Внимание! Модель большемерит на пол размера)
 									if (size2)
 										.product-size
@@ -208,6 +208,7 @@ html(lang="ru-RU")
 																	span.product-cartBtn__txt сообщить о поступлении 
 													.product-size__actions-right
 														a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+															span.card-favorite__animate
 															span.product-favoriteBtn__icon.icon 
 																+icon('heart')
 																+icon('heart-fill')
@@ -312,6 +313,7 @@ html(lang="ru-RU")
 																	span 
 													.product-size__actions-right
 														a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+															.card-favorite__animate
 															span.product-favoriteBtn__icon.icon 
 																+icon('heart')
 																+icon('heart-fill')
@@ -325,7 +327,11 @@ html(lang="ru-RU")
 											.product-notification__item-icon.product-notification__item-icon--outline.icon 
 												include ../icons//car
 											.product-notification__item-txt.txt-sm Бесплатная доставка курьером по всей России
-								.product__hr
+								.product__availability
+									a.product-availabilityBtn.d-flex.align-center.txt-sm(href="#availabilityListOffcanvas" data-bs-toggle="offcanvas") 
+										span.product-availabilityBtn__txt ДОСТУПЕН В 8 МАГАЗИНАХ
+										span.product-availabilityBtn__icon.icon-outline 
+											include ../icons/right-12
 								.product__colors 
 									.product__subtitle
 										.product__subtitle-txt.base-up в других цветах
@@ -487,10 +493,16 @@ html(lang="ru-RU")
 			include ../modules/footer/footer
 			include ../modules/notification/notification-top
 		include ../modules/modals/modals
+		include ../modules/availability/availability
 		include ../modules/popups/popups
+		
 		script(src="static/js/lottie.min.js") 
 		script(src="static/js/libs.js")
 		script(src="static/js/swiper-bundle.min.js")
 		script(src="static/js/imask.js")
 		script(src="static/js/main.js")
+
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+		script(src="static/js/availability.js")
+
 		block script

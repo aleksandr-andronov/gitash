@@ -433,6 +433,9 @@
             width: 16px;
             height: 16px;
             margin-left: 8px;
+            path {
+                stroke: var(--black);
+            }
         }
 
     }
@@ -448,6 +451,9 @@
         overflow: hidden;
         &--rounded {
             border-radius: 20px;
+        }
+        &--size {
+            width: 212px;
         }
         &::before {
             border-color: var(--black);
@@ -658,6 +664,11 @@
                 width: 14px;
                 height: 14px;
                 margin-left: 6px;
+            }
+        }
+        &-dropdown {
+             &--size {
+                width: 188px; 
             }
         }
     }
@@ -1015,6 +1026,7 @@
             }
         }
         &-dropdown {
+           
             &__list {
                 &-item {
                     &--m-border {

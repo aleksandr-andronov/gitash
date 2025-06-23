@@ -303,7 +303,7 @@
         height: 100svh;
         background: var(--cert-bg);
         &__item {
-            padding: 10px 10px 14px;
+            padding: calc(10px + var(--notification-height)) 10px 14px;
             background: var(--cert-bg);
             display: flex;
             align-items: center;
@@ -326,6 +326,7 @@
                 height: auto;
                 box-shadow: 0px 4px 8.7px 4px rgba(0, 0, 0, 0.07);
                 max-width: 394px;
+                max-height: 100%;
             }
         }
     }
@@ -575,11 +576,14 @@
             }
         }
         &__actions {
-            top: 0;
+            top: var(--notification-height);
             padding: 20px 14px;
             z-index: 9;
+            transition: top .2s linear;
         }
     }
+
+
 }
 
 @media (max-width: 480px) {

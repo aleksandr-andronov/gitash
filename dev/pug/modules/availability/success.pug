@@ -1,0 +1,29 @@
+#availabilitySuccessOffcanvas.offcanvas.offcanvas-end(tabindex="-1" data-bs-backdrop="false")
+    a.offcanvas-close.btn-circle.closeAvailabilityMap.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+        +svg('close')
+    .offcanvas-feedback__status
+        .offcanvas-feedback__status-inner.centered
+            .offcanvas-feedback__status-group.offcanvas-feedback__status-group--center
+                .offcanvas-feedback__status-img
+                    +svg('success', '80', '80')
+                .offcanvas-feedback__status-title.h6.ttl заказ успешно забронирован
+                .offcanvas-feedback__status-txt.mx-auto
+                    .offcanvas-feedback__status-txt__item
+                        .offcanvas-feedback__status-number.d-flex.d-grid-list.align-center.justify-center
+                            .offcanvas-feedback__status-number__txt № заказа 48087
+                            button.product-installments__promocode-icon.icon.copy_code
+                                +icon('copy')
+                                +icon('check-12')
+                    .offcanvas-feedback__status-txt__item Назовите номер заказа или номер телефона при получении товара. 
+
+
+#availabilityErrorOffcanvas.offcanvas.offcanvas-end(tabindex="-1" data-bs-backdrop="false")
+    a.offcanvas-close.btn-circle.closeAvailabilityMap.offcanvas-close--absolute(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+        +svg('close')
+    .offcanvas-feedback__status
+        .offcanvas-feedback__status-inner.centered
+            .offcanvas-feedback__status-group.offcanvas-feedback__status-group--center
+                .offcanvas-feedback__status-img
+                    +svg('error', '80', '80')
+                .offcanvas-feedback__status-title.h6.ttl ошибка
+                .offcanvas-feedback__status-txt.mx-auto Что-то пошло не так. Попробуйте ещё раз

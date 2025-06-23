@@ -8,13 +8,16 @@ header.padelHeader
         .padelIntro-content__left 
             h1.padelIntro__title.ttl Все на корт! Играйте в падел вместе с&nbsp;ASH
             .padelIntro__txt 
-                p <span class="s-bold">ASH — 25 лет.</span> Этот большой праздник мы хотим разделить с&nbsp;cамыми близкими — мы, конечно, про вас. Спасибо, что выбираете нас уже столько лет!
-                p В честь юбилея мы устраиваем серию закрытых падел-тренировок для наших&nbsp;VIP-клиентов. Присоединитесь?
-            a.padelIntro__btn.padel-btn(href="#") Записаться
+                p <span class="s-bold">ASH — 25 лет.</span> Этот большой праздник мы хотим разделить с&nbsp;самыми близкими — это, конечно, про вас. Спасибо, что выбираете ASH уже столько лет!
+                p В честь юбилея устраиваем серию закрытых падел-тренировок для наших VIP-клиентов. Присоединитесь?
+            a.padelIntro__btn.padel-btn(href="#padelRequest") Записаться
         .padelIntro-content__right
             .padelIntro__picture
-                .padelIntro__picture-img
-                    +pngG('intro-img', '757', '1034', 'padel')
+                .padelIntro__picture-img-wrap
+                    .padelIntro__picture-img
+                        +pngG('intro-img', '757', '1034', 'padel')
+                    .padelIntro__picture-decor 
+                        +svg('intro-before', '1030', '172', 'padel')
                 .padelIntro__picture-txt.g-border 
                     span Каждый четверг — <br>только четыре места
 
@@ -83,7 +86,7 @@ header.padelHeader
                             .padelLocation__item-icon 
                                 +svg('location-2', '24', '24', 'padel')
                             .padelLocation__item-txt 
-                                a(href="#") Перейти на сайт площадки 
+                                a(href="https://cooltennis.ru/padel-malevich" target="_blank") Перейти на сайт площадки 
                     .padelLocation__list-item
                         .padelLocation__item.d-grid
                             .padelLocation__item-icon 
@@ -107,7 +110,7 @@ header.padelHeader
                                 a(href="tel:89958885794") 8 (995) 888-57-94
 
 
-.padelRequest
+.padelRequest#padelRequest
     .padel-container 
         .padelRequest__content.d-grid
             .padelRequest__content-left 
@@ -127,31 +130,54 @@ header.padelHeader
                 form.padelRequest-form(action="/")
                     .padelRequest-form__inner.d-grid 
                         .padelRequest-form__group
-                            .padelRequest-form__fields.d-grid
-                                .padelRequest-form__field-wrap
-                                    input.padelRequest-form__field(type="text" placeholder="ФИО")
-                                .padelRequest-form__field-wrap
-                                    input.padelRequest-form__field(type="text" placeholder="Дата рождения")
-                                .padelRequest-form__field-wrap
-                                    input.padelRequest-form__field.padelRequest-form__field--phone(type="tel" data-phone required placeholder="телефон*")
-                                    .padelRequest-form__flag.d-flex 
-                                        .padelRequest-form__flag-icon 
-                                            +svg('flag', '24', '17', 'padel')
-                                        .padelRequest-form__flag-txt +7
-                                .padelRequest-form__field-wrap
-                                    .padelRequest-form__field.d-flex.padelRequest-form__field--select
-                                        .padelRequest-form__field-output Выберите дату тренировки
-                                        .padelRequest-form__field-icon
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L8 12L15 5" stroke="#7F82B6" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/></svg>
-                                    .padelRequest-form__dropdown
-                                        .padelRequest-form__dropdown-backdrop 
-                                        .padelRequest-form__dropdown-dialog
-                                            .padelRequest-form__dropdown-content 
-                                                .padelRequest-form__dropdown-list.d-grid
-                                                    - for (let i = 0; i < 9; i++)
+                            .padelRequest-form__fields.d-flex
+                                .padelRequest-form__fields-item
+                                    .padelRequest-form__field-wrap
+                                        input.padelRequest-form__field(autocomplete="off" type="text" placeholder="Имя*" data-validate)
+                                .padelRequest-form__fields-item
+                                    .padelRequest-form__field-wrap
+                                        input.padelRequest-form__field(autocomplete="off" type="text" placeholder="Фамилия*" data-validate)
+                                .padelRequest-form__fields-item
+                                    .padelRequest-form__field-wrap
+                                        input.padelRequest-form__field#dateInput(autocomplete="off" type="text" data-date placeholder="Дата рождения")
+                                        .custom-placeholder#customPlaceholder дд.мм.гггг
+                                .padelRequest-form__fields-item
+                                    .padelRequest-form__field-wrap
+                                        input.padelRequest-form__field.padelRequest-form__field--phone#phoneInput(autocomplete="off" type="tel" data-phone placeholder="телефон*" data-validate)
+                                        .custom-placeholder#customPhonePlaceholder (___)___-__-__
+                                        .padelRequest-form__flag.d-flex 
+                                            .padelRequest-form__flag-icon 
+                                                +svg('flag', '24', '17', 'padel')
+                                            .padelRequest-form__flag-txt +7
+                                .padelRequest-form__fields-item
+                                    .padelRequest-form__field-wrap
+                                        .padelRequest-form__field.d-flex.padelRequest-form__field--select
+                                            .padelRequest-form__field-output Выберите дату тренировки*
+                                            .padelRequest-form__field-icon
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 5L8 12L15 5" stroke="#7F82B6" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/></svg>
+                                        .padelRequest-form__dropdown
+                                            .padelRequest-form__dropdown-backdrop 
+                                            .padelRequest-form__dropdown-dialog
+                                                .padelRequest-form__dropdown-content 
+                                                    button.padelRequest-form__dropdown-close.centered(type="button")
+                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L12 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/><path d="M12 2L2 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>
+                                                    .padelRequest-form__dropdown-list.d-grid
+                                                        - for (let i = 0; i < 9; i++)
+                                                            .padelRequest-form__dropdown-list__item 
+                                                                label.padelRequest-form__day.padelRequest-form-label
+                                                                    input(type="radio" name="day" data-value="19 июня" data-type="day" data-validate)
+                                                                    span.padelRequest-form__day-content.outline-border.padelRequest-form-label__content 
+                                                                        span.padelRequest-form__day-day ЧТ
+                                                                        span.padelRequest-form__day-date 19
+                                                                        span.padelRequest-form__day-month июня
+                                                                        span.padelRequest-form__day-slots.d-grid 
+                                                                            span.padelRequest-form__day-slots__item
+                                                                            span.padelRequest-form__day-slots__item
+                                                                            span.padelRequest-form__day-slots__item
+                                                                            span.padelRequest-form__day-slots__item.null
                                                         .padelRequest-form__dropdown-list__item 
                                                             label.padelRequest-form__day.padelRequest-form-label
-                                                                input(type="radio" name="day")
+                                                                input(type="radio" name="day" disabled data-value="19 июня" data-type="day" data-validate)
                                                                 span.padelRequest-form__day-content.outline-border.padelRequest-form-label__content 
                                                                     span.padelRequest-form__day-day ЧТ
                                                                     span.padelRequest-form__day-date 19
@@ -161,57 +187,64 @@ header.padelHeader
                                                                         span.padelRequest-form__day-slots__item
                                                                         span.padelRequest-form__day-slots__item
                                                                         span.padelRequest-form__day-slots__item.null
-                                                    .padelRequest-form__dropdown-list__item 
-                                                        label.padelRequest-form__day.padelRequest-form-label
-                                                            input(type="radio" name="day" disabled)
-                                                            span.padelRequest-form__day-content.outline-border.padelRequest-form-label__content 
-                                                                span.padelRequest-form__day-day ЧТ
-                                                                span.padelRequest-form__day-date 19
-                                                                span.padelRequest-form__day-month июня
-                                                                span.padelRequest-form__day-slots.d-grid 
-                                                                    span.padelRequest-form__day-slots__item
-                                                                    span.padelRequest-form__day-slots__item
-                                                                    span.padelRequest-form__day-slots__item
-                                                                    span.padelRequest-form__day-slots__item.null
                         .padelRequest-form__group
                             .padelRequest-form__wrap.d-flex 
-                                .padelRequest-form__title.s-bold Сколько мест забронировать?
+                                .padelRequest-form__title.s-bold Сколько мест забронировать?*
                                 .padelRequest-form__labels.flex
                                     .padelRequest-form__labels-item 
                                         label.padelRequest-form__label.padelRequest-form-label
-                                            input(type="radio" name="people")
+                                            input(type="radio" name="people" data-type="label" data-validate)
                                             span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content 1 место
                                     .padelRequest-form__labels-item 
                                         label.padelRequest-form__label.padelRequest-form-label
-                                            input(type="radio" name="people")
+                                            input(type="radio" name="people" data-type="label" data-validate)
                                             span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content 2 места
                         .padelRequest-form__group
-                            .padelRequest-form__title.s-bold.padelRequest-form__title--mb Ваш опыт игры в падел
+                            .padelRequest-form__title.s-bold.padelRequest-form__title--mb Ваш опыт игры в падел*
                             .padelRequest-form__labels.flex
                                 .padelRequest-form__labels-item 
                                     label.padelRequest-form__label.padelRequest-form-label
-                                        input(type="radio" name="exp")
+                                        input(type="radio" name="exp" data-type="label" data-validate)
                                         span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content Никогда не играла, но хочу попробовать
                                 .padelRequest-form__labels-item 
                                     label.padelRequest-form__label.padelRequest-form-label
-                                        input(type="radio" name="exp")
+                                        input(type="radio" name="exp" data-type="label" data-validate)
                                         span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content Пробовала пару раз
                                 .padelRequest-form__labels-item 
                                     label.padelRequest-form__label.padelRequest-form-label
-                                        input(type="radio" name="exp")
+                                        input(type="radio" name="exp" data-type="label" data-validate)
                                         span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content Играю время от времени
                                 .padelRequest-form__labels-item 
                                     label.padelRequest-form__label.padelRequest-form-label
-                                        input(type="radio" name="exp")
+                                        input(type="radio" name="exp" data-type="label" data-validate)
                                         span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content Уверенно играю, но не регулярно
                                 .padelRequest-form__labels-item 
                                     label.padelRequest-form__label.padelRequest-form-label
-                                        input(type="radio" name="exp")
+                                        input(type="radio" name="exp" data-type="label" data-validate)
                                         span.padelRequest-form__label-content.outline-border.padelRequest-form-label__content Играю регулярно
                         .padelRequest-form__group
                             button.padelRequest-form__btn.padel-btn(type="submit") Записаться
                         .padelRequest-form__group
-                            .padelRequest-form__txt Нажимая на кнопку «Записаться», я принимаю условия Публичной оферты и Политики Конфиденциальности
+                            .padelRequest-form__txt Нажимая на кнопку «Записаться», я принимаю условия <a href="#" target="_blank">Публичной оферты</a> и 
+                                a(href="#" target="_blank") Политики Конфиденциальности
+    .padelRequest-status.padelRequest-status-success
+        button.padelRequest-status__close.centered(type="button")
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L12 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/><path d="M12 2L2 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>
+        .padelRequest-status__content
+            .padelRequest-status__content-inner
+                .padelRequest-status__content-img 
+                    +svg('success', '80', '80', 'padel')
+                .padelRequest-status__content-title.ttl ВЫ записаны
+                .padelRequest-status__content-txt Спасибо, мы получили вашу заявку. Напомним вам о&nbsp;тренировке за день, отправив сообщение
+    .padelRequest-status.padelRequest-status-error
+        button.padelRequest-status__close.centered(type="button")
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L12 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/><path d="M12 2L2 12" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/></svg>
+        .padelRequest-status__content
+            .padelRequest-status__content-inner
+                .padelRequest-status__content-img 
+                    +svg('error', '80', '80', 'padel')
+                .padelRequest-status__content-title.ttl ошибка
+                .padelRequest-status__content-txt Попробуйте ещё раз
 
 footer.pageFooter
     .padel-container
@@ -224,7 +257,7 @@ footer.pageFooter
                             a(href="tel:88005007682")  8 800 500-76-82
                             a(href="tel:+74956498313") +7 495 649-83-13
                         .pageFooter__contacts-right
-                            a.pageFooter__contacts-tg.centered(href="#") 
+                            a.pageFooter__contacts-tg.centered(href="#" target="_blank") 
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.27852 11.2269L7.01383 15.1357C7.39252 15.1357 7.55653 14.9649 7.75321 14.7598L9.52866 12.9783L13.2076 15.807C13.8823 16.2018 14.3576 15.9939 14.5396 15.1553L16.9545 3.27492C17.1685 2.22772 16.5944 1.81752 15.9371 2.07442L1.74283 7.78011C0.774104 8.17491 0.788772 8.74191 1.57816 8.99881L5.20705 10.1839L13.6363 4.64621C14.0329 4.37041 14.3936 4.52301 14.0969 4.79881L7.27852 11.2269Z" fill="#DCDCED"/></svg>
             .pageFooter__content-middle 
                 .pageFooter__logo 

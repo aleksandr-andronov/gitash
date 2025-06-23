@@ -1,0 +1,136 @@
+#availabilityProductOffcanvas.offcanvas.offcanvas-end(tabindex="-1" data-bs-backdrop="false")
+    .offcanvas__inner.offcanvas__inner--flex 
+        .offcanvas__head
+            .offcanvas__head-inner.d-flex
+                .offcanvas__head-back 
+                    a.offcanvas-close.btn-circle(href="#availabilityListOffcanvas" data-bs-toggle="offcanvas") 
+                        +svg('arrow-left', '16', '16')
+                .offcanvas__head-left 
+                    .offcanvas__title.ttl.h4.offcanvas__title--m-center подтверждение
+                .offcanvas__head-right 
+                    a.offcanvas-close.btn-circle.closeAvailabilityMap(href="#" data-bs-dismiss="offcanvas" aria-label="закрыть") 
+                        +svg('close')
+        form.offcanvas__form.d-flex.flex-col.availabilityForm.form(action="#")
+            .offcanvas__body
+                .availabilityProduct
+                    .availabilityProduct__group.d-grid
+                        .availabilityProduct__txt Для подтверждения бронирования оставьте свои контактные данные
+                        .availabilityProduct__warning
+                            .product-notification
+                                .product-notification__item.d-flex 
+                                    .product-notification__item-icon.icon-outline
+                                        +icon('i')
+                                    .product-notification__item-txt.txt-sm Возврат товара осуществляется за счет покупателя
+                    .availabilityProduct__group.availabilityProduct__shop.d-grid
+                        span.availabilityLabel__info-group.d-flex.flex-wrap.align-center  
+                            span.availabilityLabel__info-name.title ASH Цветной
+                            span.availabilityLabel__info-color.d-flex.align-center 
+                                span.availabilityLabel__info-color__icon(style=`background: #AEB0B0`) 
+                                span.availabilityLabel__info-color__txt.txt-sm Цветной бульвар
+                        span.availabilityLabel__info-address.txt-sm Универмаг Цветной, Цветной бульвар д.15, стр. 1. Этаж 3
+                        span.availabilityLabel__info-item.d-flex.align-center
+                            span.availabilityLabel__info-item__icon.icon-outline 
+                                include ../../icons/phone-11
+                            span.availabilityLabel__info-item__txt 
+                                a.underline(href="tel:+74959098314") +7 495 909-83-14 доб 202 
+                        span.availabilityLabel__info-item.d-flex.align-center
+                            span.availabilityLabel__info-item__icon.icon-outline 
+                                include ../../icons/calendar-11
+                            span.availabilityLabel__info-item__txt ежедневно с 10:00 до 22:00 
+                    .availabilityProduct__group.d-grid
+                        .title Товар
+                        .account-orderItem.account-orderItem--sm.account-orderItem--outline.outline-border
+                            .account-orderItem__inner.d-flex 
+                                .account-orderItem__inner-img 
+                                    a.account-orderItem__img.centered(href="#") 
+                                        +pngC('stphoto_ru2', '100', '96')
+                                        .account-orderItem__img-size.mobile 36
+                                .account-orderItem__inner-info 
+                                    .account-orderItem__top 
+                                        .account-orderItem__group.d-flex
+                                            .account-orderItem__group-name 
+                                                .account-orderItem__title 
+                                                    a(href="#")  Addict
+                                                .account-orderItem__size
+                                                    .account-orderItem__size-txt 38
+                                                    .account-orderItem__size-icon(style="background: #EBE3CF;")
+                                    .account-orderItem__bottom
+                                        .account-orderItem__price.d-flex.flex-col.account-orderItem__price--col
+                                            
+                                            .account-orderItem__price-old
+                                                .account-orderItem__price-old-value 20 990 ₽
+                                                .account-orderItem__price-old-icon
+                                                    .account-orderItem__price-old-icon__btn.icon 
+                                                        +icon('i')
+                                                    .account-orderItem__price-dropdown.mobileBottom 
+                                                        .mobileBottom__backdrop.backdrop(data-close)
+                                                        .mobileBottom__content
+                                                            .mobileBottom__head 
+                                                                a.mobileBottom-close.icon(href="#" data-close) 
+                                                                    +svg('close', '14', '14')
+                                                            .mobileBottom__title Детализация скидки
+                                                            .mobileBottom__info
+                                                                .account-orderItem__price-dropdown__content 
+                                                                    .product-price__dropdown-item.d-flex 
+                                                                        .product-price__dropdown-item__name Скидка на товары
+                                                                        .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                    .product-price__dropdown-item.d-flex 
+                                                                        .product-price__dropdown-item__name Последняя пара
+                                                                        .product-price__dropdown-item__value — 3 670 ₽ (20%)
+                                                                .account-orderItem__price-dropdown__arrow
+                                                                    +svg('dropdown-arrow', '32', '16')
+                                            .account-orderItem__price-new.ttl.title2 12 990 ₽
+                                            
+                    .availabilityProduct__group.d-grid
+                        .title Получатель
+                        .availabilityProduct__fields.d-grid 
+                            .form-item
+                                .form-item__group 
+                                    .form-item__label имя*
+                                    input.form-input(type="text" data-validate)
+                            .form-item.form-phone
+                                .form-phone__inner.d-flex 
+                                    .form-phone__left 
+                                        a.form-phone__btn.d-flex(href="#") 
+                                            span.form-phone__btn-flag.centered 
+                                                +svg('rus', '24', '17')
+                                            span.form-phone__btn-txt +7
+                                            span.form-phone__btn-icon.icon 
+                                                +icon('down')
+                                    .form-phone__right
+                                        .form-item__group 
+                                            .form-item__label.form-item__label--hidden телефон*
+                                            input.form-input.form-phone__input(type="tel" data-placeholder="(___)__-__-__" data-validate)
+                                .form-phone__dropdown.form-item__dropdown.outline-border
+                                    .form-item__dropdown-scroll(data-simplebar)
+                                        .form-item__list
+                                            .form-item__list-item 
+                                                label.form-item__country
+                                                    input(type="radio" name="country-phone" data-txt="+375" data-flag="static/images/general/bel.svg")
+                                                    span.form-item__country-inner.d-flex 
+                                                        span.form-item__country-flag.centered 
+                                                            +svg('bel', '24', '17') 
+                                                        span.form-item__country-txt Беларусь
+                                            .form-item__list-item 
+                                                label.form-item__country
+                                                    input(type="radio" name="country-phone" data-txt="+7" data-flag="static/images/general/kz.svg")
+                                                    span.form-item__country-inner.d-flex 
+                                                        span.form-item__country-flag.centered 
+                                                            +svg('kz', '24', '17') 
+                                                        span.form-item__country-txt Казахстан
+                                            .form-item__list-item 
+                                                label.form-item__country
+                                                    input(type="radio" checked name="country-phone" data-txt="+7" data-flag="static/images/general/rus.svg")
+                                                    span.form-item__country-inner.d-flex 
+                                                        span.form-item__country-flag.centered 
+                                                            +svg('rus', '24', '17') 
+                                                        span.form-item__country-txt Россия
+                            .form-item
+                                .form-item__group 
+                                    .form-item__label e-mail
+                                    input.form-input(type="email")
+                                .form-item__txt.tech-14 для отправки чека
+            .offcanvas__sticky-foot
+                button.btn.w-full(type="submit") забронировать
+                .offcanvas__sticky-foot__txt.tech-14 Нажимая на кнопку «Оформить возврат», я принимаю условия 
+                    a(href="#" target="_blabk") публичной оферты

@@ -1,0 +1,27 @@
+.availabilityProduct {
+    &__group {
+        margin-bottom: 32px;
+        gap: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__shop {
+        color: var(--text-grey_bckgr);
+    }
+    &__fields {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .availabilityProduct {
+        &__group {
+            margin-bottom: 28px;
+            gap: 12px;
+        }
+        &__fields {
+            gap: 16px;
+        }
+    }
+}

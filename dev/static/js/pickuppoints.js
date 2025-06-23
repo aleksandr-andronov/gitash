@@ -33,7 +33,6 @@ offcanvasIds.forEach(id => {
     }
 });
 
-console.log(modals); // Проверяем, создались ли модалки
 
 
 

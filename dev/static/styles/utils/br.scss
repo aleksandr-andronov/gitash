@@ -1,0 +1,19 @@
+.br-1440, .br-932 {
+    display: none;
+}
+
+@media (max-width: 1440px) {
+    .br-1440 {
+        display: block;
+    }
+}
+
+@media (max-width: 932px) {
+    .br-1440 {
+        display: none;
+    }
+    
+    .br-932 {
+        display: block;
+    }
+}

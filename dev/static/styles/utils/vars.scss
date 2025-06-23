@@ -36,6 +36,7 @@
   --button-default: #1B1B1D;
 
   --text-grey: #BCB8C4;
+  --text-grey_bckgr: #B0ABB9;
   --text-light_grey: #D6D4E0;
 
   --stroke-default: #E2E1E7;
@@ -77,6 +78,8 @@
 
   --list-gutter-x: 4px; 
   --rounded-1: 6px;
+
+  --notification-height: 0px;
 }
 
 @media (max-width: 1440px) {

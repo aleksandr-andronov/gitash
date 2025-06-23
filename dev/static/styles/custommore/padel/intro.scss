@@ -28,6 +28,9 @@
         font-size: rem(18);
         line-height: 150%;
         margin-bottom: rem(40);
+        span {
+            color: var(--color-2);
+        }
         p {
             margin-bottom: rem(28);
             &:last-child {
@@ -40,19 +43,21 @@
     }
     &__picture {
         position: relative;
+        &-img-wrap {
+            position: relative;
+        }
         &-img {
             position: relative;
-            &::before {
-                content: "";
-                width: rem(1030);
-                height: rem(172);
-                background: url(../../static/images/general/padel/intro-before.svg) 0 0 no-repeat;
-                background-size: cover;
-                position: absolute;
-                bottom: rem(-42);
-                right: rem(-402);
-
-            }
+            clip-path: url(#bigClipPath);
+        }
+        &-decor {
+            width: rem(1030);
+            height: rem(172);
+            background: url(../../static/images/general/padel/intro-before.svg) 0 0 no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: rem(-42);
+            right: rem(-402);
         }
         &-txt {
             width: rem(276);
@@ -120,16 +125,20 @@
                 left: rem(-138);
             }
             &-img {
-                &::before {
-                    bottom: rem(-60);
+                // &::before {
+                //     bottom: rem(-60);
+                //     right: rem(-516);
+                // }
+            }
+            &-decor {
+                bottom: rem(-60);
                     right: rem(-516);
-                }
             }
         }
     }
 }
 
-@media (max-width: 932px) {
+@media (max-width: 480px) {
     .padelIntro {
         padding-top: rem(0);
         padding-left: rem(14);
@@ -160,12 +169,13 @@
         }
         &__picture {
             &-img {
-                &::before {
-                    width: rem(618);
+                
+            }
+            &-decor {
+                width: rem(618);
                     height: rem(104);
                     bottom: rem(-32);
                     right: rem(-278);
-                }
             }
             &-txt {
                 width: rem(198);

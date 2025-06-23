@@ -37,6 +37,10 @@ $baseFontSize : 16;
     font-display: swap;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4, p {
     margin-top: 0;
 }
@@ -134,10 +138,7 @@ img {
     font-family: "Inter", sans-serif;
     font-size: rem(16);
     line-height: 140%;
-    
-    &::-webkit-scrollbar {
-        display: none;
-    }
+
 }
 
 .padel-subtitle {
@@ -146,6 +147,7 @@ img {
     margin-bottom: rem(28);
     letter-spacing: 0em;
     text-transform: uppercase;
+    color: var(--color-2);
 }
 
 .padel-txt {
@@ -181,10 +183,25 @@ img {
     text-decoration: none;
     cursor: pointer;
     border: none;
+    transition: .2s linear;
+    &:hover {
+        background: #FF8BDB;
+    }
+    &:active {
+        background: #FF83D8;
+    }
 }
+
+
+
 
 label {
     cursor: pointer;
+}
+
+button {
+    padding: 0;
+    border: none;
 }
 
 .centered {
@@ -210,7 +227,7 @@ label {
     }
 }
 
-@media (max-width: 932px) {
+@media (max-width: 480px) {
     .html-rem {
         font-size: calc(100vw*16/390 + 0PX);
         color: var(--nickel-5);

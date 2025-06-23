@@ -1,0 +1,344 @@
+.productOffcanvas {
+    overflow-y: auto;
+    --subtitle-margin: 16px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &-top {
+        position: sticky;
+        top: 0;
+        margin-bottom: -52px;
+    }
+    &-head {
+        padding: 32px 24px;
+        grid-template-columns: 1fr 40px;
+        &__title {
+            font-size: 22px;
+            line-height: 90%;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+    }
+    &-galleryWrap {
+        --slide-height: 646px;
+        background: var(--card--bg);
+        height: var(--slide-height);
+        &:hover {
+            .mainSection-btn {
+                opacity: 1;
+            }
+        }
+        .productOffcanvas-galleryNext, .productOffcanvas-galleryPrev {
+            top: 264px;
+            transform: initial;
+        }
+    }
+    &-galleryCursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        font-size: 14px;
+        line-height: 115%;
+        grid-template-columns: 16px auto;
+        width: fit-content;
+        opacity: 0;
+        transform: translateY(-50%) scale(0.95);
+        transition: opacity 0.15s, transform 0.15s;
+
+        &.visible {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+        }
+        &--reverce {
+            grid-template-columns: auto 16px;
+            .productOffcanvas-galleryCursor__icon {
+                order: 1;
+            }
+            .productOffcanvas-galleryCursor__txt {
+                order: 0;
+            }
+        }
+    }
+    &-gallery {
+        &__img {
+            height: var(--slide-height);
+            padding-top: 24px;
+            text-align: center;
+            cursor: none;
+            img {
+                height: 428px;
+                width: auto;
+                mix-blend-mode: darken;
+            }
+        }
+    }
+    &-galleryPrev {
+        left: 40px;
+    }
+    &-galleryNext {
+        right: 40px;
+    }
+    &-thumbsWrap {
+        position: absolute;
+        bottom: 68px;
+        left: 0;
+        right: 0;
+        width: 510px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &-thumbs {
+        .swiper-slide-thumb-active {
+            .productOffcanvas-thumbs__img {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+        &__img {
+            height: 78px;
+            padding-top: 8px;
+            text-align: center;
+            &::before {
+                border-color: var(--black);
+                opacity: 0;
+            }
+            img {
+                height: 54px;
+                mix-blend-mode: darken;
+            }
+        }
+    }
+    &-sticker {
+        right: initial;
+        left: 24px;
+        top: 24px;
+    }
+
+    &-bottom {
+        z-index: 3;
+        &__content {
+            padding: 24px;
+            background: var(--white);
+            border-radius: 24px 24px 0px 0px;
+            gap: 32px;
+        }
+        &__info {
+            gap: 20px;
+        }
+    }
+    &-colors {
+        &__slider-slide {
+            width: auto;
+        }
+        &__item {
+            width: 40px;
+            height: 40px;
+            background: var(--element-second);
+            border-radius: 50%;
+            span {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                &::before {
+                    border-color: transparent;
+                }
+            }
+            &--white {
+                span {
+                    &::before {
+                        border-color: var(--stroke-default);
+                    }
+                }
+            }
+        }
+    }
+    &__size {
+        .product-size__btn {
+            width: 80px;
+        }
+    }
+    &-pagination {
+        display: none;
+    }
+    &__mobile-info {
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--stroke-default);
+    }
+    &-close {
+        z-index: 9;
+        top: 32px;
+        right: 24px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .productOffcanvas {
+        --subtitle-margin: 12px;
+        &-top {
+            margin-bottom: -28px;
+        }
+        &-head {
+            padding: 24px 20px;
+            grid-template-columns: 1fr 34px;
+            &__title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+        }
+        &-galleryWrap {
+            --slide-height: 498px;
+            .productOffcanvas-galleryNext, .productOffcanvas-galleryPrev {
+                top: 174px;
+            }
+        }
+        &-galleryCursor {
+            grid-template-columns: 14px auto;
+            font-size: 12px;
+            &--reverce {
+                grid-template-columns: auto 14px;
+            }
+        }
+        &-sticker {
+            top: 20px;
+            left: 20px;
+        }
+        &-gallery {
+            &__img {
+                padding-top: 28px;
+                img {
+                    height: 326px;
+                }
+            }
+        }
+        &-galleryPrev {
+            left: 20px;
+        }
+        &-galleryNext {
+            right: 20px;
+        }
+        &-thumbsWrap {
+            bottom: 40px;
+            width: 388px;
+            
+        }
+        &-thumbs {
+            &__img {
+                height: 56px;
+                padding-top: 6px;
+                img {
+                    height: 42px;
+                }
+            }
+        }
+        &-bottom {
+            &__content {
+                padding: 20px;
+                gap: 28px;
+            }
+            &__info {
+                gap: 12px;
+            }
+        }
+        &__size {
+            .product-size__btn {
+                width: 58px;
+            }
+        }
+        &-colors {
+            &__item {
+                width: 34px;
+                height: 34px;
+                span {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+        &-close {
+            top: 24px;
+            right: 20px;
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    #productOffcanvas {
+        --bs-offcanvas-height: calc(100vh - 12px);
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+    }
+    .productOffcanvas {
+        --swiper-pagination-bottom: 36px;
+        &-top {
+            margin-bottom: -20px;
+        }
+        &-head {
+            padding: 0;
+            &__left {
+                display: none;
+            }
+            &__title {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+        }
+        &-close {
+            top: 14px;
+            right: 14px;
+            --btn-bg: var(--white);
+            &--second-bg {
+                --btn-bg: var(--element-second)
+            }
+        }
+        &-galleryWrap {
+            border-radius: 20px 20px 0px 0px;
+            --slide-height: 408px;
+            max-height: 100vh;
+        }
+        &-galleryCursor {
+            display: none;
+        }
+        &-sticker {
+            left: 14px;
+            bottom: 32px;
+            top: initial;
+        }
+        &-gallery {
+            &__img {
+                padding-top: 48px;
+                padding-bottom: 48px;
+                max-height: 100vh;
+                img {
+                    height: 298px;
+                    max-height: 100%;
+                }
+            }
+        }
+        &-thumbsWrap {
+            display: none;
+        }
+        &-pagination {
+            display: flex;
+            bottom: 36px;
+        }
+        &-bottom {
+            &__content {
+                padding: 32px var(--container-padding);
+                &::before {
+                    content: "";
+                    width: 134px;
+                    height: 5px;
+                    background: var(--stroke-default);
+                    border-radius: 32px;
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}

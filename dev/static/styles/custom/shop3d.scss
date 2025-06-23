@@ -1,0 +1,35 @@
+.shop3d {
+    position: relative;
+    &-head {
+        top: 32px;
+        left: 24px;
+        right: 24px;
+        &__right {
+            margin-left: auto;
+        }
+    }
+    &-btn {
+        --icon-size: 20px;
+    }
+    &-content {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    &-turn {
+        bottom: 44px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        padding: 14px 16px;
+        gap: 36px;
+        border-radius: 24px;
+        background: var(--white);
+        &__btn {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

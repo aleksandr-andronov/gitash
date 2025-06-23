@@ -6,9 +6,15 @@ block variables
 block content
 	include pages/certificate/certificate
 
+	include modules/notification/notification-top
+
 block styles 
 	link(rel="stylesheet" type='text/css' href="static/css/air-datepicker.min.css")
 
-block script
+
+block scriptBefore
 	script(src="static/js/air-datepicker.min.js")
+block script
+	
 	script(src="static/js/certificate.js")
+

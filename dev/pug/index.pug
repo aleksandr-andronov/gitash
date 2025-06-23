@@ -47,6 +47,10 @@ block content
 			//- li 
 			//- 	a(href="#fridayModal" data-bs-toggle="modal") Окно черная пятница
 			li 
+				a(href="#availabilityListOffcanvas" data-bs-toggle="offcanvas") наличие в магазинах
+			li 
+				a(href="#productOffcanvas" data-bs-toggle="offcanvas") товар в 3d магазине
+			li 
 				a(href="#splitModal" data-bs-toggle="offcanvas") Окно сплит
 			li 
 				a(href="#loginModal" data-bs-toggle="modal") Вход
@@ -239,4 +243,8 @@ block content
 		//- 		a(href="./_order-success-2.html" target="_blank") Вторая страница успешного оформления
 		
 		
-		
+	include modules/availability/availability
+	include modules/offcanvas/product
+block script
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+	script(src="static/js/availability.js")

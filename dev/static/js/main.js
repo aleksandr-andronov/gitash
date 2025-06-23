@@ -1,3 +1,198 @@
+const productOffcanvasThumbs = new Swiper(".productOffcanvas-thumbs", {
+    spaceBetween: 2,
+    slidesPerView: 8,
+    watchSlidesProgress: true,
+});
+const productOffcanvasGallery = new Swiper(".productOffcanvas-gallery", {
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".productOffcanvas-galleryNext",
+        prevEl: ".productOffcanvas-galleryPrev",
+    },
+    pagination: {
+        el: '.productOffcanvas-pagination',
+        clickable: true
+    },
+    thumbs: {
+        swiper: productOffcanvasThumbs,
+    },
+});
+
+const productOffcanvasColors = new Swiper(".productOffcanvas-colors__slider", {
+    spaceBetween: 12,
+    slidesPerView: 'auto',
+    breakpoints: {
+        1441: {
+            spaceBetween: 16,
+        }
+    }
+});
+
+function productOffcanvasPosition() {
+  const offcanvas = document.querySelector('#productOffcanvas');
+  if (!offcanvas) return;
+
+  const isMobile = window.innerWidth <= 932;
+
+  offcanvas.classList.toggle('offcanvas-end', !isMobile);
+  offcanvas.classList.toggle('offcanvas-bottom', isMobile);
+}
+
+function debounce(func, wait = 100) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+productOffcanvasPosition();
+
+
+window.addEventListener('resize', debounce(productOffcanvasPosition));
+
+
+function galleryCursor() {
+  const gallery = document.querySelector('.productOffcanvas-gallery');
+  const cursor = document.querySelector('.productOffcanvas-galleryCursor');
+
+  if (!gallery || !cursor) return;
+
+  const offset = 20;
+  let rafId;
+
+  const moveCursor = (event) => {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      const { clientX, clientY } = event;
+      const innerWidth = window.innerWidth;
+      const cursorWidth = cursor.offsetWidth;
+      const cursorHeight = cursor.offsetHeight;
+
+      // По умолчанию — справа от курсора
+      let left = clientX + offset;
+
+      // Если не помещается — налево и включаем класс reverse
+      if (left + cursorWidth > innerWidth) {
+        left = clientX - cursorWidth - offset;
+        cursor.classList.add('productOffcanvas-galleryCursor--reverse');
+      } else {
+        cursor.classList.remove('productOffcanvas-galleryCursor--reverse');
+      }
+
+      const top = clientY - cursorHeight / 2;
+
+      cursor.style.left = `${left}px`;
+      cursor.style.top = `${top}px`;
+    });
+  };
+
+  const showCursor = () => {
+    cursor.classList.add('visible');
+  };
+
+  const hideCursor = () => {
+    cursor.classList.remove('visible');
+  };
+
+  gallery.addEventListener('mousemove', moveCursor);
+  gallery.addEventListener('mouseenter', showCursor);
+  gallery.addEventListener('mouseleave', hideCursor);
+}
+
+galleryCursor();
+
+function productOffcanvasBtnBg() {
+  const closeBtn = document.querySelector('.productOffcanvas-close');
+  const bottomBlock = document.querySelector('.productOffcanvas-bottom');
+  const offcanvas = document.querySelector('.productOffcanvas');
+
+  if (!closeBtn || !bottomBlock || !offcanvas) return;
+
+  const checkOverlap = () => {
+    const btnRect = closeBtn.getBoundingClientRect();
+    const bottomRect = bottomBlock.getBoundingClientRect();
+
+    const isOverlap = !(
+      bottomRect.top > btnRect.bottom ||
+      bottomRect.bottom < btnRect.top ||
+      bottomRect.left > btnRect.right ||
+      bottomRect.right < btnRect.left
+    );
+
+    closeBtn.classList.toggle('productOffcanvas-close--second-bg', isOverlap);
+  };
+
+  let ticking = false;
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        checkOverlap();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  // Навешиваем слушатель на конкретный скроллящий контейнер
+  offcanvas.addEventListener('scroll', onScroll);
+
+  // Проверка при загрузке
+  checkOverlap();
+}
+
+document.addEventListener('DOMContentLoaded', productOffcanvasBtnBg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function availabilityShop() {
+    const items = document.querySelectorAll('.availabilityLabel')
+    const allHiddenItems = document.querySelectorAll('.availabilityLabel__info-bottom')
+    const btn = document.getElementById('reserveBtn')
+    if (!items.length) return
+
+    items.forEach(item => {
+        const hiddenInfo = item.querySelector('.availabilityLabel__info-bottom')
+        const input = item.querySelector('input')
+        
+
+        input.addEventListener('change', () => {
+
+            btn.removeAttribute('disabled')
+
+            allHiddenItems.forEach(i => {
+                const collapse = new bootstrap.Collapse(i, {
+                    toggle: false
+                })
+                collapse.hide()
+            })
+
+            if (hiddenInfo) {
+                const bsCollapse = new bootstrap.Collapse(hiddenInfo, {
+                    toggle: false
+                })
+                bsCollapse.show()
+            }
+        })
+    })
+}
+
+availabilityShop()
+
+
+
 function statusPosition() {
   const statusContainer = document.querySelector('.account-status');
   const transformLine = document.querySelector('.account-status__lines--transform');
@@ -592,31 +787,40 @@ function hideNotification() {
     const header = document.querySelector('.header');
     if (!header) return;
 
-    const notificationHeight = notificationTop.offsetHeight;
+    const root = document.documentElement;
 
-    // Функция для обновления положения элементов
-    const updatePositions = () => {
+    const updateNotification = () => {
         const scrollY = window.scrollY;
 
-        // Вычисляем новое значение `top` для notificationTop
-        const newTop = Math.min(0, -scrollY);
+        const fullHeight = notificationTop.offsetHeight;
 
-        // Обновляем положение notificationTop
-        notificationTop.style.top = `${newTop}px`;
+        // Новое "видимое" значение высоты при скролле
+        const visibleHeight = Math.max(0, fullHeight - scrollY);
 
-        // Устанавливаем положение header в зависимости от прокрутки
-        if (scrollY < notificationHeight) {
-            header.style.top = `${notificationHeight + newTop}px`;
-        } else {
-            header.style.top = '0';
-        }
+        // Ограничиваем top, чтобы не было меньше -fullHeight
+        const topOffset = -Math.min(scrollY, fullHeight);
+
+        // Устанавливаем стили
+        notificationTop.style.top = `${topOffset}px`;
+
+        // Обновляем CSS переменную
+        root.style.setProperty('--notification-height', `${visibleHeight}px`);
+
+        // Обновляем позицию хедера
+        header.style.top = `${visibleHeight}px`;
     };
 
-    // Привязываем обработчик к событию прокрутки
-    window.addEventListener('scroll', updatePositions);
+    // Установить начальное значение
+    const setInitialHeight = () => {
+        const height = notificationTop.offsetHeight;
+        root.style.setProperty('--notification-height', `${height}px`);
+        updateNotification();
+    };
 
-    // Выполняем обновление сразу после загрузки страницы
-    window.addEventListener('load', updatePositions);
+    // События
+    window.addEventListener('scroll', updateNotification);
+    window.addEventListener('resize', setInitialHeight);
+    window.addEventListener('load', setInitialHeight);
 }
 
 hideNotification();
@@ -662,12 +866,10 @@ function checkInputsValue() {
                     const label = parent.querySelector('.form-item__label')
                     parent.classList.add('error')
 
-
                     if (label && label.hasAttribute('data-error')) {
                         label.textContent = label.dataset.error
                     }
                 }
-                
             })
         })
     })

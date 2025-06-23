@@ -1,0 +1,33 @@
+extends template/clear
+
+block variables
+	- var title = '3d shop'
+	//- - var bodyClass = 'padelPage'
+	//- - var htmlClass = 'html-rem'
+
+block content
+	include pages/shop3d/shop3d
+	
+	
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	link(rel="stylesheet" type='text/css' href="static/css/shop3d.css")
+
+block script
+	//- script(src="static/js/three/three.core.js")
+	//- script(src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js") 
+	//- script(src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/loaders/GLTFLoader.js") 
+	script(src="static/js/gsap.min.js")
+	//- script(type="importmap").
+	//- {
+	//- 	"imports": {
+	//- 	"three": "https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js",
+	//- 	"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.177.0/examples/jsm/"
+	//- 	}
+	//- }
+
+	include pages/shop3d/script.html
+		
+	script(src="static/js/three/shop3d.js" type="module")
+	 
+	
