@@ -1,0 +1,178 @@
+.aboutFive {
+    padding-top: rem(64);
+    padding-bottom: rem(124);
+    
+    &-content {
+        position: relative;
+        &__imgTop {
+            margin-left: rem(224);
+            margin-bottom: rem(-144);
+            
+            &-img {
+                transform: rotate(15deg);
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: rem(-38);
+                    left: rem(-54);
+                    width: rem(168);
+                    height: rem(72);
+                    background: url(../../static/images/general/about/scotch-1.png) 0 0 no-repeat;
+                    background-size: 100% auto;
+                }
+                img {
+                    width: rem(228);
+                }
+            }
+        }
+        &__title {
+            margin-top: rem(54);
+            margin-bottom: rem(192);
+        }
+        &__imgBottom {
+            height: rem(520);
+            width: rem(400);
+            position: relative;
+            margin-left: rem(460);
+            margin-bottom: rem(86);
+            &-item {
+                width: rem(374);
+                position: absolute;
+                img {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                z-index: 3;
+            }
+            &-2 {
+                z-index: 2;
+                img {
+                    transform: rotate(3.76deg);
+                }
+            }
+            &-3 {
+                z-index: 1;
+                img {
+                    transform: rotate(-6.16deg);
+                }
+            }
+            &-left {
+                width: rem(210);
+                top: rem(24);
+                left: rem(-170);
+            }
+            &-right {
+                width: rem(76);
+                bottom: rem(12);
+                right: rem(-66);
+                transform: rotate(39.95deg);
+            }
+        }
+        &__decor {
+            width: rem(436);
+            position: absolute;
+            right: rem(294);
+            bottom: rem(524);
+            svg {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutFive {
+        padding-top: rem(36);
+        padding-bottom: rem(112);
+        &-content {
+            &__imgTop {
+                margin-left: rem(106);
+                margin-bottom: rem(-108);
+                &-img {
+                    transform: rotate(12deg);
+                    &::before {
+                        width: rem(144);
+                        height: rem(54);
+                        transform: rotate(-11.81deg);
+                        top: rem(-20);
+                        left: rem(-28);
+                    }
+                }
+            }
+            &__title {
+                margin-top: rem(44);
+                margin-bottom: rem(86);
+            }
+            &__imgBottom {
+                height: rem(420);
+                width: rem(300);
+                margin-left: rem(354);
+                margin-bottom: rem(102);
+                &-item {
+                    width: rem(300);
+                }
+                &-left {
+                    width: rem(166);
+                    top: rem(12);
+                    left: rem(-124);
+                }
+                &-right {
+                    width: rem(56);
+                    bottom: rem(-4);
+                    right: rem(-74);
+                }
+            }
+            &__decor {
+                width: rem(340);
+                right: rem(264);
+                bottom: rem(406);
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFive {
+        padding-top: rem(48);
+        padding-bottom: rem(84);
+        overflow: hidden;
+        &-content {
+            &__imgTop {
+                margin-left: rem(28);
+                margin-bottom: rem(40);
+            }
+            &__title {
+                margin-top: rem(24);
+                margin-bottom: rem(290);
+            }
+            &__imgBottom {
+                height: rem(380);
+                width: rem(268);
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: rem(36);
+                &-item {
+                    width: rem(268);
+                }
+                &-left {
+                    width: rem(158);
+                    top: rem(-34);
+                    left: rem(-54);
+                }
+                &-right {
+                    width: rem(46);
+                    bottom: rem(180);
+                    right: rem(-62);
+                }
+            }
+            &__decor {
+                width: rem(288);
+                right: rem(-52);
+                bottom: rem(616);
+            }
+        }
+    }
+}

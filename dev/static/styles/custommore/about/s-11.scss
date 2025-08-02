@@ -1,0 +1,193 @@
+.aboutSix {
+    padding-top: rem(64);
+    padding-bottom: rem(220);
+    &-content {
+        &__txt {
+            margin-bottom: rem(116);
+        }
+        &__img {
+            display: flex;
+            width: fit-content;
+            margin-left: rem(594);
+            position: relative;
+            &-item {
+                position: relative;
+                z-index: 3;
+                &::before {
+                    content: "";
+                    position: absolute;
+                }
+            }
+            &-1 {
+                &::before {
+                    width: rem(176);
+                    height: rem(76);
+                    background: url(../../static/images/general/about/scotch-2.png) 0 0 no-repeat;
+                    background-size: 100% auto;
+                    top: rem(-16);
+                    left: rem(48);
+                    transform: rotate(-6.64deg);
+                }
+                img {
+                    width: rem(350);
+                }
+            }
+            &-2 {
+                transform: rotate(-1.45deg);
+                margin-top: rem(246);
+                margin-left: rem(-28);
+                z-index: 2;
+                &::before {
+                    width: rem(176);
+                    height: rem(76);
+                    background: url(../../static/images/general/about/scotch-3.png) 0 0 no-repeat;
+                    background-size: 100% auto;
+                    bottom: rem(-40);
+                    right: rem(-74);
+                    transform: rotate(-5.86deg);
+                }
+                img {
+                    width: rem(282);
+                }
+            }
+            &-left {
+                z-index: 1;
+                left: rem(-78);
+                bottom: rem(12);
+                img {
+                    width: rem(244);
+                }
+            }
+            &-right {
+                width: rem(146);
+                right: rem(-136);
+                top: rem(100);
+                transform: rotate(-20.39deg);
+                img {
+                    width: rem(146);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutSix {
+        padding-top: rem(56);
+        padding-bottom: rem(248);
+        &-content {
+            &__txt {
+                margin-bottom: rem(44);
+            }
+            &__img {
+                margin-left: rem(452);
+                &-1 {
+                    transform: rotate(-1.46deg);
+                    &::before {
+                        width: rem(140);
+                        height: rem(62);
+                        top: rem(-16);
+                        left: rem(-16);
+                        transform: rotate(-8.11deg);
+                    }
+                    img {
+                        width: rem(280);
+                    }
+                }
+                &-2 {
+                    margin-top: rem(180);
+                    margin-left: rem(-24);
+                    &::before {
+                        width: rem(140);
+                        height: rem(62);
+                        bottom: rem(-40);
+                        right: rem(-52);
+                    }
+                    img {
+                        width: rem(224);
+                    }
+                }
+                &-left {
+                   left: rem(-68);
+                   bottom: rem(-16);
+                    img {
+                        width: rem(186);
+                    }
+                }
+                &-right {
+                    width: rem(106);
+                    right: rem(-80);
+                    top: rem(106);
+                    transform: rotate(-21.09deg);
+                    img {
+                        width: rem(106);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutSix {
+        padding-top: rem(18);
+        padding-bottom: rem(100);
+        overflow: hidden;
+        &-content {
+            &__txt {
+                margin-bottom: rem(60);
+            }
+            &__img {
+                margin-left: rem(14);
+                &-item {
+                    flex-shrink: 0;
+                }
+                &-1 {
+                    
+                    &::before {
+                        width: rem(94);
+                        height: rem(40);
+                        top: rem(-10);
+                        left: rem(-12);
+                        background: url(../../static/images/general/about/scotch-4.png) 0 0 no-repeat;
+                        background-size: 100% auto;
+                    }
+                    img {
+                        width: rem(186);
+                    }
+                }
+                &-2 {
+                    margin-top: rem(168);
+                    margin-left: rem(-24);
+                    z-index: 4;
+                    &::before {
+                        width: rem(104);
+                        height: rem(46);
+                        bottom: rem(-24);
+                        right: rem(-16);
+                    }
+                    img {
+                        width: rem(164);
+                    }
+                }
+                &-left {
+                   left: rem(-32);
+                   top: rem(-32);
+                   bottom: initial;
+                    img {
+                        width: rem(124);
+                    }
+                }
+                &-right {
+                    width: rem(78);
+                    right: rem(-16);
+                    top: rem(104);
+                    transform: rotate(-21.09deg);
+                    img {
+                        width: rem(78);
+                    }
+                }
+            }
+        }
+    }
+}

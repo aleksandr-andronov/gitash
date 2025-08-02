@@ -1,0 +1,110 @@
+.aboutNine {
+    padding-top: rem(64);
+    padding-bottom: rem(96);
+    &-content {
+        &__txt {
+            margin-bottom: rem(64);
+        }
+        &__img {
+            margin-left: rem(468);
+            &-item {
+                position: relative;
+                z-index: 2;
+            }
+            &-1 {
+                width: rem(278);
+                margin-right: rem(80);
+                margin-top: rem(20);
+            }
+            &-2 {
+                width: rem(556);
+                &::before {
+                    width: rem(232);
+                    height: rem(76);
+                    right: 0;
+                    top: rem(-16);
+                    background: url(../../static/images/general/about/scotch-5.png) 0 0 no-repeat;
+                }
+            }
+            &-decor {
+                width: rem(108);
+                transform: rotate(-10.5deg);
+                top: rem(28);
+                left: rem(260);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutNine {
+        padding-top: rem(48);
+        padding-bottom: rem(128);
+        &-content {
+            &__txt {
+                margin-bottom: rem(52);
+            }
+            &__img {
+                margin-left: rem(350);
+                &-1 {
+                    width: rem(220);
+                    margin-right: rem(64);
+                    margin-top: rem(16);
+                }
+                &-2 {
+                    width: rem(440);
+                    &::before {
+                        width: rem(184);
+                        height: rem(60);
+                        right: rem(-16);
+                        top: rem(-22);
+                    }
+                }
+                &-decor {
+                    width: rem(86);
+                    top: rem(-16);
+                    left: rem(204);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutNine {
+        padding-top: rem(16);
+        padding-bottom: rem(96);
+        overflow: hidden;
+        &-content {
+            &__txt {
+                margin-bottom: rem(32);
+            }
+            &__img {
+                margin-left: rem(0);
+                flex-direction: column;
+                align-items: center;
+                &-1 {
+                    width: rem(256);
+                    margin-right: rem(0);
+                    margin-top: rem(0);
+                    margin-bottom: rem(32);
+                }
+                &-2 {
+                    width: rem(362);
+                    &::before {
+                        width: rem(184);
+                        height: rem(48);
+                        right: rem(0);
+                        top: rem(-16);
+                    }
+                }
+                &-decor {
+                    width: rem(120);
+                    top: rem(-68);
+                    left: initial;
+                    right: -14px;
+                }
+            }
+        }
+    }
+}

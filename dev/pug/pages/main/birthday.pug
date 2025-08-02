@@ -1,0 +1,25 @@
+.birthday.mainSection 
+    .container 
+        .birthday-main
+            .birthday-main__inner.d-flex.align-center.justify-between 
+                .birthday-main__left 
+                    .birthday__info 
+                        .birthday__title.ttl.uppercase День рождения — <br class="br-932">повод для&nbsp;пары мечты
+                        .birthday__txt.base-up Поделитесь датой, и в нужный момент мы появимся с&nbsp;чем-то приятным 
+                .birthday-main__right
+                    form.birthday-form(action="/")
+                        .birthday-form__inner.d-flex.align-center
+                            .birthday-form__left 
+                                .birthday-form__group.d-flex.align-end.ttl 
+                                    .birthday-form__group-item
+                                        input.birthday-form__input.birthday-form__input--day(type="tel" minlength="2" maxlength="2" placeholder="дд")
+                                    .birthday-form__group-item 
+                                        .birthday-form__group-dot .
+                                    .birthday-form__group-item
+                                        input.birthday-form__input.birthday-form__input--month(type="tel" minlength="2" maxlength="2" placeholder="мм")
+                                    .birthday-form__group-item 
+                                        .birthday-form__group-dot .
+                                    .birthday-form__group-item
+                                        input.birthday-form__input.birthday-form__input--year(type="tel" minlength="4" maxlength="4" placeholder="гггг")
+                            .birthday-form__right 
+                                button.birthday-form__btn.btn(type="submit") отправить

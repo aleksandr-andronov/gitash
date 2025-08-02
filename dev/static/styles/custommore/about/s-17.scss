@@ -1,0 +1,108 @@
+.aboutTen {
+    padding-top: rem(32);
+    padding-bottom: rem(80);
+    &-content {
+        &__img {
+            margin-left: rem(430);
+            width: fit-content;
+            position: relative;
+            &-right {
+                margin-left: rem(-10);
+                margin-top: rem(10);
+            }
+            &-1 {
+                width: rem(638);
+            }
+            &-2 {
+                width: rem(196);
+                margin-right: rem(16);
+            }
+            &-3 {
+                width: rem(198);
+            }
+            &-txt {
+                font-size: rem(38);
+                line-height: 133%;
+                transform: rotate(5deg);
+                bottom: rem(32);
+                right: rem(56);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutTen {
+        padding-top: rem(24);
+        padding-bottom: rem(80);
+        &-content {
+            &__title {
+                margin-bottom: rem(48);
+            }
+            &__img {
+                margin-left: rem(236);
+                &-right {
+                    margin-left: rem(24);
+                    margin-top: rem(8);
+                }
+                &-1 {
+                    width: rem(546);
+                }
+                &-2 {
+                    width: rem(168);
+                    margin-right: rem(12);
+                }
+                &-3 {
+                    width: rem(170);
+                }
+                &-txt {
+                    bottom: rem(24);
+                    right: rem(-32);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutTen {
+        overflow: hidden;
+        &-content {
+            &__title {
+                margin-bottom: rem(12);
+            }
+            &__img {
+                margin-left: 0;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                &-right {
+                    margin-top: rem(56);
+                    margin-left: 0;
+                }
+                &-1 {
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    img {
+                        width: rem(394);
+                        max-width: initial;
+                    }
+                }
+                &-2 {
+                    width: rem(164);
+                    margin-right: rem(12);
+                }
+                &-3 {
+                    width: rem(166);
+                }
+                &-txt {
+                    font-size: rem(24);
+                    transform: rotate(-2.85deg);
+                    right: 0;
+                    bottom: rem(274);
+                }
+            }
+        }
+    }
+}

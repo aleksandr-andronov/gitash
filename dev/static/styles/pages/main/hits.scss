@@ -1,16 +1,20 @@
+
+
 .hits {
     &-content {
-        padding-left: 72px;
-        padding-right: 108px;
+        padding-left: vw(72, 1920);
+        // padding-right: vw(72, 1920);
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
         &__img {
-            width: 750px;
-            max-width: 100%;
+            width: vw(750, 1920);
+            max-width: calc(100% - 37vw);
         }
         &__info {
-            width: 702px;
+            width: 37vw;
             max-width: 100%;
+            flex-shrink: 0;
+            margin: auto;
         }
     }
     &-info {
@@ -227,13 +231,14 @@
 
     .hits {
         &-content {
-            padding-left: 60px;
-            padding-right: 86px;
+            padding-left: 4.15vw;
+            // padding-right: 4.15vw;
             &__img {
-                width: 558px;
+                width: vw(558, 1440);
+                max-width: calc(100% - 36vw);
             }
             &__info {
-                width: 516px;
+                width: 36vw;
             }
         }
         &-info {
@@ -322,6 +327,7 @@
             &__img {
                 width: 100%;
                 margin-bottom: 44px;
+                max-width: 100%;
             }
             &__info {
                 width: 100%;

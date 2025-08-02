@@ -61,17 +61,19 @@ mixin jpgG(name, w, h, folder)
 			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
 			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt='img')
 
-mixin jpgG2(name, w, h, arr)
-	if (arr)
+mixin jpgG2(name, w, h, arr, folder)
+	if (folder)
+		picture
+			each item in arr
+				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${folder}/${item.name}.webp`, type="image/webp")
+			source(srcset=`static/images/general/${folder}/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${folder}/${name}.jpg`, width=`${w}`, height=`${h}`, alt="img")
+	else 
 		picture
 			each item in arr
 				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${item.name}.webp`, type="image/webp")
 			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
-			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
-	else 
-		picture
-			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
-			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="ㅤ")
+			img(src=`static/images/general/${name}.jpg`, width=`${w}`, height=`${h}`, alt="img")
 
 mixin pngG2(name, w, h, arr)
 	if (arr)
@@ -85,6 +87,19 @@ mixin pngG2(name, w, h, arr)
 			source(srcset=`static/images/content/${name}.webp`, type='image/webp')
 			img(src=`static/images/content/${name}.png`, width=`${w}`, height=`${h}`, alt="ㅤ")
 
+mixin pngG3(name, w, h, arr, folder)
+	if (folder)
+		picture
+			each item in arr
+				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${folder}/${item.name}.webp`, type="image/webp")
+			source(srcset=`static/images/general/${folder}/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${folder}/${name}.png`, width=`${w}`, height=`${h}`, alt="ㅤ")
+	else 
+		picture
+			each item in arr
+				source(media=`(max-width: ${item.mw}px)`, srcset=`static/images/general/${item.name}.webp`, type="image/webp")
+			source(srcset=`static/images/general/${name}.webp`, type='image/webp')
+			img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt="ㅤ")
 
 
 mixin productCard(img, className)

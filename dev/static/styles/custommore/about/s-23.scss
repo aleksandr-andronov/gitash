@@ -1,0 +1,174 @@
+.aboutFifteen {
+    padding-top: rem(50);
+    padding-bottom: rem(180);
+    &-content {
+        &__txt {
+            margin-bottom: rem(124);
+        }
+        &__img {
+            height: rem(1090);
+            width: rem(1526);
+            margin-left: auto;
+            margin-right: auto;
+            &-item {
+                &__inner {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                width: rem(540);
+                top: 0;
+                left: 0;
+            }
+            &-2 {
+                width: rem(964);
+                transform: rotate(3.78deg);
+                left: rem(378);
+                top: rem(180);
+                z-index: 2;
+                &::before {
+                    width: rem(178);
+                    height: rem(78);
+                    background: url(../../static/images/general/about/scotch-3.webp) 0 0 no-repeat;
+                    top: rem(-16);
+                    right: rem(-40);
+                    transform: rotate(4.46deg);
+                }
+            }
+            &-3 {
+                width: rem(396);
+                transform: rotate(-9.11deg);
+                left: rem(324);
+                bottom: rem(104);
+                z-index: 2;
+                &::before {
+                    width: rem(224);
+                    height: rem(70);
+                    background: url(../../static/images/general/about/scotch-9.webp) 0 0 no-repeat;
+                    top: rem(-20);
+                    left: rem(-52);
+                    transform: rotate(-1.29deg);
+                }
+            }
+            &-4 {
+                width: rem(520);
+                right: 0;
+                bottom: 0;
+            }
+            &-txt {
+                font-size: rem(38);
+                letter-spacing: -0.03em;
+                top: rem(94);
+                right: rem(340);
+                transform: rotate(-8.07deg);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutFifteen {
+        &-content {
+            &__txt {
+                margin-bottom: rem(88);
+            }
+            &__img {
+                height: rem(848);
+                width: rem(1156);
+                &-1 {
+                    width: rem(404);
+                }
+                &-2 {
+                    width: rem(756);
+                    transform: rotate(7deg);
+                    left: rem(320);
+                    top: rem(146);
+                    &::before {
+                        width: rem(140);
+                        height: rem(60);
+                        top: rem(-24);
+                        right: rem(-32);
+                        transform: rotate(3.46deg);
+                    }
+                }
+                &-3 {
+                    width: rem(330);
+                    transform: rotate(-9.11deg);
+                    left: rem(188);
+                    bottom: rem(76);
+                    &::before {
+                        width: rem(186);
+                        height: rem(58);
+                        top: rem(-20);
+                        left: rem(-40);
+                        transform: rotate(0deg);
+                    }
+                }
+                &-4 {
+                    width: rem(396);
+                }
+                &-txt {
+                    font-size: rem(30);
+                    top: rem(68);
+                    right: rem(152);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFifteen {
+        padding-top: rem(12);
+        padding-bottom: rem(48);
+        overflow: hidden;
+        &-content {
+            &__txt {
+                margin-bottom: rem(32);
+            }
+            &__img {
+                height: rem(1000);
+                width: 100%;
+                &-1 {
+                    width: rem(288);
+                }
+                &-2 {
+                    width: rem(430);
+                    transform: rotate(4deg);
+                    left: rem(-36);
+                    top: rem(302);
+                    &::before {
+                        width: rem(112);
+                        height: rem(60);
+                        top: rem(-22);
+                        right: rem(36);
+                        background: url(../../static/images/general/about/scotch-10.webp) 0 0 no-repeat;
+                        transform: rotate(8deg);
+                    }
+                }
+                &-3 {
+                    width: rem(254);
+                    bottom: rem(20);
+                    left: rem(-12);
+                    &::before {
+                        width: rem(164);
+                        height: rem(52);
+                        top: rem(-16);
+                        left: rem(-36);
+                    }
+                }
+                &-4 {
+                    width: rem(276);
+                    bottom: rem(216);
+                    right: rem(-48);
+                }
+                &-txt {
+                    font-size: rem(28);
+                    transform: rotate(-9.07deg);
+                    top: rem(140);
+                    right: rem(8);
+                }
+            }
+        }
+    }
+}

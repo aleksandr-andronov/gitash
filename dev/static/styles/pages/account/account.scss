@@ -8,6 +8,7 @@
     }
     &-mobile {
         display: none;
+        
     }
     &__left {
         max-width: 380px;
@@ -348,6 +349,8 @@
         }
         &__warning {
             margin-top: 20px;
+            position: sticky;
+            left: 0;
         }
     }
     &-warning {
@@ -969,6 +972,7 @@
             position: sticky;
             bottom: 0;
             z-index: 9;
+            display: none;
         }
     }
     &-subscriptions {
@@ -2520,6 +2524,11 @@ body:has(.account-mobile__foot) .wrapper {
                     border-color: var(--element-second);
                 }
             }
+            &__group {
+                &-name {
+                    width: auto;
+                }
+            }
         }
         &__right {
             margin-top: 20px;
@@ -2768,12 +2777,6 @@ body:has(.account-mobile__foot) .wrapper {
                 }
             }
         }
-
-        // .content__col {
-        //     &:first-child {
-        //         display: none;
-        //     }
-        // }
         &-certificateNull {
             margin-top: -139px;
             margin-left: -14px;
@@ -2918,6 +2921,11 @@ body:has(.account-mobile__foot) .wrapper {
         }
         &-right {
             margin-top: 36px;
+        }
+        &-mobile {
+            &__foot {
+                display: block;
+            }
         }
     }
 }

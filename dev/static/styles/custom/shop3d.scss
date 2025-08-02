@@ -1,5 +1,6 @@
 .shop3d {
     position: relative;
+    overflow: hidden;
     &-head {
         top: 32px;
         left: 24px;
@@ -15,6 +16,7 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
+        background: rgba(#000, .1);
     }
     &-turn {
         bottom: 44px;
@@ -30,6 +32,89 @@
         &__btn {
             width: 16px;
             height: 16px;
+        }
+    }
+    &-dots, &-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+    &-placeholder {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.hidden {
+            display: none;
+        }
+    }
+}
+
+.shop3d {
+    &-dot {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid var(--white);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+        box-shadow: 0px 8px 12px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+        cursor: pointer;
+        span {
+            width: 12px;
+            height: 12px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+        &:hover {
+            border-color: #B1FAFE;
+            span {
+                background: #B1FAFE;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .shop3d {
+        &-head {
+            top: 24px;
+            left: 20px;
+            right: 20px;
+        }
+        &-btn {
+            --icon-size: 18px;
+            padding: 10px 14px 10px 16px;
+            &--circle {
+                padding: 11px;
+            }
+        }
+        &-turn {
+            bottom: 40px;
+            padding: 13px 12px;
+            gap: 32px;
+            &__btn {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .shop3d {
+        &-head {
+            left: 14px;
+            right: 14px;
         }
     }
 }

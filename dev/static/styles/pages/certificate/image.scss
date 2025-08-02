@@ -1,4 +1,5 @@
 .certificate {
+    
     &-img {
         &__picture {
             svg {
@@ -108,6 +109,7 @@
             padding: 16px 20px;
             border-radius: 4px;
             background: var(--cert-bg);
+            fill: var(--text-color);
             margin-top: 6px;
             &-inner {
                 align-items: center;

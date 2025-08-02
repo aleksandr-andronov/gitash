@@ -1,0 +1,567 @@
+.aboutThirteen {
+    &__top {
+        padding-top: rem(52);
+        padding-bottom: rem(164);
+    }
+    &-content {
+        &__title {
+            margin-top: rem(54);
+            
+            position: relative;
+            > span {
+                position: relative;
+                z-index: 3;
+            }
+            svg {
+                width: rem(244);
+                height: auto;
+                position: absolute;
+                top: rem(-182);
+                left: rem(210);
+            }
+        }
+        &__images {
+            height: rem(824);
+            margin-top: rem(134);
+            &-item {
+                &__inner {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                width: rem(358);
+                top: 0;
+                left: 0;
+            }
+            &-2 {
+                width: rem(300);
+                left: 0;
+                bottom: 0;
+            }
+            &-3 {
+                width: rem(282);
+                left: rem(456);
+                top: rem(242);
+            }
+            &-4 {
+                width: rem(282);
+                left: rem(924);
+                top: 0;
+            }
+            &-5 {
+                width: rem(238);
+                left: rem(948);
+                bottom: 0;
+            }
+            &-6 {
+                width: rem(282);
+                top: 0;
+                right: 0;
+            }
+            &-7 {
+                width: rem(300);
+                bottom: 0;
+                right: 0;
+            }
+
+            &__txt {
+                font-size: rem(32);
+                line-height: 133%;
+                &-1 {
+                    transform: rotate(-16.11deg);
+                    top: rem(258);
+                    left: rem(72);
+                }
+                &-2 {
+                    transform: rotate(-13.88deg);
+                    top: rem(704);
+                    left: rem(326);
+                }
+                &-3 {
+                    transform: rotate(13.64deg);
+                    top: rem(182);
+                    left: rem(584);
+                }
+                &-4 {
+                    transform: rotate(-8.41deg);
+                    top: rem(170);
+                    left: rem(1276);
+                }
+                &-5 {
+                    transform: rotate(4.03deg);
+                    top: rem(786);
+                    left: rem(876);
+                }
+                &-7 {
+                    transform: rotate(-8.71deg);
+                    top: rem(472);
+                    left: rem(1660);
+                }
+            }
+        }
+    }
+    &-banner {
+        margin-bottom: rem(170);
+        &__big {
+            width: rem(1372);
+            margin-left: auto;
+        }
+        &__sm {
+            width: rem(602);
+            top: rem(52);
+            left: rem(8);
+        }
+        &__logo {
+            width: rem(818);
+            top: rem(86);
+            left: rem(328);
+        }
+        &__txt {
+            font-family: 'Space Mono';
+            font-weight: bold;
+            font-size: rem(32);
+            line-height: 145%;
+            bottom: rem(80);
+            left: rem(646);
+            color: var(--white);
+        }
+    }
+    &__bottom {
+        padding-bottom: rem(160);
+    }
+    &-content {
+        &__bImages {
+            height: rem(1000);
+            margin-top: rem(32);
+            &-item {
+                &__inner {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                width: rem(134);
+                top: rem(102);
+                left: rem(82);
+                z-index: 3;
+            }
+            &-2 {
+                width: rem(118);
+                top: rem(112);
+                left: rem(240);
+                z-index: 3;
+            }
+            &-3 {
+                width: rem(374);
+                transform: rotate(2.51deg);
+                top: rem(78);
+                left: rem(98);
+                z-index: 2;
+            }
+            &-4 {
+                width: rem(192);
+                transform: rotate(-87.49deg);
+                top: rem(806);
+                left: rem(110);
+                z-index: 2;
+            }
+            &-5 {
+                width: rem(188);
+                transform: rotate(2.51deg);
+                
+                top: rem(134);
+                left: rem(896);
+                z-index: 2;
+            }
+            &-6 {
+                width: rem(732);
+                top: rem(238);
+                left: rem(564);
+                z-index: 3;
+                &::before {
+                    width: rem(244);
+                    height: rem(75);
+                    background: url(../../static/images/general/about/scotch-9.png) 0 0 no-repeat;
+                    top: rem(-12);
+                    left: rem(-68);
+                }
+            }
+            &-7 {
+                width: rem(402);
+                transform: rotate(92.51deg);
+                top: rem(534);
+                left: rem(656);
+            }
+            &-8 {
+                width: rem(388);
+                transform: rotate(-87.49deg);
+                top: rem(4);
+                right: rem(158);
+            }
+            &-9 {
+                width: rem(196);
+                transform: rotate(-87.49deg);
+                top: rem(730);
+                right: rem(66);
+            }
+            &-10 {
+                width: rem(806);
+                top: rem(842);
+                right: rem(94);
+                z-index: 3;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutThirteen {
+        &__top {
+            padding-top: rem(48);
+            padding-bottom: rem(214);
+        }
+        &-content {
+            &__title {
+                margin-top: rem(44);
+                
+                svg {
+                    width: rem(194);
+                    top: rem(-132);
+                    left: rem(142);
+                }
+            }
+            &__images {
+                height: rem(618);
+                margin-top: rem(86);
+                &-item {
+                    
+                }
+                &-1 {
+                    width: rem(268);
+                }
+                &-2 {
+                    width: rem(226);
+                }
+                &-3 {
+                    width: rem(212);
+                    left: rem(340);
+                    top: rem(182);
+                }
+                &-4 {
+                    width: rem(212);
+                    left: rem(694);
+                }
+                &-5 {
+                    width: rem(178);
+                    left: rem(710);
+                }
+                &-6 {
+                    width: rem(212);
+                }
+                &-7 {
+                    width: rem(226);
+                }
+
+
+                &__txt {
+                    font-size: rem(24);
+                    &-1 {
+                        top: rem(194);
+                        left: rem(56);
+                    }
+                    &-2 {
+                        top: rem(528);
+                        left: rem(244);
+                    }
+                    &-3 {
+                        top: rem(138);
+                        left: rem(438);
+                    }
+                    &-4 {
+                        top: rem(126);
+                        left: rem(958);
+                    }
+                    &-5 {
+                        top: rem(590);
+                        left: rem(658);
+                    }
+                    &-7 {
+                        top: rem(354);
+                        left: rem(1244);
+                    }
+                }
+            }
+        }
+        &-banner {
+            margin-bottom: rem(84);
+            &__big {
+                width: rem(1032);
+            }
+            &__sm {
+                width: rem(454);
+                top: rem(40);
+                left: rem(2);
+            }
+            &__logo {
+                width: rem(614);
+                top: rem(64);
+                left: rem(246);
+            }
+            &__txt {
+                font-size: rem(24);
+                bottom: rem(60);
+                left: rem(488);
+            }
+        }
+
+        &-content {
+            &__bImages {
+                height: rem(760);
+                margin-top: rem(48);
+                &-1 {
+                    width: rem(102);
+                    top: rem(80);
+                    left: rem(44);
+                }
+                &-2 {
+                    width: rem(90);
+                    top: rem(88);
+                    left: rem(164);
+                }
+                &-3 {
+                    width: rem(286);
+                    top: rem(58);
+                    left: rem(56);
+                }
+                &-4 {
+                    width: rem(146);
+                    top: rem(614);
+                    left: rem(66);
+                }
+                &-5 {
+                    width: rem(144);
+                    top: rem(102);
+                    left: rem(664);
+                }
+                &-6 {
+                    width: rem(558);
+                    top: rem(182);
+                    left: rem(412);
+                    &::before {
+                        width: rem(186);
+                        height: rem(58);
+                        top: rem(-10);
+                        left: rem(-52);
+                    }
+                }
+                &-7 {
+                    width: rem(306);
+                    top: rem(408);
+                    left: rem(480);
+                }
+                &-8 {
+                    width: rem(296);
+                    top: rem(4);
+                    right: rem(116);
+                }
+                &-9 {
+                    width: rem(150);
+                    top: rem(558);
+                    right: rem(46);
+                }
+                &-10 {
+                    width: rem(614);
+                    top: rem(642);
+                    right: rem(68);
+                }
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutThirteen {
+        overflow: hidden;
+        &__top {
+            padding-top: rem(24);
+            padding-bottom: rem(144);
+        }
+        &-content {
+            &__title {
+                margin-top: rem(24);
+                
+                svg {
+                    width: rem(100);
+                    top: rem(-42);
+                    left: rem(-20);
+                }
+            }
+            &__images {
+                height: rem(1308);
+                margin-top: rem(46);
+                &-1 {
+                    width: rem(260);
+                }
+                &-2 {
+                    width: rem(144);
+                    left: initial;
+                    right: rem(-2);
+                    top: rem(224);
+                }
+                &-3 {
+                    width: rem(202);
+                    top: rem(508);
+                    left: initial;
+                    right: rem(-4);
+                }
+                &-4 {
+                    width: rem(112);
+                    top: rem(368);
+                    left: 0;
+                }
+                &-5 {
+                    width: rem(144);
+                    top: rem(810);
+                    left: 0;
+                }
+                &-6 {
+                    width: rem(116);
+                    top: rem(886);
+                    right: rem(-2);
+                }
+                &-7 {
+                    width: rem(228);
+                    bottom: initial;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    top: rem(1076);
+                }
+
+                &__txt {
+                    font-size: rem(20);
+                    &-1 {
+                        top: rem(834);
+                        left: rem(256);
+                    }
+                    &-2 {
+                        top: rem(284);
+                        left: rem(62);
+                        transform: rotate(-8.41deg);
+                    }
+                    &-3 {
+                        top: rem(646);
+                        left: rem(20);
+                        transform: rotate(-4.69deg);
+                    }
+                    &-4 {
+                        top: rem(1326);
+                        left: rem(192);
+                        transform: rotate(0deg);
+                    }
+                    &-5 {
+                        top: rem(84);
+                        left: rem(236);
+                        transform: rotate(-5.54deg);
+                    }
+                    &-7 {
+                        top: rem(1086);
+                        left: rem(16);
+                    }
+                }
+            }
+        }
+        &-banner {
+            margin-bottom: rem(42);
+            &__big {
+                width: rem(278);
+                margin-right: rem(-24);
+            }
+            &__sm {
+                width: rem(202);
+                top: rem(26);
+                left: rem(-18);
+            }
+            &__logo {
+                width: rem(256);
+                top: rem(42);
+                left: rem(80);
+            }
+            &__txt {
+                font-size: rem(13);
+                line-height: 159%;
+                bottom: rem(24);
+                left: initial;
+                right: rem(18);
+            }
+        }
+        &__bottom {
+            padding-bottom: rem(96);
+        }
+        &-content {
+            &__bImages {
+                height: rem(540);
+                margin-top: rem(42);
+                &-1 {
+                    width: rem(48);
+                    top: rem(16);
+                    left: rem(224);
+                }
+                &-2 {
+                    width: rem(42);
+                    top: rem(20);
+                    left: rem(280);
+                }
+                &-3 {
+                    width: rem(152);
+                    top: 0;
+                    left: rem(10);
+                }
+                &-4 {
+                    width: rem(82);
+                    top: rem(190);
+                    left: rem(20);
+                }
+                &-5 {
+                    width: rem(80);
+                    top: rem(78);
+                    left: rem(232);
+                }
+                &-6 {
+                    width: rem(390);
+                    top: rem(140);
+                    left: rem(-12);
+                    transform: rotate(2.51deg);
+                    &::before {
+                        width: rem(126);
+                        height: rem(54);
+                        top: rem(24);
+                        left: rem(112);
+                    }
+                }
+                &-7 {
+                    width: rem(152);
+                    top: rem(344);
+                    left: rem(8);
+                }
+                &-8 {
+                    width: rem(152);
+                    top: rem(228);
+                    right: rem(10);
+                }
+                &-9 {
+                    width: rem(84);
+                    top: rem(448);
+                    right: rem(36);
+                }
+                &-10 {
+                    width: rem(212);
+                    top: rem(482);
+                    right: rem(66);
+                    transform: rotate(-3.15deg);
+                }
+            }
+        }
+    }
+}

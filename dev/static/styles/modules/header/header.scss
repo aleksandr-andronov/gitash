@@ -7,6 +7,7 @@
     z-index: 150;
     --height-content: 124px;
     --height-scroll: 118px;
+    --header-line-bg: var(--white);
     &-transparent {
       background: #f6f6f6;
       .header__bg {
@@ -123,6 +124,7 @@
         position: relative;
         z-index: 10;
         overflow: auto;
+        color: var(--base-color);
         &::-webkit-scrollbar {
           width: 6px;
           
@@ -310,6 +312,12 @@
   .header.notbg:not(.opened) .header__content {
     color: var(--accent-color);
     fill: var(--accent-color);
+  }
+
+  .header {
+    .header__bg {
+      background: var(--custom-header-bg);
+    }
   }
 }
 

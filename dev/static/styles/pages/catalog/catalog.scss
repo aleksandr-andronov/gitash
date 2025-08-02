@@ -27,6 +27,22 @@
         padding-bottom: 50px;
         margin-bottom: -50px;
     }
+    &-auth {
+        height: 100%;
+        background: #CBB6E4 url(../../static/images/general/birthday/star-6.svg) center no-repeat;
+        color: var(--white);
+        &__title {
+            font-size: 120px;
+            line-height: 80%;
+            margin-bottom: 12px;
+            letter-spacing: -0.08em;
+        }
+        &__txt {
+            font-size: 28px;
+            line-height: 121%;
+            letter-spacing: -0.01em;
+        }
+    }
     &-discounts {
         width: fit-content;
         margin-left: auto;
@@ -509,6 +525,16 @@
         &__content {
             
         }
+        &-auth {
+            background-size: 365px 392px;
+            &__title {
+                font-size: 90px;
+                margin-bottom: 8px;
+            }
+            &__txt {
+                font-size: 20px;
+            }
+        }
         &-discounts {
             &--bottom {
                 padding: 6px;
@@ -756,6 +782,16 @@
         }
         &__content {
             
+        }
+        &-auth {
+            background-size: 200px 198px;
+            &__title {
+                font-size: 49px;
+            }
+            &__txt {
+                font-size: 16px;
+                letter-spacing: -0.03em;
+            }
         }
         &-discounts {
             // position: initial;

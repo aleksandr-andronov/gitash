@@ -1,0 +1,12 @@
+extends template/mainPage
+
+block variables
+	- var title = 'Каталог'
+	- var bodyClass = 'preSalePage'
+	- var htmlClass = 'html-rem'
+
+block content
+	include pages/landing/presale-2
+
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/presalelanding.css")

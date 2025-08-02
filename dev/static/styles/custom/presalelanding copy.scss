@@ -1,0 +1,174 @@
+body {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@function vw($px, $viewport, $precision: 2) {
+    $value: ($px * 100 / $viewport);
+    $multiplier: pow(10, $precision);
+    @return (round($value * $multiplier) / $multiplier) * 1vw;
+}
+
+$baseFontSize : 16;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+.preSaleLanding {
+    background: #F7F4F2;
+    position: relative;
+    font-size: rem(19);
+    &__inner {
+        overflow: hidden;
+        position: relative;
+    }
+    &-img {
+        &__top {
+            position: absolute;
+            top: vw(-196, 1920);
+            right: vw(-472, 1920);
+            width: vw(1368, 1920);
+        }
+        &__bottom {
+            position: absolute;
+            left: vw(-10, 1920);
+            bottom: vw(-485, 1920);  
+            width: vw(968, 1920); 
+        }
+    }
+    &__title {
+
+    }
+    &__txt {
+        line-height: rem(22);
+        margin-top: rem(32);
+    }
+    &-first {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        // min-height: 100vh;
+        min-height: rem(922);
+        &__left {
+            padding-top: rem(108);
+        }
+        &__right {
+            padding-top: rem(120);
+        }
+        &__inner {
+            width: 100%;
+            justify-content: space-between;
+            max-width: vw(1630, 1920);
+        }
+        &__title {
+            max-width: vw(726, 1920);
+        }
+        &__txt {
+            max-width: 496px;
+        }
+    }
+    &-second {
+        position: relative;
+        z-index: 3;
+        &__inner {
+            // min-height: 100vh;
+            min-height: rem(922);
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-bottom: rem(294);
+        }
+        &__info {
+            max-width: rem(696);
+            width: 100%;
+            margin-right: rem(60);
+        }
+        &__txt {
+            max-width: 544px;
+        }
+        &__title {
+            font-size: rem(86);
+            line-height: 80%;
+            letter-spacing: -0.04em;
+        }
+    }
+    &-form-wrapper {
+        position: sticky;
+        z-index: 9;
+        bottom: 0;
+        padding-bottom: 48px;
+        display: none;
+    }
+    &-form {
+        padding: 28px 32px;
+        background: var(--button-default);
+        border-radius: 12px;
+        box-shadow: 0px 12px 15.4px 1px rgba(0, 0, 0, 0.09);
+        &__inner {
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__right {
+            grid-template-columns: 630px 225px;
+            gap: 8px;
+        }
+        &__title {
+            color: var(--white);
+        }
+        &__input {
+            background: transparent;
+            height: 60px;
+            color: #EBEBF4;
+            &:hover {
+                border-color: #9393A1;
+            }
+            &:focus {
+                border-color: var(--white) !important;
+            }
+        }
+    }
+    &-timer {
+        width: rem(506);
+        padding: rem(28);
+        border-radius: rem(10);
+        background: var(--button-default);
+        box-shadow: 0px rem(4) rem(12) rem(4) rgba(0, 0, 0, 0.04);
+        backdrop-filter: blur(16px);
+        &__title {
+            margin-bottom: rem(24);
+            color: #EBEBF4;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .preSaleLanding {
+        font-size: 17px;
+        &__txt {
+            margin-top: 24px;
+        }
+        &__inner {
+
+        }
+        &-first {
+            &__inner {
+                
+            }
+        }
+        &-timer {
+            padding: 24px;
+            &__title {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

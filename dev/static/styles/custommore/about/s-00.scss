@@ -1,0 +1,351 @@
+.aboutOne {
+    padding-top: rem(116);
+    padding-bottom: rem(106);
+    margin-top: rem(214);
+    &-content {
+        &__top {
+            position: relative;
+            margin-bottom: rem(-86);
+            &-img {
+                text-align: center;
+                img {
+                    width: rem(1818);
+                }
+            }
+            &-right {
+                top: rem(-118);
+                right: rem(204);
+                transform: rotate(4.68deg);
+                img {
+                    width: rem(302);
+                }
+            }
+            &-left {
+                left: rem(338);
+                bottom: rem(12);
+                img {
+                    width: rem(210);
+                }
+            }
+        }
+        &__imgTop {
+            transform: rotate(-5.91deg);
+            margin-left: rem(242);
+            margin-bottom: rem(32);
+            img {
+                width: rem(346);
+            }
+        }
+        &__txt {
+            margin-bottom: rem(54);
+            
+        }
+        &__quote {
+            margin-bottom: rem(40);
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(104);
+                height: rem(74);
+                position: absolute;
+                top: rem(-44);
+                left: 0;
+                background: url(../../static/images/general/about/s-00-4.svg) 0 0 no-repeat;
+                background-size: 100% auto;
+            }
+        }
+        &__author {
+            margin-left: rem(466);
+            &-img {
+                width: rem(120);
+                height: rem(120);
+                margin-right: rem(36);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        &__imgBottom {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: rem(364);
+            margin-top: rem(16);
+            img {
+                width: 100%;
+            }
+            &-decorTop {
+                
+                &__front {
+                    width: rem(269);
+                    top: rem(-24);
+                    right: rem(-24);
+                    z-index: 2;
+                }
+                &__back {
+                    width: rem(264);
+                    top: 0;
+                    right: rem(-48);
+                    z-index: 1;
+                }
+            }
+            &-img {
+                transform: rotate(4.02deg);
+                width: rem(518);
+                z-index: 3;
+                &::before {
+                    content: "";
+                    width: rem(175);
+                    height: rem(54);
+                    transform: rotate(179.98deg);
+                    background: url(../../static/images/general/about/s-00-decor-3.png) 0 0 no-repeat;
+                    background-size: 100% auto;
+                    position: absolute;
+                    bottom: rem(-24);
+                    left: rem(-28); 
+                }
+            }
+            &-decorTxt {
+                &__txt {
+                    font-size: rem(32);
+                    line-height: 81%;
+                    letter-spacing: -0.03em;
+                    transform: rotate(-8.07deg);
+                    left: rem(-268);
+                    bottom: rem(48);
+                }
+                &__img {
+                    width: rem(152);
+                    transform: rotate(-188.89deg);
+                    left: rem(-154);
+                    bottom: rem(126);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutOne {
+        padding-top: rem(86);
+        padding-bottom: rem(76);
+        margin-top: rem(160);
+        &-content {
+            &__top {
+                margin-bottom: rem(-56);
+                &-img {
+                    img {
+                        width: rem(1360);
+                    }
+                }
+                &-right {
+                    top: rem(-66);
+                    right: rem(124);
+                    img {
+                        width: rem(194);
+                    }
+                }
+                &-left {
+                    left: rem(244);
+                    bottom: rem(6);
+                    img {
+                        width: rem(160);
+                    }
+                }
+            }
+            &__imgTop {
+                transform: rotate(-5.41deg);
+                margin-left: rem(256);
+                margin-bottom: rem(24);
+                img {
+                    width: rem(228);
+                }
+            }
+            &__txt {
+                margin-bottom: rem(44);
+            }
+            &__quote {
+                margin-bottom: rem(28);
+                &::before {
+                    width: rem(82);
+                    height: rem(60);
+                    top: rem(-24);
+                }
+            }
+            &__author {
+                margin-left: rem(348);
+                &-img {
+                    width: rem(112);
+                    height: rem(112);
+                    margin-right: rem(32);
+                }
+            }
+            &__imgBottom {
+                margin-right: rem(276);
+                margin-top: rem(60);
+                &-decorTop {
+                    &__front {
+                        width: rem(234);
+                        top: rem(-28);
+                        right: rem(-18);
+                    }
+                    &__back {
+                        width: rem(234);
+                        top: rem(-6);
+                        right: rem(-38);
+                    }
+                }
+                &-img {
+                    width: rem(375);
+                    &::before {
+                        width: rem(126);
+                        height: rem(40);
+                        bottom: rem(-6);
+                        transform: initial;
+                    }
+                }
+                &-decorTxt {
+                    &__txt {
+                        left: rem(-236);
+                        bottom: rem(88);
+                    }
+                    &__img {
+                        width: rem(124);
+                        left: rem(-146);
+                        bottom: rem(164);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutOne {
+        padding-top: rem(42);
+        margin-top: rem(70);
+        padding-bottom: 100px;
+        &-content {
+            &__top {
+                margin-bottom: rem(-42);
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    background-size: 100% 100% !important;
+                    transform: rotate(31.45deg);
+                }
+                &::before {
+                    width: rem(22);
+                    height: rem(24);
+                    background: url(../../static/images/general/about/star-1.svg) 0 0 no-repeat;
+                    top: rem(24);
+                    left: rem(-12);
+                }
+                &::after {
+                    width: rem(40);
+                    height: rem(44);
+                    background: url(../../static/images/general/about/star-2.svg) 0 0 no-repeat;
+                    right: rem(10);
+                    bottom: rem(36);
+                }
+                &-img {
+                    display: flex;
+                    justify-content: center;
+                    img {
+                        width: rem(354);
+                        max-width: initial;
+                    }
+                }
+                &-right {
+                    top: rem(24);
+                    right: rem(134);
+                    transform: rotate(8.58deg);
+                    img {
+                        width: rem(102);
+                    }
+                }
+                &-left {
+                    display: none;
+                }
+            }
+            &__imgTop {
+                transform: rotate(-5.91deg);
+                margin-left: rem(68);
+                margin-bottom: rem(28);
+                img {
+                    width: rem(204);
+                }
+            }
+            &__txt {
+                margin-bottom: rem(24);
+            }
+            &__quote {
+                margin-bottom: rem(16);
+                &::before {
+                    width: rem(36);
+                    height: rem(25);
+                    top: rem(-2);
+                }
+            }
+            &__author {
+                margin-left: 0;
+                &-img {
+                    width: rem(54);
+                    height: rem(54);
+                    margin-right: rem(16);
+                }
+            }
+            &__imgBottom {
+                margin-left: rem(-2);
+                margin-right: initial;
+                margin-top: rem(70);
+                &-decorTop {
+                    &__front {
+                        width: rem(136);
+                        top: rem(-14);
+                        right: rem(8);
+                    }
+                    &__back {
+                        width: rem(136);
+                        top: rem(-2);
+                        right: rem(-4);
+                    }
+                }
+                &-img {
+                    width: rem(338);
+                    transform: rotate(-5.28deg);
+                    &::before {
+                        background: url(../../static/images/general/about/s-00-decor-3-m.png) 0 0 no-repeat;
+                        background-size: 100% auto;
+                        width: rem(142);
+                        height: rem(54);
+                        transform: rotate(7.81deg);
+                        bottom: rem(6);
+                        left: rem(-16);
+                    }
+                }
+                &-decorTxt {
+                    &__txt {
+                        bottom: rem(-74);
+                        left: initial;
+                        right: rem(56);
+
+                        font-size: rem(24);
+                        z-index: 4;
+
+                    }
+                    &__img {
+                        width: rem(94);
+                        bottom: rem(12);
+                        left: initial;
+                        right: rem(4);
+                        transform: rotate(-120.38deg);
+                        z-index: 4;
+                        img {
+                            transform: scale(-1, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

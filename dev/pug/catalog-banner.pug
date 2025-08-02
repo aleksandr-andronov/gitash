@@ -2,7 +2,9 @@ extends template/catalog
 
 block variables
 	- var title = 'Каталог'
+	- var support = true
 
 block content
 	include pages/catalog/catalog-banner
+	include modules/support/support
 	//- include modules/notification/notification-top

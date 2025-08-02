@@ -1,0 +1,169 @@
+.aboutTwelve {
+    padding-top: rem(32);
+        padding-bottom: rem(240);
+    &-content {
+        
+        &__txtImg {
+            width: rem(988);
+            max-width: 100%;
+            margin-left: rem(468);
+            align-items: center;
+            justify-content: space-between;
+            &-txt {
+                width: rem(428);
+            }
+            &-img {
+                width: fit-content;
+                position: relative;
+                &__main {
+                    width: rem(386);
+                    position: relative;
+                    z-index: 3;
+                }
+                &__second {
+                    width: rem(226);
+                    left: rem(-140);
+                    bottom: rem(-96);
+                    z-index: 4;
+                    &::before {
+                        width: rem(98);
+                        height: rem(82);
+                        background: url(../../static/images/general/about/clip-1.png) 0 0 no-repeat;
+                        transform: rotate(14.42deg);
+                        top: rem(-8);
+                        right: 0;
+                    }
+                }
+                &__decor {
+                    &-1 {
+                        width: rem(300);
+                        top: rem(36);
+                        right: rem(-220);
+                    }
+                    &-2 {
+                        width: rem(124);
+                        transform: rotate(92deg);
+                        right: rem(-124);
+                        bottom: 0;
+                    }
+                    &-3 {
+                        font-size: rem(28);
+                        line-height: 133%;
+                        transform: rotate(-30deg);
+                        right: rem(-16);
+                        bottom: rem(-80);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutTwelve {
+        padding-top: rem(12);
+            padding-bottom: rem(200);
+        &-content {
+            
+            &__txtImg {
+                width: rem(750);
+                margin-left: rem(344);
+                &-txt {
+                    width: rem(322);
+                }
+                &-img {
+                    &__main {
+                        width: rem(330);
+                    }
+                    &__second {
+                        width: rem(194);
+                        left: rem(-74);
+                        bottom: rem(-24);
+                        &::before {
+                            width: rem(84);
+                            height: rem(70);
+                            top: rem(-8);
+                            right: 0;
+                        }
+                    }
+                    &__decor {
+                        &-1 {
+                            width: rem(248);
+                            top: rem(12);
+                            right: rem(-198);
+                        }
+                        &-2 {
+                            width: rem(106);
+                            transform: rotate(88deg);
+                            right: rem(-100);
+                            bottom: rem(16);
+                        }
+                        &-3 {
+                            font-size: rem(24);
+                            transform: rotate(-35deg);
+                            right: 0;
+                            bottom: rem(-56);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutTwelve {
+        overflow: hidden;
+        padding-top: rem(20);
+            padding-bottom: rem(200);
+        &-content {
+            
+            
+            &__txtImg {
+                width: 100%;
+                margin-left: 0;
+                flex-direction: column;
+                align-items: center;
+                &-txt {
+                    width: 100%;
+                    margin-bottom: rem(110);
+                }
+                &-img {
+                    &__main {
+                        width: rem(308);
+                        transform: rotate(3.14deg);
+                    }
+                    &__second {
+                        width: rem(172);
+                        left: rem(-48);
+                        bottom: rem(-64);
+                        transform: rotate(-11.46deg);
+                        &::before {
+                            width: rem(74);
+                            height: rem(62);
+                            top: rem(-8);
+                            right: rem(74);
+                        }
+                    }
+                    &__decor {
+                        &-1 {
+                            width: rem(248);
+                            top: rem(-90);
+                            right: rem(-40);
+                        }
+                        &-2 {
+                            transform: rotate(113.37deg);
+                            right: rem(-16);
+                            bottom: rem(-54);
+                        }
+                        &-3 {
+                            transform: rotate(-8.42deg);
+                            right: rem(90);
+                            bottom: rem(-84);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

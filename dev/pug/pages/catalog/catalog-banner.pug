@@ -83,12 +83,39 @@
         .catalog__content
             .catalog-list-wrapper
                 .catalog-list.flex
-                    - for (let i = 0; i < 2; i++)
+                    .catalog-list__item 
+                        .catalog-auth.ttl.centered.flex-col
+                            .catalog-auth__title -10%
+                            .catalog-auth__txt при 
+                                a.underline(href="#loginModal" data-bs-toggle="modal") авторизации
+                    - for (let i = 0; i < 1; i++)
                         .catalog-list__item 
                             +newCard()
                     .catalog-list__item.catalog-list__item--image 
-                        .catalog__img
-                            +jpgC('catalog-img', '917', '563')
+                        .birthday.birthday-catalog
+                            .birthday-catalog__inner.centered.flex-col
+                                .birthday-catalog__top 
+                                    .birthday__info 
+                                        .birthday__title.ttl.uppercase День рождения — <br class="br-932">повод для&nbsp;пары мечты
+                                        .birthday__txt.base-up.mx-auto Поделитесь датой, и в нужный момент мы появимся с&nbsp;чем-то приятным 
+                                .birthday-catalog__bottom
+                                    form.birthday-form(action="/")
+                                        .birthday-form__inner.d-flex.align-center
+                                            .birthday-form__left 
+                                                .birthday-form__group.d-flex.align-end.ttl 
+                                                    .birthday-form__group-item
+                                                        input.birthday-form__input.birthday-form__input--day(type="tel" minlength="2" maxlength="2" placeholder="дд")
+                                                    .birthday-form__group-item 
+                                                        .birthday-form__group-dot .
+                                                    .birthday-form__group-item
+                                                        input.birthday-form__input.birthday-form__input--month(type="tel" minlength="2" maxlength="2" placeholder="мм")
+                                                    .birthday-form__group-item 
+                                                        .birthday-form__group-dot .
+                                                    .birthday-form__group-item
+                                                        input.birthday-form__input.birthday-form__input--year(type="tel" minlength="4" maxlength="4" placeholder="гггг")
+                                            .birthday-form__right 
+                                                button.birthday-form__btn.btn(type="submit") отправить
+
                     .catalog-list__item.catalog-list__item--image.desctop
                         .catalog__img
                             +jpgC('catalog-img', '917', '563')

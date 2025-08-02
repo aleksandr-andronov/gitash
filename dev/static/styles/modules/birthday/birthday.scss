@@ -1,0 +1,459 @@
+.birthday {
+    &-main {
+        background: #EFDFCD url(../../static/images/general/birthday/main-1920.svg) 0 0 no-repeat;
+        background-size: cover;
+        padding: 48px 96px 48px 48px;
+        &__left {
+            max-width: 824px;
+        }   
+    }
+    &__title {
+        font-size: 44px;
+        line-height: 90%;
+        &--sm {
+            font-size: 27px;
+            line-height: normal;
+            letter-spacing: 0em;
+        }
+    }
+    &__txt {
+        margin-top: 20px;
+        max-width: 534px;
+        &--sm {
+            font-size: 16px;
+            line-height: 118%;
+            margin-top: 8px;
+            max-width: 302px;
+        }
+    }
+    &-form {
+        &__inner {
+            gap: 24px;
+            &--col {
+                flex-direction: column;
+            }
+        }
+        &__group {
+            gap: 16px;
+            &-item {
+                flex-shrink: 0;
+            }
+            &-dot {
+                font-size: 40px;
+                line-height: 70%;
+                text-align: center;
+            }
+        }
+        &__input {
+            display: block;
+            height: 62px;
+            border: none;
+            border-bottom: 2px solid var(--base-color);
+            text-align: center;
+            background: transparent;
+            font-size: 40px;
+            line-height: 70%;
+            border-radius: 0;
+            &::placeholder {
+                color: var(--base-color);
+                transition: color .2s ease-in-out;
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+            &--day {
+                width: 84px;
+            }
+            &--month {
+                width: 96px;
+            }
+            &--year {
+                width: 132px;
+            }
+        }
+        &__btn {
+            padding-left: 0;
+            padding-right: 0;
+            width: 168px;
+        }
+    }
+    &-catalog {
+        height: 100%;
+        overflow: hidden;
+        background: #EFDFCD url(../../static/images/general/birthday/birthday-center.svg) bottom 176px center no-repeat;
+        text-align: center;
+        position: relative;
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            background-size: contain !important;
+        }
+        &::before {
+            width: 322px;
+            height: 364px;
+            background: url(../../static/images/general/birthday/birthday-top-left.svg) 0 0 no-repeat;
+            left: -100px;
+            top: -56px;
+        }
+        &::after {
+            width: 334px;
+            height: 352px;
+            background: url(../../static/images/general/birthday/birthday-top-right.svg) 0 0 no-repeat;
+            right: -100px;
+            top: -84px;
+        }
+        &__inner {
+            height: 100%;
+            gap: 40px;
+             &::before, &::after {
+                content: "";
+                position: absolute;
+                background-size: contain !important;
+            }
+            &::before {
+                width: 368px;
+                height: 424px;
+                background: url(../../static/images/general/birthday/birthday-bottom-left.svg) 0 0 no-repeat;
+                left: -92px;
+                bottom: -198px;
+            }
+            &::after {
+                width: 352px;
+                height: 354px;
+                background: url(../../static/images/general/birthday/birthday-bottom-right.svg) 0 0 no-repeat;
+                right: -120px;
+                bottom: -104px;
+            }
+        }
+        &__top, &__bottom {
+            z-index: 9;
+            position: relative;
+        }
+    }
+    &-account {
+        padding: 32px 8px;
+        height: auto;
+        position: sticky;
+        top: var(--height-content);
+        &::before {
+            width: 135px;
+            height: 151px;
+            left: -44px;
+            top: -34px;
+        }
+        &::after {
+            width: 120px;
+            height: 152px;
+            right: -40px;
+            top: -34px;
+        }
+        &__inner {
+            gap: 8px;
+            &::before {
+                width: 138px;
+                height: 178px;
+                left: -24px;
+                bottom: -80px;
+            }
+            &::after {
+                width: 148px;
+                height: 154px;
+                right: -58px;
+                bottom: -56px;
+            }
+        }
+        .birthday-form {
+            &__group {
+                gap: 8px;
+                &-dot {
+                    font-size: 24px;
+                }
+            }
+            &__input {
+                height: 38px;
+                font-size: 24px;
+                &--day {
+                    width: 58px;
+                }
+                &--month {
+                    width: 64px;
+                }
+                &--year {
+                    width: 72px;
+                }
+            }
+            &__btn {
+                padding: 10px 16px;
+                border-radius: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .birthday {
+        &-main {
+            padding: 36px 60px 36px 36px;
+            background: #EFDFCD url(../../static/images/general/birthday/main-1440.svg) 0 0 no-repeat;
+            background-size: cover;
+            &__left {
+                max-width: 652px;
+            }
+        }
+        &__title {
+            font-size: 35px;
+            letter-spacing: -0.02em;
+            &--sm {
+                font-size: 20px;
+                letter-spacing: 0em;
+            }
+        }
+        &__txt {
+            margin-top: 16px;
+            max-width: 374px;
+            &--sm {
+                font-size: 14px;
+                margin-top: 8px;
+            }
+        }
+        &-form {
+            &__inner {
+                gap: 20px;
+            }
+            &__group {
+                gap: 12px;
+                &-dot {
+                    font-size: 32px;
+                }
+            }
+            &__btn {
+                width: 162px;
+            }
+            &__input {
+                height: 48px;
+                font-size: 32px;
+                &--day {
+                    width: 64px;
+                }
+                &--month {
+                    width: 72px;
+                }
+                &--year {
+                    width: 108px;
+                }
+            }
+        }
+
+        &-catalog {
+            background: #EFDFCD url(../../static/images/general/birthday/birthday-center.svg) bottom 132px center no-repeat;
+            background-size: 81px 90px;
+            padding: 24px;
+            .birthday__info {
+                max-width: 546px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &::before {
+                width: 242px;
+                height: 260px;
+                left: -76px;
+                top: -42px;
+            }
+            &::after {
+                width: 250px;
+                height: 264px;
+                right: -76px;
+                top: -64px;
+            }
+            &__inner {
+                gap: 36px;
+                &::before {
+                    width: 276px;
+                    height: 318px;
+                    left: -68px;
+                    bottom: -148px;
+                }
+                &::after {
+                    width: 264px;
+                    height: 266px;
+                    right: -90px;
+                    bottom: -78px;
+                }
+            }
+        }
+        &-account {
+            padding: 32px 8px;
+            &::before {
+                width: 135px;
+                height: 151px;
+                left: -36px;
+                top: -34px;
+            }
+            &::after {
+                width: 120px;
+                height: 152px;
+                right: -40px;
+                top: -34px;
+            }
+            &__inner {
+                gap: 10px;
+                &::before {
+                    width: 138px;
+                    height: 178px;
+                    left: -24px;
+                    bottom: -112px;
+                }
+                &::after {
+                    width: 148px;
+                    height: 154px;
+                    right: -58px;
+                    bottom: -58px;
+                }
+            }
+            .birthday-form {
+                &__group {
+                    
+                }
+                &__btn {
+                    padding: 8px 14px 9px;
+                    width: auto;
+                }
+                &__input {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .birthday {
+        &-main {
+            padding: 32px 16px;
+            background: #EFDFCD;
+            position: relative;
+            &::before, &::after {
+                position: absolute;
+                top: 0;
+            }
+            &::before {
+                left: 0;
+                content: url(../../static/images/general/birthday/main-932-1.svg);
+            }
+            &::after {
+                right: 0;
+                content: url(../../static/images/general/birthday/main-932-2.svg);
+            }
+            &__inner {
+                flex-direction: column;
+                gap: 12px;
+                &::before, &::after {
+                    position: absolute;
+                    bottom: -5px;
+                }
+                &::before {
+                    left: 0;
+                    content: url(../../static/images/general/birthday/main-932-3.svg);
+                }
+                &::after {
+                    right: 0;
+                    content: url(../../static/images/general/birthday/main-932-4.svg);
+                }
+            }
+        }
+        &__info {
+            text-align: center;
+            position: relative;
+            z-index: 9;
+        }
+        &__title {
+            font-size: 20px;
+            line-height: 112%;
+            letter-spacing: 0em;
+        }
+        &__txt {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 118%;
+            text-transform: initial;
+            max-width: 302px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-form {
+            position: relative;
+            &__inner {
+                flex-direction: column;
+                gap: 16px;
+            }
+            &__group {
+                gap: 8px;
+                &-dot {
+                    font-size: 20px;
+                }
+            }
+            &__input {
+                font-size: 18px;
+                height: 36px;
+                &--day {
+                    width: 52px;
+                }
+                &--month {
+                    width: 58px;
+                }
+                &--year {
+                    width: 64px;
+                }
+            }
+            &__btn {
+                border-radius: 34px;
+                width: auto;
+                padding: 8px 14px;
+            }
+        }
+        &-catalog {
+            background: #EFDFCD;
+            padding: 32px 16px;
+            height: auto;
+            &::before {
+                width: 135px;
+                height: 152px;
+                background: url(../../static/images/general/birthday/birthday-top-left-m.svg) 0 0 no-repeat;
+                left: -46px;
+                top: -34px;
+            }
+            &::after {
+                width: 120px;
+                height: 152px;
+                background: url(../../static/images/general/birthday/birthday-top-right-m.svg) 0 0 no-repeat;
+                right: -34px;
+                top: -26px;
+            }
+            &__inner {
+                gap: 12px;
+                &::before {
+                    width: 138px;
+                    height: 178px;
+                    background: url(../../static/images/general/birthday/birthday-bottom-left-m.svg) 0 0 no-repeat;
+                    left: -32px;
+                    bottom: -104px;
+                }
+                &::after {
+                    width: 148px;
+                    height: 154px;
+                    background: url(../../static/images/general/birthday/birthday-bottom-right-m.svg) 0 0 no-repeat;
+                    right: -48px;
+                    bottom: -60px;
+                }
+            }
+        }
+        &-account {
+            margin-left: calc(-1 * var(--container-padding));
+            margin-right: calc(-1 * var(--container-padding));
+            margin-bottom: 8px;
+            margin-top: -16px;
+        }
+    }
+}

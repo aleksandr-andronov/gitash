@@ -65,12 +65,9 @@
     .button {
         gap: 8px;
         padding: 10px 14px 10px 16px;
+        --icon-size: 14px;
         &--icon-left {
             padding: 10px 16px 10px 14px;
-        }
-        &__icon {
-            width: 14px;
-            height: 14px;
         }
     }
 

@@ -1,0 +1,192 @@
+.aboutIntro {
+    overflow: hidden;
+    background: url(../../static/images/general/about/intro-bg.webp) top 0rem center no-repeat;
+    background-size: rem(1920) rem(1072);
+    position: relative;
+    color: var(--light);
+    &-content {
+        height: rem(1072);
+        padding-top: rem(200);
+        padding-bottom: rem(40);
+        &__title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: rem(102);
+            line-height: 81%;
+            letter-spacing: -0.07em;
+            margin-bottom: rem(44);
+        }
+        &__img {
+            position: absolute;
+            top: rem(320);
+            left: rem(244);
+            &-mobile {
+                display: none;
+            }
+            img {
+                width: rem(1389);
+            }
+        }
+        &__txt {
+            width: rem(1524);
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: rem(43);
+            line-height: 84%;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 3;
+            &-item {
+                width: 50%;
+                &:nth-child(2) {
+                    text-align: right;
+                }
+                &:nth-child(3) {
+                    text-align: center;
+                    margin-top: rem(388);
+                }
+            }
+        }
+        &__icons {
+            justify-content: space-between;
+            margin-top: rem(-48);
+            &-list {
+                gap: 8px;
+                align-items: center;
+            }
+        }
+        &__iconItem {
+            align-items: center;
+            font-size: rem(28);
+            &-txt {
+                margin-left: rem(16);
+            }
+            &-icon {
+                width: rem(46);
+                height: rem(46);
+                &--size-2 {
+                    width: rem(61);
+                    height: rem(43);
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutIntro {
+        background-size: rem(1440) rem(804);
+        &-content {
+            height: rem(804);
+            padding-top: rem(166);
+            padding-bottom: rem(24);
+            &__title {
+                font-size: rem(76);
+            }
+            &__txt {
+                width: rem(1024);
+                font-size: rem(32);
+                &-item {
+                    &:nth-child(3) {
+                        margin-top: rem(268);
+                    }
+                }
+            }
+            &__img {
+                left: rem(160);
+                top: rem(224);
+                img {
+                    width: rem(1070);
+                }
+            }
+            &__icons {
+                margin-top: rem(-34);
+                &-list {
+                    gap: rem(6);
+                }
+            }
+            &__iconItem {
+                font-size: rem(24);
+                &-icon {
+                    width: rem(36);
+                    height: rem(36);
+                    &--size-2 {
+                        width: rem(51);
+                        height: rem(36);
+                    }
+                }
+                &-txt {
+                    margin-left: rem(12);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutIntro {
+        background: url(../../static/images/general/about/intro-bg-m.webp) top 0rem center no-repeat;
+        background-size: rem(375) rem(695);
+        &-content {
+            padding-top: rem(180);
+            height: rem(695);
+            &__title {
+                font-size: rem(32);
+                margin-bottom: rem(100);
+            }
+            &__txt {
+                width: 100%;
+                font-size: rem(18);
+                &-item {
+                    &:nth-child(3) {
+                        margin-top: rem(190);
+                    }
+                }
+            }
+            &__icons {
+                margin-top: rem(48);
+                &-list {
+                    gap: rem(4);
+                }
+            }
+            &__iconItem {
+                font-size: rem(12);
+                &-icon {
+                    width: rem(24);
+                    height: rem(24);
+                    &--size-2 {
+                        width: rem(34);
+                        height: rem(24);
+                    }
+                }
+                &-txt {
+                    margin-left: rem(8);
+                }
+            }
+            &__img {
+                left: 0;
+                right: 0;
+                top: rem(224);
+                &-desktop {
+                    display: none;
+                }
+                &-mobile {
+                    display: block;
+                    display: flex;
+                    justify-content: center;
+                }
+                img {
+                    width: rem(524);
+                    max-width: initial;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,9 @@
-extends template/catalog
+extends template/mainPage
 
 block variables
 	- var title = 'Каталог'
+	- var bodyClass = 'preSalePage'
+	- var htmlClass = 'html-rem'
 
 block content
 	include pages/landing/presale

@@ -1,0 +1,40 @@
+extends template/mainPage
+
+block variables
+	- var title = 'О бренде'
+	- var bodyClass = 'aboutPage'
+	- var htmlClass = 'html-rem'
+
+block content
+	.about
+		include pages/about/intro
+		.aboutContent 
+			include pages/about/years
+			include pages/about/s-00
+			include pages/about/s-04
+			include pages/about/s-05
+			include pages/about/s-06
+			include pages/about/s-10
+			include pages/about/s-11
+			include pages/about/s-12
+			include pages/about/s-14
+			include pages/about/s-17
+			include pages/about/s-18
+			include pages/about/s-20
+			include pages/about/s-21
+			include pages/about/s-22
+			include pages/about/s-23
+
+//- block header
+//- 	include modules/header/header
+	
+	
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	link(rel="stylesheet" type='text/css' href="static/css/about.css")
+
+block script
+	script(src="static/js/gsap.min.js")
+	script(src="static/js/ScrollTrigger.min.js")
+	script(src="static/js/lenis.min.js")
+	script(src="static/js/about.js")

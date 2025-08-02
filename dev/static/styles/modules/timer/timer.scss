@@ -1,24 +1,24 @@
 .ashTimer {
     &-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 4px;
+        gap: rem(4);
     }
     &-item {
         background: var(--button-default);
         color: #EBEBF4;
-        padding: 12px;
+        padding: rem(12);
         text-align: center;
-        border-radius: 8px;
+        border-radius: rem(8);
         &::before {
             border-color: #65636E;
         }
         &__value {
-            font-size: 44px;
+            font-size: rem(44);
             line-height: normal;
         }
         &__name {
-            font-size: 14px;
-            margin-top: -4px;
+            font-size: rem(16);
+            line-height: rem(18);
         }
     }
 }
@@ -26,7 +26,33 @@
 @media (max-width: 1440px) {
     .ashTimer {
         &-grid {
-            gap: 2px;
+            gap: rem(2);
+        }
+        &-item {
+            padding: rem(8);
+            &__value {
+                font-size: rem(40);
+            }
+            &__name {
+                font-size: rem(14);
+                line-height: rem(16);
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .ashTimer {
+        &-item {
+            padding: rem(8);
+            &__value {
+                font-size: rem(32);
+                line-height: rem(37);
+            }
+            &__name {
+                font-size: rem(12);
+                line-height: rem(14);
+            }
         }
     }
 }

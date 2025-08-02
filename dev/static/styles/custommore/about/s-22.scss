@@ -1,0 +1,188 @@
+.aboutFourteen {
+    padding-top: rem(64);
+    padding-bottom: rem(128);
+    &-content {
+        &__tImg {
+            height: rem(640);
+            margin-bottom: rem(64);
+            &-item {
+                &__inner {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                width: rem(558);
+                top: rem(8);
+                left: rem(382);
+                transform: rotate(-0.69deg);
+            }
+            &-2 {
+                width: rem(362);
+                top: rem(96);
+                left: rem(900);
+                transform: rotate(4.39deg);
+                z-index: 2;
+                &::before {
+                    width: rem(216);
+                    height: rem(68);
+                    background: url(../../static/images/general/about/scotch-9.png) 0 0 no-repeat;
+                    top: rem(-32);
+                    right: rem(-56);
+                    transform: rotate(8.94deg);
+                }
+            }
+            &-3 {
+                width: rem(238);
+                transform: rotate(-111.12deg);
+                top: rem(372);
+                right: rem(424);
+            }
+            &-4 {
+                width: rem(128);
+                transform: rotate(-126.8deg);
+                right: rem(290);
+                top: rem(356);
+            }
+        }
+        &__txt {
+            margin-bottom: rem(32);
+        }
+        &__title {
+            margin-bottom: rem(80);
+        }
+        &__bImg {
+            display: flex;
+            gap: rem(52);
+            margin-left: rem(450);
+            &-item {
+                &__inner {
+                    width: 100%;
+                }
+            }
+            &-1 {
+                width: rem(412);
+            }
+            &-2 {
+                width: rem(324);
+                margin-top: rem(90);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutFourteen {
+        padding-top: rem(48);
+        padding-bottom: rem(96);
+        &-content {
+            &__tImg {
+                height: rem(560);
+                margin-bottom: rem(48);
+                &-1 {
+                    width: rem(484);
+                    top: rem(4);
+                    left: rem(284);
+                }
+                &-2 {
+                    width: rem(312);
+                    top: rem(80);
+                    left: rem(732);
+                    &::before {
+                        width: rem(186);
+                        height: rem(58);
+                    }
+                }
+                &-3 {
+                    width: rem(206);
+                    top: rem(320);
+                    right: rem(200);
+                }
+                &-4 {
+                    width: rem(110);
+                    right: rem(82);
+                    top: rem(306);
+                }
+            }
+            &__txt {
+                margin-bottom: rem(44);
+            }
+            &__title {
+                margin-bottom: rem(56);
+            }
+            &__bImg {
+                gap: rem(52);
+                margin-left: rem(346);
+                &-1 {
+                    width: rem(356);
+                }
+                &-2 {
+                    width: rem(282);
+                    margin-top: rem(78);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFourteen {
+        padding-top: rem(16);
+        padding-bottom: rem(32);
+        &-content {
+            &__tImg {
+                &-1 {
+                    width: rem(360);
+                    top: rem(40);
+                    left: rem(-12);
+                }
+                &-2 {
+                    width: rem(202);
+                    top: rem(246);
+                    left: rem(16);
+                    transform: rotate(-2.21deg);
+                    &::before {
+                        width: rem(120);
+                        height: rem(38);
+                        top: rem(-16);
+                        right: rem(-20);
+                    }
+                }
+                &-3 {
+                    width: rem(132);
+                    top: rem(364);
+                    right: rem(28);
+                    transform: rotate(-157.29deg);
+                }
+                &-4 {
+                    width: rem(70);
+                    right: rem(16);
+                    top: rem(292);
+                    transform: rotate(-172.97deg);
+                }
+            }
+            &__txt {
+                margin-bottom: rem(24);
+            }
+            &__title {
+                margin-bottom: rem(12);
+            }
+            &__bImg {
+                gap: rem(12);
+                margin-left: 0;
+                position: relative;
+                left: rem(8);
+                flex-direction: row-reverse;
+                &-item {
+                    flex-shrink: 0;
+                }
+                &-1 {
+                    width: rem(188);
+                }
+                &-2 {
+                    width: rem(138);
+                    margin-top: rem(56);
+                }
+            }
+        }
+    }
+}

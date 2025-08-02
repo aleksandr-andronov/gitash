@@ -1,0 +1,95 @@
+.aboutThree {
+    padding-top: rem(64);
+    padding-bottom: rem(186);
+    &-content {
+        &__txt {
+            margin-bottom: rem(132);
+        }
+        &__img {
+            margin-left: rem(376);
+            width: fit-content;
+            svg {
+                width: 100%;
+                height: auto;
+            }
+            &-img {
+                img {
+                    width: rem(304);
+                }
+            }
+            &-left {
+                width: rem(148);
+                top: rem(-84);
+                left: rem(-68);
+            }
+            &-right {
+                width: rem(152);
+                transform: rotate(82.4deg);
+                bottom: rem(-46);
+                right: rem(-96);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutThree {
+        padding-top: rem(64);
+        padding-bottom: rem(178);
+        &-content {
+            &__txt {
+                margin-bottom: rem(80);
+            }
+            &__img {
+                margin-left: rem(208);
+                &-img {
+                    img {
+                        width: rem(270);
+                    }
+                }
+                &-left {
+                    width: rem(120);
+                    top: rem(-56);
+                    left: rem(-28);
+                }
+                &-right {
+                    width: rem(122);
+                    transform: rotate(90deg);
+                    bottom: rem(-42);
+                    right: rem(-74);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutThree {
+        padding-top: rem(10);
+        padding-bottom: rem(92);
+        &-content {
+            &__txt {
+                margin-bottom: rem(98);
+            }
+            &__img {
+                margin-left: rem(24);
+                &-img {
+                    img {
+                        width: rem(188);
+                    }
+                }
+                &-left {
+                    width: rem(84);
+                    top: rem(-40);
+                    left: rem(-20);
+                }
+                &-right {
+                    width: rem(86);
+                    transform: rotate(82.4deg);
+                    bottom: rem(-20);
+                    right: rem(-62);
+                }
+            }
+        }
+    }
+}

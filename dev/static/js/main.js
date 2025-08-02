@@ -1,3 +1,112 @@
+function getBirthday() {
+  const main = document.querySelector('.birthday-form');
+  if (!main) return;  
+  const dayInput = document.querySelector('.birthday-form__input--day');
+  const monthInput = document.querySelector('.birthday-form__input--month');
+  const yearInput = document.querySelector('.birthday-form__input--year');
+
+  const sanitizeNumber = (value) => value.replace(/\D/g, '');
+
+  const handleInput = (input, maxLength, maxValue, nextInput) => {
+    input.addEventListener('input', (e) => {
+      let value = sanitizeNumber(input.value);
+      if (value.length > maxLength) value = value.slice(0, maxLength);
+
+      if (maxValue && +value > maxValue) {
+        value = maxValue.toString().padStart(maxLength, '0');
+      }
+
+      input.value = value;
+
+      if (value.length === maxLength && nextInput) {
+        nextInput.focus();
+      }
+    });
+
+    input.addEventListener('keypress', (e) => {
+      if (!/\d/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+  };
+
+  handleInput(dayInput, 2, 31, monthInput);
+  handleInput(monthInput, 2, 12, yearInput);
+  handleInput(yearInput, 4, null, null);
+}
+
+getBirthday()
+
+
+
+function adjustFormWrapperBottom() {
+  const timer = document.querySelector('.preSaleLanding-timer');
+  const formWrapper = document.querySelector('.preSaleLanding-form-wrapper');
+
+  if (!timer || !formWrapper) return;
+
+  const viewportHeight = window.innerHeight;
+  const timerRect = timer.getBoundingClientRect();
+  const formWrapperHeight = formWrapper.offsetHeight;
+
+  const availableSpace = viewportHeight - timerRect.bottom;
+  const bottomValue = availableSpace >= formWrapperHeight 
+    ? 0 
+    : availableSpace - formWrapperHeight;
+
+  formWrapper.style.setProperty('--form-wrapper-bottom', `${bottomValue}px`);
+}
+
+let ticking = false;
+function onScrollOrResize() {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      adjustFormWrapperBottom();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+adjustFormWrapperBottom()
+window.addEventListener('resize', onScrollOrResize);
+window.addEventListener('scroll', onScrollOrResize);
+
+
+function startDailyTimer() {
+  const hoursEl = document.querySelector('.ashTimer-item__value:nth-child(1)');
+  const minutesEl = document.querySelector('.ashTimer-col:nth-child(2) .ashTimer-item__value');
+  const secondsEl = document.querySelector('.ashTimer-col:nth-child(3) .ashTimer-item__value');
+
+  // Exit early if any timer element is missing
+  if (!hoursEl || !minutesEl || !secondsEl) return;
+
+  const updateTimer = () => {
+    const now = new Date();
+    const endOfDay = new Date();
+    endOfDay.setHours(23, 59, 59, 999);
+
+    const diff = endOfDay - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+  };
+
+  updateTimer(); // initial update
+  setInterval(updateTimer, 1000);
+}
+
+startDailyTimer();
+
+
+
+
+
+
 const productOffcanvasThumbs = new Swiper(".productOffcanvas-thumbs", {
     spaceBetween: 2,
     slidesPerView: 8,
@@ -72,13 +181,13 @@ function galleryCursor() {
       // По умолчанию — справа от курсора
       let left = clientX + offset;
 
-      // Если не помещается — налево и включаем класс reverse
-      if (left + cursorWidth > innerWidth) {
-        left = clientX - cursorWidth - offset;
-        cursor.classList.add('productOffcanvas-galleryCursor--reverse');
-      } else {
-        cursor.classList.remove('productOffcanvas-galleryCursor--reverse');
-      }
+    //   // Если не помещается — налево и включаем класс reverse
+    //   if (left + cursorWidth > innerWidth) {
+    //     left = clientX - cursorWidth - offset;
+    //     cursor.classList.add('productOffcanvas-galleryCursor--reverse');
+    //   } else {
+    //     cursor.classList.remove('productOffcanvas-galleryCursor--reverse');
+    //   }
 
       const top = clientY - cursorHeight / 2;
 
@@ -2455,6 +2564,7 @@ function catalogBg() {
 
 function startCountdown(durationInSeconds) {
     const modalBottom = document.querySelector('.modal-login__bottom');
+    if (!modalBottom) return
     const repeatLink = document.querySelector('.modal-login__repeat');
     let countdown = durationInSeconds;
     let countdownInterval;

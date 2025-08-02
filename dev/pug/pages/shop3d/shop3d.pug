@@ -7,15 +7,17 @@
                     span.button__icon.icon-outline
                         include ../../icons/logout-12
             .shop3d-head__left-item
-                button.shop3d-btn.button.button--circle(type="button")
+                button.shop3d-btn.button.button--circle.shop3d-btn--circle(type="button")
                     span.button__icon.icon-outline
                         include ../../icons/sound-on-12
         .shop3d-head__right
-            a.shop3d-btn.button.button--circle(href="#")
+            a.shop3d-btn.button.button--circle.shop3d-btn--circle(href="#")
                 span.button__icon.icon-outline
                     include ../../icons/bag-12
     .shop3d-content#shop3d-container  
         //- +jpgC('shop3d', '1920', '1080')
+    .shop3d-placeholder 
+    .shop3d-dots#dots-container
     .shop3d-turn.d-flex.absolute
         button.shop3d-turn__btn.icon-outline#turnLeft(type="button")
             include ../../icons/left-12

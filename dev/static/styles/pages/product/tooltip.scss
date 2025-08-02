@@ -17,6 +17,23 @@
                 left: initial;
             }
         }
+        &--bottom-center {
+            .product-tooltip__dropdown {
+                top: 36px;
+                bottom: initial;
+            }
+        }
+        &--bottom-right {
+            .product-tooltip__dropdown {
+                bottom: initial;
+                top: calc(100% + 16px);
+            }
+            .product-tooltip__arrow {
+                bottom: initial;
+                top: -16px;
+                transform: rotate(180deg);
+            }
+        }
         &__backdrop {
             background: rgba(62, 62, 62, 0.1);
             backdrop-filter: blur(7.5px);

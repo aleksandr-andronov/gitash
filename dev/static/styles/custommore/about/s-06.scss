@@ -1,0 +1,106 @@
+.aboutFour {
+    padding-top: rem(14);
+    padding-bottom: rem(132);
+    &-content {
+        &__title {
+            padding-left: rem(6);
+            margin-bottom: rem(54);
+        }
+        &__txt {
+            margin-bottom: rem(56);
+        }
+        &__img {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: rem(282);
+            svg {
+                width: 100%;
+            }
+            &-img {
+                img {
+                    width: rem(304);
+                }
+            }
+            &-left {
+                transform: rotate(-75deg);
+                top: rem(-82);
+                left: rem(-4);
+                width: rem(198);
+            }
+            &-right {
+                bottom: rem(-54);
+                right: rem(-68);
+                width: rem(86);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutFour {
+        padding-top: rem(10);
+        padding-bottom: rem(74);
+        &-content {
+            &__title {
+                padding-left: rem(0);
+                margin-bottom: rem(44);
+            }
+            &__txt {
+                margin-bottom: rem(24);
+            }
+            &__img {
+                margin-right: rem(174);
+                &-img {
+                    img {
+                        width: rem(270);
+                    }
+                }
+                &-left {
+                    transform: rotate(-90deg);
+                    top: rem(-92);
+                    left: rem(6);
+                    width: rem(146);
+                }
+                &-right {
+                    bottom: rem(-90);
+                    right: rem(-50);
+                    width: rem(60);
+                    transform: rotate(-2.18deg);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutFour {
+        padding-top: rem(0);
+        padding-bottom: rem(92);
+        &-content {
+            &__title {
+                margin-bottom: rem(24);
+            }
+            &__txt {
+                margin-bottom: rem(70);
+            }
+            &__img {
+                margin-right: rem(48);
+                &-img {
+                    img {
+                        width: rem(188);
+                    }
+                }
+                &-left {
+                    top: rem(-100);
+                    left: 0;
+                    width: rem(104);
+                }
+                &-right {
+                    bottom: rem(-106);
+                    right: rem(-28);
+                    width: rem(46);
+                }
+            }
+        }
+    }
+}

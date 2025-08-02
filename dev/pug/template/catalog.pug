@@ -2,7 +2,7 @@ include ../utils/mixins
 block variables
 
 doctype html
-html(lang="ru-RU")
+html(lang="ru-RU" class=htmlClass ? `${htmlClass}` : '')
 	head
 		meta(charset="utf-8")
 		title #{title}

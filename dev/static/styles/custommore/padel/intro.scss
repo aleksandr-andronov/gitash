@@ -140,7 +140,7 @@
 
 @media (max-width: 480px) {
     .padelIntro {
-        padding-top: rem(0);
+        padding-top: rem(16);
         padding-left: rem(14);
         padding-right: rem(14);
         padding-bottom: rem(36);
@@ -183,7 +183,7 @@
                 font-size: rem(16);
                 border-radius: rem(10);
                 left: rem(-4);
-                bottom: rem(68);
+                bottom: 0.25rem;
                 padding-top: rem(24);
                 padding-left: rem(12);
             }

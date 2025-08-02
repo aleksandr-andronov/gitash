@@ -9,10 +9,10 @@ html(lang="ru-RU" class=htmlClass ? `${htmlClass}` : '')
 		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
 		//- link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		//- link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-		meta(name="theme-color" content="#000000")
 		block styles
 	body.no-padding(  class=bodyClass ? `${bodyClass} custom-header` : '' )
 		.wrapper
+			block header
 			block content
 		//- script(src="static/js/libs.js")
 		//- script(src="static/js/swiper-bundle.min.js")

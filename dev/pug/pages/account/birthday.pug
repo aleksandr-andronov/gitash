@@ -1,0 +1,23 @@
+.birthday.birthday-catalog.birthday-account
+    .birthday-catalog__inner.centered.flex-col.birthday-account__inner
+        .birthday-catalog__top 
+            .birthday__info 
+                .birthday__title.ttl.uppercase.birthday__title--sm День рождения — <br>повод для&nbsp;пары мечты
+                .birthday__txt.mx-auto.birthday__txt--sm Поделитесь датой, и в нужный момент мы появимся с&nbsp;чем-то приятным 
+        .birthday-catalog__bottom
+            form.birthday-form(action="/")
+                .birthday-form__inner.d-flex.align-center.birthday-form__inner--col
+                    .birthday-form__left 
+                        .birthday-form__group.d-flex.align-end.ttl 
+                            .birthday-form__group-item
+                                input.birthday-form__input.birthday-form__input--day.birthday-form__input(type="tel" minlength="2" maxlength="2" placeholder="дд")
+                            .birthday-form__group-item 
+                                .birthday-form__group-dot .
+                            .birthday-form__group-item
+                                input.birthday-form__input.birthday-form__input--month.birthday-form__input(type="tel" minlength="2" maxlength="2" placeholder="мм")
+                            .birthday-form__group-item 
+                                .birthday-form__group-dot .
+                            .birthday-form__group-item
+                                input.birthday-form__input.birthday-form__input--year.birthday-form__input(type="tel" minlength="4" maxlength="4" placeholder="гггг")
+                    .birthday-form__right 
+                        button.birthday-form__btn.btn(type="submit") отправить

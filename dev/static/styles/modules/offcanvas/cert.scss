@@ -5,6 +5,9 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
+        .certificate-img__content-text {
+            display: block;
+        }
         &--start {
             justify-content: flex-start;
         }
