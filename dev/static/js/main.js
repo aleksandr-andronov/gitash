@@ -1,14 +1,15 @@
 function getBirthday() {
-  const main = document.querySelector('.birthday-form');
-  if (!main) return;  
-  const dayInput = document.querySelector('.birthday-form__input--day');
-  const monthInput = document.querySelector('.birthday-form__input--month');
-  const yearInput = document.querySelector('.birthday-form__input--year');
+  const form = document.querySelector('.birthday-form');
+  if (!form) return;
+
+  const dayInput = form.querySelector('.birthday-form__input--day');
+  const monthInput = form.querySelector('.birthday-form__input--month');
+  const yearInput = form.querySelector('.birthday-form__input--year');
 
   const sanitizeNumber = (value) => value.replace(/\D/g, '');
 
   const handleInput = (input, maxLength, maxValue, nextInput) => {
-    input.addEventListener('input', (e) => {
+    input.addEventListener('input', () => {
       let value = sanitizeNumber(input.value);
       if (value.length > maxLength) value = value.slice(0, maxLength);
 
@@ -21,6 +22,9 @@ function getBirthday() {
       if (value.length === maxLength && nextInput) {
         nextInput.focus();
       }
+
+      input.classList.remove('error');
+      form.classList.remove('error');
     });
 
     input.addEventListener('keypress', (e) => {
@@ -30,12 +34,67 @@ function getBirthday() {
     });
   };
 
+  const isLeapYear = (year) =>
+    (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+  const isValidDate = (day, month, year) => {
+    const daysInMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    return (
+      month >= 1 &&
+      month <= 12 &&
+      day >= 1 &&
+      day <= daysInMonth[month - 1] &&
+      year >= 1900 &&
+      year <= new Date().getFullYear()
+    );
+  };
+
+  const validateForm = (e) => {
+    const day = +sanitizeNumber(dayInput.value);
+    const month = +sanitizeNumber(monthInput.value);
+    const year = +sanitizeNumber(yearInput.value);
+
+    let hasError = false;
+    const errorInputs = [];
+
+    [dayInput, monthInput, yearInput].forEach((input) => {
+      if (!sanitizeNumber(input.value)) {
+        input.classList.add('error');
+        errorInputs.push(input);
+        hasError = true;
+      } else {
+        input.classList.remove('error');
+      }
+    });
+
+    if (!hasError && !isValidDate(day, month, year)) {
+      [dayInput, monthInput, yearInput].forEach((input) => {
+        input.classList.add('error');
+        errorInputs.push(input);
+      });
+      hasError = true;
+    }
+
+    if (hasError) {
+      e.preventDefault();
+      form.classList.add('error');
+      if (errorInputs.length > 0) {
+        errorInputs[0].focus();
+      }
+    } else {
+      form.classList.remove('error');
+    }
+  };
+
+  form.addEventListener('submit', validateForm);
+
   handleInput(dayInput, 2, 31, monthInput);
   handleInput(monthInput, 2, 12, yearInput);
-  handleInput(yearInput, 4, null, null);
+  handleInput(yearInput, 4, new Date().getFullYear(), null);
 }
 
-getBirthday()
+getBirthday();
+
 
 
 

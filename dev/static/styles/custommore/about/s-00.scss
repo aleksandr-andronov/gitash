@@ -1,11 +1,10 @@
 .aboutOne {
-    padding-top: rem(116);
-    padding-bottom: rem(106);
-    margin-top: rem(214);
+    overflow: hidden;
+    padding-top: rem(156);
     &-content {
         &__top {
             position: relative;
-            margin-bottom: rem(-86);
+            margin-bottom: rem(-144);
             &-img {
                 text-align: center;
                 img {
@@ -18,10 +17,12 @@
                 transform: rotate(4.68deg);
                 img {
                     width: rem(302);
+                    will-change: transform;
+                    transform: translate(15rem, -3rem);
                 }
             }
             &-left {
-                left: rem(338);
+                left: rem(160);
                 bottom: rem(12);
                 img {
                     width: rem(210);
@@ -93,15 +94,13 @@
                 width: rem(518);
                 z-index: 3;
                 &::before {
-                    content: "";
                     width: rem(175);
                     height: rem(54);
                     transform: rotate(179.98deg);
                     background: url(../../static/images/general/about/s-00-decor-3.png) 0 0 no-repeat;
-                    background-size: 100% auto;
-                    position: absolute;
                     bottom: rem(-24);
                     left: rem(-28); 
+                    z-index: 4;
                 }
             }
             &-decorTxt {
@@ -126,12 +125,9 @@
 
 @media (max-width: 1440px) {
     .aboutOne {
-        padding-top: rem(86);
-        padding-bottom: rem(76);
-        margin-top: rem(160);
         &-content {
             &__top {
-                margin-bottom: rem(-56);
+                margin-bottom: rem(-160);
                 &-img {
                     img {
                         width: rem(1360);
@@ -145,7 +141,7 @@
                     }
                 }
                 &-left {
-                    left: rem(244);
+                    left: rem(160);
                     bottom: rem(6);
                     img {
                         width: rem(160);
@@ -221,9 +217,6 @@
 
 @media (max-width: 480px) {
     .aboutOne {
-        padding-top: rem(42);
-        margin-top: rem(70);
-        padding-bottom: 100px;
         &-content {
             &__top {
                 margin-bottom: rem(-42);

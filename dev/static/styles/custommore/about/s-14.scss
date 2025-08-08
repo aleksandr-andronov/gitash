@@ -1,6 +1,4 @@
 .aboutNine {
-    padding-top: rem(64);
-    padding-bottom: rem(96);
     &-content {
         &__txt {
             margin-bottom: rem(64);
@@ -38,8 +36,6 @@
 
 @media (max-width: 1440px) {
     .aboutNine {
-        padding-top: rem(48);
-        padding-bottom: rem(128);
         &-content {
             &__txt {
                 margin-bottom: rem(52);
@@ -72,8 +68,6 @@
 
 @media (max-width: 480px) {
     .aboutNine {
-        padding-top: rem(16);
-        padding-bottom: rem(96);
         overflow: hidden;
         &-content {
             &__txt {

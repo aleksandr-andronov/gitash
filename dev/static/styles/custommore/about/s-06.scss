@@ -1,6 +1,4 @@
 .aboutFour {
-    padding-top: rem(14);
-    padding-bottom: rem(132);
     &-content {
         &__title {
             padding-left: rem(6);
@@ -38,15 +36,13 @@
 
 @media (max-width: 1440px) {
     .aboutFour {
-        padding-top: rem(10);
-        padding-bottom: rem(74);
         &-content {
             &__title {
                 padding-left: rem(0);
                 margin-bottom: rem(44);
             }
             &__txt {
-                margin-bottom: rem(24);
+                margin-bottom: rem(64);
             }
             &__img {
                 margin-right: rem(174);
@@ -74,8 +70,6 @@
 
 @media (max-width: 480px) {
     .aboutFour {
-        padding-top: rem(0);
-        padding-bottom: rem(92);
         &-content {
             &__title {
                 margin-bottom: rem(24);

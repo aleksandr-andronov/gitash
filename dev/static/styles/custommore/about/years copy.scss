@@ -1,0 +1,226 @@
+.aboutYears {
+    position: sticky;
+    top: var(--height-scroll);
+    z-index: 9;
+    height: rem(174);
+    display: flex;
+    align-items: center;
+    background: var(--years-bg);
+    overflow: hidden;
+    padding-left: var(--containter-padding);
+    padding-right: var(--containter-padding);
+    &__list {
+        gap: rem(54);
+        transition: transform .4s linear;
+        &[data-pos="0"] {
+            transform: translateX(60.5rem);
+        }
+        &[data-pos="1"] {
+            transform: translateX(calc(28.125rem + 40px));
+        }
+        &[data-pos="2"] {
+            transform: translateX(calc(13.5rem + 40px));
+        }
+        &[data-pos="3"] {
+            transform: translateX(calc(-18.5rem + 40px));
+        }
+        &[data-pos="4"] {
+            transform: translateX(calc(-33.75rem + 40px));
+        }
+        &[data-pos="5"] {
+            transform: translateX(calc(-49.375rem + 40px));
+        }
+        &[data-pos="6"] {
+            transform: translateX(calc(-63.5rem + 40px));
+        }
+        &[data-pos="7"] {
+            transform: translateX(calc(-76.25rem + 40px));
+        }
+        &[data-pos="8"] {
+            transform: translateX(calc(-90.625rem + 40px)); 
+        }
+        &[data-pos="9"] {
+            transform: translateX(calc(-116.875rem + 40px));
+        }
+        &[data-pos="10"] {
+            transform: translateX(calc(-131.25rem + 40px));
+        }
+        &[data-pos="11"] {
+            transform: translateX(calc(-145.625rem + 40px));
+        }
+        &[data-pos="12"] {
+            transform: translateX(calc(-159.375rem + 40px));
+        }
+        &[data-pos="13"] {
+            transform: translateX(calc(-186.875rem + 40px));
+        }
+        &[data-pos="14"] {
+            transform: translateX(calc(-201.25rem + 40px));
+        }
+    }
+    &__item {
+        font-size: rem(64);
+        line-height: 84%;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+        color: var(--years-color);
+        transition: .4s linear;
+        will-change: transform;
+        &.selected {
+            font-size: rem(120);
+            color: var(--years-color-selected);
+        }
+    }
+    &__proxy {
+        &-list {
+            gap: rem(54);
+            display: flex;
+        }
+        .aboutYears__item {
+            transition: 0s;
+            &.selected {
+                font-size: rem(120);
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .aboutYears {
+        height: rem(132);
+        &__list {
+            gap: rem(40);
+            &[data-pos="0"] {
+                transform: translateX(60.5rem);
+            }
+            &[data-pos="1"] {
+                transform: translateX(calc(21.125rem + 30px));
+            }
+            &[data-pos="2"] {
+                transform: translateX(calc(10rem + 30px));
+            }
+            &[data-pos="3"] {
+                transform: translateX(calc(-14rem + 30px));
+            }
+            &[data-pos="4"] {
+                transform: translateX(calc(-25.75rem + 30px));
+            }
+            &[data-pos="5"] {
+                transform: translateX(calc(-37rem + 30px));
+            }
+            &[data-pos="6"] {
+                transform: translateX(calc(-47.5rem + 30px));
+            }
+            &[data-pos="7"] {
+                transform: translateX(calc(-57.25rem + 30px));
+            }
+            &[data-pos="8"] {
+                transform: translateX(calc(-67.625rem + 30px)); 
+            }
+            &[data-pos="9"] {
+                transform: translateX(calc(-87.875rem + 30px));
+            }
+            &[data-pos="10"] {
+                transform: translateX(calc(-98.25rem + 30px));
+            }
+            &[data-pos="11"] {
+                transform: translateX(calc(-109.625rem + 30px));
+            }
+            &[data-pos="12"] {
+                transform: translateX(calc(-119.375rem + 30px));
+            }
+            &[data-pos="13"] {
+                transform: translateX(calc(-139.875rem + 30px));
+            }
+            &[data-pos="14"] {
+                transform: translateX(calc(-149.6rem + 30px));
+            }
+        }
+        &__item {
+            font-size: rem(48);
+            &.selected {
+                font-size: rem(100);
+            }
+        }
+        &__proxy {
+            &-list {
+                gap: rem(40);
+            }
+            .aboutYears__item {
+                &.selected {
+                    font-size: rem(100);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutYears {
+        height: rem(70);
+        &__list {
+            gap: rem(16);
+            &[data-pos="0"] {
+                transform: translateX(60.5rem);
+            }
+            &[data-pos="1"] {
+                transform: translateX(calc(14px));
+            }
+            &[data-pos="2"] {
+                transform: translateX(calc(-5rem + 14px));
+            }
+            &[data-pos="3"] {
+                transform: translateX(calc(-15rem + 14px));
+            }
+            &[data-pos="4"] {
+                transform: translateX(calc(-19.75rem + 14px));
+            }
+            &[data-pos="5"] {
+                transform: translateX(calc(-24rem + 14px));
+            }
+            &[data-pos="6"] {
+                transform: translateX(calc(-28.5rem + 14px));
+            }
+            &[data-pos="7"] {
+                transform: translateX(calc(-32.25rem + 14px));
+            }
+            &[data-pos="8"] {
+                transform: translateX(calc(-36.625rem + 14px)); 
+            }
+            &[data-pos="9"] {
+                transform: translateX(calc(-44.875rem + 14px));
+            }
+            &[data-pos="10"] {
+                transform: translateX(calc(-49.25rem + 14px));
+            }
+            &[data-pos="11"] {
+                transform: translateX(calc(-53.625rem + 14px));
+            }
+            &[data-pos="12"] {
+                transform: translateX(calc(-58.375rem + 14px));
+            }
+            &[data-pos="13"] {
+                transform: translateX(calc(-66.875rem + 14px));
+            }
+            &[data-pos="14"] {
+                transform: translateX(calc(-71rem + 14px));
+            }
+        }
+        &__item {
+            font-size: rem(20);
+            &.selected {
+                font-size: rem(44);
+            }
+        }
+        &__proxy {
+            &-list {
+                gap: rem(16);
+            }
+            .aboutYears__item {
+                &.selected {
+                    font-size: rem(44);
+                }
+            }
+        }
+    }
+}

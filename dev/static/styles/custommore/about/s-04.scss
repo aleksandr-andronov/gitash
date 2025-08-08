@@ -1,6 +1,4 @@
 .aboutTwo {
-    padding-top: rem(64);
-    padding-bottom: rem(124);
     &-content {
         &__txt {
             margin-bottom: rem(132);
@@ -67,8 +65,6 @@
 
 @media (max-width: 1440px) {
     .aboutTwo {
-        padding-top: rem(48);
-        padding-bottom: rem(92);
         &-content {
             &__txt {
                 margin-bottom: rem(104);
@@ -118,8 +114,6 @@
 
 @media (max-width: 480px) {
     .aboutTwo {
-        padding-top: rem(10);
-        padding-bottom: rem(40);
         &-content {
             &__txt {
                 margin-bottom: rem(78);

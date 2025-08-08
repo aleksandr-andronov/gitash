@@ -1,6 +1,4 @@
 .aboutTen {
-    padding-top: rem(32);
-    padding-bottom: rem(80);
     &-content {
         &__img {
             margin-left: rem(430);
@@ -33,8 +31,6 @@
 
 @media (max-width: 1440px) {
     .aboutTen {
-        padding-top: rem(24);
-        padding-bottom: rem(80);
         &-content {
             &__title {
                 margin-bottom: rem(48);

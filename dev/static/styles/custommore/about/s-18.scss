@@ -232,11 +232,13 @@
                 &-img {
                     margin-left: auto;
                     margin-right: auto;
+                    position: relative;
+                    z-index: 4;
                 }
             }
             &__gifs {
                 height: auto;
-                margin-bottom: rem(12);
+                margin-bottom: rem(90);
                 align-items: flex-start;
                 flex-direction: column;
                 &-item {

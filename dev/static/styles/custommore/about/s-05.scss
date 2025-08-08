@@ -1,6 +1,4 @@
 .aboutThree {
-    padding-top: rem(64);
-    padding-bottom: rem(186);
     &-content {
         &__txt {
             margin-bottom: rem(132);
@@ -34,8 +32,6 @@
 
 @media (max-width: 1440px) {
     .aboutThree {
-        padding-top: rem(64);
-        padding-bottom: rem(178);
         &-content {
             &__txt {
                 margin-bottom: rem(80);
@@ -65,11 +61,10 @@
 
 @media (max-width: 480px) {
     .aboutThree {
-        padding-top: rem(10);
-        padding-bottom: rem(92);
         &-content {
             &__txt {
                 margin-bottom: rem(98);
+                margin-top: rem(24);
             }
             &__img {
                 margin-left: rem(24);

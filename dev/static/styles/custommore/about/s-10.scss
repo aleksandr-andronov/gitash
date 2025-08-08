@@ -1,7 +1,4 @@
 .aboutFive {
-    padding-top: rem(64);
-    padding-bottom: rem(124);
-    
     &-content {
         position: relative;
         &__imgTop {
@@ -10,16 +7,14 @@
             
             &-img {
                 transform: rotate(15deg);
-                position: relative;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: rem(-38);
-                    left: rem(-54);
-                    width: rem(168);
-                    height: rem(72);
-                    background: url(../../static/images/general/about/scotch-1.png) 0 0 no-repeat;
-                    background-size: 100% auto;
+                &__inner {
+                    &::before {
+                        top: rem(-38);
+                        left: rem(-54);
+                        width: rem(168);
+                        height: rem(72);
+                        background: url(../../static/images/general/about/scotch-1.png) 0 0 no-repeat;
+                    }
                 }
                 img {
                     width: rem(228);
@@ -30,15 +25,23 @@
             margin-top: rem(54);
             margin-bottom: rem(192);
         }
+        &__txt-bottom {
+            margin-top: rem(90);
+        }
         &__imgBottom {
             height: rem(520);
             width: rem(400);
             position: relative;
             margin-left: rem(460);
             margin-bottom: rem(86);
+            &-wrap {
+                
+            }
             &-item {
                 width: rem(374);
                 position: absolute;
+                transform: translateY(100%);
+                opacity: 0;
                 img {
                     width: 100%;
                 }
@@ -73,8 +76,8 @@
         &__decor {
             width: rem(436);
             position: absolute;
-            right: rem(294);
-            bottom: rem(524);
+            right: rem(90);
+            top: rem(-260);
             svg {
                 width: 100%;
                 height: auto;
@@ -85,20 +88,20 @@
 
 @media (max-width: 1440px) {
     .aboutFive {
-        padding-top: rem(36);
-        padding-bottom: rem(112);
         &-content {
             &__imgTop {
                 margin-left: rem(106);
                 margin-bottom: rem(-108);
                 &-img {
                     transform: rotate(12deg);
-                    &::before {
-                        width: rem(144);
-                        height: rem(54);
-                        transform: rotate(-11.81deg);
-                        top: rem(-20);
-                        left: rem(-28);
+                    &__inner {
+                        &::before {
+                            width: rem(144);
+                            height: rem(54);
+                            transform: rotate(-11.81deg);
+                            top: rem(-20);
+                            left: rem(-28);
+                        }
                     }
                 }
             }
@@ -136,8 +139,6 @@
 
 @media (max-width: 480px) {
     .aboutFive {
-        padding-top: rem(48);
-        padding-bottom: rem(84);
         overflow: hidden;
         &-content {
             &__imgTop {

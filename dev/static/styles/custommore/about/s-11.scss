@@ -1,6 +1,4 @@
 .aboutSix {
-    padding-top: rem(64);
-    padding-bottom: rem(220);
     &-content {
         &__txt {
             margin-bottom: rem(116);
@@ -73,8 +71,6 @@
 
 @media (max-width: 1440px) {
     .aboutSix {
-        padding-top: rem(56);
-        padding-bottom: rem(248);
         &-content {
             &__txt {
                 margin-bottom: rem(44);
@@ -130,8 +126,6 @@
 
 @media (max-width: 480px) {
     .aboutSix {
-        padding-top: rem(18);
-        padding-bottom: rem(100);
         overflow: hidden;
         &-content {
             &__txt {

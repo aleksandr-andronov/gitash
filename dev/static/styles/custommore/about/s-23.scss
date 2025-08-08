@@ -1,6 +1,4 @@
 .aboutFifteen {
-    padding-top: rem(50);
-    padding-bottom: rem(180);
     &-content {
         &__txt {
             margin-bottom: rem(124);
@@ -119,8 +117,7 @@
 
 @media (max-width: 480px) {
     .aboutFifteen {
-        padding-top: rem(12);
-        padding-bottom: rem(48);
+        padding-bottom: rem(64);
         overflow: hidden;
         &-content {
             &__txt {

@@ -1,6 +1,4 @@
 .aboutFourteen {
-    padding-top: rem(64);
-    padding-bottom: rem(128);
     &-content {
         &__tImg {
             height: rem(640);
@@ -72,8 +70,6 @@
 
 @media (max-width: 1440px) {
     .aboutFourteen {
-        padding-top: rem(48);
-        padding-bottom: rem(96);
         &-content {
             &__tImg {
                 height: rem(560);
@@ -126,8 +122,6 @@
 
 @media (max-width: 480px) {
     .aboutFourteen {
-        padding-top: rem(16);
-        padding-bottom: rem(32);
         &-content {
             &__tImg {
                 &-1 {

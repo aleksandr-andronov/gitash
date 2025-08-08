@@ -1,7 +1,29 @@
+.textBlock {
+    p {
+        margin-bottom: 24px;
+    }
+
+    ul {
+        margin-bottom: 24px;
+    }
+}
+
 .text-center {
     text-align: center;
 }
 
 .text-nowrap {
     white-space: nowrap;
+}
+
+@media (max-width: 1440px) {
+    .textBlock {
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+    }
 }

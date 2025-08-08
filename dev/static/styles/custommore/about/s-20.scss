@@ -1,6 +1,4 @@
 .aboutTwelve {
-    padding-top: rem(32);
-        padding-bottom: rem(240);
     &-content {
         
         &__txtImg {
@@ -61,8 +59,6 @@
 
 @media (max-width: 1440px) {
     .aboutTwelve {
-        padding-top: rem(12);
-            padding-bottom: rem(200);
         &-content {
             
             &__txtImg {
@@ -114,8 +110,6 @@
 @media (max-width: 480px) {
     .aboutTwelve {
         overflow: hidden;
-        padding-top: rem(20);
-            padding-bottom: rem(200);
         &-content {
             
             

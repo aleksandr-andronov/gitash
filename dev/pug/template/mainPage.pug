@@ -11,7 +11,7 @@ html(lang="ru-RU" class=htmlClass ? `${htmlClass}` : '')
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
 		meta(name="theme-color" content="#000000")
 		block styles
-	body.no-padding(  class=bodyClass ? `${bodyClass} custom-header` : '' )
+	body.no-padding( data-lenis-container class=bodyClass ? `${bodyClass} custom-header` : '' )
 		.wrapper
 			include ../modules/header/header-nobg
 			block content

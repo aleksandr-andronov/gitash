@@ -1,6 +1,4 @@
 .aboutEight {
-    padding-top: rem(94);
-    padding-bottom: rem(188);
     &-content {
         &__txt {
             margin-bottom: rem(90);
@@ -21,8 +19,6 @@
 
 @media (max-width: 1440px) {
     .aboutEight {
-        padding-top: rem(16);
-        padding-bottom: rem(176);
         &-content {
             &__txt {
                 margin-bottom: rem(24);
@@ -42,7 +38,6 @@
 
 @media (max-width: 480px) {
     .aboutEight {
-        padding-bottom: rem(72);
         &-content {
             &__txt {
                 margin-bottom: rem(16);

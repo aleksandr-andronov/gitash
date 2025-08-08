@@ -27,6 +27,16 @@
         }
     }
     &-form {
+        position: relative;
+        &.error {
+            color: var(--cancel);
+            .birthday-form__error {
+                display: block;
+            }
+            .birthday-form__inner--col {
+                gap: 12px;
+            }
+        }
         &__inner {
             gap: 24px;
             &--col {
@@ -54,6 +64,13 @@
             font-size: 40px;
             line-height: 70%;
             border-radius: 0;
+            &.error {
+                border-color: var(--cancel);
+                color: var(--cancel);
+                &::placeholder {
+                    color: var(--cancel);
+                }
+            }
             &::placeholder {
                 color: var(--base-color);
                 transition: color .2s ease-in-out;
@@ -77,6 +94,17 @@
             padding-left: 0;
             padding-right: 0;
             width: 168px;
+        }
+        &__error {
+            color: var(--cancel);
+            font-size: 14px;
+            line-height: 130%;
+            top: 100%;
+            margin-top: 16px;
+            display: none;
+            &--static {
+                margin: 0;
+            }
         }
     }
     &-catalog {
@@ -219,6 +247,11 @@
             }
         }
         &-form {
+            &.error {
+                .birthday-form__inner--col {
+                    gap: 10px;
+                }
+            }
             &__inner {
                 gap: 20px;
             }
@@ -242,6 +275,13 @@
                 }
                 &--year {
                     width: 108px;
+                }
+            }
+            &__error {
+                font-size: 12px;
+                margin-top: 12px;
+                &--static {
+                    margin: 0;
                 }
             }
         }
@@ -384,6 +424,14 @@
         }
         &-form {
             position: relative;
+            &.error {
+                .birthday-form__inner {
+                    gap: 12px;
+                    &--col {
+                        gap: 10px;
+                    }
+                }
+            }
             &__inner {
                 flex-direction: column;
                 gap: 16px;
@@ -411,6 +459,10 @@
                 border-radius: 34px;
                 width: auto;
                 padding: 8px 14px;
+            }
+            &__error {
+                position: initial;
+                margin-top: 0;
             }
         }
         &-catalog {
