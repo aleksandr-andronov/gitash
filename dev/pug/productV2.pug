@@ -1,0 +1,15 @@
+extends template/main
+block variables
+	- var title = 'Страница товара'
+	- var bodyClass = 'pageProduct'
+
+	- var mood = 'mood'
+
+block content
+	.product-page
+		include pages/productV2/content
+		.product-page__more
+			include pages/productV2/media
+			include pages/productV2/watched
+			include pages/productV2/like
+	

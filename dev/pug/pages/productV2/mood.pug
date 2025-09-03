@@ -1,0 +1,21 @@
+.product__grid-left
+    .productImages
+        .productImages-grid.d-grid
+            .productImages-grid__item
+                .productImages-grid__title.ttl #ashgirls <br>#ashmood
+            .productImages-grid__item
+                .productImages-grid__img.video 
+                    //- +jpgC('productImages-1', '420', '709')
+                    video(playsinline autoplay muted loop)
+                        source(src="static/videos/8.webm", type="video/webm")
+                        source(src="static/videos/8.mp4", type="video/mp4") 
+            .productImages-grid__item
+                .productImages-grid__img 
+                    +jpgC('productImages-1', '420', '709')
+            .productImages-grid__item
+                .productImages-grid__img 
+                    +jpgC('productImages-2', '420', '709')
+            .productImages-grid__item
+            .productImages-grid__item
+                .productImages-grid__img 
+                    +jpgC('productImages-3', '420', '451')

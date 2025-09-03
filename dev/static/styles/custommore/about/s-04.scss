@@ -114,6 +114,8 @@
 
 @media (max-width: 480px) {
     .aboutTwo {
+        padding-bottom: rem(24);
+        overflow: initial;
         &-content {
             &__txt {
                 margin-bottom: rem(78);

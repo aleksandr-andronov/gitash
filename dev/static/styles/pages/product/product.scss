@@ -66,28 +66,54 @@
             }
         }
     }
+    &__back {
+        z-index: 9;
+        top: 30px;
+        left: 30px;
+        bottom: 0;
+        pointer-events: none;
+    }
     &-back {
         position: absolute;
         top: 24px;
         left: 24px;
         background: var(--white);
+        pointer-events: auto;
         svg {
             width: 16px;
             height: 16px;
         }
+        &--sticky {
+            position: sticky;
+            top: calc(30px + var(--height-scroll));
+            left: 30px;
+        }
+    }
+    &__sticker {
+        position: absolute;
+        z-index: 9;
+        top: 20px;
+        right: 20px;
+        bottom: 0;
+        pointer-events: none;
     }
     &-sticker {
         position: absolute;
         top: 16px;
         right: 96px;
+        &--sticky {
+            position: sticky;
+            top: calc(20px + var(--height-scroll));
+        }
     }
     &-badges {
         position: absolute;
-        top: 148px;
+        top: 186px;
         left: 0;
         flex-direction: column-reverse ;
         // transform: rotate(-90deg);
         gap: 2px;
+        z-index: 9;
         &__item {
             width: 28px;
             img {
@@ -122,6 +148,25 @@
         &::before {
             display: none;
         }
+        &--dashed {
+            &::before {
+                display: block;
+                border-style: dashed;
+                border-color: var(--stroke-dash);
+            }
+        }
+        &--border {
+            &::before {
+                display: block;
+                border-color: var(--stroke-dash);
+            }
+        }
+        &--transparent {
+            background: transparent;
+        }
+        &--lilac {
+            background: #CBB6E4;
+        }
         &__left {
             max-width: 70%;
         }
@@ -149,6 +194,11 @@
                 }
                 &::after {
                     bottom: -7px;
+                }
+            }
+            &--dots-dashed {
+                &::before, &::after {
+                    border: 1px dashed var(--stroke-dash);
                 }
             }
         }
@@ -189,9 +239,15 @@
             font-size: 14px;
             line-height: normal;
             text-decoration: underline;
+            color: var(--text-grey_bckgr);
             &:hover {
                 text-decoration: none;
             }
+        }
+        &-txt {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 115%;
         }
     }
     &__colors {
@@ -199,30 +255,25 @@
     }
     &-colors {
         &__slide {
-            width: 121px;
+            width: 95px;
         }
         &__item {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            height: 150px;
-            padding-bottom: 24px;
-            img {
-                height: 108px;
-            }
-            input {
+            height: 118px;
+            padding-bottom: 20px;
+            &::before {
                 display: none;
-                &:checked + span {
-                    &::before {
-                        border-color: var(--black);
-                    }
+                border-color: var(--black);
+            }
+            &.selected {
+                &::before {
+                    display: block;
                 }
             }
-            &-img {
-                display: block;
-                &::before {
-                    border-color: transparent;
-                }
+            img {
+                height: 84px;
             }
         }
     }
@@ -252,7 +303,7 @@
             }
         }
         &__list-wrapper {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         &__list {
             margin-left: -4px;
@@ -266,7 +317,6 @@
                 &--width-auto {
                     width: auto;
                     flex-shrink: 0;
-                    
                 }
             }
         }
@@ -283,7 +333,12 @@
             background: var(--element-second);
             height: 44px;
             font-size: 16px;
+            line-height: 20px;
             line-height: normal;
+            &--rounded {
+                border-radius: 32px;
+                padding: 12px 24px;
+            }
             &.selected {
                 &::before {
                     border-color: var(--black);
@@ -426,12 +481,25 @@
     &-info {
         &__group {
             border-top: 1px solid var(--stroke-default);
+            &--no-border {
+                border: none;
+                margin-bottom: 24px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
         &__item {
             &-btn {
                 justify-content: space-between;
                 align-items: center;
                 padding: 20px 0;
+                &--py-0 {
+                    padding: 0;
+                }
+                &__txt {
+                    line-height: 115%;
+                }
                 &__icon {
                     width: 16px;
                     height: 16px;
@@ -471,7 +539,13 @@
         &__txt {
             padding-top: 8px;
             padding-bottom: 28px;
-            max-width: 525px;
+            max-width: 542px;
+            font-size: 15px;
+            line-height: 151%;
+        }
+        &__content {
+            padding-top: 16px;
+            padding-bottom: 0;
         }
     }
     &-more {
@@ -574,6 +648,47 @@
             padding-bottom: 80px;
             img {
                 height: 334px;
+                max-height: 100%;
+            }
+            &--vertical {
+                height: calc(468px + var(--height-scroll));
+                height: 100%;
+                padding-bottom: 46px;
+            }
+            &--mood {
+                height: calc(468px + var(--height-scroll));
+                height: 100%;
+                background: #F3F3F3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                video {
+                    height: 100%;
+                    width: auto;
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+                picture {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                img {
+                    height: 100%;
+                    width: auto;
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+                // &-width {
+                //     img {
+                //         width: 100%;
+                //         height: auto;
+                //         max-height: 100%;
+                //     }
+                // }
             }
         }
         &__pagination {
@@ -621,9 +736,16 @@
     .product {
         --info-width: 455px;
         --subtitle-margin: 16px;
+        &__sticker {
+            top: 16px;
+            right: 16px;
+        }
         &-sticker {
             top: 12px;
             right: 137px;
+            &--sticky {
+                top: calc(16px + var(--height-scroll));
+            }
         }
         &-favoriteBtn {
             .card-favorite__animate {
@@ -649,10 +771,10 @@
         }
         &-colors {
             &__item {
-                height: 110px;
-                padding-bottom: 20px;
+                height: 80px;
+                padding-bottom: 14px;
                 img {
-                    height: 78px;
+                    height: 56px;
                 }
             }
         }
@@ -678,9 +800,12 @@
         &-back {
             top: 20px;
             left: 20px;
+            &--sticky {
+                top: calc(30px + var(--height-scroll));
+            }
         }
         &-badges {
-            top: 118px;
+            top: 208px;
             &__item {
                 width: 24px; 
             }
@@ -697,7 +822,8 @@
             gap: 6px;
         }
         &-installments {
-            padding: 10px 12px;
+            padding: 10px 16px;
+            min-height: 40px;
             &__icon {
                 width: 28px;
             }
@@ -752,7 +878,7 @@
         }
         &-colors {
             &__slide {
-                width: 89px;
+                width: 64px;
             }
         }
         &__size {
@@ -773,7 +899,7 @@
                 }
             }
             &__list-wrapper {
-                margin-bottom: 16px;
+                margin-bottom: 12px;
             }
             &__list {
                 margin-left: -3px;
@@ -784,7 +910,11 @@
                 }
             }
             &__btn {
+                font-size: 14px;
                 height: 40px;
+                &--rounded {
+                    padding: 12px 20px;
+                }
             }
             &_warning {
                 &-txt {
@@ -826,9 +956,13 @@
             }
         }
         &-info {
+            
             &__item {
                 &-btn {
                     padding: 16px 0;
+                    &--py-0 {
+                        padding: 0;
+                    }
                     &__icon {
                         width: 14px;
                         height: 14px;
@@ -846,6 +980,11 @@
             &__txt {
                 padding-top: 4px;
                 padding-bottom: 24px;
+                max-width: 422px;
+            }
+            &__content {
+                padding-top: 16px;
+                padding-bottom: 0;
             }
         }
         &-more {
@@ -886,6 +1025,15 @@
 
 @media (max-width: 932px) {
     .product {
+        &__back {
+            display: none;
+        }
+        &__sticker {
+            top: initial;
+            right: initial;
+            left: var(--container-padding);
+            bottom: 18px;
+        }
         &-page {
             position: relative;
             &::before {
@@ -906,15 +1054,15 @@
             left: 0px;
             z-index: 9;
         }
-        &-colors {
-            &__item {
-                height: 106px;
-                padding-bottom: 20px;
-                img {
-                    height: 76px;
-                }
-            }
-        }
+        // &-colors {
+        //     &__item {
+        //         height: 106px;
+        //         padding-bottom: 20px;
+        //         img {
+        //             height: 76px;
+        //         }
+        //     }
+        // }
         &-page {
             padding-top: 0;
         }
@@ -949,6 +1097,9 @@
             bottom: initial;
             z-index: 9;
             align-items: flex-start;
+            &--m-hidden {
+                display: none;
+            }
         }
         &-galleryMobile {
             display: block;
@@ -995,7 +1146,6 @@
             
         }
         &__subtitle {
-            margin-bottom: 12px;
             &-link {
                 font-size: 12px;
             }
@@ -1009,9 +1159,9 @@
             padding-left: var(--container-padding);
             padding-right: var(--container-padding);
             overflow: hidden;
-            &__slide {
-                width: 85.5px;
-            }
+            // &__slide {
+            //     width: 85.5px;
+            // }
         }
         &__size {
             margin-bottom: 12px;
@@ -1043,12 +1193,19 @@
                 overflow-x: auto;
                 margin-bottom: 0;
                 margin-right: -14px;
-    padding-right: 14px;
+                padding-right: 14px;
                 &-item {
                     width: 71px;
                     flex-shrink: 0;
                     margin-bottom: 0;
+                    &--width-auto {
+                        width: auto;
+                    }
                 }
+            }
+            &__btn {
+                font-size: 15px;
+
             }
         }
         &-notification {
@@ -1060,7 +1217,7 @@
             }
         }
         &-more {
-            margin: 80px 0;
+            margin: 64px 0;
             &--mood {
                 margin-top: 44px;
             }
@@ -1081,6 +1238,9 @@
         }
         &-slider {
             &__slide {
+                width: 173px;
+            }
+            &__slideV2 {
                 width: 173px;
             }
         }

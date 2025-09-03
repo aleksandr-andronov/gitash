@@ -1644,7 +1644,7 @@ catalogFilter();
 
 
 function productCardSlider() {
-    const items = document.querySelectorAll('.catalog__content .card');
+    const items = document.querySelectorAll('.card');
     if (!items.length) return;
 
     items.forEach(item => {
@@ -2125,7 +2125,7 @@ const moodSlider = new Swiper('.product-mood', {
 
 
 // слайдер товаров 
-function productliders() {
+function productSliders() {
     const items = document.querySelectorAll('.product-slider-wrapper')
     if (!items.length) return
 
@@ -2134,13 +2134,25 @@ function productliders() {
         const prev = item.querySelector('.product-prev')
         const next = item.querySelector('.product-next')
 
+        // проверяем обычный или "особенный" слайдер
+        const isSpecial = item.classList.contains('product-slider-4-items')
+
         const init = new Swiper(slider, {
             slidesPerView: 'auto',
             spaceBetween: 2,
             speed: 800,
             observer: true,
             observeParents: true,
-            breakpoints: {
+            breakpoints: isSpecial ? {
+                933: {
+                    slidesPerView: 4,
+                    spaceBetween: 6,
+                },
+                1441: {
+                    slidesPerView: 4,
+                    spaceBetween: 8,
+                }
+            } : {
                 933: {
                     spaceBetween: 6,
                 },
@@ -2156,7 +2168,7 @@ function productliders() {
     })
 }
 
-productliders()
+productSliders()
 
 
 
@@ -2284,7 +2296,47 @@ const productPhotos = new Swiper('.product-galleryMobile__slider', {
         el: '.product-galleryMobile__pagination',
         clickable: true
     }
-})
+});
+
+const productSwipe = new Swiper('.product-swipe__inner', {
+  on: {
+    slideChange: function () {
+      document
+        .querySelectorAll('.product-swipe__type-btn')
+        .forEach((btn) => btn.classList.remove('selected'));
+      document
+        .querySelectorAll('.product-swipe__type-btn')[this.activeIndex]
+        .classList.add('selected');
+    },
+  },
+});
+
+// Клики по кнопкам
+document.querySelectorAll('.product-swipe__type-btn').forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    productSwipe.slideTo(index);
+  });
+});
+
+
+// слайдер фото товара вертикальный
+const productPhotosVertical = new Swiper('.product-galleryMobile__sliderVertical', {
+    speed: 800,
+    direction: 'vertical',
+    pagination: {
+        el: '.photo-pagination',
+        clickable: true
+    }
+});
+
+const productMoodVertical = new Swiper('.product-galleryMobile__moodVertical', {
+    speed: 800,
+    direction: 'vertical',
+    pagination: {
+        el: '.mood-pagination',
+        clickable: true
+    }
+});
 
 
 // слайдер ashgirls

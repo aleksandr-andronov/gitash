@@ -12,15 +12,19 @@
         }
         &__new {
             margin-right: 8px;
+            font-size: 32px;
         }
         &__old {
             gap: 6px;
+            
+            fill: var(--text-grey_bckgr);
             &-value {
                 white-space: nowrap;
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 1;
                 text-decoration: line-through;
+                color: var(--text-grey_bckgr);
             }
             &-icon {
                 width: 16px;
@@ -65,8 +69,6 @@
         &__dropdown {
             width: 452px;
             position: absolute;
-            // left: 0;
-            // transform: translateX(-48%);
             right: -30px;
             z-index: 9;
             bottom: 36px;
@@ -121,6 +123,10 @@
                 display: none;
             }
         }
+
+        &__installments {
+            margin-top: 20px;
+        }
     }
 }
 
@@ -136,6 +142,10 @@
             &__old {
                 &-value {
                     font-size: 12px;
+                }
+                &-icon {
+                    width: 14px;
+                    height: 14px;
                 }
             }
             &__sale {
@@ -170,6 +180,9 @@
                     height: 21px;
                     bottom: -11px;
                 }
+            }
+            &__installments {
+                margin-top: 16px;
             }
         }
     }

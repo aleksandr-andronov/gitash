@@ -1,0 +1,120 @@
+.product-gallery {
+    &__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+    }
+    &__img {
+        &--v2 {
+            height: auto;
+            height: 100%;
+            padding: 114px 92px 78px;
+            picture {
+                width: 100%;
+            }
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    &Mobile {
+        position: relative;
+        &--mx-0 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        &__sliderVertical {
+            height: calc(468px + var(--height-scroll));
+            height: 90vh;
+        }
+        &__moodVertical {
+            height: calc(468px + var(--height-scroll));
+            height: 90vh;
+        }
+        &__paginationVeritical {
+            position: absolute;
+            right: 14px;
+            top: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: fit-content;
+            padding: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            z-index: 9;
+            &.swiper-pagination-vertical {
+                transform: initial;
+                top: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .product-gallery {
+        &__img {
+            &--v2 {
+                padding: 86px 68px 56px;
+            }
+        }
+    }
+}
+
+@media (max-width: 932px) {
+    .product-gallery {
+
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        &Mobile {
+            &__sliderVertical {
+                height: calc(468px + var(--height-scroll));
+            }
+            &__moodVertical {
+                height: calc(468px + var(--height-scroll));
+            }
+            &__img {
+                height: 465px;
+                img {
+                    height: 334px;
+                }
+                &--vertical {
+                    height: calc(468px + var(--height-scroll));
+                    padding-bottom: 46px;
+                }
+                &--mood {
+                    height: calc(468px + var(--height-scroll));
+                    background: #F3F3F3;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    picture {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    img {
+                        height: 100%;
+                        width: auto;
+                        max-width: 100%;
+                        object-fit: cover;
+                    }
+                    &-width {
+                        img {
+                            // width: 100%;
+                            // height: auto;
+                            // max-height: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

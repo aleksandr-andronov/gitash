@@ -30,7 +30,7 @@ mixin pngG(name, w, h, folder)
 	if(folder)
 		picture
 			source(srcset=`static/images/general/${folder}/${name}.webp`, type='image/webp')
-			img(src=`static/images/general/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
+			img(src=`static/images/general/${folder}/${name}.png`, width=`${w}`, height=`${h}`, alt='img')
 	else 
 		picture
 			source(srcset=`static/images/general/${name}.webp`, type='image/webp')

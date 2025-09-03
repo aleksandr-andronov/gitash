@@ -3,6 +3,16 @@ extends template/account-clear
 block variables
 	- var title = 'аккаунт'
 	- var receipt = true
+	- var birthday = true
 
 block content
 	include pages/account/account-main
+
+block right
+	include pages/account/birthday
+
+block head 
+	include pages/account/main-head
+
+block bottom 
+	include pages/account/main-foot

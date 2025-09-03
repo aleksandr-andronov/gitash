@@ -51,8 +51,6 @@
         height: 100%;
         transition: opacity .2s ease-in-out;
         img {
-            // width: 100%;
-            // height: 100%;
             object-fit: cover;
             mix-blend-mode: darken;
         }
@@ -65,7 +63,13 @@
                 height: 404px;
                 width: auto;
             }
-            // margin-top: -52px;
+            &--sm {
+                padding-top: 82px;
+                height: 512px;
+                img {
+                    height: 280px;
+                }
+            }
         }
         &__pagination {
             position: absolute;
@@ -104,6 +108,9 @@
         justify-content: center;
         &__item {
             margin-right: 20px;
+            &--mr-2 {
+                margin-right: 14px;
+            }
             &:last-child {
                 margin-right: 0;
             }
@@ -156,6 +163,9 @@
         &__name {
             margin-bottom: 6px;
             line-height: 140%;
+        }
+        &__sizes {
+            margin-top: 24px;
         }
     }
     &-price {
@@ -287,11 +297,17 @@
         }
         &-img {
             &__slider-img {
-                // margin-top: -32px;
                 padding-top: 46px;
                 height: 441px;
                 img {
                     height: 304px;
+                }
+                &--sm {
+                    padding-top: 54px;
+                    height: 430px;
+                    img {
+                        height: 252px;
+                    }
                 }
             }
         }
@@ -300,8 +316,9 @@
             &__name {
                 margin-bottom: 4px;
                 line-height: normal;
-
-                
+            }
+            &__sizes {
+                margin-top: 20px;
             }
         }
         &-price {
@@ -337,6 +354,9 @@
         &-sizes {
             &__item {
                 margin-right: 16px;
+                &--mr-2 {
+                    margin-right: 11px;
+                }
             }
         }
         &-colors {
@@ -361,6 +381,9 @@
 @media (max-width: 932px) {
     .card {
         overflow: hidden;
+
+        
+
         .card-info, .card-stickers, .card-favorite {
             will-change: transform;
             transform: translateZ(0);
@@ -382,9 +405,17 @@
                 &-img {
                     height: 254px;
                     padding-top: 22px;
+                    &--sm {
+                        padding-top: 32px;
+                        height: 464px;
+                        img {
+                            height: 280px;
+                        }
+                    }
                 }
             }
         }
+        
         &-img-mobile {
             // display: block;
             height: 254px;
@@ -408,6 +439,10 @@
                 line-height: 16px;
                 letter-spacing: -0.02em;
             }
+            &__sizes {
+                margin-top: 20px;
+            }
+            
         }
         &-price {
             letter-spacing: -0.015em;
@@ -429,6 +464,55 @@
             left: 10px;
             &__item {
                 font-size: 11px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        &__mobile-grid {
+            display: flex;
+            .card-img {
+                height: initial;
+                width: 50%;
+                overflow: hidden;
+            }
+            .card-info {
+                position: initial;
+                padding: 18px;
+                width: 50%;
+                &__sizes {
+                    margin-top: 38px;
+                }
+                &__name {
+                    margin-top: auto;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+            .card-sizes {
+                &__item {
+                    &--mr-2 {
+                        margin-right: 8px;
+                        letter-spacing: -0.015em;
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+        &-img {
+            &__slider {
+                &-img {
+                    &--m-sm {
+                        height: 174px;
+                        padding: 0;
+                        img {
+                            height: 100%;
+                        }
+                    }
+                }
             }
         }
     }

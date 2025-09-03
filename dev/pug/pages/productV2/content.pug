@@ -1,0 +1,265 @@
+.product
+    .container 
+        .breadcrumbs
+            ul.breadcrumbs-list.flex 
+                li.breadcrumbs-list__item 
+                    a.breadcrumbs-list__link(href="#") главная
+                li.breadcrumbs-list__item 
+                    a.breadcrumbs-list__link(href="#") женщинам
+                li.breadcrumbs-list__item 
+                    a.breadcrumbs-list__link(href="#") Новая коллекция ASH SS’23
+                li.breadcrumbs-list__item кроссовки женские addict серые
+    .product__grid.d-grid
+        .product__grid-left
+            .product__back.absolute
+                a.product-back.btn-circle.product-back--sticky(href="#")
+                    +icon('a-left-sm')
+            .product__sticker
+                .product-sticker.product-sticker--sticky
+                    .sticker.ttl.sticker--sale -30%
+            .product-badges.d-flex.product-badges--m-hidden
+                .product-badges__item
+                    img(src="static/images/content/tag-1.svg", alt="img")
+                .product-badges__item
+                    img(src="static/images/content/tag-2.svg", alt="img")
+            .product-gallery 
+                .product-gallery__grid.d-grid
+                    - for (let i = 0; i < 7; i++)
+                        .product-gallery__grid-item
+                            .product-gallery__img.grey-img.product-gallery__img--v2.js-gallery-open(data-img=`${i+1}`) 
+                                +jpgC(`product-${i+1}`, '447', '596')
+            if (mood == 'mood')
+                include components/mobileGallery
+            else 
+                include components/mobileGallery-nomood
+
+        .product__grid-right
+            .product__rightInfo.d-grid
+                .product__rightInfo-group
+                    .product__titleV2.ttl Кроссовки женские Addict
+                .product__rightInfo-group
+                    .product-price
+                        .product-price__inner.d-flex.items-center 
+                            .product-price__left 
+                                .product-price__new.h5.ttl 17 140 ₽
+                            .product-price__right
+                                .product-price__old.d-flex.items-center 
+                                    .product-price__old-value 24 490 ₽
+                                    .product-price__old-icon
+                                        .product-tooltip.product-tooltip--right
+                                            .product-tooltip__btn.icon-outline
+                                                +icon('i')
+                                            .product-tooltip__dropdown 
+                                                .product-tooltip__backdrop.product-tooltip__close
+                                                .product-tooltip__content
+                                                    button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+                                                        include ../../icons/x-11
+                                                    .product-tooltip__title.mobile.medium Детализация скидки
+                                                    .product-tooltip__content-inner.d-flex.flex-col
+                                                        .product-tooltip__content-item
+                                                            .product-tooltip__item.d-flex
+                                                                .product-tooltip__item-name Скидка на товары
+                                                                .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                        .product-tooltip__content-item
+                                                            .product-tooltip__item.d-flex
+                                                                .product-tooltip__item-name Последняя пара
+                                                                .product-tooltip__item-value.medium — 3 670 ₽ (20%)
+                                                .product-tooltip__arrow
+                                                    +svg('dropdown-arrow', '32', '16')
+                        .product-price__points
+                            .product-points
+                                .product-points__inner.d-flex.items-center
+                                    .product-points__group.d-flex.items-center 
+                                        .product-points__icon.centered 
+                                            +svg('ya-plus', '14', '14')
+                                        .product-points__value 3500
+                                    .product-points__txt.technic баллов Плюса
+                        .product-price__installments
+                            .product__installments.d-flex.flex-col
+                                .product-installments.outline-border.product-installments--lilac
+                                    .product-installments__txt.txt-sm -10% дополнительно при 
+                                        a.underline(href="#loginModal" data-bs-toggle="modal") авторизации
+                                .product-installments.outline-border.product-installments--dashed.product-installments--transparent
+                                    .product-installments__left
+                                        .product-installments__group.d-flex.items-center
+                                            .product-installments__txt.txt-sm -30% по промокоду SP30
+                                            .product-installments__hint 
+                                                .product-tooltip
+                                                    .product-tooltip__btn.icon-outline
+                                                        +icon('i')
+                                                    .product-tooltip__dropdown 
+                                                        .product-tooltip__backdrop.product-tooltip__close 
+                                                        .product-tooltip__content 
+                                                            button.product-tooltip__close-btn.btn-circle.product-tooltip__close(type="button" aria-label="Закрыть")
+                                                                    include ../../icons/x-11
+                                                            .product-tooltip__content-inner.d-flex.flex-col
+                                                                .product-tooltip__content-item
+                                                                    .txt-sm Товар из раздела <a class="underline" href="#">SPECIAL OFFER</a>. Для получения скидки 30% примените промокод в корзине.
+                                                                .product-tooltip__content-item
+                                                                    .tech-14 Скидка не суммируется с другими акциями
+                                                        .product-tooltip__arrow
+                                                            +svg('dropdown-arrow', '32', '16')
+                                    .product-installments__right.product-installments__right--dots.product-installments__right--dots-dashed
+                                        .product-installments__promocode.ttl.uppercase.d-flex.align-center 
+                                            .product-installments__promocode-value sp30
+                                            button.product-installments__promocode-icon.icon.copy_code
+                                                +icon('copy')
+                                                +icon('check-12')
+                                .product-installments.outline-border.product-installments--border.product-installments--transparent 
+                                    .product-installments__left
+                                        .product-installments__txt.txt-sm Частями от 4 522 ₽
+                                    .product-installments__right
+                                        .product-installments__icon 
+                                            +svg('product-split-icon', '37', '14')
+                .product__rightInfo-group
+                    .product__subtitle
+                        .product__subtitle-txt.product-size__title(data-default="размер" data-error="выберите размер") Размер
+                        a.product__subtitle-link(href="#determineSize" data-bs-toggle="offcanvas") Определить размер
+                    .product-size
+                        .product-size__list-wrapper 
+                            .product-size__list.flex 
+                                .product-size__list-item.product-size__list-item--width-auto
+                                    a.product-size__btn.outline-border.centered.product-size__btn--rounded(href="#" data-sizeWarning="true" data-sizeQtyText='последний размер -10%') 35 
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered.product-size__btn--rounded(href="#" data-sizeWarning="true" data-sizeQtyText='осталось мало') 36
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.disabled.outline-border.selected.centered.product-size__btn--rounded(href="#") 37
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered.product-size__btn--rounded(href="#") 38
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.disabled.outline-border.centered.product-size__btn--rounded(href="#") 39
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered.product-size__btn--rounded(href="#") 40
+                                .product-size__list-item.product-size__list-item--width-auto 
+                                    a.product-size__btn.outline-border.centered.product-size__btn--rounded(href="#") 41
+                            .product-size__warning.collapse#sizeWarning
+                                .product-size__warning-txt.tech-14 осталось мало
+                        .product-size__actions-wrapper
+                            .product-size__actions.d-flex
+                                .product-size__actions-left 
+                                    .product-size__btn-wrapper.product-size__btn-default
+                                        a.product-cartBtn.product-cartBtnChange.btn(href="#" data-default="добавить в корзину" data-finish="добавлено!" data-change="выберите размер" data-last="перейти в корзину") 
+                                            span.product-cartBtn__output добавить в корзину
+                                            span.product-cartBtn__animate 
+                                                span 
+                                                span 
+                                                span 
+                                                span 
+                                    .product-size__btn-wrapper.product-size__btn-change.hidden  
+                                        if (signed)
+                                            a.product-cartBtn.btn.btn-outline(href="#subscribeSize" data-bs-toggle="offcanvas")
+                                                span.product-cartBtn__icon.icon 
+                                                    +svg('bell-active', '20', '20') 
+                                                span.product-cartBtn__txt вы подписаны
+                                        else
+                                            a.product-cartBtn.btn.btn-outline(href="#subscribeSize" data-bs-toggle="offcanvas")
+                                                span.product-cartBtn__icon.icon 
+                                                    +svg('bell', '20', '20') 
+                                                span.product-cartBtn__txt сообщить о поступлении 
+                                .product-size__actions-right
+                                    a.product-favoriteBtn.btn.btn-outline.fav-btn(href="#") 
+                                        span.card-favorite__animate
+                                        span.product-favoriteBtn__icon.icon 
+                                            +icon('heart')
+                                            +icon('heart-fill')
+                    .product-delivery.outline-border.product-delivery--margin-top
+                        .product-delivery__city
+                            a.txt-sm.underline(href="#") г. Москва
+                        .product-delivery__list.d-grid 
+                            .product-delivery__list-item
+                                .product-delivery__item.d-flex.align-center.txt-sm 
+                                    .product-delivery__item-icon.icon-outline 
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 11.7063V11.7063C1 10.0488 2.34371 8.70508 4.00125 8.70508H5.72397" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M10.0093 8.37109V10.3719" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12.3444 10.8898C12.3444 10.6032 12.1121 10.3709 11.8255 10.3709H8.19466C7.90809 10.3709 7.67578 10.6032 7.67578 10.8898" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.34273 13.0397H11.6774C12.0458 13.0397 12.3444 12.7411 12.3444 12.3728V9.9951C12.3443 9.72484 12.2897 9.45738 12.1837 9.20878L11.9982 8.77593C11.8934 8.5305 11.6522 8.37124 11.3853 8.37109H8.63485C8.3677 8.37097 8.12625 8.53027 8.02126 8.77593L7.83651 9.20811C7.7305 9.45671 7.67583 9.72417 7.67578 9.99444V12.3728C7.67578 12.7411 7.97438 13.0397 8.34273 13.0397Z" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M8.33877 1.86355C9.14951 2.67419 9.39209 3.89339 8.95338 4.95263C8.51468 6.01186 7.48109 6.70251 6.3346 6.70251C5.18811 6.70251 4.15452 6.01186 3.71581 4.95263C3.2771 3.89339 3.51968 2.67419 4.33043 1.86355C4.86191 1.3319 5.58285 1.0332 6.3346 1.0332C7.08634 1.0332 7.80729 1.3319 8.33877 1.86355" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    .product-delivery__item-txt Доставка курьером 
+                                        span 30 июля - 499 р, 100% предоплата
+                            .product-delivery__list-item
+                                .product-delivery__item.d-flex.align-center.txt-sm 
+                                    .product-delivery__item-icon.icon-outline 
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.02876 5.71094V7.86599" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9.35341 9.70408V8.38349C9.35341 8.09619 9.1205 7.86328 8.8332 7.86328H5.19306C4.90576 7.86328 4.67285 8.09619 4.67285 8.38349V9.70408" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.3415 10.3915H8.68476C9.05404 10.3915 9.35341 10.0921 9.35341 9.72284V7.3391C9.35336 7.06815 9.29855 6.8 9.19226 6.55076L9.00638 6.11681C8.90122 5.87075 8.65948 5.71108 8.39189 5.71094H5.63437C5.36654 5.71081 5.12447 5.87052 5.01921 6.11681L4.834 6.55009C4.72771 6.79933 4.6729 7.06748 4.67285 7.33843V9.72284C4.67285 10.0921 4.97222 10.3915 5.3415 10.3915Z" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 11.0624V11.0624C1 12.1702 1.8981 13.0683 3.00595 13.0683H11.0298C12.1376 13.0683 13.0357 12.1702 13.0357 11.0624V11.0624V6.15847C13.0353 5.53995 12.7496 4.95621 12.2614 4.57644L8.24952 1.45585C7.5251 0.892322 6.51062 0.892322 5.7862 1.45585L1.7743 4.57644C1.2861 4.95621 1.0004 5.53995 1 6.15847V11.0624Z" stroke="#1B1B1D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    .product-delivery__item-txt Доставка в пункт выдачи 
+                                        span 3 августа - бесплатно, 100% предоплата
+                            .product-delivery__list-item
+                                .product-delivery__item.d-flex.align-center.txt-sm 
+                                    .product-delivery__item-icon.icon-outline 
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.46549 6.38281V12.2161" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M11.5368 6.38281V12.2161" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M8.29351 12.2205V9.6282C8.29351 8.91245 7.71309 8.33203 6.99734 8.33203C6.28159 8.33203 5.70117 8.91245 5.70117 9.6282V12.2205" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M1.16211 12.2155H12.8288" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.50412 6.38482C1.51362 6.37782 0.867868 5.39724 1.2972 4.55199L2.29762 2.58207C2.5257 2.13291 3.0052 1.84766 3.53137 1.84766H10.459C10.9852 1.84766 11.4647 2.13291 11.6928 2.58207L12.6938 4.55199C13.1231 5.39724 12.4774 6.37782 11.4869 6.38482C10.6603 6.38482 9.99003 5.82016 9.99003 5.12307V5.09507C9.99003 5.80732 9.31978 6.38482 8.4932 6.38482C7.66662 6.38482 6.99637 5.80732 6.99637 5.09507C6.99637 5.80732 6.32612 6.38482 5.49953 6.38482C4.67295 6.38482 4.0027 5.80732 4.0027 5.09507V5.12307C4.00095 5.82016 3.3307 6.38482 2.50412 6.38482Z" stroke="#1B1B1D" stroke-width="1.1" stroke-linecap="square" stroke-linejoin="round"/>
+                                        </svg>
+                                    .product-delivery__item-txt Самовывоз из <a href="#" class="underline">16 магазинов</a> 
+                                        span сегодня - бесплатно
+                .product__rightInfo-group
+                    .product__subtitle
+                        .product__subtitle-txt В других цветах
+                    .product-colors.slider 
+                        .swiper-wrapper 
+                            .product-colors__slide.swiper-slide
+                                a.product-colors__item.grey-img.outline-border.selected(href="#") 
+                                    +jpgC('color', '121', '151')
+                            - for (let i = 0; i < 4; i++)
+                                .product-colors__slide.swiper-slide
+                                    a.product-colors__item.grey-img.outline-border(href="#") 
+                                        +jpgC('color', '121', '151')
+                .product__rightInfo-group
+                    .product-info
+                        .product-info__item
+                            a.product-info__item-btn.d-flex.copy_code.product-info__item-btn--py-0(href="javascript:void(0);")
+                                span.product-info__item-btn__txt.txt-sm.s-bold Артикул 440515
+                                span.product-info__item-btn__icon.icon 
+                                    +icon('copy')
+                                    +icon('check-12')
+                .product__rightInfo-group
+                    .product-info
+                        .product-info__group.product-info__group--no-border 
+                            .product-info__item
+                                a.product-info__item-btn.d-flex.product-info__item-btn--py-0(href="#hiddenInfo1" data-bs-toggle="collapse")
+                                    span.product-info__item-btn__txt.txt-sm.s-bold Описание
+                                    span.product-info__item-btn__icon.icon 
+                                        +icon('plus-circle')
+                                        +icon('minus-circle')
+                                .product-info__hidden.collapse#hiddenInfo1 
+                                    .product-info__txt.txt-sm.product-info__content Босоножки JESS BIS станут изящным дополнением вечерних образов благодаря фактурным плетеным ремешкам, деликатным золотым акцентам и утонченному каблуку-запятой. Проводить важные вечера и ночи в этой паре будет не только красиво, но и комфортно: кожаная стелька с мягким наполнителем и оптимальная высота каблука позаботятся о том, чтобы ничто не смогло помешать вашим планам.
+                        .product-info__group.product-info__group--no-border 
+                            .product-info__item
+                                a.product-info__item-btn.d-flex.product-info__item-btn--py-0(href="#hiddenInfo2" data-bs-toggle="collapse")
+                                    span.product-info__item-btn__txt.txt-sm.s-bold Детали
+                                    span.product-info__item-btn__icon.icon 
+                                        +icon('plus-circle')
+                                        +icon('minus-circle')
+                                .product-info__hidden.collapse#hiddenInfo2 
+                                    .product-info__item-list.txt-sm.product-info__content
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Цвет:
+                                            .product-info__item-list__value коричневый
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Сезон:
+                                            .product-info__item-list__value демисезон
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Материал верха:
+                                            .product-info__item-list__value велюр, кожа натуральная
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Материал подкладки:
+                                            .product-info__item-list__value кожа натуральная
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Материал подошвы:
+                                            .product-info__item-list__value кожа натуральная
+                                        .product-info__item-list__item.d-flex 
+                                            .product-info__item-list__name Высота каблука:
+                                            .product-info__item-list__value 4.5 см
+        if (mood == 'mood')
+            include mood-more
+        //- else 
+        //-     include mood-more

@@ -477,7 +477,7 @@
 }
 
 @media (max-width: 932px) {
-    body:has(.certificate) {
+    body:has(.certificate-form) {
         padding-top: 0;
         .header {
             display: none;

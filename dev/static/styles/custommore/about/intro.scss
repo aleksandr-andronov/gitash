@@ -2,12 +2,16 @@
     overflow: hidden;
     background: url(../../static/images/general/about/intro-bg.webp) top 0rem center no-repeat;
     background-size: rem(1920) rem(1072);
+    background-size: cover;
     position: relative;
     color: var(--light);
+   
     &-content {
         height: rem(1072);
         padding-top: rem(200);
         padding-bottom: rem(40);
+        // height: 100vh;
+        // min-height: 100vh;
         &__title {
             text-align: center;
             text-transform: uppercase;
@@ -20,6 +24,17 @@
             position: absolute;
             top: rem(320);
             left: rem(244);
+            transform: translateY(4rem);
+            transition: transform .4s linear;
+            will-change: transform;
+            &-desktop {
+                
+                
+                img {
+                    will-change: transform;
+                    transform: translateY(50%); 
+                }
+            }
             &-mobile {
                 display: none;
             }
@@ -39,6 +54,7 @@
             text-transform: uppercase;
             position: relative;
             z-index: 3;
+            flex-grow: 1;
             &-item {
                 width: 50%;
                 &:nth-child(2) {
@@ -47,6 +63,7 @@
                 &:nth-child(3) {
                     text-align: center;
                     margin-top: rem(388);
+                    margin-top: auto;
                 }
             }
         }
@@ -133,10 +150,12 @@
 @media (max-width: 480px) {
     .aboutIntro {
         background: url(../../static/images/general/about/intro-bg-m.webp) top 0rem center no-repeat;
-        background-size: rem(375) rem(695);
+        background-size: cover;
+        overflow: hidden;
         &-content {
             padding-top: rem(180);
             height: rem(695);
+            // min-height: 100vh;
             &__title {
                 font-size: rem(32);
                 margin-bottom: rem(100);
@@ -173,7 +192,7 @@
             &__img {
                 left: 0;
                 right: 0;
-                top: rem(224);
+                transform: translateY(4rem);
                 &-desktop {
                     display: none;
                 }
@@ -181,9 +200,13 @@
                     display: block;
                     display: flex;
                     justify-content: center;
+                    // transform: translateY(4rem);
+                    img {
+                        transform: translateY(25%);
+                    }
                 }
                 img {
-                    width: rem(524);
+                    width: rem(450);
                     max-width: initial;
                 }
             }

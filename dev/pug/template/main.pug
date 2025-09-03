@@ -2,7 +2,7 @@ include ../utils/mixins
 block variables
 
 doctype html
-html(lang="ru-RU")
+html(lang="ru-RU" class=htmlClass ? `${htmlClass}` : '')
 	head
 		meta(charset="utf-8") 
 		title #{title}
@@ -10,7 +10,7 @@ html(lang="ru-RU")
 		link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/simplebar.min.css")
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-	body
+	body(class=bodyClass ? `${bodyClass} custom-header` : '')
 		.wrapper
 			include ../modules/header/header
 			block content

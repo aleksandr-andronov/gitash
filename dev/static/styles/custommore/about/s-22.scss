@@ -122,6 +122,8 @@
 
 @media (max-width: 480px) {
     .aboutFourteen {
+        padding-bottom: rem(24);
+        overflow: initial;
         &-content {
             &__tImg {
                 &-1 {

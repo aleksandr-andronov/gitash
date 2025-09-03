@@ -36,6 +36,13 @@ body {
     }
 }
 
+.video {
+    video {
+        display: block;
+        max-width: 100%;
+    }
+}
+
 .slider {
     overflow: hidden;
     &-pagination {
@@ -50,6 +57,26 @@ body {
             &-active {
                 width: 36px;
                 background: var(--white);
+            }
+        }
+    }
+    &-paginationVerical {
+        --swiper-pagination-bullet-inactive-opacity: 1;
+        --swiper-pagination-bullet-size: 6px;
+        --swiper-pagination-bullet-inactive-color: #ECECF0;
+        --swiper-pagination-bullet-vertical-gap: 8px;
+        --swiper-pagination-color: #E2E1E7;
+        .swiper-pagination-bullet {
+            transition: .2s ease-in-out;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &-active {
+                height: 28px;
+                border-radius: 28px;
             }
         }
     }

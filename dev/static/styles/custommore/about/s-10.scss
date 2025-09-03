@@ -21,9 +21,13 @@
                 }
             }
         }
+        &__txt {
+            margin-bottom: rem(64);
+        }
         &__title {
-            margin-top: rem(54);
-            margin-bottom: rem(192);
+            // margin-top: rem(54);
+            // padding-top: rem(64);
+            margin-bottom: rem(64);
         }
         &__txt-bottom {
             margin-top: rem(90);
@@ -40,8 +44,6 @@
             &-item {
                 width: rem(374);
                 position: absolute;
-                transform: translateY(100%);
-                opacity: 0;
                 img {
                     width: 100%;
                 }
@@ -76,8 +78,8 @@
         &__decor {
             width: rem(436);
             position: absolute;
-            right: rem(90);
-            top: rem(-260);
+            right: rem(190);
+            top: rem(90);
             svg {
                 width: 100%;
                 height: auto;
@@ -106,7 +108,7 @@
                 }
             }
             &__title {
-                margin-top: rem(44);
+                // margin-top: rem(44);
                 margin-bottom: rem(86);
             }
             &__imgBottom {
@@ -131,7 +133,7 @@
             &__decor {
                 width: rem(340);
                 right: rem(264);
-                bottom: rem(406);
+                bottom: rem(214);
             }
         }
     }
@@ -147,7 +149,7 @@
             }
             &__title {
                 margin-top: rem(24);
-                margin-bottom: rem(290);
+                margin-bottom: rem(48);
             }
             &__imgBottom {
                 height: rem(380);

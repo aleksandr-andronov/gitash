@@ -1,0 +1,12 @@
+.product-swipe
+    .product-swipe__inner.slider 
+        .swiper-wrapper 
+            .swiper-slide
+                .product-galleryMobile.product-galleryMobile--mx-0
+                    .product-galleryMobile__sliderVertical.slider
+                        .swiper-wrapper 
+                            - for (let i = 0; i < 7; i++)
+                                .swiper-slide 
+                                    .product-galleryMobile__img.grey-img.js-gallery-open.product-galleryMobile__img--vertical
+                                        +jpgC('img-m', '375', '462')
+                    .product-galleryMobile__paginationVeritical.slider-paginationVerical.photo-pagination

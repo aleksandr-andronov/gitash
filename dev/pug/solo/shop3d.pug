@@ -1,0 +1,28 @@
+extends template/clear
+
+block variables
+	- var title = '3d shop'
+	//- - var bodyClass = 'padelPage'
+	//- - var htmlClass = 'html-rem'
+
+block content
+	include pages/shop3d/shop3d
+	include modules/offcanvas/product
+	
+	
+block styles
+	link(rel="stylesheet" type='text/css' href="static/css/swiper-bundle.min.css")
+	link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+	link(rel="stylesheet" type='text/css' href="static/css/shop3d.css")
+
+block script
+	script(src="static/js/libs.js")
+	script(src="static/js/swiper-bundle.min.js")
+	script(src="static/js/gsap.min.js")
+	script(src="static/js/main.js")
+	//- include pages/shop3d/script.html
+	//- script(src="static/js/three/shop3d.js" type="module")
+	 
+	
+//- .shop3d-dot
+//- 	span

@@ -82,7 +82,12 @@
                                         span.form-checkbox__info 40
                 .offcanvas-subscribe__txt Мы обязательно напишем вам, когда нужный размер появится в&nbsp;наличии
                 .offcanvas-subscribe__group.d-flex
-                    .offcanvas-subscribe__group-left 
+                    .offcanvas-subscribe__group-col
+                        .form-item
+                            .form-item__group 
+                                .form-item__label(data-default="ваше имя" data-error="пожалуйста введите имя") ваше имя
+                                input.form-input(type="text" data-validate)
+                    .offcanvas-subscribe__group-col 
                         .form-item
                             .form-item__group 
                                 .form-item__label(data-default="e-mail" data-error="пожалуйста введите e-mail") e-mail

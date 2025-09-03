@@ -1,50 +1,138 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const lenis = new Lenis({
-    smooth: true,
-    lerp: 0.08,
-  });
+    const lenis = new Lenis({
+        smooth: true,
+        lerp: 0.08,
+    });
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
 
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-  let currentScroll = 0;
-  lenis.on('scroll', ({ scroll }) => {
-    currentScroll = scroll;
-    ScrollTrigger.update();
-  });
+    let currentScroll = 0;
+    lenis.on('scroll', ({ scroll }) => {
+        currentScroll = scroll;
+        ScrollTrigger.update();
+    });
 
-  ScrollTrigger.scrollerProxy(document.body, {
-    scrollTop(value) {
-      if (arguments.length) {
-        lenis.scrollTo(value, { immediate: true });
-      } else {
-        return currentScroll;
+    ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+            if (arguments.length) {
+                lenis.scrollTo(value, { immediate: true });
+            } else {
+                return currentScroll;
+            }
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        },
+        pinType: document.querySelector('.aboutPage')?.style.transform
+            ? 'transform'
+            : 'fixed'
+    });
+
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+    });
+
+    function aboutYears() {
+      const aboutSections = document.querySelectorAll('.aboutSection');
+      const yearsList = document.querySelector('.aboutYears__list');
+      const proxyList = document.querySelector('.aboutYears__proxy');
+      const yearsItems = yearsList.querySelectorAll('.aboutYears__item');
+      const proxyItems = proxyList.querySelectorAll('.aboutYears__item');
+
+      function setSelected(itemNumber) {
+        yearsItems.forEach(item => {
+          const isSelected = item.dataset.item === itemNumber;
+          item.classList.toggle('selected', isSelected);
+          if (isSelected) console.log(`Main list selected: data-item=${item.dataset.item}`);
+        });
+
+      proxyItems.forEach(item => {
+        const isSelected = item.dataset.item === itemNumber;
+        item.classList.toggle('selected', isSelected);
+        if (isSelected) console.log(`Proxy list selected: data-item=${item.dataset.item}`);
+      });
+    }
+
+    function updatePosition(activeItemNumber, yearPosElem) {
+      const proxyActiveItem = proxyList.querySelector(`.aboutYears__item[data-item="${activeItemNumber}"]`);
+      if (!proxyActiveItem || !yearPosElem) {
+        return;
       }
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
-    },
-    pinType: document.querySelector('[data-lenis-container]')?.style.transform
-      ? 'transform'
-      : 'fixed'
-  });
+      const proxyRect = proxyActiveItem.getBoundingClientRect();
+      const targetRect = yearPosElem.getBoundingClientRect();
 
-  window.addEventListener('load', () => {
-    ScrollTrigger.refresh();
-  });
+      const shiftX = targetRect.left - proxyRect.left;
+      gsap.to(yearsList, {
+        x: shiftX,
+        duration: 0.4,
+        ease: "linear"
+      });
+    }
 
 
-  function changeAboutTheme() {
+    aboutSections.forEach(section => {
+      const itemNumber = section.dataset.item;
+      const yearPosElem = section.querySelector('.aboutSection__yearPos');
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: window.matchMedia("(max-width: 480px)").matches ? "top 25%" : "top center",
+        end: () => window.matchMedia("(max-width: 480px)").matches ? "bottom 25%" : "bottom center",
+        onEnter: () => {
+          setSelected(itemNumber);
+          updatePosition(itemNumber, yearPosElem);
+        },
+        onEnterBack: () => {
+          setSelected(itemNumber);
+          updatePosition(itemNumber, yearPosElem);
+        }
+      });
+    });
+
+
+    window.addEventListener('resize', () => {
+      const selectedItem = yearsList.querySelector('.aboutYears__item.selected');
+      if (!selectedItem) {
+        return;
+      }
+      const selectedNumber = selectedItem.dataset.item;
+
+      const activeSection = [...document.querySelectorAll('.aboutSection')]
+        .find(section => section.dataset.item === selectedNumber);
+
+      if (!activeSection) {
+        return;
+      }
+
+        const yearPosElem = activeSection.querySelector('.aboutSection__yearPos');
+        updatePosition(selectedNumber, yearPosElem);
+      });
+    }
+
+    function getOffset() {
+      const header = document.querySelector(".header");
+      const aboutYears = document.querySelector(".aboutYears");
+
+      const headerHeight = header?.offsetHeight || 0;
+      const aboutYearsHeight = aboutYears?.offsetHeight || 0;
+      const extraOffset = 0;
+
+      return headerHeight + aboutYearsHeight + extraOffset;
+    }
+
+    function changeAboutTheme() {
     const aboutPage = document.querySelector('.aboutPage');
     const blocks = document.querySelectorAll('.js-block');
 
@@ -77,1006 +165,854 @@ document.addEventListener("DOMContentLoaded", () => {
     blocks.forEach(block => observer.observe(block));
   }
 
+  const sectionsContent = ['.aboutThree-content', '.aboutFour-content', '.aboutSix-content', '.aboutEight-content', '.aboutNine-content', '.aboutTen-content', '.aboutThirteen-content', '.aboutFourteen-content']
 
-changeAboutTheme()
-
-function aboutYears() {
-  const aboutSections = document.querySelectorAll('.aboutSection');
-  const yearsList = document.querySelector('.aboutYears__list');
-  const proxyList = document.querySelector('.aboutYears__proxy');
-  const yearsItems = yearsList.querySelectorAll('.aboutYears__item');
-  const proxyItems = proxyList.querySelectorAll('.aboutYears__item');
-
-  function setSelected(itemNumber) {
-    console.log(`setSelected called with itemNumber: ${itemNumber}`);
-
-    yearsItems.forEach(item => {
-      const isSelected = item.dataset.item === itemNumber;
-      item.classList.toggle('selected', isSelected);
-      if (isSelected) console.log(`Main list selected: data-item=${item.dataset.item}`);
-    });
-
-    proxyItems.forEach(item => {
-      const isSelected = item.dataset.item === itemNumber;
-      item.classList.toggle('selected', isSelected);
-      if (isSelected) console.log(`Proxy list selected: data-item=${item.dataset.item}`);
-    });
-  }
-
-  function updatePosition(activeItemNumber, yearPosElem) {
-    console.log(`updatePosition called with activeItemNumber: ${activeItemNumber}`);
-
-    const proxyActiveItem = proxyList.querySelector(`.aboutYears__item[data-item="${activeItemNumber}"]`);
-
-    if (!proxyActiveItem || !yearPosElem) {
-      console.warn('Missing elements for positioning:', { proxyActiveItem, yearPosElem });
-      return;
-    }
-
-    const proxyRect = proxyActiveItem.getBoundingClientRect();
-    const targetRect = yearPosElem.getBoundingClientRect();
-
-    console.log('proxyActiveItem left:', proxyRect.left);
-    console.log('yearPosElem left:', targetRect.left);
-
-    // Рассчитываем сдвиг относительно нуля, без добавления к текущему transform
-    const shiftX = targetRect.left - proxyRect.left;
-
-    console.log('Calculated shiftX (absolute):', shiftX);
-
-    gsap.to(yearsList, {
-      x: shiftX,
-      duration: 0.4,
-      ease: "linear"
-    });
-  }
+    ScrollTrigger.matchMedia({
+      "(max-width: 480px)": function() {
 
 
-  aboutSections.forEach(section => {
-    const itemNumber = section.dataset.item;
-    const yearPosElem = section.querySelector('.aboutSection__yearPos');
-
-    ScrollTrigger.create({
-      trigger: section,
-      markers: true,
-      start: "top center",
-      end: () => `bottom center`,
-      onEnter: () => {
-        console.log(`ScrollTrigger onEnter for section data-item=${itemNumber}`);
-        setSelected(itemNumber);
-        updatePosition(itemNumber, yearPosElem);
-      },
-      onEnterBack: () => {
-        console.log(`ScrollTrigger onEnterBack for section data-item=${itemNumber}`);
-        setSelected(itemNumber);
-        updatePosition(itemNumber, yearPosElem);
-      }
-    });
-  });
-
-  window.addEventListener('resize', () => {
-    const selectedItem = yearsList.querySelector('.aboutYears__item.selected');
-    if (!selectedItem) {
-      console.log('Resize: no selected item found');
-      return;
-    }
-    const selectedNumber = selectedItem.dataset.item;
-
-    const activeSection = [...document.querySelectorAll('.aboutSection')]
-      .find(section => section.dataset.item === selectedNumber);
-
-    if (!activeSection) {
-      console.log('Resize: no active section found for selectedNumber', selectedNumber);
-      return;
-    }
-
-    const yearPosElem = activeSection.querySelector('.aboutSection__yearPos');
-    console.log('Resize event - recalculating position for selectedNumber:', selectedNumber);
-    updatePosition(selectedNumber, yearPosElem);
-  });
-}
-
-
-
-
-// function aboutYears() {
-//   const sections = document.querySelectorAll('.aboutSection[data-item]');
-//   const years = document.querySelectorAll('.aboutYears__item.ttl[data-item]');
-//   const list = document.querySelector('.aboutYears__list')
-
-//   if (!sections.length || !years.length) return;
-
-//   const observerOptions = {
-//     root: null,
-//     rootMargin: '-50% 0px -50% 0px', // Центр экрана
-//     threshold: 0
-//   };
-
-//   const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         const currentItem = entry.target.dataset.item;
-
-//         list.dataset.pos = `${currentItem}`
-
-//         years.forEach(year => {
-//           if (year.dataset.item === currentItem) {
-//             year.classList.add('selected');
-//           } else {
-//             year.classList.remove('selected');
-//           }
-//         });
-//       }
-//     });
-//   }, observerOptions);
-
-//   sections.forEach(section => observer.observe(section));
-// }
-
-// aboutYears();
-
-  function photoAnimates() {
-    const header = document.querySelector(".header");
-    const aboutYears = document.querySelector(".aboutYears");
-    const wrap = document.querySelector(".aboutFive-content__imgBottom-wrap");
-
-    const headerHeight = header?.offsetHeight || 0;
-    const aboutYearsHeight = aboutYears?.offsetHeight || 0;
-    const extraOffset = 50;
-    const totalOffset = headerHeight + aboutYearsHeight + extraOffset;
-
-    // Create a GSAP timeline tied to ScrollTrigger
-    const tl = gsap.timeline({
-      y: '100%',
-      scrollTrigger: {
-        trigger: wrap,
-        start: `top ${totalOffset}`, // when wrap's top hits (header + aboutYears + 50)
-        end: "+=200%", // duration of pin/scroll
-        scrub: true, // enables scroll-linked animation
-        pin: true,
-        markers: false, // remove in production
-      },
-  });
-
-  // Sequentially animate the 3 items in from below
-  tl.to(".aboutFive-content__imgBottom-3", {
-    y: "0%",
-    opacity: 1,
-    duration: 0.5,
-    ease: "power3.out",
-  })
-    .to(".aboutFive-content__imgBottom-2", {
-      y: "0%",
-      opacity: 1,
-      duration: 0.5,
-      ease: "power3.out",
-    }, "+=0.2") // small delay
-    .to(".aboutFive-content__imgBottom-1", {
-      y: "0%",
-      opacity: 1,
-      duration: 0.5,
-      ease: "power3.out",
-    }, "+=0.2");
-  }
-
-  photoAnimates()
-  aboutYears()
-
-
-
-  function animateImageOnScroll({
-    targetSelector,
-    triggerSelector,
-    fromProps,
-    toProps,
-    scrollOptions = {}
-  }) {
-    // Поддержка: строка селекторов или массив
-    const selectors = Array.isArray(targetSelector)
-      ? targetSelector
-      : [targetSelector];
-
-    // Объединяем все найденные элементы в один массив
-    const targets = selectors
-      .flatMap(selector => Array.from(document.querySelectorAll(selector)))
-      .filter(el => el); // на случай, если что-то не найдено
-
-    if (targets.length === 0) return;
-
-    targets.forEach(target => {
-      target.style.willChange = 'transform';
-
-      const defaultToProps = {
-        // immediateRender: false,
-        scrollTrigger: {
-          trigger: triggerSelector,
-          scroller: document.body,
-          start: 'top center',
-          end: 'bottom bottom',
-          scrub: 6,
-          markers: false,
-          ...scrollOptions
-        },
-      };
-
-      gsap.fromTo(
-        target,
-        fromProps,
-        {
-          ...defaultToProps,
-          ...toProps,
+        // анимация на первом экране
+        gsap.to('.aboutIntro-content__img', {
+          y: '-2rem',
           scrollTrigger: {
-            ...defaultToProps.scrollTrigger,
-            ...toProps.scrollTrigger
+            trigger: ".aboutIntro",
+            pin: true,
+            start: 'top top',
+            end: "+=50%",
+            scrub: true,
+            ease: "power2.inOut",
           }
-        }
-      );
-    });
-  }
+        });
 
+        gsap.to('.aboutIntro-content__img-mobile img', { 
+            y: '0%', 
+            duration: 1, 
+            ease: "power2.inOut",
+        });
 
-  ScrollTrigger.matchMedia({
-    "(min-width: 481px)": function () {
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__top-right img',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '-3rem', x: '15rem' },
-        toProps: { 
-          y: '3rem', 
-          x: '-15rem',
+        // анимация 2000
+
+        gsap.timeline({
           scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
-          }
-        }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__imgTop  img',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '14rem', rotate: '12deg' },
-        toProps: { y: '0rem', rotate: '0deg',
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
-          }
-         }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__txt',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '8rem' },
-        toProps: { 
-          y: '0rem',  
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
-          }
-        }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__quote',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '8rem' },
-        toProps: { 
-          y: '0rem',  
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
-          }
-        }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutTwo-content__images-item__img--right, .aboutTwo-content__images-item__txt--right',
-        triggerSelector: '.aboutTwo-content__images-item--right',
-        fromProps: { y: '16rem' },
-        toProps: { 
-          y: '-4rem',  
-          scrollTrigger: {
-            start: 'top+200 center',
-            end: 'bottom bottom',
-          }
-        }
-      });
-
-
-
-      animateImageOnScroll({
-        targetSelector: '.aboutTwo-content__images-item__year--right',
-        triggerSelector: '.aboutTwo-content__images-item--right',
-        fromProps: { y: '10rem' },
-        toProps: { 
-          y: '0rem',  
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
-          }
-        }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutFourteen-content__bImg-1',
-        triggerSelector: '.aboutFourteen-content__bImg',
-        fromProps: { y: '10rem' },
-        toProps: { 
-          y: '0rem',
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom+=200 bottom',
-          }
-        }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutFourteen-content__bImg-2',
-        triggerSelector: '.aboutFourteen-content__bImg',
-        fromProps: { y: '10rem' },
-        toProps: { 
-          y: '0rem',
-          scrollTrigger: {
-            start: 'top+=100 center',
-            end: 'bottom+=200 bottom',
-          }
-        }
-      });
-    },
-    "(max-width: 480px)": function () {
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__top-right img',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '0rem', x: '4rem' },
-        toProps: { 
-          y: '0rem', 
-          x: '0rem',
-          scrollTrigger: {
+            trigger: '.aboutOne-content__top-img',
             start: 'top bottom',
-            end: 'bottom bottom',
+            end: 'bottom top',
+            scrub: 4,
+            ease: "power2.inOut",
           }
-        }
-      });
+        }).fromTo('.aboutOne-content__top-right', {
+          y: '-3rem',
+          x: '3rem'
+        }, {y: '0rem', x: '0rem'}).fromTo('.aboutOne-content__imgTop', {
+          rotate: -12,
+          y: '4rem'
+        }, {y: '-2rem', rotate: -6}, '0');
 
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__imgTop  img',
-        triggerSelector: '.aboutOne-content__top-img',
-        fromProps: { y: '2.5rem', rotate: '12deg' },
-        toProps: { y: '0rem', rotate: '0deg' }
-      });
-
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__txt',
-        triggerSelector: '.aboutOne-content__txt',
-        fromProps: { y: '2rem' },
-        toProps: { 
-          y: '0rem',  
+        gsap.timeline({
           scrollTrigger: {
+                trigger: ".aboutOne-content__imgBottom",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 4,
+                ease: "power2.inOut",
+            }
+        }).from('.aboutOne-content__imgBottom-img', {
+            y: '2rem',
+            x: '-2rem'
+        }).from('.aboutOne-content__imgBottom-decorTxt', {
+            y: '2rem',
+            x: '-2rem'
+        }, '<0.1');
+
+        // анимация 2005
+        gsap.fromTo('.aboutThree-content__img-img', { 
+          y: '1rem' },{ 
+          y: '-1rem',
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: '.aboutThree-content__img-img',
             start: 'top bottom',
-            end: 'bottom bottom',
+            end: 'top top',
+            scrub: 4
+          }
+        })
+
+
+        // анимация 2006
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: '.aboutFour-content', 
+            start: 'top 80%',
+            end: 'top center',
+            scrub: 4,
+            ease: "power2.inOut",
+          }
+        }).from('.aboutFour-content__title', {
+          opacity: 0,
+        }).from('.aboutFour-content__txt', {
+          opacity: 0,
+        }, '<0.2');
+
+        gsap.fromTo('.aboutFour-content__img-img', { 
+          y: '2rem' },{ 
+          y: '-2rem',
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: '.aboutFour-content__img-img',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 4
+          }
+        })
+
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".aboutFive-content__imgBottom-wrap",
+            start: () => `top ${getOffset()}`,
+            end: "+=100%",
+            scrub: true,
+            pin: true,
+          }
+        })
+        // --- блок 3 ---
+        .from(".aboutFive-content__imgBottom-3", { 
+          y: '50%' 
+        }, "<") // двигается со скроллом
+        .from(".aboutFive-content__imgBottom-3", { 
+          opacity: 0, 
+          duration: 0.3, 
+          ease: "power1.out" 
+        }, "<") // быстрое появление
+
+        // --- блок 2 ---
+        .from(".aboutFive-content__imgBottom-2", { 
+          y: '50%' 
+        })
+        .from(".aboutFive-content__imgBottom-2", { 
+          opacity: 0, 
+          duration: 0.3, 
+          ease: "power1.out" 
+        }, "<")
+
+        // --- блок 1 ---
+        .from(".aboutFive-content__imgBottom-1", { 
+          y: '50%' 
+        })
+        .from(".aboutFive-content__imgBottom-1", { 
+          opacity: 0, 
+          duration: 0.3, 
+          ease: "power1.out" 
+        }, "<");
+
+        
+
+        // анимация 2019-2020
+        gsap.from('.aboutThirteen-content__images-1, .aboutThirteen-content__images__txt-5', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-1',
+            start: 'top bottom',
+        end: 'bottom top',
+            scrub: 4,
+          }
+        })
+
+        gsap.from('.aboutThirteen-content__images-2, .aboutThirteen-content__images__txt-2', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-2',
+            start: 'top bottom',
+        end: 'bottom top',
+            scrub: 4
+          }
+        })
+
+        gsap.from('.aboutThirteen-content__images-4', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-4',
+            start: 'top bottom',
+        end: 'bottom top',
+            scrub: 4
+          }
+        })
+
+        gsap.from('.aboutThirteen-content__images-3, .aboutThirteen-content__images__txt-3', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-3',
+            start: 'top bottom',
+        end: 'bottom top',
+            scrub: 4
+          }
+        })
+
+        gsap.from('.aboutThirteen-content__images-5, .aboutThirteen-content__images__txt-1, .aboutThirteen-content__images-6', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-5',
+            start: 'top bottom',
+        end: 'bottom top',
+            scrub: 4
+          }
+        })
+
+        gsap.from('.aboutThirteen-content__images-7, .aboutThirteen-content__images__txt-7, .aboutThirteen-content__images__txt-4', {
+          y: '4rem',
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.aboutThirteen-content__images-7',
+            sstart: 'top bottom',
+        end: 'bottom top',
+            scrub: 4
+          }
+        })
+
+        // анимация 2021
+
+        gsap.from('.aboutFourteen-content__tImg-2', {
+          rotate: -8,
+          scrollTrigger: {
+            trigger: '.aboutFourteen-content',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 4,
+          }
+        })
+
+        // анимация 2022
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: '.aboutFifteen-content',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 4,
+          }
+        }).from('.aboutFifteen-content__img-2', {
+          rotate: 0
+        }).from('.aboutFifteen-content__img-3', {
+          rotate: 0
+        }, '<0.2')
+
+         sectionsContent.forEach(i => {
+          gsap.from(i, {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: i,
+              start: 'top center',
+              end: 'top 25%',
+              scrub: true
+            }
+          })
+        })
+      },
+
+      "(min-width: 481px)": function() {
+        // анимация на первом экране
+        gsap.to('.aboutIntro-content__img', {
+          y: '-6rem',
+          scrollTrigger: {
+            trigger: ".aboutIntro",
+            pin: true,
+            start: 'top top',
+            end: "+=50%",
+            scrub: true,
+            ease: "power2.inOut",
+          }
+        });
+
+        gsap.to('.aboutIntro-content__img-desktop img', { 
+            y: '0%', 
+            duration: 1, 
+            ease: "power2.inOut",
+        });
+
+        // анимация 2000
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: '.aboutOne-content__top-img',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 4,
+            ease: "power2.inOut",
+          }
+        }).fromTo('.aboutOne-content__top-right', {
+          y: '-2rem',
+          x: '4rem'
+        }, {y: '4rem', x: '-8rem'}).fromTo('.aboutOne-content__imgTop', {
+          rotate: -12,
+          y: '4rem'
+        }, {y: '-4rem', rotate: -6}, '0').fromTo('.aboutOne-content__top-left', {
+          y: '4rem',
+          x: '4rem'
+        }, {y: '-2rem', x: '-2rem'}, '0')
+
+        gsap.timeline({
+          scrollTrigger: {
+                trigger: ".aboutOne-content__imgBottom",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 4,
+                ease: "power2.inOut",
+            }
+        }).fromTo('.aboutOne-content__imgBottom-img', {
+            y: '4rem',
+            x: '-4rem'
+        }, {y: '-4rem', x: '0rem'}).fromTo('.aboutOne-content__imgBottom-decorTxt', {
+            y: '4rem',
+            x: '-4rem'
+        }, {y: '-4rem', x: '0rem'}, '<0.1');
+
+        // анимация 2005
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: '.aboutThree-content', 
+            start: 'top 80%',
+            end: 'top center',
+            scrub: 2,
+            ease: "power2.inOut",
+          }
+        }).from('.aboutThree-content__txt', {
+          opacity: 0,
+        });
+
+        gsap.fromTo('.aboutThree-content__img-img', { 
+          y: '2rem' },{ 
+          y: '-2rem',
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: '.aboutThree-content__img-img',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 4
+          }
+        })
+
+        // анимация 2006
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: '.aboutFour-content', 
+            start: 'top 80%',
+            end: 'top center',
+            scrub: 4,
+            ease: "power2.inOut",
+          }
+        }).from('.aboutFour-content__title', {
+          opacity: 0,
+        }).from('.aboutFour-content__txt', {
+          opacity: 0,
+        }, '<0.2');
+
+        gsap.fromTo('.aboutFour-content__img-img', { 
+          y: '2rem' },{ 
+          y: '-2rem',
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: '.aboutFour-content__img-img',
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 4
+          }
+        })
+
+
+        // анимация 2010
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".aboutFive-content__imgBottom-wrap",
+            start: () => `top ${getOffset()}`,
+            end: "+=150%",
+            scrub: 2,
+            pin: true,
             
           }
-        }
-      });
+        })
+        .from(".aboutFive-content__imgBottom-3", {
+          y: '50%',
+          opacity: 0,
+        })
+        .from(".aboutFive-content__imgBottom-2", {
+          y: '50%',
+          opacity: 0,
+        })
+        .from(".aboutFive-content__imgBottom-1", {
+          y: '50%',
+          opacity: 0,
+        });
 
-      animateImageOnScroll({
-        targetSelector: '.aboutOne-content__quote',
-        triggerSelector: '.aboutOne-content__txt',
-        fromProps: { y: '12rem' },
-        toProps: { 
-          y: '0rem',  
+        // анимация 2019-2020
+        gsap.timeline({
           scrollTrigger: {
-            start: 'top+=200 bottom',
-            end: 'bottom bottom',
+            trigger: '.aboutThirteen-content__images',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 4,
           }
-        }
-      });
+        }).from('.aboutThirteen-content__images-1, .aboutThirteen-content__images__txt-1, .aboutThirteen-content__images-3, .aboutThirteen-content__images__txt-3, .aboutThirteen-content__images-5, .aboutThirteen-content__images__txt-5, .aboutThirteen-content__images-7', {
+          y: '4rem',
+        }).from('.aboutThirteen-content__images-2, .aboutThirteen-content__images__txt-2, .aboutThirteen-content__images-4, .aboutThirteen-content__images__txt-4, .aboutThirteen-content__images-6, .aboutThirteen-content__images__txt-6', {
+          y: '4rem',
+        }, '<0.2')
 
-      animateImageOnScroll({
-        targetSelector: '.aboutTwo-content__images-item__img--right, .aboutTwo-content__images-item__txt--right',
-        triggerSelector: '.aboutTwo-content__images-item--right',
-        fromProps: { y: '8rem' },
-        toProps: { 
-          y: '0rem',  
+        // анимация 2021
+
+        gsap.from('.aboutFourteen-content__tImg-2', {
+          rotate: -8,
           scrollTrigger: {
-            start: 'top+200 center',
-            end: 'bottom bottom',
+            trigger: '.aboutFourteen-content__tImg',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 4,
           }
-        }
-      });
+        })
 
+        // анимация 2022
 
-
-      animateImageOnScroll({
-        targetSelector: '.aboutTwo-content__images-item__year--right',
-        triggerSelector: '.aboutTwo-content__images-item--right',
-        fromProps: { y: '4rem' },
-        toProps: { 
-          y: '2rem',  
+        gsap.timeline({
           scrollTrigger: {
-            start: 'top center',
-            end: 'bottom bottom',
+            trigger: '.aboutFifteen-content__img',
+            start: 'top bottom',
+            end: 'bottom yop',
+            scrub: 4,
           }
+        }).from('.aboutFifteen-content__img-2', {
+          rotate: 0
+        }).from('.aboutFifteen-content__img-3', {
+          rotate: 0
+        }, '<0.2')
+      }
+    });
+
+
+
+
+
+    
+    
+
+
+    // анимация 2000
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".aboutOne-content__top-img",
+            start: "top 70%",
+            end: "top 20%",
+            scrub: 4,
+            ease: "power2.inOut",
         }
-      });
+    }).from('.aboutOne-content__txt', {
+        opacity: 0,
+        y: '4rem'     
+    }, "<0.2").from('.aboutOne .aboutOne-content__quote', {
+        opacity: 0,
+        y: '4rem' 
+    }, "<0.2").from('.aboutOne-content__author', {
+        opacity: 0,
+        y: '4rem' 
+    }, "<0.2");
 
-      animateImageOnScroll({
-        targetSelector: '.aboutFourteen-content__bImg-1',
-        triggerSelector: '.aboutFourteen-content__bImg',
-        fromProps: { y: '3rem' },
-        toProps: { 
-          y: '0rem',
-          scrollTrigger: {
-            start: 'top center',
-            end: 'bottom+=200 bottom',
-          }
-        }
-      });
+    
 
-      animateImageOnScroll({
-        targetSelector: '.aboutFourteen-content__bImg-2',
-        triggerSelector: '.aboutFourteen-content__bImg',
-        fromProps: { y: '3rem' },
-        toProps: { 
-          y: '0rem',
-          scrollTrigger: {
-            start: 'top+=100 center',
-            end: 'bottom+=200 bottom',
-          }
-        }
-      });
-    },
-  });
+    
 
-  
+    // анимация 2002-2004
 
-  animateImageOnScroll({
-    targetSelector: '.aboutOne-content__top-left',
-    triggerSelector: '.aboutOne-content__top-img',
-    fromProps: { y: '8rem', x: '8rem' },
-    toProps: { y: '0rem', x: '0rem' }
-  });
-
-  
-
-  animateImageOnScroll({
-    targetSelector: '.aboutOne-content__imgBottom-img__inner',
-    triggerSelector: '.aboutOne-content__imgBottom',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    gsap.from('.aboutTwo-content__txt', {
+      opacity: 0,
       scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom bottom',
+        trigger: '.aboutTwo-content',
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 4,
+        ease: "power2.inOut",
       }
-     }
-  });
+    })
 
-  animateImageOnScroll({
-    targetSelector: '.aboutOne-content__imgBottom-decorTxt',
-    triggerSelector: '.aboutOne-content__imgBottom',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',  
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=100 bottom',
-        end: 'bottom bottom',
-      }
-    }
-  });
-
-
-  
-
-  
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutTwo-content__images-item__year--left',
-    triggerSelector: '.aboutTwo-content__images-item--left',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',  
-      scrollTrigger: {
-        start: 'top center',
-        end: 'bottom bottom',
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutTwo-content__images-item__img--left, .aboutTwo-content__images-item__txt--left',
-    triggerSelector: '.aboutTwo-content__images-item--left',
-    fromProps: { y: '16rem' },
-    toProps: { 
-      y: '-4rem',  
-      scrollTrigger: {
-        start: 'top+200 center',
-        end: 'bottom bottom',
-      }
-    }
-  });
-
-  
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutThree-content__img-img img',
-    triggerSelector: '.aboutThree-content__img',
-    fromProps: { y: '4rem' },
-    toProps: { 
-      y: '0rem',  
-      scrollTrigger: {
-        start: 'top+=100 bottom',
-        end: 'bottom bottom',
-        
-      }
-    }
-  });
-
-  // animateImageOnScroll({
-  //   targetSelector: '.aboutThree-content__img-left svg',
-  //   triggerSelector: '.aboutThree-content__img',
-  //   fromProps: { y: '16rem' },
-  //   toProps: { 
-  //     y: '0rem',  
-  //     scrollTrigger: {
-  //       start: 'top+=200 bottom',
-  //       end: 'bottom bottom',
-  //       markers: true,
-  //     }
-  //   }
-  // });
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFour-content__title',
-    triggerSelector: '.aboutFour-content__title',
-    fromProps: { opacity: '0.5' },
-    toProps: { 
-      opacity: '1',
-      scrollTrigger: {
-        start: 'top-=200 center',
-        end: 'bottom bottom',
-        scrub: 1,
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFour-content__txt',
-    triggerSelector: '.aboutFour-content__txt',
-    fromProps: { opacity: '0.5' },
-    toProps: { 
-      opacity: '1',
-      scrollTrigger: {
-        start: 'top-=200 center',
-        end: 'bottom bottom',
-        scrub: 1,
-      }
-    }
-  });
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFour-content__img-img img',
-    triggerSelector: '.aboutFour-content__img',
-    fromProps: { y: '4rem' },
-    toProps: { 
-      y: '0rem',  
-      scrollTrigger: {
-        start: 'top+=100 bottom',
-        end: 'bottom bottom',
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFive-content__imgTop-img__inner',
-    triggerSelector: '.aboutFive-content__imgTop-img',
-    fromProps: { y: '4rem', x: '-4rem' },
-    toProps: { 
-      x: '0rem',
-      y: '0rem',  
-      scrollTrigger: {
-        start: 'top-=200 center',
-        end: 'bottom bottom',
-        // markers: true,
-      }
-    }
-  });
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFive-content__imgBottom-left img',
-    triggerSelector: '.aboutFive-content__imgBottom-wrap',
-    fromProps: { y: '4rem', x: '-4rem' },
-    toProps: { 
-      x: '0rem',
-      y: '0rem',  
-      scrollTrigger: {
-        start: 'top+=1200 100%',
-        end: 'top 200%',
-        
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutSix-content__img-1',
-    triggerSelector: '.aboutSix-content__img',
-    fromProps: { y: '10rem', rotate: '4deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '-2deg', 
-      scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutSix-content__img-2',
-    triggerSelector: '.aboutSix-content__img',
-    fromProps: { y: '10rem', rotate: '4deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '-2deg', 
-      scrollTrigger: {
-        start: 'top+=100 bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEight-content__img-1',
-    triggerSelector: '.aboutEight-content__img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
-      scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEight-content__img-2',
-    triggerSelector: '.aboutEight-content__img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
-      scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutNine-content__img-1',
-    triggerSelector: '.aboutNine-content__img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
-      scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutNine-content__img-2',
-    triggerSelector: '.aboutNine-content__img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
-      scrollTrigger: {
-        start: 'top bottom',
-        end: 'bottom+=200 bottom',
-      }
-    }
-  });
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutTen-content__img-1',
-    triggerSelector: '.aboutTen-content__img',
-    fromProps: { y: '10rem', rotate: '10deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '0deg'
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutTen-content__img-2',
-    triggerSelector: '.aboutTen-content__img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutTen-content__img-txt',
-    triggerSelector: '.aboutTen-content__img',
-    fromProps: { y: '10rem', rotate: '0deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '5deg',
-      crollTrigger: {
-        start: 'top center',
-        end: 'bottom+=200 bottom',
-        markers: true,
-      }
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEleven-content__txtImg-img',
-    triggerSelector: '.aboutEleven-content__txtImg-img',
-    fromProps: { y: '10rem', rotate: '0deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '8deg',
-      scrollTrigger: {
+        trigger: '.aboutTwo-content__images-item--left',
         start: "top bottom",
-        end: "bottom center"
+        end: "bottom top",
+        scrub: 4,
+        ease: "power2.inOut",
       }
-    }
-  });
+    }).fromTo('.aboutTwo-content__images-item__year--left', {
+      y: '4rem'
+    }, {y: '-2rem'}).fromTo('.aboutTwo-content__images-item__img--left', {
+      y: '4rem'
+    }, {y: '-2rem'}, '<0.2').fromTo('.aboutTwo-content__images-item__txt--left', {
+      y: '4rem'
+    }, {y: '-2rem'}, '<0.2')
 
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEleven-content__gifs-item__img--left',
-    triggerSelector: '.aboutEleven-content__gifs-item__gif--left',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem'
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEleven-content__gifs-item__img--right',
-    triggerSelector: '.aboutEleven-content__gifs-item__gif--right',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem'
-    }
-  });
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEleven-content__img-1',
-    triggerSelector: '.aboutEleven-content__img',
-    fromProps: {  rotate: '0deg' },
-    toProps: { 
-
-      rotate: '3deg'
-    }
-  });
-
-  animateImageOnScroll({
-    targetSelector: '.aboutEleven-content__img-txt',
-    triggerSelector: '.aboutEleven-content__img',
-    fromProps: { y: '-2rem', rotate: '0deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '-7deg'
-    }
-  });
-
-
-
-
-
-
-
-
-   animateImageOnScroll({
-    targetSelector: '.aboutTwelve-content__txtImg-img__main',
-    triggerSelector: '.aboutTwelve-content__txtImg-img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top center',
-        end: 'bottom bottom',
+        trigger: '.aboutTwo-content__images-item--right',
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 4,
+        ease: "power2.inOut",
       }
-    }
-  });
+    }).fromTo('.aboutTwo-content__images-item__year--right', {
+      y: '4rem'
+    }, {y: '-2rem'}).fromTo('.aboutTwo-content__images-item__img--right', {
+      y: '4rem'
+    }, {y: '-2rem'}, '<0.2').fromTo('.aboutTwo-content__images-item__txt--right', {
+      y: '4rem'
+    }, {y: '-2rem'}, '<0.2')
 
-  animateImageOnScroll({
-    targetSelector: '.aboutTwelve-content__txtImg-img__decor-1',
-    triggerSelector: '.aboutTwelve-content__txtImg-img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    
+    
+
+    
+
+    // анимация 2010
+
+    gsap.fromTo('.aboutFive-content__imgTop', {
+      x: '-4rem',
+      y: '4rem',
+    }, {
+      x: '2rem', 
+      y: '-2rem', 
       scrollTrigger: {
-        start: 'top+=100 center',
-        end: 'bottom bottom',
+        trigger: '.aboutFive-content__imgTop',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2,
+        ease: "power2.inOut",
       }
-    }
-  });
+    })
+    
 
-  animateImageOnScroll({
-    targetSelector: '.aboutTwelve-content__txtImg-img__decor-2',
-    triggerSelector: '.aboutTwelve-content__txtImg-img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    // анимация 2011
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=200 center',
-        end: 'bottom bottom',
+        trigger: '.aboutSix-content',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutSix-content__txt', {
+      opacity: 0,
+    }).from('.aboutSix-content__img', {
+      opacity: 0,
+    }, '<0.2')
 
-  animateImageOnScroll({
-    targetSelector: '.aboutTwelve-content__txtImg-img__decor-3, .aboutTwelve-content__txtImg-img__second',
-    triggerSelector: '.aboutTwelve-content__txtImg-img',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=300 center',
-        end: 'bottom bottom',
+        trigger: '.aboutSix-content__img',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutSix-content__img-1', {
+      rotate: '-5'
+    }).from('.aboutSix-content__img-2', {
+      rotate: '5'
+    }, '<0.2')
 
 
-  animateImageOnScroll({
-    targetSelector: '.aboutThirteen-content__images-1, .aboutThirteen-content__images-4, .aboutThirteen-content__images-6',
-    triggerSelector: '.aboutThirteen-content__images',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    // анимация 2012
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=100 center',
-        end: 'bottom bottom',
+        trigger: '.aboutEight-content',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutEight-content__txt', {
+      opacity: 0,
+    })
 
-  animateImageOnScroll({
-    targetSelector: '.aboutThirteen-content__images-2, .aboutThirteen-content__images-3, .aboutThirteen-content__images-5, .aboutThirteen-content__images-7',
-    triggerSelector: '.aboutThirteen-content__images',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=200 center',
-        end: 'bottom bottom',
+        trigger: '.aboutEight-content__img',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutEight-content__img-1', {
+      y: '8rem'
+    }).from('.aboutEight-content__img-2', {
+      y: '8rem'
+    }, '<0.2')
 
 
-  animateImageOnScroll({
-    targetSelector: '.aboutThirteen-banner__txt, .aboutThirteen-banner__logo',
-    triggerSelector: '.aboutThirteen-banner',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    // анимация 2013-2014
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+=100 center',
-        end: 'bottom bottom',
+        trigger: '.aboutNine-content',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutNine-content__txt', {
+      opacity: 0,
+    }).from('.aboutNine-content__img', {
+      opacity: 0,
+    }, '<0.2')
 
-  
 
-  animateImageOnScroll({
-    targetSelector: '.aboutThirteen-content__bImages-3,  .aboutThirteen-content__bImages-5,  .aboutThirteen-content__bImages-8, .aboutThirteen-content__bImages-9',
-    triggerSelector: '.aboutThirteen-content__bImages',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top center',
-        end: 'bottom bottom',
+        trigger: '.aboutNine-content__img',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+        
       }
-    }
-  });
+    }).from('.aboutNine-content__img-1', {
+      y: '8rem'
+    }).from('.aboutNine-content__img-2', {
+      y: '8rem'
+    }, '<0.2')
 
-  animateImageOnScroll({
-    targetSelector: ' .aboutThirteen-content__bImages-4,  .aboutThirteen-content__bImages-7',
-    triggerSelector: '.aboutThirteen-content__bImages',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+    // анимация 2015
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+100 center',
-        end: 'bottom bottom',
+        trigger: '.aboutTen-content',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutTen-content__title', {
+      opacity: 0,
+    }).from('.aboutTen-content__img', {
+      opacity: 0,
+    }, '<0.2')
 
-  animateImageOnScroll({
-    targetSelector: ' .aboutThirteen-content__bImages-6',
-    triggerSelector: '.aboutThirteen-content__bImages',
-    fromProps: { y: '10rem' },
-    toProps: { 
-      y: '0rem',
+
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top+300 center',
-        end: 'bottom bottom',
+        trigger: '.aboutTen-content__img',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
       }
-    }
-  });
-  
+    }).from('.aboutTen-content__img-1', {
+      y: '8rem',
+      rotate: -8,
+    }).from('.aboutTen-content__img-txt', {
+      y: '2rem',
+      rotate: 0
+    }, '<0.2')
 
-  animateImageOnScroll({
-    targetSelector: '.aboutFourteen-content__tImg-2 img',
-    triggerSelector: '.aboutFourteen-content__tImg',
-    fromProps: { y: '4rem', rotate: '10deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '0deg'
-    }
-  });
-
-  
-
-
-
-
-  animateImageOnScroll({
-    targetSelector: '.aboutFifteen-content__img-3',
-    triggerSelector: '.aboutFifteen-content__img',
-    fromProps: { y: '10rem', rotate: '0deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '-9deg',
+    gsap.timeline({
       scrollTrigger: {
-        start: 'top center',
-        end: 'bottom+=200 bottom',
+        trigger: '.aboutEleven-content__txtImg',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
       }
-    }
-  });
+    }).from('.aboutEleven-content__txtImg-txt', {
+      opacity: 0
+    }).from('.aboutEleven-content__txtImg-img', {
+      opacity: 0
+    }, '0')
 
-  animateImageOnScroll({
-    targetSelector: '.aboutFifteen-content__img-2',
-    triggerSelector: '.aboutFifteen-content__img',
-    fromProps: { y: '10rem', rotate: '0deg' },
-    toProps: { 
-      y: '0rem',
-      rotate: '7deg',
+
+    gsap.from('.aboutEleven-content__txtImg-img', {
+      rotate: 0,
       scrollTrigger: {
-        start: 'top+=100 center',
-        end: 'bottom+=200 bottom',
+        trigger: '.aboutEleven-content__txtImg',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4
       }
-    }
-  });
-
-  
+    })
 
 
+    gsap.from('.aboutEleven-content__gifs-item__img--left', {
+      y: '6rem',
+      scrollTrigger: {
+        trigger: '.aboutEleven-content__gifs-item__gif--left',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    })
+
+    gsap.from('.aboutEleven-content__gifs-item__img--right', {
+      y: '6rem',
+      scrollTrigger: {
+        trigger: '.aboutEleven-content__gifs-item__gif--right',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    })
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.aboutEleven-content__quote',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    }).from('.aboutEleven-content__quote', {
+      opacity: 0,
+      y: '2rem' 
+    }).from('aboutEleven-content__author', {
+      opacity: 0,
+      y: '2rem'
+    }, '<0.2').from('.aboutEleven-content__b-txt', {
+      opacity: 0,
+      y: '2rem'
+    }, '<0.2')
+
+
+
+    gsap.from('.aboutEleven__bottom', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.aboutEleven__bottom',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    })
+
+
+    gsap.from('.aboutEleven-content__img-1', {
+      rotate: -8,
+      scrollTrigger: {
+        trigger: '.aboutEleven-content__img-list',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    })
+
+    // анимация 2018
+
+    gsap.from('.aboutTwelve-content', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.aboutTwelve-content',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    })
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.aboutTwelve-content',
+        start: 'top-=200 bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    }).from('.aboutTwelve-content__txtImg-img__main', {
+      y: '4rem'
+    }).from('.aboutTwelve-content__txtImg-img__decor-1', {
+      x: '2rem',
+      y: '-2rem'
+    }, '<0.2').from('.aboutTwelve-content__txtImg-img__second', {
+      y: '4rem'
+    }, '<0.2');
+
+    // анимация 2019-2020
+
+    gsap.from('.aboutThirteen__top', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.aboutThirteen__top',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    })
+
+    
+
+
+    gsap.from('.aboutThirteen-banner__logo, .aboutThirteen-banner__txt', {
+      y: '2rem',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.aboutThirteen-banner',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    })
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.aboutThirteen-content__b-txt',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    }).from('.aboutThirteen-content__b-txt', {
+      opacity: 0
+    }).from('.aboutThirteen-content__b-title', {
+      opacity: 0,
+    }, '<0.2').from('.aboutThirteen-content__bImages', {
+      opacity: 0
+    }, '<0.2');
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.aboutThirteen-content__bImages',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    }).from('.aboutThirteen-content__bImages-1, .aboutThirteen-content__bImages-2, .aboutThirteen-content__bImages-5, .aboutThirteen-content__bImages-7, .aboutThirteen-content__bImages-9', {
+      y: '8rem'
+    }).from('.aboutThirteen-content__bImages-3, .aboutThirteen-content__bImages-4, .aboutThirteen-content__bImages-6, .aboutThirteen-content__bImages-8, .aboutThirteen-content__bImages-10', {
+      y: '8rem'
+    }, '<0.2');
+
+    // анимация 2021
+
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.aboutFourteen-content__bImg',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 4,
+      }
+    }).from('.aboutFourteen-content__bImg-1', {
+      y: '8rem'
+    }).from('.aboutFourteen-content__bImg-2', {
+      y: '8rem'
+    }, '<0.2')
+
+    // анимация 2022
+
+    gsap.from('.aboutFifteen-content', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '.aboutFifteen-content',
+        start: 'top 80%',
+        end: 'top center',
+        scrub: 4,
+      }
+    })
+
+    
+
+    changeAboutTheme();
+    aboutYears();
 });
-
-
-
-
-
- 
-
-
-
-
-
- 

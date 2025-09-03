@@ -74,7 +74,11 @@ $baseFontSize : 16;
 
 .aboutSection {
     padding-top: 25vh;
-    padding-bottom: 25vh;
+    padding-bottom: 10vh;
+    overflow: hidden;
+    --padding-top: 10.875rem;
+    padding-top: calc(var(--padding-top) + var(--height-scroll) + 2rem);
+
     &__yearPos {
         margin-left: rem(468);
     }
@@ -96,11 +100,16 @@ $baseFontSize : 16;
     }
 }
 
+
+
+
+
+
 .aboutPage {
     --light: #FFFFFF;
     --main-bg: #FBFAF5;
     --about-color: #1B1B1D;
-    --years-bg: linear-gradient(176.71deg, #FBFAF5 3%, rgba(251, 250, 245, 0.95) 80.41%, rgba(251, 250, 245, 0) 95.83%, rgba(251, 250, 245, 0) 106.63%);
+    --years-bg: linear-gradient(180deg, #FBFAF5 -4.91%, rgba(251, 250, 245, 0.95) 79.91%, rgba(251, 250, 245, 0) 96.87%, rgba(251, 250, 245, 0) 108.18%);
     --years-color: rgba(240, 237, 223, 1);
     --years-color-selected: rgba(27, 27, 29, 1);
     --custom-header-bg: var(--main-bg);
@@ -119,32 +128,24 @@ $baseFontSize : 16;
             }
         }
     }
+
+    
     &--black {
         --main-bg: #1E1E20;
         --about-color: #E3E3E3;
-        --years-bg: linear-gradient(176.71deg, #1E1E20 3%, rgba(30, 30, 32, 0.95) 80.41%, rgba(30, 30, 32, 0) 95.83%, rgba(30, 30, 32, 0) 106.63%);
+        --years-bg: linear-gradient(180deg, #1E1E20 -4.91%, rgba(30, 30, 32, 0.95) 79.91%, rgba(30, 30, 32, 0) 96.87%, rgba(30, 30, 32, 0) 108.18%);
         --years-color: rgba(50, 50, 53, 1);
         --years-color-selected: rgba(217, 217, 223, 1);
         --accent-color: var(--white);
         &.body-pt-scroll {
             --accent-color: var(--white);
         }
-        // --custom-header-bg: var(--white);
-        // &.custom-header {
-        //     .header {
-        //         svg {
-        //             fill: var(--white);
-        //         }
-        //         .user-menu__link-qty {
-        //             color: var(--base-color);
-        //         }
-        //     }
-        // }
     }
     &--white {
         --main-bg: #FFFFFF;
         --about-color: #1B1B1D;
-        --years-bg: linear-gradient(176.71deg, #FFFFFF 3%, rgba(255, 255, 255, 0.95) 80.41%, #FFFFFF 95.83%, rgba(255, 255, 255, 0) 106.63%);
+        --years-bg: linear-gradient(180deg, #FFFFFF -4.91%, rgba(255, 255, 255, 0.95) 79.91%, rgba(255, 255, 255, 0) 96.87%, rgba(255, 255, 255, 0) 108.18%);
+
         --years-color: rgba(233, 232, 239, 1);
         --years-color-selected: rgba(27, 27, 29, 1);
     }
@@ -170,12 +171,24 @@ $baseFontSize : 16;
 }
 
 
+
+
 @media (max-width: 1440px) {
     .html-rem {
         font-size: calc(100vw*16/1440 + 0PX);
     }
 
+
+
+
     .aboutPage {
+        --years-bg: linear-gradient(180deg, #FBFAF5 0%, rgba(251, 250, 245, 0.95) 80%, rgba(251, 250, 245, 0) 92.74%, rgba(251, 250, 245, 0) 100%);
+        &--black {
+            --years-bg: linear-gradient(180deg, #1E1E20 0%, rgba(30, 30, 32, 0.95) 80%, rgba(30, 30, 32, 0) 92.74%, rgba(30, 30, 32, 0) 100%);
+        }
+        &--white {
+            --years-bg: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.95) 80%, rgba(255, 255, 255, 0) 92.74%, rgba(255, 255, 255, 0) 100%);
+        }
         &__txt {
             font-size: rem(18);
             &--center {
@@ -192,11 +205,13 @@ $baseFontSize : 16;
     }
 
     .aboutSection {
+        --padding-top: 8.25rem;
         &__yearPos {
             margin-left: rem(350);
         }
     }
 }
+
 
 
 @media (max-width: 480px) {
@@ -216,7 +231,16 @@ $baseFontSize : 16;
         display: inline;
     }
 
+
+
     .aboutPage {
+        --years-bg: linear-gradient(180deg, #FBFAF5 0%, rgba(251, 250, 245, 0.95) 81.64%, rgba(251, 250, 245, 0) 93.44%, rgba(251, 250, 245, 0) 100%);
+        &--black {
+            --years-bg: linear-gradient(180deg, #1E1E20 0%, rgba(30, 30, 32, 0.95) 81.64%, rgba(30, 30, 32, 0) 93.44%, rgba(30, 30, 32, 0) 100%);
+        }
+        &--white {
+            --years-bg: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.95) 81.64%, rgba(255, 255, 255, 0) 93.44%, rgba(255, 255, 255, 0) 100%);
+        }
         &__txt {
             font-size: rem(16);
             &--center {
@@ -233,8 +257,9 @@ $baseFontSize : 16;
     }
 
     .aboutSection {
-        padding-top: rem(64);
-        padding-bottom: rem(64);
+        --padding-top: 4rem;
+        padding-bottom: 15vh;
+        padding-top: 15vh;
         &__yearPos {
             margin-left: 0;
         }

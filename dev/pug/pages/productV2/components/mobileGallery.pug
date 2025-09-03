@@ -1,0 +1,32 @@
+.product-swipe
+    .product-swipe__inner.slider 
+        .swiper-wrapper 
+            .swiper-slide
+                .product-galleryMobile.product-galleryMobile--mx-0
+                    .product-galleryMobile__sliderVertical.slider
+                        .swiper-wrapper 
+                            - for (let i = 0; i < 7; i++)
+                                .swiper-slide 
+                                    .product-galleryMobile__img.grey-img.js-gallery-open.product-galleryMobile__img--vertical
+                                        +jpgC('img-m', '375', '462')
+                    .product-galleryMobile__paginationVeritical.slider-paginationVerical.photo-pagination
+            .swiper-slide
+                .product-galleryMobile.product-galleryMobile--mx-0
+                    .product-galleryMobile__moodVertical.slider
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                .product-galleryMobile__img.video.product-galleryMobile__img--mood
+                                    video(playsinline autoplay muted loop)
+                                        source(src="static/videos/8.webm", type="video/webm")
+                                        source(src="static/videos/8.mp4", type="video/mp4") 
+                            - for (let i = 0; i < 2; i++)
+                                .swiper-slide 
+                                    .product-galleryMobile__img.product-galleryMobile__img--mood
+                                        +jpgC('mmud-1', '312', '527')
+                                .swiper-slide 
+                                    .product-galleryMobile__img.product-galleryMobile__img--mood.product-galleryMobile__img--mood-width
+                                        +jpgC('mmud-2', '375', '403')
+                    .product-galleryMobile__paginationVeritical.slider-paginationVerical.mood-pagination
+    .product-swipe__type.d-flex
+        button.product-swipe__type-btn.selected(type="button") товар
+        button.product-swipe__type-btn(type="button") mood

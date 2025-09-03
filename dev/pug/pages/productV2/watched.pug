@@ -1,0 +1,13 @@
+.product-more
+    .container 
+        .product-more__title.ttl.h3 популярное
+    .mainSection-slider-wrapper.product-slider-wrapper.product-slider-4-items
+        .product-slider 
+            .swiper-wrapper 
+                - for (let i = 0; i < 10; i++)
+                    .product-slider__slideV2.swiper-slide
+                        +newCard()
+        button.mainSection-btn.mainSection-prev.centered.product-prev(type="button")
+            include ../../icons/left-12
+        button.mainSection-btn.mainSection-next.centered.product-next(type="button")
+            include ../../icons/right-12
